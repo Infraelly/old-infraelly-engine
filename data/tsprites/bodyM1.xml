@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<TSprite>
+    <Tileset>tilesets/bodyM.xml</Tileset>
+    <ImageCount frames="1" perRow="1" fps="0" />
+    <Offsets x="0" y="0" />
+</TSprite>

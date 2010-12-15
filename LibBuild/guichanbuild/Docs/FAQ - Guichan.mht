@@ -1,0 +1,3418 @@
+From: <Saved by Windows Internet Explorer 7>
+Subject: FAQ - Guichan
+Date: Tue, 3 Jun 2008 13:02:28 +1000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_001F_01C8C57A.137DC270"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.3198
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_001F_01C8C57A.137DC270
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://guichan.sourceforge.net/wiki/index.php/FAQ
+
+=EF=BB=BF<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" =
+"http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML lang=3Den dir=3Dltr xml:lang=3D"en"=20
+xmlns=3D"http://www.w3.org/1999/xhtml"><HEAD><TITLE>FAQ - =
+Guichan</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; charset=3Dutf-8">
+<META content=3D"FAQ,ImageFont collection" name=3Dkeywords><LINK =
+href=3D"/favicon.ico"=20
+rel=3D"shortcut icon">
+<STYLE type=3Dtext/css media=3Dscreen,projection>@import url( =
+/wiki/skins/guichan/main.css?7 );
+</STYLE>
+<LINK media=3Dprint=20
+href=3D"http://guichan.sourceforge.net/wiki/skins/common/commonPrint.css"=
+=20
+type=3Dtext/css rel=3Dstylesheet><!--[if lt IE 5.5000]><style =
+type=3D"text/css">@import =
+"/wiki/skins/guichan/IE50Fixes.css";</style><![endif]--><!--[if IE =
+5.5000]><style type=3D"text/css">@import =
+"/wiki/skins/guichan/IE55Fixes.css";</style><![endif]--><!--[if IE =
+6]><style type=3D"text/css">@import =
+"/wiki/skins/guichan/IE60Fixes.css";</style><![endif]--><!--[if IE 7]>
+<STYLE type=3Dtext/css>@import url( /wiki/skins/guichan/IE70Fixes.css?1 =
+);
+</STYLE>
+<![endif]--><!--[if lt IE 7]><script type=3D"text/javascript" =
+src=3D"/wiki/skins/common/IEFixes.js"></script>=0A=
+		<meta http-equiv=3D"imagetoolbar" content=3D"no" /><![endif]-->
+<SCRIPT=20
+type=3Dtext/javascript>var skin =3D 'guichan';var stylepath =3D =
+'/wiki/skins';</SCRIPT>
+
+<SCRIPT =
+src=3D"http://guichan.sourceforge.net/wiki/skins/common/wikibits.js"=20
+type=3Dtext/javascript><!-- wikibits js --></SCRIPT>
+
+<SCRIPT=20
+src=3D"http://guichan.sourceforge.net/wiki/index.php?title=3D-&amp;action=
+=3Draw&amp;gen=3Djs"=20
+type=3Dtext/javascript><!-- site js --></SCRIPT>
+
+<STYLE type=3Dtext/css>@import url( =
+/wiki/index.php?title=3DMediaWiki:Common.css&action=3Draw&ctype=3Dtext/cs=
+s&smaxage=3D18000 );
+@import url( =
+/wiki/index.php?title=3DMediaWiki:Guichan.css&action=3Draw&ctype=3Dtext/c=
+ss&smaxage=3D18000 );
+@import url( =
+/wiki/index.php?title=3D-&action=3Draw&gen=3Dcss&maxage=3D18000 );
+</STYLE>
+<!-- Head Scripts -->
+<META content=3D"MSHTML 6.00.6000.16544" name=3DGENERATOR></HEAD>
+<BODY class=3D"ns-0 ltr">
+<DIV id=3Dguichan-logo=20
+style=3D"PADDING-LEFT: 2px; FONT-SIZE: small; HEIGHT: 94px"><IMG =
+alt=3D"Guican logo"=20
+src=3D"http://guichan.sf.net/guichanlogo.png"> A portable C++ GUI =
+library designed=20
+for games using Allegro, HGE, OpenGL, OpenLayer and/or SDL. </DIV>
+<DIV id=3DglobalWrapper>
+<DIV id=3Dcolumn-content>
+<DIV id=3Dcontent><A id=3Dtop name=3Dtop></A>
+<H1 class=3DfirstHeading>FAQ</H1>
+<DIV id=3DbodyContent>
+<H3 id=3DsiteSub>From Guichan</H3>
+<DIV id=3DcontentSub></DIV>
+<DIV id=3Djump-to-nav>Jump to: <A=20
+href=3D"http://guichan.sourceforge.net/wiki/index.php/FAQ#column-one">nav=
+igation</A>,=20
+<A=20
+href=3D"http://guichan.sourceforge.net/wiki/index.php/FAQ#searchInput">se=
+arch</A></DIV><!-- start content -->
+<TABLE class=3Dtoc id=3Dtoc summary=3DContents>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV id=3Dtoctitle>
+      <H2>Contents</H2></DIV>
+      <UL>
+        <LI class=3Dtoclevel-1><A=20
+        =
+href=3D"http://guichan.sourceforge.net/wiki/index.php/FAQ#Q:_Sometimes_yo=
+u_write_Guichan_as_Gui-chan._Are_you_dyslectic.3F"><SPAN=20
+        class=3Dtocnumber>1</SPAN> <SPAN class=3Dtoctext>Q: Sometimes =
+you write=20
+        Guichan as Gui-chan. Are you dyslectic?</SPAN></A>=20
+        <LI class=3Dtoclevel-1><A=20
+        =
+href=3D"http://guichan.sourceforge.net/wiki/index.php/FAQ#Q:_Does_Guichan=
+_have_a_dirty_rectangles_system.3F"><SPAN=20
+        class=3Dtocnumber>2</SPAN> <SPAN class=3Dtoctext>Q: Does Guichan =
+have a=20
+        dirty rectangles system?</SPAN></A>=20
+        <LI class=3Dtoclevel-1><A=20
+        =
+href=3D"http://guichan.sourceforge.net/wiki/index.php/FAQ#Q:_Where_can_I_=
+find_fonts_for_your_ImageFont_class.3F"><SPAN=20
+        class=3Dtocnumber>3</SPAN> <SPAN class=3Dtoctext>Q: Where can I =
+find fonts=20
+        for your ImageFont class?</SPAN></A>=20
+        <LI class=3Dtoclevel-1><A=20
+        =
+href=3D"http://guichan.sourceforge.net/wiki/index.php/FAQ#Q:_How_do_I_add=
+_a_font_of_my_own_to_the_ImageFont_collection.3F"><SPAN=20
+        class=3Dtocnumber>4</SPAN> <SPAN class=3Dtoctext>Q: How do I add =
+a font of=20
+        my own to the ImageFont collection?</SPAN></A>=20
+        <LI class=3Dtoclevel-1><A=20
+        =
+href=3D"http://guichan.sourceforge.net/wiki/index.php/FAQ#Q:_My_custom_wi=
+dget_doesn.27t_receive_key_input.3F"><SPAN=20
+        class=3Dtocnumber>5</SPAN> <SPAN class=3Dtoctext>Q: My custom =
+widget doesn't=20
+        receive key input?</SPAN></A>=20
+        <LI class=3Dtoclevel-1><A=20
+        =
+href=3D"http://guichan.sourceforge.net/wiki/index.php/FAQ#Q:_My_custom_wi=
+dget_doesn.27t_seem_to_receive_mouse_input.3F"><SPAN=20
+        class=3Dtocnumber>6</SPAN> <SPAN class=3Dtoctext>Q: My custom =
+widget doesn't=20
+        seem to receive mouse input?</SPAN></A>=20
+        <LI class=3Dtoclevel-1><A=20
+        =
+href=3D"http://guichan.sourceforge.net/wiki/index.php/FAQ#Q:_I_don.27t_re=
+ceive_any_actions_from_my_widget.3F"><SPAN=20
+        class=3Dtocnumber>7</SPAN> <SPAN class=3Dtoctext>Q: I don't =
+receive any=20
+        actions from my widget?</SPAN></A>=20
+        <LI class=3Dtoclevel-1><A=20
+        =
+href=3D"http://guichan.sourceforge.net/wiki/index.php/FAQ#Q:_I_can.27t_ge=
+t_keyboard_input_to_work_with_SDL.3F"><SPAN=20
+        class=3Dtocnumber>8</SPAN> <SPAN class=3Dtoctext>Q: I can't get =
+keyboard=20
+        input to work with SDL?</SPAN></A>=20
+        <LI class=3Dtoclevel-1><A=20
+        =
+href=3D"http://guichan.sourceforge.net/wiki/index.php/FAQ#Q:_When_I_use_G=
+uichan_I_get_a_compile_error_in_key.hpp.3F"><SPAN=20
+        class=3Dtocnumber>9</SPAN> <SPAN class=3Dtoctext>Q: When I use =
+Guichan I get=20
+        a compile error in key.hpp?</SPAN></A>=20
+        <LI class=3Dtoclevel-1><A=20
+        =
+href=3D"http://guichan.sourceforge.net/wiki/index.php/FAQ#Q:_Why_do_my_si=
+mple_GUI_application_take_100.25_of_CPU_power.3F"><SPAN=20
+        class=3Dtocnumber>10</SPAN> <SPAN class=3Dtoctext>Q: Why do my =
+simple GUI=20
+        application take 100% of CPU power?</SPAN></A>=20
+</LI></UL></TD></TR></TBODY></TABLE>
+<SCRIPT type=3Dtext/javascript> if (window.showTocToggle) { var =
+tocShowText =3D "show"; var tocHideText =3D "hide"; showTocToggle(); } =
+</SCRIPT>
+
+<DIV class=3Deditsection style=3D"FLOAT: right; MARGIN-LEFT: 5px">[<A=20
+title=3D"Edit section: Q: Sometimes you write Guichan as Gui-chan. Are =
+you dyslectic?"=20
+href=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DFAQ&amp;act=
+ion=3Dedit&amp;section=3D1">edit</A>]</DIV><A=20
+name=3DQ:_Sometimes_you_write_Guichan_as_Gui-chan._Are_you_dyslectic.3F><=
+/A>
+<H2>Q: Sometimes you write Guichan as Gui-chan. Are you dyslectic? </H2>
+<P>A: Guichan is the name of the library. We used to have a mascot =
+called=20
+Gui-chan, but we don't anymore. </P>
+<DIV class=3Deditsection style=3D"FLOAT: right; MARGIN-LEFT: 5px">[<A=20
+title=3D"Edit section: Q: Does Guichan have a dirty rectangles system?"=20
+href=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DFAQ&amp;act=
+ion=3Dedit&amp;section=3D2">edit</A>]</DIV><A=20
+name=3DQ:_Does_Guichan_have_a_dirty_rectangles_system.3F></A>
+<H2>Q: Does Guichan have a dirty rectangles system? </H2>
+<P>A: No Guichan does not. </P>
+<DIV class=3Deditsection style=3D"FLOAT: right; MARGIN-LEFT: 5px">[<A=20
+title=3D"Edit section: Q: Where can I find fonts for your ImageFont =
+class?"=20
+href=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DFAQ&amp;act=
+ion=3Dedit&amp;section=3D3">edit</A>]</DIV><A=20
+name=3DQ:_Where_can_I_find_fonts_for_your_ImageFont_class.3F></A>
+<H2>Q: Where can I find fonts for your ImageFont class? </H2>
+<P>A: Check out this <A title=3D"ImageFont collection"=20
+href=3D"http://guichan.sourceforge.net/wiki/index.php/ImageFont_collectio=
+n">font=20
+collection</A> and the <A class=3D"external text"=20
+title=3Dhttp://www.openfontlibrary.org/ =
+href=3D"http://www.openfontlibrary.org/"=20
+rel=3Dnofollow>Open Font Library</A>. </P>
+<DIV class=3Deditsection style=3D"FLOAT: right; MARGIN-LEFT: 5px">[<A=20
+title=3D"Edit section: Q: How do I add a font of my own to the ImageFont =
+collection?"=20
+href=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DFAQ&amp;act=
+ion=3Dedit&amp;section=3D4">edit</A>]</DIV><A=20
+name=3DQ:_How_do_I_add_a_font_of_my_own_to_the_ImageFont_collection.3F></=
+A>
+<H2>Q: How do I add a font of my own to the ImageFont collection? </H2>
+<P>A: Just mail one (preferable both) of the developers the font or post =
+it in=20
+the forum. </P>
+<DIV class=3Deditsection style=3D"FLOAT: right; MARGIN-LEFT: 5px">[<A=20
+title=3D"Edit section: Q: My custom widget doesn't receive key input?"=20
+href=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DFAQ&amp;act=
+ion=3Dedit&amp;section=3D5">edit</A>]</DIV><A=20
+name=3DQ:_My_custom_widget_doesn.27t_receive_key_input.3F></A>
+<H2>Q: My custom widget doesn't receive key input? </H2>
+<P>A: Go through this check list: </P>
+<UL>
+  <LI>Make sure your widget is focusable, setFocusable(true).=20
+  <LI>If you made your widget from scratch, make sure it inherits from=20
+  KeyListener and that it adds itself to the KeyListener, =
+addKeyListener(this).=20
+  <LI>Make sure you have spelled the overloaded KeyListener functions =
+right and=20
+  that they take the right arguments. </LI></UL>
+<DIV class=3Deditsection style=3D"FLOAT: right; MARGIN-LEFT: 5px">[<A=20
+title=3D"Edit section: Q: My custom widget doesn't seem to receive mouse =
+input?"=20
+href=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DFAQ&amp;act=
+ion=3Dedit&amp;section=3D6">edit</A>]</DIV><A=20
+name=3DQ:_My_custom_widget_doesn.27t_seem_to_receive_mouse_input.3F></A>
+<H2>Q: My custom widget doesn't seem to receive mouse input? </H2>
+<P>A: Go through this check list: </P>
+<UL>
+  <LI>If you made your widget from scratch, make sure it inherits from=20
+  MouseListener and that it adds itself to the MouseListener,=20
+  addMouseListener(this).=20
+  <LI>Make sure you have spelled the overloaded MouseListener functions =
+right=20
+  and that they take the right arguments. </LI></UL>
+<DIV class=3Deditsection style=3D"FLOAT: right; MARGIN-LEFT: 5px">[<A=20
+title=3D"Edit section: Q: I don't receive any actions from my widget?"=20
+href=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DFAQ&amp;act=
+ion=3Dedit&amp;section=3D7">edit</A>]</DIV><A=20
+name=3DQ:_I_don.27t_receive_any_actions_from_my_widget.3F></A>
+<H2>Q: I don't receive any actions from my widget? </H2>
+<P>A: Go through this check list: </P>
+<UL>
+  <LI>Make sure you have added the widget to the ActionListener.=20
+  <LI>Make sure you have spelled the eventID right, a very common and =
+very=20
+  annoying error. </LI></UL>
+<DIV class=3Deditsection style=3D"FLOAT: right; MARGIN-LEFT: 5px">[<A=20
+title=3D"Edit section: Q: I can't get keyboard input to work with SDL?"=20
+href=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DFAQ&amp;act=
+ion=3Dedit&amp;section=3D8">edit</A>]</DIV><A=20
+name=3DQ:_I_can.27t_get_keyboard_input_to_work_with_SDL.3F></A>
+<H2>Q: I can't get keyboard input to work with SDL? </H2>
+<P>A: You must call SDL_EnableUNICODE(1); in your initialization code. =
+</P>
+<DIV class=3Deditsection style=3D"FLOAT: right; MARGIN-LEFT: 5px">[<A=20
+title=3D"Edit section: Q: When I use Guichan I get a compile error in =
+key.hpp?"=20
+href=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DFAQ&amp;act=
+ion=3Dedit&amp;section=3D9">edit</A>]</DIV><A=20
+name=3DQ:_When_I_use_Guichan_I_get_a_compile_error_in_key.hpp.3F></A>
+<H2>Q: When I use Guichan I get a compile error in key.hpp? </H2>
+<P>A: This problem only occurs on windows when you have the windows.h =
+header=20
+included somewhere in your project (OpenGLGraphics for instance includes =
+
+windows.h) and is due to a define, DELETE, in the header. A simple work =
+around,=20
+if you are not going to use the windows API, is to undefine DELETE after =
+the=20
+inclusion of windows.hpp. </P>
+<DIV class=3Deditsection style=3D"FLOAT: right; MARGIN-LEFT: 5px">[<A=20
+title=3D"Edit section: Q: Why do my simple GUI application take 100% of =
+CPU power?"=20
+href=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DFAQ&amp;act=
+ion=3Dedit&amp;section=3D10">edit</A>]</DIV><A=20
+name=3DQ:_Why_do_my_simple_GUI_application_take_100.25_of_CPU_power.3F></=
+A>
+<H2>Q: Why do my simple GUI application take 100% of CPU power? </H2>
+<P>A: This is probably because your application loop runs at a maximum =
+speed=20
+(including polling of events, running the GUI logic and drawing the =
+GUI). To=20
+lower your CPU usage, you may want to run Gui::logic and Gui::draw only =
+when an=20
+event occurs (such as when a mouse or key input is received or when the =
+screen=20
+needs to be redrawn or whenever the GUI needs to be refreshed). </P>
+<P>When it e.i. comes to SDL, SDL users often use=20
+"while(SDL_PollEvent(&amp;ev))" which works, but takes a lot of the CPU =
+power.=20
+If your application doesn't need to produce animations or other real =
+time stuff,=20
+consider using SDL_WaitEvent (you may want to try fastevents<A=20
+class=3D"external autonumber" =
+title=3Dhttp://gameprogrammer.com/game.html=20
+href=3D"http://gameprogrammer.com/game.html" rel=3Dnofollow>[1]</A>) or =
+posting=20
+"time out" events from other threads. </P><!-- Saved in parser cache =
+with key g131206_wiki:pcache:idhash:1368-0!1!0!0!!en!2 and timestamp =
+20080602165626 -->
+<DIV class=3Dprintfooter>Retrieved from "<A=20
+href=3D"http://guichan.sourceforge.net/wiki/index.php/FAQ">http://guichan=
+.sourceforge.net/wiki/index.php/FAQ</A>"</DIV><!-- end content -->
+<DIV class=3DvisualClear></DIV></DIV></DIV></DIV>
+<DIV id=3Dcolumn-one>
+<DIV class=3Dportlet id=3Dp-cactions>
+<H5>Views</H5>
+<UL>
+  <LI class=3Dselected id=3Dca-nstab-main><A=20
+  href=3D"http://guichan.sourceforge.net/wiki/index.php/FAQ">Article</A> =
+
+  <LI class=3Dnew id=3Dca-talk><A=20
+  =
+href=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DTalk:FAQ&am=
+p;action=3Dedit">Discussion</A>=20
+
+  <LI id=3Dca-edit><A=20
+  =
+href=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DFAQ&amp;act=
+ion=3Dedit">Edit</A>=20
+
+  <LI id=3Dca-history><A=20
+  =
+href=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DFAQ&amp;act=
+ion=3Dhistory">History</A>=20
+  </LI></UL></DIV>
+<DIV class=3Dportlet id=3Dp-personal>
+<H5>Personal tools</H5>
+<DIV class=3DpBody>
+<UL>
+  <LI id=3Dpt-login><A=20
+  =
+href=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DSpecial:Use=
+rlogin&amp;returnto=3DFAQ">Log=20
+  in / create account</A> </LI></UL></DIV></DIV>
+<SCRIPT type=3Dtext/javascript> if (window.isMSIE55) fixalpha(); =
+</SCRIPT>
+
+<DIV class=3Dportlet id=3Dp-project>
+<H5>project</H5>
+<DIV class=3DpBody>
+<UL>
+  <LI id=3Dn-mainpage><A=20
+  href=3D"http://guichan.sourceforge.net/wiki/index.php/Main_Page">Main =
+Page</A>=20
+  <LI id=3Dn-about><A=20
+  href=3D"http://guichan.sourceforge.net/wiki/index.php/About">About</A> =
+
+  <LI id=3Dn-Features><A=20
+  =
+href=3D"http://guichan.sourceforge.net/wiki/index.php/Features">Features<=
+/A>=20
+  <LI id=3Dn-Change-log><A=20
+  =
+href=3D"http://guichan.sourceforge.net/wiki/index.php/Change_log">Change =
+log</A>=20
+
+  <LI id=3Dn-License><A=20
+  =
+href=3D"http://guichan.sourceforge.net/wiki/index.php/Licensing">Licensin=
+g</A>=20
+  <LI id=3Dn-Screenshots><A=20
+  =
+href=3D"http://guichan.sourceforge.net/wiki/index.php/Screenshots">Screen=
+shots</A>=20
+
+  <LI id=3Dn-Downloads><A=20
+  =
+href=3D"http://guichan.sourceforge.net/wiki/index.php/Downloads">Download=
+s</A>=20
+  <LI id=3Dn-Source><A=20
+  =
+href=3D"http://guichan.sourceforge.net/wiki/index.php/Source">Source</A> =
+
+  <LI id=3Dn-Bugs-and-requests><A=20
+  href=3D"http://code.google.com/p/guichan/issues/list">Bugs and =
+requests</A>=20
+</LI></UL></DIV></DIV>
+<DIV class=3Dportlet id=3Dp-community>
+<H5>community</H5>
+<DIV class=3DpBody>
+<UL>
+  <LI id=3Dn-Forum><A =
+href=3D"http://guichan.sourceforge.net/forum/">Forum</A>=20
+  <LI id=3Dn-Mailing-lists><A=20
+  =
+href=3D"http://guichan.sourceforge.net/wiki/index.php/Mailing_lists">Mail=
+ing=20
+  lists</A> </LI></UL></DIV></DIV>
+<DIV class=3Dportlet id=3Dp-documentation>
+<H5>documentation</H5>
+<DIV class=3DpBody>
+<UL>
+  <LI id=3Dn-API><A href=3D"http://guichan.sourceforge.net/api">API</A>=20
+  <LI id=3Dn-FAQ><A=20
+  href=3D"http://guichan.sourceforge.net/wiki/index.php/FAQ">FAQ</A>=20
+  <LI id=3Dn--User-guide><A=20
+  href=3D"http://guichan.sourceforge.net/wiki/index.php/User_guide">User =
+guide</A>=20
+
+  <LI id=3Dn--Tutorials><A=20
+  =
+href=3D"http://guichan.sourceforge.net/wiki/index.php/Tutorials">Tutorial=
+s</A>=20
+  <LI id=3Dn--Developer-guide><A=20
+  =
+href=3D"http://guichan.sourceforge.net/wiki/index.php/Developer_guide">De=
+veloper=20
+  guide</A> </LI></UL></DIV></DIV>
+<DIV class=3Dportlet id=3Dp-resources>
+<H5>resources</H5>
+<DIV class=3DpBody>
+<UL>
+  <LI id=3Dn--ImageFont-collection><A=20
+  =
+href=3D"http://guichan.sourceforge.net/wiki/index.php/ImageFont_collectio=
+n">ImageFont=20
+  collection</A> </LI></UL></DIV></DIV>
+<DIV class=3Dportlet id=3Dp-extensions>
+<H5>extensions</H5>
+<DIV class=3DpBody>
+<UL>
+  <LI id=3Dn-XMLGuichan><A=20
+  href=3D"http://code.google.com/p/xmlguichan/">XMLGuichan</A>=20
+  <LI id=3Dn-Small-Basic-(Guichan-incorporated)><A=20
+  href=3D"http://smallbasic.sourceforge.net/">Small Basic (Guichan=20
+  incorporated)</A>=20
+  <LI id=3Dn-GCE-GUI-Editor><A href=3D"http://gce.sourceforge.net/">GCE =
+GUI=20
+  Editor</A> </LI></UL></DIV></DIV>
+<DIV class=3Dportlet id=3Dp-site>
+<H5>site</H5>
+<DIV class=3DpBody>
+<UL>
+  <LI id=3Dn-recentchanges><A=20
+  =
+href=3D"http://guichan.sourceforge.net/wiki/index.php/Special:Recentchang=
+es">Recent=20
+  changes</A>=20
+  <LI id=3Dn-randompage><A=20
+  =
+href=3D"http://guichan.sourceforge.net/wiki/index.php/Special:Random">Ran=
+dom=20
+  page</A>=20
+  <LI id=3Dn-help><A=20
+  =
+href=3D"http://guichan.sourceforge.net/wiki/index.php/Help:Contents">Help=
+</A>=20
+  </LI></UL></DIV></DIV>
+<DIV class=3Dportlet id=3Dp-search>
+<H5><LABEL for=3DsearchInput>Search</LABEL></H5>
+<DIV class=3DpBody id=3DsearchBody>
+<FORM id=3Dsearchform action=3D/wiki/index.php/Special:Search>
+<DIV><INPUT id=3DsearchInput accessKey=3Df name=3Dsearch> <INPUT =
+class=3DsearchButton id=3DsearchGoButton type=3Dsubmit value=3DGo =
+name=3Dgo>&nbsp; <INPUT class=3DsearchButton type=3Dsubmit =
+value=3DSearch name=3Dfulltext>=20
+</DIV></FORM></DIV></DIV>
+<DIV class=3Dportlet id=3Dp-tb>
+<H5>Toolbox</H5>
+<DIV class=3DpBody>
+<UL>
+  <LI id=3Dt-whatlinkshere><A=20
+  =
+href=3D"http://guichan.sourceforge.net/wiki/index.php/Special:Whatlinkshe=
+re/FAQ">What=20
+  links here</A>=20
+  <LI id=3Dt-recentchangeslinked><A=20
+  =
+href=3D"http://guichan.sourceforge.net/wiki/index.php/Special:Recentchang=
+eslinked/FAQ">Related=20
+  changes</A>=20
+  <LI id=3Dt-upload><A=20
+  =
+href=3D"http://guichan.sourceforge.net/wiki/index.php/Special:Upload">Upl=
+oad=20
+  file</A>=20
+  <LI id=3Dt-specialpages><A=20
+  =
+href=3D"http://guichan.sourceforge.net/wiki/index.php/Special:Specialpage=
+s">Special=20
+  pages</A>=20
+  <LI id=3Dt-print><A=20
+  =
+href=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DFAQ&amp;pri=
+ntable=3Dyes">Printable=20
+  version</A>=20
+  <LI id=3Dt-permalink><A=20
+  =
+href=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DFAQ&amp;old=
+id=3D1582">Permanent=20
+  link</A> </LI></UL></DIV></DIV></DIV><!-- end of the left (by default =
+at least) column -->
+<DIV class=3DvisualClear></DIV>
+<DIV id=3Dfooter>
+<DIV id=3Df-poweredbyico><A href=3D"http://sourceforge.net/"><IMG =
+id=3Dsourceforgelogo=20
+height=3D31 alt=3D"SourceForge.net Logo"=20
+src=3D"http://sflogo.sourceforge.net/sflogo.php?group_id=3D131206&amp;typ=
+e=3D1"=20
+width=3D88 border=3D0> </A><A href=3D"http://www.mediawiki.org/"><IMG =
+alt=3DMediaWiki=20
+src=3D"http://guichan.sourceforge.net/wiki/skins/common/images/poweredby_=
+mediawiki_88x31.png"></A></DIV>
+<UL id=3Df-list>
+  <LI id=3Dlastmod>This page was last modified 18:10, 5 April 2008.=20
+  <LI id=3Dviewcount>This page has been accessed 2,964 times.=20
+  <LI id=3Dprivacy><A title=3D"Guichan:Privacy policy"=20
+  =
+href=3D"http://guichan.sourceforge.net/wiki/index.php/Guichan:Privacy_pol=
+icy">Privacy=20
+  policy</A>=20
+  <LI id=3Dabout><A title=3DGuichan:About=20
+  =
+href=3D"http://guichan.sourceforge.net/wiki/index.php/Guichan:About">Abou=
+t=20
+  Guichan</A>=20
+  <LI id=3Ddisclaimer><A title=3D"Guichan:General disclaimer"=20
+  =
+href=3D"http://guichan.sourceforge.net/wiki/index.php/Guichan:General_dis=
+claimer">Disclaimers</A>=20
+  </LI></UL></DIV>
+<SCRIPT=20
+type=3Dtext/javascript> if (window.runOnloadHook) =
+runOnloadHook();</SCRIPT>
+</DIV><!-- Served by sc8-pr-web4.sourceforge.net in 15.23 secs. =
+--></BODY></HTML>
+
+------=_NextPart_000_001F_01C8C57A.137DC270
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://guichan.sf.net/guichanlogo.png
+
+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
+KQoAAAAASUVORK5CYII=
+
+------=_NextPart_000_001F_01C8C57A.137DC270
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Location: http://sflogo.sourceforge.net/sflogo.php?group_id=131206&type=1
+
+iVBORw0KGgoAAAANSUhEUgAAAFgAAAAfCAMAAABUFvrSAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJ
+bWFnZVJlYWR5ccllPAAAAFpQTFRF////7u7uX2pytLm9ipKYn6aqdH6F3+Hj6uvsf4iOv8PHanR7
+1NfZlJyhqrC09PX2ys3Qsri8kpqf7KqcmJ+k1kkqzdDTxcnMub7BoKarqpOR8cK4lp2j6Z6NbVan
+UgAAARFJREFUSMft08lu3DAURNHb93EUKbUcJ7Ez/f9vZiG3h2TdG0O1IMDNQaEIcrlTuHCXnPAJ
+n/Bng69deyXU3nIGUi5qEGpkX5JnVzdUe6tdjUV1gWQwTepxWC5cdisR25i0Xm5wEIZBzTlDM0Gz
+VLJZWfwxSiW2xQAgaZ0mE8BiHFPktcEIoPrlFc4jrQBZfVINA64OJfx6iItagGQp+1G2vcG03OMG
+r0Daiva5HvCt8Rtc3MOA5MNr41rKv41nr4S/x0LtfRuNOqLEdF8Mak8fpkiGtpFeLg8GPH57TLbq
+f1Ns6kZW12vrarqWYBrvHi8Bs+sIlN3+vajrs+rPP7+SjTimKO+mOD/ICZ/wJ4LvlL9T9gm7i8l6
+8gAAAABJRU5ErkJggg==
+
+------=_NextPart_000_001F_01C8C57A.137DC270
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://guichan.sourceforge.net/wiki/skins/common/images/poweredby_mediawiki_88x31.png
+
+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
+
+------=_NextPart_000_001F_01C8C57A.137DC270
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://guichan.sourceforge.net/wiki/skins/guichan/main.css?7
+
+#column-content {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: right; PADDING-BOTTOM: =
+0px; MARGIN: 0px 0px 0.6em -12.2em; WIDTH: 100%; PADDING-TOP: 0px
+}
+#content {
+	PADDING-RIGHT: 1em; PADDING-LEFT: 1em; Z-INDEX: 2; BACKGROUND: white; =
+PADDING-BOTTOM: 1.5em; MARGIN: 2.8em 0px 0px 12.2em; COLOR: black; =
+LINE-HEIGHT: 1.5em; PADDING-TOP: 0px; POSITION: relative
+}
+#column-one {
+	PADDING-LEFT: 5px; PADDING-TOP: 20px
+}
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: #ffffff; =
+PADDING-BOTTOM: 0px; MARGIN: 0px; FONT: 10px sans-serif; COLOR: black; =
+PADDING-TOP: 0px
+}
+#globalWrapper {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 127%; PADDING-BOTTOM: =
+0px; MARGIN: 0px; WIDTH: 100%; PADDING-TOP: 0px
+}
+.visualClear {
+	CLEAR: both
+}
+TABLE {
+	FONT-SIZE: 100%; BACKGROUND: white; COLOR: black
+}
+A {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #dd6070; =
+TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #aa4050
+}
+A:active {
+	COLOR: #dd6070
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+A.stub {
+	COLOR: #dd6070
+}
+A.new {
+	FONT-WEIGHT: normal; COLOR: #000000; TEXT-DECORATION: line-through
+}
+#content A.new {
+	FONT-WEIGHT: normal; COLOR: #000000; TEXT-DECORATION: line-through
+}
+A.new {
+	FONT-WEIGHT: bold; COLOR: #dd6070
+}
+#p-personal A.new {
+	FONT-WEIGHT: bold; COLOR: #dd6070
+}
+A.new:visited {
+	COLOR: #dd6070
+}
+#p-personal A.new:visited {
+	COLOR: #dd6070
+}
+IMG {
+	VERTICAL-ALIGN: middle; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: =
+none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+P {
+	MARGIN: 0.4em 0px 0.5em; LINE-HEIGHT: 1.5em
+}
+P IMG {
+	MARGIN: 0px
+}
+HR {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: =
+0px; MARGIN: 0.2em 0px; COLOR: #aaa; HEIGHT: 1px; BACKGROUND-COLOR: =
+#aaa; BORDER-RIGHT-WIDTH: 0px
+}
+H1 {
+	FONT-WEIGHT: normal; BACKGROUND: none transparent scroll repeat 0% 0%; =
+PADDING-BOTTOM: 0.17em; MARGIN: 0px; COLOR: black; PADDING-TOP: 0.5em; =
+BORDER-BOTTOM: #aaa 1px solid
+}
+H2 {
+	FONT-WEIGHT: normal; BACKGROUND: none transparent scroll repeat 0% 0%; =
+PADDING-BOTTOM: 0.17em; MARGIN: 0px; COLOR: black; PADDING-TOP: 0.5em; =
+BORDER-BOTTOM: #aaa 1px solid
+}
+H3 {
+	FONT-WEIGHT: normal; BACKGROUND: none transparent scroll repeat 0% 0%; =
+PADDING-BOTTOM: 0.17em; MARGIN: 0px; COLOR: black; PADDING-TOP: 0.5em; =
+BORDER-BOTTOM: #aaa 1px solid
+}
+H4 {
+	FONT-WEIGHT: normal; BACKGROUND: none transparent scroll repeat 0% 0%; =
+PADDING-BOTTOM: 0.17em; MARGIN: 0px; COLOR: black; PADDING-TOP: 0.5em; =
+BORDER-BOTTOM: #aaa 1px solid
+}
+H5 {
+	FONT-WEIGHT: normal; BACKGROUND: none transparent scroll repeat 0% 0%; =
+PADDING-BOTTOM: 0.17em; MARGIN: 0px; COLOR: black; PADDING-TOP: 0.5em; =
+BORDER-BOTTOM: #aaa 1px solid
+}
+H6 {
+	FONT-WEIGHT: normal; BACKGROUND: none transparent scroll repeat 0% 0%; =
+PADDING-BOTTOM: 0.17em; MARGIN: 0px; COLOR: black; PADDING-TOP: 0.5em; =
+BORDER-BOTTOM: #aaa 1px solid
+}
+H1 {
+	FONT-SIZE: 188%
+}
+H2 {
+	FONT-SIZE: 150%
+}
+H3 {
+	FONT-WEIGHT: bold; BORDER-BOTTOM-STYLE: none
+}
+H4 {
+	FONT-WEIGHT: bold; BORDER-BOTTOM-STYLE: none
+}
+H5 {
+	FONT-WEIGHT: bold; BORDER-BOTTOM-STYLE: none
+}
+H6 {
+	FONT-WEIGHT: bold; BORDER-BOTTOM-STYLE: none
+}
+H3 {
+	FONT-SIZE: 132%
+}
+H4 {
+	FONT-SIZE: 116%
+}
+H5 {
+	FONT-SIZE: 100%
+}
+H6 {
+	FONT-SIZE: 80%
+}
+UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; LIST-STYLE-IMAGE: =
+url(bullet.gif); PADDING-BOTTOM: 0px; MARGIN: 0.3em 0px 0px 1.5em; =
+LINE-HEIGHT: 1.5em; PADDING-TOP: 0px; LIST-STYLE-TYPE: square
+}
+OL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; LIST-STYLE-IMAGE: none; =
+PADDING-BOTTOM: 0px; MARGIN: 0.3em 0px 0px 3.2em; LINE-HEIGHT: 1.5em; =
+PADDING-TOP: 0px
+}
+LI {
+	MARGIN-BOTTOM: 0.1em
+}
+DT {
+	FONT-WEIGHT: bold; MARGIN-BOTTOM: 0.1em
+}
+DL {
+	MARGIN-TOP: 0.2em; MARGIN-BOTTOM: 0.5em
+}
+DD {
+	MARGIN-BOTTOM: 0.1em; MARGIN-LEFT: 2em; LINE-HEIGHT: 1.5em
+}
+FIELDSET {
+	BORDER-RIGHT: #2f6fab 1px solid; PADDING-RIGHT: 1em; BORDER-TOP: =
+#2f6fab 1px solid; PADDING-LEFT: 1em; PADDING-BOTTOM: 1em; MARGIN: 1em =
+0px; BORDER-LEFT: #2f6fab 1px solid; LINE-HEIGHT: 1.5em; PADDING-TOP: =
+0px; BORDER-BOTTOM: #2f6fab 1px solid
+}
+LEGEND {
+	PADDING-RIGHT: 0.5em; PADDING-LEFT: 0.5em; FONT-SIZE: 95%; BACKGROUND: =
+white; PADDING-BOTTOM: 0.5em; PADDING-TOP: 0.5em
+}
+FORM {
+	MARGIN: 0px; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; =
+BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+TEXTAREA {
+	PADDING-RIGHT: 0.1em; PADDING-LEFT: 0.1em; PADDING-BOTTOM: 0.1em; =
+WIDTH: 100%; PADDING-TOP: 0.1em
+}
+INPUT.historysubmit {
+	PADDING-RIGHT: 0.3em! important; PADDING-LEFT: 0.3em! important; =
+FONT-SIZE: 94%; PADDING-BOTTOM: 0.3em! important; MARGIN-LEFT: 1.6em; =
+CURSOR: pointer; PADDING-TOP: 0px! important; HEIGHT: 1.7em! important
+}
+SELECT {
+	VERTICAL-ALIGN: top
+}
+ABBR {
+	BACKGROUND: none transparent scroll repeat 0% 0%; CURSOR: help; COLOR: =
+black; BORDER-BOTTOM: black 1px dotted
+}
+ACRONYM {
+	BACKGROUND: none transparent scroll repeat 0% 0%; CURSOR: help; COLOR: =
+black; BORDER-BOTTOM: black 1px dotted
+}
+.explain {
+	BACKGROUND: none transparent scroll repeat 0% 0%; CURSOR: help; COLOR: =
+black; BORDER-BOTTOM: black 1px dotted
+}
+Q {
+	FONT-STYLE: italic; FONT-FAMILY: Times, "Times New Roman", serif
+}
+CODE {
+	BACKGROUND-COLOR: #f9f9f9
+}
+PRE {
+	BORDER-RIGHT: #2f6fab 1px dashed; PADDING-RIGHT: 1em; BORDER-TOP: =
+#2f6fab 1px dashed; PADDING-LEFT: 1em; PADDING-BOTTOM: 1em; BORDER-LEFT: =
+#2f6fab 1px dashed; COLOR: black; LINE-HEIGHT: 1.1em; PADDING-TOP: 1em; =
+BORDER-BOTTOM: #2f6fab 1px dashed; BACKGROUND-COLOR: #f9f9f9
+}
+#siteSub {
+	DISPLAY: none
+}
+#jump-to-nav {
+	DISPLAY: none
+}
+#contentSub {
+	FONT-SIZE: 84%; MARGIN: 0px 0px 1.4em 1em; WIDTH: auto; COLOR: #7d7d7d; =
+LINE-HEIGHT: 1.2em
+}
+#contentSub2 {
+	FONT-SIZE: 84%; MARGIN: 0px 0px 1.4em 1em; WIDTH: auto; COLOR: #7d7d7d; =
+LINE-HEIGHT: 1.2em
+}
+SPAN.subpages {
+	DISPLAY: block
+}
+#bodyContent H1 {
+	MARGIN-BOTTOM: 0.6em
+}
+#bodyContent H2 {
+	MARGIN-BOTTOM: 0.6em
+}
+#bodyContent H3 {
+	MARGIN-BOTTOM: 0.3em
+}
+#bodyContent H4 {
+	MARGIN-BOTTOM: 0.3em
+}
+#bodyContent H5 {
+	MARGIN-BOTTOM: 0.3em
+}
+.firstHeading {
+	BORDER-RIGHT: #aaaaaa 1px solid; BORDER-TOP: #aaaaaa 1px solid; =
+PADDING-LEFT: 0.5em; FONT-WEIGHT: bold; MARGIN-BOTTOM: 0.1em; =
+PADDING-BOTTOM: 0.25em; BORDER-LEFT: #aaaaaa 1px solid; PADDING-TOP: =
+0.25em; BORDER-BOTTOM: #aaaaaa 1px solid; BACKGROUND-COLOR: #ffcccc
+}
+.usermessage {
+	BORDER-RIGHT: #ffa500 1px solid; PADDING-RIGHT: 1em; BORDER-TOP: =
+#ffa500 1px solid; PADDING-LEFT: 1em; FONT-WEIGHT: bold; PADDING-BOTTOM: =
+0.5em; MARGIN: 2em 0px 1em; VERTICAL-ALIGN: middle; BORDER-LEFT: #ffa500 =
+1px solid; COLOR: black; PADDING-TOP: 0.5em; BORDER-BOTTOM: #ffa500 1px =
+solid; BACKGROUND-COLOR: #ffce7b
+}
+#siteNotice {
+	PADDING-RIGHT: 0.9em; PADDING-LEFT: 0.9em; FONT-SIZE: 95%; =
+PADDING-BOTTOM: 0px; PADDING-TOP: 0px; TEXT-ALIGN: center
+}
+#siteNotice P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: =
+0px; PADDING-TOP: 0px
+}
+.error {
+	FONT-SIZE: larger; COLOR: red
+}
+.errorbox {
+	BORDER-RIGHT: 2px solid; PADDING-RIGHT: 1em; BORDER-TOP: 2px solid; =
+PADDING-LEFT: 1em; FONT-SIZE: larger; FLOAT: left; MARGIN-BOTTOM: 2em; =
+PADDING-BOTTOM: 0.5em; BORDER-LEFT: 2px solid; COLOR: #000; PADDING-TOP: =
+0.5em; BORDER-BOTTOM: 2px solid
+}
+.successbox {
+	BORDER-RIGHT: 2px solid; PADDING-RIGHT: 1em; BORDER-TOP: 2px solid; =
+PADDING-LEFT: 1em; FONT-SIZE: larger; FLOAT: left; MARGIN-BOTTOM: 2em; =
+PADDING-BOTTOM: 0.5em; BORDER-LEFT: 2px solid; COLOR: #000; PADDING-TOP: =
+0.5em; BORDER-BOTTOM: 2px solid
+}
+.errorbox {
+	BORDER-LEFT-COLOR: red; BORDER-BOTTOM-COLOR: red; BORDER-TOP-COLOR: =
+red; BACKGROUND-COLOR: #fff2f2; BORDER-RIGHT-COLOR: red
+}
+.successbox {
+	BORDER-LEFT-COLOR: green; BORDER-BOTTOM-COLOR: green; BORDER-TOP-COLOR: =
+green; BACKGROUND-COLOR: #dfd; BORDER-RIGHT-COLOR: green
+}
+.errorbox H2 {
+	DISPLAY: inline; FONT-WEIGHT: bold; FONT-SIZE: 1em; MARGIN: 0px 0.5em =
+0px 0px; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; =
+BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+.successbox H2 {
+	DISPLAY: inline; FONT-WEIGHT: bold; FONT-SIZE: 1em; MARGIN: 0px 0.5em =
+0px 0px; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; =
+BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+#catlinks {
+	CLEAR: both; BORDER-RIGHT: #aaa 1px solid; PADDING-RIGHT: 5px; =
+BORDER-TOP: #aaa 1px solid; MARGIN-TOP: 1em; PADDING-LEFT: 5px; =
+PADDING-BOTTOM: 5px; BORDER-LEFT: #aaa 1px solid; PADDING-TOP: 5px; =
+BORDER-BOTTOM: #aaa 1px solid; BACKGROUND-COLOR: #f9f9f9
+}
+.documentDescription {
+	DISPLAY: block; FONT-WEIGHT: bold; MARGIN: 1em 0px; LINE-HEIGHT: 1.5em
+}
+.documentByLine {
+	CLEAR: both; FONT-WEIGHT: normal; FONT-SIZE: 90%; COLOR: #76797c; =
+TEXT-ALIGN: right
+}
+.center {
+	WIDTH: 100%; TEXT-ALIGN: center
+}
+*.center * {
+	MARGIN-LEFT: auto; MARGIN-RIGHT: auto
+}
+.small {
+	FONT-SIZE: 94%
+}
+.small * {
+	FONT-SIZE: 94%
+}
+TABLE.small {
+	FONT-SIZE: 100%
+}
+#toc {
+	BORDER-RIGHT: #aaa 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #aaa 1px =
+solid; PADDING-LEFT: 5px; FONT-SIZE: 95%; PADDING-BOTTOM: 5px; =
+BORDER-LEFT: #aaa 1px solid; PADDING-TOP: 5px; BORDER-BOTTOM: #aaa 1px =
+solid; BACKGROUND-COLOR: #f9f9f9
+}
+.toc {
+	BORDER-RIGHT: #aaa 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #aaa 1px =
+solid; PADDING-LEFT: 5px; FONT-SIZE: 95%; PADDING-BOTTOM: 5px; =
+BORDER-LEFT: #aaa 1px solid; PADDING-TOP: 5px; BORDER-BOTTOM: #aaa 1px =
+solid; BACKGROUND-COLOR: #f9f9f9
+}
+.mw-warning {
+	BORDER-RIGHT: #aaa 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #aaa 1px =
+solid; PADDING-LEFT: 5px; FONT-SIZE: 95%; PADDING-BOTTOM: 5px; =
+BORDER-LEFT: #aaa 1px solid; PADDING-TOP: 5px; BORDER-BOTTOM: #aaa 1px =
+solid; BACKGROUND-COLOR: #f9f9f9
+}
+#toc H2 {
+	PADDING-RIGHT: 0px; DISPLAY: inline; PADDING-LEFT: 0px; FONT-WEIGHT: =
+bold; FONT-SIZE: 100%; PADDING-BOTTOM: 0px; BORDER-TOP-STYLE: none; =
+PADDING-TOP: 0px; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; =
+BORDER-BOTTOM-STYLE: none
+}
+.toc H2 {
+	PADDING-RIGHT: 0px; DISPLAY: inline; PADDING-LEFT: 0px; FONT-WEIGHT: =
+bold; FONT-SIZE: 100%; PADDING-BOTTOM: 0px; BORDER-TOP-STYLE: none; =
+PADDING-TOP: 0px; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; =
+BORDER-BOTTOM-STYLE: none
+}
+#toc #toctitle {
+	TEXT-ALIGN: center
+}
+.toc #toctitle {
+	TEXT-ALIGN: center
+}
+#toc .toctitle {
+	TEXT-ALIGN: center
+}
+.toc .toctitle {
+	TEXT-ALIGN: center
+}
+#toc UL {
+	PADDING-LEFT: 0px; LIST-STYLE-IMAGE: none; MARGIN-LEFT: 0px; =
+LIST-STYLE-TYPE: none; TEXT-ALIGN: left
+}
+.toc UL {
+	PADDING-LEFT: 0px; LIST-STYLE-IMAGE: none; MARGIN-LEFT: 0px; =
+LIST-STYLE-TYPE: none; TEXT-ALIGN: left
+}
+#toc UL UL {
+	MARGIN: 0px 0px 0px 2em
+}
+.toc UL UL {
+	MARGIN: 0px 0px 0px 2em
+}
+#toc .toctoggle {
+	FONT-SIZE: 94%
+}
+.toc .toctoggle {
+	FONT-SIZE: 94%
+}
+.mw-warning {
+	MARGIN-LEFT: 50px; MARGIN-RIGHT: 50px; TEXT-ALIGN: center
+}
+DIV.floatright {
+	BORDER-TOP-WIDTH: 0px; CLEAR: right; BORDER-LEFT-WIDTH: 0px; FLOAT: =
+right; BORDER-BOTTOM-WIDTH: 0px; MARGIN: 0px 0px 0.5em 0.5em; POSITION: =
+relative; BORDER-RIGHT-WIDTH: 0px
+}
+TABLE.floatright {
+	BORDER-TOP-WIDTH: 0px; CLEAR: right; BORDER-LEFT-WIDTH: 0px; FLOAT: =
+right; BORDER-BOTTOM-WIDTH: 0px; MARGIN: 0px 0px 0.5em 0.5em; POSITION: =
+relative; BORDER-RIGHT-WIDTH: 0px
+}
+DIV.floatright P {
+	FONT-STYLE: italic
+}
+DIV.floatleft {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; FLOAT: left; =
+BORDER-BOTTOM-WIDTH: 0px; MARGIN: 0px 0.5em 0.5em 0px; POSITION: =
+relative; BORDER-RIGHT-WIDTH: 0px
+}
+TABLE.floatleft {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; FLOAT: left; =
+BORDER-BOTTOM-WIDTH: 0px; MARGIN: 0px 0.5em 0.5em 0px; POSITION: =
+relative; BORDER-RIGHT-WIDTH: 0px
+}
+DIV.floatleft P {
+	FONT-STYLE: italic
+}
+DIV.thumb {
+	BORDER-LEFT-COLOR: white; MARGIN-BOTTOM: 0.5em; BORDER-BOTTOM-COLOR: =
+white; WIDTH: auto; BORDER-TOP-STYLE: solid; BORDER-TOP-COLOR: white; =
+BORDER-RIGHT-STYLE: solid; BORDER-LEFT-STYLE: solid; BORDER-RIGHT-COLOR: =
+white; BORDER-BOTTOM-STYLE: solid
+}
+DIV.thumb DIV {
+	BORDER-RIGHT: #ccc 1px solid; PADDING-RIGHT: 3px! important; =
+BORDER-TOP: #ccc 1px solid; PADDING-LEFT: 3px! important; FONT-SIZE: =
+94%; PADDING-BOTTOM: 3px! important; OVERFLOW: hidden; BORDER-LEFT: #ccc =
+1px solid; PADDING-TOP: 3px! important; BORDER-BOTTOM: #ccc 1px solid; =
+BACKGROUND-COLOR: #f9f9f9; TEXT-ALIGN: center
+}
+DIV.thumb DIV A IMG {
+	BORDER-RIGHT: #ccc 1px solid; BORDER-TOP: #ccc 1px solid; BORDER-LEFT: =
+#ccc 1px solid; BORDER-BOTTOM: #ccc 1px solid
+}
+DIV.thumb DIV DIV.thumbcaption {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0.1em; =
+BORDER-TOP-STYLE: none; LINE-HEIGHT: 1.4em; PADDING-TOP: 0.3em; =
+BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; TEXT-ALIGN: left; =
+BORDER-BOTTOM-STYLE: none
+}
+DIV.magnify {
+	BACKGROUND: none transparent scroll repeat 0% 0%; FLOAT: right; =
+BORDER-TOP-STYLE: none! important; BORDER-RIGHT-STYLE: none! important; =
+BORDER-LEFT-STYLE: none! important; BORDER-BOTTOM-STYLE: none! important
+}
+DIV.magnify A {
+	DISPLAY: block; BACKGROUND: none transparent scroll repeat 0% 0%; =
+BORDER-TOP-STYLE: none! important; BORDER-RIGHT-STYLE: none! important; =
+BORDER-LEFT-STYLE: none! important; BORDER-BOTTOM-STYLE: none! important
+}
+DIV.magnify IMG {
+	DISPLAY: block; BACKGROUND: none transparent scroll repeat 0% 0%; =
+BORDER-TOP-STYLE: none! important; BORDER-RIGHT-STYLE: none! important; =
+BORDER-LEFT-STYLE: none! important; BORDER-BOTTOM-STYLE: none! important
+}
+DIV.tright {
+	BORDER-TOP-WIDTH: 0.5em; CLEAR: right; BORDER-LEFT-WIDTH: 1.4em; FLOAT: =
+right; BORDER-BOTTOM-WIDTH: 0.8em; BORDER-RIGHT-WIDTH: 0px
+}
+DIV.tleft {
+	BORDER-TOP-WIDTH: 0.5em; BORDER-LEFT-WIDTH: 0px; FLOAT: left; =
+BORDER-BOTTOM-WIDTH: 0.8em; MARGIN-RIGHT: 0.5em; BORDER-RIGHT-WIDTH: =
+1.4em
+}
+.hiddenStructure {
+	DISPLAY: none; speak: none
+}
+IMG.tex {
+	VERTICAL-ALIGN: middle
+}
+SPAN.texhtml {
+	FONT-FAMILY: serif
+}
+TABLE.rimage {
+	FLOAT: right; MARGIN-BOTTOM: 1em; MARGIN-LEFT: 1em; POSITION: relative; =
+TEXT-ALIGN: center
+}
+.toccolours {
+	BORDER-RIGHT: #aaa 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #aaa 1px =
+solid; PADDING-LEFT: 5px; FONT-SIZE: 95%; PADDING-BOTTOM: 5px; =
+BORDER-LEFT: #aaa 1px solid; PADDING-TOP: 5px; BORDER-BOTTOM: #aaa 1px =
+solid; BACKGROUND-COLOR: #f9f9f9
+}
+DIV.townBox {
+	CLEAR: right; BORDER-RIGHT: gray 1px solid; PADDING-RIGHT: 0.3em; =
+BORDER-TOP: gray 1px solid; PADDING-LEFT: 0.3em; BACKGROUND: white; =
+FLOAT: right; PADDING-BOTTOM: 0.3em; MARGIN-LEFT: 1em; OVERFLOW: hidden; =
+BORDER-LEFT: gray 1px solid; WIDTH: 200px; PADDING-TOP: 0.3em; =
+BORDER-BOTTOM: gray 1px solid; POSITION: relative
+}
+DIV.townBox DL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 96%; PADDING-BOTTOM: =
+0px; MARGIN: 0px 0px 0.3em; PADDING-TOP: 0px
+}
+DIV.townBox DL DT {
+	BACKGROUND: none transparent scroll repeat 0% 0%; MARGIN: 0.4em 0px 0px
+}
+DIV.townBox DL DD {
+	MARGIN: 0.1em 0px 0px 1.1em; BACKGROUND-COLOR: #f3f3f3
+}
+.special LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: =
+0px; LINE-HEIGHT: 1.4em; PADDING-TOP: 0px
+}
+.autocomment {
+	COLOR: gray
+}
+#pagehistory SPAN.user {
+	MARGIN-LEFT: 1.4em; MARGIN-RIGHT: 0.4em
+}
+#pagehistory SPAN.minor {
+	FONT-WEIGHT: bold
+}
+#pagehistory LI {
+	BORDER-RIGHT: white 1px solid; BORDER-TOP: white 1px solid; =
+BORDER-LEFT: white 1px solid; BORDER-BOTTOM: white 1px solid
+}
+#pagehistory LI.selected {
+	BORDER-RIGHT: #aaa 1px dashed; BORDER-TOP: #aaa 1px dashed; =
+BORDER-LEFT: #aaa 1px dashed; BORDER-BOTTOM: #aaa 1px dashed; =
+BACKGROUND-COLOR: #f9f9f9
+}
+TABLE.diff {
+	BACKGROUND-COLOR: white
+}
+TD.diff-otitle {
+	BACKGROUND-COLOR: white
+}
+TD.diff-ntitle {
+	BACKGROUND-COLOR: white
+}
+TD.diff-addedline {
+	FONT-SIZE: smaller; BACKGROUND: #cfc
+}
+TD.diff-deletedline {
+	FONT-SIZE: smaller; BACKGROUND: #ffa
+}
+TD.diff-context {
+	FONT-SIZE: smaller; BACKGROUND: #eee
+}
+SPAN.diffchange {
+	FONT-WEIGHT: bold; COLOR: red
+}
+#bodyContent A.external {
+	PADDING-RIGHT: 13px; BACKGROUND: url(external.png) no-repeat right =
+center
+}
+#bodyContent A[href^=3D'gopher://'] {
+	PADDING-RIGHT: 13px; BACKGROUND: url(external.png) no-repeat right =
+center
+}
+#bodyContent A[href^=3D'https://'] {
+	PADDING-RIGHT: 16px; BACKGROUND: url(lock_icon.gif) no-repeat right =
+center
+}
+.link-https {
+	PADDING-RIGHT: 16px; BACKGROUND: url(lock_icon.gif) no-repeat right =
+center
+}
+#bodyContent A[href^=3D'mailto:'] {
+	PADDING-RIGHT: 18px; BACKGROUND: url(mail_icon.gif) no-repeat right =
+center
+}
+.link-mailto {
+	PADDING-RIGHT: 18px; BACKGROUND: url(mail_icon.gif) no-repeat right =
+center
+}
+#bodyContent A[href^=3D'news://'] {
+	PADDING-RIGHT: 18px; BACKGROUND: url(news_icon.png) no-repeat right =
+center
+}
+#bodyContent A[href^=3D'ftp://'] {
+	PADDING-RIGHT: 18px; BACKGROUND: url(file_icon.gif) no-repeat right =
+center
+}
+.link-ftp {
+	PADDING-RIGHT: 18px; BACKGROUND: url(file_icon.gif) no-repeat right =
+center
+}
+#bodyContent A[href^=3D'irc://'] {
+	PADDING-RIGHT: 18px; BACKGROUND: url(discussionitem_icon.gif) no-repeat =
+right center
+}
+.link-irc {
+	PADDING-RIGHT: 18px; BACKGROUND: url(discussionitem_icon.gif) no-repeat =
+right center
+}
+#bodyContent A.extiw {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: none transparent =
+scroll repeat 0% 0%; PADDING-BOTTOM: 0px; COLOR: #36b; PADDING-TOP: 0px
+}
+#bodyContent A.extiw:active {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: none transparent =
+scroll repeat 0% 0%; PADDING-BOTTOM: 0px; COLOR: #36b; PADDING-TOP: 0px
+}
+#bodyContent A.external {
+	COLOR: #dd6070
+}
+#bodyContent .plainlinks A {
+	PADDING-RIGHT: 0px! important; PADDING-LEFT: 0px! important; =
+BACKGROUND: none transparent scroll repeat 0% 0%; PADDING-BOTTOM: 0px! =
+important; PADDING-TOP: 0px! important
+}
+.portlet {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: none; PADDING-BOTTOM: =
+0px; MARGIN: 0px 0px 0.5em; OVERFLOW: hidden; WIDTH: 11.6em; =
+BORDER-TOP-STYLE: none; PADDING-TOP: 0px; BORDER-RIGHT-STYLE: none; =
+BORDER-LEFT-STYLE: none; POSITION: relative; BACKGROUND-COLOR: #ffcccc; =
+BORDER-BOTTOM-STYLE: none
+}
+.portlet H4 {
+	FONT-WEIGHT: normal; FONT-SIZE: 95%; WHITE-SPACE: nowrap
+}
+.portlet H5 {
+	PADDING-RIGHT: 1em; DISPLAY: inline; PADDING-LEFT: 0.5em; FONT-WEIGHT: =
+normal; FONT-SIZE: 91%; BACKGROUND: none transparent scroll repeat 0% =
+0%; PADDING-BOTTOM: 0px; TEXT-TRANSFORM: lowercase; PADDING-TOP: 0px; =
+WHITE-SPACE: nowrap; HEIGHT: 1em
+}
+.portlet H6 {
+	BORDER-RIGHT: #2f6fab 1px solid; PADDING-RIGHT: 1em; BORDER-TOP: =
+#2f6fab 1px solid; DISPLAY: block; PADDING-LEFT: 1em; FONT-WEIGHT: =
+normal; FONT-SIZE: 1em; BACKGROUND: #ffae2e; PADDING-BOTTOM: 0px; =
+TEXT-TRANSFORM: lowercase; BORDER-LEFT: #2f6fab 1px solid; PADDING-TOP: =
+0px; BORDER-BOTTOM: #2f6fab 1px; WHITE-SPACE: nowrap; HEIGHT: 1.2em
+}
+.pBody {
+	BORDER-RIGHT: #aaa 1px solid; PADDING-RIGHT: 0.8em; BORDER-TOP: #aaa =
+1px solid; PADDING-LEFT: 0.5em; FONT-SIZE: 95%; PADDING-BOTTOM: 0.3em; =
+BORDER-LEFT: #aaa 1px solid; COLOR: black; PADDING-TOP: 0px; =
+BORDER-BOTTOM: #aaa 1px solid; BORDER-COLLAPSE: collapse; =
+BACKGROUND-COLOR: white
+}
+.portlet H1 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: =
+0px; PADDING-TOP: 0px
+}
+.portlet H2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: =
+0px; PADDING-TOP: 0px
+}
+.portlet H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: =
+0px; PADDING-TOP: 0px
+}
+.portlet H4 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: =
+0px; PADDING-TOP: 0px
+}
+.portlet UL {
+	FONT-SIZE: 95%; LIST-STYLE-IMAGE: url(bullet.gif); LINE-HEIGHT: 1.5em; =
+LIST-STYLE-TYPE: square
+}
+.portlet LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: =
+0px; PADDING-TOP: 0px
+}
+#p-logo {
+	Z-INDEX: 3; LEFT: 0px; OVERFLOW: visible; WIDTH: 12em; POSITION: =
+absolute; TOP: 0px; HEIGHT: 155px
+}
+#p-logo H5 {
+	DISPLAY: none
+}
+#p-logo A {
+	BACKGROUND-POSITION: 35% 50%; DISPLAY: block; WIDTH: 12.2em; =
+BACKGROUND-REPEAT: no-repeat; HEIGHT: 155px; TEXT-DECORATION: none
+}
+#p-logo A:hover {
+	BACKGROUND-POSITION: 35% 50%; DISPLAY: block; WIDTH: 12.2em; =
+BACKGROUND-REPEAT: no-repeat; HEIGHT: 155px; TEXT-DECORATION: none
+}
+#p-navigation {
+	Z-INDEX: 3; POSITION: relative; BACKGROUND-COLOR: #ffcccc
+}
+#p-navigation .pBody {
+	PADDING-RIGHT: 0px
+}
+#p-navigation A {
+	DISPLAY: block
+}
+#p-navigation LI.active A {
+	DISPLAY: inline; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+#p-navigation LI.active A:hover {
+	DISPLAY: inline; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+#p-search {
+	Z-INDEX: 3; POSITION: relative; BACKGROUND-COLOR: #ffcccc
+}
+INPUT.searchButton {
+	MARGIN-TOP: 1px; FONT-SIZE: 95%
+}
+#searchGoButton {
+	PADDING-RIGHT: 0.5em; PADDING-LEFT: 0.5em; FONT-WEIGHT: bold
+}
+#searchInput {
+	FONT-SIZE: 95%; MARGIN: 0px; WIDTH: 10.9em
+}
+#p-search .pBody {
+	PADDING-RIGHT: 0.4em; PADDING-LEFT: 0.4em; PADDING-BOTTOM: 0.4em; =
+PADDING-TOP: 0.5em; TEXT-ALIGN: center
+}
+#p-personal {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: none transparent =
+scroll repeat 0% 0%; LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; =
+OVERFLOW: visible; WIDTH: 100%; BORDER-TOP-STYLE: none; LINE-HEIGHT: =
+1.2em; PADDING-TOP: 0px; BORDER-RIGHT-STYLE: none; WHITE-SPACE: nowrap; =
+BORDER-LEFT-STYLE: none; POSITION: absolute; TOP: 0px; =
+BORDER-BOTTOM-STYLE: none
+}
+#p-personal H5 {
+	DISPLAY: none
+}
+#p-personal .portlet {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: none transparent =
+scroll repeat 0% 0%; PADDING-BOTTOM: 0px; MARGIN: 0px; OVERFLOW: =
+visible; BORDER-TOP-STYLE: none; PADDING-TOP: 0px; BORDER-RIGHT-STYLE: =
+none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+#p-personal .pBody {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: none transparent =
+scroll repeat 0% 0%; PADDING-BOTTOM: 0px; MARGIN: 0px; OVERFLOW: =
+visible; BORDER-TOP-STYLE: none; PADDING-TOP: 0px; BORDER-RIGHT-STYLE: =
+none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+#p-personal UL {
+	PADDING-RIGHT: 2em; PADDING-LEFT: 3em; BACKGROUND: none transparent =
+scroll repeat 0% 0%; PADDING-BOTTOM: 0px; MARGIN: 0px; TEXT-TRANSFORM: =
+lowercase; CURSOR: default; COLOR: #2f6fab; BORDER-TOP-STYLE: none; =
+LINE-HEIGHT: 1.4em; PADDING-TOP: 0px; BORDER-RIGHT-STYLE: none; =
+BORDER-LEFT-STYLE: none; LIST-STYLE-TYPE: none; TEXT-ALIGN: right; =
+BORDER-BOTTOM-STYLE: none
+}
+#p-personal LI {
+	PADDING-RIGHT: 0px; DISPLAY: inline; PADDING-LEFT: 0px; BACKGROUND: =
+none transparent scroll repeat 0% 0%; PADDING-BOTTOM: 0px; MARGIN-LEFT: =
+1em; COLOR: #2f6fab; BORDER-TOP-STYLE: none; LINE-HEIGHT: 1.2em; =
+PADDING-TOP: 0px; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; =
+BORDER-BOTTOM-STYLE: none
+}
+#p-personal LI.active {
+	FONT-WEIGHT: bold
+}
+#p-personal LI A {
+	BACKGROUND: none transparent scroll repeat 0% 0%; PADDING-BOTTOM: =
+0.2em; COLOR: #dd6070; TEXT-DECORATION: none
+}
+#p-personal LI A:hover {
+	PADDING-BOTTOM: 0.2em; BACKGROUND-COLOR: white; TEXT-DECORATION: none
+}
+#p-personal LI.active A:hover {
+	BACKGROUND-COLOR: transparent
+}
+LI#pt-userpage {
+	PADDING-LEFT: 20px; BACKGROUND: url(user.gif) no-repeat left top; =
+TEXT-TRANSFORM: none
+}
+LI#pt-anonuserpage {
+	PADDING-LEFT: 20px; BACKGROUND: url(user.gif) no-repeat left top; =
+TEXT-TRANSFORM: none
+}
+LI#pt-login {
+	PADDING-LEFT: 20px; BACKGROUND: url(user.gif) no-repeat left top; =
+TEXT-TRANSFORM: none
+}
+#p-cactions {
+	PADDING-LEFT: 1em; FONT-SIZE: 95%; BACKGROUND: none transparent scroll =
+repeat 0% 0%; LEFT: 12em; MARGIN: 0px; OVERFLOW: visible; WIDTH: 76%; =
+LINE-HEIGHT: 1.1em; WHITE-SPACE: nowrap; LIST-STYLE-TYPE: none; =
+POSITION: absolute; TOP: 110px; BORDER-COLLAPSE: collapse
+}
+#p-cactions .hiddenStructure {
+	DISPLAY: none
+}
+#p-cactions UL {
+	LIST-STYLE-TYPE: none
+}
+#p-cactions LI {
+	BORDER-RIGHT: #aaa 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #aaa 1px =
+solid; DISPLAY: inline; PADDING-LEFT: 0px; PADDING-BOTTOM: 0.1em; =
+MARGIN: 0px 0.3em 0px 0px; OVERFLOW: visible; BORDER-LEFT: #aaa 1px =
+solid; PADDING-TOP: 0px; BORDER-BOTTOM: #aaa 1px; backgroun: #ffcccc
+}
+#p-cactions LI.selected {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; =
+BORDER-LEFT-COLOR: #aaa; BORDER-BOTTOM-COLOR: #aaa; PADDING-BOTTOM: =
+0.2em; BORDER-TOP-COLOR: #aaa; PADDING-TOP: 0px; BACKGROUND-COLOR: =
+#ffcccc; BORDER-RIGHT-COLOR: #aaa
+}
+#p-cactions LI A {
+	PADDING-RIGHT: 0.8em; PADDING-LEFT: 0.8em; Z-INDEX: 3; PADDING-BOTTOM: =
+0.3em; MARGIN: 0px; TEXT-TRANSFORM: lowercase; COLOR: #dd6070; =
+BORDER-TOP-STYLE: none; PADDING-TOP: 0px; BORDER-RIGHT-STYLE: none; =
+BORDER-LEFT-STYLE: none; POSITION: relative; TEXT-DECORATION: none; =
+BORDER-BOTTOM-STYLE: none
+}
+#p-cactions LI.selected A {
+	PADDING-RIGHT: 1em! important; PADDING-LEFT: 1em! important; Z-INDEX: =
+3; PADDING-BOTTOM: 0.2em! important; COLOR: #000000; PADDING-TOP: 0px! =
+important; BACKGROUND-COLOR: #ffcccc
+}
+#p-cactions .new A {
+	FONT-WEIGHT: bold; COLOR: #dd6070
+}
+#p-cactions LI A:hover {
+	Z-INDEX: 3; COLOR: #000000; BACKGROUND-COLOR: #ffcccc; TEXT-DECORATION: =
+none
+}
+#p-cactions H5 {
+	DISPLAY: none
+}
+#p-cactions LI.istalk {
+	MARGIN-RIGHT: 0px
+}
+#p-cactions LI.istalk A {
+	PADDING-RIGHT: 0.5em
+}
+#p-cactions #ca-addsection A {
+	PADDING-RIGHT: 0.4em; PADDING-LEFT: 0.4em
+}
+LI#ca-talk {
+	MARGIN-RIGHT: 1.6em
+}
+LI#ca-watch {
+	MARGIN-LEFT: 1.6em
+}
+LI#ca-unwatch {
+	MARGIN-LEFT: 1.6em
+}
+LI#ca-varlang-0 {
+	MARGIN-LEFT: 1.6em
+}
+LI#ca-print {
+	MARGIN-LEFT: 1.6em
+}
+#p-tb {
+	Z-INDEX: 3; POSITION: relative; BACKGROUND-COLOR: #ffcccc
+}
+#p-tbx {
+	Z-INDEX: 3; POSITION: relative; BACKGROUND-COLOR: #ffcccc
+}
+#p-lang {
+	Z-INDEX: 3; POSITION: relative; BACKGROUND-COLOR: #ffcccc
+}
+#t-ispermalink {
+	COLOR: #999
+}
+#t-iscite {
+	COLOR: #999
+}
+#footer {
+	PADDING-RIGHT: 0px; BORDER-TOP: #aaa 1px solid; PADDING-LEFT: 0px; =
+FONT-SIZE: 90%; PADDING-BOTTOM: 1.2em; MARGIN: 0.6em 0px 1em; =
+PADDING-TOP: 0.4em; BORDER-BOTTOM: #aaa 1px solid; BACKGROUND-COLOR: =
+white; TEXT-ALIGN: center
+}
+#footer LI {
+	DISPLAY: inline; MARGIN: 0px 1.3em
+}
+HEAD:first-child + BODY #footer LI {
+	WHITE-SPACE: nowrap
+}
+#f-poweredbyico {
+	MARGIN: 0px 8px; POSITION: relative; TOP: -2px
+}
+#f-copyrightico {
+	MARGIN: 0px 8px; POSITION: relative; TOP: -2px
+}
+#f-poweredbyico {
+	FLOAT: right; HEIGHT: 1%
+}
+#f-copyrightico {
+	FLOAT: left; HEIGHT: 1%
+}
+#preftoc {
+	CLEAR: both; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: =
+0px; MARGIN: 0px; WIDTH: 100%; PADDING-TOP: 0px
+}
+#preftoc LI {
+	BORDER-RIGHT: #716f64 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #fff =
+1px solid; PADDING-LEFT: 0px; Z-INDEX: 3; FLOAT: left; LIST-STYLE-IMAGE: =
+none; PADDING-BOTTOM: 3px; MARGIN: 1px -2px 1px 2px; BORDER-LEFT: #fff =
+1px solid; COLOR: #000; PADDING-TOP: 2px; BORDER-BOTTOM: #fff 0px solid; =
+WHITE-SPACE: nowrap; LIST-STYLE-TYPE: none; POSITION: relative; =
+BACKGROUND-COLOR: #f0f0f0
+}
+#preftoc LI.selected {
+	BORDER-RIGHT: #aaa 1px solid; BORDER-TOP: #aaa 1px solid; FONT-WEIGHT: =
+bold; BORDER-LEFT: #aaa 1px solid; CURSOR: default; MARGIN-RIGHT: -3px; =
+PADDING-TOP: 2px; BORDER-BOTTOM: #aaa 1px; TOP: 1px; BACKGROUND-COLOR: =
+#f9f9f9
+}
+#preftoc > LI.selected {
+	TOP: 2px
+}
+#preftoc A {
+	PADDING-RIGHT: 0.7em; DISPLAY: block; PADDING-LEFT: 0.7em; =
+PADDING-BOTTOM: 0px; COLOR: #000; PADDING-TOP: 0px; POSITION: relative; =
+TEXT-DECORATION: none
+}
+#preftoc A:active {
+	PADDING-RIGHT: 0.7em; DISPLAY: block; PADDING-LEFT: 0.7em; =
+PADDING-BOTTOM: 0px; COLOR: #000; PADDING-TOP: 0px; POSITION: relative; =
+TEXT-DECORATION: none
+}
+#preftoc LI.selected A {
+	CURSOR: default; TEXT-DECORATION: none
+}
+#prefcontrol {
+	CLEAR: both; PADDING-TOP: 2em
+}
+#preferences {
+	CLEAR: both; BORDER-RIGHT: #aaa 1px solid; PADDING-RIGHT: 1.5em; =
+BORDER-TOP: #aaa 1px solid; PADDING-LEFT: 1.5em; PADDING-BOTTOM: 1.5em; =
+MARGIN: 0px; BORDER-LEFT: #aaa 1px solid; PADDING-TOP: 1.5em; =
+BORDER-BOTTOM: #aaa 1px solid; BACKGROUND-COLOR: #f9f9f9
+}
+.prefsection {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: =
+0px; BORDER-TOP-STYLE: none; PADDING-TOP: 0px; BORDER-RIGHT-STYLE: none; =
+BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+.prefsection FIELDSET {
+	BORDER-RIGHT: #aaa 1px solid; BORDER-TOP: #aaa 1px solid; FLOAT: left; =
+BORDER-LEFT: #aaa 1px solid; MARGIN-RIGHT: 2em; BORDER-BOTTOM: #aaa 1px =
+solid
+}
+.prefsection LEGEND {
+	FONT-WEIGHT: bold
+}
+.prefsection TABLE {
+	BACKGROUND-COLOR: #f9f9f9
+}
+.prefsection LEGEND {
+	BACKGROUND-COLOR: #f9f9f9
+}
+.mainLegend {
+	DISPLAY: none
+}
+DIV.prefsectiontip {
+	CLEAR: both; PADDING-RIGHT: 0.7em; MARGIN-TOP: 0px; PADDING-LEFT: =
+0.7em; FONT-SIZE: 95%; PADDING-BOTTOM: 0.2em; PADDING-TOP: 0.2em; =
+BACKGROUND-COLOR: #ffc1c1
+}
+.btnSavePrefs {
+	PADDING-RIGHT: 0.3em; PADDING-LEFT: 0.3em; FONT-WEIGHT: bold
+}
+.preferences-login {
+	CLEAR: both; MARGIN-BOTTOM: 1.5em
+}
+.prefcache {
+	MARGIN-TOP: 2em; FONT-SIZE: 90%
+}
+DIV#userloginForm FORM {
+	CLEAR: both; BORDER-RIGHT: #aaa 1px solid; PADDING-RIGHT: 2em; =
+BORDER-TOP: #aaa 1px solid; PADDING-LEFT: 2em; FLOAT: left; =
+PADDING-BOTTOM: 1.5em; MARGIN: 0px 3em 1em 0px; BORDER-LEFT: #aaa 1px =
+solid; PADDING-TOP: 1.5em; BORDER-BOTTOM: #aaa 1px solid; =
+BACKGROUND-COLOR: #f9f9f9
+}
+DIV#userlogin FORM#userlogin2 {
+	CLEAR: both; BORDER-RIGHT: #aaa 1px solid; PADDING-RIGHT: 2em; =
+BORDER-TOP: #aaa 1px solid; PADDING-LEFT: 2em; FLOAT: left; =
+PADDING-BOTTOM: 1.5em; MARGIN: 0px 3em 1em 0px; BORDER-LEFT: #aaa 1px =
+solid; PADDING-TOP: 1.5em; BORDER-BOTTOM: #aaa 1px solid; =
+BACKGROUND-COLOR: #f9f9f9
+}
+DIV#userloginForm TABLE {
+	BACKGROUND-COLOR: #f9f9f9
+}
+DIV#userlogin FORM#userlogin2 TABLE {
+	BACKGROUND-COLOR: #f9f9f9
+}
+DIV#userloginForm H2 {
+	PADDING-TOP: 0px
+}
+DIV#userlogin FORM#userlogin2 H2 {
+	PADDING-TOP: 0px
+}
+DIV#userlogin .captcha {
+	BORDER-RIGHT: #bbb 1px solid; PADDING-RIGHT: 2em; BORDER-TOP: #bbb 1px =
+solid; PADDING-LEFT: 2em; PADDING-BOTTOM: 1.5em; BORDER-LEFT: #bbb 1px =
+solid; WIDTH: 400px; PADDING-TOP: 1.5em; BORDER-BOTTOM: #bbb 1px solid; =
+BACKGROUND-COLOR: white
+}
+#userloginprompt {
+	FONT-SIZE: 85%
+}
+#login-emailforlost {
+	FONT-SIZE: 85%; LINE-HEIGHT: 1.2; PADDING-TOP: 2em
+}
+#userlogin .loginText {
+	WIDTH: 12em
+}
+#userlogin .loginPassword {
+	WIDTH: 12em
+}
+#userloginlink A {
+	FONT-WEIGHT: bold
+}
+#wpLoginattempt {
+	FONT-WEIGHT: bold
+}
+#wpCreateaccount {
+	FONT-WEIGHT: bold
+}
+* > HTML #p-cactions LI {
+	BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: =
+none; BORDER-BOTTOM-STYLE: none
+}
+* > HTML #p-cactions LI A {
+	BORDER-RIGHT: #aaa 1px solid; BORDER-TOP: #aaa 1px solid; BORDER-LEFT: =
+#aaa 1px solid; BORDER-BOTTOM: #aaa 1px
+}
+* > HTML #p-cactions LI.selected A {
+	BORDER-LEFT-COLOR: #fabd23; BORDER-BOTTOM-COLOR: #fabd23; =
+BORDER-TOP-COLOR: #fabd23; BORDER-RIGHT-COLOR: #fabd23
+}
+* > HTML #f-poweredbyico {
+	WIDTH: 88px
+}
+* > HTML #f-copyrightico {
+	WIDTH: 88px
+}
+* > HTML #bodyContent {
+	OVERFLOW-X: auto; PADDING-BOTTOM: 25px; WIDTH: 100%
+}
+* > HTML #bodyContent PRE {
+	OVERFLOW-X: auto; PADDING-BOTTOM: 25px; WIDTH: 100%
+}
+* HTML #footer {
+	MARGIN-TOP: 0px
+}
+* HTML #column-content {
+	DISPLAY: inline; MARGIN-BOTTOM: 0px
+}
+* HTML DIV.editsection {
+	FONT-SIZE: smaller
+}
+#pagehistory LI.selected {
+	POSITION: relative
+}
+* > HTML #column-content {
+	FLOAT: none
+}
+* > HTML #column-one {
+	LEFT: 0px; POSITION: absolute
+}
+* > HTML #footer {
+	MARGIN-LEFT: 13.2em
+}
+.redirectText {
+	FONT-SIZE: 150%; MARGIN: 5px
+}
+.printfooter {
+	DISPLAY: none
+}
+.not-patrolled {
+	BACKGROUND-COLOR: #ffa
+}
+DIV.patrollink {
+	FONT-SIZE: 75%; TEXT-ALIGN: right
+}
+SPAN.newpage {
+	FONT-WEIGHT: bold
+}
+SPAN.minor {
+	FONT-WEIGHT: bold
+}
+SPAN.searchmatch {
+	FONT-WEIGHT: bold
+}
+SPAN.unpatrolled {
+	FONT-WEIGHT: bold; COLOR: red
+}
+SPAN.searchmatch {
+	COLOR: red
+}
+.sharedUploadNotice {
+	FONT-STYLE: italic
+}
+SPAN.updatedmarker {
+	COLOR: black; BACKGROUND-COLOR: #0f0
+}
+SPAN.newpageletter {
+	FONT-WEIGHT: bold; COLOR: black; BACKGROUND-COLOR: yellow
+}
+SPAN.minoreditletter {
+	COLOR: black; BACKGROUND-COLOR: #c5ffe6
+}
+TABLE.gallery {
+	BORDER-RIGHT: #ccc 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #ccc 1px =
+solid; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; MARGIN: 2px; BORDER-LEFT: =
+#ccc 1px solid; PADDING-TOP: 2px; BORDER-BOTTOM: #ccc 1px solid; =
+BACKGROUND-COLOR: white
+}
+TABLE.gallery TR {
+	VERTICAL-ALIGN: top
+}
+TABLE.gallery TD {
+	BORDER-RIGHT: white 2px solid; BORDER-TOP: white 2px solid; =
+VERTICAL-ALIGN: top; BORDER-LEFT: white 2px solid; BORDER-BOTTOM: white =
+2px solid; BACKGROUND-COLOR: #f9f9f9
+}
+DIV.gallerybox {
+	MARGIN: 2px; WIDTH: 150px
+}
+DIV.gallerybox DIV.thumb {
+	BORDER-RIGHT: #ccc 1px solid; BORDER-TOP: #ccc 1px solid; MARGIN: 2px; =
+BORDER-LEFT: #ccc 1px solid; BORDER-BOTTOM: #ccc 1px solid; TEXT-ALIGN: =
+center
+}
+DIV.gallerytext {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; FONT-SIZE: 94%; PADDING-BOTTOM: =
+2px; PADDING-TOP: 2px
+}
+SPAN.comment {
+	FONT-STYLE: italic
+}
+SPAN.changedby {
+	FONT-SIZE: 95%
+}
+.previewnote {
+	MARGIN-BOTTOM: 1em; PADDING-BOTTOM: 1em; COLOR: #c00; TEXT-INDENT: 3em; =
+BORDER-BOTTOM: #aaa 1px solid
+}
+.previewnote P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: =
+0px; PADDING-TOP: 0px
+}
+.editExternally {
+	BORDER-RIGHT: gray 1px solid; PADDING-RIGHT: 3px; BORDER-TOP: gray 1px =
+solid; MARGIN-TOP: 0.5em; PADDING-LEFT: 3px; FONT-SIZE: small; FLOAT: =
+left; PADDING-BOTTOM: 3px; BORDER-LEFT: gray 1px solid; PADDING-TOP: =
+3px; BORDER-BOTTOM: gray 1px solid; BACKGROUND-COLOR: #ffffff; =
+TEXT-ALIGN: center
+}
+.editExternallyHelp {
+	COLOR: gray; FONT-STYLE: italic
+}
+LI SPAN.deleted {
+	COLOR: #888; FONT-STYLE: italic; TEXT-DECORATION: line-through
+}
+SPAN.history-deleted {
+	COLOR: #888; FONT-STYLE: italic; TEXT-DECORATION: line-through
+}
+.toggle {
+	MARGIN-LEFT: 2em; TEXT-INDENT: -2em
+}
+TABLE.mw_metadata {
+	FONT-SIZE: 0.8em; MARGIN-BOTTOM: 0.5em; MARGIN-LEFT: 0.5em; WIDTH: =
+300px
+}
+TABLE.mw_metadata CAPTION {
+	FONT-WEIGHT: bold
+}
+TABLE.mw_metadata TH {
+	FONT-WEIGHT: normal
+}
+TABLE.mw_metadata TD {
+	PADDING-RIGHT: 0.1em; PADDING-LEFT: 0.1em; PADDING-BOTTOM: 0.1em; =
+PADDING-TOP: 0.1em
+}
+TABLE.mw_metadata {
+	BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: =
+none; BORDER-COLLAPSE: collapse; BORDER-BOTTOM-STYLE: none
+}
+TABLE.mw_metadata TD {
+	BORDER-RIGHT: #aaaaaa 1px solid; PADDING-RIGHT: 0.1em; BORDER-TOP: =
+#aaaaaa 1px solid; PADDING-LEFT: 0.1em; BORDER-LEFT: #aaaaaa 1px solid; =
+BORDER-BOTTOM: #aaaaaa 1px solid; TEXT-ALIGN: center
+}
+TABLE.mw_metadata TH {
+	BORDER-RIGHT: #aaaaaa 1px solid; PADDING-RIGHT: 0.1em; BORDER-TOP: =
+#aaaaaa 1px solid; PADDING-LEFT: 0.1em; BORDER-LEFT: #aaaaaa 1px solid; =
+BORDER-BOTTOM: #aaaaaa 1px solid; TEXT-ALIGN: center
+}
+TABLE.mw_metadata TH {
+	BACKGROUND-COLOR: #f9f9f9
+}
+TABLE.mw_metadata TD {
+	BACKGROUND-COLOR: #fcfcfc
+}
+TABLE.collapsed TR.collapsable {
+	DISPLAY: none
+}
+UL#filetoc {
+	BORDER-RIGHT: #aaaaaa 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: =
+#aaaaaa 1px solid; PADDING-LEFT: 5px; FONT-SIZE: 95%; MARGIN-BOTTOM: =
+0.5em; PADDING-BOTTOM: 5px; MARGIN-LEFT: 0px; BORDER-LEFT: #aaaaaa 1px =
+solid; MARGIN-RIGHT: 0px; PADDING-TOP: 5px; BORDER-BOTTOM: #aaaaaa 1px =
+solid; BACKGROUND-COLOR: #f9f9f9; TEXT-ALIGN: center
+}
+#filetoc LI {
+	PADDING-RIGHT: 2em; DISPLAY: inline; LIST-STYLE-TYPE: none
+}
+INPUT#wpSave {
+	MARGIN-RIGHT: 0.33em
+}
+INPUT#wpDiff {
+	MARGIN-RIGHT: 0.33em
+}
+#editform .editOptions {
+	DISPLAY: inline
+}
+#wpSave {
+	FONT-WEIGHT: bold
+}
+TABLE.revisionform_default {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; =
+BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid
+}
+TABLE.revisionform_focus {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; =
+BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid; =
+BACKGROUND-COLOR: #00bbff
+}
+TR.revision_tr_default {
+	BACKGROUND-COLOR: #eeeeee
+}
+TR.revision_tr_first {
+	BACKGROUND-COLOR: #dddddd
+}
+P.revision_saved {
+	FONT-WEIGHT: bold; COLOR: green
+}
+#mw_trackbacks {
+	BORDER-RIGHT: #bbbbff 1px solid; PADDING-RIGHT: 0.2em; BORDER-TOP: =
+#bbbbff 1px solid; PADDING-LEFT: 0.2em; PADDING-BOTTOM: 0.2em; =
+BORDER-LEFT: #bbbbff 1px solid; PADDING-TOP: 0.2em; BORDER-BOTTOM: =
+#bbbbff 1px solid; BACKGROUND-COLOR: #eeeeff
+}
+#allmessagestable TH {
+	BACKGROUND-COLOR: #b2b2ff
+}
+#allmessagestable TR.orig {
+	BACKGROUND-COLOR: #ffe2e2
+}
+#allmessagestable TR.new {
+	BACKGROUND-COLOR: #e2ffe2
+}
+#allmessagestable TR.def {
+	BACKGROUND-COLOR: #f0f0ff
+}
+DIV.noarticletext {
+	BORDER-RIGHT: #ccc 1px solid; PADDING-RIGHT: 1em; BORDER-TOP: #ccc 1px =
+solid; PADDING-LEFT: 1em; BACKGROUND: #fff; PADDING-BOTTOM: 0.2em; =
+BORDER-LEFT: #ccc 1px solid; COLOR: #000; PADDING-TOP: 0.2em; =
+BORDER-BOTTOM: #ccc 1px solid
+}
+DIV#searchTargetContainer {
+	BACKGROUND: white; LEFT: 10px; WIDTH: 90%; TOP: 10px
+}
+DIV#searchTarget {
+	BORDER-RIGHT: blue 1px solid; PADDING-RIGHT: 3px; BORDER-TOP: blue 1px =
+solid; PADDING-LEFT: 3px; BACKGROUND: #f0f0f0; PADDING-BOTTOM: 3px; =
+MARGIN: 5px; BORDER-LEFT: blue 1px solid; PADDING-TOP: 3px; =
+BORDER-BOTTOM: blue 1px solid
+}
+DIV#searchTarget UL LI {
+	LIST-STYLE-TYPE: none
+}
+DIV#searchTarget UL LI:unknown {
+	COLOR: orange; content: "=BB "
+}
+
+------=_NextPart_000_001F_01C8C57A.137DC270
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://guichan.sourceforge.net/wiki/skins/common/commonPrint.css
+
+A.stub {
+	COLOR: #ba0000; TEXT-DECORATION: none
+}
+A.new {
+	COLOR: #ba0000; TEXT-DECORATION: none
+}
+#toc {
+	BORDER-RIGHT: #aaaaaa 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: =
+#aaaaaa 1px solid; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; BORDER-LEFT: =
+#aaaaaa 1px solid; PADDING-TOP: 5px; BORDER-BOTTOM: #aaaaaa 1px solid; =
+BACKGROUND-COLOR: #f9f9f9
+}
+.tocindent {
+	MARGIN-LEFT: 2em
+}
+.tocline {
+	MARGIN-BOTTOM: 0px
+}
+.toctoggle {
+	FONT-SIZE: smaller
+}
+.editsection {
+	FONT-SIZE: smaller
+}
+DIV.floatright {
+	BORDER-RIGHT: white 0px solid; BORDER-TOP: white 0.5em solid; FLOAT: =
+right; MARGIN: 0px; BORDER-LEFT: white 1.4em solid; BORDER-BOTTOM: white =
+0.8em solid; POSITION: relative
+}
+DIV.floatright P {
+	FONT-STYLE: italic
+}
+DIV.floatleft {
+	BORDER-RIGHT: white 1.4em solid; BORDER-TOP: white 0.5em solid; FLOAT: =
+left; MARGIN: 0.3em 0.5em 0.5em 0px; BORDER-LEFT: white 0px solid; =
+BORDER-BOTTOM: white 0.8em solid; POSITION: relative
+}
+DIV.floatleft P {
+	FONT-STYLE: italic
+}
+DIV.thumb {
+	BORDER-LEFT-COLOR: white; MARGIN-BOTTOM: 0.5em; BORDER-BOTTOM-COLOR: =
+white; OVERFLOW: hidden; WIDTH: auto; BORDER-TOP-STYLE: solid; =
+BORDER-TOP-COLOR: white; BORDER-RIGHT-STYLE: solid; BORDER-LEFT-STYLE: =
+solid; BORDER-RIGHT-COLOR: white; BORDER-BOTTOM-STYLE: solid
+}
+DIV.thumb DIV {
+	BORDER-RIGHT: #cccccc 1px solid; PADDING-RIGHT: 3px! important; =
+BORDER-TOP: #cccccc 1px solid; PADDING-LEFT: 3px! important; FONT-SIZE: =
+94%; PADDING-BOTTOM: 3px! important; BORDER-LEFT: #cccccc 1px solid; =
+PADDING-TOP: 3px! important; BORDER-BOTTOM: #cccccc 1px solid; =
+BACKGROUND-COLOR: #f9f9f9; TEXT-ALIGN: center
+}
+DIV.thumb DIV A IMG {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; =
+BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid
+}
+DIV.thumb DIV DIV.thumbcaption {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0.1em; =
+BORDER-TOP-STYLE: none; PADDING-TOP: 0.3em; BORDER-RIGHT-STYLE: none; =
+BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+DIV.magnify {
+	DISPLAY: none
+}
+DIV.tright {
+	BORDER-TOP-WIDTH: 0.5em; BORDER-LEFT-WIDTH: 1.4em; FLOAT: right; =
+BORDER-BOTTOM-WIDTH: 0.8em; BORDER-RIGHT-WIDTH: 0px
+}
+DIV.tleft {
+	BORDER-TOP-WIDTH: 0.5em; BORDER-LEFT-WIDTH: 0px; FLOAT: left; =
+BORDER-BOTTOM-WIDTH: 0.8em; MARGIN-RIGHT: 0.5em; BORDER-RIGHT-WIDTH: =
+1.4em
+}
+TABLE.rimage {
+	FLOAT: right; MARGIN-BOTTOM: 1em; MARGIN-LEFT: 1em; WIDTH: 1pt; =
+POSITION: relative; TEXT-ALIGN: center
+}
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: white; =
+PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: black; PADDING-TOP: 0px
+}
+.noprint {
+	DISPLAY: none
+}
+DIV#jump-to-nav {
+	DISPLAY: none
+}
+DIV.top {
+	DISPLAY: none
+}
+DIV#column-one {
+	DISPLAY: none
+}
+#colophon {
+	DISPLAY: none
+}
+.editsection {
+	DISPLAY: none
+}
+.toctoggle {
+	DISPLAY: none
+}
+.tochidden {
+	DISPLAY: none
+}
+DIV#f-poweredbyico {
+	DISPLAY: none
+}
+DIV#f-copyrightico {
+	DISPLAY: none
+}
+LI#f-viewcount {
+	DISPLAY: none
+}
+LI#f-about {
+	DISPLAY: none
+}
+LI#f-disclaimer {
+	DISPLAY: none
+}
+LI#f-privacy {
+	DISPLAY: none
+}
+UL {
+	LIST-STYLE-TYPE: square
+}
+#content {
+	PADDING-RIGHT: 0px! important; PADDING-LEFT: 0px! important; FONT-SIZE: =
+11pt; BACKGROUND: none transparent scroll repeat 0% 0%; PADDING-BOTTOM: =
+0px! important; MARGIN: 0px; BORDER-TOP-STYLE: none! important; =
+PADDING-TOP: 0px! important; BORDER-RIGHT-STYLE: none! important; =
+BORDER-LEFT-STYLE: none! important; BORDER-BOTTOM-STYLE: none! important
+}
+#footer {
+	BORDER-TOP: black 1px solid; BACKGROUND: white; COLOR: black
+}
+H1 {
+	FONT-WEIGHT: bold
+}
+H2 {
+	FONT-WEIGHT: bold
+}
+H3 {
+	FONT-WEIGHT: bold
+}
+H4 {
+	FONT-WEIGHT: bold
+}
+H5 {
+	FONT-WEIGHT: bold
+}
+H6 {
+	FONT-WEIGHT: bold
+}
+P {
+	MARGIN: 1em 0px; LINE-HEIGHT: 1.2em
+}
+.documentDescription {
+	MARGIN: 1em 0px; LINE-HEIGHT: 1.2em
+}
+.tocindent P {
+	MARGIN: 0px
+}
+PRE {
+	BORDER-RIGHT: black 1pt dashed; PADDING-RIGHT: 0px; BORDER-TOP: black =
+1pt dashed; PADDING-LEFT: 0px; FONT-SIZE: 8pt; BACKGROUND: white; =
+PADDING-BOTTOM: 1em; OVERFLOW: auto; BORDER-LEFT: black 1pt dashed; =
+COLOR: black; PADDING-TOP: 1em; BORDER-BOTTOM: black 1pt dashed; =
+WHITE-SPACE: pre
+}
+TABLE.listing {
+	BORDER-RIGHT: black 1pt solid; BORDER-TOP: black 1pt solid; =
+BORDER-LEFT: black 1pt solid; BORDER-BOTTOM: black 1pt solid; =
+BORDER-COLLAPSE: collapse
+}
+TABLE.listing TD {
+	BORDER-RIGHT: black 1pt solid; BORDER-TOP: black 1pt solid; =
+BORDER-LEFT: black 1pt solid; BORDER-BOTTOM: black 1pt solid; =
+BORDER-COLLAPSE: collapse
+}
+A {
+	PADDING-RIGHT: 0px! important; PADDING-LEFT: 0px! important; =
+PADDING-BOTTOM: 0px! important; COLOR: black! important; PADDING-TOP: =
+0px! important
+}
+A:link {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #520; =
+TEXT-DECORATION: underline
+}
+A:visited {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #520; =
+TEXT-DECORATION: underline
+}
+#content A.text.external:unknown {
+	content: " (" attr(href) ") "
+}
+#content A.autonumber.external:unknown {
+	content: " (" attr(href) ") "
+}
+#globalWrapper {
+	MIN-WIDTH: 0px! important; WIDTH: 100%! important
+}
+#content {
+	BACKGROUND: white; COLOR: black
+}
+#column-content {
+	MARGIN: 0px
+}
+#column-content #content {
+	PADDING-RIGHT: 1em; PADDING-LEFT: 1em; PADDING-BOTTOM: 1em; MARGIN: =
+0px; PADDING-TOP: 1em
+}
+A {
+	COLOR: black! important; TEXT-DECORATION: none! important
+}
+A.external {
+	COLOR: black! important; TEXT-DECORATION: none! important
+}
+A.new {
+	COLOR: black! important; TEXT-DECORATION: none! important
+}
+A.stub {
+	COLOR: black! important; TEXT-DECORATION: none! important
+}
+A {
+=09
+}
+A.external {
+=09
+}
+A.new {
+=09
+}
+A.stub {
+=09
+}
+IMG {
+	BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: =
+none; BORDER-BOTTOM-STYLE: none
+}
+IMG.tex {
+	VERTICAL-ALIGN: middle
+}
+SPAN.texhtml {
+	FONT-FAMILY: serif
+}
+DIV.townBox {
+	CLEAR: right; BORDER-RIGHT: gray 1px solid; PADDING-RIGHT: 0.3em; =
+BORDER-TOP: gray 1px solid; PADDING-LEFT: 0.3em; BACKGROUND: white; =
+FLOAT: right; PADDING-BOTTOM: 0.3em; MARGIN-LEFT: 1em; OVERFLOW: hidden; =
+BORDER-LEFT: gray 1px solid; WIDTH: 200px; PADDING-TOP: 0.3em; =
+BORDER-BOTTOM: gray 1px solid; POSITION: relative
+}
+DIV.townBox DL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 96%; PADDING-BOTTOM: =
+0px; MARGIN: 0px 0px 0.3em; PADDING-TOP: 0px
+}
+DIV.townBox DL DT {
+	BACKGROUND: none transparent scroll repeat 0% 0%; MARGIN: 0.4em 0px 0px
+}
+DIV.townBox DL DD {
+	MARGIN: 0.1em 0px 0px 1.1em; BACKGROUND-COLOR: #f3f3f3
+}
+#siteNotice {
+	DISPLAY: none
+}
+TABLE.gallery {
+	BORDER-RIGHT: #cccccc 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: =
+#cccccc 1px solid; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; MARGIN: 2px; =
+BORDER-LEFT: #cccccc 1px solid; PADDING-TOP: 2px; BORDER-BOTTOM: #cccccc =
+1px solid; BACKGROUND-COLOR: #ffffff
+}
+TABLE.gallery TR {
+	VERTICAL-ALIGN: top
+}
+DIV.gallerybox {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; MARGIN: =
+2px; BORDER-LEFT: #cccccc 1px solid; WIDTH: 150px; BORDER-BOTTOM: =
+#cccccc 1px solid; BACKGROUND-COLOR: #f9f9f9
+}
+DIV.gallerybox DIV.thumb {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; MARGIN: =
+2px; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid; =
+TEXT-ALIGN: center
+}
+DIV.gallerytext {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; FONT-SIZE: 94%; PADDING-BOTTOM: =
+2px; PADDING-TOP: 2px
+}
+TABLE.diff {
+	BACKGROUND: white
+}
+TD.diff-otitle {
+	BACKGROUND: #ffffff
+}
+TD.diff-ntitle {
+	BACKGROUND: #ffffff
+}
+TD.diff-addedline {
+	BORDER-RIGHT: black 2px solid; BORDER-TOP: black 2px solid; FONT-SIZE: =
+smaller; BACKGROUND: #ccffcc; BORDER-LEFT: black 2px solid; =
+BORDER-BOTTOM: black 2px solid
+}
+TD.diff-deletedline {
+	BORDER-RIGHT: black 2px dotted; BORDER-TOP: black 2px dotted; =
+FONT-SIZE: smaller; BACKGROUND: #ffffaa; BORDER-LEFT: black 2px dotted; =
+BORDER-BOTTOM: black 2px dotted
+}
+TD.diff-context {
+	FONT-SIZE: smaller; BACKGROUND: #eeeeee
+}
+SPAN.diffchange {
+	FONT-WEIGHT: bold; COLOR: silver; TEXT-DECORATION: underline
+}
+
+------=_NextPart_000_001F_01C8C57A.137DC270
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://guichan.sourceforge.net/wiki/skins/guichan/IE70Fixes.css?1
+
+#column-content #content {
+	MARGIN-TOP: 3em; MARGIN-LEFT: 12.2em; HEIGHT: 1%
+}
+.rtl #column-one {
+	PADDING-TOP: 0px
+}
+.rtl #column-one #p-navigation {
+	MARGIN-TOP: 160px
+}
+#p-cactions {
+	Z-INDEX: 3
+}
+#p-cactions LI {
+	FLOAT: none! important; PADDING-BOTTOM: 0px! important; CURSOR: =
+default; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; =
+BORDER-LEFT-STYLE: none; BACKGROUND-COLOR: transparent; =
+BORDER-BOTTOM-STYLE: none
+}
+#p-cactions LI A {
+	BORDER-RIGHT: #aaa 1px solid; BORDER-TOP: #aaa 1px solid; DISPLAY: =
+inline-block! important; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: top; =
+BORDER-LEFT: #aaa 1px solid; BORDER-BOTTOM: #aaa 0px solid
+}
+#p-cactions LI.selected A {
+	BORDER-LEFT-COLOR: #fabd23; BORDER-BOTTOM-COLOR: #fabd23; =
+PADDING-BOTTOM: 0.17em; BORDER-TOP-COLOR: #fabd23; BORDER-RIGHT-COLOR: =
+#fabd23
+}
+#p-cactions LI A:hover {
+	PADDING-BOTTOM: 0.17em
+}
+#p-navigation A {
+	DISPLAY: inline-block; WIDTH: 100%
+}
+#portal-personaltools {
+	PADDING-BOTTOM: 0.1em
+}
+TEXTAREA {
+	WIDTH: 96%
+}
+
+------=_NextPart_000_001F_01C8C57A.137DC270
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: 7bit
+Content-Location: http://guichan.sourceforge.net/wiki/index.php?title=-&action=raw&gen=css&maxage=18000
+
+A.new {
+	COLOR: #cc2200
+}
+#quickbar A.new {
+	COLOR: #cc2200
+}
+
+------=_NextPart_000_001F_01C8C57A.137DC270
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://guichan.sourceforge.net/wiki/skins/common/wikibits.js
+
+// Wikipedia JavaScript support functions=0A=
+=0A=
+var clientPC =3D navigator.userAgent.toLowerCase(); // Get client info=0A=
+var is_gecko =3D ((clientPC.indexOf('gecko')!=3D-1) && =
+(clientPC.indexOf('spoofer')=3D=3D-1)=0A=
+                && (clientPC.indexOf('khtml') =3D=3D -1) && =
+(clientPC.indexOf('netscape/7.0')=3D=3D-1));=0A=
+var is_safari =3D ((clientPC.indexOf('AppleWebKit')!=3D-1) && =
+(clientPC.indexOf('spoofer')=3D=3D-1));=0A=
+var is_khtml =3D (navigator.vendor =3D=3D 'KDE' || ( document.childNodes =
+&& !document.all && !navigator.taintEnabled ));=0A=
+if (clientPC.indexOf('opera') !=3D -1) {=0A=
+	var is_opera =3D true;=0A=
+	var is_opera_preseven =3D (window.opera && !document.childNodes);=0A=
+	var is_opera_seven =3D (window.opera && document.childNodes);=0A=
+}=0A=
+=0A=
+// add any onload functions in this hook (please don't hard-code any =
+events in the xhtml source)=0A=
+=0A=
+var doneOnloadHook;=0A=
+=0A=
+if (!window.onloadFuncts)=0A=
+	var onloadFuncts =3D [];=0A=
+=0A=
+function addOnloadHook(hookFunct) {=0A=
+	// Allows add-on scripts to add onload functions=0A=
+	onloadFuncts[onloadFuncts.length] =3D hookFunct;=0A=
+}=0A=
+=0A=
+function runOnloadHook() {=0A=
+	// don't run anything below this for non-dom browsers=0A=
+	if (doneOnloadHook || !(document.getElementById && =
+document.getElementsByTagName))=0A=
+		return;=0A=
+=0A=
+	histrowinit();=0A=
+	unhidetzbutton();=0A=
+	tabbedprefs();=0A=
+	akeytt();=0A=
+	scrollEditBox();=0A=
+	setupCheckboxShiftClick();=0A=
+=0A=
+	// Run any added-on functions=0A=
+	for (var i =3D 0; i < onloadFuncts.length; i++)=0A=
+		onloadFuncts[i]();=0A=
+=0A=
+	doneOnloadHook =3D true;=0A=
+}=0A=
+=0A=
+function hookEvent(hookName, hookFunct) {=0A=
+	if (window.addEventListener)=0A=
+		addEventListener(hookName, hookFunct, false);=0A=
+	else if (window.attachEvent)=0A=
+		attachEvent("on" + hookName, hookFunct);=0A=
+}=0A=
+=0A=
+hookEvent("load", runOnloadHook);=0A=
+=0A=
+// document.write special stylesheet links=0A=
+if (typeof stylepath !=3D 'undefined' && typeof skin !=3D 'undefined') {=0A=
+	if (is_opera_preseven) {=0A=
+		document.write('<link rel=3D"stylesheet" type=3D"text/css" =
+href=3D"'+stylepath+'/'+skin+'/Opera6Fixes.css">');=0A=
+	} else if (is_opera_seven) {=0A=
+		document.write('<link rel=3D"stylesheet" type=3D"text/css" =
+href=3D"'+stylepath+'/'+skin+'/Opera7Fixes.css">');=0A=
+	} else if (is_khtml) {=0A=
+		document.write('<link rel=3D"stylesheet" type=3D"text/css" =
+href=3D"'+stylepath+'/'+skin+'/KHTMLFixes.css">');=0A=
+	}=0A=
+}=0A=
+// Un-trap us from framesets=0A=
+if (window.top !=3D window)=0A=
+	window.top.location =3D window.location;=0A=
+=0A=
+// for enhanced RecentChanges=0A=
+function toggleVisibility(_levelId, _otherId, _linkId) {=0A=
+	var thisLevel =3D document.getElementById(_levelId);=0A=
+	var otherLevel =3D document.getElementById(_otherId);=0A=
+	var linkLevel =3D document.getElementById(_linkId);=0A=
+	if (thisLevel.style.display =3D=3D 'none') {=0A=
+		thisLevel.style.display =3D 'block';=0A=
+		otherLevel.style.display =3D 'none';=0A=
+		linkLevel.style.display =3D 'inline';=0A=
+	} else {=0A=
+		thisLevel.style.display =3D 'none';=0A=
+		otherLevel.style.display =3D 'inline';=0A=
+		linkLevel.style.display =3D 'none';=0A=
+	}=0A=
+}=0A=
+=0A=
+// page history stuff=0A=
+// attach event handlers to the input elements on history page=0A=
+function histrowinit() {=0A=
+	var hf =3D document.getElementById('pagehistory');=0A=
+	if (!hf)=0A=
+		return;=0A=
+	var lis =3D hf.getElementsByTagName('li');=0A=
+	for (i =3D 0; i < lis.length; i++) {=0A=
+		var inputs =3D historyRadios(lis[i]);=0A=
+		if (inputs[0] && inputs[1]) {=0A=
+			inputs[0].onclick =3D diffcheck;=0A=
+			inputs[1].onclick =3D diffcheck;=0A=
+		}=0A=
+	}=0A=
+	diffcheck();=0A=
+}=0A=
+=0A=
+function historyRadios(parent) {=0A=
+	var inputs =3D parent.getElementsByTagName('input');=0A=
+	var radios =3D [];=0A=
+	for (var i =3D 0; i < inputs.length; i++) {=0A=
+		if (inputs[i].name =3D=3D "diff" || inputs[i].name =3D=3D "oldid")=0A=
+			radios[radios.length] =3D inputs[i];=0A=
+	}=0A=
+	return radios;=0A=
+}=0A=
+=0A=
+// check selection and tweak visibility/class onclick=0A=
+function diffcheck() {=0A=
+	var dli =3D false; // the li where the diff radio is checked=0A=
+	var oli =3D false; // the li where the oldid radio is checked=0A=
+	var hf =3D document.getElementById('pagehistory');=0A=
+	if (!hf)=0A=
+		return;=0A=
+	var lis =3D hf.getElementsByTagName('li');=0A=
+	for (i=3D0;i<lis.length;i++) {=0A=
+		var inputs =3D historyRadios(lis[i]);=0A=
+		if (inputs[1] && inputs[0]) {=0A=
+			if (inputs[1].checked || inputs[0].checked) { // this row has a =
+checked radio button=0A=
+				if (inputs[1].checked && inputs[0].checked && inputs[0].value =3D=3D =
+inputs[1].value)=0A=
+					return false;=0A=
+				if (oli) { // it's the second checked radio=0A=
+					if (inputs[1].checked) {=0A=
+						oli.className =3D "selected";=0A=
+						return false=0A=
+					}=0A=
+				} else if (inputs[0].checked) {=0A=
+					return false;=0A=
+				}=0A=
+				if (inputs[0].checked)=0A=
+					dli =3D lis[i];=0A=
+				if (!oli)=0A=
+					inputs[0].style.visibility =3D 'hidden';=0A=
+				if (dli)=0A=
+					inputs[1].style.visibility =3D 'hidden';=0A=
+				lis[i].className =3D "selected";=0A=
+				oli =3D lis[i];=0A=
+			}  else { // no radio is checked in this row=0A=
+				if (!oli)=0A=
+					inputs[0].style.visibility =3D 'hidden';=0A=
+				else=0A=
+					inputs[0].style.visibility =3D 'visible';=0A=
+				if (dli)=0A=
+					inputs[1].style.visibility =3D 'hidden';=0A=
+				else=0A=
+					inputs[1].style.visibility =3D 'visible';=0A=
+				lis[i].className =3D "";=0A=
+			}=0A=
+		}=0A=
+	}=0A=
+}=0A=
+=0A=
+// generate toc from prefs form, fold sections=0A=
+// XXX: needs testing on IE/Mac and safari=0A=
+// more comments to follow=0A=
+function tabbedprefs() {=0A=
+	var prefform =3D document.getElementById('preferences');=0A=
+	if (!prefform || !document.createElement)=0A=
+		return;=0A=
+	if (prefform.nodeName.toLowerCase() =3D=3D 'a')=0A=
+		return; // Occasional IE problem=0A=
+	prefform.className =3D prefform.className + 'jsprefs';=0A=
+	var sections =3D new Array();=0A=
+	children =3D prefform.childNodes;=0A=
+	var seci =3D 0;=0A=
+	for (i =3D 0; i < children.length; i++) {=0A=
+		if (children[i].nodeName.toLowerCase() =3D=3D 'fieldset') {=0A=
+			children[i].id =3D 'prefsection-' + seci;=0A=
+			children[i].className =3D 'prefsection';=0A=
+			if (is_opera || is_khtml)=0A=
+				children[i].className =3D 'prefsection operaprefsection';=0A=
+			legends =3D children[i].getElementsByTagName('legend');=0A=
+			sections[seci] =3D new Object();=0A=
+			legends[0].className =3D 'mainLegend';=0A=
+			if (legends[0] && legends[0].firstChild.nodeValue)=0A=
+				sections[seci].text =3D legends[0].firstChild.nodeValue;=0A=
+			else=0A=
+				sections[seci].text =3D '# ' + seci;=0A=
+			sections[seci].secid =3D children[i].id;=0A=
+			seci++;=0A=
+			if (sections.length !=3D 1)=0A=
+				children[i].style.display =3D 'none';=0A=
+			else=0A=
+				var selectedid =3D children[i].id;=0A=
+		}=0A=
+	}=0A=
+	var toc =3D document.createElement('ul');=0A=
+	toc.id =3D 'preftoc';=0A=
+	toc.selectedid =3D selectedid;=0A=
+	for (i =3D 0; i < sections.length; i++) {=0A=
+		var li =3D document.createElement('li');=0A=
+		if (i =3D=3D 0)=0A=
+			li.className =3D 'selected';=0A=
+		var a =3D document.createElement('a');=0A=
+		a.href =3D '#' + sections[i].secid;=0A=
+		a.onmousedown =3D a.onclick =3D uncoversection;=0A=
+		a.appendChild(document.createTextNode(sections[i].text));=0A=
+		a.secid =3D sections[i].secid;=0A=
+		li.appendChild(a);=0A=
+		toc.appendChild(li);=0A=
+	}=0A=
+	prefform.parentNode.insertBefore(toc, =
+prefform.parentNode.childNodes[0]);=0A=
+	document.getElementById('prefsubmit').id =3D 'prefcontrol';=0A=
+}=0A=
+=0A=
+function uncoversection() {=0A=
+	oldsecid =3D this.parentNode.parentNode.selectedid;=0A=
+	newsec =3D document.getElementById(this.secid);=0A=
+	if (oldsecid !=3D this.secid) {=0A=
+		ul =3D document.getElementById('preftoc');=0A=
+		document.getElementById(oldsecid).style.display =3D 'none';=0A=
+		newsec.style.display =3D 'block';=0A=
+		ul.selectedid =3D this.secid;=0A=
+		lis =3D ul.getElementsByTagName('li');=0A=
+		for (i =3D 0; i< lis.length; i++) {=0A=
+			lis[i].className =3D '';=0A=
+		}=0A=
+		this.parentNode.className =3D 'selected';=0A=
+	}=0A=
+	return false;=0A=
+}=0A=
+=0A=
+// Timezone stuff=0A=
+// tz in format [+-]HHMM=0A=
+function checkTimezone(tz, msg) {=0A=
+	var localclock =3D new Date();=0A=
+	// returns negative offset from GMT in minutes=0A=
+	var tzRaw =3D localclock.getTimezoneOffset();=0A=
+	var tzHour =3D Math.floor( Math.abs(tzRaw) / 60);=0A=
+	var tzMin =3D Math.abs(tzRaw) % 60;=0A=
+	var tzString =3D ((tzRaw >=3D 0) ? "-" : "+") + ((tzHour < 10) ? "0" : =
+"") + tzHour + ((tzMin < 10) ? "0" : "") + tzMin;=0A=
+	if (tz !=3D tzString) {=0A=
+		var junk =3D msg.split('$1');=0A=
+		document.write(junk[0] + "UTC" + tzString + junk[1]);=0A=
+	}=0A=
+}=0A=
+=0A=
+function unhidetzbutton() {=0A=
+	tzb =3D document.getElementById('guesstimezonebutton')=0A=
+	if (tzb)=0A=
+		tzb.style.display =3D 'inline';=0A=
+}=0A=
+=0A=
+// in [-]HH:MM format...=0A=
+// won't yet work with non-even tzs=0A=
+function fetchTimezone() {=0A=
+	// FIXME: work around Safari bug=0A=
+	var localclock =3D new Date();=0A=
+	// returns negative offset from GMT in minutes=0A=
+	var tzRaw =3D localclock.getTimezoneOffset();=0A=
+	var tzHour =3D Math.floor( Math.abs(tzRaw) / 60);=0A=
+	var tzMin =3D Math.abs(tzRaw) % 60;=0A=
+	var tzString =3D ((tzRaw >=3D 0) ? "-" : "") + ((tzHour < 10) ? "0" : =
+"") + tzHour +=0A=
+		":" + ((tzMin < 10) ? "0" : "") + tzMin;=0A=
+	return tzString;=0A=
+}=0A=
+=0A=
+function guessTimezone(box) {=0A=
+	document.getElementsByName("wpHourDiff")[0].value =3D fetchTimezone();=0A=
+}=0A=
+=0A=
+function showTocToggle() {=0A=
+	if (document.createTextNode) {=0A=
+		// Uses DOM calls to avoid document.write + XHTML issues=0A=
+=0A=
+		var linkHolder =3D document.getElementById('toctitle')=0A=
+		if (!linkHolder)=0A=
+			return;=0A=
+=0A=
+		var outerSpan =3D document.createElement('span');=0A=
+		outerSpan.className =3D 'toctoggle';=0A=
+=0A=
+		var toggleLink =3D document.createElement('a');=0A=
+		toggleLink.id =3D 'togglelink';=0A=
+		toggleLink.className =3D 'internal';=0A=
+		toggleLink.href =3D 'javascript:toggleToc()';=0A=
+		toggleLink.appendChild(document.createTextNode(tocHideText));=0A=
+=0A=
+		outerSpan.appendChild(document.createTextNode('['));=0A=
+		outerSpan.appendChild(toggleLink);=0A=
+		outerSpan.appendChild(document.createTextNode(']'));=0A=
+=0A=
+		linkHolder.appendChild(document.createTextNode(' '));=0A=
+		linkHolder.appendChild(outerSpan);=0A=
+=0A=
+		var cookiePos =3D document.cookie.indexOf("hidetoc=3D");=0A=
+		if (cookiePos > -1 && document.cookie.charAt(cookiePos + 8) =3D=3D 1)=0A=
+			toggleToc();=0A=
+	}=0A=
+}=0A=
+=0A=
+function changeText(el, newText) {=0A=
+	// Safari work around=0A=
+	if (el.innerText)=0A=
+		el.innerText =3D newText;=0A=
+	else if (el.firstChild && el.firstChild.nodeValue)=0A=
+		el.firstChild.nodeValue =3D newText;=0A=
+}=0A=
+=0A=
+function toggleToc() {=0A=
+	var toc =3D =
+document.getElementById('toc').getElementsByTagName('ul')[0];=0A=
+	var toggleLink =3D document.getElementById('togglelink')=0A=
+=0A=
+	if (toc && toggleLink && toc.style.display =3D=3D 'none') {=0A=
+		changeText(toggleLink, tocHideText);=0A=
+		toc.style.display =3D 'block';=0A=
+		document.cookie =3D "hidetoc=3D0";=0A=
+	} else {=0A=
+		changeText(toggleLink, tocShowText);=0A=
+		toc.style.display =3D 'none';=0A=
+		document.cookie =3D "hidetoc=3D1";=0A=
+	}=0A=
+}=0A=
+=0A=
+// this function generates the actual toolbar buttons with localized text=0A=
+// we use it to avoid creating the toolbar where javascript is not =
+enabled=0A=
+function addButton(imageFile, speedTip, tagOpen, tagClose, sampleText) {=0A=
+	// Don't generate buttons for browsers which don't fully=0A=
+	// support it.=0A=
+	if (!document.selection && !is_gecko) {=0A=
+		return false;=0A=
+	}=0A=
+	imageFile =3D escapeQuotesHTML(imageFile);=0A=
+	speedTip =3D escapeQuotesHTML(speedTip);=0A=
+	tagOpen =3D escapeQuotes(tagOpen);=0A=
+	tagClose =3D escapeQuotes(tagClose);=0A=
+	sampleText =3D escapeQuotes(sampleText);=0A=
+	var mouseOver =3D "";=0A=
+=0A=
+	document.write("<a href=3D\"javascript:insertTags");=0A=
+	document.write("('"+tagOpen+"','"+tagClose+"','"+sampleText+"');\">");=0A=
+	document.write("<img width=3D\"23\" height=3D\"22\" =
+src=3D\""+imageFile+"\" border=3D\"0\" alt=3D\""+speedTip+"\" =
+title=3D\""+speedTip+"\""+mouseOver+">");=0A=
+	document.write("</a>");=0A=
+	return;=0A=
+}=0A=
+=0A=
+function escapeQuotes(text) {=0A=
+	var re =3D new RegExp("'","g");=0A=
+	text =3D text.replace(re,"\\'");=0A=
+	re =3D new RegExp("\\n","g");=0A=
+	text =3D text.replace(re,"\\n");=0A=
+	return escapeQuotesHTML(text);=0A=
+}=0A=
+=0A=
+function escapeQuotesHTML(text) {=0A=
+	var re =3D new RegExp('&',"g");=0A=
+	text =3D text.replace(re,"&amp;");=0A=
+	var re =3D new RegExp('"',"g");=0A=
+	text =3D text.replace(re,"&quot;");=0A=
+	var re =3D new RegExp('<',"g");=0A=
+	text =3D text.replace(re,"&lt;");=0A=
+	var re =3D new RegExp('>',"g");=0A=
+	text =3D text.replace(re,"&gt;");=0A=
+	return text;=0A=
+}=0A=
+=0A=
+// apply tagOpen/tagClose to selection in textarea,=0A=
+// use sampleText instead of selection if there is none=0A=
+// copied and adapted from phpBB=0A=
+function insertTags(tagOpen, tagClose, sampleText) {=0A=
+	if (document.editform)=0A=
+		var txtarea =3D document.editform.wpTextbox1;=0A=
+	else {=0A=
+		// some alternate form? take the first one we can find=0A=
+		var areas =3D document.getElementsByTagName('textarea');=0A=
+		var txtarea =3D areas[0];=0A=
+	}=0A=
+=0A=
+	// IE=0A=
+	if (document.selection  && !is_gecko) {=0A=
+		var theSelection =3D document.selection.createRange().text;=0A=
+		if (!theSelection)=0A=
+			theSelection=3DsampleText;=0A=
+		txtarea.focus();=0A=
+		if (theSelection.charAt(theSelection.length - 1) =3D=3D " ") { // =
+exclude ending space char, if any=0A=
+			theSelection =3D theSelection.substring(0, theSelection.length - 1);=0A=
+			document.selection.createRange().text =3D tagOpen + theSelection + =
+tagClose + " ";=0A=
+		} else {=0A=
+			document.selection.createRange().text =3D tagOpen + theSelection + =
+tagClose;=0A=
+		}=0A=
+=0A=
+	// Mozilla=0A=
+	} else if(txtarea.selectionStart || txtarea.selectionStart =3D=3D '0') {=0A=
+		var replaced =3D false;=0A=
+		var startPos =3D txtarea.selectionStart;=0A=
+		var endPos =3D txtarea.selectionEnd;=0A=
+		if (endPos-startPos)=0A=
+			replaced =3D true;=0A=
+		var scrollTop =3D txtarea.scrollTop;=0A=
+		var myText =3D (txtarea.value).substring(startPos, endPos);=0A=
+		if (!myText)=0A=
+			myText=3DsampleText;=0A=
+		if (myText.charAt(myText.length - 1) =3D=3D " ") { // exclude ending =
+space char, if any=0A=
+			subst =3D tagOpen + myText.substring(0, (myText.length - 1)) + =
+tagClose + " ";=0A=
+		} else {=0A=
+			subst =3D tagOpen + myText + tagClose;=0A=
+		}=0A=
+		txtarea.value =3D txtarea.value.substring(0, startPos) + subst +=0A=
+			txtarea.value.substring(endPos, txtarea.value.length);=0A=
+		txtarea.focus();=0A=
+		//set new selection=0A=
+		if (replaced) {=0A=
+			var cPos =3D startPos+(tagOpen.length+myText.length+tagClose.length);=0A=
+			txtarea.selectionStart =3D cPos;=0A=
+			txtarea.selectionEnd =3D cPos;=0A=
+		} else {=0A=
+			txtarea.selectionStart =3D startPos+tagOpen.length;=0A=
+			txtarea.selectionEnd =3D startPos+tagOpen.length+myText.length;=0A=
+		}=0A=
+		txtarea.scrollTop =3D scrollTop;=0A=
+=0A=
+	// All other browsers get no toolbar.=0A=
+	// There was previously support for a crippled "help"=0A=
+	// bar, but that caused more problems than it solved.=0A=
+	}=0A=
+	// reposition cursor if possible=0A=
+	if (txtarea.createTextRange)=0A=
+		txtarea.caretPos =3D document.selection.createRange().duplicate();=0A=
+}=0A=
+=0A=
+function akeytt() {=0A=
+	if (typeof ta =3D=3D "undefined" || !ta)=0A=
+		return;=0A=
+	var pref =3D 'alt-';=0A=
+	if (is_safari || navigator.userAgent.toLowerCase().indexOf('mac') + 1=0A=
+		|| navigator.userAgent.toLowerCase().indexOf('konqueror') + 1 )=0A=
+		pref =3D 'control-';=0A=
+	if (is_opera)=0A=
+		pref =3D 'shift-esc-';=0A=
+=0A=
+	for (var id in ta) {=0A=
+		var n =3D document.getElementById(id);=0A=
+		if (n) {=0A=
+			var a =3D null;=0A=
+			var ak =3D '';=0A=
+			// Are we putting accesskey in it=0A=
+			if (ta[id][0].length > 0) {=0A=
+				// Is this object a object? If not assume it's the next child.=0A=
+=0A=
+				if (n.nodeName.toLowerCase() =3D=3D "a") {=0A=
+					a =3D n;=0A=
+				} else {=0A=
+					a =3D n.childNodes[0];=0A=
+				}=0A=
+=0A=
+				if (a) {=0A=
+					a.accessKey =3D ta[id][0];=0A=
+					ak =3D ' ['+pref+ta[id][0]+']';=0A=
+				}=0A=
+			} else {=0A=
+				// We don't care what type the object is when assigning tooltip=0A=
+				a =3D n;=0A=
+				ak =3D '';=0A=
+			}=0A=
+=0A=
+			if (a) {=0A=
+				a.title =3D ta[id][1]+ak;=0A=
+			}=0A=
+		}=0A=
+	}=0A=
+}=0A=
+=0A=
+function setupRightClickEdit() {=0A=
+	if (document.getElementsByTagName) {=0A=
+		var divs =3D document.getElementsByTagName('div');=0A=
+		for (var i =3D 0; i < divs.length; i++) {=0A=
+			var el =3D divs[i];=0A=
+			if(el.className =3D=3D 'editsection') {=0A=
+				addRightClickEditHandler(el);=0A=
+			}=0A=
+		}=0A=
+	}=0A=
+}=0A=
+=0A=
+function addRightClickEditHandler(el) {=0A=
+	for (var i =3D 0; i < el.childNodes.length; i++) {=0A=
+		var link =3D el.childNodes[i];=0A=
+		if (link.nodeType =3D=3D 1 && link.nodeName.toLowerCase() =3D=3D 'a') {=0A=
+			var editHref =3D link.getAttribute('href');=0A=
+=0A=
+			// find the following a=0A=
+			var next =3D el.nextSibling;=0A=
+			while (next.nodeType !=3D 1)=0A=
+				next =3D next.nextSibling;=0A=
+=0A=
+			// find the following header=0A=
+			next =3D next.nextSibling;=0A=
+			while (next.nodeType !=3D 1)=0A=
+				next =3D next.nextSibling;=0A=
+=0A=
+			if (next && next.nodeType =3D=3D 1 &&=0A=
+				next.nodeName.match(/^[Hh][1-6]$/)) {=0A=
+				next.oncontextmenu =3D function() {=0A=
+					document.location =3D editHref;=0A=
+					return false;=0A=
+				}=0A=
+			}=0A=
+		}=0A=
+	}=0A=
+}=0A=
+=0A=
+function setupCheckboxShiftClick() {=0A=
+	if (document.getElementsByTagName) {=0A=
+		var uls =3D document.getElementsByTagName('ul');=0A=
+		var len =3D uls.length;=0A=
+		for (var i =3D 0; i < len; ++i) {=0A=
+			addCheckboxClickHandlers(uls[i]);=0A=
+		}=0A=
+	}=0A=
+}=0A=
+=0A=
+function addCheckboxClickHandlers(ul, start, finish) {=0A=
+	if (ul.checkboxHandlersTimer) {=0A=
+		clearInterval(ul.checkboxHandlersTimer);=0A=
+	}=0A=
+	if ( !ul.childNodes ) {=0A=
+		return;=0A=
+	}=0A=
+	var len =3D ul.childNodes.length;=0A=
+	if (len < 2) {=0A=
+		return;=0A=
+	}=0A=
+	start =3D start || 0;=0A=
+	finish =3D finish || start + 250;=0A=
+	if ( finish > len ) { finish =3D len; }=0A=
+	ul.checkboxes =3D ul.checkboxes || [];=0A=
+	ul.lastCheckbox =3D ul.lastCheckbox || null;=0A=
+	for (var i =3D start; i<finish; ++i) {=0A=
+		var child =3D ul.childNodes[i];=0A=
+		if ( child && child.childNodes && child.childNodes[0] ) {=0A=
+			var cb =3D child.childNodes[0];=0A=
+			if ( !cb.nodeName || cb.nodeName.toLowerCase() !=3D 'input' ||=0A=
+			     !cb.type || cb.type.toLowerCase() !=3D 'checkbox' ) {=0A=
+				return;=0A=
+			}=0A=
+			cb.index =3D ul.checkboxes.push(cb) - 1;=0A=
+			cb.container =3D ul;=0A=
+			cb.onmouseup =3D checkboxMouseupHandler;=0A=
+		}=0A=
+	}=0A=
+	if (finish < len) {=0A=
+	  var f=3Dfunction(){ addCheckboxClickHandlers(ul, finish, finish+250); =
+};=0A=
+	  ul.checkboxHandlersTimer=3DsetInterval(f, 200);=0A=
+	}=0A=
+}=0A=
+=0A=
+function checkboxMouseupHandler(e) {=0A=
+	if (typeof e =3D=3D 'undefined') {=0A=
+		e =3D window.event;=0A=
+	}=0A=
+	if ( !e.shiftKey || this.container.lastCheckbox =3D=3D=3D null ) {=0A=
+		this.container.lastCheckbox =3D this.index;=0A=
+		return true;=0A=
+	}=0A=
+	var endState =3D !this.checked;=0A=
+	if ( is_opera ) { // opera has already toggled the checkbox by this =
+point=0A=
+		endState =3D !endState;=0A=
+	}=0A=
+	var start, finish;=0A=
+	if ( this.index < this.container.lastCheckbox ) {=0A=
+		start =3D this.index + 1;=0A=
+		finish =3D this.container.lastCheckbox;=0A=
+	} else {=0A=
+		start =3D this.container.lastCheckbox;=0A=
+		finish =3D this.index - 1;=0A=
+	}=0A=
+	for (var i =3D start; i <=3D finish; ++i ) {=0A=
+		this.container.checkboxes[i].checked =3D endState;=0A=
+	}=0A=
+	this.container.lastCheckbox =3D this.index;=0A=
+	return true;=0A=
+}=0A=
+=0A=
+function fillDestFilename() {=0A=
+	if (!document.getElementById)=0A=
+		return;=0A=
+	var path =3D document.getElementById('wpUploadFile').value;=0A=
+	// Find trailing part=0A=
+	var slash =3D path.lastIndexOf('/');=0A=
+	var backslash =3D path.lastIndexOf('\\');=0A=
+	var fname;=0A=
+	if (slash =3D=3D -1 && backslash =3D=3D -1) {=0A=
+		fname =3D path;=0A=
+	} else if (slash > backslash) {=0A=
+		fname =3D path.substring(slash+1, 10000);=0A=
+	} else {=0A=
+		fname =3D path.substring(backslash+1, 10000);=0A=
+	}=0A=
+=0A=
+	// Capitalise first letter and replace spaces by underscores=0A=
+	fname =3D =
+fname.charAt(0).toUpperCase().concat(fname.substring(1,10000)).replace(/ =
+/g, '_');=0A=
+=0A=
+	// Output result=0A=
+	var destFile =3D document.getElementById('wpDestFile');=0A=
+	if (destFile)=0A=
+		destFile.value =3D fname;=0A=
+}=0A=
+=0A=
+=0A=
+function considerChangingExpiryFocus() {=0A=
+	if (!document.getElementById)=0A=
+		return;=0A=
+	var drop =3D document.getElementById('wpBlockExpiry');=0A=
+	if (!drop)=0A=
+		return;=0A=
+	var field =3D document.getElementById('wpBlockOther');=0A=
+	if (!field)=0A=
+		return;=0A=
+	var opt =3D drop.value;=0A=
+	if (opt =3D=3D 'other')=0A=
+		field.style.display =3D '';=0A=
+	else=0A=
+		field.style.display =3D 'none';=0A=
+}=0A=
+=0A=
+function scrollEditBox() {=0A=
+	var editBoxEl =3D document.getElementById("wpTextbox1");=0A=
+	var scrollTopEl =3D document.getElementById("wpScrolltop");=0A=
+	var editFormEl =3D document.getElementById("editform");=0A=
+=0A=
+	if (editBoxEl && scrollTopEl) {=0A=
+		if (scrollTopEl.value) editBoxEl.scrollTop =3D scrollTopEl.value;=0A=
+		editFormEl.onsubmit =3D function() {=0A=
+			document.getElementById("wpScrolltop").value =3D =
+document.getElementById("wpTextbox1").scrollTop;=0A=
+		}=0A=
+	}=0A=
+}=0A=
+=0A=
+hookEvent("load", scrollEditBox);=0A=
+=0A=
+function allmessagesfilter() {=0A=
+	text =3D document.getElementById('allmessagesinput').value;=0A=
+	k =3D document.getElementById('allmessagestable');=0A=
+	if (!k) { return;}=0A=
+=0A=
+	var items =3D k.getElementsByTagName('span');=0A=
+=0A=
+	if ( text.length > allmessages_prev.length ) {=0A=
+		for (var i =3D items.length-1, j =3D 0; i >=3D 0; i--) {=0A=
+			j =3D allmessagesforeach(items, i, j);=0A=
+		}=0A=
+	} else {=0A=
+		for (var i =3D 0, j =3D 0; i < items.length; i++) {=0A=
+			j =3D allmessagesforeach(items, i, j);=0A=
+		}=0A=
+	}=0A=
+	allmessages_prev =3D text;=0A=
+}=0A=
+=0A=
+function allmessagesforeach(items, i, j) {=0A=
+	var hItem =3D items[i].getAttribute('id');=0A=
+	if (hItem.substring(0,17) =3D=3D 'sp-allmessages-i-') {=0A=
+		if (items[i].firstChild && items[i].firstChild.nodeName =3D=3D '#text' =
+&& items[i].firstChild.nodeValue.indexOf(text) !=3D -1) {=0A=
+			var itemA =3D document.getElementById( hItem.replace('i', 'r1') );=0A=
+			var itemB =3D document.getElementById( hItem.replace('i', 'r2') );=0A=
+			if ( itemA.style.display !=3D '' ) {=0A=
+				var s =3D "allmessageshider(\"" + hItem.replace('i', 'r1') + "\", =
+\"" + hItem.replace('i', 'r2') + "\", '')";=0A=
+				var k =3D window.setTimeout(s,j++*5);=0A=
+			}=0A=
+		} else {=0A=
+			var itemA =3D document.getElementById( hItem.replace('i', 'r1') );=0A=
+			var itemB =3D document.getElementById( hItem.replace('i', 'r2') );=0A=
+			if ( itemA.style.display !=3D 'none' ) {=0A=
+				var s =3D "allmessageshider(\"" + hItem.replace('i', 'r1') + "\", =
+\"" + hItem.replace('i', 'r2') + "\", 'none')";=0A=
+				var k =3D window.setTimeout(s,j++*5);=0A=
+			}=0A=
+		}=0A=
+	}=0A=
+	return j;=0A=
+}=0A=
+=0A=
+=0A=
+function allmessageshider(idA, idB, cstyle) {=0A=
+	var itemA =3D document.getElementById( idA );=0A=
+	var itemB =3D document.getElementById( idB );=0A=
+	if (itemA) { itemA.style.display =3D cstyle; }=0A=
+	if (itemB) { itemB.style.display =3D cstyle; }=0A=
+}=0A=
+=0A=
+function allmessagesmodified() {=0A=
+	allmessages_modified =3D !allmessages_modified;=0A=
+	k =3D document.getElementById('allmessagestable');=0A=
+	if (!k) { return;}=0A=
+	var items =3D k.getElementsByTagName('tr');=0A=
+	for (var i =3D 0, j =3D 0; i< items.length; i++) {=0A=
+		if (!allmessages_modified ) {=0A=
+			if ( items[i].style.display !=3D '' ) {=0A=
+				var s =3D "allmessageshider(\"" + items[i].getAttribute('id') + "\", =
+null, '')";=0A=
+				var k =3D window.setTimeout(s,j++*5);=0A=
+			}=0A=
+		} else if (items[i].getAttribute('class') =3D=3D 'def' && =
+allmessages_modified) {=0A=
+			if ( items[i].style.display !=3D 'none' ) {=0A=
+				var s =3D "allmessageshider(\"" + items[i].getAttribute('id') + "\", =
+null, 'none')";=0A=
+				var k =3D window.setTimeout(s,j++*5);=0A=
+			}=0A=
+		}=0A=
+	}=0A=
+}=0A=
+=0A=
+function allmessagesshow() {=0A=
+	k =3D document.getElementById('allmessagesfilter');=0A=
+	if (k) { k.style.display =3D ''; }=0A=
+=0A=
+	allmessages_prev =3D '';=0A=
+	allmessages_modified =3D false;=0A=
+}=0A=
+=0A=
+hookEvent("load", allmessagesshow);=0A=
+
+------=_NextPart_000_001F_01C8C57A.137DC270
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://guichan.sourceforge.net/wiki/index.php?title=-&action=raw&gen=js
+
+/* generated javascript */var skin =3D 'guichan';=0A=
+var stylepath =3D '/wiki/skins';/* MediaWiki:Guichan */=0A=
+
+------=_NextPart_000_001F_01C8C57A.137DC270--

@@ -1,0 +1,3808 @@
+# depslib dependency file v1.0
+1187244552 source:d:\tony\infraelly\curver\include\cryptopp\3way.cpp
+	"pch.h"
+	"3way.h"
+	"misc.h"
+
+1190545394 d:\tony\infraelly\curver\include\cryptopp\pch.h
+	"cpu.h"
+	"config.h"
+	"simple.h"
+	"secblock.h"
+	"misc.h"
+	"smartptr.h"
+
+1190644234 d:\tony\infraelly\curver\include\cryptopp\cpu.h
+	"config.h"
+	<emmintrin.h>
+
+1190644234 d:\tony\infraelly\curver\include\cryptopp\config.h
+	<malloc.h>
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\simple.h
+	"cryptlib.h"
+	"misc.h"
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\cryptlib.h
+	"config.h"
+	"stdcpp.h"
+
+1190545394 d:\tony\infraelly\curver\include\cryptopp\stdcpp.h
+	<stddef.h>
+	<assert.h>
+	<limits.h>
+	<memory>
+	<string>
+	<exception>
+	<typeinfo>
+	<string.h>
+	<algorithm>
+	<map>
+	<vector>
+
+1190644234 d:\tony\infraelly\curver\include\cryptopp\misc.h
+	"cryptlib.h"
+	"smartptr.h"
+	<string.h>
+	<stdlib.h>
+	<intrin.h>
+	<mem.h>
+	<byteswap.h>
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\smartptr.h
+	"config.h"
+	<algorithm>
+
+1190545394 d:\tony\infraelly\curver\include\cryptopp\secblock.h
+	"config.h"
+	"misc.h"
+	<assert.h>
+	<malloc.h>
+	<stdlib.h>
+
+1187244552 d:\tony\infraelly\curver\include\cryptopp\3way.h
+	"seckey.h"
+	"secblock.h"
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\seckey.h
+	"cryptlib.h"
+	"misc.h"
+	"simple.h"
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\adler32.cpp
+	"pch.h"
+	"adler32.h"
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\adler32.h
+	"cryptlib.h"
+
+1187244552 source:d:\tony\infraelly\curver\include\cryptopp\algebra.cpp
+	"pch.h"
+	"algebra.h"
+	"integer.h"
+	<vector>
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\algebra.h
+	"config.h"
+	"algebra.cpp"
+
+1187244552 d:\tony\infraelly\curver\include\cryptopp\algebra.cpp
+	"pch.h"
+	"algebra.h"
+	"integer.h"
+	<vector>
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\integer.h
+	"cryptlib.h"
+	"secblock.h"
+	<iosfwd>
+	<algorithm>
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\algparam.cpp
+	"pch.h"
+	"algparam.h"
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\algparam.h
+	"cryptlib.h"
+	"smartptr.h"
+	"secblock.h"
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\arc4.cpp
+	"pch.h"
+	"arc4.h"
+
+1187244552 d:\tony\infraelly\curver\include\cryptopp\arc4.h
+	"strciphr.h"
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\strciphr.h
+	"seckey.h"
+	"secblock.h"
+	"argnames.h"
+	"strciphr.cpp"
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\argnames.h
+	"cryptlib.h"
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\strciphr.cpp
+	"pch.h"
+	"strciphr.h"
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\asn.cpp
+	"pch.h"
+	"asn.h"
+	<iomanip>
+	<time.h>
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\asn.h
+	"filters.h"
+	"queue.h"
+	<vector>
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\filters.h
+	"simple.h"
+	"secblock.h"
+	"misc.h"
+	"smartptr.h"
+	"queue.h"
+	"algparam.h"
+	<deque>
+
+1187244552 d:\tony\infraelly\curver\include\cryptopp\queue.h
+	"simple.h"
+
+1187244552 source:d:\tony\infraelly\curver\include\cryptopp\base32.cpp
+	"pch.h"
+	"base32.h"
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\base32.h
+	"basecode.h"
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\basecode.h
+	"filters.h"
+	"algparam.h"
+	"argnames.h"
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\base64.cpp
+	"pch.h"
+	"base64.h"
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\base64.h
+	"basecode.h"
+
+1187244552 source:d:\tony\infraelly\curver\include\cryptopp\basecode.cpp
+	"pch.h"
+	"basecode.h"
+	"fltrimpl.h"
+	<ctype.h>
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\fltrimpl.h
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\bfinit.cpp
+	"pch.h"
+	"blowfish.h"
+
+1187244552 d:\tony\infraelly\curver\include\cryptopp\blowfish.h
+	"seckey.h"
+	"secblock.h"
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\blowfish.cpp
+	"pch.h"
+	"blowfish.h"
+	"misc.h"
+
+1187244552 source:d:\tony\infraelly\curver\include\cryptopp\blumshub.cpp
+	"pch.h"
+	"blumshub.h"
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\blumshub.h
+	"modarith.h"
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\modarith.h
+	"cryptlib.h"
+	"misc.h"
+	"integer.h"
+	"algebra.h"
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\camellia.cpp
+	"pch.h"
+	"camellia.h"
+	"misc.h"
+	"cpu.h"
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\camellia.h
+	"config.h"
+	"seckey.h"
+	"secblock.h"
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\cast.cpp
+	"pch.h"
+	"cast.h"
+	"misc.h"
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\cast.h
+	"seckey.h"
+	"secblock.h"
+
+1187244552 source:d:\tony\infraelly\curver\include\cryptopp\casts.cpp
+	"pch.h"
+	"cast.h"
+
+1187244552 source:d:\tony\infraelly\curver\include\cryptopp\cbcmac.cpp
+	"pch.h"
+	"cbcmac.h"
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\cbcmac.h
+	"seckey.h"
+	"secblock.h"
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\channels.cpp
+	"pch.h"
+	"channels.h"
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\channels.h
+	"simple.h"
+	"smartptr.h"
+	<map>
+	<list>
+
+1187244552 source:d:\tony\infraelly\curver\include\cryptopp\cpu.cpp
+	"pch.h"
+	"cpu.h"
+	"misc.h"
+	<algorithm>
+	<signal.h>
+	<setjmp.h>
+	<emmintrin.h>
+
+1187244552 source:d:\tony\infraelly\curver\include\cryptopp\crc.cpp
+	"pch.h"
+	"crc.h"
+	"misc.h"
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\crc.h
+	"cryptlib.h"
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\cryptlib.cpp
+	"pch.h"
+	"cryptlib.h"
+	"misc.h"
+	"filters.h"
+	"algparam.h"
+	"fips140.h"
+	"argnames.h"
+	"fltrimpl.h"
+	"trdlocal.h"
+	"osrng.h"
+	<memory>
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\fips140.h
+	"cryptlib.h"
+	"secblock.h"
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\trdlocal.h
+	"config.h"
+	"misc.h"
+	<pthread.h>
+
+1187244552 d:\tony\infraelly\curver\include\cryptopp\osrng.h
+	"config.h"
+	"randpool.h"
+	"rng.h"
+	"aes.h"
+	"sha.h"
+	"fips140.h"
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\randpool.h
+	"cryptlib.h"
+	"filters.h"
+
+1187244552 d:\tony\infraelly\curver\include\cryptopp\rng.h
+	"cryptlib.h"
+	"filters.h"
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\aes.h
+	"rijndael.h"
+
+1187244552 d:\tony\infraelly\curver\include\cryptopp\rijndael.h
+	"seckey.h"
+	"secblock.h"
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\sha.h
+	"iterhash.h"
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\iterhash.h
+	"cryptlib.h"
+	"secblock.h"
+	"misc.h"
+	"simple.h"
+	"iterhash.cpp"
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\iterhash.cpp
+	"pch.h"
+	"iterhash.h"
+	"misc.h"
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\default.cpp
+	"pch.h"
+	"default.h"
+	"queue.h"
+	<time.h>
+	<memory>
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\default.h
+	"sha.h"
+	"hmac.h"
+	"des.h"
+	"filters.h"
+	"modes.h"
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\hmac.h
+	"seckey.h"
+	"secblock.h"
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\des.h
+	"seckey.h"
+	"secblock.h"
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\modes.h
+	"cryptlib.h"
+	"secblock.h"
+	"misc.h"
+	"strciphr.h"
+	"argnames.h"
+	"algparam.h"
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\des.cpp
+	"pch.h"
+	"misc.h"
+	"des.h"
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\dessp.cpp
+	"pch.h"
+	"des.h"
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\dh.cpp
+	"pch.h"
+	"dh.h"
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\dh.h
+	"gfpcrypt.h"
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\gfpcrypt.h
+	"pubkey.h"
+	"modexppc.h"
+	"sha.h"
+	"algparam.h"
+	"asn.h"
+	"smartptr.h"
+	"hmac.h"
+	<limits.h>
+
+1187244552 d:\tony\infraelly\curver\include\cryptopp\pubkey.h
+	"modarith.h"
+	"filters.h"
+	"eprecomp.h"
+	"fips140.h"
+	"argnames.h"
+	<memory>
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\eprecomp.h
+	"integer.h"
+	"algebra.h"
+	<vector>
+	"eprecomp.cpp"
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\eprecomp.cpp
+	"pch.h"
+	"eprecomp.h"
+	"asn.h"
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\modexppc.h
+	"modarith.h"
+	"eprecomp.h"
+	"smartptr.h"
+	"pubkey.h"
+
+1187244552 source:d:\tony\infraelly\curver\include\cryptopp\dh2.cpp
+	"pch.h"
+	"dh2.h"
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\dh2.h
+	"cryptlib.h"
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\dll.cpp
+	"dll.h"
+	<windows.h>
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\dll.h
+	"aes.h"
+	"cbcmac.h"
+	"channels.h"
+	"des.h"
+	"dh.h"
+	"dsa.h"
+	"ec2n.h"
+	"eccrypto.h"
+	"ecp.h"
+	"files.h"
+	"fips140.h"
+	"hex.h"
+	"hmac.h"
+	"modes.h"
+	"mqueue.h"
+	"nbtheory.h"
+	"osrng.h"
+	"pkcspad.h"
+	"pssr.h"
+	"randpool.h"
+	"rsa.h"
+	"rw.h"
+	"sha.h"
+	"skipjack.h"
+	"trdlocal.h"
+	<new>
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\dsa.h
+	"gfpcrypt.h"
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\ec2n.h
+	"gf2n.h"
+	"eprecomp.h"
+	"smartptr.h"
+	"pubkey.h"
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\gf2n.h
+	"cryptlib.h"
+	"secblock.h"
+	"misc.h"
+	"algebra.h"
+	<iosfwd>
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\eccrypto.h
+	"pubkey.h"
+	"integer.h"
+	"asn.h"
+	"hmac.h"
+	"sha.h"
+	"gfpcrypt.h"
+	"dh.h"
+	"mqv.h"
+	"ecp.h"
+	"ec2n.h"
+	"eccrypto.cpp"
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\mqv.h
+	"gfpcrypt.h"
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\ecp.h
+	"modarith.h"
+	"eprecomp.h"
+	"smartptr.h"
+	"pubkey.h"
+
+1190545394 d:\tony\infraelly\curver\include\cryptopp\eccrypto.cpp
+	"pch.h"
+	"eccrypto.h"
+	"nbtheory.h"
+	"oids.h"
+	"hex.h"
+	"argnames.h"
+	"ec2n.h"
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\nbtheory.h
+	"integer.h"
+	"algparam.h"
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\oids.h
+	"asn.h"
+
+1187244552 d:\tony\infraelly\curver\include\cryptopp\hex.h
+	"basecode.h"
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\files.h
+	"cryptlib.h"
+	"filters.h"
+	"argnames.h"
+	<iostream>
+	<fstream>
+
+1187244552 d:\tony\infraelly\curver\include\cryptopp\mqueue.h
+	"queue.h"
+	"filters.h"
+	<deque>
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\pkcspad.h
+	"cryptlib.h"
+	"pubkey.h"
+	"sha.h"
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\pssr.h
+	"pubkey.h"
+	"emsa2.h"
+	"sha.h"
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\emsa2.h
+	"cryptlib.h"
+	"pubkey.h"
+	"sha.h"
+
+1187244552 d:\tony\infraelly\curver\include\cryptopp\rsa.h
+	"pubkey.h"
+	"asn.h"
+	"pkcspad.h"
+	"oaep.h"
+	"emsa2.h"
+
+1187244552 d:\tony\infraelly\curver\include\cryptopp\oaep.h
+	"pubkey.h"
+	"sha.h"
+
+1187244552 d:\tony\infraelly\curver\include\cryptopp\rw.h
+	"pubkey.h"
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\skipjack.h
+	"seckey.h"
+	"secblock.h"
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\dsa.cpp
+	"pch.h"
+	"dsa.h"
+	"nbtheory.h"
+
+1187244552 source:d:\tony\infraelly\curver\include\cryptopp\ec2n.cpp
+	"pch.h"
+	"ec2n.h"
+	"asn.h"
+	"algebra.cpp"
+	"eprecomp.cpp"
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\ecp.cpp
+	"pch.h"
+	"ecp.h"
+	"asn.h"
+	"nbtheory.h"
+	"algebra.cpp"
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\elgamal.cpp
+	"pch.h"
+	"elgamal.h"
+	"asn.h"
+	"nbtheory.h"
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\elgamal.h
+	"modexppc.h"
+	"dsa.h"
+
+1187244552 source:d:\tony\infraelly\curver\include\cryptopp\emsa2.cpp
+	"pch.h"
+	"emsa2.h"
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\esign.cpp
+	"pch.h"
+	"esign.h"
+	"asn.h"
+	"modarith.h"
+	"nbtheory.h"
+	"sha.h"
+	"algparam.h"
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\esign.h
+	"pubkey.h"
+	"integer.h"
+	"asn.h"
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\files.cpp
+	"pch.h"
+	"files.h"
+	<limits>
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\filters.cpp
+	"pch.h"
+	"filters.h"
+	"mqueue.h"
+	"fltrimpl.h"
+	"argnames.h"
+	<memory>
+	<functional>
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\fips140.cpp
+	"pch.h"
+	"fips140.h"
+	"trdlocal.h"
+
+1190545394 source:d:\tony\infraelly\curver\include\cryptopp\fipstest.cpp
+	"pch.h"
+	"dll.h"
+	<windows.h>
+	<iostream>
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\gf256.cpp
+	"pch.h"
+	"gf256.h"
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\gf256.h
+	"cryptlib.h"
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\gf2_32.cpp
+	"pch.h"
+	"misc.h"
+	"gf2_32.h"
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\gf2_32.h
+	"cryptlib.h"
+
+1187244552 source:d:\tony\infraelly\curver\include\cryptopp\gf2n.cpp
+	"pch.h"
+	"gf2n.h"
+	"algebra.h"
+	"words.h"
+	"randpool.h"
+	"asn.h"
+	"oids.h"
+	<iostream>
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\words.h
+	"misc.h"
+
+1187244552 source:d:\tony\infraelly\curver\include\cryptopp\gfpcrypt.cpp
+	"pch.h"
+	"gfpcrypt.h"
+	"asn.h"
+	"oids.h"
+	"nbtheory.h"
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\gost.cpp
+	"pch.h"
+	"gost.h"
+	"misc.h"
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\gost.h
+	"seckey.h"
+	"secblock.h"
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\gzip.cpp
+	"pch.h"
+	"gzip.h"
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\gzip.h
+	"zdeflate.h"
+	"zinflate.h"
+	"crc.h"
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\zdeflate.h
+	"filters.h"
+	"misc.h"
+
+1187244552 d:\tony\infraelly\curver\include\cryptopp\zinflate.h
+	"filters.h"
+	<vector>
+
+1187244552 source:d:\tony\infraelly\curver\include\cryptopp\hex.cpp
+	"pch.h"
+	"hex.h"
+
+1187244552 source:d:\tony\infraelly\curver\include\cryptopp\hmac.cpp
+	"pch.h"
+	"hmac.h"
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\hrtimer.cpp
+	"pch.h"
+	"hrtimer.h"
+	"misc.h"
+	<stddef.h>
+	<time.h>
+	<windows.h>
+	<sys/time.h>
+	<sys/times.h>
+	<unistd.h>
+	<assert.h>
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\hrtimer.h
+	"config.h"
+	<time.h>
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\ida.cpp
+	"pch.h"
+	"ida.h"
+	"algebra.h"
+	"gf2_32.h"
+	"polynomi.h"
+	<functional>
+	"polynomi.cpp"
+
+1187244552 d:\tony\infraelly\curver\include\cryptopp\ida.h
+	"mqueue.h"
+	"filters.h"
+	"channels.h"
+	<map>
+	<vector>
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\polynomi.h
+	"cryptlib.h"
+	"misc.h"
+	"algebra.h"
+	<iosfwd>
+	<vector>
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\polynomi.cpp
+	"pch.h"
+	"polynomi.h"
+	"secblock.h"
+	<sstream>
+	<iostream>
+
+1187244552 source:d:\tony\infraelly\curver\include\cryptopp\idea.cpp
+	"pch.h"
+	"idea.h"
+	"misc.h"
+
+1187244552 d:\tony\infraelly\curver\include\cryptopp\idea.h
+	"seckey.h"
+	"secblock.h"
+
+1190644234 source:d:\tony\infraelly\curver\include\cryptopp\integer.cpp
+	"pch.h"
+	"integer.h"
+	"modarith.h"
+	"nbtheory.h"
+	"asn.h"
+	"oids.h"
+	"words.h"
+	"algparam.h"
+	"pubkey.h"
+	"sha.h"
+	"cpu.h"
+	<iostream>
+	<intrin.h>
+	<c_asm.h>
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\iterhash.cpp
+	"pch.h"
+	"iterhash.h"
+	"misc.h"
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\luc.cpp
+	"pch.h"
+	"luc.h"
+	"asn.h"
+	"nbtheory.h"
+	"sha.h"
+	"algparam.h"
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\luc.h
+	"pkcspad.h"
+	"oaep.h"
+	"integer.h"
+	"dh.h"
+	<limits.h>
+
+1187244552 source:d:\tony\infraelly\curver\include\cryptopp\md2.cpp
+	"pch.h"
+	"md2.h"
+
+1187244552 d:\tony\infraelly\curver\include\cryptopp\md2.h
+	"cryptlib.h"
+	"secblock.h"
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\md4.cpp
+	"pch.h"
+	"md4.h"
+	"misc.h"
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\md4.h
+	"iterhash.h"
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\md5.cpp
+	"pch.h"
+	"md5.h"
+	"misc.h"
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\md5.h
+	"iterhash.h"
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\misc.cpp
+	"pch.h"
+	"misc.h"
+	"words.h"
+	<new>
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\modes.cpp
+	"pch.h"
+	"modes.h"
+	"des.h"
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\mqueue.cpp
+	"pch.h"
+	"mqueue.h"
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\mqv.cpp
+	"pch.h"
+	"mqv.h"
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\nbtheory.cpp
+	"pch.h"
+	"nbtheory.h"
+	"modarith.h"
+	"algparam.h"
+	<math.h>
+	<vector>
+	<omp.h>
+
+1187244552 source:d:\tony\infraelly\curver\include\cryptopp\network.cpp
+	"pch.h"
+	"network.h"
+	"wait.h"
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\network.h
+	"config.h"
+	"filters.h"
+	"hrtimer.h"
+	<deque>
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\wait.h
+	"config.h"
+	"misc.h"
+	"cryptlib.h"
+	<vector>
+	<winsock2.h>
+	<sys/types.h>
+	"hrtimer.h"
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\oaep.cpp
+	"pch.h"
+	"oaep.h"
+	<functional>
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\osrng.cpp
+	"pch.h"
+	"osrng.h"
+	"rng.h"
+	<windows.h>
+	<wincrypt.h>
+	<errno.h>
+	<fcntl.h>
+	<unistd.h>
+
+1190644234 source:d:\tony\infraelly\curver\include\cryptopp\panama.cpp
+	"pch.h"
+	"panama.h"
+	"misc.h"
+	"cpu.h"
+
+1187244552 d:\tony\infraelly\curver\include\cryptopp\panama.h
+	"strciphr.h"
+	"iterhash.h"
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\pch.cpp
+	"pch.h"
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\pkcspad.cpp
+	"pch.h"
+	"pkcspad.h"
+	<assert.h>
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\polynomi.cpp
+	"pch.h"
+	"polynomi.h"
+	"secblock.h"
+	<sstream>
+	<iostream>
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\pssr.cpp
+	"pch.h"
+	"pssr.h"
+	<functional>
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\pubkey.cpp
+	"pch.h"
+	"pubkey.h"
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\queue.cpp
+	"pch.h"
+	"queue.h"
+	"filters.h"
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\rabin.cpp
+	"pch.h"
+	"rabin.h"
+	"nbtheory.h"
+	"asn.h"
+	"sha.h"
+	"modarith.h"
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\rabin.h
+	"oaep.h"
+	"pssr.h"
+	"integer.h"
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\randpool.cpp
+	"pch.h"
+	"randpool.h"
+	"aes.h"
+	"sha.h"
+	"hrtimer.h"
+	<time.h>
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\rc2.cpp
+	"pch.h"
+	"rc2.h"
+	"misc.h"
+	"argnames.h"
+
+1187244552 d:\tony\infraelly\curver\include\cryptopp\rc2.h
+	"seckey.h"
+	"secblock.h"
+	"algparam.h"
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\rc5.cpp
+	"pch.h"
+	"rc5.h"
+	"misc.h"
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\rc5.h
+	"seckey.h"
+	"secblock.h"
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\rc6.cpp
+	"pch.h"
+	"rc6.h"
+	"misc.h"
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\rc6.h
+	"seckey.h"
+	"secblock.h"
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\rdtables.cpp
+	"pch.h"
+	"rijndael.h"
+
+1190545394 source:d:\tony\infraelly\curver\include\cryptopp\rijndael.cpp
+	"pch.h"
+	"rijndael.h"
+	"misc.h"
+	"cpu.h"
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\ripemd.cpp
+	"pch.h"
+	"ripemd.h"
+	"misc.h"
+
+1187244552 d:\tony\infraelly\curver\include\cryptopp\ripemd.h
+	"iterhash.h"
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\rng.cpp
+	"pch.h"
+	"rng.h"
+	"fips140.h"
+	<time.h>
+	<math.h>
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\rsa.cpp
+	"pch.h"
+	"rsa.h"
+	"asn.h"
+	"oids.h"
+	"modarith.h"
+	"nbtheory.h"
+	"sha.h"
+	"algparam.h"
+	"fips140.h"
+	"pssr.h"
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\rw.cpp
+	"pch.h"
+	"rw.h"
+	"nbtheory.h"
+	"asn.h"
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\safer.cpp
+	"pch.h"
+	"safer.h"
+	"misc.h"
+	"argnames.h"
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\safer.h
+	"seckey.h"
+	"secblock.h"
+
+1190644234 source:d:\tony\infraelly\curver\include\cryptopp\salsa.cpp
+	"pch.h"
+	"salsa.h"
+	"misc.h"
+	"argnames.h"
+	"cpu.h"
+	<emmintrin.h>
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\salsa.h
+	"strciphr.h"
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\seal.cpp
+	"pch.h"
+	"seal.h"
+	"sha.h"
+	"misc.h"
+
+1187244552 d:\tony\infraelly\curver\include\cryptopp\seal.h
+	"strciphr.h"
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\serpent.cpp
+	"pch.h"
+	"serpent.h"
+	"misc.h"
+	"serpentp.h"
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\serpent.h
+	"seckey.h"
+	"secblock.h"
+
+1187244552 d:\tony\infraelly\curver\include\cryptopp\serpentp.h
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\sha.cpp
+	"pch.h"
+	"sha.h"
+	"misc.h"
+	"cpu.h"
+
+1187244552 source:d:\tony\infraelly\curver\include\cryptopp\shacal2.cpp
+	"pch.h"
+	"shacal2.h"
+	"misc.h"
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\shacal2.h
+	"seckey.h"
+	"secblock.h"
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\shark.cpp
+	"pch.h"
+	"shark.h"
+	"misc.h"
+	"modes.h"
+	"gf256.h"
+
+1187244552 d:\tony\infraelly\curver\include\cryptopp\shark.h
+	"config.h"
+	"seckey.h"
+	"secblock.h"
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\sharkbox.cpp
+	"pch.h"
+	"shark.h"
+
+1187244552 source:d:\tony\infraelly\curver\include\cryptopp\simple.cpp
+	"pch.h"
+	"simple.h"
+	"secblock.h"
+
+1187244552 source:d:\tony\infraelly\curver\include\cryptopp\skipjack.cpp
+	"pch.h"
+	"skipjack.h"
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\socketft.cpp
+	"pch.h"
+	"socketft.h"
+	"wait.h"
+	<errno.h>
+	<netdb.h>
+	<unistd.h>
+	<arpa/inet.h>
+	<netinet/in.h>
+	<sys/ioctl.h>
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\socketft.h
+	"config.h"
+	"network.h"
+	"queue.h"
+	<winsock2.h>
+	"winpipes.h"
+	<sys/time.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<unistd.h>
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\winpipes.h
+	"config.h"
+	"network.h"
+	"queue.h"
+	<winsock2.h>
+
+1190644234 source:d:\tony\infraelly\curver\include\cryptopp\sosemanuk.cpp
+	"pch.h"
+	"sosemanuk.h"
+	"misc.h"
+	"cpu.h"
+	"serpentp.h"
+	<emmintrin.h>
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\sosemanuk.h
+	"strciphr.h"
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\square.cpp
+	"pch.h"
+	"square.h"
+	"misc.h"
+	"gf256.h"
+
+1187244552 d:\tony\infraelly\curver\include\cryptopp\square.h
+	"seckey.h"
+	"secblock.h"
+
+1187244552 source:d:\tony\infraelly\curver\include\cryptopp\squaretb.cpp
+	"pch.h"
+	"square.h"
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\strciphr.cpp
+	"pch.h"
+	"strciphr.h"
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\tea.cpp
+	"pch.h"
+	"tea.h"
+	"misc.h"
+
+1187244552 d:\tony\infraelly\curver\include\cryptopp\tea.h
+	"seckey.h"
+	"secblock.h"
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\tftables.cpp
+	"pch.h"
+	"twofish.h"
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\twofish.h
+	"seckey.h"
+	"secblock.h"
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\tiger.cpp
+	"pch.h"
+	"tiger.h"
+	"misc.h"
+	"cpu.h"
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\tiger.h
+	"config.h"
+	"iterhash.h"
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\tigertab.cpp
+	"pch.h"
+	"tiger.h"
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\trdlocal.cpp
+	"pch.h"
+	"trdlocal.h"
+	<windows.h>
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\ttmac.cpp
+	"pch.h"
+	"ttmac.h"
+	"misc.h"
+
+1187244552 d:\tony\infraelly\curver\include\cryptopp\ttmac.h
+	"seckey.h"
+	"iterhash.h"
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\twofish.cpp
+	"pch.h"
+	"twofish.h"
+	"misc.h"
+
+1190644234 source:d:\tony\infraelly\curver\include\cryptopp\vmac.cpp
+	"pch.h"
+	"vmac.h"
+	"argnames.h"
+	"cpu.h"
+	<intrin.h>
+
+1187244550 d:\tony\infraelly\curver\include\cryptopp\vmac.h
+	"iterhash.h"
+	"seckey.h"
+
+1187244552 source:d:\tony\infraelly\curver\include\cryptopp\wait.cpp
+	"pch.h"
+	"wait.h"
+	"misc.h"
+	<errno.h>
+	<sys/types.h>
+	<sys/time.h>
+	<unistd.h>
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\wake.cpp
+	"pch.h"
+	"wake.h"
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\wake.h
+	"seckey.h"
+	"secblock.h"
+	"strciphr.h"
+
+1190545394 source:d:\tony\infraelly\curver\include\cryptopp\whrlpool.cpp
+	"pch.h"
+	"whrlpool.h"
+	"misc.h"
+	"cpu.h"
+	<emmintrin.h>
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\whrlpool.h
+	"config.h"
+	"iterhash.h"
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\winpipes.cpp
+	"pch.h"
+	"winpipes.h"
+	"wait.h"
+
+1187244548 source:d:\tony\infraelly\curver\include\cryptopp\xtr.cpp
+	"pch.h"
+	"xtr.h"
+	"nbtheory.h"
+	"algebra.cpp"
+
+1187244552 d:\tony\infraelly\curver\include\cryptopp\xtr.h
+	"modarith.h"
+
+1187244550 source:d:\tony\infraelly\curver\include\cryptopp\xtrcrypt.cpp
+	"pch.h"
+	"xtrcrypt.h"
+	"nbtheory.h"
+	"asn.h"
+	"argnames.h"
+
+1187244552 d:\tony\infraelly\curver\include\cryptopp\xtrcrypt.h
+	"xtr.h"
+
+1190545394 source:d:\tony\infraelly\curver\include\cryptopp\zdeflate.cpp
+	"pch.h"
+	"zdeflate.h"
+	<functional>
+
+1187244552 source:d:\tony\infraelly\curver\include\cryptopp\zinflate.cpp
+	"pch.h"
+	"zinflate.h"
+
+1187244552 source:d:\tony\infraelly\curver\include\cryptopp\zlib.cpp
+	"pch.h"
+	"zlib.h"
+	"zdeflate.h"
+	"zinflate.h"
+
+1187244548 d:\tony\infraelly\curver\include\cryptopp\zlib.h
+	"adler32.h"
+	"zdeflate.h"
+	"zinflate.h"
+
+1187244552 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\3way.cpp
+	"pch.h"
+	"3way.h"
+	"misc.h"
+
+1190545394 d:\tony\infraelly\curver\libbuild\cryptoppbuild\pch.h
+	"cpu.h"
+	"config.h"
+	"simple.h"
+	"secblock.h"
+	"misc.h"
+	"smartptr.h"
+
+1190644234 d:\tony\infraelly\curver\libbuild\cryptoppbuild\cpu.h
+	"config.h"
+	<emmintrin.h>
+
+1190644234 d:\tony\infraelly\curver\libbuild\cryptoppbuild\config.h
+	<malloc.h>
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\simple.h
+	"cryptlib.h"
+	"misc.h"
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\cryptlib.h
+	"config.h"
+	"stdcpp.h"
+
+1190545394 d:\tony\infraelly\curver\libbuild\cryptoppbuild\stdcpp.h
+	<stddef.h>
+	<assert.h>
+	<limits.h>
+	<memory>
+	<string>
+	<exception>
+	<typeinfo>
+	<string.h>
+	<algorithm>
+	<map>
+	<vector>
+
+1190644234 d:\tony\infraelly\curver\libbuild\cryptoppbuild\misc.h
+	"cryptlib.h"
+	"smartptr.h"
+	<string.h>
+	<stdlib.h>
+	<intrin.h>
+	<mem.h>
+	<byteswap.h>
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\smartptr.h
+	"config.h"
+	<algorithm>
+
+1190545394 d:\tony\infraelly\curver\libbuild\cryptoppbuild\secblock.h
+	"config.h"
+	"misc.h"
+	<assert.h>
+	<malloc.h>
+	<stdlib.h>
+
+1187244552 d:\tony\infraelly\curver\libbuild\cryptoppbuild\3way.h
+	"seckey.h"
+	"secblock.h"
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\seckey.h
+	"cryptlib.h"
+	"misc.h"
+	"simple.h"
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\adler32.cpp
+	"pch.h"
+	"adler32.h"
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\adler32.h
+	"cryptlib.h"
+
+1187244552 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\algebra.cpp
+	"pch.h"
+	"algebra.h"
+	"integer.h"
+	<vector>
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\algebra.h
+	"config.h"
+	"algebra.cpp"
+
+1187244552 d:\tony\infraelly\curver\libbuild\cryptoppbuild\algebra.cpp
+	"pch.h"
+	"algebra.h"
+	"integer.h"
+	<vector>
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\integer.h
+	"cryptlib.h"
+	"secblock.h"
+	<iosfwd>
+	<algorithm>
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\algparam.cpp
+	"pch.h"
+	"algparam.h"
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\algparam.h
+	"cryptlib.h"
+	"smartptr.h"
+	"secblock.h"
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\arc4.cpp
+	"pch.h"
+	"arc4.h"
+
+1187244552 d:\tony\infraelly\curver\libbuild\cryptoppbuild\arc4.h
+	"strciphr.h"
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\strciphr.h
+	"seckey.h"
+	"secblock.h"
+	"argnames.h"
+	"strciphr.cpp"
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\argnames.h
+	"cryptlib.h"
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\strciphr.cpp
+	"pch.h"
+	"strciphr.h"
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\asn.cpp
+	"pch.h"
+	"asn.h"
+	<iomanip>
+	<time.h>
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\asn.h
+	"filters.h"
+	"queue.h"
+	<vector>
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\filters.h
+	"simple.h"
+	"secblock.h"
+	"misc.h"
+	"smartptr.h"
+	"queue.h"
+	"algparam.h"
+	<deque>
+
+1187244552 d:\tony\infraelly\curver\libbuild\cryptoppbuild\queue.h
+	"simple.h"
+
+1187244552 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\base32.cpp
+	"pch.h"
+	"base32.h"
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\base32.h
+	"basecode.h"
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\basecode.h
+	"filters.h"
+	"algparam.h"
+	"argnames.h"
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\base64.cpp
+	"pch.h"
+	"base64.h"
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\base64.h
+	"basecode.h"
+
+1187244552 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\basecode.cpp
+	"pch.h"
+	"basecode.h"
+	"fltrimpl.h"
+	<ctype.h>
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\fltrimpl.h
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\bfinit.cpp
+	"pch.h"
+	"blowfish.h"
+
+1187244552 d:\tony\infraelly\curver\libbuild\cryptoppbuild\blowfish.h
+	"seckey.h"
+	"secblock.h"
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\blowfish.cpp
+	"pch.h"
+	"blowfish.h"
+	"misc.h"
+
+1187244552 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\blumshub.cpp
+	"pch.h"
+	"blumshub.h"
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\blumshub.h
+	"modarith.h"
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\modarith.h
+	"cryptlib.h"
+	"misc.h"
+	"integer.h"
+	"algebra.h"
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\camellia.cpp
+	"pch.h"
+	"camellia.h"
+	"misc.h"
+	"cpu.h"
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\camellia.h
+	"config.h"
+	"seckey.h"
+	"secblock.h"
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\cast.cpp
+	"pch.h"
+	"cast.h"
+	"misc.h"
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\cast.h
+	"seckey.h"
+	"secblock.h"
+
+1187244552 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\casts.cpp
+	"pch.h"
+	"cast.h"
+
+1187244552 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\cbcmac.cpp
+	"pch.h"
+	"cbcmac.h"
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\cbcmac.h
+	"seckey.h"
+	"secblock.h"
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\channels.cpp
+	"pch.h"
+	"channels.h"
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\channels.h
+	"simple.h"
+	"smartptr.h"
+	<map>
+	<list>
+
+1187244552 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\cpu.cpp
+	"pch.h"
+	"cpu.h"
+	"misc.h"
+	<algorithm>
+	<signal.h>
+	<setjmp.h>
+	<emmintrin.h>
+
+1187244552 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\crc.cpp
+	"pch.h"
+	"crc.h"
+	"misc.h"
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\crc.h
+	"cryptlib.h"
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\cryptlib.cpp
+	"pch.h"
+	"cryptlib.h"
+	"misc.h"
+	"filters.h"
+	"algparam.h"
+	"fips140.h"
+	"argnames.h"
+	"fltrimpl.h"
+	"trdlocal.h"
+	"osrng.h"
+	<memory>
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\fips140.h
+	"cryptlib.h"
+	"secblock.h"
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\trdlocal.h
+	"config.h"
+	"misc.h"
+	<pthread.h>
+
+1187244552 d:\tony\infraelly\curver\libbuild\cryptoppbuild\osrng.h
+	"config.h"
+	"randpool.h"
+	"rng.h"
+	"aes.h"
+	"sha.h"
+	"fips140.h"
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\randpool.h
+	"cryptlib.h"
+	"filters.h"
+
+1187244552 d:\tony\infraelly\curver\libbuild\cryptoppbuild\rng.h
+	"cryptlib.h"
+	"filters.h"
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\aes.h
+	"rijndael.h"
+
+1187244552 d:\tony\infraelly\curver\libbuild\cryptoppbuild\rijndael.h
+	"seckey.h"
+	"secblock.h"
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\sha.h
+	"iterhash.h"
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\iterhash.h
+	"cryptlib.h"
+	"secblock.h"
+	"misc.h"
+	"simple.h"
+	"iterhash.cpp"
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\iterhash.cpp
+	"pch.h"
+	"iterhash.h"
+	"misc.h"
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\default.cpp
+	"pch.h"
+	"default.h"
+	"queue.h"
+	<time.h>
+	<memory>
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\default.h
+	"sha.h"
+	"hmac.h"
+	"des.h"
+	"filters.h"
+	"modes.h"
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\hmac.h
+	"seckey.h"
+	"secblock.h"
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\des.h
+	"seckey.h"
+	"secblock.h"
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\modes.h
+	"cryptlib.h"
+	"secblock.h"
+	"misc.h"
+	"strciphr.h"
+	"argnames.h"
+	"algparam.h"
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\des.cpp
+	"pch.h"
+	"misc.h"
+	"des.h"
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\dessp.cpp
+	"pch.h"
+	"des.h"
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\dh.cpp
+	"pch.h"
+	"dh.h"
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\dh.h
+	"gfpcrypt.h"
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\gfpcrypt.h
+	"pubkey.h"
+	"modexppc.h"
+	"sha.h"
+	"algparam.h"
+	"asn.h"
+	"smartptr.h"
+	"hmac.h"
+	<limits.h>
+
+1187244552 d:\tony\infraelly\curver\libbuild\cryptoppbuild\pubkey.h
+	"modarith.h"
+	"filters.h"
+	"eprecomp.h"
+	"fips140.h"
+	"argnames.h"
+	<memory>
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\eprecomp.h
+	"integer.h"
+	"algebra.h"
+	<vector>
+	"eprecomp.cpp"
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\eprecomp.cpp
+	"pch.h"
+	"eprecomp.h"
+	"asn.h"
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\modexppc.h
+	"modarith.h"
+	"eprecomp.h"
+	"smartptr.h"
+	"pubkey.h"
+
+1187244552 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\dh2.cpp
+	"pch.h"
+	"dh2.h"
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\dh2.h
+	"cryptlib.h"
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\dll.cpp
+	"dll.h"
+	<windows.h>
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\dll.h
+	"aes.h"
+	"cbcmac.h"
+	"channels.h"
+	"des.h"
+	"dh.h"
+	"dsa.h"
+	"ec2n.h"
+	"eccrypto.h"
+	"ecp.h"
+	"files.h"
+	"fips140.h"
+	"hex.h"
+	"hmac.h"
+	"modes.h"
+	"mqueue.h"
+	"nbtheory.h"
+	"osrng.h"
+	"pkcspad.h"
+	"pssr.h"
+	"randpool.h"
+	"rsa.h"
+	"rw.h"
+	"sha.h"
+	"skipjack.h"
+	"trdlocal.h"
+	<new>
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\dsa.h
+	"gfpcrypt.h"
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\ec2n.h
+	"gf2n.h"
+	"eprecomp.h"
+	"smartptr.h"
+	"pubkey.h"
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\gf2n.h
+	"cryptlib.h"
+	"secblock.h"
+	"misc.h"
+	"algebra.h"
+	<iosfwd>
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\eccrypto.h
+	"pubkey.h"
+	"integer.h"
+	"asn.h"
+	"hmac.h"
+	"sha.h"
+	"gfpcrypt.h"
+	"dh.h"
+	"mqv.h"
+	"ecp.h"
+	"ec2n.h"
+	"eccrypto.cpp"
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\mqv.h
+	"gfpcrypt.h"
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\ecp.h
+	"modarith.h"
+	"eprecomp.h"
+	"smartptr.h"
+	"pubkey.h"
+
+1190545394 d:\tony\infraelly\curver\libbuild\cryptoppbuild\eccrypto.cpp
+	"pch.h"
+	"eccrypto.h"
+	"nbtheory.h"
+	"oids.h"
+	"hex.h"
+	"argnames.h"
+	"ec2n.h"
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\nbtheory.h
+	"integer.h"
+	"algparam.h"
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\oids.h
+	"asn.h"
+
+1187244552 d:\tony\infraelly\curver\libbuild\cryptoppbuild\hex.h
+	"basecode.h"
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\files.h
+	"cryptlib.h"
+	"filters.h"
+	"argnames.h"
+	<iostream>
+	<fstream>
+
+1187244552 d:\tony\infraelly\curver\libbuild\cryptoppbuild\mqueue.h
+	"queue.h"
+	"filters.h"
+	<deque>
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\pkcspad.h
+	"cryptlib.h"
+	"pubkey.h"
+	"sha.h"
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\pssr.h
+	"pubkey.h"
+	"emsa2.h"
+	"sha.h"
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\emsa2.h
+	"cryptlib.h"
+	"pubkey.h"
+	"sha.h"
+
+1187244552 d:\tony\infraelly\curver\libbuild\cryptoppbuild\rsa.h
+	"pubkey.h"
+	"asn.h"
+	"pkcspad.h"
+	"oaep.h"
+	"emsa2.h"
+
+1187244552 d:\tony\infraelly\curver\libbuild\cryptoppbuild\oaep.h
+	"pubkey.h"
+	"sha.h"
+
+1187244552 d:\tony\infraelly\curver\libbuild\cryptoppbuild\rw.h
+	"pubkey.h"
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\skipjack.h
+	"seckey.h"
+	"secblock.h"
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\dsa.cpp
+	"pch.h"
+	"dsa.h"
+	"nbtheory.h"
+
+1187244552 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\ec2n.cpp
+	"pch.h"
+	"ec2n.h"
+	"asn.h"
+	"algebra.cpp"
+	"eprecomp.cpp"
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\ecp.cpp
+	"pch.h"
+	"ecp.h"
+	"asn.h"
+	"nbtheory.h"
+	"algebra.cpp"
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\elgamal.cpp
+	"pch.h"
+	"elgamal.h"
+	"asn.h"
+	"nbtheory.h"
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\elgamal.h
+	"modexppc.h"
+	"dsa.h"
+
+1187244552 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\emsa2.cpp
+	"pch.h"
+	"emsa2.h"
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\esign.cpp
+	"pch.h"
+	"esign.h"
+	"asn.h"
+	"modarith.h"
+	"nbtheory.h"
+	"sha.h"
+	"algparam.h"
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\esign.h
+	"pubkey.h"
+	"integer.h"
+	"asn.h"
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\files.cpp
+	"pch.h"
+	"files.h"
+	<limits>
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\filters.cpp
+	"pch.h"
+	"filters.h"
+	"mqueue.h"
+	"fltrimpl.h"
+	"argnames.h"
+	<memory>
+	<functional>
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\fips140.cpp
+	"pch.h"
+	"fips140.h"
+	"trdlocal.h"
+
+1190545394 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\fipstest.cpp
+	"pch.h"
+	"dll.h"
+	<windows.h>
+	<iostream>
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\gf256.cpp
+	"pch.h"
+	"gf256.h"
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\gf256.h
+	"cryptlib.h"
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\gf2_32.cpp
+	"pch.h"
+	"misc.h"
+	"gf2_32.h"
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\gf2_32.h
+	"cryptlib.h"
+
+1187244552 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\gf2n.cpp
+	"pch.h"
+	"gf2n.h"
+	"algebra.h"
+	"words.h"
+	"randpool.h"
+	"asn.h"
+	"oids.h"
+	<iostream>
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\words.h
+	"misc.h"
+
+1187244552 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\gfpcrypt.cpp
+	"pch.h"
+	"gfpcrypt.h"
+	"asn.h"
+	"oids.h"
+	"nbtheory.h"
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\gost.cpp
+	"pch.h"
+	"gost.h"
+	"misc.h"
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\gost.h
+	"seckey.h"
+	"secblock.h"
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\gzip.cpp
+	"pch.h"
+	"gzip.h"
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\gzip.h
+	"zdeflate.h"
+	"zinflate.h"
+	"crc.h"
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\zdeflate.h
+	"filters.h"
+	"misc.h"
+
+1187244552 d:\tony\infraelly\curver\libbuild\cryptoppbuild\zinflate.h
+	"filters.h"
+	<vector>
+
+1187244552 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\hex.cpp
+	"pch.h"
+	"hex.h"
+
+1187244552 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\hmac.cpp
+	"pch.h"
+	"hmac.h"
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\hrtimer.cpp
+	"pch.h"
+	"hrtimer.h"
+	"misc.h"
+	<stddef.h>
+	<time.h>
+	<windows.h>
+	<sys/time.h>
+	<sys/times.h>
+	<unistd.h>
+	<assert.h>
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\hrtimer.h
+	"config.h"
+	<time.h>
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\ida.cpp
+	"pch.h"
+	"ida.h"
+	"algebra.h"
+	"gf2_32.h"
+	"polynomi.h"
+	<functional>
+	"polynomi.cpp"
+
+1187244552 d:\tony\infraelly\curver\libbuild\cryptoppbuild\ida.h
+	"mqueue.h"
+	"filters.h"
+	"channels.h"
+	<map>
+	<vector>
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\polynomi.h
+	"cryptlib.h"
+	"misc.h"
+	"algebra.h"
+	<iosfwd>
+	<vector>
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\polynomi.cpp
+	"pch.h"
+	"polynomi.h"
+	"secblock.h"
+	<sstream>
+	<iostream>
+
+1187244552 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\idea.cpp
+	"pch.h"
+	"idea.h"
+	"misc.h"
+
+1187244552 d:\tony\infraelly\curver\libbuild\cryptoppbuild\idea.h
+	"seckey.h"
+	"secblock.h"
+
+1190644234 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\integer.cpp
+	"pch.h"
+	"integer.h"
+	"modarith.h"
+	"nbtheory.h"
+	"asn.h"
+	"oids.h"
+	"words.h"
+	"algparam.h"
+	"pubkey.h"
+	"sha.h"
+	"cpu.h"
+	<iostream>
+	<intrin.h>
+	<c_asm.h>
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\iterhash.cpp
+	"pch.h"
+	"iterhash.h"
+	"misc.h"
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\luc.cpp
+	"pch.h"
+	"luc.h"
+	"asn.h"
+	"nbtheory.h"
+	"sha.h"
+	"algparam.h"
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\luc.h
+	"pkcspad.h"
+	"oaep.h"
+	"integer.h"
+	"dh.h"
+	<limits.h>
+
+1187244552 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\md2.cpp
+	"pch.h"
+	"md2.h"
+
+1187244552 d:\tony\infraelly\curver\libbuild\cryptoppbuild\md2.h
+	"cryptlib.h"
+	"secblock.h"
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\md4.cpp
+	"pch.h"
+	"md4.h"
+	"misc.h"
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\md4.h
+	"iterhash.h"
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\md5.cpp
+	"pch.h"
+	"md5.h"
+	"misc.h"
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\md5.h
+	"iterhash.h"
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\misc.cpp
+	"pch.h"
+	"misc.h"
+	"words.h"
+	<new>
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\modes.cpp
+	"pch.h"
+	"modes.h"
+	"des.h"
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\mqueue.cpp
+	"pch.h"
+	"mqueue.h"
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\mqv.cpp
+	"pch.h"
+	"mqv.h"
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\nbtheory.cpp
+	"pch.h"
+	"nbtheory.h"
+	"modarith.h"
+	"algparam.h"
+	<math.h>
+	<vector>
+	<omp.h>
+
+1187244552 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\network.cpp
+	"pch.h"
+	"network.h"
+	"wait.h"
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\network.h
+	"config.h"
+	"filters.h"
+	"hrtimer.h"
+	<deque>
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\wait.h
+	"config.h"
+	"misc.h"
+	"cryptlib.h"
+	<vector>
+	<winsock2.h>
+	<sys/types.h>
+	"hrtimer.h"
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\oaep.cpp
+	"pch.h"
+	"oaep.h"
+	<functional>
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\osrng.cpp
+	"pch.h"
+	"osrng.h"
+	"rng.h"
+	<windows.h>
+	<wincrypt.h>
+	<errno.h>
+	<fcntl.h>
+	<unistd.h>
+
+1190644234 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\panama.cpp
+	"pch.h"
+	"panama.h"
+	"misc.h"
+	"cpu.h"
+
+1187244552 d:\tony\infraelly\curver\libbuild\cryptoppbuild\panama.h
+	"strciphr.h"
+	"iterhash.h"
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\pch.cpp
+	"pch.h"
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\pkcspad.cpp
+	"pch.h"
+	"pkcspad.h"
+	<assert.h>
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\polynomi.cpp
+	"pch.h"
+	"polynomi.h"
+	"secblock.h"
+	<sstream>
+	<iostream>
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\pssr.cpp
+	"pch.h"
+	"pssr.h"
+	<functional>
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\pubkey.cpp
+	"pch.h"
+	"pubkey.h"
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\queue.cpp
+	"pch.h"
+	"queue.h"
+	"filters.h"
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\rabin.cpp
+	"pch.h"
+	"rabin.h"
+	"nbtheory.h"
+	"asn.h"
+	"sha.h"
+	"modarith.h"
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\rabin.h
+	"oaep.h"
+	"pssr.h"
+	"integer.h"
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\randpool.cpp
+	"pch.h"
+	"randpool.h"
+	"aes.h"
+	"sha.h"
+	"hrtimer.h"
+	<time.h>
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\rc2.cpp
+	"pch.h"
+	"rc2.h"
+	"misc.h"
+	"argnames.h"
+
+1187244552 d:\tony\infraelly\curver\libbuild\cryptoppbuild\rc2.h
+	"seckey.h"
+	"secblock.h"
+	"algparam.h"
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\rc5.cpp
+	"pch.h"
+	"rc5.h"
+	"misc.h"
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\rc5.h
+	"seckey.h"
+	"secblock.h"
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\rc6.cpp
+	"pch.h"
+	"rc6.h"
+	"misc.h"
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\rc6.h
+	"seckey.h"
+	"secblock.h"
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\rdtables.cpp
+	"pch.h"
+	"rijndael.h"
+
+1190545394 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\rijndael.cpp
+	"pch.h"
+	"rijndael.h"
+	"misc.h"
+	"cpu.h"
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\ripemd.cpp
+	"pch.h"
+	"ripemd.h"
+	"misc.h"
+
+1187244552 d:\tony\infraelly\curver\libbuild\cryptoppbuild\ripemd.h
+	"iterhash.h"
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\rng.cpp
+	"pch.h"
+	"rng.h"
+	"fips140.h"
+	<time.h>
+	<math.h>
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\rsa.cpp
+	"pch.h"
+	"rsa.h"
+	"asn.h"
+	"oids.h"
+	"modarith.h"
+	"nbtheory.h"
+	"sha.h"
+	"algparam.h"
+	"fips140.h"
+	"pssr.h"
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\rw.cpp
+	"pch.h"
+	"rw.h"
+	"nbtheory.h"
+	"asn.h"
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\safer.cpp
+	"pch.h"
+	"safer.h"
+	"misc.h"
+	"argnames.h"
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\safer.h
+	"seckey.h"
+	"secblock.h"
+
+1190644234 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\salsa.cpp
+	"pch.h"
+	"salsa.h"
+	"misc.h"
+	"argnames.h"
+	"cpu.h"
+	<emmintrin.h>
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\salsa.h
+	"strciphr.h"
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\seal.cpp
+	"pch.h"
+	"seal.h"
+	"sha.h"
+	"misc.h"
+
+1187244552 d:\tony\infraelly\curver\libbuild\cryptoppbuild\seal.h
+	"strciphr.h"
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\serpent.cpp
+	"pch.h"
+	"serpent.h"
+	"misc.h"
+	"serpentp.h"
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\serpent.h
+	"seckey.h"
+	"secblock.h"
+
+1187244552 d:\tony\infraelly\curver\libbuild\cryptoppbuild\serpentp.h
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\sha.cpp
+	"pch.h"
+	"sha.h"
+	"misc.h"
+	"cpu.h"
+
+1187244552 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\shacal2.cpp
+	"pch.h"
+	"shacal2.h"
+	"misc.h"
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\shacal2.h
+	"seckey.h"
+	"secblock.h"
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\shark.cpp
+	"pch.h"
+	"shark.h"
+	"misc.h"
+	"modes.h"
+	"gf256.h"
+
+1187244552 d:\tony\infraelly\curver\libbuild\cryptoppbuild\shark.h
+	"config.h"
+	"seckey.h"
+	"secblock.h"
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\sharkbox.cpp
+	"pch.h"
+	"shark.h"
+
+1187244552 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\simple.cpp
+	"pch.h"
+	"simple.h"
+	"secblock.h"
+
+1187244552 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\skipjack.cpp
+	"pch.h"
+	"skipjack.h"
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\socketft.cpp
+	"pch.h"
+	"socketft.h"
+	"wait.h"
+	<errno.h>
+	<netdb.h>
+	<unistd.h>
+	<arpa/inet.h>
+	<netinet/in.h>
+	<sys/ioctl.h>
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\socketft.h
+	"config.h"
+	"network.h"
+	"queue.h"
+	<winsock2.h>
+	"winpipes.h"
+	<sys/time.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<unistd.h>
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\winpipes.h
+	"config.h"
+	"network.h"
+	"queue.h"
+	<winsock2.h>
+
+1190644234 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\sosemanuk.cpp
+	"pch.h"
+	"sosemanuk.h"
+	"misc.h"
+	"cpu.h"
+	"serpentp.h"
+	<emmintrin.h>
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\sosemanuk.h
+	"strciphr.h"
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\square.cpp
+	"pch.h"
+	"square.h"
+	"misc.h"
+	"gf256.h"
+
+1187244552 d:\tony\infraelly\curver\libbuild\cryptoppbuild\square.h
+	"seckey.h"
+	"secblock.h"
+
+1187244552 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\squaretb.cpp
+	"pch.h"
+	"square.h"
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\strciphr.cpp
+	"pch.h"
+	"strciphr.h"
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\tea.cpp
+	"pch.h"
+	"tea.h"
+	"misc.h"
+
+1187244552 d:\tony\infraelly\curver\libbuild\cryptoppbuild\tea.h
+	"seckey.h"
+	"secblock.h"
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\tftables.cpp
+	"pch.h"
+	"twofish.h"
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\twofish.h
+	"seckey.h"
+	"secblock.h"
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\tiger.cpp
+	"pch.h"
+	"tiger.h"
+	"misc.h"
+	"cpu.h"
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\tiger.h
+	"config.h"
+	"iterhash.h"
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\tigertab.cpp
+	"pch.h"
+	"tiger.h"
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\trdlocal.cpp
+	"pch.h"
+	"trdlocal.h"
+	<windows.h>
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\ttmac.cpp
+	"pch.h"
+	"ttmac.h"
+	"misc.h"
+
+1187244552 d:\tony\infraelly\curver\libbuild\cryptoppbuild\ttmac.h
+	"seckey.h"
+	"iterhash.h"
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\twofish.cpp
+	"pch.h"
+	"twofish.h"
+	"misc.h"
+
+1190644234 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\vmac.cpp
+	"pch.h"
+	"vmac.h"
+	"argnames.h"
+	"cpu.h"
+	<intrin.h>
+
+1187244550 d:\tony\infraelly\curver\libbuild\cryptoppbuild\vmac.h
+	"iterhash.h"
+	"seckey.h"
+
+1187244552 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\wait.cpp
+	"pch.h"
+	"wait.h"
+	"misc.h"
+	<errno.h>
+	<sys/types.h>
+	<sys/time.h>
+	<unistd.h>
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\wake.cpp
+	"pch.h"
+	"wake.h"
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\wake.h
+	"seckey.h"
+	"secblock.h"
+	"strciphr.h"
+
+1190545394 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\whrlpool.cpp
+	"pch.h"
+	"whrlpool.h"
+	"misc.h"
+	"cpu.h"
+	<emmintrin.h>
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\whrlpool.h
+	"config.h"
+	"iterhash.h"
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\winpipes.cpp
+	"pch.h"
+	"winpipes.h"
+	"wait.h"
+
+1187244548 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\xtr.cpp
+	"pch.h"
+	"xtr.h"
+	"nbtheory.h"
+	"algebra.cpp"
+
+1187244552 d:\tony\infraelly\curver\libbuild\cryptoppbuild\xtr.h
+	"modarith.h"
+
+1187244550 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\xtrcrypt.cpp
+	"pch.h"
+	"xtrcrypt.h"
+	"nbtheory.h"
+	"asn.h"
+	"argnames.h"
+
+1187244552 d:\tony\infraelly\curver\libbuild\cryptoppbuild\xtrcrypt.h
+	"xtr.h"
+
+1190545394 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\zdeflate.cpp
+	"pch.h"
+	"zdeflate.h"
+	<functional>
+
+1187244552 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\zinflate.cpp
+	"pch.h"
+	"zinflate.h"
+
+1187244552 source:d:\tony\infraelly\curver\libbuild\cryptoppbuild\zlib.cpp
+	"pch.h"
+	"zlib.h"
+	"zdeflate.h"
+	"zinflate.h"
+
+1187244548 d:\tony\infraelly\curver\libbuild\cryptoppbuild\zlib.h
+	"adler32.h"
+	"zdeflate.h"
+	"zinflate.h"
+
+1187244552 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\3way.cpp
+	"pch.h"
+	"3way.h"
+	"misc.h"
+
+1190545394 d:\projects\infraelly\curver\libbuild\cryptoppbuild\pch.h
+	"cpu.h"
+	"config.h"
+	"simple.h"
+	"secblock.h"
+	"misc.h"
+	"smartptr.h"
+
+1190644234 d:\projects\infraelly\curver\libbuild\cryptoppbuild\cpu.h
+	"config.h"
+	<emmintrin.h>
+
+1190644234 d:\projects\infraelly\curver\libbuild\cryptoppbuild\config.h
+	<malloc.h>
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\simple.h
+	"cryptlib.h"
+	"misc.h"
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\cryptlib.h
+	"config.h"
+	"stdcpp.h"
+
+1190545394 d:\projects\infraelly\curver\libbuild\cryptoppbuild\stdcpp.h
+	<stddef.h>
+	<assert.h>
+	<limits.h>
+	<memory>
+	<string>
+	<exception>
+	<typeinfo>
+	<string.h>
+	<algorithm>
+	<map>
+	<vector>
+
+1190644234 d:\projects\infraelly\curver\libbuild\cryptoppbuild\misc.h
+	"cryptlib.h"
+	"smartptr.h"
+	<string.h>
+	<stdlib.h>
+	<intrin.h>
+	<mem.h>
+	<byteswap.h>
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\smartptr.h
+	"config.h"
+	<algorithm>
+
+1190545394 d:\projects\infraelly\curver\libbuild\cryptoppbuild\secblock.h
+	"config.h"
+	"misc.h"
+	<assert.h>
+	<malloc.h>
+	<stdlib.h>
+
+1187244552 d:\projects\infraelly\curver\libbuild\cryptoppbuild\3way.h
+	"seckey.h"
+	"secblock.h"
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\seckey.h
+	"cryptlib.h"
+	"misc.h"
+	"simple.h"
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\adler32.cpp
+	"pch.h"
+	"adler32.h"
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\adler32.h
+	"cryptlib.h"
+
+1187244552 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\algebra.cpp
+	"pch.h"
+	"algebra.h"
+	"integer.h"
+	<vector>
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\algebra.h
+	"config.h"
+	"algebra.cpp"
+
+1187244552 d:\projects\infraelly\curver\libbuild\cryptoppbuild\algebra.cpp
+	"pch.h"
+	"algebra.h"
+	"integer.h"
+	<vector>
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\integer.h
+	"cryptlib.h"
+	"secblock.h"
+	<iosfwd>
+	<algorithm>
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\algparam.cpp
+	"pch.h"
+	"algparam.h"
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\algparam.h
+	"cryptlib.h"
+	"smartptr.h"
+	"secblock.h"
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\arc4.cpp
+	"pch.h"
+	"arc4.h"
+
+1187244552 d:\projects\infraelly\curver\libbuild\cryptoppbuild\arc4.h
+	"strciphr.h"
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\strciphr.h
+	"seckey.h"
+	"secblock.h"
+	"argnames.h"
+	"strciphr.cpp"
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\argnames.h
+	"cryptlib.h"
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\strciphr.cpp
+	"pch.h"
+	"strciphr.h"
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\asn.cpp
+	"pch.h"
+	"asn.h"
+	<iomanip>
+	<time.h>
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\asn.h
+	"filters.h"
+	"queue.h"
+	<vector>
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\filters.h
+	"simple.h"
+	"secblock.h"
+	"misc.h"
+	"smartptr.h"
+	"queue.h"
+	"algparam.h"
+	<deque>
+
+1187244552 d:\projects\infraelly\curver\libbuild\cryptoppbuild\queue.h
+	"simple.h"
+
+1187244552 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\base32.cpp
+	"pch.h"
+	"base32.h"
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\base32.h
+	"basecode.h"
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\basecode.h
+	"filters.h"
+	"algparam.h"
+	"argnames.h"
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\base64.cpp
+	"pch.h"
+	"base64.h"
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\base64.h
+	"basecode.h"
+
+1187244552 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\basecode.cpp
+	"pch.h"
+	"basecode.h"
+	"fltrimpl.h"
+	<ctype.h>
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\fltrimpl.h
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\bfinit.cpp
+	"pch.h"
+	"blowfish.h"
+
+1187244552 d:\projects\infraelly\curver\libbuild\cryptoppbuild\blowfish.h
+	"seckey.h"
+	"secblock.h"
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\blowfish.cpp
+	"pch.h"
+	"blowfish.h"
+	"misc.h"
+
+1187244552 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\blumshub.cpp
+	"pch.h"
+	"blumshub.h"
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\blumshub.h
+	"modarith.h"
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\modarith.h
+	"cryptlib.h"
+	"misc.h"
+	"integer.h"
+	"algebra.h"
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\camellia.cpp
+	"pch.h"
+	"camellia.h"
+	"misc.h"
+	"cpu.h"
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\camellia.h
+	"config.h"
+	"seckey.h"
+	"secblock.h"
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\cast.cpp
+	"pch.h"
+	"cast.h"
+	"misc.h"
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\cast.h
+	"seckey.h"
+	"secblock.h"
+
+1187244552 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\casts.cpp
+	"pch.h"
+	"cast.h"
+
+1187244552 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\cbcmac.cpp
+	"pch.h"
+	"cbcmac.h"
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\cbcmac.h
+	"seckey.h"
+	"secblock.h"
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\channels.cpp
+	"pch.h"
+	"channels.h"
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\channels.h
+	"simple.h"
+	"smartptr.h"
+	<map>
+	<list>
+
+1187244552 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\cpu.cpp
+	"pch.h"
+	"cpu.h"
+	"misc.h"
+	<algorithm>
+	<signal.h>
+	<setjmp.h>
+	<emmintrin.h>
+
+1187244552 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\crc.cpp
+	"pch.h"
+	"crc.h"
+	"misc.h"
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\crc.h
+	"cryptlib.h"
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\cryptlib.cpp
+	"pch.h"
+	"cryptlib.h"
+	"misc.h"
+	"filters.h"
+	"algparam.h"
+	"fips140.h"
+	"argnames.h"
+	"fltrimpl.h"
+	"trdlocal.h"
+	"osrng.h"
+	<memory>
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\fips140.h
+	"cryptlib.h"
+	"secblock.h"
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\trdlocal.h
+	"config.h"
+	"misc.h"
+	<pthread.h>
+
+1187244552 d:\projects\infraelly\curver\libbuild\cryptoppbuild\osrng.h
+	"config.h"
+	"randpool.h"
+	"rng.h"
+	"aes.h"
+	"sha.h"
+	"fips140.h"
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\randpool.h
+	"cryptlib.h"
+	"filters.h"
+
+1187244552 d:\projects\infraelly\curver\libbuild\cryptoppbuild\rng.h
+	"cryptlib.h"
+	"filters.h"
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\aes.h
+	"rijndael.h"
+
+1187244552 d:\projects\infraelly\curver\libbuild\cryptoppbuild\rijndael.h
+	"seckey.h"
+	"secblock.h"
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\sha.h
+	"iterhash.h"
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\iterhash.h
+	"cryptlib.h"
+	"secblock.h"
+	"misc.h"
+	"simple.h"
+	"iterhash.cpp"
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\iterhash.cpp
+	"pch.h"
+	"iterhash.h"
+	"misc.h"
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\default.cpp
+	"pch.h"
+	"default.h"
+	"queue.h"
+	<time.h>
+	<memory>
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\default.h
+	"sha.h"
+	"hmac.h"
+	"des.h"
+	"filters.h"
+	"modes.h"
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\hmac.h
+	"seckey.h"
+	"secblock.h"
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\des.h
+	"seckey.h"
+	"secblock.h"
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\modes.h
+	"cryptlib.h"
+	"secblock.h"
+	"misc.h"
+	"strciphr.h"
+	"argnames.h"
+	"algparam.h"
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\des.cpp
+	"pch.h"
+	"misc.h"
+	"des.h"
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\dessp.cpp
+	"pch.h"
+	"des.h"
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\dh.cpp
+	"pch.h"
+	"dh.h"
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\dh.h
+	"gfpcrypt.h"
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\gfpcrypt.h
+	"pubkey.h"
+	"modexppc.h"
+	"sha.h"
+	"algparam.h"
+	"asn.h"
+	"smartptr.h"
+	"hmac.h"
+	<limits.h>
+
+1187244552 d:\projects\infraelly\curver\libbuild\cryptoppbuild\pubkey.h
+	"modarith.h"
+	"filters.h"
+	"eprecomp.h"
+	"fips140.h"
+	"argnames.h"
+	<memory>
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\eprecomp.h
+	"integer.h"
+	"algebra.h"
+	<vector>
+	"eprecomp.cpp"
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\eprecomp.cpp
+	"pch.h"
+	"eprecomp.h"
+	"asn.h"
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\modexppc.h
+	"modarith.h"
+	"eprecomp.h"
+	"smartptr.h"
+	"pubkey.h"
+
+1187244552 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\dh2.cpp
+	"pch.h"
+	"dh2.h"
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\dh2.h
+	"cryptlib.h"
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\dll.cpp
+	"dll.h"
+	<windows.h>
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\dll.h
+	"aes.h"
+	"cbcmac.h"
+	"channels.h"
+	"des.h"
+	"dh.h"
+	"dsa.h"
+	"ec2n.h"
+	"eccrypto.h"
+	"ecp.h"
+	"files.h"
+	"fips140.h"
+	"hex.h"
+	"hmac.h"
+	"modes.h"
+	"mqueue.h"
+	"nbtheory.h"
+	"osrng.h"
+	"pkcspad.h"
+	"pssr.h"
+	"randpool.h"
+	"rsa.h"
+	"rw.h"
+	"sha.h"
+	"skipjack.h"
+	"trdlocal.h"
+	<new>
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\dsa.h
+	"gfpcrypt.h"
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\ec2n.h
+	"gf2n.h"
+	"eprecomp.h"
+	"smartptr.h"
+	"pubkey.h"
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\gf2n.h
+	"cryptlib.h"
+	"secblock.h"
+	"misc.h"
+	"algebra.h"
+	<iosfwd>
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\eccrypto.h
+	"pubkey.h"
+	"integer.h"
+	"asn.h"
+	"hmac.h"
+	"sha.h"
+	"gfpcrypt.h"
+	"dh.h"
+	"mqv.h"
+	"ecp.h"
+	"ec2n.h"
+	"eccrypto.cpp"
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\mqv.h
+	"gfpcrypt.h"
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\ecp.h
+	"modarith.h"
+	"eprecomp.h"
+	"smartptr.h"
+	"pubkey.h"
+
+1190545394 d:\projects\infraelly\curver\libbuild\cryptoppbuild\eccrypto.cpp
+	"pch.h"
+	"eccrypto.h"
+	"nbtheory.h"
+	"oids.h"
+	"hex.h"
+	"argnames.h"
+	"ec2n.h"
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\nbtheory.h
+	"integer.h"
+	"algparam.h"
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\oids.h
+	"asn.h"
+
+1187244552 d:\projects\infraelly\curver\libbuild\cryptoppbuild\hex.h
+	"basecode.h"
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\files.h
+	"cryptlib.h"
+	"filters.h"
+	"argnames.h"
+	<iostream>
+	<fstream>
+
+1187244552 d:\projects\infraelly\curver\libbuild\cryptoppbuild\mqueue.h
+	"queue.h"
+	"filters.h"
+	<deque>
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\pkcspad.h
+	"cryptlib.h"
+	"pubkey.h"
+	"sha.h"
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\pssr.h
+	"pubkey.h"
+	"emsa2.h"
+	"sha.h"
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\emsa2.h
+	"cryptlib.h"
+	"pubkey.h"
+	"sha.h"
+
+1187244552 d:\projects\infraelly\curver\libbuild\cryptoppbuild\rsa.h
+	"pubkey.h"
+	"asn.h"
+	"pkcspad.h"
+	"oaep.h"
+	"emsa2.h"
+
+1187244552 d:\projects\infraelly\curver\libbuild\cryptoppbuild\oaep.h
+	"pubkey.h"
+	"sha.h"
+
+1187244552 d:\projects\infraelly\curver\libbuild\cryptoppbuild\rw.h
+	"pubkey.h"
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\skipjack.h
+	"seckey.h"
+	"secblock.h"
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\dsa.cpp
+	"pch.h"
+	"dsa.h"
+	"nbtheory.h"
+
+1187244552 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\ec2n.cpp
+	"pch.h"
+	"ec2n.h"
+	"asn.h"
+	"algebra.cpp"
+	"eprecomp.cpp"
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\ecp.cpp
+	"pch.h"
+	"ecp.h"
+	"asn.h"
+	"nbtheory.h"
+	"algebra.cpp"
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\elgamal.cpp
+	"pch.h"
+	"elgamal.h"
+	"asn.h"
+	"nbtheory.h"
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\elgamal.h
+	"modexppc.h"
+	"dsa.h"
+
+1187244552 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\emsa2.cpp
+	"pch.h"
+	"emsa2.h"
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\esign.cpp
+	"pch.h"
+	"esign.h"
+	"asn.h"
+	"modarith.h"
+	"nbtheory.h"
+	"sha.h"
+	"algparam.h"
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\esign.h
+	"pubkey.h"
+	"integer.h"
+	"asn.h"
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\files.cpp
+	"pch.h"
+	"files.h"
+	<limits>
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\filters.cpp
+	"pch.h"
+	"filters.h"
+	"mqueue.h"
+	"fltrimpl.h"
+	"argnames.h"
+	<memory>
+	<functional>
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\fips140.cpp
+	"pch.h"
+	"fips140.h"
+	"trdlocal.h"
+
+1190545394 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\fipstest.cpp
+	"pch.h"
+	"dll.h"
+	<windows.h>
+	<iostream>
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\gf256.cpp
+	"pch.h"
+	"gf256.h"
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\gf256.h
+	"cryptlib.h"
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\gf2_32.cpp
+	"pch.h"
+	"misc.h"
+	"gf2_32.h"
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\gf2_32.h
+	"cryptlib.h"
+
+1187244552 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\gf2n.cpp
+	"pch.h"
+	"gf2n.h"
+	"algebra.h"
+	"words.h"
+	"randpool.h"
+	"asn.h"
+	"oids.h"
+	<iostream>
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\words.h
+	"misc.h"
+
+1187244552 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\gfpcrypt.cpp
+	"pch.h"
+	"gfpcrypt.h"
+	"asn.h"
+	"oids.h"
+	"nbtheory.h"
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\gost.cpp
+	"pch.h"
+	"gost.h"
+	"misc.h"
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\gost.h
+	"seckey.h"
+	"secblock.h"
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\gzip.cpp
+	"pch.h"
+	"gzip.h"
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\gzip.h
+	"zdeflate.h"
+	"zinflate.h"
+	"crc.h"
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\zdeflate.h
+	"filters.h"
+	"misc.h"
+
+1187244552 d:\projects\infraelly\curver\libbuild\cryptoppbuild\zinflate.h
+	"filters.h"
+	<vector>
+
+1187244552 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\hex.cpp
+	"pch.h"
+	"hex.h"
+
+1187244552 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\hmac.cpp
+	"pch.h"
+	"hmac.h"
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\hrtimer.cpp
+	"pch.h"
+	"hrtimer.h"
+	"misc.h"
+	<stddef.h>
+	<time.h>
+	<windows.h>
+	<sys/time.h>
+	<sys/times.h>
+	<unistd.h>
+	<assert.h>
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\hrtimer.h
+	"config.h"
+	<time.h>
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\ida.cpp
+	"pch.h"
+	"ida.h"
+	"algebra.h"
+	"gf2_32.h"
+	"polynomi.h"
+	<functional>
+	"polynomi.cpp"
+
+1187244552 d:\projects\infraelly\curver\libbuild\cryptoppbuild\ida.h
+	"mqueue.h"
+	"filters.h"
+	"channels.h"
+	<map>
+	<vector>
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\polynomi.h
+	"cryptlib.h"
+	"misc.h"
+	"algebra.h"
+	<iosfwd>
+	<vector>
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\polynomi.cpp
+	"pch.h"
+	"polynomi.h"
+	"secblock.h"
+	<sstream>
+	<iostream>
+
+1187244552 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\idea.cpp
+	"pch.h"
+	"idea.h"
+	"misc.h"
+
+1187244552 d:\projects\infraelly\curver\libbuild\cryptoppbuild\idea.h
+	"seckey.h"
+	"secblock.h"
+
+1190644234 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\integer.cpp
+	"pch.h"
+	"integer.h"
+	"modarith.h"
+	"nbtheory.h"
+	"asn.h"
+	"oids.h"
+	"words.h"
+	"algparam.h"
+	"pubkey.h"
+	"sha.h"
+	"cpu.h"
+	<iostream>
+	<intrin.h>
+	<c_asm.h>
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\iterhash.cpp
+	"pch.h"
+	"iterhash.h"
+	"misc.h"
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\luc.cpp
+	"pch.h"
+	"luc.h"
+	"asn.h"
+	"nbtheory.h"
+	"sha.h"
+	"algparam.h"
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\luc.h
+	"pkcspad.h"
+	"oaep.h"
+	"integer.h"
+	"dh.h"
+	<limits.h>
+
+1187244552 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\md2.cpp
+	"pch.h"
+	"md2.h"
+
+1187244552 d:\projects\infraelly\curver\libbuild\cryptoppbuild\md2.h
+	"cryptlib.h"
+	"secblock.h"
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\md4.cpp
+	"pch.h"
+	"md4.h"
+	"misc.h"
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\md4.h
+	"iterhash.h"
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\md5.cpp
+	"pch.h"
+	"md5.h"
+	"misc.h"
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\md5.h
+	"iterhash.h"
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\misc.cpp
+	"pch.h"
+	"misc.h"
+	"words.h"
+	<new>
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\modes.cpp
+	"pch.h"
+	"modes.h"
+	"des.h"
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\mqueue.cpp
+	"pch.h"
+	"mqueue.h"
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\mqv.cpp
+	"pch.h"
+	"mqv.h"
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\nbtheory.cpp
+	"pch.h"
+	"nbtheory.h"
+	"modarith.h"
+	"algparam.h"
+	<math.h>
+	<vector>
+	<omp.h>
+
+1187244552 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\network.cpp
+	"pch.h"
+	"network.h"
+	"wait.h"
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\network.h
+	"config.h"
+	"filters.h"
+	"hrtimer.h"
+	<deque>
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\wait.h
+	"config.h"
+	"misc.h"
+	"cryptlib.h"
+	<vector>
+	<winsock2.h>
+	<sys/types.h>
+	"hrtimer.h"
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\oaep.cpp
+	"pch.h"
+	"oaep.h"
+	<functional>
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\osrng.cpp
+	"pch.h"
+	"osrng.h"
+	"rng.h"
+	<windows.h>
+	<wincrypt.h>
+	<errno.h>
+	<fcntl.h>
+	<unistd.h>
+
+1190644234 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\panama.cpp
+	"pch.h"
+	"panama.h"
+	"misc.h"
+	"cpu.h"
+
+1187244552 d:\projects\infraelly\curver\libbuild\cryptoppbuild\panama.h
+	"strciphr.h"
+	"iterhash.h"
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\pch.cpp
+	"pch.h"
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\pkcspad.cpp
+	"pch.h"
+	"pkcspad.h"
+	<assert.h>
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\polynomi.cpp
+	"pch.h"
+	"polynomi.h"
+	"secblock.h"
+	<sstream>
+	<iostream>
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\pssr.cpp
+	"pch.h"
+	"pssr.h"
+	<functional>
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\pubkey.cpp
+	"pch.h"
+	"pubkey.h"
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\queue.cpp
+	"pch.h"
+	"queue.h"
+	"filters.h"
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\rabin.cpp
+	"pch.h"
+	"rabin.h"
+	"nbtheory.h"
+	"asn.h"
+	"sha.h"
+	"modarith.h"
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\rabin.h
+	"oaep.h"
+	"pssr.h"
+	"integer.h"
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\randpool.cpp
+	"pch.h"
+	"randpool.h"
+	"aes.h"
+	"sha.h"
+	"hrtimer.h"
+	<time.h>
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\rc2.cpp
+	"pch.h"
+	"rc2.h"
+	"misc.h"
+	"argnames.h"
+
+1187244552 d:\projects\infraelly\curver\libbuild\cryptoppbuild\rc2.h
+	"seckey.h"
+	"secblock.h"
+	"algparam.h"
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\rc5.cpp
+	"pch.h"
+	"rc5.h"
+	"misc.h"
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\rc5.h
+	"seckey.h"
+	"secblock.h"
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\rc6.cpp
+	"pch.h"
+	"rc6.h"
+	"misc.h"
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\rc6.h
+	"seckey.h"
+	"secblock.h"
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\rdtables.cpp
+	"pch.h"
+	"rijndael.h"
+
+1190545394 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\rijndael.cpp
+	"pch.h"
+	"rijndael.h"
+	"misc.h"
+	"cpu.h"
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\ripemd.cpp
+	"pch.h"
+	"ripemd.h"
+	"misc.h"
+
+1187244552 d:\projects\infraelly\curver\libbuild\cryptoppbuild\ripemd.h
+	"iterhash.h"
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\rng.cpp
+	"pch.h"
+	"rng.h"
+	"fips140.h"
+	<time.h>
+	<math.h>
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\rsa.cpp
+	"pch.h"
+	"rsa.h"
+	"asn.h"
+	"oids.h"
+	"modarith.h"
+	"nbtheory.h"
+	"sha.h"
+	"algparam.h"
+	"fips140.h"
+	"pssr.h"
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\rw.cpp
+	"pch.h"
+	"rw.h"
+	"nbtheory.h"
+	"asn.h"
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\safer.cpp
+	"pch.h"
+	"safer.h"
+	"misc.h"
+	"argnames.h"
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\safer.h
+	"seckey.h"
+	"secblock.h"
+
+1190644234 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\salsa.cpp
+	"pch.h"
+	"salsa.h"
+	"misc.h"
+	"argnames.h"
+	"cpu.h"
+	<emmintrin.h>
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\salsa.h
+	"strciphr.h"
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\seal.cpp
+	"pch.h"
+	"seal.h"
+	"sha.h"
+	"misc.h"
+
+1187244552 d:\projects\infraelly\curver\libbuild\cryptoppbuild\seal.h
+	"strciphr.h"
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\serpent.cpp
+	"pch.h"
+	"serpent.h"
+	"misc.h"
+	"serpentp.h"
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\serpent.h
+	"seckey.h"
+	"secblock.h"
+
+1187244552 d:\projects\infraelly\curver\libbuild\cryptoppbuild\serpentp.h
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\sha.cpp
+	"pch.h"
+	"sha.h"
+	"misc.h"
+	"cpu.h"
+
+1187244552 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\shacal2.cpp
+	"pch.h"
+	"shacal2.h"
+	"misc.h"
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\shacal2.h
+	"seckey.h"
+	"secblock.h"
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\shark.cpp
+	"pch.h"
+	"shark.h"
+	"misc.h"
+	"modes.h"
+	"gf256.h"
+
+1187244552 d:\projects\infraelly\curver\libbuild\cryptoppbuild\shark.h
+	"config.h"
+	"seckey.h"
+	"secblock.h"
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\sharkbox.cpp
+	"pch.h"
+	"shark.h"
+
+1187244552 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\simple.cpp
+	"pch.h"
+	"simple.h"
+	"secblock.h"
+
+1187244552 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\skipjack.cpp
+	"pch.h"
+	"skipjack.h"
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\socketft.cpp
+	"pch.h"
+	"socketft.h"
+	"wait.h"
+	<errno.h>
+	<netdb.h>
+	<unistd.h>
+	<arpa/inet.h>
+	<netinet/in.h>
+	<sys/ioctl.h>
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\socketft.h
+	"config.h"
+	"network.h"
+	"queue.h"
+	<winsock2.h>
+	"winpipes.h"
+	<sys/time.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<unistd.h>
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\winpipes.h
+	"config.h"
+	"network.h"
+	"queue.h"
+	<winsock2.h>
+
+1190644234 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\sosemanuk.cpp
+	"pch.h"
+	"sosemanuk.h"
+	"misc.h"
+	"cpu.h"
+	"serpentp.h"
+	<emmintrin.h>
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\sosemanuk.h
+	"strciphr.h"
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\square.cpp
+	"pch.h"
+	"square.h"
+	"misc.h"
+	"gf256.h"
+
+1187244552 d:\projects\infraelly\curver\libbuild\cryptoppbuild\square.h
+	"seckey.h"
+	"secblock.h"
+
+1187244552 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\squaretb.cpp
+	"pch.h"
+	"square.h"
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\strciphr.cpp
+	"pch.h"
+	"strciphr.h"
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\tea.cpp
+	"pch.h"
+	"tea.h"
+	"misc.h"
+
+1187244552 d:\projects\infraelly\curver\libbuild\cryptoppbuild\tea.h
+	"seckey.h"
+	"secblock.h"
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\tftables.cpp
+	"pch.h"
+	"twofish.h"
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\twofish.h
+	"seckey.h"
+	"secblock.h"
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\tiger.cpp
+	"pch.h"
+	"tiger.h"
+	"misc.h"
+	"cpu.h"
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\tiger.h
+	"config.h"
+	"iterhash.h"
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\tigertab.cpp
+	"pch.h"
+	"tiger.h"
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\trdlocal.cpp
+	"pch.h"
+	"trdlocal.h"
+	<windows.h>
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\ttmac.cpp
+	"pch.h"
+	"ttmac.h"
+	"misc.h"
+
+1187244552 d:\projects\infraelly\curver\libbuild\cryptoppbuild\ttmac.h
+	"seckey.h"
+	"iterhash.h"
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\twofish.cpp
+	"pch.h"
+	"twofish.h"
+	"misc.h"
+
+1190644234 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\vmac.cpp
+	"pch.h"
+	"vmac.h"
+	"argnames.h"
+	"cpu.h"
+	<intrin.h>
+
+1187244550 d:\projects\infraelly\curver\libbuild\cryptoppbuild\vmac.h
+	"iterhash.h"
+	"seckey.h"
+
+1187244552 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\wait.cpp
+	"pch.h"
+	"wait.h"
+	"misc.h"
+	<errno.h>
+	<sys/types.h>
+	<sys/time.h>
+	<unistd.h>
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\wake.cpp
+	"pch.h"
+	"wake.h"
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\wake.h
+	"seckey.h"
+	"secblock.h"
+	"strciphr.h"
+
+1190545394 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\whrlpool.cpp
+	"pch.h"
+	"whrlpool.h"
+	"misc.h"
+	"cpu.h"
+	<emmintrin.h>
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\whrlpool.h
+	"config.h"
+	"iterhash.h"
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\winpipes.cpp
+	"pch.h"
+	"winpipes.h"
+	"wait.h"
+
+1187244548 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\xtr.cpp
+	"pch.h"
+	"xtr.h"
+	"nbtheory.h"
+	"algebra.cpp"
+
+1187244552 d:\projects\infraelly\curver\libbuild\cryptoppbuild\xtr.h
+	"modarith.h"
+
+1187244550 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\xtrcrypt.cpp
+	"pch.h"
+	"xtrcrypt.h"
+	"nbtheory.h"
+	"asn.h"
+	"argnames.h"
+
+1187244552 d:\projects\infraelly\curver\libbuild\cryptoppbuild\xtrcrypt.h
+	"xtr.h"
+
+1190545394 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\zdeflate.cpp
+	"pch.h"
+	"zdeflate.h"
+	<functional>
+
+1187244552 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\zinflate.cpp
+	"pch.h"
+	"zinflate.h"
+
+1187244552 source:d:\projects\infraelly\curver\libbuild\cryptoppbuild\zlib.cpp
+	"pch.h"
+	"zlib.h"
+	"zdeflate.h"
+	"zinflate.h"
+
+1187244548 d:\projects\infraelly\curver\libbuild\cryptoppbuild\zlib.h
+	"adler32.h"
+	"zdeflate.h"
+	"zinflate.h"
+

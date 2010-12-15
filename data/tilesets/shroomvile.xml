@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<Tileset>
+    <ImageFilename>images/shroomvile.png</ImageFilename>
+    <TilesetName>Shroomvile</TilesetName>
+    <TransKey use="0" r="0" g="0" b="0" />
+    <TileSize w="32" h="32" />
+    <Offset x="0" y="0" />
+</Tileset>

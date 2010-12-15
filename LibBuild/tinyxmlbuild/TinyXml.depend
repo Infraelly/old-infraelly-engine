@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1178430084 source:d:\projects\infraelly\curver\libbuild\tinyxmlbuild\tinyxml.cpp
+	<ctype.h>
+	<sstream>
+	<iostream>
+	"tinyxml.h"
+
+1178430084 d:\projects\infraelly\curver\libbuild\tinyxmlbuild\tinyxml.h
+	<ctype.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<string>
+	<iostream>
+	<sstream>
+	"tinystr.h"
+
+1178430084 d:\projects\infraelly\curver\libbuild\tinyxmlbuild\tinystr.h
+	<assert.h>
+	<string.h>
+
+1178430084 source:d:\projects\infraelly\curver\libbuild\tinyxmlbuild\tinyxmlerror.cpp
+	"tinyxml.h"
+
+1289907515 source:d:\projects\infraelly\curver\libbuild\tinyxmlbuild\tinyxmlparser.cpp
+	<ctype.h>
+	<stddef.h>
+	"tinyxml.h"
+	<windows.h>
+
+1178430084 source:d:\projects\infraelly\curver\libbuild\tinyxmlbuild\xmltest.cpp
+	<iostream>
+	<sstream>
+	<stdio.h>
+	<crtdbg.h>
+	"tinyxml.h"
+
+1178430084 source:d:\projects\infraelly\curver\libbuild\tinyxmlbuild\tinystr.cpp
+	"tinystr.h"
+

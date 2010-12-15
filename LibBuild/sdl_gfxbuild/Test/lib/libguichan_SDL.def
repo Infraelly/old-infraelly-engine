@@ -1,0 +1,64 @@
+EXPORTS
+    _ZN3gcn11SDLGraphics10_beginDrawEv @1
+    _ZN3gcn11SDLGraphics11popClipAreaEv @2
+    _ZN3gcn11SDLGraphics12pushClipAreaENS_9RectangleE @3
+    _ZN3gcn11SDLGraphics13drawRectangleERKNS_9RectangleE @4
+    _ZN3gcn11SDLGraphics13fillRectangleERKNS_9RectangleE @5
+    _ZN3gcn11SDLGraphics14drawSDLSurfaceEP11SDL_Surface8SDL_RectS3_ @6
+    _ZN3gcn11SDLGraphics8_endDrawEv @7
+    _ZN3gcn11SDLGraphics8drawLineEiiii @8
+    _ZN3gcn11SDLGraphics8setColorERKNS_5ColorE @9
+    _ZN3gcn11SDLGraphics9drawHLineEiii @10
+    _ZN3gcn11SDLGraphics9drawImageEPKNS_5ImageEiiiiii @11
+    _ZN3gcn11SDLGraphics9drawPointEii @12
+    _ZN3gcn11SDLGraphics9drawVLineEiii @13
+    _ZN3gcn11SDLGraphics9setTargetEP11SDL_Surface @14
+    _ZN3gcn11SDLGraphicsC1Ev @15
+    _ZN3gcn11SDLGraphicsC2Ev @16
+    _ZN3gcn14SDLImageLoader14loadSDLSurfaceERKSs @17
+    _ZN3gcn14SDLImageLoader23convertToStandardFormatEP11SDL_Surface @18
+    _ZN3gcn14SDLImageLoader4loadERKSsb @19
+    _ZN3gcn7contrib15SDLTrueTypeFont10drawStringEPNS_8GraphicsERKSsii @20
+    _ZN3gcn7contrib15SDLTrueTypeFont11isAntiAliasEv @21
+    _ZN3gcn7contrib15SDLTrueTypeFont12setAntiAliasEb @22
+    _ZN3gcn7contrib15SDLTrueTypeFont13getRowSpacingEv @23
+    _ZN3gcn7contrib15SDLTrueTypeFont13setRowSpacingEi @24
+    _ZN3gcn7contrib15SDLTrueTypeFont15getGlyphSpacingEv @25
+    _ZN3gcn7contrib15SDLTrueTypeFont15setGlyphSpacingEi @26
+    _ZN3gcn7contrib15SDLTrueTypeFontC1ERKSsi @27
+    _ZN3gcn7contrib15SDLTrueTypeFontC2ERKSsi @28
+    _ZN3gcn7contrib15SDLTrueTypeFontD0Ev @29
+    _ZN3gcn7contrib15SDLTrueTypeFontD1Ev @30
+    _ZN3gcn7contrib15SDLTrueTypeFontD2Ev @31
+    _ZN3gcn8SDLImage22convertToDisplayFormatEv @32
+    _ZN3gcn8SDLImage4freeEv @33
+    _ZN3gcn8SDLImage8getPixelEii @34
+    _ZN3gcn8SDLImage8putPixelEiiRKNS_5ColorE @35
+    _ZN3gcn8SDLImageC1EP11SDL_Surfaceb @36
+    _ZN3gcn8SDLImageC2EP11SDL_Surfaceb @37
+    _ZN3gcn8SDLImageD0Ev @38
+    _ZN3gcn8SDLImageD1Ev @39
+    _ZN3gcn8SDLImageD2Ev @40
+    _ZN3gcn8SDLInput10_pollInputEv @41
+    _ZN3gcn8SDLInput15dequeueKeyInputEv @42
+    _ZN3gcn8SDLInput15isKeyQueueEmptyEv @43
+    _ZN3gcn8SDLInput17dequeueMouseInputEv @44
+    _ZN3gcn8SDLInput17isMouseQueueEmptyEv @45
+    _ZN3gcn8SDLInput18convertMouseButtonEi @46
+    _ZN3gcn8SDLInput32convertSDLEventToGuichanKeyValueE9SDL_Event @47
+    _ZN3gcn8SDLInput9pushInputE9SDL_Event @48
+    _ZN3gcn8SDLInputC1Ev @49
+    _ZN3gcn8SDLInputC2Ev @50
+    _ZNK3gcn11SDLGraphics8getColorEv @51
+    _ZNK3gcn11SDLGraphics9getTargetEv @52
+    _ZNK3gcn7contrib15SDLTrueTypeFont8getWidthERKSs @53
+    _ZNK3gcn7contrib15SDLTrueTypeFont9getHeightEv @54
+    _ZNK3gcn8SDLImage10getSurfaceEv @55
+    _ZNK3gcn8SDLImage8getWidthEv @56
+    _ZNK3gcn8SDLImage9getHeightEv @57
+    _ZTVN3gcn11SDLGraphicsE @58 DATA
+    _ZTVN3gcn14SDLImageLoaderE @59 DATA
+    _ZTVN3gcn7contrib15SDLTrueTypeFontE @60 DATA
+    _ZTVN3gcn8SDLImageE @61 DATA
+    _ZTVN3gcn8SDLInputE @62 DATA
+    gcnSDL @63

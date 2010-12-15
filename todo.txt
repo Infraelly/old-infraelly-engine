@@ -1,0 +1,687 @@
+#if 0
+________________________________________________________________________________
+
+                            TODO List and Notes
+________________________________________________________________________________
+
+File names with a "_" prefix are obselete and are due for deletion.
+
+
+ ---------------------------
+|           Tasks           |
+ ---------------------------
+
+Current Task:
+    + character shud use animations
+
+Major tasks:
+    + character/npcs
+    + cut scene er
+    + Data basing
+    + chat chanels
+    + database
+
+
+Minor Taks:
+
+    + item aug
+    + item actions and stuffs
+    + map draw/merge layer cache
+    + excessive cpu use because GameZone::ConnectionGroup is emtpy. checkSockets
+        returns instantly
+    + server USER_LEFT
+    + Unlag
+        + benchmark packeting
+        + benchmark un-packeting
+    + Go read Postgre Documentation
+
+Low Priority/Random Fixes:
+    + Mapper: Tools
+        + Paint Bucket (currently assigned to middle mouse)
+    + Mapper: layer change. make more clear where to click.
+    + logout.hpp log<ostream>
+        + use logOut functions
+        + assert
+    + More stuff needs to be logged ><
+        + INFPacket read type mismatch log warning
+    + String search for "!@#", these are issues needing amendment
+    + improve info forms ( validate function )
+    + Speech Bubble Word Wrap: line 58 SpeechBubble.cpp
+    + chat box, alert sound
+    + Make end-user infraelly launcher (updater?) to replace bat file
+    + give widgets custom alpha values (loaded from cfg?)
+    + use MuxtexLoker in COnnectionGroup
+        + inline stream compressor
+        + file << compress << some_char_aray
+        + file >> decompress >> some_char_aray
+    + inline stream encryptor
+        + file << encrypt << some_char_aray
+        + file >> decrypt >> some_char_aray
+
+
+Probably wont happen after all:
+    + may switch to non encapsulated "TCP_SOCKET" on server...
+    + switch to boost threads or pthreads atleast =/
+    + bsdSock/winsock?
+        + Wrap winsock/bsdSockets
+
+
+
+--------------------------------------------------------
+                pre-alpha release 1 Part4
+--------------------------------------------------------
+/* TODO (#1#): compression on irf*/
+/* TODO (#1#): encryptoin*/
+/* TODO (#1#): Load and use maps*/
+/* TODO (#3#): inventory fix*/
+/* TODO (#2#): Confirm Junk item? */
+/* TODO (#3#): guichan equips box */
+/* TODO (#3#): Inventory box */
+/* TODO (#3#): NPC Scripting language
+        TYPE: Friend,foe
+        BLOCK: true false
+        CHASEPLAYER true
+        TEXT:
+        SETSPEED 10 (px)
+        MOVE WEST 5 (ms)
+        STOP random(0,100);
+        WAIT (5ms)
+        ATTACK(20)
+etc */
+
+/* TODO (#3#): Item Actions parser
+        WARP 0 0 green.inm (x, y, map name)
+*/
+/* TODO (#3#): Gold. (currency - item)
+/* todo (#3#): hot keys for guichan->windows */
+/* TODO (#9#): Chracter shud use item (index of the inventory vector, not random reference) */
+/* TODO (#5#): Battle? */
+/* TODO (#5#): make Sprites */
+/* TODO (#5#): make Tileset */
+/* TODO (#5#): make Music */
+/* TODO (#5#): make Sound effects */
+/* DONE (#1#):
+    + Extract data from INFPacket operator<<
+    + TransmissionPacket: wrapped up version of INFPacket
+    + INFPacket friend function prepareTransmission
+                Will split up the INFPacket.data into correctly sized chunks for sending
+                return a queue of TransmissionPacket
+    + Connection can send INFPacket
+    + threads delete themselves from the map
+        reaper is obselete. Cry him a river ;]
+    + client post to server fix
+    + bool Character::validCharState(int state)
+    + bool Character::validDirection(int state)
+    + bool Character::validJob(int job)
+    + Job changes chart
+    + jobToString(const enum Character::Jobs& currentClass){
+    + Character::Jobs stringToJob(std::string currentClass)
+    + bool Stat::validStat(int stat)
+    + void Character::Stop
+    + void Character::move [ so glitchy ]
+    + renumber NetProtocol.hpp
+    + resizeable screen
+    + wrap the connections/threads vector [turned into the ConnectionsManager]
+    + server/client use new inp structure
+    + user is unwrapping data wad poorly
+    + renumber NetProtocol.hpp
+    + line number cerr/cout
+    + screen switch to proper full screen res
+    + polish debugOut functions
+    + implement connectionGroup with a sdl_socket_set
+    + dont poll sockets, block all in a group
+    + multiplayer net protocol
+    + servre exit, dedicated socket to shutdown
+    + press up for last command in console
+    + make sure USER_JOIN is sent/recived properly
+    + make function to get total players online (rivive con counter?)
+    + fix command line
+    + shift fonts into namespace fonts
+    + colour to colour namspace
+    + mixer, enable/disable sound/music
+        + center base gui dialogues
+        +Notification
+        +AlertBox
+        + migrate the run loops to RunContexts
+        + shift game loop usernaming stugff to the intro screen
+        + USE Log in box
+        + Ping ( test it, and wish for the best )
+    + areamap add, push, remove, insert layer
+    + Character use time dependent motion. xy velocity, px/s
+    + CacheableResource
+    + ResourceCache(CacheableResource);
+        -load, erase, get, at, empty. etc.
+    + MakeNewTileset ts preview fixed
+    + MAP SAVE/LOAD FIX
+    + Making code more standards conforming. ie, fix warnings
+    + FIXED: mapper wont place tiles... layer draw function... alpha compositing problem
+*/
+[+] use Connection's internal socket group system with ConnectionGroup;
+[+] use pair<connection, player>  instead of PlayerConnection
+[+] posession forge
+[+] online test
+[+] put SpeechBubble into Character
+[+] Animation work with cache (cacheables)
+/* DONE (#1#): auto load irf files*/
+/* DONE (#1#): have all clases uses irf files*/
+
+/* DONE (#1#): Infraelly packer
+                + pack resorces
+                + auto pack resources at compile time
+            SAVE LOAD READY:
+            -------------------
+            [+]Tileset  (v)
+            [+]Tile     (v)
+            [+]MapTile  (v)
+            [+]Layer    (v)
+            [+]Maps     (v)
+            [+]TSprite
+            [+]Frames
+            [+]Animation (v)
+            [+]Items     (v)
+            [+]Inventory (v)
+            [+]Character (v)
+            CACHE READY:
+            ------------
+            [+]Tileset
+            [+]Maps
+            [+]TSprite
+            [+]Images
+            [+]Music
+            [+]Sounds
+            [+]Animation
+            [+]Items
+            [+] save: class version... every class shud have a "static double ver"
+            [+] config file
+            [+]
+             check server/client/inp version
+
+             [+] make files load from pack (rWop loading)
+
+            load from ResourcePack
+            ----------------------
+            [+] = functions to load from packs
+            [c] = pack/cache will work together
+            font    [+][c]
+            audio   [+][c]
+            images  [+][c]
+            anim    [+][c]
+            maps    [+][c]
+            tilsets [+][c]
+            tsprites[+][c]
+            items   [+][c]
+*/
+    [+] filenames: interal/packs use unix paths.  external(writting) correctPath
+[+] InfraellyWindow: bound to screen?
+
+
+
+
+
+
+
+-------------------------------------------------------
+                pre-alpha release 1 Clean
+--------------------------------------------------------
+/* TODO (#7#):    + no more itoa */
+/* TODO (#7#):     + consistent formating convention */
+/* TODO (#7#):     + consistent naming convention */
+/* TODO (#7#): Sepparate the stderr and stdout */
+/* TODO (#1#): OffsetX vs XOffset
+/* TODO (#8#): Polish AreaMap::save(std::string filename) */
+/* TODO (#8#): Trace every "new" to find memory leaks*/
+/* TODO (#8#): Trace every "[" ([]) to find segmentation errors*/
+/* TODO (#8#): AutoBound? Sprite.dat? */
+/* TODO (#7#): On screen status messages */
+/* TODO (#3#): Sexyfy  credits */
+/* TODO (#9#): Improve Stacks */
+/* TODO (#9#): Optimize/clean -> review all code -> 3 to 1 inline function,   fix fps problem TT__TT*/
+/* TODO (#1#): chat stream. chatBox << "sup: " << player.name(); */
+/* TODO (#8#): frameskip  */
+/* TODO (#9#): Embed fonts *
+/* TODO (#9#): Embed Base character graphics */
+/* TODO (#9#): AreamMap use map<T> for load/save */
+/* TODO (#8#): Seamless Map integration? */
+/* TODO (#8#): Configuration:
+    screen size? \_____default
+                  _____auto
+    colour mode  /
+    blended fonts?
+    start in fullscreen mode
+    sound
+    music
+    always free tilesets
+    display FPS?
+*/
+/* TODO (#9#): All resources pre-loaded. enum for rc names */
+/* TODO (#9#): Particle Engine from sprites/SDL_pixels?*/
+/* TODO (#1#): map's Tile width.height per layer */
+/* TODO (#1#): Layer Set Tile wdith/height */
+/* TODO (#1#): layer Set Tile wdith/height of LAYER*/
+/* TODO (#1#): fix frame rate... gl?
+/* TODO (#3#) Use Augumentation class  */
+/* TODO (#3#): Character: StatBonus */
+/* TODO (#3#): Item: Augument class, + vector */
+/* TODO (#3#): Item: BUFF STR || INT || HP 200(ms) */
+
+
+
+
+--------------------------------------------------------
+                pre-alpha release 1 Part1       DONE
+--------------------------------------------------------
+/* DONE (#1#): Sound */
+/* DONE (#2#): Port Items */
+/* DONE (#2#): Item, NPC indexes */
+/* DONE (#2#): Port NPC  */
+/* DONE (#1#): draw health on top of npc/player */
+/* DONE (#2#): NPC Draw (subClass of Chracter) */
+/* DONE (#2#): Item Draw  */
+/* DONE (#1#): Buttons */
+/* DONE (#3#): Object Stacks */
+/* DONE (#1#): MsgBox(std::string Title, std::string Text); just and ok, pop-up */
+/* DONE (#3#): Inventory  */
+/* DONE (#3#): credits  */
+/* DONE (#3#): fix get string height */
+/* DONE (#9#): Get splash screen in center of screen */
+/* DONE (#6#): Maps (DO NOT PORT)*/
+-------------------------------------------------------
+                pre-alpha release 1 Part2       DONE
+-------------------------------------------------------
+/* DONE (#4#): Collision checker (function) */
+/* DONE (#3#): special effects:Fade in/out  */
+/* DONE (#1#): String input */
+/* DONE (#2#): Level up equation */
+/* DONE (#1#): Layer Properties (Properties Layer) : Linked Maps*/
+/* DONE (#1#): REWRITE button CLASS TileSet? */
+/* DONE (#1#): FormObject: Radio Button  */
+/* DONE (#1#): closeTileset */
+/* DONE (#1#): Tileset Scroll */
+/* DONE (#1#): Tileset Grid */
+/* DONE (#1#): Grid for map area */
+/* DONE (#1#): Tileset Tile Select */
+/* DONE (#1#): MapClass draw functions */
+/* DONE (#1#): Tile Place */
+/* DONE (#1#): Tile Delete */
+/* DONE (#1#): clear Tile::tilesets on close*/
+/* Done (#1#): Map scroll */
+/* DONE (#1#): draw layer/map within region /*
+/* DONE (#1#): QuestionBox(std::string Title, std::string Text); pop-up, yes/no (ok/cancell) buttons. */
+/* Done (#1#): REWRITE CHARACTER CLASS Re-think spriting... TileSet? */
+/* Done (#3#): Item loading
+/* Done (#3#): Ajust stax and stak ctrl for edited classes: cha, item, npc */
+/* Done (#2#): Intro menu buttons */
+/* Done (#3#): link inventory/character  */
+/* Done (#3#): inventory saving  */
+/* Done (#3#): Character saving */
+--------------------------------------------------------
+                pre-alpha release 1 Part3
+--------------------------------------------------------
+/* DONE (#8#): Game Menu */
+/* DONE (#8#): character int, spd,  */
+/* DONE (#1#) Implement Guichan */
+/* DONE (#1#) Guichan Font loading */
+/* DONE (#1#) Guichan intro menu*/
+/* DONE (#1#) Guichan statbox*/
+/* DONE (#3#): Guichan chatbox */
+/* DONE (#3#): guichan stat box */
+/* DONE (#3#): guichan progress bar widget*/
+/* DONE (#3#): progress bar widget*/
+/* DONE (#3#): guichan health box */
+/* DONE (#3#): Guichan InfraellyPopup */
+/* FIXED : access violation some where , when exiting */
+/* DONE (#1#): MAP EDITOR file tool bar */
+/* DONE (#1#): MAP EDITOR layertoggle toolbar */
+/* FIXED (#1#): delete the image loader on exit!!! */
+/* DONE (#1#): MAP EDITOR file tool bar */
+/* DONE (#1#): MAP EDITOR layertoggle toolbar */
+/* DONE (#1#): infraelly scroll area */
+/* DONE (#1#): Tileset alias's */
+/* DONE (#1#): Tileset alias's write/read to file */
+/* DONE (#1#): MAP EDITOR tileset toolbar */
+/* FIXED : access violation when deleting tileset */
+/* DONE (#1#): MAP details box */
+/* DONE (#1#): embed editor into infraely main client */
+/* DONE (#1#): draw map behind the gui */
+/* DONE (#1#): Custom "exit(int)" codes */
+/* DONE (#1#): Guichan BaseGui object. contains input and gfx, + notify/unNotify + alert */
+/* DONE (#1#): Guichan MessegeBox widget (VIA BaseGui) */
+/* DONE (#1#): All guis inherit from BaseGui */
+/* DONE (#1#): Endian safin AreaMap */
+/* FIXED : Alert box + notfier epic fail. No input recieved */
+/* DONE (#1#): MAP name */
+/* DONE (#1#): map's exclusive flag, store */
+/* DONE (#1#): MAP EDITOR guichan */
+/* Done (#1#): MonoState class Screen */
+/* DONE (#1#): MAP Olayer */
+/* DONE (#1#): MonoState class InfraellyMixer */
+/* DONE (#1#): Replace Tileset::tilesets. Use <map> (like mixer) */
+/* DONE class ConnectionCounter (thread safe){ ++, --, getValue() };*/
+/* DONE (#1#): Server/client model */
+/* DONE (#1#): reap dead threads/Connection */
+/* DONE (#1#):  Off screen selected Tile Notyfier  */
+/* DONE (#1#): mapper load ts crashes (type, del, type) [ SOLVED: tileset class was still deleting image resources, even tho it does not need to; its image resources are managed by cache] */
+/* DONE (#1#): Make load TSPRITE box */
+
+
+
+
+
+
+
+-------------------------------------------------
+
+            Connection Coms
+
+-------------------------------------------------
+[ SERVER_MESSAGE | <string WHAT> ]
+[ CONNECT_DENY | <string REASON> ]
+[ CONNECT_SUCCESS ]
+[ KICK | REASON ]
+
+
+-----------------------------------------
+
+        Ping
+
+-----------------------------------------
+Ping - Client > Server
+[ PING ]
+
+Ping Time - Client > server
+[ USERNAME | PING_TIME ]
+
+Ping Request - Server > Client
+[ PING_REQ ]
+
+// server ping to player
+ Server sends ping_REQ
+ Player recieves, and sends ping.
+ Server responds to player's ping request
+ Player recieves the pong.
+ Player calculates time, and sends the time off in a 'ping_time'
++ Pros
+server doesn't have to store timers for all the players =]
++ Cons, bandwidth is used.
++ cant time out... wont get any response until user sends 'ping_time'
+
+
+
+
+--------------------------------------------------------------------------------
+
+                            NOTES (JUNK HEAP) BELLOW
+                        (mostly old/deprecated)
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+packs:
+    THE ROOT DIRECTORY FOR ALL FILE PATHS SHOULD BE data/
+    DONT PUT /data/ AT THE BEGINING OF THE FILE PATH
+    SO TO GET A FILE STORED AT /data/tileset/TEST.XML,
+        USE THE FILEPATH tileset/TEST.XML
+
+    ALL DIRECTORIES lowerCase
+
+--------------------------------------------------------------------------------
+
+Our networking model:
+    The client _IS_ the server's bitch
+        + move/eat/attack/etc when your told >=O
+
+
+
+
+
+//alpha compositing
+SDL_Surface *source, destination;
+int width, height;
+
+source = IMG_Load("foo.png");
+width = getNextPowerOfTwo(source->w);
+height = getNextPowerOfTwo(source->h);
+destination = SDL_CreateRGBSurface(SDL_SWSURFACE, width, height, 32, RED_MASK, GREEN_MASK, BLUE_MASK,
+    ALPHA_MASK);
+
+SDL_SetAlpha(source, 0, SDL_ALPHA_OPAQUE);
+SDL_FillRect(destination, 0, SDL_MapRGBA(destination->format, 0, 0, 0, 0));
+SDL_BlitSurface(source, 0, destination, 0);
+
+SDL_FreeSurface(source);
+SDL_FreeSurface(destination);
+
+
+
+
+
+
+_________________________________________________________________
+
+                 Infraelly Resource File v01.000.000
+_________________________________________________________________
+
+File will be saved in binary format + text header.
+.irf -> infraelly resource file
+
+
+            Header                  size/type
+ ----------------------------------------------------|
+|      File type string      |        string         |
+|----------------------------|-----------------------|
+|         Copyright          |        string         |
+|----------------------------|-----------------------|
+|   total number of files    |        2  bytes       |
+|----------------------------|-----------------------| 524b
+
+            ....
+
+|----------------------------|-----------------------|
+|   file size                |        2  bytes       |
+|----------------------------|-----------------------|
+|   file name                |        string         |
+|----------------------------|-----------------------|  xn
+|   position to start of rc  |        4  bytes       |
+|----------------------------|-----------------------|
+|   size of rc               |        4  bytes       |
+|----------------------------|-----------------------|
+|   SHA1 hash                |       16  bytes       |
+|----------------------------|-----------------------|
+
+        ...
+
+|----------------------------|-----------------------|
+|            rc file         |        char           | x n
+|----------------------------|-----------------------|
+
+
+
+
+
+
+
+_________________________________________________________________
+
+                 Inventory Save-File Structure PLAN
+_________________________________________________________________
+
+File will be saved in binary format.
+File name, if not merged with the character savefile should be named as follows:
+    userID_characterName.iin
+.iin -> infraelly inventory
+
+
+            Header                     size                     Description
+ ----------------------------------------------------|------------------------------|
+|      number of items       |          int          |   Number of Blocks to load   |
+|----------------------------|-----------------------|------------------------------|
+
+
+            Body
+|----------------------------|-----------------------|-------------------------------|
+|          Item file         |      item::save()     | each item stored in the list  |
+|----------------------------|-----------------------|-------------------------------|
+|      item end block        |             char      |  'EOF' to allow multiple      |
+                             |                       | items to load from same source|
+|----------------------------|-----------------------|-------------------------------|
+|                            |                       |                               |
+
+
+
+
+
+
+
+_________________________________________________________________
+
+               Map/layer File Structure Plan
+_________________________________________________________________
+
+File will be saved in binary format.
+Map should be named as follows:
+    mapName.imf
+.imf -> infraelly map file.
+
+
+
+Containment:
+map <- layer <-  tile <- tileset
+
+
+Method:
+Scan through tiles.
+Assign an ID to every Tileset used
+Store in header of map file/layer
+Use this ID when reloading
+
+
+
+
+Layering:
+1 ground layer
+2 objects/decals
+
+    <---------------item
+
+3 Trees/Building
+4 Trees/Building
+
+    <---------------Players \   Greater y = drawn last (on top)
+                    NPC     /       sorting algorythm (client-side)
+5 Trees/Building
+6 Trees/Building
+
+    <---------------windows (warning popups eg "Are you sure you want to junk this item? yes/no")
+
+
+
+
+
+Map file:
+
+            Header                     size                     Description
+
+                                    Map Header
+ ----------------------------|-----------------------|-------------------------------
+|    number of tilesets      |          int          |  the number of tilesets       |
+|----------------------------|-----------------------|-------------------------------|
+^                            ^                       ^                               ^
+--------------------------------------------------------------------------------------
+|     size of filename       |         int           |the size of the filename string|
+|----------------------------|-----------------------|-------------------------------|   xNumber of tilesets
+|          filename          |        char[]         |       c string format         |
+--------------------------------------------------------------------------------------
+
+
+|----------------------------|-----------------------|-------------------------------|
+v                            v                       v                               v
+
+^                            ^       Tileset         ^                               ^
+|----------------------------|-----------------------|-------------------------------|
+|           tileWidth        |         int           |     width of a single Tile    |
+|----------------------------|-----------------------|-------------------------------|
+|          tileHeight        |         int           |     height of a single Tile   |
+|----------------------------|-----------------------|-------------------------------|
+|            xOffset         |          int          |             xOffset           |
+|----------------------------|-----------------------|-------------------------------|
+|            yOffset         |          int          |             yOffset           |
+|----------------------------|-----------------------|-------------------------------|
+|     size of filename       |         int           |the size of the filename string|
+|----------------------------|-----------------------|-------------------------------|
+|          filename          |        char[]         |       c string format         |
+|----------------------------|-----------------------|-------------------------------|
+|                            |                       |                               |
+
+^                            ^         Layer         ^                               ^
+|----------------------------|-----------------------|-------------------------------|
+|          width             |          int          |       width of layer/map      |
+|----------------------------|-----------------------|-------------------------------|
+|          height            |          int          |       height of layer/map     |
+|----------------------------|-----------------------|-------------------------------|       x6
+|                                        ^                                           |
+|                                        |                                           |
+|           Tiles saved inside           |                                           |
+|                  layer                 |                                           |
+|                                        |                                           |
+
+^                            ^         Tile          ^                               ^
+|----------------------------|-----------------------|-------------------------------|
+|            row             |         int           |     row on the tileset        |
+|----------------------------|-----------------------|-------------------------------|
+|             col            |         int           |     collumn on tileset        |  xWidth*Height*6
+|----------------------------|-----------------------|-------------------------------|
+|           Tileset ID       |         int           | unique ID for tileset(made during map scan)
+|----------------------------|-----------------------|-------------------------------|
+
+
+
+
+
+
+
+
+Sprites = 64x64
+    centered horizontally
+
+
+
+
+#define startCutscene() {
+#define endCutscence() };
+
+
+
+
+//MOUSE COLLISION CHECK
+(mouseX > size.x) && (mouseX < size.x + size.w) && (mouseY > size.y) && (mouseY < size.y + size.h)
+
+
+
+//PIE HUNT CHASE SCRIPT
+
+if (foe1Y_int !== charY){
+    if (foe1X_int >= charX){
+        foe1X -= 10;
+        foe1.style.left = foe1X;
+        moving = true;
+    } else {
+        foe1X += 10;
+        foe1.style.left = foe1X;
+        moving = true;
+    }
+}
+
+if (foe1X_int !== charX) {
+    if (foe1Y_int >= charY) {
+        foe1Y -= 10;
+        foe1.style.top = foe1Y;
+        moving = true;
+    } else {
+        foe1Y += 10;
+        foe1.style.top = foe1Y;
+        moving = true;
+    }
+}
+
+
+#endif

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Windows" />
+	<File name="include\guichan\widget.hpp" open="0" top="0" tabpos="0">
+		<Cursor position="5519" topLine="643" />
+	</File>
+	<File name="include\guichan\widgets\button.hpp" open="0" top="0" tabpos="0">
+		<Cursor position="0" topLine="57" />
+	</File>
+	<File name="src\actionevent.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="2264" topLine="36" />
+	</File>
+	<File name="src\contrib\sdl\sdltruetypefont.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="2265" topLine="31" />
+	</File>
+	<File name="src\widgets\button.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="4658" topLine="240" />
+	</File>
+</CodeBlocks_layout_file>

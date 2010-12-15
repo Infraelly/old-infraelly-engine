@@ -1,0 +1,86 @@
+26 January 2009
+   released version 0.0.8327 of Infraelly
+
+     Change log:
+        -Added: Tileset grid guidelines
+        -Fixed: Offscreen Tileset: Selected Tile Bob
+        -Added: Map edit area
+        -Added: Map edit area guide grid lines
+        -Cleaned: AreaMap class header
+        -Cleaned: Layer class header
+        -Cleaned: MapTile class header
+        -Cleaned: Character class header
+        -Cleaned: Stats class header
+        -Cleaned: FpsManager Class header
+        -Optimised: Initialiser usage now in place in most classes
+        -Optimised: Now returning "const T&" instead of "T"
+        -Optimised: Parameters in form of "const T&" instead of "T"
+        -Optimised: Minor Optimisations on Global Functions
+        -Cleaned: Item class header
+        -Cleaned: Tile class header
+        -Cleaned: TSprite class header
+        -Cleaned: Tileset class header
+        -Added: New run mode. try "infraelly.exe -crash" then open stderr.txt
+        -Added: Layer cache drawing
+        -Updated: exit(int) now uses EXIT_SUCESS and EXIT_FAILURE (about time =.=)
+        -Added: Fps Manager can now draw fps onto an SDL_Surface
+        -Added: BaseGui class. All Infraelly Guis should inherrit from this.
+        -Added: BaseGui Class now capable of alert(const string&), and notification(const string&)
+        -Applied: Game gui now inherrits from BaseGui
+        -Added: Ability to change the container in BaseGui
+        -Cleaned: MainGui class header
+        -Applied: Mapper Gui inherrits from BaseGui
+        -Cleaned: Mapper Gui class header
+        -Applied: Endian safe AreaMap (via ascii output opposed to the prior binary file format)
+        -Added: Exclusive tag wirtten in AreaMap
+        -Added: Safe saving of files from AreaMap class
+        -Updated: CreateSurface now uses SDL_DisplayFormat, giving an 82.5% performance boost in mapper !!!!
+        -Fixed: BaseGui's notification() and alert() now work
+        -Applied: X-Y tileset offsets now work. (buggy)
+        -Fixed: X-Y tilset offsets fuly functional
+        -Added: Character x-y velocity added
+        -Fixed: Mapper tile delete
+        -Fixed: Tileset dependency properly cleared when closing a tileset
+        -Added: Tabbing enabled in mapper gui
+        -Updated: Prettier layer selector
+        -Added: Layer Names
+        -Fixed: Layer Names save/load
+        -Added: Infraelly DevSuit Lock off files: KeySmith
+        -Added: Character movement
+        -Added: Map editor now interfaces directly to the Global Tileset array
+        -Updated: bin2c Utility has been completely rewriten and ported to c++ and by me!
+        -Applied: Monostate class Screen used, now gloabalFunc is more independant
+        -Added: Attributes now available in editor
+        -Added: InfraellyMixer. Can play/cache sound + music. Also has a playlist with custom loop amounts  for multi-part songs ^_^
+        -Added: Thread safe, reference counted class: ThreadHelper
+        -Added: Rudimentary multi-threaded server ready
+        -Updated: Tileset now longer uses homebrew linear search. std::map<string,  Tileset* > is now used to provide a performance boost for tileset look ups!
+        -Added: ServerConsole now has an area to display connections and ip
+        -Added: Connection Class for handling player connections
+        -Added: Connection counter, is a thread safe counter datatype
+        -Trivia: Guess what little kiddies? my dad just told me im gona be scooping shit for a living. yay! =.=
+        -Added: Network data is now encapsulated with the Infraelly Network protocol
+        -Added: Rudimentary packet caching
+        -Added: NetWork Codes (values used to control data flow
+        -Added: Packet class (INFPacket) with stream like interface
+        -Added: Connection class is able to split INFPackets into chunks of "maxSendSize" and send
+        -Added: Connection class is able to recieve INFPacket chunks and rebuild them into a full INFPacket
+        -Added: Magical ConnectionManager class that promises to fix up the last of the thread con-currency problems
+        -Updated: ConnectionManager more appropriately renamed to ConnectionGroup
+        -Added: Centering functions added to GlobalFunctions
+        -Added: Center some more widgets, remove borders on some buttons
+        -Added: LOTS of fixed memory resource problems
+        -Cleaned: No more itoa
+        -Cleaned: headers cleaned
+        -New: Animation framework: AnimFrame, AnimFx, AnimFxControl, Animation
+        -New: Run mode Animator
+        -New: Animator Gui
+        -New: Animator Gui: Item Animator
+        -Fixed: Password Field FIxed
+        -New: NumberField added
+        -New: Gui List models for Animation class ready
+        -Added: Animation::name_
+        -Added: ThreadBase allowing for easy thread creating/deletion/pause/resume and the ability to transmit data to and from thread via psudo network connection
+        -
+        -
+

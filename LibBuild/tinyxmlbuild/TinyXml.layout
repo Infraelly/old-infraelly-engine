@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Release Windows" />
+	<File name="tinystr.h" open="0" top="0" tabpos="0">
+		<Cursor position="4595" topLine="135" />
+	</File>
+	<File name="tinyxml.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="tinyxml.h" open="0" top="0" tabpos="0">
+		<Cursor position="49942" topLine="1386" />
+	</File>
+	<File name="tinyxmlparser.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="9436" topLine="343" />
+	</File>
+</CodeBlocks_layout_file>

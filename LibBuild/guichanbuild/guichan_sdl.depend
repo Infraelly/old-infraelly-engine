@@ -1,0 +1,512 @@
+# depslib dependency file v1.0
+1200865718 source:/media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/src/actionevent.cpp
+	"guichan/actionevent.hpp"
+
+1200865148 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/actionevent.hpp
+	"guichan/event.hpp"
+	"guichan/platform.hpp"
+	<string>
+
+1200865312 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/event.hpp
+	"guichan/platform.hpp"
+
+1200865586 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/platform.hpp
+
+1200865748 source:/media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/src/basiccontainer.cpp
+	"guichan/basiccontainer.hpp"
+	<algorithm>
+	"guichan/exception.hpp"
+	"guichan/focushandler.hpp"
+	"guichan/graphics.hpp"
+	"guichan/mouseinput.hpp"
+
+1200865292 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/basiccontainer.hpp
+	<list>
+	"guichan/deathlistener.hpp"
+	"guichan/platform.hpp"
+	"guichan/widget.hpp"
+
+1200865306 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/deathlistener.hpp
+	<string>
+	"guichan/event.hpp"
+	"guichan/platform.hpp"
+
+1200865630 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/widget.hpp
+	<list>
+	<string>
+	"guichan/color.hpp"
+	"guichan/rectangle.hpp"
+
+1201946842 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/color.hpp
+	"guichan/platform.hpp"
+	<iostream>
+
+1201946842 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/rectangle.hpp
+	"guichan/platform.hpp"
+	<iostream>
+
+1200865316 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/exception.hpp
+	<string>
+	"guichan/platform.hpp"
+
+1200865320 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/focushandler.hpp
+	<vector>
+	"guichan/event.hpp"
+	"guichan/platform.hpp"
+
+1200865372 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/graphics.hpp
+	<iosfwd>
+	<stack>
+	"guichan/cliprectangle.hpp"
+	"guichan/platform.hpp"
+
+1200865300 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/cliprectangle.hpp
+	"guichan/rectangle.hpp"
+	"guichan/platform.hpp"
+
+1200865446 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/mouseinput.hpp
+	"guichan/platform.hpp"
+
+1200865752 source:/media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/src/cliprectangle.cpp
+	"guichan/cliprectangle.hpp"
+
+1201946844 source:/media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/src/color.cpp
+	"guichan/color.hpp"
+
+1200865758 source:/media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/src/defaultfont.cpp
+	"guichan/defaultfont.hpp"
+	<string>
+	"guichan/graphics.hpp"
+	"guichan/rectangle.hpp"
+
+1200865310 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/defaultfont.hpp
+	"guichan/font.hpp"
+	"guichan/platform.hpp"
+
+1200865328 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/font.hpp
+	<string>
+	"guichan/platform.hpp"
+
+1200865762 source:/media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/src/event.cpp
+	"guichan/event.hpp"
+
+1200865764 source:/media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/src/exception.cpp
+	"guichan/exception.hpp"
+
+1200865768 source:/media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/src/focushandler.cpp
+	"guichan/focushandler.hpp"
+	"guichan/focuslistener.hpp"
+	"guichan/exception.hpp"
+	"guichan/widget.hpp"
+
+1200865324 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/focuslistener.hpp
+	<string>
+	"guichan/event.hpp"
+	"guichan/platform.hpp"
+
+1200865770 source:/media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/src/font.cpp
+	"guichan/font.hpp"
+	<string>
+
+1200865774 source:/media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/src/genericinput.cpp
+	"guichan/genericinput.hpp"
+	"guichan/exception.hpp"
+
+1200865332 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/genericinput.hpp
+	<queue>
+	"guichan/input.hpp"
+	"guichan/keyinput.hpp"
+	"guichan/mouseinput.hpp"
+	"guichan/platform.hpp"
+
+1200865422 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/input.hpp
+	"guichan/platform.hpp"
+
+1200865432 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/keyinput.hpp
+	"guichan/key.hpp"
+	"guichan/platform.hpp"
+
+1208002810 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/key.hpp
+	"guichan/platform.hpp"
+
+1207470398 source:/media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/src/graphics.cpp
+	"guichan/graphics.hpp"
+	"guichan/exception.hpp"
+	"guichan/font.hpp"
+	"guichan/image.hpp"
+
+1200865410 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/image.hpp
+	<string>
+	"guichan/platform.hpp"
+
+1209211212 source:/media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/src/gui.cpp
+	"guichan/gui.hpp"
+	"guichan/basiccontainer.hpp"
+	"guichan/exception.hpp"
+	"guichan/focushandler.hpp"
+	"guichan/graphics.hpp"
+	"guichan/input.hpp"
+	"guichan/keyinput.hpp"
+	"guichan/keylistener.hpp"
+	"guichan/mouseinput.hpp"
+	"guichan/mouselistener.hpp"
+	"guichan/widget.hpp"
+
+1200865376 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/gui.hpp
+	<list>
+	<deque>
+	"guichan/keyevent.hpp"
+	"guichan/mouseevent.hpp"
+	"guichan/mouseinput.hpp"
+	"guichan/platform.hpp"
+
+1200865430 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/keyevent.hpp
+	"guichan/inputevent.hpp"
+	"guichan/key.hpp"
+	"guichan/platform.hpp"
+
+1200865424 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/inputevent.hpp
+	"guichan/event.hpp"
+	"guichan/platform.hpp"
+
+1200865442 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/mouseevent.hpp
+	"guichan/inputevent.hpp"
+	"guichan/platform.hpp"
+
+1200865438 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/keylistener.hpp
+	"guichan/keyevent.hpp"
+	"guichan/platform.hpp"
+
+1200865448 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/mouselistener.hpp
+	"guichan/mouseevent.hpp"
+	"guichan/platform.hpp"
+
+1200865802 source:/media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/src/guichan.cpp
+
+1200865828 source:/media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/src/image.cpp
+	"guichan/image.hpp"
+	"guichan/exception.hpp"
+	"guichan/imageloader.hpp"
+
+1200865418 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/imageloader.hpp
+	<iosfwd>
+	"guichan/platform.hpp"
+
+1207470398 source:/media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/src/imagefont.cpp
+	"guichan/imagefont.hpp"
+	<sstream>
+	"guichan/color.hpp"
+	"guichan/exception.hpp"
+	"guichan/graphics.hpp"
+	"guichan/image.hpp"
+
+1207470398 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/imagefont.hpp
+	<string>
+	"guichan/font.hpp"
+	"guichan/platform.hpp"
+	"guichan/rectangle.hpp"
+
+1215775904 source:/media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/src/contrib/sdl/sdltruetypefont.cpp
+	"sdltruetypefont.hpp"
+	"guichan/exception.hpp"
+	"guichan/image.hpp"
+	"guichan/graphics.hpp"
+	"guichan/sdl/sdlgraphics.hpp"
+
+1215775934 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/contrib/sdl/sdltruetypefont.hpp
+	<map>
+	<string>
+	<SDL/SDL_ttf.h>
+	"guichan/font.hpp"
+	"guichan/platform.hpp"
+
+1264936216 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/sdl/sdlgraphics.hpp
+	<SDL/SDL.h>
+	"guichan/color.hpp"
+	"guichan/graphics.hpp"
+	"guichan/platform.hpp"
+
+1200865834 source:/media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/src/inputevent.cpp
+	"guichan/inputevent.hpp"
+
+1207470398 source:/media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/src/key.cpp
+	"guichan/key.hpp"
+
+1200865838 source:/media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/src/keyevent.cpp
+	"guichan/keyevent.hpp"
+
+1200865842 source:/media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/src/keyinput.cpp
+	"guichan/keyinput.hpp"
+
+1200865846 source:/media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/src/mouseevent.cpp
+	"guichan/mouseevent.hpp"
+
+1200865848 source:/media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/src/mouseinput.cpp
+	"guichan/mouseinput.hpp"
+
+1201946844 source:/media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/src/rectangle.cpp
+	"guichan/rectangle.hpp"
+
+1264936255 source:/media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/src/sdl/sdlimageloader.cpp
+	"guichan/sdl/sdlimage.hpp"
+	<SDL/SDL_image.h>
+	"guichan/exception.hpp"
+	"guichan/sdl/sdlimageloader.hpp"
+
+1264936224 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/sdl/sdlimage.hpp
+	<SDL/SDL.h>
+	<string>
+	"guichan/color.hpp"
+	"guichan/platform.hpp"
+	"guichan/image.hpp"
+
+1264936255 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/sdl/sdlimageloader.hpp
+	"guichan/imageloader.hpp"
+	"guichan/platform.hpp"
+	<SDL/SDL.h>
+
+1200865920 source:/media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/src/sdl/sdlgraphics.cpp
+	"guichan/sdl/sdlgraphics.hpp"
+	"guichan/exception.hpp"
+	"guichan/font.hpp"
+	"guichan/image.hpp"
+	"guichan/sdl/sdlimage.hpp"
+	"guichan/sdl/sdlpixel.hpp"
+
+1264936261 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/include/guichan/sdl/sdlpixel.hpp
+	<SDL/SDL.h>
+	"guichan/color.hpp"
+
+1200865922 source:/media/drive_d/Projects/Infraelly/CurVer/LibBuild/guichanbuild/src/sdl/sdlimage.cpp
+	"guichan/sdl/sdlimage.hpp"
+	"guichan/exception.hpp"
+	"guichan/sdl/sdlpixel.hpp"
+
+1200865718 source:d:\projects\infraelly\curver\libbuild\guichanbuild\src\actionevent.cpp
+	"guichan/actionevent.hpp"
+
+1200865148 d:\projects\infraelly\curver\libbuild\guichanbuild\include\guichan\actionevent.hpp
+	"guichan/event.hpp"
+	"guichan/platform.hpp"
+	<string>
+
+1200865312 d:\projects\infraelly\curver\libbuild\guichanbuild\include\guichan\event.hpp
+	"guichan/platform.hpp"
+
+1200865586 d:\projects\infraelly\curver\libbuild\guichanbuild\include\guichan\platform.hpp
+
+1200865748 source:d:\projects\infraelly\curver\libbuild\guichanbuild\src\basiccontainer.cpp
+	"guichan/basiccontainer.hpp"
+	<algorithm>
+	"guichan/exception.hpp"
+	"guichan/focushandler.hpp"
+	"guichan/graphics.hpp"
+	"guichan/mouseinput.hpp"
+
+1200865292 d:\projects\infraelly\curver\libbuild\guichanbuild\include\guichan\basiccontainer.hpp
+	<list>
+	"guichan/deathlistener.hpp"
+	"guichan/platform.hpp"
+	"guichan/widget.hpp"
+
+1200865306 d:\projects\infraelly\curver\libbuild\guichanbuild\include\guichan\deathlistener.hpp
+	<string>
+	"guichan/event.hpp"
+	"guichan/platform.hpp"
+
+1200865630 d:\projects\infraelly\curver\libbuild\guichanbuild\include\guichan\widget.hpp
+	<list>
+	<string>
+	"guichan/color.hpp"
+	"guichan/rectangle.hpp"
+
+1201946842 d:\projects\infraelly\curver\libbuild\guichanbuild\include\guichan\color.hpp
+	"guichan/platform.hpp"
+	<iostream>
+
+1201946842 d:\projects\infraelly\curver\libbuild\guichanbuild\include\guichan\rectangle.hpp
+	"guichan/platform.hpp"
+	<iostream>
+
+1200865316 d:\projects\infraelly\curver\libbuild\guichanbuild\include\guichan\exception.hpp
+	<string>
+	"guichan/platform.hpp"
+
+1200865320 d:\projects\infraelly\curver\libbuild\guichanbuild\include\guichan\focushandler.hpp
+	<vector>
+	"guichan/event.hpp"
+	"guichan/platform.hpp"
+
+1200865372 d:\projects\infraelly\curver\libbuild\guichanbuild\include\guichan\graphics.hpp
+	<iosfwd>
+	<stack>
+	"guichan/cliprectangle.hpp"
+	"guichan/platform.hpp"
+
+1200865300 d:\projects\infraelly\curver\libbuild\guichanbuild\include\guichan\cliprectangle.hpp
+	"guichan/rectangle.hpp"
+	"guichan/platform.hpp"
+
+1200865446 d:\projects\infraelly\curver\libbuild\guichanbuild\include\guichan\mouseinput.hpp
+	"guichan/platform.hpp"
+
+1200865752 source:d:\projects\infraelly\curver\libbuild\guichanbuild\src\cliprectangle.cpp
+	"guichan/cliprectangle.hpp"
+
+1201946844 source:d:\projects\infraelly\curver\libbuild\guichanbuild\src\color.cpp
+	"guichan/color.hpp"
+
+1200865758 source:d:\projects\infraelly\curver\libbuild\guichanbuild\src\defaultfont.cpp
+	"guichan/defaultfont.hpp"
+	<string>
+	"guichan/graphics.hpp"
+	"guichan/rectangle.hpp"
+
+1200865310 d:\projects\infraelly\curver\libbuild\guichanbuild\include\guichan\defaultfont.hpp
+	"guichan/font.hpp"
+	"guichan/platform.hpp"
+
+1200865328 d:\projects\infraelly\curver\libbuild\guichanbuild\include\guichan\font.hpp
+	<string>
+	"guichan/platform.hpp"
+
+1200865762 source:d:\projects\infraelly\curver\libbuild\guichanbuild\src\event.cpp
+	"guichan/event.hpp"
+
+1200865764 source:d:\projects\infraelly\curver\libbuild\guichanbuild\src\exception.cpp
+	"guichan/exception.hpp"
+
+1200865768 source:d:\projects\infraelly\curver\libbuild\guichanbuild\src\focushandler.cpp
+	"guichan/focushandler.hpp"
+	"guichan/focuslistener.hpp"
+	"guichan/exception.hpp"
+	"guichan/widget.hpp"
+
+1200865324 d:\projects\infraelly\curver\libbuild\guichanbuild\include\guichan\focuslistener.hpp
+	<string>
+	"guichan/event.hpp"
+	"guichan/platform.hpp"
+
+1200865770 source:d:\projects\infraelly\curver\libbuild\guichanbuild\src\font.cpp
+	"guichan/font.hpp"
+	<string>
+
+1200865774 source:d:\projects\infraelly\curver\libbuild\guichanbuild\src\genericinput.cpp
+	"guichan/genericinput.hpp"
+	"guichan/exception.hpp"
+
+1200865332 d:\projects\infraelly\curver\libbuild\guichanbuild\include\guichan\genericinput.hpp
+	<queue>
+	"guichan/input.hpp"
+	"guichan/keyinput.hpp"
+	"guichan/mouseinput.hpp"
+	"guichan/platform.hpp"
+
+1200865422 d:\projects\infraelly\curver\libbuild\guichanbuild\include\guichan\input.hpp
+	"guichan/platform.hpp"
+
+1200865432 d:\projects\infraelly\curver\libbuild\guichanbuild\include\guichan\keyinput.hpp
+	"guichan/key.hpp"
+	"guichan/platform.hpp"
+
+1208006410 d:\projects\infraelly\curver\libbuild\guichanbuild\include\guichan\key.hpp
+	"guichan/platform.hpp"
+
+1207473998 source:d:\projects\infraelly\curver\libbuild\guichanbuild\src\graphics.cpp
+	"guichan/graphics.hpp"
+	"guichan/exception.hpp"
+	"guichan/font.hpp"
+	"guichan/image.hpp"
+
+1200865410 d:\projects\infraelly\curver\libbuild\guichanbuild\include\guichan\image.hpp
+	<string>
+	"guichan/platform.hpp"
+
+1209214812 source:d:\projects\infraelly\curver\libbuild\guichanbuild\src\gui.cpp
+	"guichan/gui.hpp"
+	"guichan/basiccontainer.hpp"
+	"guichan/exception.hpp"
+	"guichan/focushandler.hpp"
+	"guichan/graphics.hpp"
+	"guichan/input.hpp"
+	"guichan/keyinput.hpp"
+	"guichan/keylistener.hpp"
+	"guichan/mouseinput.hpp"
+	"guichan/mouselistener.hpp"
+	"guichan/widget.hpp"
+
+1200865376 d:\projects\infraelly\curver\libbuild\guichanbuild\include\guichan\gui.hpp
+	<list>
+	<deque>
+	"guichan/keyevent.hpp"
+	"guichan/mouseevent.hpp"
+	"guichan/mouseinput.hpp"
+	"guichan/platform.hpp"
+
+1200865430 d:\projects\infraelly\curver\libbuild\guichanbuild\include\guichan\keyevent.hpp
+	"guichan/inputevent.hpp"
+	"guichan/key.hpp"
+	"guichan/platform.hpp"
+
+1200865424 d:\projects\infraelly\curver\libbuild\guichanbuild\include\guichan\inputevent.hpp
+	"guichan/event.hpp"
+	"guichan/platform.hpp"
+
+1200865442 d:\projects\infraelly\curver\libbuild\guichanbuild\include\guichan\mouseevent.hpp
+	"guichan/inputevent.hpp"
+	"guichan/platform.hpp"
+
+1200865438 d:\projects\infraelly\curver\libbuild\guichanbuild\include\guichan\keylistener.hpp
+	"guichan/keyevent.hpp"
+	"guichan/platform.hpp"
+
+1200865448 d:\projects\infraelly\curver\libbuild\guichanbuild\include\guichan\mouselistener.hpp
+	"guichan/mouseevent.hpp"
+	"guichan/platform.hpp"
+
+1200865802 source:d:\projects\infraelly\curver\libbuild\guichanbuild\src\guichan.cpp
+
+1200865828 source:d:\projects\infraelly\curver\libbuild\guichanbuild\src\image.cpp
+	"guichan/image.hpp"
+	"guichan/exception.hpp"
+	"guichan/imageloader.hpp"
+
+1200865418 d:\projects\infraelly\curver\libbuild\guichanbuild\include\guichan\imageloader.hpp
+	<iosfwd>
+	"guichan/platform.hpp"
+
+1207473998 source:d:\projects\infraelly\curver\libbuild\guichanbuild\src\imagefont.cpp
+	"guichan/imagefont.hpp"
+	<sstream>
+	"guichan/color.hpp"
+	"guichan/exception.hpp"
+	"guichan/graphics.hpp"
+	"guichan/image.hpp"
+
+1207473998 d:\projects\infraelly\curver\libbuild\guichanbuild\include\guichan\imagefont.hpp
+	<string>
+	"guichan/font.hpp"
+	"guichan/platform.hpp"
+	"guichan/rectangle.hpp"
+
+1200865834 source:d:\projects\infraelly\curver\libbuild\guichanbuild\src\inputevent.cpp
+	"guichan/inputevent.hpp"
+
+1207473998 source:d:\projects\infraelly\curver\libbuild\guichanbuild\src\key.cpp
+	"guichan/key.hpp"
+
+1200865838 source:d:\projects\infraelly\curver\libbuild\guichanbuild\src\keyevent.cpp
+	"guichan/keyevent.hpp"
+
+1200865842 source:d:\projects\infraelly\curver\libbuild\guichanbuild\src\keyinput.cpp
+	"guichan/keyinput.hpp"
+
+1200865846 source:d:\projects\infraelly\curver\libbuild\guichanbuild\src\mouseevent.cpp
+	"guichan/mouseevent.hpp"
+
+1200865848 source:d:\projects\infraelly\curver\libbuild\guichanbuild\src\mouseinput.cpp
+	"guichan/mouseinput.hpp"
+
+1201946844 source:d:\projects\infraelly\curver\libbuild\guichanbuild\src\rectangle.cpp
+	"guichan/rectangle.hpp"
+

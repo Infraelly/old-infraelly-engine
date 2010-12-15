@@ -1,0 +1,7 @@
+SDL_rotozoom test
+Loading 8bit image
+Loading picture: sample8.bmp
+1.  rotozoom: Rotating and zooming
+2.  rotozoom: Just zooming (angle=0)
+3.  zoom: Just zooming
+4.  rotozoom: Rotating and zooming, interpolation on but unused

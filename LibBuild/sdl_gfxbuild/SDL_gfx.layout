@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Windows" />
+	<File name="SDL_gfxBlitFunc.c" open="0" top="0" tabpos="0">
+		<Cursor position="5376" topLine="286" />
+	</File>
+	<File name="SDL_gfxBlitFunc.h" open="0" top="0" tabpos="1">
+		<Cursor position="323" topLine="2" />
+	</File>
+	<File name="SDL_imageFilter.h" open="0" top="0" tabpos="2">
+		<Cursor position="997" topLine="21" />
+	</File>
+</CodeBlocks_layout_file>

@@ -1,0 +1,2790 @@
+From: <Saved by Mozilla 5.0 (Windows; en-GB)>
+Subject: Getting started - Guichan
+Date: Tue Jun 17 2008 17:44:40 GMT+1000 (AUS Eastern Standard Time)
+MIME-Version: 1.0
+Content-Location: http://guichan.sourceforge.net/wiki/index.php/Getting_started
+Content-Type: multipart/related;
+	boundary="----=_NextPart_000_0000_6463A6A0.AA281237";
+	type="text/html"
+X-MAF: Produced By MAF MHT Archive Handler V0.4.1
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0000_6463A6A0.AA281237
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://guichan.sourceforge.net/wiki/index.php/Getting_started
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w=
+3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xml:lang=3D"en" dir=3D"ltr" lan=
+g=3D"en"><head>     =20
+
+=09
+=09=09<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-=
+8">
+=09=09<meta name=3D"keywords" content=3D"Getting started,Downloads,Source">
+<link rel=3D"shortcut icon" href=3D"http://guichan.sourceforge.net/favicon.i=
+co"><title>Getting started - Guichan</title>
+=09=09
+=09=09<style type=3D"text/css" media=3D"screen,projection">/*<![CDATA[*/ @im=
+port "/wiki/skins/guichan/main.css?7"; /*]]>*/</style>
+=09=09<link rel=3D"stylesheet" type=3D"text/css" media=3D"print" href=3D"ind=
+ex_files/commonPrint.css"><!--[if lt IE 5.5000]><style type=3D"text/css">@im=
+port "/wiki/skins/guichan/IE50Fixes.css";</style><![endif]--><!--[if IE 5.50=
+00]><style type=3D"text/css">@import "/wiki/skins/guichan/IE55Fixes.css";</s=
+tyle><![endif]--><!--[if IE 6]><style type=3D"text/css">@import "/wiki/skins=
+/guichan/IE60Fixes.css";</style><![endif]--><!--[if IE 7]><style type=3D"tex=
+t/css">@import "/wiki/skins/guichan/IE70Fixes.css?1";</style><![endif]--><!-=
+-[if lt IE 7]><script type=3D"text/javascript" src=3D"/wiki/skins/common/IEF=
+ixes.js"></script>
+=09=09<meta http-equiv=3D"imagetoolbar" content=3D"no" /><![endif]-->
+=09=09
+=09=09
+=09=09
+=09=09
+=09=09
+=09=09<script type=3D"text/javascript">var skin =3D 'guichan';var stylepath =
+=3D '/wiki/skins';</script>
+=09=09<script type=3D"text/javascript" src=3D"index_files/wikibits.js"><!-- =
+wikibits js --></script>
+=09=09<script type=3D"text/javascript" src=3D"index_files/index.php"><!-- si=
+te js --></script>
+=09=09<style type=3D"text/css">/*<![CDATA[*/
+@import "/wiki/index.php?title=3DMediaWiki:Common.css&action=3Draw&ctype=3Dt=
+ext/css&smaxage=3D18000";
+@import "/wiki/index.php?title=3DMediaWiki:Guichan.css&action=3Draw&ctype=3D=
+text/css&smaxage=3D18000";
+@import "/wiki/index.php?title=3D-&action=3Draw&gen=3Dcss&maxage=3D18000";
+/*]]>*/</style><!-- Head Scripts --><script charset=3D"utf-8" id=3D"injectio=
+n_graph_func" src=3D"index_files/injection_graph_func.js"></script></head><b=
+ody class=3D"ns-0 ltr">
+   <div id=3D"guichan-logo" style=3D"height: 94px; font-size: small; padding=
+-left: 2px;">
+   <img src=3D"index_files/guichanlogo.png" alt=3D"Guican logo">
+   A portable C++ GUI library designed for games using Allegro, HGE, OpenGL,=
+ OpenLayer and/or SDL.
+   </div>
+   <div id=3D"globalWrapper">
+   <div id=3D"column-content">
+=09<div id=3D"content">
+=09=09<a name=3D"top" id=3D"top"></a>
+=09=09=09=09<h1 class=3D"firstHeading">Getting started</h1>
+=09=09<div id=3D"bodyContent">
+=09=09=09<h3 id=3D"siteSub">From Guichan</h3>
+=09=09=09<div id=3D"contentSub"></div>
+=09=09=09=09=09=09=09=09=09<div id=3D"jump-to-nav">Jump to: <a href=3D"#colu=
+mn-one">navigation</a>, <a href=3D"#searchInput">search</a></div>=09=09=09<!=
+-- start content -->
+=09=09=09<p>To get started with Guichan you need to download the Guichan sou=
+rce package in the <a href=3D"http://guichan.sourceforge.net/wiki/index.php/=
+Downloads" title=3D"Downloads">downloads</a>
+section. As there are numerous problems with providing pre built
+binaries for a C++ library, such as binary incompatibility between
+compilers and different versions of the same compiler, only the source
+of Guichan is provided since Guichan 0.7.0.
+</p>
+<table id=3D"toc" class=3D"toc" summary=3D"Contents"><tbody><tr><td><div id=
+=3D"toctitle"><h2>Contents</h2> <span class=3D"toctoggle">[<a href=3D"javasc=
+ript:toggleToc()" class=3D"internal" id=3D"togglelink">hide</a>]</span></div=
+>
+<ul>
+<li class=3D"toclevel-1"><a href=3D"#The_structure_of_the_source_package"><s=
+pan class=3D"tocnumber">1</span> <span class=3D"toctext">The structure of th=
+e source package</span></a></li>
+<li class=3D"toclevel-1"><a href=3D"#Supported_back_ends"><span class=3D"toc=
+number">2</span> <span class=3D"toctext">Supported back ends</span></a></li>
+<li class=3D"toclevel-1"><a href=3D"#Adding_the_Guichan_source_to_a_project"=
+><span class=3D"tocnumber">3</span> <span class=3D"toctext">Adding the Guich=
+an source to a project</span></a></li>
+<li class=3D"toclevel-1"><a href=3D"#Compiling_Guichan_libraries"><span clas=
+s=3D"tocnumber">4</span> <span class=3D"toctext">Compiling Guichan libraries=
+</span></a>
+<ul>
+<li class=3D"toclevel-2"><a href=3D"#Windows"><span class=3D"tocnumber">4.1<=
+/span> <span class=3D"toctext">Windows</span></a>
+<ul>
+<li class=3D"toclevel-3"><a href=3D"#MSVC_8"><span class=3D"tocnumber">4.1.1=
+</span> <span class=3D"toctext">MSVC 8</span></a></li>
+<li class=3D"toclevel-3"><a href=3D"#Dev-Cpp"><span class=3D"tocnumber">4.1.=
+2</span> <span class=3D"toctext">Dev-Cpp</span></a></li>
+<li class=3D"toclevel-3"><a href=3D"#MinGW"><span class=3D"tocnumber">4.1.3<=
+/span> <span class=3D"toctext">MinGW</span></a></li>
+</ul>
+</li>
+<li class=3D"toclevel-2"><a href=3D"#Unix"><span class=3D"tocnumber">4.2</sp=
+an> <span class=3D"toctext">Unix</span></a></li>
+<li class=3D"toclevel-2"><a href=3D"#MacOS_X"><span class=3D"tocnumber">4.3<=
+/span> <span class=3D"toctext">MacOS X</span></a></li>
+</ul>
+</li>
+<li class=3D"toclevel-1"><a href=3D"#Using_Guichan_libraries"><span class=3D=
+"tocnumber">5</span> <span class=3D"toctext">Using Guichan libraries</span><=
+/a>
+<ul>
+<li class=3D"toclevel-2"><a href=3D"#Windows_2"><span class=3D"tocnumber">5.=
+1</span> <span class=3D"toctext">Windows</span></a>
+<ul>
+<li class=3D"toclevel-3"><a href=3D"#MSVC_8_2"><span class=3D"tocnumber">5.1=
+.1</span> <span class=3D"toctext">MSVC 8</span></a></li>
+<li class=3D"toclevel-3"><a href=3D"#Dev-Cpp_2"><span class=3D"tocnumber">5.=
+1.2</span> <span class=3D"toctext">Dev-Cpp</span></a></li>
+<li class=3D"toclevel-3"><a href=3D"#MinGW_2"><span class=3D"tocnumber">5.1.=
+3</span> <span class=3D"toctext">MinGW</span></a></li>
+</ul>
+</li>
+<li class=3D"toclevel-2"><a href=3D"#Unix_2"><span class=3D"tocnumber">5.2</=
+span> <span class=3D"toctext">Unix</span></a></li>
+<li class=3D"toclevel-2"><a href=3D"#MacOS_X_2"><span class=3D"tocnumber">5.=
+3</span> <span class=3D"toctext">MacOS X</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></tbody></table><script type=3D"text/javascript"> if (window.showT=
+ocToggle) { var tocShowText =3D "show"; var tocHideText =3D "hide"; showTocT=
+oggle(); } </script>
+<div class=3D"editsection" style=3D"float: right; margin-left: 5px;">[<a hre=
+f=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DGetting_started&a=
+mp;action=3Dedit&amp;section=3D1" title=3D"Edit section: The structure of th=
+e source package">edit</a>]</div><a name=3D"The_structure_of_the_source_pack=
+age"></a><h1> The structure of the source package </h1>
+<p>The Guichan core source is found under the directories include and
+src. Source for back ends are found in sub directories of
+include/guichan and src, where the sub directories are named after the
+name of the back end. Examples are found in the examples directory. Add
+ons to Guichan are found in the addons directory. Addons are helpful
+source not a part of the core library because they either require an
+extra dependency or because the code implements a very specific non
+generic task. </p>
+<pre>guichan-x-x-x (root directory) +-&gt; addons
+                               |
+                               +-&gt; include +-&gt; guichan +-&gt; allegro
+                               |                       |
+                               |                       +-&gt; hge
+                               |                       |
+                               |                       +-&gt; opengl
+                               |                       |
+                               |                       +-&gt; openlayer
+                               |                       |
+                               |                       +-&gt; sdl
+                               |
+                               +-&gt; examples
+                               |
+                               +-&gt; src +-&gt; allegro
+                                       |
+                                       +-&gt; hge
+                                       |
+                                       +-&gt; opengl
+                                       |
+                                       +-&gt; openlayer
+                                       |
+                                       +-&gt; sdl
+</pre>
+<div class=3D"editsection" style=3D"float: right; margin-left: 5px;">[<a hre=
+f=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DGetting_started&a=
+mp;action=3Dedit&amp;section=3D2" title=3D"Edit section: Supported back ends=
+">edit</a>]</div><a name=3D"Supported_back_ends"></a><h1> Supported back end=
+s </h1>
+<p>Guichan supports usage with the following back ends:
+</p>
+<ul><li> <a href=3D"http://www.talula.demon.co.uk/allegro/" class=3D"externa=
+l text" title=3D"http://www.talula.demon.co.uk/allegro/" rel=3D"nofollow">Al=
+legro</a>
+</li><li> <a href=3D"http://www.opengl.org/" class=3D"external text" title=
+=3D"http://www.opengl.org/" rel=3D"nofollow">OpenGL</a>
+</li><li> <a href=3D"http://openlayer.berlios.de/" class=3D"external text" t=
+itle=3D"http://openlayer.berlios.de/" rel=3D"nofollow">OpenLayer</a>
+</li><li> <a href=3D"http://hge.relishgames.com/" class=3D"external text" ti=
+tle=3D"http://hge.relishgames.com/" rel=3D"nofollow">HGE</a>
+</li><li> <a href=3D"http://www.libsdl.org/" class=3D"external text" title=
+=3D"http://www.libsdl.org/" rel=3D"nofollow">SDL</a>
+</li></ul>
+<p>With OpenGL no image loading or input handling is supported due to
+the fact that OpenGL lacks functions for image loading and input
+handling. To be able to use the OpenGL back end another back end must
+be used which takes care of image loading and input handling. At the
+moment is SDL the only back end that has an implemented image loader
+that can be used with OpenGL.
+</p>
+<div class=3D"editsection" style=3D"float: right; margin-left: 5px;">[<a hre=
+f=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DGetting_started&a=
+mp;action=3Dedit&amp;section=3D3" title=3D"Edit section: Adding the Guichan =
+source to a project">edit</a>]</div><a name=3D"Adding_the_Guichan_source_to_=
+a_project"></a><h1> Adding the Guichan source to a project </h1>
+<p>The easiest way of using Guichan is to simply add the Guichan source
+to an existing project source. By doing so no libraries need to be
+built. To add the Guichan source just copy the needed source and header
+files to a project and compile the source files as the other project
+source files are compiled.
+</p><p>The Guichan source needed depends on the dependencies of the
+project using Guichan. The core source of Guichan must be added. The
+core source is the=20
+headers and source files in the <i>include/guichan/</i>, the <i>src/</i> dir=
+ectory, the <i>include/guichan/widgets</i> directory and the <i>src/widgets<=
+/i>
+directory in the source package (source and header files other
+directories and subdirectories are not a part of the core source). </p><p>To=
+ use Guichan with a back end, such as Allegro or SDL, source
+for that back end must be added. Source for each supported back end
+reside in a subdirectories of <i>src/</i> and <i>include/guichan/</i>.
+In the case of Allegro the source in the allegro subdirectory of the <i>incl=
+ude/guichan/</i> and <i>src/</i> directories must be added. In the case of S=
+DL the source in the sdl subdirectory of the <i>include/guichan/</i> and <i>=
+src/</i> directories must be added. Source for usage with HGE, OpenGL and Op=
+enLayer have similar subdirectories.  =20
+</p><p>For convenience the core source has a header <i>include/guichan.hpp</=
+i> which includes all classes in the core source. All back ends have a simil=
+ar header. In the case of Allegro the header is <i>include/guichan/allegro.h=
+pp</i>. In the case of SDL the header is <i>include/guichan/sdl.hpp</i>.
+</p><p>If you're using the OpenLayer back end, you can't make a shared
+library (DLL) from the guichan_openlayer sources, due to the fact that
+OpenLayer uses global variables internally. So the best way to use
+guichan with OpenLayer back end is to either put all guichan and
+guichan_openlayer sources into your project, or create a static library
+which is linked to your executable. There are two things to know as
+well: It doesn't work with OpenLayer 2.0, you have to use a reasonable
+recent snapshot from SVN (2007/04 for example). You should also not use
+OpenLayer with GlyphKeeper, but the internal text renderer instead. </p>
+<pre>include/guichan.hpp
+include/guichan/*.hpp
+include/guichan/widgets/*.hpp
+src/*.cpp
+src/widgets/*.cpp
+</pre>
+<p><i>The core source</i>
+</p>
+<pre>include/guichan/allegro.hpp
+include/guichan/allegro/*.hpp
+src/allegro/*.cpp
+</pre>
+<p><i>The Allegro back end source</i>
+</p>
+<pre>include/guichan/hge.hpp
+include/guichan/hge/*.hpp
+src/hge/*.cpp
+</pre>
+<p><i>The HGE back end source</i>
+</p>
+<pre>include/guichan/opengl.hpp
+include/guichan/opengl/*.hpp
+src/opengl/*.cpp
+</pre>
+<p><i>The OpenGL back end source</i>
+</p>
+<pre>include/guichan/openlayer.hpp
+include/guichan/openlayer/*.hpp
+src/openlayer/*.cpp
+</pre>
+<p><i>The OpenLayer back end source</i>
+</p>
+<pre>include/guichan/sdl.hpp
+include/guichan/sdl/*.hpp
+src/sdl/*.cpp
+</pre>
+<p><i>The SDL back end source</i>
+</p>
+<div class=3D"editsection" style=3D"float: right; margin-left: 5px;">[<a hre=
+f=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DGetting_started&a=
+mp;action=3Dedit&amp;section=3D4" title=3D"Edit section: Compiling Guichan l=
+ibraries">edit</a>]</div><a name=3D"Compiling_Guichan_libraries"></a><h1> Co=
+mpiling Guichan libraries </h1>
+<p>A more complicated way of using Guichan (or at least when it comes
+to Windows) is to compile Guichan as libraries. How this is done varies
+depending on what operating system is used and what compiler is used.
+</p>
+<div class=3D"editsection" style=3D"float: right; margin-left: 5px;">[<a hre=
+f=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DGetting_started&a=
+mp;action=3Dedit&amp;section=3D5" title=3D"Edit section: Windows">edit</a>]<=
+/div><a name=3D"Windows"></a><h2> Windows </h2>
+<div class=3D"editsection" style=3D"float: right; margin-left: 5px;">[<a hre=
+f=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DGetting_started&a=
+mp;action=3Dedit&amp;section=3D6" title=3D"Edit section: MSVC 8">edit</a>]</=
+div><a name=3D"MSVC_8"></a><h3> MSVC 8 </h3>
+<pre>Todo!
+</pre>
+<div class=3D"editsection" style=3D"float: right; margin-left: 5px;">[<a hre=
+f=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DGetting_started&a=
+mp;action=3Dedit&amp;section=3D7" title=3D"Edit section: Dev-Cpp">edit</a>]<=
+/div><a name=3D"Dev-Cpp"></a><h3> Dev-Cpp </h3>
+<p>In the <a href=3D"http://guichan.sourceforge.net/wiki/index.php/Source" t=
+itle=3D"Source">source</a>
+of Guichan there exists Dev-Cpp project files for the core library, the
+Allegro back end, the OpenGL back end and the SDL back end. The easiest
+way to compile Guichan libraries with Dev-Cpp is to use those project
+files. They however assume Dev-Cpp is installed in <i>C:\Dev-Cpp</i>.
+</p><p>The following header and source files from the source package are nee=
+ded to compile the Guichan core library with Dev-Cpp:
+</p>
+<pre>include/guichan.hpp
+include/guichan/*.hpp
+include/guichan/widgets/*.hpp
+src/*.cpp
+src/widgets/*.cpp
+</pre>
+<p>The following options are needed to compile the Guichan core library with=
+ Dev-Cpp:
+</p>
+<pre>Project Options=20
+    General -&gt; Type -&gt; Win32DLL
+    Parameters -&gt; Compiler -&gt; DGUICHAN_BUILD=3D1
+               -&gt; C++ Compiler -&gt; DGUICHAN_BUILD=3D1
+               -&gt; Linker -&gt; --no-export-all-symbols --add-stdcall-alia=
+s -Wl,--enable-runtime-pseudo-reloc --enable-auto-import
+    Directories -&gt; Include Directories -&gt; include
+</pre>
+<p>The following header and source files from the source package are needed =
+to compile the Allegro back end library with Dev-Cpp:
+</p>
+<pre>include/guichan/allegro.hpp
+include/guichan/allegro/*.hpp
+src/allegro/*.cpp
+</pre>
+<p>The following options are needed to compile the Allegro back end library =
+with Dev-Cpp:
+</p>
+<pre>Project Options=20
+    General -&gt; Type -&gt; Win32DLL
+    Parameters -&gt; Compiler -&gt; DGUICHAN_EXTENSION_BUILD=3D1
+                  C++ Compiler -&gt; DGUICHAN_EXTENSION_BUILD=3D1
+                  Linker -&gt; --no-export-all-symbols --add-stdcall-alias -=
+Wl,--enable-runtime-pseudo-reloc --enable-auto-import -lalleg PATH_TO_GUICHA=
+N_CORE_LIBRARY/libguichan.a
+    Directories -&gt; Include Directories -&gt; include
+</pre>
+<p>PATH_TO_GUICHAN_CORE_LIBRARY should be replaced with the path to the comp=
+iled Guichan core library.
+</p><p>The following header and source files from the source package are nee=
+ded to compile the OpenGL back end library with Dev-Cpp:
+</p>
+<pre>include/opengl/opengl.hpp
+include/guichan/opengl/*.hpp
+src/opengl/*.cpp
+</pre>
+<pre>Project Options=20
+    General -&gt; Type -&gt; Win32DLL
+    Parameters -&gt; Compiler -&gt; DGUICHAN_EXTENSION_BUILD=3D1
+                  C++ Compiler -&gt; DGUICHAN_EXTENSION_BUILD=3D1
+                  Linker -&gt; --no-export-all-symbols --add-stdcall-alias -=
+Wl,--enable-runtime-pseudo-reloc --enable-auto-import PATH_TO_GUICHAN_CORE_L=
+IBRARY/libguichan.a -lopengl32
+    Directories -&gt; Include Directories -&gt; include
+</pre>
+<p>PATH_TO_GUICHAN_CORE_LIBRARY should be replaced with the path to the comp=
+iled Guichan core library.
+</p><p>The following header and source files from the source package are nee=
+ded to compile the SDL back end library with Dev-Cpp:
+</p>
+<pre>include/sdl/sdl.hpp
+include/guichan/sdl/*.hpp
+src/sdl/*.cpp
+</pre>
+<pre>Project Options=20
+    General -&gt; Type -&gt; Win32DLL
+    Parameters -&gt; Compiler -&gt; DGUICHAN_EXTENSION_BUILD=3D1
+                  C++ Compiler -&gt; DGUICHAN_EXTENSION_BUILD=3D1
+                  Linker -&gt; --no-export-all-symbols --add-stdcall-alias -=
+Wl,--enable-runtime-pseudo-reloc --enable-auto-import PATH_TO_GUICHAN_CORE_L=
+IBRARY/libguichan.a -lmingw32 -lSDL_image -lSDLmain -lSDL -mwindows
+    Directories -&gt; Include Directories -&gt; include
+</pre>
+<p>PATH_TO_GUICHAN_CORE_LIBRARY should be replaced with the path to the comp=
+iled Guichan core library.
+</p>
+<div class=3D"editsection" style=3D"float: right; margin-left: 5px;">[<a hre=
+f=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DGetting_started&a=
+mp;action=3Dedit&amp;section=3D8" title=3D"Edit section: MinGW">edit</a>]</d=
+iv><a name=3D"MinGW"></a><h3> MinGW </h3>
+<p>Todo!
+</p>
+<div class=3D"editsection" style=3D"float: right; margin-left: 5px;">[<a hre=
+f=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DGetting_started&a=
+mp;action=3Dedit&amp;section=3D9" title=3D"Edit section: Unix">edit</a>]</di=
+v><a name=3D"Unix"></a><h2> Unix </h2>
+<p>To compile Guichan libraries in Unix is quite easy. The source
+package of Guichan contains configure and make scripts built with <a href=3D=
+"http://sourceware.org/autobook/" class=3D"external text" title=3D"http://so=
+urceware.org/autobook/" rel=3D"nofollow">autotools</a> to make the process a=
+utomatic.
+</p><p>To compile Guichan libraries simply call:
+</p>
+<pre>$ tar xvzf guichan-x.y.z-src.tar.gz
+$ cd guichan-x.y.z
+$ ./configure
+$ make
+$ su
+Password:=20
+# make install
+</pre>
+<p>To disable compiling of a certain back end libraries simply pass a
+--disable-backend flag to the configure script. For instance, to
+disable compiling of an Allegro back end library pass
+--disable--allegro to the configure script.
+</p><p>To verify that the compiled libraries work you can enter the examples=
+ directory and compile the examples.
+</p>
+<pre># exit=20
+(log out from root)
+$ cd examples
+$ make -f Makefile.examples sdl     (for SDL examples)
+$ make -f Makefile.examples allegro (for Allegro examples)
+$ make -f Makefile.examples opengl  (for SDL+OpenGL examples)
+</pre>
+<div class=3D"editsection" style=3D"float: right; margin-left: 5px;">[<a hre=
+f=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DGetting_started&a=
+mp;action=3Dedit&amp;section=3D10" title=3D"Edit section: MacOS X">edit</a>]=
+</div><a name=3D"MacOS_X"></a><h2> MacOS X </h2>
+<p>Compiling Guichan libraries with MacOS X has been reported to be a
+difficult task (non of the developers have access to a MaxOS X system
+so this cannot be confirmed). Because of that it's at the moment not
+recommended to compile libraries with MacOS X. Instead it's recommended
+to add the Guichan source to the project using Guichan if MacOS X is to
+be used.
+</p>
+<div class=3D"editsection" style=3D"float: right; margin-left: 5px;">[<a hre=
+f=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DGetting_started&a=
+mp;action=3Dedit&amp;section=3D11" title=3D"Edit section: Using Guichan libr=
+aries">edit</a>]</div><a name=3D"Using_Guichan_libraries"></a><h1> Using Gui=
+chan libraries </h1>
+<div class=3D"editsection" style=3D"float: right; margin-left: 5px;">[<a hre=
+f=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DGetting_started&a=
+mp;action=3Dedit&amp;section=3D12" title=3D"Edit section: Windows">edit</a
+>]</div><a name=3D"Windows_2"></a><h2> Windows </h2>
+<div class=3D"editsection" style=3D"float: right; margin-left: 5px;">[<a hre=
+f=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DGetting_started&a=
+mp;action=3Dedit&amp;section=3D13" title=3D"Edit section: MSVC 8">edit</a>]<=
+/div><a name=3D"MSVC_8_2"></a><h3> MSVC 8 </h3>
+<p>Todo!
+</p>
+<div class=3D"editsection" style=3D"float: right; margin-left: 5px;">[<a hre=
+f=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DGetting_started&a=
+mp;action=3Dedit&amp;section=3D14" title=3D"Edit section: Dev-Cpp">edit</a>]=
+</div><a name=3D"Dev-Cpp_2"></a><h3> Dev-Cpp </h3>
+<p>The following project options are needed to use Guichan core library and =
+the Guichan Allegro back end library with Dev-Cpp:
+</p>
+<pre>Project Options -&gt; Parameters -&gt; Linker -&gt; -lguichan_allegro -=
+lguichan -lalleg
+</pre>
+<p>The following project options are needed to use Guichan core library and =
+the Guichan OpenGL back end library with Dev-Cpp:
+</p>
+<pre>Project Options -&gt; Parameters -&gt; Linker -&gt; -lguichan_opengl -l=
+guichan -lmingw32 -lopengl32 -mwindows
+</pre>
+<p>The following project options are needed to use Guichan core
+library, the Guichan OpenGL back end library and the Guichan SDL back
+end library with Dev-Cpp:
+</p>
+<pre>Project Options -&gt; Parameters -&gt; Linker -&gt; -lguichan_opengl -l=
+guichan_sdl -lguichan -lmingw32 -lSDL_image -lSDLmain -lSDL -lopengl32 -mwin=
+dows
+</pre>
+<p>The following project options are needed to use Guichan core library and =
+the Guichan SDL back end library with Dev-Cpp:
+</p>
+<pre>Project Options -&gt; Parameters -&gt; Linker -&gt; -lguichan_sdl -lgui=
+chan -lmingw32 -lSDL_image -lSDLmain -lSDL -mwindows
+</pre>
+<div class=3D"editsection" style=3D"float: right; margin-left: 5px;">[<a hre=
+f=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DGetting_started&a=
+mp;action=3Dedit&amp;section=3D15" title=3D"Edit section: MinGW">edit</a>]</=
+div><a name=3D"MinGW_2"></a><h3> MinGW </h3>
+<p>Todo!
+</p>
+<div class=3D"editsection" style=3D"float: right; margin-left: 5px;">[<a hre=
+f=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DGetting_started&a=
+mp;action=3Dedit&amp;section=3D16" title=3D"Edit section: Unix">edit</a>]</d=
+iv><a name=3D"Unix_2"></a><h2> Unix </h2>
+<p>To use compiled Guichan libraries in Unix is also quite easy. The
+core Guichan library must always be linked with, which other Guichan
+libraries which needs to be linked with varies depending on the
+dependencies of the project using Guichan.
+</p><p>The default compiled libraries are:
+</p>
+<pre>guichan
+guichan_allegro
+guichan_opengl
+guichan_sdl
+</pre>
+<p>Here is an example of compiling a project using SDL and Guichan.
+</p>
+<pre>g++ sdlhelloworld.cpp -o sdlhelloworld -lguichan_sdl -lguichan -lSDL_im=
+age `sdl-config --libs --cflags`
+</pre>
+<p>Note that as always with GCC do the order of libraries passed for
+linkage matter. The library with no dependency of other linked
+libraries should be linked last, the library with the most dependency
+of other libraries passed should be linked first. In the above example
+has the SDL_image library a dependency of SDL and is therefore linked
+before SDL. The guichan_sdl library has a dependency of all other
+linked libraries - guichan, SDL and SDL_image - and is therefore linked
+first.
+</p>
+<div class=3D"editsection" style=3D"float: right; margin-left: 5px;">[<a hre=
+f=3D"http://guichan.sourceforge.net/wiki/index.php?title=3DGetting_started&a=
+mp;action=3Dedit&amp;section=3D17" title=3D"Edit section: MacOS X">edit</a>]=
+</div><a name=3D"MacOS_X_2"></a><h2> MacOS X </h2>
+<p>Todo!
+</p>
+<!-- Saved in parser cache with key g131206_wiki:pcache:idhash:1387-0!1!0!0!=
+!en!2 and timestamp 20080617000145 -->
+<div class=3D"printfooter">
+Retrieved from "<a href=3D"http://guichan.sourceforge.net/wiki/index.php/Get=
+ting_started">http://guichan.sourceforge.net/wiki/index.php/Getting_started<=
+/a>"</div>
+=09=09=09=09=09=09<!-- end content -->
+=09=09=09<div class=3D"visualClear"></div>
+=09=09</div>
+=09</div>
+=09=09</div>
+=09=09<div id=3D"column-one">
+=09<div id=3D"p-cactions" class=3D"portlet">
+=09=09<h5>Views</h5>
+=09=09<ul>
+=09=09=09=09 <li id=3D"ca-nstab-main" class=3D"selected"><a href=3D"http://g=
+uichan.sourceforge.net/wiki/index.php/Getting_started">Article</a></li>
+=09=09=09=09 <li id=3D"ca-talk" class=3D"new"><a href=3D"http://guichan.sour=
+ceforge.net/wiki/index.php?title=3DTalk:Getting_started&amp;action=3Dedit">D=
+iscussion</a></li>
+=09=09=09=09 <li id=3D"ca-edit"><a href=3D"http://guichan.sourceforge.net/wi=
+ki/index.php?title=3DGetting_started&amp;action=3Dedit">Edit</a></li>
+=09=09=09=09 <li id=3D"ca-history"><a href=3D"http://guichan.sourceforge.net=
+/wiki/index.php?title=3DGetting_started&amp;action=3Dhistory">History</a></l=
+i>
+=09=09</ul>
+=09</div>
+=09<div class=3D"portlet" id=3D"p-personal">
+=09=09<h5>Personal tools</h5>
+=09=09<div class=3D"pBody">
+=09=09=09<ul>
+=09=09=09=09<li id=3D"pt-login"><a href=3D"http://guichan.sourceforge.net/wi=
+ki/index.php?title=3DSpecial:Userlogin&amp;returnto=3DGetting_started">Log i=
+n / create account</a></li>
+=09=09=09</ul>
+=09=09</div>
+=09</div>
+=09<script type=3D"text/javascript"> if (window.isMSIE55) fixalpha(); </scri=
+pt>
+=09=09<div class=3D"portlet" id=3D"p-project">
+=09=09<h5>project</h5>
+=09=09<div class=3D"pBody">
+=09=09=09<ul>
+=09=09=09=09<li id=3D"n-mainpage"><a href=3D"http://guichan.sourceforge.net/=
+wiki/index.php/Main_Page">Main Page</a></li>
+=09=09=09=09<li id=3D"n-about"><a href=3D"http://guichan.sourceforge.net/wik=
+i/index.php/About">About</a></li>
+=09=09=09=09<li id=3D"n-Features"><a href=3D"http://guichan.sourceforge.net/=
+wiki/index.php/Features">Features</a></li>
+=09=09=09=09<li id=3D"n-Change-log"><a href=3D"http://guichan.sourceforge.ne=
+t/wiki/index.php/Change_log">Change log</a></li>
+=09=09=09=09<li id=3D"n-License"><a href=3D"http://guichan.sourceforge.net/w=
+iki/index.php/Licensing">Licensing</a></li>
+=09=09=09=09<li id=3D"n-Screenshots"><a href=3D"http://guichan.sourceforge.n=
+et/wiki/index.php/Screenshots">Screenshots</a></li>
+=09=09=09=09<li id=3D"n-Downloads"><a href=3D"http://guichan.sourceforge.net=
+/wiki/index.php/Downloads">Downloads</a></li>
+=09=09=09=09<li id=3D"n-Source"><a href=3D"http://guichan.sourceforge.net/wi=
+ki/index.php/Source">Source</a></li>
+=09=09=09=09<li id=3D"n-Bugs-and-requests"><a href=3D"http://code.google.com=
+/p/guichan/issues/list">Bugs and requests</a></li>
+=09=09=09</ul>
+=09=09</div>
+=09</div>
+=09=09<div class=3D"portlet" id=3D"p-community">
+=09=09<h5>community</h5>
+=09=09<div class=3D"pBody">
+=09=09=09<ul>
+=09=09=09=09<li id=3D"n-Forum"><a href=3D"http://guichan.sourceforge.net/for=
+um/">Forum</a></li>
+=09=09=09=09<li id=3D"n-Mailing-lists"><a href=3D"http://guichan.sourceforge=
+.net/wiki/index.php/Mailing_lists">Mailing lists</a></li>
+=09=09=09</ul>
+=09=09</div>
+=09</div>
+=09=09<div class=3D"portlet" id=3D"p-documentation">
+=09=09<h5>documentation</h5>
+=09=09<div class=3D"pBody">
+=09=09=09<ul>
+=09=09=09=09<li id=3D"n-API"><a href=3D"http://guichan.sourceforge.net/api">=
+API</a></li>
+=09=09=09=09<li id=3D"n-FAQ"><a href=3D"http://guichan.sourceforge.net/wiki/=
+index.php/FAQ">FAQ</a></li>
+=09=09=09=09<li id=3D"n--User-guide"><a href=3D"http://guichan.sourceforge.n=
+et/wiki/index.php/User_guide"> User guide</a></li>
+=09=09=09=09<li id=3D"n--Tutorials"><a href=3D"http://guichan.sourceforge.ne=
+t/wiki/index.php/Tutorials"> Tutorials</a></li>
+=09=09=09=09<li id=3D"n--Developer-guide"><a href=3D"http://guichan.sourcefo=
+rge.net/wiki/index.php/Developer_guide"> Developer guide</a></li>
+=09=09=09</ul>
+=09=09</div>
+=09</div>
+=09=09<div class=3D"portlet" id=3D"p-resources">
+=09=09<h5>resources</h5>
+=09=09<div class=3D"pBody">
+=09=09=09<ul>
+=09=09=09=09<li id=3D"n--ImageFont-collection"><a href=3D"http://guichan.sou=
+rceforge.net/wiki/index.php/ImageFont_collection"> ImageFont collection</a><=
+/li>
+=09=09=09</ul>
+=09=09</div>
+=09</div>
+=09=09<div class=3D"portlet" id=3D"p-extensions">
+=09=09<h5>extensions</h5>
+=09=09<div class=3D"pBody">
+=09=09=09<ul>
+=09=09=09=09<li id=3D"n-XMLGuichan"><a href=3D"http://code.google.com/p/xmlg=
+uichan/">XMLGuichan</a></li>
+=09=09=09=09<li id=3D"n-Small-Basic-(Guichan-incorporated)"><a href=3D"http:=
+//smallbasic.sourceforge.net/">Small Basic (Guichan incorporated)</a></li>
+=09=09=09=09<li id=3D"n-GCE-GUI-Editor"><a href=3D"http://gce.sourceforge.ne=
+t/">GCE GUI Editor</a></li>
+=09=09=09</ul>
+=09=09</div>
+=09</div>
+=09=09<div class=3D"portlet" id=3D"p-site">
+=09=09<h5>site</h5>
+=09=09<div class=3D"pBody">
+=09=09=09<ul>
+=09=09=09=09<li id=3D"n-recentchanges"><a href=3D"http://guichan.sourceforge=
+.net/wiki/index.php/Special:Recentchanges">Recent changes</a></li>
+=09=09=09=09<li id=3D"n-randompage"><a href=3D"http://guichan.sourceforge.ne=
+t/wiki/index.php/Special:Random">Random page</a></li>
+=09=09=09=09<li id=3D"n-help"><a href=3D"http://guichan.sourceforge.net/wiki=
+/index.php/Help:Contents">Help</a></li>
+=09=09=09</ul>
+=09=09</div>
+=09</div>
+=09=09<div id=3D"p-search" class=3D"portlet">
+=09=09<h5><label for=3D"searchInput">Search</label></h5>
+=09=09<div id=3D"searchBody" class=3D"pBody">
+=09=09=09<form action=3D"/wiki/index.php/Special:Search" id=3D"searchform"><=
+div>
+=09=09=09=09<input id=3D"searchInput" name=3D"search" accesskey=3D"f" value=
+=3D"" type=3D"text">
+=09=09=09=09<input name=3D"go" class=3D"searchButton" id=3D"searchGoButton" =
+value=3D"Go" type=3D"submit">=C2=A0
+=09=09=09=09<input name=3D"fulltext" class=3D"searchButton" value=3D"Search"=
+ type=3D"submit">
+=09=09=09</div></form>
+=09=09</div>
+=09</div>
+=09<div class=3D"portlet" id=3D"p-tb">
+=09=09<h5>Toolbox</h5>
+=09=09<div class=3D"pBody">
+=09=09=09<ul>
+=09=09=09=09<li id=3D"t-whatlinkshere"><a href=3D"http://guichan.sourceforge=
+.net/wiki/index.php/Special:Whatlinkshere/Getting_started">What links here</=
+a></li>
+=09=09=09=09<li id=3D"t-recentchangeslinked"><a href=3D"http://guichan.sourc=
+eforge.net/wiki/index.php/Special:Recentchangeslinked/Getting_started">Relat=
+ed changes</a></li>
+<li id=3D"t-upload"><a href=3D"http://guichan.sourceforge.net/wiki/index.php=
+/Special:Upload">Upload file</a></li>
+<li id=3D"t-specialpages"><a href=3D"http://guichan.sourceforge.net/wiki/ind=
+ex.php/Special:Specialpages">Special pages</a></li>
+=09=09=09=09<li id=3D"t-print"><a href=3D"http://guichan.sourceforge.net/wik=
+i/index.php?title=3DGetting_started&amp;printable=3Dyes">Printable version</=
+a></li>=09=09=09=09<li id=3D"t-permalink"><a href=3D"http://guichan.sourcefo=
+rge.net/wiki/index.php?title=3DGetting_started&amp;oldid=3D1579">Permanent l=
+ink</a></li>=09=09=09</ul>
+=09=09</div>
+=09</div>
+=09=09</div><!-- end of the left (by default at least) column -->
+
+
+
+       =20
+
+      <div class=3D"visualClear"></div>
+=09=09=09<div id=3D"footer">
+=09=09=09=09<div id=3D"f-poweredbyico">
+           <a href=3D"http://sourceforge.net/">
+           <img id=3D"sourceforgelogo" src=3D"index_files/sflogo.png" alt=3D=
+"SourceForge.net Logo" border=3D"0" height=3D"31" width=3D"88">
+           </a>
+
+                                      <a href=3D"http://www.mediawiki.org/">=
+<img src=3D"index_files/poweredby_mediawiki_88x31.png" alt=3D"MediaWiki"
+></a></div>
+=09=09=09<ul id=3D"f-list">
+=09=09=09=09<li id=3D"lastmod"> This page was last modified 15:11, 13 Februa=
+ry 2008.</li>
+=09=09=09=09<li id=3D"viewcount">This page has been accessed 2,679 times.</l=
+i>
+=09=09=09=09<li id=3D"privacy"><a href=3D"http://guichan.sourceforge.net/wik=
+i/index.php/Guichan:Privacy_policy" title=3D"Guichan:Privacy policy">Privacy=
+ policy</a></li>
+=09=09=09=09<li id=3D"about"><a href=3D"http://guichan.sourceforge.net/wiki/=
+index.php/Guichan:About" title=3D"Guichan:About">About Guichan</a></li>
+=09=09=09=09<li id=3D"disclaimer"><a href=3D"http://guichan.sourceforge.net/=
+wiki/index.php/Guichan:General_disclaimer" title=3D"Guichan:General disclaim=
+er">Disclaimers</a></li>
+=09=09=09</ul>
+=09=09</div>
+=09<script type=3D"text/javascript"> if (window.runOnloadHook) runOnloadHook=
+();</script>
+</div>
+<!-- Served by sc8-pr-web5.sourceforge.net in 0.91 secs. -->
+
+</body></html>
+
+
+------=_NextPart_000_0000_6463A6A0.AA281237
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: index_files/commonPrint.css
+
+/*
+** MediaWiki Print style sheet for CSS2-capable browsers.
+** Copyright Gabriel Wicke, http://www.aulinx.de/
+**
+** Derived from the plone (http://plone.org/) styles
+** Copyright Alexander Limi
+*/
+
+/* Thanks to A List Apart (http://alistapart.com/) for useful extras */
+a.stub,
+a.new{ color:#ba0000; text-decoration:none; }
+
+#toc {=20
+    /*border:1px solid #2f6fab;*/
+    border:1px solid #aaaaaa;
+    background-color:#f9f9f9;
+    padding:5px;
+}
+.tocindent {
+=09margin-left: 2em;
+}
+.tocline {
+=09margin-bottom: 0px;
+}
+.toctoggle, .editsection {
+=09font-size: smaller;
+}
+
+/* images */
+div.floatright {=20
+    float: right;=20
+    margin: 0;
+    position:relative;
+    border: 0.5em solid White;
+    border-width: 0.5em 0 0.8em 1.4em;
+}
+div.floatright p { font-style: italic;}=20
+div.floatleft {=20
+    float: left;=20
+    margin: 0.3em 0.5em 0.5em 0;
+    position:relative;
+    border: 0.5em solid White;
+    border-width: 0.5em 1.4em 0.8em 0;
+}
+div.floatleft p { font-style: italic; }=20
+/* thumbnails */
+div.thumb {
+    margin-bottom: 0.5em;
+    border-style: solid; border-color: White;
+    width: auto;
+    overflow: hidden;
+}
+div.thumb div {
+    border:1px solid #cccccc;
+    padding: 3px !important;
+    background-color:#f9f9f9;
+    font-size: 94%;
+    text-align: center;
+}
+div.thumb div a img {
+    border:1px solid #cccccc;
+}
+div.thumb div div.thumbcaption {
+    border: none;
+    padding: 0.3em 0 0.1em 0;
+}
+div.magnify { display: none; }
+div.tright {
+    float: right;
+    border-width: 0.5em 0 0.8em 1.4em;
+}
+div.tleft {
+    float: left;
+    margin-right:0.5em;
+    border-width: 0.5em 1.4em 0.8em 0;
+}
+
+/* table standards */
+table.rimage {
+    float:right;=20
+    width:1pt;=20
+    position:relative;
+    margin-left:1em;=20
+    margin-bottom:1em;
+    text-align:center;
+}
+
+body {
+    background: White;
+    /*font-size: 11pt !important;*/
+    color: Black;
+    margin: 0;
+    padding: 0;
+}
+
+.noprint,
+div#jump-to-nav,
+div.top,
+div#column-one,
+#colophon,
+.editsection,
+.toctoggle,
+.tochidden,
+div#f-poweredbyico,
+div#f-copyrightico,
+li#f-viewcount,
+li#f-about,
+li#f-disclaimer,
+li#f-privacy {
+    /* Hides all the elements irrelevant for printing */
+    display: none;
+}
+
+ul {=20
+    list-style-type: square;
+}
+
+#content {
+    background: none;
+    border: none ! important;
+    font-size: 11pt;
+    padding: 0 ! important;
+    margin: 0 ! important;
+}
+#footer {
+=09background : white;
+=09color : black;
+    border-top: 1px solid black;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    font-weight: bold;
+}
+
+p, .documentDescription {
+    margin: 1em 0 ! important;
+    line-height: 1.2em;   =20
+}
+
+.tocindent p {
+=09margin: 0 0 0 0 ! important;
+}
+
+pre {
+    border: 1pt dashed black;
+    white-space: pre;
+    font-size: 8pt;
+    overflow: auto;
+    padding: 1em 0;
+=09background : white;
+=09color : black;
+}
+
+table.listing,
+table.listing td {
+    border: 1pt solid black;
+    border-collapse: collapse;
+}
+
+a {
+    color: Black !important;
+    padding: 0 !important
+}
+
+a:link, a:visited {
+    color: #520;
+    background: transparent;
+    text-decoration: underline;
+}
+
+#content a.external.text:after, #content a.external.autonumber:after {
+    /* Expand URLs for printing */
+    content: " (" attr(href) ") ";
+}
+
+#globalWrapper {
+    width: 100% !important;
+    min-width: 0 !important;
+}
+
+#content {
+=09background : white;
+=09color : black;
+}
+
+#column-content {
+    margin: 0 !important;
+}
+
+#column-content #content {
+    padding: 1em;
+    margin: 0 !important;
+}
+/* MSIE/Win doesn't understand 'inherit' */
+a, a.external, a.new, a.stub {
+=09color: black ! important;
+=09text-decoration: none ! important;
+}
+
+/* Continue ... */
+a, a.external, a.new, a.stub {
+=09color: inherit ! important;
+=09text-decoration: inherit ! important;
+}
+
+img { border: none; }
+img.tex { vertical-align: middle; }
+span.texhtml { font-family: serif; }
+
+div.townBox {
+    position:relative;
+    float:right;
+    background:White;
+    margin-left:1em;
+    border: 1px solid gray;
+    padding:0.3em;
+    width: 200px;
+    overflow: hidden;
+    clear: right;
+}
+div.townBox dl {
+    padding: 0;
+    margin: 0 0 0.3em 0;=20
+    font-size: 96%;
+}
+div.townBox dl dt {
+    background: none;
+    margin: 0.4em 0 0 0;
+}
+div.townBox dl dd {
+    margin: 0.1em 0 0 1.1em;
+    background-color: #f3f3f3;
+}
+
+#siteNotice { display: none; }
+
+table.gallery {
+        border:  1px solid #cccccc;
+        margin:  2px;
+        padding: 2px;
+        background-color:#ffffff;
+}
+
+table.gallery tr {=20
+        vertical-align:top;
+}
+
+div.gallerybox {
+        border: 1px solid #cccccc;
+        margin: 2px;
+        background-color:#f9f9f9;
+        width:  150px;
+}
+
+div.gallerybox div.thumb {
+        text-align: center;
+        border: 1px solid #cccccc;
+        margin: 2px;
+}      =20
+
+div.gallerytext {
+        font-size: 94%;
+        padding: 2px 4px;
+}      =20
+
+/*
+** Diff rendering
+*/
+table.diff { background:white; }
+td.diff-otitle { background:#ffffff; }
+td.diff-ntitle { background:#ffffff; }
+td.diff-addedline {
+    background:#ccffcc;
+    font-size: smaller;
+    border: solid 2px black;
+}
+td.diff-deletedline {
+    background:#ffffaa;
+    font-size: smaller;
+    border: dotted 2px black;
+}
+td.diff-context {
+    background:#eeeeee;
+    font-size: smaller;
+}
+span.diffchange { color: silver; font-weight: bold; text-decoration: underli=
+ne; }
+
+
+
+
+------=_NextPart_000_0000_6463A6A0.AA281237
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: index_files/guichanlogo.png
+
+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
+KQoAAAAASUVORK5CYII=
+
+------=_NextPart_000_0000_6463A6A0.AA281237
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Location: index_files/index.php
+
+LyogZ2VuZXJhdGVkIGphdmFzY3JpcHQgKi92YXIgc2tpbiA9ICdndWljaGFuJzsKdmFyIHN0eWxl
+cGF0aCA9ICcvd2lraS9za2lucyc7LyogTWVkaWFXaWtpOkd1aWNoYW4gKi8K
+
+------=_NextPart_000_0000_6463A6A0.AA281237
+Content-Type: application/x-javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: index_files/injection_graph_func.js
+
+var skype_injection_path =3D 'chrome://skype_ff_toolbar_win/content/';
+var skype_tool =3D null;
+
+/*window.addEventListener("click",skype_click_handler,true);
+function skype_click_handler(event)
+{
+=09if (skype_tool)
+=09=09skype_tool.closemenu();
+=09//HideSkypeMenuFull();
+} */
+
+//CALL BUTTON
+var SkypeActiveCallButtonPart =3D 0;
+function SkypeSetCallButtonPart(obj)
+{
+=09if (obj.getAttribute('id') =3D=3D '__skype_highlight_id_left')
+=09{
+=09=09SkypeActiveCallButtonPart =3D 0;
+=09}
+=09else if (obj.getAttribute('id') =3D=3D '__skype_highlight_id_right')
+=09{
+=09=09SkypeActiveCallButtonPart =3D 1;
+=09}
+}
+
+function SkypeSetCallButton(obj, hl, isInternational)
+{
+=09var cb_part_l =3D null;
+=09var cb_part_ml =3D null;
+=09var cb_part_mr =3D null;
+=09var cb_part_r =3D null;
+=09if (obj.getAttribute('rtl') =3D=3D 'false')
+=09{
+=09=09cb_part_l =3D obj.firstChild.firstChild;
+=09=09cb_part_ml =3D obj.firstChild.lastChild;
+=09=09cb_part_mr =3D obj.lastChild.firstChild;
+=09=09cb_part_r =3D obj.lastChild.lastChild;
+
+=09=09cb_flag =3D obj.firstChild.lastChild.firstChild;
+=09=09if (cb_flag && cb_flag.isSameNode(obj.firstChild.firstChild.firstChild=
+) =3D=3D true)
+=09=09=09cb_flag =3D null;
+=09}
+=09else
+=09{
+=09=09cb_part_l =3D obj.lastChild.lastChild;
+=09=09cb_part_ml =3D obj.lastChild.firstChild;
+=09=09cb_part_mr =3D obj.firstChild.lastChild;
+=09=09cb_part_r =3D obj.firstChild.firstChild;
+
+=09=09cb_flag =3D obj.lastChild.firstChild.lastChild;
+=09=09if (cb_flag && cb_flag.isSameNode(obj.lastChild.lastChild.lastChild) =
+=3D=3D true)
+=09=09=09cb_flag =3D null;
+=09}
+
+=09if (hl =3D=3D 1)
+=09{
+=09=09cb_part_l.style.backgroundImage =3D "url('chrome://skype_ff_toolbar_wi=
+n/content/cb_mouseover_l.gif')";
+=09=09if (cb_part_l.isSameNode(cb_part_ml) !=3D true)
+=09=09=09cb_part_ml.style.backgroundImage =3D "url('chrome://skype_ff_toolba=
+r_win/content/cb_mouseover_m.gif')";
+=09=09cb_part_mr.style.backgroundImage =3D "url('chrome://skype_ff_toolbar_w=
+in/content/cb_mouseover_m.gif')";
+
+
+=09=09if (isInternational =3D=3D "0")
+=09=09{
+=09=09=09if (SkypeActiveCallButtonPart =3D=3D 0)    //left
+=09=09=09{
+=09=09=09=09cb_part_r.style.backgroundImage =3D "url('chrome://skype_ff_tool=
+bar_win/content/cb_mouseonflag_r.gif')";
+=09=09=09=09//shadow
+=09=09=09=09if (cb_flag)
+=09=09=09=09{
+=09=09=09=09=09cb_flag.style.top =3D '1px';
+=09=09=09=09=09cb_flag.style.left =3D '1px';
+=09=09=09=09=09/*top right bottom left*/
+=09=09=09=09=09cb_flag.style.padding =3D '1px 0px 0px 1px';//'2px 0px 0px 0p=
+x';
+=09=09=09=09}
+=09=09=09}
+=09=09=09else                            //right
+=09=09=09{
+=09=09=09=09cb_part_r.style.backgroundImage =3D "url('chrome://skype_ff_tool=
+bar_win/content/cb_mouseover_r.gif')";
+=09=09=09=09//flag
+=09=09=09=09if (cb_flag)
+=09=09=09=09{
+=09=09=09=09=09cb_flag.style.top =3D '0px';
+=09=09=09=09=09cb_flag.style.left =3D '0px';
+=09=09=09=09=09cb_flag.style.padding =3D '0px 1px 1px 0px';//'0px 1px 1px 0p=
+x';
+=09=09=09=09=09cb_flag.style.margin =3D '0px 0px 2px 0px;';
+=09=09=09=09}
+=09=09=09}
+=09=09}
+=09=09else
+=09=09{
+=09=09=09cb_part_r.style.backgroundImage =3D "url('chrome://skype_ff_toolbar=
+_win/content/cb_mouseover_r.gif')";
+=09=09=09//flag
+=09=09=09if (cb_flag)
+=09=09=09{
+=09=09=09=09cb_flag.style.top =3D '0px';
+=09=09=09=09cb_flag.style.left =3D '0px';
+=09=09=09=09cb_flag.style.padding =3D '0px 1px 1px 0px';
+=09=09=09=09cb_flag.style.margin =3D '0px 0px 2px 0px;';
+=09=09=09}
+=09=09}
+=09}
+=09else
+=09{
+=09=09cb_part_l.style.backgroundImage =3D "url('chrome://skype_ff_toolbar_wi=
+n/content/cb_normal_l.gif')";
+=09=09if (cb_part_l.isSameNode(cb_part_ml) !=3D true)
+=09=09=09cb_part_ml.style.backgroundImage =3D "url('chrome://skype_ff_toolba=
+r_win/content/cb_normal_m.gif')";
+=09=09cb_part_mr.style.backgroundImage =3D "url('chrome://skype_ff_toolbar_w=
+in/content/cb_normal_m.gif')";
+=09=09cb_part_r.style.backgroundImage =3D "url('chrome://skype_ff_toolbar_wi=
+n/content/cb_normal_r.gif')";
+
+=09=09//flag
+=09=09if (cb_flag)
+=09=09{
+=09=09=09cb_flag.style.top =3D '0px';
+=09=09=09cb_flag.left =3D '0px';
+=09=09=09cb_flag.style.padding =3D '0px 1px 1px 0px';
+=09=09=09cb_flag.style.margin =3D '0px 0px 2px 0px;';
+=09=09}
+=09}
+}
+var skype_cb_l =3D '';
+var skype_cb_m =3D '';
+var skype_cb_r =3D '';
+
+function SkypeSetCallButtonPressed(obj, pr, isInternational)
+{
+=09var cb_part_l =3D null;
+=09var cb_part_ml =3D null;
+=09var cb_part_mr =3D null;
+=09var cb_part_r =3D null;
+=09if (obj.getAttribute('rtl') =3D=3D 'false')
+=09{
+=09=09cb_part_l =3D obj.firstChild.firstChild;
+=09=09cb_part_ml =3D obj.firstChild.lastChild;
+=09=09cb_part_mr =3D obj.lastChild.firstChild;
+=09=09cb_part_r =3D obj.lastChild.lastChild;
+
+=09=09cb_flag =3D obj.firstChild.lastChild.firstChild;
+=09=09if (cb_flag && cb_flag.isSameNode(obj.firstChild.firstChild.firstChild=
+) =3D=3D true)
+=09=09=09cb_flag =3D null;
+=09}
+=09else
+=09{
+=09=09cb_part_l =3D obj.lastChild.lastChild;
+=09=09cb_part_ml =3D obj.lastChild.firstChild;
+=09=09cb_part_mr =3D obj.firstChild.lastChild;
+=09=09cb_part_r =3D obj.firstChild.firstChild;
+
+=09=09cb_flag =3D obj.lastChild.firstChild.lastChild;
+=09=09if (cb_flag && cb_flag.isSameNode(obj.lastChild.lastChild.lastChild) =
+=3D=3D true)
+=09=09=09cb_flag =3D null;
+=09}
+=09if (pr =3D=3D 1)
+=09{
+=09=09skype_cb_l =3D cb_part_l.style.backgroundImage;//getAttribute('src');
+=09=09skype_cb_m =3D cb_part_mr.style.backgroundImage;
+=09=09skype_cb_r =3D cb_part_r.style.backgroundImage;//getAttribute('src');
+
+=09=09if (isInternational =3D=3D "0")
+=09=09{
+=09=09=09if (SkypeActiveCallButtonPart =3D=3D 0)    //left
+=09=09=09{
+=09=09=09=09//obj.firstChild.firstChild.setAttribute('src', 'chrome://skype_=
+ff_toolbar_win/content/cb_down_l.gif');
+=09=09=09=09cb_part_l.style.backgroundImage =3D "url('chrome://skype_ff_tool=
+bar_win/content/cb_down_l.gif')";
+=09=09=09=09if (cb_part_l.isSameNode(cb_part_ml) !=3D true)
+=09=09=09=09=09cb_part_ml.style.backgroundImage =3D "url('chrome://skype_ff_=
+toolbar_win/content/cb_down_m.gif')";
+=09=09=09}
+=09=09=09else                            //right
+=09=09=09{
+=09=09=09=09//obj.firstChild.firstChild.setAttribute('src', 'chrome://skype_=
+ff_toolbar_win/content/cb_down_l.gif');
+=09=09=09=09cb_part_l.style.backgroundImage =3D "url('chrome://skype_ff_tool=
+bar_win/content/cb_down_l.gif')";
+=09=09=09=09if (cb_part_l.isSameNode(cb_part_ml) !=3D true)
+=09=09=09=09=09cb_part_ml.style.backgroundImage =3D "url('chrome://skype_ff_=
+toolbar_win/content/cb_down_m.gif')";
+=09=09=09=09cb_part_mr.style.backgroundImage =3D "url('chrome://skype_ff_too=
+lbar_win/content/cb_down_m.gif')";
+=09=09=09=09//obj.lastChild.lastChild.setAttribute('src', 'chrome://skype_ff=
+_toolbar_win/content/cb_down_r.gif');
+=09=09=09=09cb_part_r.style.backgroundImage =3D "url('chrome://skype_ff_tool=
+bar_win/content/cb_down_r.gif')";
+=09=09=09}
+=09=09}
+=09=09else
+=09=09{
+=09=09=09//obj.firstChild.firstChild.setAttribute('src', 'chrome://skype_ff_=
+toolbar_win/content/cb_down_l.gif');
+=09=09=09cb_part_l.style.backgroundImage =3D "url('chrome://skype_ff_toolbar=
+_win/content/cb_down_l.gif')";
+=09=09=09if (cb_part_l.isSameNode(cb_part_ml) !=3D true)
+=09=09=09=09cb_part_ml.style.backgroundImage =3D "url('chrome://skype_ff_too=
+lbar_win/content/cb_down_m.gif')";
+=09=09=09cb_part_mr.style.backgroundImage =3D "url('chrome://skype_ff_toolba=
+r_win/content/cb_down_m.gif')";
+=09=09=09=09//obj.lastChild.lastChild.setAttribute('src', 'chrome://skype_ff=
+_toolbar_win/content/cb_down_r.gif');
+=09=09=09cb_part_r.style.backgroundImage =3D "url('chrome://skype_ff_toolbar=
+_win/content/cb_down_r.gif')";
+=09=09}
+=09}
+=09else
+=09{
+=09=09//obj.firstChild.firstChild.setAttribute('src', skype_cb_l);
+=09=09cb_part_l.style.backgroundImage =3D skype_cb_l;
+=09=09if (cb_part_l.isSameNode(cb_part_ml) !=3D true)
+=09=09=09cb_part_ml.style.backgroundImage =3D skype_cb_m;
+=09=09cb_part_mr.style.backgroundImage =3D skype_cb_m;
+=09=09//obj.lastChild.lastChild.setAttribute('src', skype_cb_r);
+=09=09cb_part_r.style.backgroundImage =3D skype_cb_r;
+=09}
+}
+
+//COMMANDS
+function SkypeToolBarInit(tb)
+{
+=09skype_tool =3D tb;
+}
+
+function doRunCMDSkype(event, link, id, name)
+{
+=09if (skype_tool)
+=09{
+=09=09if (link =3D=3D 'chdial')
+=09=09{
+=09=09=09var obj=3Devent.originalTarget;
+=09=09=09if (!obj)
+=09=09=09=09obj=3Devent;
+
+=09=09=09/*var brd=3DSkypeGetBounds(obj);
+=09=09   var docelem =3D document.documentElement;
+=09=09   if ((docelem.scrollTop =3D=3D 0 && document.body.scrollTop !=3D 0) =
+|| (docelem.scrollLeft =3D=3D 0 && document.body.scrollLeft !=3D 0))
+=09=09=09   docelem=3Ddocument.body;
+  =20
+=09=09   scrollY=3Ddocelem.scrollTop;
+=09=09   scrollX=3Ddocelem.scrollLeft;
+  =20
+=09=09   var my=3Dbrd.top+16, mx=3Dbrd.left;/*brd.height*/
+
+=09=09=09//var oDoc =3D obj.ownerDocument;
+
+=09=09=09/*var obj2 =3D document.getBoxObjectFor(element);
+  =20
+=09=09   var html_box =3D new XPCNativeWrapper(obj2).wrappedJSObject;
+=09=09   if (!html_box)
+=09=09=09 html_box =3D obj2;
+  =20
+=09=09   var screenX =3D html_box.screenX;
+=09=09   var screenY =3D html_box.screenY;
+=09=09=09   */
+
+=09=09=09SkypeFlagColor=3D'rgb(184, 203, 255)';
+=09=09=09skype_tool.chprefix(id, document, obj, screenY);
+=09=09}
+=09=09else if (link =3D=3D 'copy')
+=09=09=09skype_tool.copy_num(id, document);
+=09=09else if (link =3D=3D 'sms')
+=09=09=09skype_tool.sms(id);
+=09=09else if (link =3D=3D 'add')
+=09=09=09skype_tool.add(id, name);
+=09=09else
+=09=09=09skype_tool.call(id);
+=09}
+}
+
+function runCMDSkype(link)
+{
+=09HideSkypeFull();
+=09doRunCMDSkype(null, link, skype_curid, skype_cur_name);
+}
+
+//FLAG TOOLTIP
+function HideSkypeFull()
+{
+=09//   skype_active=3Dfalse;
+=09document.getElementById('skype_dc').style.visibility =3D "hidden";
+}
+
+function ShowSkype(event, title)
+{
+=09//  skype_active=3Dtrue;
+=09DoShowSkype(event.pageX, event.pageY + 20, title);
+}
+
+function DoShowSkype(cX, cY, title)
+{
+=09var menu =3D document.getElementById('skype_dc');
+=09menu.firstChild.nodeValue =3D title;
+=09menu.style.visibility =3D "visible";
+
+=09menu.style.left =3D cX + 'px';
+=09menu.style.top =3D cY + 'px';
+
+}
+var SkypeFlagColor =3D 'rgb(184, 203, 255)';
+function doSkypeFlag(obj, brd)
+{
+=09SkypeFlagColor =3D brd;
+}
+
+//MENU
+var skype_curid =3D 0,skype_active =3D false,skype_showseed =3D 0,skype_ctm =
+=3D 0,skype_cur_name =3D '';
+var skype_curbutton =3D null;
+function SkypeCheckCallButton(obj)
+{
+=09var res =3D false;
+=09if (skype_curbutton && skype_curbutton.isSameNode(obj) =3D=3D true)
+=09=09res =3D true;
+
+=09skype_curbutton =3D obj;
+=09return res;
+}
+
+function HideSkypeMenu()
+{                       //skype_tool.sd('HideSkypeMenu skype_active=3D'+skyp=
+e_active);
+=09if (!skype_active)
+=09=09HideSkypeMenuFull();
+=09else
+=09=09setTimeout("HideSkypeMenu()", 1000);
+}
+
+function HideSkypeMenu2(event)
+{
+=09skype_showseed =3D 0;
+=09if (!skype_active)
+=09=09HideSkypeMenuFull();
+=09else
+=09{
+=09=09skype_active =3D false;
+=09=09setTimeout("HideSkypeMenu()", 1000);
+=09}
+}
+
+function HideSkypeMenuFull()
+{                                 //skype_tool.sd('HideSkypeMenuFull skype_a=
+ctive=3D'+skype_active);
+=09/*   skype_active=3Dfalse;
+=09document.getElementById('skype_menu').style.visibility=3D"hidden";*/
+}
+
+function CheckSkype()
+{
+=09skype_active =3D true;
+}
+
+function ShowSkypeMenu(event, call_msg, id, callto, isMobile, name, x, y)
+{
+=09try {
+=09=09/*  =09skype_active=3Dtrue;       =09=09=09=09=09=09//skype_tool.sd('S=
+howSkypeMenu skype_curid=3D'+skype_curid+'   callto=3D'+callto+'  id=3D'+id)=
+;
+=09=09if(document.g
+etElementById('skype_menu').style.visibility!=3D"hidden" && skype_curid=3D=
+=3Dcallto)//id
+=09=09  return;
+=09=09skype_showseed=3DMath.random();
+=09=09clearTimeout(skype_ctm);
+=09  var obj=3Devent.originalTarget;
+=09  if (!obj)
+=09=09  obj=3Devent;
+  //  =09var brd=3DSkypeGetBounds(obj);
+=09=09//var pcx=3Dbrd.left, pcy=3Dbrd.top+16;/*brd.height;* /   //alert(pcx+=
+'--'+pcy);
+ =20
+=09  scrolls=3DSkypeGetDivScroll(obj);
+ =20
+=09=09var pcx =3D x+scrolls.left, pcy =3D y+scrolls.top;
+ =20
+=09=09skype_ctm=3DsetTimeout('DoShowSkypeMenu(\''+call_msg+'\','+skype_shows=
+eed+',"'+callto+'",'+pcx+','+pcy+','+isMobile+',"'+name+'")',0);*/
+=09} catch(e) {
+=09}
+}
+
+function DoShowSkypeMenu(call_msg, seed, callto, pcx, pcy, isMobile, name)
+{
+=09try {                                                        //skype_tool=
+.sd('DoShowSkypeMenu seed=3D'+seed+'   skype_showseed=3D'+skype_showseed);
+=09=09/*  =09if(seed!=3Dskype_showseed)
+=09=09  return;
+=09=09skype_showseed=3D0;
+=09=09skype_curid=3Dcallto;
+=09  skype_cur_name=3Dname;
+=09=09var menu=3Ddocument.getElementById('skype_menu');
+ =20
+=09=09var my=3Dpcy, mx=3Dpcx;
+ =20
+=09  var menubox=3Ddocument.getBoxObjectFor(menu);
+=09  //var docelem =3D document.documentElement;
+=09=09=09=09=09=09=09=09=09//alert(menubox.height);
+=09=09=09=09=09=09=09=09=09//alert('doc h=3D'+document.height + ' y=3D'+my+'=
+ menu h=3D'+menubox.height);
+=09  var docH=3Ddocument.height;
+=09  if (docH < document.documentElement.clientHeight) docH=3Ddocument.docum=
+entElement.clientHeight;
+=09  if (docH < document.documentElement.scrollHeight) docH=3Ddocument.docum=
+entElement.scrollHeight;
+=09  if (docH < document.body.clientHeight) docH=3Ddocument.body.clientHeigh=
+t;
+=09  if (docH < document.body.scrollHeight) docH=3Ddocument.body.scrollHeigh=
+t;
+=09  if ((my + menubox.height) > docH)
+=09=09  my=3Dmy - 16 - menubox.height;
+=09  if (my < 0) my=3D0;
+  //    if (document.height !=3D 0 && (my + menubox.height) > document.heigh=
+t && (my + menubox.height) > document.documentElement.scrollHeight)//docelem=
+.clientHeight)
+=09=09  //my=3Ddocument.height - menubox.height;
+ =20
+=09  var docW=3Ddocument.width;
+=09  if (docW < document.documentElement.clientWidth) docW=3Ddocument.docume=
+ntElement.clientWidth;
+=09  if (docW < document.documentElement.scrollWidth) docW=3Ddocument.docume=
+ntElement.scrollWidth;
+=09  if (docW < document.body.clientWidth) docW=3Ddocument.body.clientWidth;
+=09  if (docW < document.body.scrollWidth) docW=3Ddocument.body.scrollWidth;
+=09  if ((mx + menubox.width) > docW)
+=09=09  mx=3Ddocument.width - menubox.width;
+=09  if (mx < 0) mx=3D0;
+  //=09if (document.width !=3D 0 && (mx + menubox.width) > document.width &&=
+ (mx + menubox.width) > document.documentElement.scrollWidth)//docelem.clien=
+tWidth)
+ =20
+=09=09menu.style.left=3Dmx+'px';
+=09=09menu.style.top=3Dmy+'px';
+ =20
+=09  skype_tool.doFixMenu(menu, isMobile, document);
+ =20
+=09  menu.style.visibility=3D"visible";  */
+=09} catch(e) {
+=09}
+}
+
+function SkypeSetBgColor(obj, color)
+{
+=09try {
+=09=09obj.lastChild.style.backgroundColor =3D color;
+=09} catch(e) {
+=09}
+}
+
+//UTIL
+function SkypeGetBounds(element)
+{
+=09try {
+=09=09var left =3D element.left;
+=09=09var top =3D element.top;
+=09=09while (!(element.tagName.toLowerCase() =3D=3D 'span' && element.getAtt=
+ribute('id') =3D=3D '__skype_highlight_id'))
+=09=09{
+=09=09=09element =3D element.parentNode;
+=09=09}
+=09=09left =3D element.offsetLeft;
+=09=09top =3D element.offsetTop;
+=09=09for (var parent =3D element.offsetParent; parent; parent =3D parent.of=
+fsetParent)
+=09=09{
+=09=09=09left +=3D parent.offsetLeft;
+=09=09=09top +=3D parent.offsetTop;
+=09=09=09if (parent.tagName.toLowerCase() =3D=3D 'div')
+=09=09=09{
+=09=09=09=09left -=3D parent.scrollLeft;
+=09=09=09=09top -=3D parent.scrollTop;
+=09=09=09}
+=09=09}
+
+
+=09=09return {left: left, top: top, width: element.offsetWidth, height: elem=
+ent.offsetHeight};
+=09} catch(e) {
+=09}
+}
+
+function SkypeGetDivScroll(element)
+{
+=09try {
+=09=09var left =3D 0;
+=09=09var top =3D 0;
+=09=09while (!(element.tagName.toLowerCase() =3D=3D 'span' && element.getAtt=
+ribute('id') =3D=3D '__skype_highlight_id'))
+=09=09{
+=09=09=09element =3D element.parentNode;
+=09=09}
+
+=09=09for (var parent =3D element.offsetParent; parent; parent =3D parent.of=
+fsetParent)
+=09=09{
+=09=09=09if (parent.tagName.toLowerCase() =3D=3D 'div')
+=09=09=09{
+=09=09=09=09left -=3D parent.scrollLeft;
+=09=09=09=09top -=3D parent.scrollTop;
+=09=09=09}
+=09=09}
+
+
+=09=09return {left: left, top: top};
+=09} catch(e) {
+=09}
+}
+
+
+------=_NextPart_000_0000_6463A6A0.AA281237
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: index_files/poweredby_mediawiki_88x31.png
+
+iVBORw0KGgoAAAANSUhEUgAAAFgAAAAfCAMAAABUFvrSAAAAA3NCSVQICAjb4U/gAAAClFBMVEUC
+KWuqqtbmxQbRvxS1xc+BdgdzlKmEq76qqqpBeZ3HxHrt7OZbZ1LWxE0lX3hxeUWzq2nY3N5WhKPQ
+dQoAUIThyiSwrTY9RpT29vbGwqSjtsTHzdDAaQoAZplPepgATICdo6vp1Asyao7o59vO1NfQx2Ph
+2XiOkTeKjY3yzQnW1smGla7s2yNemLXflg06hK0wO3h2pLvm2D/1sgfn4akHV4uYscEbLHZEdphO
+hKauspWsrr4ObZ3q2RqqbRTWyS8haJa5xJuFhbgrS4Ipe6WrusXX0rXW1tY4cpfBztff2Zrlqg7w
+yhTIuEyFo7dSkbFskKjShg3Yyhj91geVrb7EvnPy3TXd0WchZZKHp7xmi6Ln1lLdxUWMm7ayv8fT
+zZbe3sm7w8/AcA7w8PDNtzQaW4YmJpoybZTOzcXe3taes8D0ywDh5OZAXIvo5Lzg14rk1zTPzr40
+gafr1RBJZJFCU1rbugvlziGWehNqnbd0nLWlvsv13hsIVIaRkqXF0NfwvANEiq0wToIYX4zgnRHm
+0A7UiRL36Efc4OJMf6PoxxqgpJXYzlX/yQYbdKGNkrv4xhHq4RLO1tzo0TKUbg5biqgGHXn31xDu
+3hnj12rHuUSclS1ijqzWzozm3IXsvxLZ2ebBag2ambbMfRU4dJvlpxG1chKdtcb05D3q6M2LpLXz
+3ynExc5ika/VnBnMzMze3t6mu8h8nbMiY42sv8ufq8AQWozGdBXgz0zWvQ6Oq77gsQlNepnDwMLo
+vQJSg6NGYY4XXIvc1644Q2fu2EdNVV31vAf3zwZ7p73m5uYpapTUfQ8AU4mboKarqK2UtMS6sEDR
+ymyVmYq5taFUWZrt0R/Hdg/L0dTBvnnOy4Hi2pLr2FEpPiAVAAAACXBIWXMAAArwAAAK8AFCrDSY
+AAAEkElEQVRIx+3Q+1tTdRwH8NNYzHkiPTQqmfMCA+MST0NDSiBM8uyEjYVcBoa4jsTtO8SNBDbm
+nGN2RgQBrQ1bGt6mY9SBM7nMS2DJ+k5yXUXwn+kckMT19Dz1ID/0PL1/OJ/P+Xy+39cPX2TNKgVZ
+882q5H94OTz7WGo21NTUzK48YXDl0funj1ZWPhkYX5aon6NiKt+o3PtlcnLyo6lPqzX78L+JdmGv
+dYeNw+HCwo7mwtL0yr3jpY/kWAneqsVDMrHYjbvFPrFbJlb7BDhbcIFbsrCXsbJaHQ57vd7ZWe+N
+uVt4lE7H4/F0jYmpzs4bOK72erlDw5JWs1lmFuThWT5JqEtmlmlb8wQCtrCthNtr2WGoQBAOa5pS
+xLteeHN9zJFOa1I9j7fV6XRePv7bLnFKk+YhLJg1D+MSvMBcYM5r7dJqW1txrphD+AKMD2eFCrr+
+8hTISSn+y+0N+DsRHbz66RMn6h09Pf392z7G8ZMId8jAXsZDeS+zzyEhsn4wsB0Lc4UdSri9Nk+L
+ZxWEwRiGTGJ48WFn+nvXbl5rb2/Pnw7odNb9X9zFsEkEYyM1cF8+9zVgfClGGDCCwLiC8bmp1GDg
+YwIJH1sWFqZpREPX/nj7cFLSJ9OnxsbGzn89HeANFu/spmkNQv/T+A2P/S7Bt04/39im23/xzsac
+nI3ntwesJWuf2fKv4LAswpP0obWFzj5nx6l7OS0tOc/lB/oS5z6sWCFMUYiGop76LmrQcfbepZan
+Wy7duRjoa6A+6KYoDUKxMVbVURQeVyWm/oznWXWcnV5o/YyaUmZS0mql3OOJ42bRRopiYQAQDQB3
+15W0JSWlDeR8xj5FfmBrScLtLQBoEMBmZsYFQOzoqBcAguAGJpPHok7xcA0N+BY/LVQBn6Vu5KC+
+mqalwLMJABaGEJmEDacjrNZ9DkfavYGB99tvHrMOJqx7HUINAtm8KmII6BJNSTE7w4wAMDIVZIKm
+SA8YsQRtNq8wGlNNSRWMSfnWiBBGy2nPdQgX4SZ4Zf22hO87fm8LbE97t/1Tx8REydwr5yBsWoQz
+GRkmzwxKXaO+MlHG8Kh+OJg7Kx/KMOpjgyJ+2QUfw2REuzCVQiFUGP1QKFqC96jhuZ33S2JSU/c5
++vqmz7ZlWz/69fNuqN6zCCtHbGV29r5FNWS32G02CA1BQq7nGt+Uz6SSK/1xU8NQ5feLRGUQfrsE
+V1Rcxb56qfhIX3Zzs+PB5aRj2Y3pPT8dx7CrFRUcPKPsZTYXuYPq3KAhZI91qTCoUJnkevsFCENG
+HxQa3YSI6QUsbGEuUEswiqLc7fj4+f4D8+m6+fGJiebUHWfGG1AUAJTLjB19TdTrtvRmWPRD1aZe
+VbV9NLdXPmQKCl0WIx/VjxLYlA2lVH6FTcoIUZcIRVmYfBgU3TGPHrBeKY2IOvPgAestLcjrHrKo
+HOVHY2TG5iofSRJMlUKBRXpQflVVUSRB8ssBiCwiQfnBWCVZxxAZm0hyGUyS8Sja2Yk2dO54+0pi
+A7myPAaTJNxdS5K3Dm2oJdEnCz+5sPCLq5L/JLxK+QOx6XbtY06PNgAAAABJRU5ErkJggg==
+
+------=_NextPart_000_0000_6463A6A0.AA281237
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: index_files/sflogo.png
+
+iVBORw0KGgoAAAANSUhEUgAAAFgAAAAfCAMAAABUFvrSAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJ
+bWFnZVJlYWR5ccllPAAAAFpQTFRF////7u7uX2pytLm9ipKYn6aqdH6F3+Hj6uvsf4iOv8PHanR7
+1NfZlJyhqrC09PX2ys3Qsri8kpqf7KqcmJ+k1kkqzdDTxcnMub7BoKarqpOR8cK4lp2j6Z6NbVan
+UgAAARFJREFUSMft08lu3DAURNHb93EUKbUcJ7Ez/f9vZiG3h2TdG0O1IMDNQaEIcrlTuHCXnPAJ
+n/Bng69deyXU3nIGUi5qEGpkX5JnVzdUe6tdjUV1gWQwTepxWC5cdisR25i0Xm5wEIZBzTlDM0Gz
+VLJZWfwxSiW2xQAgaZ0mE8BiHFPktcEIoPrlFc4jrQBZfVINA64OJfx6iItagGQp+1G2vcG03OMG
+r0Daiva5HvCt8Rtc3MOA5MNr41rKv41nr4S/x0LtfRuNOqLEdF8Mak8fpkiGtpFeLg8GPH57TLbq
+f1Ns6kZW12vrarqWYBrvHi8Bs+sIlN3+vajrs+rPP7+SjTimKO+mOD/ICZ/wJ4LvlL9T9gm7i8l6
+8gAAAABJRU5ErkJggg==
+
+------=_NextPart_000_0000_6463A6A0.AA281237
+Content-Type: application/x-javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: index_files/wikibits.js
+
+// Wikipedia JavaScript support functions
+
+var clientPC =3D navigator.userAgent.toLowerCase(); // Get client info
+var is_gecko =3D ((clientPC.indexOf('gecko')!=3D-1) && (clientPC.indexOf('sp=
+oofer')=3D=3D-1)
+                && (clientPC.indexOf('khtml') =3D=3D -1) && (clientPC.indexO=
+f('netscape/7.0')=3D=3D-1));
+var is_safari =3D ((clientPC.indexOf('AppleWebKit')!=3D-1) && (clientPC.inde=
+xOf('spoofer')=3D=3D-1));
+var is_khtml =3D (navigator.vendor =3D=3D 'KDE' || ( document.childNodes && =
+!document.all && !navigator.taintEnabled ));
+if (clientPC.indexOf('opera') !=3D -1) {
+=09var is_opera =3D true;
+=09var is_opera_preseven =3D (window.opera && !document.childNodes);
+=09var is_opera_seven =3D (window.opera && document.childNodes);
+}
+
+// add any onload functions in this hook (please don't hard-code any events =
+in the xhtml source)
+
+var doneOnloadHook;
+
+if (!window.onloadFuncts)
+=09var onloadFuncts =3D [];
+
+function addOnloadHook(hookFunct) {
+=09// Allows add-on scripts to add onload functions
+=09onloadFuncts[onloadFuncts.length] =3D hookFunct;
+}
+
+function runOnloadHook() {
+=09// don't run anything below this for non-dom browsers
+=09if (doneOnloadHook || !(document.getElementById && document.getElementsBy=
+TagName))
+=09=09return;
+
+=09histrowinit();
+=09unhidetzbutton();
+=09tabbedprefs();
+=09akeytt();
+=09scrollEditBox();
+=09setupCheckboxShiftClick();
+
+=09// Run any added-on functions
+=09for (var i =3D 0; i < onloadFuncts.length; i++)
+=09=09onloadFuncts[i]();
+
+=09doneOnloadHook =3D true;
+}
+
+function hookEvent(hookName, hookFunct) {
+=09if (window.addEventListener)
+=09=09addEventListener(hookName, hookFunct, false);
+=09else if (window.attachEvent)
+=09=09attachEvent("on" + hookName, hookFunct);
+}
+
+hookEvent("load", runOnloadHook);
+
+// document.write special stylesheet links
+if (typeof stylepath !=3D 'undefined' && typeof skin !=3D 'undefined') {
+=09if (is_opera_preseven) {
+=09=09document.write('<link rel=3D"stylesheet" type=3D"text/css" href=3D"'+s=
+tylepath+'/'+skin+'/Opera6Fixes.css">');
+=09} else if (is_opera_seven) {
+=09=09document.write('<link rel=3D"stylesheet" type=3D"text/css" href=3D"'+s=
+tylepath+'/'+skin+'/Opera7Fixes.css">');
+=09} else if (is_khtml) {
+=09=09document.write('<link rel=3D"stylesheet" type=3D"text/css" href=3D"'+s=
+tylepath+'/'+skin+'/KHTMLFixes.css">');
+=09}
+}
+// Un-trap us from framesets
+if (window.top !=3D window)
+=09window.top.location =3D window.location;
+
+// for enhanced RecentChanges
+function toggleVisibility(_levelId, _otherId, _linkId) {
+=09var thisLevel =3D document.getElementById(_levelId);
+=09var otherLevel =3D document.getElementById(_otherId);
+=09var linkLevel =3D document.getElementById(_linkId);
+=09if (thisLevel.style.display =3D=3D 'none') {
+=09=09thisLevel.style.display =3D 'block';
+=09=09otherLevel.style.display =3D 'none';
+=09=09linkLevel.style.display =3D 'inline';
+=09} else {
+=09=09thisLevel.style.display =3D 'none';
+=09=09otherLevel.style.display =3D 'inline';
+=09=09linkLevel.style.display =3D 'none';
+=09}
+}
+
+// page history stuff
+// attach event handlers to the input elements on history page
+function histrowinit() {
+=09var hf =3D document.getElementById('pagehistory');
+=09if (!hf)
+=09=09return;
+=09var lis =3D hf.getElementsByTagName('li');
+=09for (i =3D 0; i < lis.length; i++) {
+=09=09var inputs =3D historyRadios(lis[i]);
+=09=09if (inputs[0] && inputs[1]) {
+=09=09=09inputs[0].onclick =3D diffcheck;
+=09=09=09inputs[1].onclick =3D diffcheck;
+=09=09}
+=09}
+=09diffcheck();
+}
+
+function historyRadios(parent) {
+=09var inputs =3D parent.getElementsByTagName('input');
+=09var radios =3D [];
+=09for (var i =3D 0; i < inputs.length; i++) {
+=09=09if (inputs[i].name =3D=3D "diff" || inputs[i].name =3D=3D "oldid")
+=09=09=09radios[radios.length] =3D inputs[i];
+=09}
+=09return radios;
+}
+
+// check selection and tweak visibility/class onclick
+function diffcheck() {
+=09var dli =3D false; // the li where the diff radio is checked
+=09var oli =3D false; // the li where the oldid radio is checked
+=09var hf =3D document.getElementById('pagehistory');
+=09if (!hf)
+=09=09return;
+=09var lis =3D hf.getElementsByTagName('li');
+=09for (i=3D0;i<lis.length;i++) {
+=09=09var inputs =3D historyRadios(lis[i]);
+=09=09if (inputs[1] && inputs[0]) {
+=09=09=09if (inputs[1].checked || inputs[0].checked) { // this row has a che=
+cked radio button
+=09=09=09=09if (inputs[1].checked && inputs[0].checked && inputs[0].value =
+=3D=3D inputs[1].value)
+=09=09=09=09=09return false;
+=09=09=09=09if (oli) { // it's the second checked radio
+=09=09=09=09=09if (inputs[1].checked) {
+=09=09=09=09=09=09oli.className =3D "selected";
+=09=09=09=09=09=09return false
+=09=09=09=09=09}
+=09=09=09=09} else if (inputs[0].checked) {
+=09=09=09=09=09return false;
+=09=09=09=09}
+=09=09=09=09if (inputs[0].checked)
+=09=09=09=09=09dli =3D lis[i];
+=09=09=09=09if (!oli)
+=09=09=09=09=09inputs[0].style.visibility =3D 'hidden';
+=09=09=09=09if (dli)
+=09=09=09=09=09inputs[1].style.visibility =3D 'hidden';
+=09=09=09=09lis[i].className =3D "selected";
+=09=09=09=09oli =3D lis[i];
+=09=09=09}  else { // no radio is checked in this row
+=09=09=09=09if (!oli)
+=09=09=09=09=09inputs[0].style.visibility =3D 'hidden';
+=09=09=09=09else
+=09=09=09=09=09inputs[0].style.visibility =3D 'visible';
+=09=09=09=09if (dli)
+=09=09=09=09=09inputs[1].style.visibility =3D 'hidden';
+=09=09=09=09else
+=09=09=09=09=09inputs[1].style.visibility =3D 'visible';
+=09=09=09=09lis[i].className =3D "";
+=09=09=09}
+=09=09}
+=09}
+}
+
+// generate toc from prefs form, fold sections
+// XXX: needs testing on IE/Mac and safari
+// more comments to follow
+function tabbedprefs() {
+=09var prefform =3D document.getElementById('preferences');
+=09if (!prefform || !document.createElement)
+=09=09return;
+=09if (prefform.nodeName.toLowerCase() =3D=3D 'a')
+=09=09return; // Occasional IE problem
+=09prefform.className =3D prefform.className + 'jsprefs';
+=09var sections =3D new Array();
+=09children =3D prefform.childNodes;
+=09var seci =3D 0;
+=09for (i =3D 0; i < children.length; i++) {
+=09=09if (children[i].nodeName.toLowerCase() =3D=3D 'fieldset') {
+=09=09=09children[i].id =3D 'prefsection-' + seci;
+=09=09=09children[i].className =3D 'prefsection';
+=09=09=09if (is_opera || is_khtml)
+=09=09=09=09children[i].className =3D 'prefsection operaprefsection';
+=09=09=09legends =3D children[i].getElementsByTagName('legend');
+=09=09=09sections[seci] =3D new Object();
+=09=09=09legends[0].className =3D 'mainLegend';
+=09=09=09if (legends[0] && legends[0].firstChild.nodeValue)
+=09=09=09=09sections[seci].text =3D legends[0].firstChild.nodeValue;
+=09=09=09else
+=09=09=09=09sections[seci].text =3D '# ' + seci;
+=09=09=09sections[seci].secid =3D children[i].id;
+=09=09=09seci++;
+=09=09=09if (sections.length !=3D 1)
+=09=09=09=09children[i].style.display =3D 'none';
+=09=09=09else
+=09=09=09=09var selectedid =3D children[i].id;
+=09=09}
+=09}
+=09var toc =3D document.createElement('ul');
+=09toc.id =3D 'preftoc';
+=09toc.selectedid =3D selectedid;
+=09for (i =3D 0; i < sections.length; i++) {
+=09=09var li =3D document.createElement('li');
+=09=09if (i =3D=3D 0)
+=09=09=09li.className =3D 'selected';
+=09=09var a =3D document.createElement('a');
+=09=09a.href =3D '#' + sections[i].secid;
+=09=09a.onmousedown =3D a.onclick =3D uncoversection;
+=09=09a.appendChild(document.createTextNode(sections[i].text));
+=09=09a.secid =3D sections[i].secid;
+=09=09li.appendChild(a);
+=09=09toc.appendChild(li);
+=09}
+=09prefform.parentNode.insertBefore(toc, prefform.parentNode.childNodes[0]);
+=09document.getElementById('prefsubmit').id =3D 'prefcontrol';
+}
+
+function uncoversection() {
+=09oldsecid =3D this.parentNode.parentNode.selectedid;
+=09newsec =3D document.getElementById(this.secid);
+=09if (oldsecid !=3D this.secid) {
+=09=09ul =3D document.getElementById('preftoc');
+=09=09document.getElementById(oldsecid).style.display =3D 'none';
+=09=09newsec.style.display =3D 'block';
+=09=09ul.selectedid =3D this.secid;
+=09=09lis =3D ul.getElementsByTagName('li');
+=09=09for (i =3D 0; i< lis.length; i++) {
+=09=09=09lis[i].className =3D '';
+=09=09}
+=09=09this.parentNode.className =3D 'selected';
+=09}
+=09return false;
+}
+
+// Timezone stuff
+// tz in format [+-]HHMM
+function checkTimezone(tz, msg) {
+=09var localclock =3D new Date();
+=09// returns negative offset from GMT in minutes
+=09var tzRaw =3D localclock.getTimezoneOffset();
+=09var tzHour =3D Math.floor( Math.abs(tzRaw) / 60);
+=09var tzMin =3D Math.abs(tzRaw) % 60;
+=09var tzString =3D ((tzRaw >=3D 0) ? "-" : "+") + ((tzHour < 10) ? "0" : ""=
+) + tzHour + ((tzMin < 10) ? "0" : "") + tzMin;
+=09if (tz !=3D tzString) {
+=09=09var junk =3D msg.split('$1');
+=09=09document.write(junk[0] + "UTC" + tzString + junk[1]);
+=09}
+}
+
+function unhidetzbutton() {
+=09tzb =3D document.getElementById('guesstimezonebutton')
+=09if (tzb)
+=09=09tzb.style.display =3D 'inline';
+}
+
+// in [-]HH:MM format...
+// won't yet work with non-even tzs
+function fetchTimezone() {
+=09// FIXME: work around Safari bug
+=09var localclock =3D new Date();
+=09// returns negative offset from GMT in minutes
+=09var tzRaw =3D localclock.getTimezoneOffset();
+=09var tzHour =3D Math.floor( Math.abs(tzRaw) / 60);
+=09var tzMin =3D Math.abs(tzRaw) % 60;
+=09var tzString =3D ((tzRaw >=3D 0) ? "-" : "") + ((tzHour < 10) ? "0" : "")=
+ + tzHour +
+=09=09":" + ((tzMin < 10) ? "0" : "") + tzMin;
+=09return tzString;
+}
+
+function guessTimezone(box) {
+=09document.getElementsByName("wpHourDiff")[0].value =3D fetchTimezone();
+}
+
+function showTocToggle() {
+=09if (document.createTextNode) {
+=09=09// Uses DOM calls to avoid document.write + XHTML issues
+
+=09=09var linkHolder =3D document.getElementById('toctitle')
+=09=09if (!linkHolder)
+=09=09=09return;
+
+=09=09var outerSpan =3D document.createElement('span');
+=09=09outerSpan.className =3D 'toctoggle';
+
+=09=09var toggleLink =3D document.createElement('a');
+=09=09toggleLink.id =3D 'togglelink';
+=09=09toggleLink.className =3D 'internal';
+=09=09toggleLink.href =3D 'javascript:toggleToc()';
+=09=09toggleLink.appendChild(document.createTextNode(tocHideText));
+
+=09=09outerSpan.appendChild(document.createTextNode('['));
+=09=09outerSpan.appendChild(toggleLink);
+=09=09outerSpan.appendChild(document.createTextNode(']'));
+
+=09=09linkHolder.appendChild(document.createTextNode(' '));
+=09=09linkHolder.appendChild(outerSpan);
+
+=09=09var cookiePos =3D document.cookie.indexOf("hidetoc=3D");
+=09=09if (cookiePos > -1 && document.cookie.charAt(cookiePos + 8) =3D=3D 1)
+=09=09=09toggleToc();
+=09}
+}
+
+function changeText(el, newText) {
+=09// Safari work around
+=09if (el.innerText)
+=09=09el.innerText =3D newText;
+=09else if (el.firstChild && el.firstChild.nodeValue)
+=09=09el.firstChild.nodeValue =3D newText;
+}
+
+function toggleToc() {
+=09var toc =3D document.getElementById('toc').getElementsByTagName('ul')[0];
+=09var toggleLink =3D document.getElementById('togglelink')
+
+=09if (toc && toggleLink && toc.style.display =3D=3D 'none') {
+=09=09changeText(toggleLink, tocHideText);
+=09=09toc.style.display =3D 'block';
+=09=09document.cookie =3D "hidetoc=3D0";
+=09} else {
+=09=09changeText(toggleLink, tocShowText);
+=09=09toc.style.display =3D 'none';
+=09=09document.cookie =3D "hidetoc=3D1";
+=09}
+}
+
+// this function generates the actual toolbar buttons with localized text
+// we use it to avoid creating the toolbar where javascript is not enabled
+function addButton(imageFile, speedTip, tagOpen, tagClose, sampleText) {
+=09// Don't generate buttons for browsers which don't fully
+=09// support it.
+=09if (!document.selection && !is_gecko) {
+=09=09return false;
+=09}
+=09imageFile =3D escapeQuotes
+HTML(imageFile);
+=09speedTip =3D escapeQuotesHTML(speedTip);
+=09tagOpen =3D escapeQuotes(tagOpen);
+=09tagClose =3D escapeQuotes(tagClose);
+=09sampleText =3D escapeQuotes(sampleText);
+=09var mouseOver =3D "";
+
+=09document.write("<a href=3D\"javascript:insertTags");
+=09document.write("('"+tagOpen+"','"+tagClose+"','"+sampleText+"');\">");
+=09document.write("<img width=3D\"23\" height=3D\"22\" src=3D\""+imageFile+"=
+\" border=3D\"0\" alt=3D\""+speedTip+"\" title=3D\""+speedTip+"\""+mouseOver=
++">");
+=09document.write("</a>");
+=09return;
+}
+
+function escapeQuotes(text) {
+=09var re =3D new RegExp("'","g");
+=09text =3D text.replace(re,"\\'");
+=09re =3D new RegExp("\\n","g");
+=09text =3D text.replace(re,"\\n");
+=09return escapeQuotesHTML(text);
+}
+
+function escapeQuotesHTML(text) {
+=09var re =3D new RegExp('&',"g");
+=09text =3D text.replace(re,"&amp;");
+=09var re =3D new RegExp('"',"g");
+=09text =3D text.replace(re,"&quot;");
+=09var re =3D new RegExp('<',"g");
+=09text =3D text.replace(re,"&lt;");
+=09var re =3D new RegExp('>',"g");
+=09text =3D text.replace(re,"&gt;");
+=09return text;
+}
+
+// apply tagOpen/tagClose to selection in textarea,
+// use sampleText instead of selection if there is none
+// copied and adapted from phpBB
+function insertTags(tagOpen, tagClose, sampleText) {
+=09if (document.editform)
+=09=09var txtarea =3D document.editform.wpTextbox1;
+=09else {
+=09=09// some alternate form? take the first one we can find
+=09=09var areas =3D document.getElementsByTagName('textarea');
+=09=09var txtarea =3D areas[0];
+=09}
+
+=09// IE
+=09if (document.selection  && !is_gecko) {
+=09=09var theSelection =3D document.selection.createRange().text;
+=09=09if (!theSelection)
+=09=09=09theSelection=3DsampleText;
+=09=09txtarea.focus();
+=09=09if (theSelection.charAt(theSelection.length - 1) =3D=3D " ") { // excl=
+ude ending space char, if any
+=09=09=09theSelection =3D theSelection.substring(0, theSelection.length - 1)=
+;
+=09=09=09document.selection.createRange().text =3D tagOpen + theSelection + =
+tagClose + " ";
+=09=09} else {
+=09=09=09document.selection.createRange().text =3D tagOpen + theSelection + =
+tagClose;
+=09=09}
+
+=09// Mozilla
+=09} else if(txtarea.selectionStart || txtarea.selectionStart =3D=3D '0') {
+=09=09var replaced =3D false;
+=09=09var startPos =3D txtarea.selectionStart;
+=09=09var endPos =3D txtarea.selectionEnd;
+=09=09if (endPos-startPos)
+=09=09=09replaced =3D true;
+=09=09var scrollTop =3D txtarea.scrollTop;
+=09=09var myText =3D (txtarea.value).substring(startPos, endPos);
+=09=09if (!myText)
+=09=09=09myText=3DsampleText;
+=09=09if (myText.charAt(myText.length - 1) =3D=3D " ") { // exclude ending s=
+pace char, if any
+=09=09=09subst =3D tagOpen + myText.substring(0, (myText.length - 1)) + tagC=
+lose + " ";
+=09=09} else {
+=09=09=09subst =3D tagOpen + myText + tagClose;
+=09=09}
+=09=09txtarea.value =3D txtarea.value.substring(0, startPos) + subst +
+=09=09=09txtarea.value.substring(endPos, txtarea.value.length);
+=09=09txtarea.focus();
+=09=09//set new selection
+=09=09if (replaced) {
+=09=09=09var cPos =3D startPos+(tagOpen.length+myText.length+tagClose.length=
+);
+=09=09=09txtarea.selectionStart =3D cPos;
+=09=09=09txtarea.selectionEnd =3D cPos;
+=09=09} else {
+=09=09=09txtarea.selectionStart =3D startPos+tagOpen.length;
+=09=09=09txtarea.selectionEnd =3D startPos+tagOpen.length+myText.length;
+=09=09}
+=09=09txtarea.scrollTop =3D scrollTop;
+
+=09// All other browsers get no toolbar.
+=09// There was previously support for a crippled "help"
+=09// bar, but that caused more problems than it solved.
+=09}
+=09// reposition cursor if possible
+=09if (txtarea.createTextRange)
+=09=09txtarea.caretPos =3D document.selection.createRange().duplicate();
+}
+
+function akeytt() {
+=09if (typeof ta =3D=3D "undefined" || !ta)
+=09=09return;
+=09var pref =3D 'alt-';
+=09if (is_safari || navigator.userAgent.toLowerCase().indexOf('mac') + 1
+=09=09|| navigator.userAgent.toLowerCase().indexOf('konqueror') + 1 )
+=09=09pref =3D 'control-';
+=09if (is_opera)
+=09=09pref =3D 'shift-esc-';
+
+=09for (var id in ta) {
+=09=09var n =3D document.getElementById(id);
+=09=09if (n) {
+=09=09=09var a =3D null;
+=09=09=09var ak =3D '';
+=09=09=09// Are we putting accesskey in it
+=09=09=09if (ta[id][0].length > 0) {
+=09=09=09=09// Is this object a object? If not assume it's the next child.
+
+=09=09=09=09if (n.nodeName.toLowerCase() =3D=3D "a") {
+=09=09=09=09=09a =3D n;
+=09=09=09=09} else {
+=09=09=09=09=09a =3D n.childNodes[0];
+=09=09=09=09}
+
+=09=09=09=09if (a) {
+=09=09=09=09=09a.accessKey =3D ta[id][0];
+=09=09=09=09=09ak =3D ' ['+pref+ta[id][0]+']';
+=09=09=09=09}
+=09=09=09} else {
+=09=09=09=09// We don't care what type the object is when assigning tooltip
+=09=09=09=09a =3D n;
+=09=09=09=09ak =3D '';
+=09=09=09}
+
+=09=09=09if (a) {
+=09=09=09=09a.title =3D ta[id][1]+ak;
+=09=09=09}
+=09=09}
+=09}
+}
+
+function setupRightClickEdit() {
+=09if (document.getElementsByTagName) {
+=09=09var divs =3D document.getElementsByTagName('div');
+=09=09for (var i =3D 0; i < divs.length; i++) {
+=09=09=09var el =3D divs[i];
+=09=09=09if(el.className =3D=3D 'editsection') {
+=09=09=09=09addRightClickEditHandler(el);
+=09=09=09}
+=09=09}
+=09}
+}
+
+function addRightClickEditHandler(el) {
+=09for (var i =3D 0; i < el.childNodes.length; i++) {
+=09=09var link =3D el.childNodes[i];
+=09=09if (link.nodeType =3D=3D 1 && link.nodeName.toLowerCase() =3D=3D 'a') =
+{
+=09=09=09var editHref =3D link.getAttribute('href');
+
+=09=09=09// find the following a
+=09=09=09var next =3D el.nextSibling;
+=09=09=09while (next.nodeType !=3D 1)
+=09=09=09=09next =3D next.nextSibling;
+
+=09=09=09// find the following header
+=09=09=09next =3D next.nextSibling;
+=09=09=09while (next.nodeType !=3D 1)
+=09=09=09=09next =3D next.nextSibling;
+
+=09=09=09if (next && next.nodeType =3D=3D 1 &&
+=09=09=09=09next.nodeName.match(/^[Hh][1-6]$/)) {
+=09=09=09=09next.oncontextmenu =3D function() {
+=09=09=09=09=09document.location =3D editHref;
+=09=09=09=09=09return false;
+=09=09=09=09}
+=09=09=09}
+=09=09}
+=09}
+}
+
+function setupCheckboxShiftClick() {
+=09if (document.getElementsByTagName) {
+=09=09var uls =3D document.getElementsByTagName('ul');
+=09=09var len =3D uls.length;
+=09=09for (var i =3D 0; i < len; ++i) {
+=09=09=09addCheckboxClickHandlers(uls[i]);
+=09=09}
+=09}
+}
+
+function addCheckboxClickHandlers(ul, start, finish) {
+=09if (ul.checkboxHandlersTimer) {
+=09=09clearInterval(ul.checkboxHandlersTimer);
+=09}
+=09if ( !ul.childNodes ) {
+=09=09return;
+=09}
+=09var len =3D ul.childNodes.length;
+=09if (len < 2) {
+=09=09return;
+=09}
+=09start =3D start || 0;
+=09finish =3D finish || start + 250;
+=09if ( finish > len ) { finish =3D len; }
+=09ul.checkboxes =3D ul.checkboxes || [];
+=09ul.lastCheckbox =3D ul.lastCheckbox || null;
+=09for (var i =3D start; i<finish; ++i) {
+=09=09var child =3D ul.childNodes[i];
+=09=09if ( child && child.childNodes && child.childNodes[0] ) {
+=09=09=09var cb =3D child.childNodes[0];
+=09=09=09if ( !cb.nodeName || cb.nodeName.toLowerCase() !=3D 'input' ||
+=09=09=09     !cb.type || cb.type.toLowerCase() !=3D 'checkbox' ) {
+=09=09=09=09return;
+=09=09=09}
+=09=09=09cb.index =3D ul.checkboxes.push(cb) - 1;
+=09=09=09cb.container =3D ul;
+=09=09=09cb.onmouseup =3D checkboxMouseupHandler;
+=09=09}
+=09}
+=09if (finish < len) {
+=09  var f=3Dfunction(){ addCheckboxClickHandlers(ul, finish, finish+250); }=
+;
+=09  ul.checkboxHandlersTimer=3DsetInterval(f, 200);
+=09}
+}
+
+function checkboxMouseupHandler(e) {
+=09if (typeof e =3D=3D 'undefined') {
+=09=09e =3D window.event;
+=09}
+=09if ( !e.shiftKey || this.container.lastCheckbox =3D=3D=3D null ) {
+=09=09this.container.lastCheckbox =3D this.index;
+=09=09return true;
+=09}
+=09var endState =3D !this.checked;
+=09if ( is_opera ) { // opera has already toggled the checkbox by this point
+=09=09endState =3D !endState;
+=09}
+=09var start, finish;
+=09if ( this.index < this.container.lastCheckbox ) {
+=09=09start =3D this.index + 1;
+=09=09finish =3D this.container.lastCheckbox;
+=09} else {
+=09=09start =3D this.container.lastCheckbox;
+=09=09finish =3D this.index - 1;
+=09}
+=09for (var i =3D start; i <=3D finish; ++i ) {
+=09=09this.container.checkboxes[i].checked =3D endState;
+=09}
+=09this.container.lastCheckbox =3D this.index;
+=09return true;
+}
+
+function fillDestFilename() {
+=09if (!document.getElementById)
+=09=09return;
+=09var path =3D document.getElementById('wpUploadFile').value;
+=09// Find trailing part
+=09var slash =3D path.lastIndexOf('/');
+=09var backslash =3D path.lastIndexOf('\\');
+=09var fname;
+=09if (slash =3D=3D -1 && backslash =3D=3D -1) {
+=09=09fname =3D path;
+=09} else if (slash > backslash) {
+=09=09fname =3D path.substring(slash+1, 10000);
+=09} else {
+=09=09fname =3D path.substring(backslash+1, 10000);
+=09}
+
+=09// Capitalise first letter and replace spaces by underscores
+=09fname =3D fname.charAt(0).toUpperCase().concat(fname.substring(1,10000)).=
+replace(/ /g, '_');
+
+=09// Output result
+=09var destFile =3D document.getElementById('wpDestFile');
+=09if (destFile)
+=09=09destFile.value =3D fname;
+}
+
+
+function considerChangingExpiryFocus() {
+=09if (!document.getElementById)
+=09=09return;
+=09var drop =3D document.getElementById('wpBlockExpiry');
+=09if (!drop)
+=09=09return;
+=09var field =3D document.getElementById('wpBlockOther');
+=09if (!field)
+=09=09return;
+=09var opt =3D drop.value;
+=09if (opt =3D=3D 'other')
+=09=09field.style.display =3D '';
+=09else
+=09=09field.style.display =3D 'none';
+}
+
+function scrollEditBox() {
+=09var editBoxEl =3D document.getElementById("wpTextbox1");
+=09var scrollTopEl =3D document.getElementById("wpScrolltop");
+=09var editFormEl =3D document.getElementById("editform");
+
+=09if (editBoxEl && scrollTopEl) {
+=09=09if (scrollTopEl.value) editBoxEl.scrollTop =3D scrollTopEl.value;
+=09=09editFormEl.onsubmit =3D function() {
+=09=09=09document.getElementById("wpScrolltop").value =3D document.getElemen=
+tById("wpTextbox1").scrollTop;
+=09=09}
+=09}
+}
+
+hookEvent("load", scrollEditBox);
+
+function allmessagesfilter() {
+=09text =3D document.getElementById('allmessagesinput').value;
+=09k =3D document.getElementById('allmessagestable');
+=09if (!k) { return;}
+
+=09var items =3D k.getElementsByTagName('span');
+
+=09if ( text.length > allmessages_prev.length ) {
+=09=09for (var i =3D items.length-1, j =3D 0; i >=3D 0; i--) {
+=09=09=09j =3D allmessagesforeach(items, i, j);
+=09=09}
+=09} else {
+=09=09for (var i =3D 0, j =3D 0; i < items.length; i++) {
+=09=09=09j =3D allmessagesforeach(items, i, j);
+=09=09}
+=09}
+=09allmessages_prev =3D text;
+}
+
+function allmessagesforeach(items, i, j) {
+=09var hItem =3D items[i].getAttribute('id');
+=09if (hItem.substring(0,17) =3D=3D 'sp-allmessages-i-') {
+=09=09if (items[i].firstChild && items[i].firstChild.nodeName =3D=3D '#text'=
+ && items[i].firstChild.nodeValue.indexOf(text) !=3D -1) {
+=09=09=09var itemA =3D document.getElementById( hItem.replace('i', 'r1') );
+=09=09=09var itemB =3D document.getElementById( hItem.replace('i', 'r2') );
+=09=09=09if ( itemA.style.display !=3D '' ) {
+=09=09=09=09var s =3D "allmessageshider(\"" + hItem.replace('i', 'r1') + "\"=
+, \"" + hItem.replace('i', 'r2') + "\", '')";
+=09=09=09=09var k =3D window.setTimeout(s,j++*5);
+=09=09=09}
+=09=09} else {
+=09=09=09var itemA =3D document.getElementById( hItem.replace('i', 'r1') );
+=09=09=09var itemB =3D document.getElementById( hItem.replace('i', 'r2') );
+=09=09=09if ( itemA.style.display !=3D 'none' ) {
+=09=09=09=09var s =3D "allmessageshider(\"" + hItem.replace('i', 'r1') + "\"=
+, \"" + hItem.replace('i', 'r2') + "\", 'none')";
+=09=09=09=09var k =3D window.setTimeout(s,j++*5);
+=09=09=09}
+=09=09}
+=09}
+=09return j;
+}
+
+
+function allmessageshider(idA, idB, cstyle) {
+=09var itemA =3D document.getElementById( idA );
+=09var itemB =3D document.getElementById( idB );
+=09if (itemA) { itemA.style.display =3D cstyle; }
+=09if (itemB) { itemB.style.display =3D cstyle; }
+}
+
+f
+unction allmessagesmodified() {
+=09allmessages_modified =3D !allmessages_modified;
+=09k =3D document.getElementById('allmessagestable');
+=09if (!k) { return;}
+=09var items =3D k.getElementsByTagName('tr');
+=09for (var i =3D 0, j =3D 0; i< items.length; i++) {
+=09=09if (!allmessages_modified ) {
+=09=09=09if ( items[i].style.display !=3D '' ) {
+=09=09=09=09var s =3D "allmessageshider(\"" + items[i].getAttribute('id') + =
+"\", null, '')";
+=09=09=09=09var k =3D window.setTimeout(s,j++*5);
+=09=09=09}
+=09=09} else if (items[i].getAttribute('class') =3D=3D 'def' && allmessages_=
+modified) {
+=09=09=09if ( items[i].style.display !=3D 'none' ) {
+=09=09=09=09var s =3D "allmessageshider(\"" + items[i].getAttribute('id') + =
+"\", null, 'none')";
+=09=09=09=09var k =3D window.setTimeout(s,j++*5);
+=09=09=09}
+=09=09}
+=09}
+}
+
+function allmessagesshow() {
+=09k =3D document.getElementById('allmessagesfilter');
+=09if (k) { k.style.display =3D ''; }
+
+=09allmessages_prev =3D '';
+=09allmessages_modified =3D false;
+}
+
+hookEvent("load", allmessagesshow);
+
+
+
+------=_NextPart_000_0000_6463A6A0.AA281237--

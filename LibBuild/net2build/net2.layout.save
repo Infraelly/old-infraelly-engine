@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Windows Release" />
+	<File name="SDLUtils.c" open="0" top="0" tabpos="0">
+		<Cursor position="0" topLine="150" />
+	</File>
+	<File name="SDLUtils.h" open="0" top="0" tabpos="0">
+		<Cursor position="0" topLine="34" />
+	</File>
+	<File name="net2.c" open="0" top="0" tabpos="0">
+		<Cursor position="25878" topLine="1301" />
+	</File>
+	<File name="net2sets.c" open="0" top="0" tabpos="0">
+		<Cursor position="0" topLine="85" />
+	</File>
+	<File name="set.h" open="0" top="0" tabpos="0">
+		<Cursor position="0" topLine="89" />
+	</File>
+	<File name="trace.c" open="0" top="0" tabpos="0">
+		<Cursor position="82" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>

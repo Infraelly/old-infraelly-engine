@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="default" />
+	<File name="SDL_gfxBlitFunc.c" open="0" top="0" tabpos="0">
+		<Cursor position="635" topLine="180" />
+	</File>
+	<File name="SDL_gfxBlitFunc.h" open="0" top="0" tabpos="0">
+		<Cursor position="294" topLine="6" />
+	</File>
+</CodeBlocks_layout_file>

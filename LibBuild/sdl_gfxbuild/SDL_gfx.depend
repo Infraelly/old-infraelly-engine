@@ -1,0 +1,537 @@
+# depslib dependency file v1.0
+1229810390 source:g:\libraries\sdl_gfx\sdl_gfx-2.0.18\sdl_imagefilter.c
+	<stdio.h>
+	<stdlib.h>
+	"SDL_imageFilter.h"
+
+1229810390 Filter.h"
+
+1170752658 g:\libraries\sdl_gfx\sdl_gfx-2.0.18\sdl_imagefilter.h
+
+1225854872 source:g:\libraries\sdl_gfx\sdl_gfx-2.0.18\sdl_gfxprimitives.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	"SDL_gfxPrimitives.h"
+	"SDL_gfxPrimitives_font.h"
+
+1225854872 imitives_font.h"
+
+1230881361 g:\libraries\sdl_gfx\sdl_gfx-2.0.18\sdl_gfxprimitives.h
+	<math.h>
+	<SDL/SDL.h>
+
+1230881361 >
+
+1166826970 g:\libraries\sdl_gfx\sdl_gfx-2.0.18\sdl_gfxprimitives_font.h
+
+1225852250 source:g:\libraries\sdl_gfx\sdl_gfx-2.0.18\sdl_rotozoom.c
+	<windows.h>
+	<stdlib.h>
+	<string.h>
+	"SDL_rotozoom.h"
+
+1225852250 oom.h"
+
+1230881361 g:\libraries\sdl_gfx\sdl_gfx-2.0.18\sdl_rotozoom.h
+	<math.h>
+	<SDL/SDL.h>
+
+1166826970 source:g:\libraries\sdl_gfx\sdl_gfx-2.0.18\sdl_framerate.c
+	"SDL_framerate.h"
+
+1166826970 rate.h"
+
+1230881361 g:\libraries\sdl_gfx\sdl_gfx-2.0.18\sdl_framerate.h
+	<SDL/SDL.h>
+
+1225854872 source:d:\tony\infraelly\curver\libbuild\sdl_gfxbuild\sdl_gfxprimitives.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	"SDL_gfxPrimitives.h"
+	"SDL_gfxPrimitives_font.h"
+
+1230881361 d:\tony\infraelly\curver\libbuild\sdl_gfxbuild\sdl_gfxprimitives.h
+	<math.h>
+	<SDL/SDL.h>
+
+1166826970 d:\tony\infraelly\curver\libbuild\sdl_gfxbuild\sdl_gfxprimitives_font.h
+
+1229810390 source:d:\tony\infraelly\curver\libbuild\sdl_gfxbuild\sdl_imagefilter.c
+	<stdio.h>
+	<stdlib.h>
+	"SDL_imageFilter.h"
+
+1170752658 d:\tony\infraelly\curver\libbuild\sdl_gfxbuild\sdl_imagefilter.h
+
+1225852250 source:d:\tony\infraelly\curver\libbuild\sdl_gfxbuild\sdl_rotozoom.c
+	<windows.h>
+	<stdlib.h>
+	<string.h>
+	"SDL_rotozoom.h"
+
+1230881361 d:\tony\infraelly\curver\libbuild\sdl_gfxbuild\sdl_rotozoom.h
+	<math.h>
+	<SDL/SDL.h>
+
+1166826970 source:d:\tony\infraelly\curver\libbuild\sdl_gfxbuild\sdl_framerate.c
+	"SDL_framerate.h"
+
+1230881361 d:\tony\infraelly\curver\libbuild\sdl_gfxbuild\sdl_framerate.h
+	<SDL/SDL.h>
+
+1199052374 d:\tony\infraelly\curver\include\\sdl\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_audio.h"
+	"SDL_cdrom.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_loadso.h"
+	"SDL_mutex.h"
+	"SDL_rwops.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_video.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 e.h"
+
+1199052374 d:\tony\infraelly\curver\include\\sdl\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\\sdl\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<iconv.h>
+	"begin_code.h"
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\\sdl\sdl_config.h
+	"SDL_platform.h"
+	<stdarg.h>
+
+1199052374 
+
+1199052374 d:\tony\infraelly\curver\include\\sdl\sdl_platform.h
+
+1199052374 d:\tony\infraelly\curver\include\\sdl\begin_code.h
+
+1199052374 d:\tony\infraelly\curver\include\\sdl\close_code.h
+
+1199052374 d:\tony\infraelly\curver\include\\sdl\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\\sdl\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\\sdl\sdl_endian.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\\sdl\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\\sdl\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\\sdl\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\\sdl\sdl_cdrom.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\\sdl\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\\sdl\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_active.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_quit.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\\sdl\sdl_active.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\\sdl\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keysym.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\\sdl\sdl_keysym.h
+
+1199052374 d:\tony\infraelly\curver\include\\sdl\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\\sdl\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\\sdl\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\\sdl\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1199052374 .h"
+
+1199052374 d:\tony\infraelly\curver\include\\sdl\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\\sdl\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\\sdl\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1168516048 source:d:\tony\infraelly\curver\libbuild\sdl_gfxbuild\sdl_gfxblitfunc.c
+	"SDL_gfxBlitFunc.h"
+
+1237442364 itFunc.h"
+
+1170752702 d:\tony\infraelly\curver\libbuild\sdl_gfxbuild\sdl_gfxblitfunc.h
+	<stdio.h>
+	<stdlib.h>
+	<SDL.h>
+	<SDL_video.h>
+
+1237442371 .h>
+
+1199052374 d:\tony\infraelly\curver\include\sdl\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_audio.h"
+	"SDL_cdrom.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_loadso.h"
+	"SDL_mutex.h"
+	"SDL_rwops.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_video.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\sdl\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\sdl\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<iconv.h>
+	"begin_code.h"
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\sdl\sdl_config.h
+	"SDL_platform.h"
+	<stdarg.h>
+
+1199052374 d:\tony\infraelly\curver\include\sdl\sdl_platform.h
+
+1199052374 d:\tony\infraelly\curver\include\sdl\begin_code.h
+
+1199052374 d:\tony\infraelly\curver\include\sdl\close_code.h
+
+1199052374 d:\tony\infraelly\curver\include\sdl\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\sdl\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\sdl\sdl_endian.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\sdl\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\sdl\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\sdl\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\sdl\sdl_cdrom.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\sdl\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\sdl\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_active.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_quit.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\sdl\sdl_active.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\sdl\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keysym.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\sdl\sdl_keysym.h
+
+1199052374 d:\tony\infraelly\curver\include\sdl\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\sdl\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\sdl\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\sdl\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1199052374 d:\tony\infraelly\curver\include\sdl\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\sdl\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 d:\tony\infraelly\curver\include\sdl\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1237442364 source:d:\projects\infraelly\curver\libbuild\sdl_gfxbuild\sdl_gfxblitfunc.c
+	"SDL_gfxBlitFunc.h"
+
+1237442371 d:\projects\infraelly\curver\libbuild\sdl_gfxbuild\sdl_gfxblitfunc.h
+	<stdio.h>
+	<stdlib.h>
+	<SDL.h>
+	<SDL_video.h>
+
+1225854872 source:d:\projects\infraelly\curver\libbuild\sdl_gfxbuild\sdl_gfxprimitives.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	"SDL_gfxPrimitives.h"
+	"SDL_gfxPrimitives_font.h"
+
+1230881361 d:\projects\infraelly\curver\libbuild\sdl_gfxbuild\sdl_gfxprimitives.h
+	<math.h>
+	<SDL/SDL.h>
+
+1166826970 d:\projects\infraelly\curver\libbuild\sdl_gfxbuild\sdl_gfxprimitives_font.h
+
+1229810390 source:d:\projects\infraelly\curver\libbuild\sdl_gfxbuild\sdl_imagefilter.c
+	<stdio.h>
+	<stdlib.h>
+	"SDL_imageFilter.h"
+
+1170752658 d:\projects\infraelly\curver\libbuild\sdl_gfxbuild\sdl_imagefilter.h
+
+1225852250 source:d:\projects\infraelly\curver\libbuild\sdl_gfxbuild\sdl_rotozoom.c
+	<windows.h>
+	<stdlib.h>
+	<string.h>
+	"SDL_rotozoom.h"
+
+1230881361 d:\projects\infraelly\curver\libbuild\sdl_gfxbuild\sdl_rotozoom.h
+	<math.h>
+	<SDL/SDL.h>
+
+1166826970 source:d:\projects\infraelly\curver\libbuild\sdl_gfxbuild\sdl_framerate.c
+	"SDL_framerate.h"
+
+1230881361 d:\projects\infraelly\curver\libbuild\sdl_gfxbuild\sdl_framerate.h
+	<SDL/SDL.h>
+
+1166826970 source:/media/drive_d/Projects/Infraelly/CurVer/LibBuild/sdl_gfxbuild/SDL_framerate.c
+	"SDL_framerate.h"
+
+1230881361 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/sdl_gfxbuild/SDL_framerate.h
+	<SDL/SDL.h>
+
+1225854872 source:/media/drive_d/Projects/Infraelly/CurVer/LibBuild/sdl_gfxbuild/SDL_gfxPrimitives.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	"SDL_gfxPrimitives.h"
+	"SDL_gfxPrimitives_font.h"
+
+1230881361 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/sdl_gfxbuild/SDL_gfxPrimitives.h
+	<math.h>
+	<SDL/SDL.h>
+
+1166826970 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/sdl_gfxbuild/SDL_gfxPrimitives_font.h
+
+1229810390 source:/media/drive_d/Projects/Infraelly/CurVer/LibBuild/sdl_gfxbuild/SDL_imageFilter.c
+	<stdio.h>
+	<stdlib.h>
+	"SDL_imageFilter.h"
+
+1170752658 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/sdl_gfxbuild/SDL_imageFilter.h
+

@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<Tileset>
+    <ImageFilename>images/character/hands.png</ImageFilename>
+    <TilesetName>Default Character Hands</TilesetName>
+    <TransKey use="0" r="0" g="0" b="0" />
+    <TileSize w="12" h="12" />
+    <Offset x="0" y="0" />
+</Tileset>

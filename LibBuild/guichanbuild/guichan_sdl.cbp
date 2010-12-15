@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="guichan" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Windows">
+				<Option platforms="Windows;" />
+				<Option output="bin\win\libguichan" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-fexpensive-optimizations" />
+					<Add option="-Os" />
+					<Add option="-O3" />
+					<Add option="-O2" />
+					<Add option="-O1" />
+					<Add option="-O" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+			<Target title="Nix">
+				<Option platforms="Unix;" />
+				<Option output="bin\nix\libguichan" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-fexpensive-optimizations" />
+					<Add option="-Os" />
+					<Add option="-O3" />
+					<Add option="-O2" />
+					<Add option="-O1" />
+					<Add option="-O" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-DBUILDING_DLL=0" />
+			<Add option="-DGUICHAN_BUILD=1" />
+			<Add directory="include" />
+			<Add directory="include\guichan\contrib\sdl" />
+			<Add directory="..\..\include" />
+		</Compiler>
+		<Linker>
+			<Add option="--no-export-all-symbols --add-stdcall-alias -Wl,--enable-runtime-pseudo-reloc --enable-auto-import" />
+		</Linker>
+		<Unit filename="include\guichan.hpp" />
+		<Unit filename="include\guichan\actionevent.hpp" />
+		<Unit filename="include\guichan\actionlistener.hpp" />
+		<Unit filename="include\guichan\allegro.hpp" />
+		<Unit filename="include\guichan\basiccontainer.hpp" />
+		<Unit filename="include\guichan\cliprectangle.hpp" />
+		<Unit filename="include\guichan\color.hpp" />
+		<Unit filename="include\guichan\deathlistener.hpp" />
+		<Unit filename="include\guichan\defaultfont.hpp" />
+		<Unit filename="include\guichan\event.hpp" />
+		<Unit filename="include\guichan\exception.hpp" />
+		<Unit filename="include\guichan\focushandler.hpp" />
+		<Unit filename="include\guichan\focuslistener.hpp" />
+		<Unit filename="include\guichan\font.hpp" />
+		<Unit filename="include\guichan\genericinput.hpp" />
+		<Unit filename="include\guichan\glut.hpp" />
+		<Unit filename="include\guichan\graphics.hpp" />
+		<Unit filename="include\guichan\gui.hpp" />
+		<Unit filename="include\guichan\hge.hpp" />
+		<Unit filename="include\guichan\image.hpp" />
+		<Unit filename="include\guichan\imagefont.hpp" />
+		<Unit filename="include\guichan\imageloader.hpp" />
+		<Unit filename="include\guichan\input.hpp" />
+		<Unit filename="include\guichan\inputevent.hpp" />
+		<Unit filename="include\guichan\key.hpp" />
+		<Unit filename="include\guichan\keyevent.hpp" />
+		<Unit filename="include\guichan\keyinput.hpp" />
+		<Unit filename="include\guichan\keylistener.hpp" />
+		<Unit filename="include\guichan\listmodel.hpp" />
+		<Unit filename="include\guichan\mouseevent.hpp" />
+		<Unit filename="include\guichan\mouseinput.hpp" />
+		<Unit filename="include\guichan\mouselistener.hpp" />
+		<Unit filename="include\guichan\opengl.hpp" />
+		<Unit filename="include\guichan\openlayer.hpp" />
+		<Unit filename="include\guichan\platform.hpp" />
+		<Unit filename="include\guichan\rectangle.hpp" />
+		<Unit filename="include\guichan\sdl.hpp" />
+		<Unit filename="include\guichan\sdl\sdlgraphics.hpp" />
+		<Unit filename="include\guichan\sdl\sdlimage.hpp" />
+		<Unit filename="include\guichan\sdl\sdlimageloader.hpp" />
+		<Unit filename="include\guichan\sdl\sdlinput.hpp" />
+		<Unit filename="include\guichan\sdl\sdlpixel.hpp" />
+		<Unit filename="include\guichan\selectionevent.hpp" />
+		<Unit filename="include\guichan\selectionlistener.hpp" />
+		<Unit filename="include\guichan\widget.hpp" />
+		<Unit filename="include\guichan\widgetlistener.hpp" />
+		<Unit filename="include\guichan\widgets\button.hpp" />
+		<Unit filename="include\guichan\widgets\checkbox.hpp" />
+		<Unit filename="include\guichan\widgets\container.hpp" />
+		<Unit filename="include\guichan\widgets\dropdown.hpp" />
+		<Unit filename="include\guichan\widgets\icon.hpp" />
+		<Unit filename="include\guichan\widgets\imagebutton.hpp" />
+		<Unit filename="include\guichan\widgets\label.hpp" />
+		<Unit filename="include\guichan\widgets\listbox.hpp" />
+		<Unit filename="include\guichan\widgets\radiobutton.hpp" />
+		<Unit filename="include\guichan\widgets\scrollarea.hpp" />
+		<Unit filename="include\guichan\widgets\slider.hpp" />
+		<Unit filename="include\guichan\widgets\tab.hpp" />
+		<Unit filename="include\guichan\widgets\tabbedarea.hpp" />
+		<Unit filename="include\guichan\widgets\textbox.hpp" />
+		<Unit filename="include\guichan\widgets\textfield.hpp" />
+		<Unit filename="include\guichan\widgets\window.hpp" />
+		<Unit filename="src\actionevent.cpp" />
+		<Unit filename="src\basiccontainer.cpp" />
+		<Unit filename="src\cliprectangle.cpp" />
+		<Unit filename="src\color.cpp" />
+		<Unit filename="src\defaultfont.cpp" />
+		<Unit filename="src\event.cpp" />
+		<Unit filename="src\exception.cpp" />
+		<Unit filename="src\focushandler.cpp" />
+		<Unit filename="src\font.cpp" />
+		<Unit filename="src\genericinput.cpp" />
+		<Unit filename="src\graphics.cpp" />
+		<Unit filename="src\gui.cpp" />
+		<Unit filename="src\guichan.cpp" />
+		<Unit filename="src\image.cpp" />
+		<Unit filename="src\imagefont.cpp" />
+		<Unit filename="src\inputevent.cpp" />
+		<Unit filename="src\key.cpp" />
+		<Unit filename="src\keyevent.cpp" />
+		<Unit filename="src\keyinput.cpp" />
+		<Unit filename="src\mouseevent.cpp" />
+		<Unit filename="src\mouseinput.cpp" />
+		<Unit filename="src\rectangle.cpp" />
+		<Unit filename="src\sdl\sdl.cpp" />
+		<Unit filename="src\sdl\sdlgraphics.cpp" />
+		<Unit filename="src\sdl\sdlimage.cpp" />
+		<Unit filename="src\sdl\sdlimageloader.cpp" />
+		<Unit filename="src\sdl\sdlinput.cpp" />
+		<Unit filename="src\selectionevent.cpp" />
+		<Unit filename="src\widget.cpp" />
+		<Unit filename="src\widgets\button.cpp" />
+		<Unit filename="src\widgets\checkbox.cpp" />
+		<Unit filename="src\widgets\container.cpp" />
+		<Unit filename="src\widgets\dropdown.cpp" />
+		<Unit filename="src\widgets\icon.cpp" />
+		<Unit filename="src\widgets\imagebutton.cpp" />
+		<Unit filename="src\widgets\label.cpp" />
+		<Unit filename="src\widgets\listbox.cpp" />
+		<Unit filename="src\widgets\radiobutton.cpp" />
+		<Unit filename="src\widgets\scrollarea.cpp" />
+		<Unit filename="src\widgets\slider.cpp" />
+		<Unit filename="src\widgets\tab.cpp" />
+		<Unit filename="src\widgets\tabbedarea.cpp" />
+		<Unit filename="src\widgets\textbox.cpp" />
+		<Unit filename="src\widgets\textfield.cpp" />
+		<Unit filename="src\widgets\window.cpp" />
+		<Extensions>
+			<AutoVersioning>
+				<Scheme minor_max="10" build_max="0" rev_max="0" rev_rand_max="10" build_times_to_increment_minor="100" />
+				<Settings autoincrement="1" date_declarations="1" do_auto_increment="0" ask_to_increment="0" language="C++" svn="0" svn_directory="" header_path="version.h" />
+				<Changes_Log show_changes_editor="0" app_title="released version %M.%m.%b of %p" changeslog_path="ChangesLog.txt" />
+				<Code header_guard="VERSION_H" namespace="AutoVersion" prefix="" />
+			</AutoVersioning>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

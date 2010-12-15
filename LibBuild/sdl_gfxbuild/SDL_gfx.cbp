@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="sdl_gfx" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Windows">
+				<Option platforms="Windows;" />
+				<Option output="bin/win/SDL_gfx" prefix_auto="1" extension_auto="1" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-fexpensive-optimizations" />
+					<Add option="-Os" />
+					<Add option="-O3" />
+					<Add option="-O2" />
+					<Add option="-O1" />
+					<Add option="-O" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="mingw32" />
+				</Linker>
+			</Target>
+			<Target title="nix">
+				<Option platforms="Unix;" />
+				<Option output="bin/nix/SDL_gfx" prefix_auto="1" extension_auto="1" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-fexpensive-optimizations" />
+					<Add option="-Os" />
+					<Add option="-O3" />
+					<Add option="-O2" />
+					<Add option="-O1" />
+					<Add option="-O" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-DBUILDING_DLL=1" />
+			<Add option="-DBUILD_DLL=1" />
+		</Compiler>
+		<Linker>
+			<Add option="--no-export-all-symbols --add-stdcall-alias" />
+			<Add library="SDL" />
+		</Linker>
+		<Unit filename="SDL_framerate.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="SDL_framerate.h" />
+		<Unit filename="SDL_gfxBlitFunc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="SDL_gfxBlitFunc.h" />
+		<Unit filename="SDL_gfxPrimitives.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="SDL_gfxPrimitives.h" />
+		<Unit filename="SDL_gfxPrimitives_font.h" />
+		<Unit filename="SDL_imageFilter.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="SDL_imageFilter.h" />
+		<Unit filename="SDL_rotozoom.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="SDL_rotozoom.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,128 @@
+# depslib dependency file v1.0
+1095375940 source:d:\projects\infraelly\curver\libbuild\net2build\fastevents.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"SDL.h"
+	"SDL_thread.h"
+	"fastevents.h"
+
+1095375940 d:\projects\infraelly\curver\libbuild\net2build\fastevents.h
+	"SDL.h"
+
+1095375940 source:d:\projects\infraelly\curver\libbuild\net2build\net2.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<signal.h>
+	<math.h>
+	"SDL.h"
+	"SDL_net.h"
+	"SDL_thread.h"
+	"net2.h"
+	"fastevents.h"
+	"queue.h"
+	"trace.h"
+
+1095375940 d:\projects\infraelly\curver\libbuild\net2build\net2.h
+	"SDL.h"
+	"SDL_net.h"
+
+1095375940 d:\projects\infraelly\curver\libbuild\net2build\queue.h
+
+1095375940 d:\projects\infraelly\curver\libbuild\net2build\trace.h
+	<iostream.h>
+	<stdio.h>
+	<stdlib.h>
+
+1095375940 source:d:\projects\infraelly\curver\libbuild\net2build\net2sets.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"SDL.h"
+	"SDL_net.h"
+	"net2.h"
+	"net2sets.h"
+	"set.h"
+	"trace.h"
+
+1095375940 d:\projects\infraelly\curver\libbuild\net2build\net2sets.h
+	"SDL.h"
+	"SDL_net.h"
+
+1095375940 d:\projects\infraelly\curver\libbuild\net2build\set.h
+
+1095375940 source:d:\projects\infraelly\curver\libbuild\net2build\set.cpp
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"set.h"
+	"net2sets.h"
+
+1095375940 source:d:\projects\infraelly\curver\libbuild\net2build\trace.c
+
+1095375940 source:d:\projects\infraelly\curver\libbuild\net2build\sdlutils.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"SDLUtils.h"
+	"net2.h"
+	"fastevents.h"
+
+1095375940 d:\projects\infraelly\curver\libbuild\net2build\sdlutils.h
+	"SDL.h"
+	"SDL_net.h"
+
+1184421544 d:\projects\infraelly\curver\libbuild\net2build\sdl_net.h
+	"SDL.h"
+	"SDL_endian.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1183284244 source:d:\projects\infraelly\curver\libbuild\net2build\sdlnet.c
+	<string.h>
+	"SDL_byteorder.h"
+	"SDLnetsys.h"
+	"SDL_net.h"
+	<Events.h>
+	<signal.h>
+
+1183284244 d:\projects\infraelly\curver\libbuild\net2build\sdlnetsys.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<errno.h>
+	<OpenTransport.h>
+	<OpenTptInternet.h>
+	<windows.h>
+	<types.h>
+	<sys/ioctl.h>
+	<sys/time.h>
+	<unistd.h>
+	<fcntl.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	<netinet/tcp.h>
+	<netdb.h>
+	<sys/socket.h>
+
+1184421342 source:d:\projects\infraelly\curver\libbuild\net2build\sdlnettcp.c
+	"SDLnetsys.h"
+	"SDL_net.h"
+	<Events.h>
+	<Threads.h>
+	<OpenTransport.h>
+	<OpenTptInternet.h>
+	<OTDebug.h>
+
+1183284244 source:d:\projects\infraelly\curver\libbuild\net2build\sdlnetudp.c
+	"SDLnetsys.h"
+	"SDL_net.h"
+	<Events.h>
+
+1183284244 source:d:\projects\infraelly\curver\libbuild\net2build\sdlnetselect.c
+	"SDLnetsys.h"
+	"SDL_net.h"
+

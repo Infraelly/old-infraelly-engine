@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Windows" />
+	<File name="include\guichan\mouselistener.hpp" open="0" top="0" tabpos="0">
+		<Cursor position="3780" topLine="69" />
+	</File>
+	<File name="include\guichan\sdl\sdlgraphics.hpp" open="0" top="0" tabpos="3">
+		<Cursor position="2418" topLine="29" />
+	</File>
+	<File name="include\guichan\sdl\sdlimage.hpp" open="0" top="0" tabpos="0">
+		<Cursor position="2242" topLine="29" />
+	</File>
+	<File name="include\guichan\sdl\sdlimageloader.hpp" open="0" top="0" tabpos="0">
+		<Cursor position="2323" topLine="32" />
+	</File>
+	<File name="include\guichan\sdl\sdlinput.hpp" open="0" top="0" tabpos="0">
+		<Cursor position="2281" topLine="31" />
+	</File>
+	<File name="include\guichan\sdl\sdlpixel.hpp" open="0" top="0" tabpos="0">
+		<Cursor position="2263" topLine="29" />
+	</File>
+	<File name="include\guichan\widget.hpp" open="0" top="0" tabpos="0">
+		<Cursor position="36619" topLine="1133" />
+	</File>
+	<File name="src\sdl\sdlimageloader.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="3316" topLine="71" />
+	</File>
+	<File name="src\widgets\window.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="1395" topLine="76" />
+	</File>
+</CodeBlocks_layout_file>

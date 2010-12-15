@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="Workspace">
+		<Project filename="LibBuild/tinyxmlbuild/TinyXml.cbp" />
+		<Project filename="Infraelly.cbp" active="1">
+			<Depends filename="LibBuild/tinyxmlbuild/TinyXml.cbp" />
+			<Depends filename="LibBuild/guichanbuild/guichan_SDL.cbp" />
+			<Depends filename="LibBuild/cryptoppbuild/cryptlib.cbp" />
+			<Depends filename="LibBuild/sdl_gfxbuild/SDL_gfx.cbp" />
+		</Project>
+		<Project filename="LibBuild/guichanbuild/guichan_SDL.cbp" />
+		<Project filename="LibBuild/cryptoppbuild/cryptlib.cbp" />
+		<Project filename="LibBuild/sdl_gfxbuild/SDL_gfx.cbp" />
+		<Project filename="LibBuild/zlibbuild/contrib/vstudio/vc9/zlibvc.cbp" />
+		<Project filename="tools/KeySmith/KeySmith.cbp" />
+		<Project filename="../../test/test.cbp" />
+	</Workspace>
+</CodeBlocks_workspace_file>

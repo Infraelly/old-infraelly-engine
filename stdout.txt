@@ -1,0 +1,63 @@
+Load Infraelly settings (delete "infraelly.cfg" to restore defaults)
+
+-Packer Console dump-
+Welcome to the Infraelly Console
+File added: audio/always_alone.mp3
+File added: audio/are_we_talking_yet.mp3
+File added: audio/loader.mp3
+File added: audio/pouk.wav
+File added: audio/walking_on_air.mp3
+File added: fonts/colour.txt
+File added: fonts/creditva.ttf
+File added: fonts/efflores.ttf
+File added: fonts/forgottb.ttf
+File added: fonts/forgotte.ttf
+File added: fonts/read_me.html
+File added: images/inventoryButtons.png
+File added: images/shadows.png
+File added: images/shroomvile.png
+File added: images/speechbubble.png
+File added: images/terrain.png
+File added: images/animator/animatorButtons.png
+File added: images/animator/dummyItem.png
+File added: images/character/bodyF.png
+File added: images/character/bodyM.png
+File added: images/character/faces.png
+File added: images/character/feet.png
+File added: images/character/hands.png
+File added: images/character/heads.png
+File added: images/editor/attribTs.png
+File added: images/editor/editorButtons.png
+File added: images/intro/cloud.png
+File added: images/intro/hillColour.png
+File added: images/intro/hills.png
+File added: images/intro/skyColour.png
+File added: images/intro/sun.png
+File added: items/test
+File added: maps/osl
+File added: maps/test
+File added: tilesets/animatorButtons.xml
+File added: tilesets/animatorItem.xml
+File added: tilesets/attrib.xml
+File added: tilesets/bodyF.xml
+File added: tilesets/bodyM.xml
+File added: tilesets/editorButtons.xml
+File added: tilesets/faces.xml
+File added: tilesets/feet.xml
+File added: tilesets/hands.xml
+File added: tilesets/heads.xml
+File added: tilesets/shadows.xml
+File added: tilesets/shroomvile.xml
+File added: tilesets/speechBubble.xml
+File added: tilesets/terrain.xml
+File added: tsprites/animatorItem.xml
+File added: tsprites/bodyM1.xml
+File added: tsprites/face1.xml
+File added: tsprites/feet1.xml
+File added: tsprites/hand1.xml
+File added: tsprites/head1.xml
+Pack written: data.ipf
+Pack reloaded sucessfuly
+Pack check good
+Done
+

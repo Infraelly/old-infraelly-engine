@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1220426474 source:c:\projects\infraelly\rawresources\bin2c\bin2c.c
+	<cctype>
+	<ctime>
+	<cstdlib>
+	<fstream>
+	<iostream>
+	<string>
+
+1220426474 
+
+1220426474 source:/media/drive_d/Projects/Infraelly/CurVer/tools/bin2c/BIN2C.C
+	<cctype>
+	<ctime>
+	<cstdlib>
+	<fstream>
+	<iostream>
+	<string>
+
+1220430074 source:d:\projects\infraelly\curver\tools\bin2c\bin2c.c
+	<cctype>
+	<ctime>
+	<cstdlib>
+	<fstream>
+	<iostream>
+	<string>
+

@@ -1,0 +1,29 @@
+Set 640x480x32 mode
+Video surface located in system memory.
+  Frame: 360   Rotate: angle=360.00  Zoom: f=0.09 
+  Frame: 480   Rotate: angle=480.00  Zoom: f=0.17 
+  Frame: 600   Rotate: angle=600.00  Zoom: f=0.26 
+  Frame: 720   Rotate: angle=720.00  Zoom: f=0.38 
+  Frame: 840   Rotate: angle=840.00  Zoom: f=0.51 
+  Frame: 960   Rotate: angle=960.00  Zoom: f=0.67 
+  Frame: 1080   Rotate: angle=1080.00  Zoom: f=0.84 
+  Frame: 1200   Rotate: angle=1200.00  Zoom: f=1.04 
+  Frame: 1320   Rotate: angle=1320.00  Zoom: f=1.26 
+  Frame: 360   Rotate: angle=0.00  Zoom: f=0.09 
+  Frame: 480   Rotate: angle=0.00  Zoom: f=0.17 
+  Frame: 600   Rotate: angle=0.00  Zoom: f=0.26 
+  Frame: 720   Rotate: angle=0.00  Zoom: f=0.38 
+  Frame: 840   Rotate: angle=0.00  Zoom: f=0.51 
+  Frame: 960   Rotate: angle=0.00  Zoom: f=0.67 
+  Frame: 1080   Rotate: angle=0.00  Zoom: f=0.84 
+  Frame: 1200   Rotate: angle=0.00  Zoom: f=1.04 
+  Frame: 1320   Rotate: angle=0.00  Zoom: f=1.26 
+  Frame: 360   Zoom: x=0.09 y=1.48
+  Frame: 480   Zoom: x=0.17 y=0.78
+  Frame: 600   Zoom: x=0.26 y=1.44
+  Frame: 720   Zoom: x=0.38 y=0.91
+  Frame: 840   Zoom: x=0.51 y=1.38
+  Frame: 960   Zoom: x=0.67 y=1.04
+  Frame: 1080   Zoom: x=0.84 y=1.30
+  Frame: 1200   Zoom: x=1.04 y=1.15
+  Frame: 1320   Zoom: x=1.26 y=1.21

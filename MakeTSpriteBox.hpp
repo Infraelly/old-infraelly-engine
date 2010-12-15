@@ -1,0 +1,116 @@
+/*-----------------------------------------------------------------------------\
+|                         ____                                                 |
+|      __                / __ \                                /\     /\       |
+|     /_/               / /  \/                               / /    / /       |
+|     __    ____       / /_    ____     ____       ____      / /    / /        |
+|    / /   / __ \     / ___\  / __ \   / __ \     / __ \    / /    / /   /\  /\|
+|   / /   / /  \ \   / /     / /  \/  / /  \ \   / ____/   / /    / /   / / / /|
+|  / /_  / /   / /  / /     / /       \ \__/ /_  \  \___  / /_   / /_   \ \/ / |
+|  \__/  \/    \/   \/      \/         \______/   \____/  \__/   \__/    \  /  |
+|                                                                        / /   |
+| ______________________________________________________________________/ /    |
+|/   ____________________________________________________________________/     |
+|\__/                                                                          |
+|                                                                              |
+|                                                                              |
+|   Infraelly MMORPG                                                           |
+|   Copyright (C) 2007-2010 Tony Huynh aka insanepotato                        |
+|                                                                              |
+|   Visit: http://sourceforge.net/projects/infraelly/                          |
+|                                                                              |
+|   License: (LGPL)                                                            |
+|   This is free software; you can redistribute it and/or                      |
+|   modify it under the terms of the GNU Library General Public                |
+|   License as published by the Free Software Foundation; either               |
+|   version 2 of the License, or (at your option) any later version.           |
+|                                                                              |
+|   This is distributed in the hope that it will be useful,                    |
+|   but WITHOUT ANY WARRANTY; without even the implied warranty of             |
+|   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU          |
+|   Library General Public License for more details.                           |
+|                                                                              |
+|   You should have received a copy of the GNU Library General Public          |
+|   License along with this library; if not, write to the Free                 |
+|   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA  |
+|                                                                              |
+|   Tony Huynh                                                                 |
+|   tony.huynh1991@gmail.com                                                   |
+|                                                                              |
+L-----------------------------------------------------------------------------*/
+
+
+#ifndef TSPRITELOADBOX_HPP_INCLUDED
+#define TSPRITELOADBOX_HPP_INCLUDED
+
+#include "guichan.hpp"
+
+#include "InfraellyWindow.hpp"
+#include "InfoForm.hpp"
+#include "TSprite.hpp"
+
+
+class NumberField;
+class InfraellyScroller;
+class TilesetIcon;
+class TSpriteIcon;
+class TilesetList;
+
+
+class MakeTSpriteBox : public InfoForm,
+                       public gcn::KeyListener,
+                       public gcn::SelectionListener
+{
+    public:
+        MakeTSpriteBox();
+        ~MakeTSpriteBox();
+
+
+        TSprite getSprite()const;
+
+
+        //update prev on key
+        virtual void keyPressed(gcn::KeyEvent& keyEvent);
+
+        //  Listener, for the drop down (tileset info)
+        void valueChanged(const gcn::SelectionEvent& event);
+
+        virtual void draw(gcn::Graphics* graphics);
+
+        //  action to take when ok buton is pressed
+        virtual void doneAction();
+        virtual void cancelAction(){};
+
+
+
+
+    private:
+        void updatePreview();
+
+        gcn::Label *filenameLbl;
+        gcn::TextField *filenameFld;
+        //---------------------------
+        gcn::Label *numImagesLbl;
+        NumberField *numImagesFld;
+        gcn::Label *perRowLbl;
+        NumberField *perRowFld;
+        gcn::Label *xOffsetLbl;
+        NumberField *xOffsetFld;
+        gcn::Label *yOffsetLbl;
+        NumberField *yOffsetFld;
+        gcn::Label *fpsLbl;
+        NumberField *fpsFld;
+        //---------------------------
+        TSpriteIcon *spriteIcon;
+        //---------------------------
+        gcn::Label *srcTsLbl;
+        TilesetList *tilesetList;
+        gcn::DropDown *tilesetDropDown;
+        //--------------------------
+        TilesetIcon *tsIcon;
+        InfraellyScroller *tsScroller;
+        //--------------------------
+        TSprite sprite;
+};
+
+
+#endif // TSPRITELOADBOX_HPP_INCLUDED

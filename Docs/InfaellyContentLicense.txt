@@ -1,0 +1,6 @@
+Copyright of all resource and content files are reserved by Infraelly Team.
+These are the files, which by default, are located within the "./data/" directory.
+These files may NOT be re-dsitributed without explicit permission of Infraelly Team;
+with the exception it is redistributed along with the Infraelly Engine/Game in verbatim.
+
+- Infraelly Team
