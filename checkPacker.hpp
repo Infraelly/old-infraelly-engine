@@ -4,7 +4,7 @@ namespace isk{
 #include <string>
 #include <fstream>
 using namespace std;
-static string PACKER_KEY("@]woO*[+{4YM]R8T?^.W/A.S))MY`*j-75RzSPS*+E75EU(0hdK<fOfSh<[Ne?}UR).JSUBdIpoh?oBzd{l+|Y3I@k3mxd8JpfX+0T1Lm2JhIEod(w201A1a,1>9.inzcs[wjbnw]bjmau)SSI)m8JKofsu|<5dG[Ms^vflG/rNTo?Vpa7=8BI:A|>Qq{us;(si3SumHfFh{y->_]_5OObb8dfBR?Aci3>0<M5Df1Q?mGy.j`l}9PQvWgB*_KW28-di.sqaMTr<mH*jFW;SFoMSLhy97rv<KU{g0DY==qm|^mVhEu=o5MiFs=UVimKpa(@r3O(}6BUtc2^2sDdJ5I/w4gTEjEJR9Zu6K@nEOKz83;dEF^SF<aXcUtE;Fq2QZGCr[8urD?(-P]FbYeM8Et.UDl:5|_NEOrBFndj*6/=*D{13=*QN~quy^/Adf;BgrK/Ir)E)PV(@_D)MVUv/VPhuAa0qa]`V-Y^vU`q,KwF`YyCFH`yjbOc6^j`uf");
+static string PACKER_KEY("NdpvdXPO7o^c,Kt:9+x}4pq{pCrLt{7CmO/pwJKymni6{2l;JNnMAeNcDDZ?ad3we=Imdox|S~4_SKbsNV.>]vKQG3iCY^u[x++GAR:y48G;PGe<OU/i>c[i7XItaUI~<lS~+WyHTu<p(xqL^DxI)T4U4.tIiJK^]x;k,MWx@=@DeM9b+g>gI<oi6*~XAMI9i-Ne|sJPA|(c-poqkC6L7Wfs+5jU>X<]]~0KAO}8E8K;mlYHU8ZYPdnkyHuCnTP5o;[,j<CUKoajeey7[YXjmKCWy*ax,J6f+bgOpC0qsB}NvEB=x:5-8P3SmR@+1M}f/uL|Cdy2>=K|FN}L8,YG..xX(g?zaI@_ZyduS~||yn4f3g^{0~Z0B)WLY/L^PBc>:,J<`<(3wZ~AOtdIP?a3lo>@/4i@Wr;mdFWV74ZIjY<:Cw.ZwTyHibnF97CRed}-[=Nxai0kYPU_lK/7XH?0w|NEM]|h5F)YM@cTbi6k.(B7(YF9n(:5NPm7xFC");
 bool checkPacker(){ifstream kf("packer.isk",fstream::in);if(!(kf.good()&&kf.is_open())){cout<<"Invalid key file"<<endl;kf.close();return 0;}string ik;ik.reserve(512);char ch = kf.get();while(ch!=EOF){ik.push_back(ch);ch=kf.get();}if(ik!=PACKER_KEY){cout<<"Invalid key file"<<endl;kf.close();return 0;}else{return 1;}}
 }
 #endif

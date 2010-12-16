@@ -48,7 +48,9 @@ L-----------------------------------------------------------------------------*/
 #include <string>
 #include <map>
 #include <deque>
+#include <vector>
 
+#include <SDL/SDL.h>
 #include <SDL/SDL_mixer.h>
 
 
@@ -129,6 +131,10 @@ class InfraellyMixer{
 
         //  This is a cache for sound effects
         static std::map<std::string, Mix_Chunk*> soundCache;
+
+        #ifdef USE_PACKED_RESOURCES
+            static std::vector<SDL_RWops*> dataRwops;
+        #endif
 };
 
 

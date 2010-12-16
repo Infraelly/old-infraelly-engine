@@ -33,7 +33,8 @@ goto make_zip
 :make_zip
 rem cleqan temp files
 echo Removing temp files
-del /F /Q *.ipf
+del /F /Q stderr.txt
+del /F /Q stdout.txt
 del /F /Q *.o
 del /F /Q *.tmp
 del /F /Q gmon.out
@@ -64,7 +65,7 @@ rmdir /S /Q LibBuild\tinyxmlbuild\obj
 rmdir /S /Q LibBuild\zlibbuild\contrib\vstudio\vc9\x86\ZlibDllReleaseWithoutAsm Win32\Tmp
 
 
-7z u -aoa -t7z -y %fn% * -mx9 -ms=on -mf=on -mmt=on -mtc=on -o..\Backups
+7z u -aoa -t7z -y %fn% * -mx9 -ms=on -mf=on -mmt=on -mtc=on -o..\Backups -x!.git -x!*.ipf
 
 IF NOT EXIST ..\Backups mkdir ..\Inf_Backups
 copy /D /V /Y %fn%.7z ..\Inf_Backups\%fn%.7z

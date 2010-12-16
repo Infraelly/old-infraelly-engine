@@ -558,7 +558,7 @@ bool ResourcePack::writePack( const std::string& filepath, bool overwriteOld ){
         file.write(buff, hashSize);
     }
 
-    compress();
+    //compress();
 
     //  Write contents of filedata
     file.write( (char*)&fileData_[headerSize], fileData_.size()-headerSize );

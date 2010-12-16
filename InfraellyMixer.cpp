@@ -61,6 +61,10 @@ std::map<std::string, Mix_Chunk*> InfraellyMixer::soundCache;
 //  Music cache
 std::map<std::string, Mix_Music*> InfraellyMixer::musicCache;
 
+//rwop data
+#ifdef USE_PACKED_RESOURCES
+    std::vector<SDL_RWops*> InfraellyMixer::dataRwops;
+#endif
 
 
 void InfraellyMixer::loadSound(const std::string& filename){
@@ -70,7 +74,7 @@ void InfraellyMixer::loadSound(const std::string& filename){
         #ifdef USE_PACKED_RESOURCES
             ResourceFile rcf;
             packs::mainPack.getResource( fixedFn, rcf );
-            sound = Mix_LoadWAV_RW( SDL_RWFromMem(const_cast<unsigned char*>(&packs::mainPack.getRawData()[rcf.start]), rcf.size), true );
+            sound = Mix_LoadWAV_RW( SDL_RWFromMem((void*)&packs::mainPack.getRawData()[rcf.start], rcf.size), true );
         #else
             sound = Mix_LoadWAV(fixedFn.c_str());
         #endif
@@ -89,11 +93,14 @@ void InfraellyMixer::loadMusic(const std::string& filename){
         #ifdef USE_PACKED_RESOURCES
             ResourceFile rcf;
             packs::mainPack.getResource( fixedFn, rcf );
-            SDL_RWops *rw = SDL_RWFromMem(const_cast<unsigned char*>(&packs::mainPack.getRawData()[rcf.start]), rcf.size);
+            SDL_RWops *rw = SDL_RWFromMem((void*)&packs::mainPack.getRawData()[rcf.start], rcf.size);
             if( rw != NULL ){
                 music = Mix_LoadMUS_RW( rw );
             }
-            SDL_FreeRW(rw);
+            // SDL_mixer cant dupe the rwop and will use the one provided
+            // freeing this will cause crashes
+            // http://www.gamedev.net/community/forums/topic.asp?topic_id=418244
+            dataRwops.push_back(rw);
         #else
             music = Mix_LoadMUS(fixedFn.c_str());
         #endif
@@ -255,6 +262,14 @@ void InfraellyMixer::freeAudio(){
         //  set null ptr to mix chunk
         musicIter->second = NULL;
     }
+    //free the rwops
+    #ifdef USE_PACKED_RESOURCES
+        for(size_t i = 0; i < dataRwops.size(); ++i){
+            SDL_FreeRW( dataRwops[i] );
+            dataRwops[i] = NULL;
+        }
+        dataRwops.clear();
+    #endif
     //  clear the map
     musicCache.clear();
     std::cerr << __FILE__ << " " << __LINE__ << ": " << "Music cleared" << std::endl << std::endl;

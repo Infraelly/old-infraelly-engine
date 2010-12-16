@@ -14,7 +14,7 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Option use_console_runner="0" />
-				<Option parameters="-animator" />
+				<Option parameters=" " />
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-Wall" />
@@ -48,8 +48,8 @@
 					<Add option="-O1" />
 					<Add option="-O" />
 					<Add option="-DNDEBUG" />
-					<Add option="-DUSE_PACKED_RESOURCES" />
 					<Add option="-DZLIB_WINAPI" />
+					<Add option="-DUSE_PACKED_RESOURCES" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -120,7 +120,7 @@
 		<ExtraCommands>
 			<Add before="tools\keySmith\bin\KeySmith.exe nucleus excogitator forge breath animator packer test" />
 			<Add after="makeDataFileList.bat" />
-			<Add after="infraelly.exe -packer -s" />
+			<Add after="echo infraelly.exe -packer -s" />
 		</ExtraCommands>
 		<Unit filename="AlertBox.cpp">
 			<Option virtualFolder="GUI\Base Widgets\" />

@@ -50,7 +50,7 @@ L-----------------------------------------------------------------------------*/
 const int GameConfig::fps = 30;
 
 #ifdef DEBUG
-    const bool GameConfig::bypassMainMenu = true;
+    const bool GameConfig::bypassMainMenu = false;
 #else
     const bool GameConfig::bypassMainMenu = false;
 #endif
@@ -72,11 +72,11 @@ int GameConfig::fScreenBpp = 32;
     int GameConfig::wScreenBpp = 32;
 
     bool GameConfig::sound = true;
-    bool GameConfig::music = false;
+    bool GameConfig::music = true;
 #else
     int GameConfig::wScreenWidth = 1024;
     int GameConfig::wScreenHeight = 768;
-    int GameConfig::wScreenBpp = 24;
+    int GameConfig::wScreenBpp = 32;
 
     bool GameConfig::sound = true;
     bool GameConfig::music = true;

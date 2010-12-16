@@ -4908,10 +4908,12 @@
 	<string>
 	"guichan.hpp"
 
-1267623797 d:\projects\infraelly\curver\infraellymixer.hpp
+1292503576 d:\projects\infraelly\curver\infraellymixer.hpp
 	<string>
 	<map>
 	<deque>
+	<vector>
+	<SDL/SDL.h>
 	<SDL/SDL_mixer.h>
 
 1258210352 d:\projects\infraelly\curver\include\sdl\sdl_mixer.h
@@ -4968,7 +4970,7 @@
 	<windows.h>
 	"version.h"
 
-1292421010 d:\projects\infraelly\curver\version.h
+1292509398 d:\projects\infraelly\curver\version.h
 
 1267624350 source:d:\projects\infraelly\curver\infraellyimageloader.cpp
 	"InfraellyImageLoader.hpp"
@@ -4991,7 +4993,7 @@
 	<string>
 	"guichan.hpp"
 
-1292411809 source:d:\projects\infraelly\curver\infraellymixer.cpp
+1292509374 source:d:\projects\infraelly\curver\infraellymixer.cpp
 	"InfraellyMixer.hpp"
 	<SDL/SDL.h>
 	<iostream>
@@ -5008,14 +5010,14 @@
 	"InfraellyWindow.hpp"
 	"fonts.hpp"
 
-1292420309 source:d:\projects\infraelly\curver\introcloud.cpp
+1292509322 source:d:\projects\infraelly\curver\introcloud.cpp
 	"IntroCloud.hpp"
 	"dataPacks.hpp"
 
 1292420355 d:\projects\infraelly\curver\introcloud.hpp
 	<SDL/SDL.h>
 
-1292420333 source:d:\projects\infraelly\curver\introcontext.cpp
+1292508815 source:d:\projects\infraelly\curver\introcontext.cpp
 	"IntroContext.hpp"
 	<iostream>
 	<sstream>
@@ -5307,7 +5309,7 @@
 1267624008 source:d:\projects\infraelly\curver\radiobar.cpp
 	"RadioBar.hpp"
 
-1292416299 source:d:\projects\infraelly\curver\resourcepack.cpp
+1292500640 source:d:\projects\infraelly\curver\resourcepack.cpp
 	"ResourcePack.hpp"
 	<sstream>
 	<string>
@@ -5317,6 +5319,7 @@
 	"SDL/SDL.h"
 	"SDL/SDL_net.h"
 	"globalFunc.hpp"
+	"zlib.h"
 
 1267624008 source:d:\projects\infraelly\curver\runcontext.cpp
 	"RunContext.hpp"
@@ -5562,7 +5565,7 @@
 
 1264778426 Box.hpp"
 
-1292419635 source:d:\projects\infraelly\curver\init.cpp
+1292502401 source:d:\projects\infraelly\curver\init.cpp
 	"init.hpp"
 	<ctime>
 	<cstdlib>
@@ -5614,27 +5617,27 @@
 	"checkPacker.hpp"
 	"GameConfig.hpp"
 
-1292421010 d:\projects\infraelly\curver\checkexcogitator.hpp
+1292509398 d:\projects\infraelly\curver\checkexcogitator.hpp
 	<string>
 	<fstream>
 
-1292421010 d:\projects\infraelly\curver\checkforge.hpp
+1292509398 d:\projects\infraelly\curver\checkforge.hpp
 	<string>
 	<fstream>
 
-1292421010 d:\projects\infraelly\curver\checkbreath.hpp
+1292509398 d:\projects\infraelly\curver\checkbreath.hpp
 	<string>
 	<fstream>
 
-1292421010 d:\projects\infraelly\curver\checkanimator.hpp
+1292509398 d:\projects\infraelly\curver\checkanimator.hpp
 	<string>
 	<fstream>
 
-1292421010 d:\projects\infraelly\curver\checknucleus.hpp
+1292509398 d:\projects\infraelly\curver\checknucleus.hpp
 	<string>
 	<fstream>
 
-1292421010 d:\projects\infraelly\curver\checktest.hpp
+1292509398 d:\projects\infraelly\curver\checktest.hpp
 	<string>
 	<fstream>
 
@@ -8941,7 +8944,7 @@
 1267623797 d:\projects\infraelly\curver\gameconfig.hpp
 	<string>
 
-1292413639 source:d:\projects\infraelly\curver\gameconfig.cpp
+1292501986 source:d:\projects\infraelly\curver\gameconfig.cpp
 	"GameConfig.hpp"
 	"tinyxml.h"
 	"globalFunc.hpp"
@@ -8959,7 +8962,7 @@
 	"Tile.hpp"
 	"InfraellyImageLoader.hpp"
 
-1292421010 d:\projects\infraelly\curver\checkpacker.hpp
+1292509398 d:\projects\infraelly\curver\checkpacker.hpp
 	<string>
 	<fstream>
 
@@ -8994,7 +8997,7 @@
 	<cryptopp/sha.h>
 	"globalFunc.hpp"
 
-1292415193 source:d:\projects\infraelly\curver\packercontext.cpp
+1292421010 source:d:\projects\infraelly\curver\packercontext.cpp
 	<string>
 	<iostream>
 	<fstream>

@@ -98,7 +98,7 @@ IntroContext::IntroContext() :
         clouds.at(i).setY( random(0, screen->h/4) );
         clouds.at(i).setSpeed( random(1, 8) );
     }
-    if( (IntroCloud::getWindDir()) && (IntroCloud::getCloudImage() != NULL) &&
+    if( IntroCloud::getWindDir() && (IntroCloud::getCloudImage() != NULL) &&
         (background != NULL) ){
         cloudSpawn = -IntroCloud::getCloudImage()->w;
     } else {

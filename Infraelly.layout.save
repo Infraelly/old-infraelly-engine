@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
-	<ActiveTarget name="Windows Release" />
+	<ActiveTarget name="Windows Dev" />
 	<File name="AlertBox.cpp" open="0" top="0" tabpos="6">
 		<Cursor position="3202" topLine="0" />
 	</File>
@@ -44,7 +44,7 @@
 		<Cursor position="3327" topLine="29" />
 	</File>
 	<File name="Animation.cpp" open="0" top="0" tabpos="4">
-		<Cursor position="25503" topLine="784" />
+		<Cursor position="5779" topLine="122" />
 	</File>
 	<File name="Animation.hpp" open="0" top="0" tabpos="7">
 		<Cursor position="7571" topLine="152" />
@@ -158,16 +158,16 @@
 		<Cursor position="3726" topLine="46" />
 	</File>
 	<File name="GameConfig.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="8764" topLine="179" />
+		<Cursor position="3767" topLine="33" />
 	</File>
 	<File name="GameConfig.hpp" open="0" top="0" tabpos="0">
-		<Cursor position="80" topLine="0" />
+		<Cursor position="80" topLine="34" />
 	</File>
 	<File name="GameContext.cpp" open="0" top="0" tabpos="1">
-		<Cursor position="4464" topLine="69" />
+		<Cursor position="4464" topLine="35" />
 	</File>
-	<File name="GameContext.hpp" open="0" top="0" tabpos="4">
-		<Cursor position="3202" topLine="0" />
+	<File name="GameContext.hpp" open="0" top="0" tabpos="2">
+		<Cursor position="5132" topLine="36" />
 	</File>
 	<File name="GameGui.cpp" open="0" top="0" tabpos="3">
 		<Cursor position="3202" topLine="0" />
@@ -223,11 +223,11 @@
 	<File name="InfraellyList.hpp" open="0" top="0" tabpos="0">
 		<Cursor position="3202" topLine="0" />
 	</File>
-	<File name="InfraellyMixer.cpp" open="0" top="0" tabpos="10">
-		<Cursor position="6855" topLine="214" />
+	<File name="InfraellyMixer.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="9978" topLine="232" />
 	</File>
 	<File name="InfraellyMixer.hpp" open="0" top="0" tabpos="2">
-		<Cursor position="3202" topLine="38" />
+		<Cursor position="6178" topLine="108" />
 	</File>
 	<File name="InfraellyScroller.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="3202" topLine="0" />
@@ -248,16 +248,16 @@
 		<Cursor position="3202" topLine="0" />
 	</File>
 	<File name="IntroCloud.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="4949" topLine="86" />
+		<Cursor position="4153" topLine="36" />
 	</File>
 	<File name="IntroCloud.hpp" open="0" top="0" tabpos="0">
 		<Cursor position="3483" topLine="40" />
 	</File>
-	<File name="IntroContext.cpp" open="0" top="0" tabpos="3">
-		<Cursor position="5026" topLine="83" />
+	<File name="IntroContext.cpp" open="1" top="1" tabpos="4">
+		<Cursor position="4450" topLine="40" />
 	</File>
 	<File name="IntroContext.hpp" open="0" top="0" tabpos="2">
-		<Cursor position="3202" topLine="35" />
+		<Cursor position="3904" topLine="47" />
 	</File>
 	<File name="IntroGui.cpp" open="0" top="0" tabpos="3">
 		<Cursor position="3202" topLine="0" />
@@ -467,13 +467,13 @@
 		<Cursor position="3520" topLine="52" />
 	</File>
 	<File name="ResourceFile.hpp" open="0" top="0" tabpos="0">
-		<Cursor position="3593" topLine="30" />
+		<Cursor position="3505" topLine="30" />
 	</File>
-	<File name="ResourcePack.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="4381" topLine="209" />
+	<File name="ResourcePack.cpp" open="0" top="0" tabpos="3">
+		<Cursor position="9599" topLine="217" />
 	</File>
 	<File name="ResourcePack.hpp" open="0" top="0" tabpos="4">
-		<Cursor position="5015" topLine="83" />
+		<Cursor position="7224" topLine="124" />
 	</File>
 	<File name="RunContext.cpp" open="0" top="0" tabpos="3">
 		<Cursor position="3826" topLine="51" />
@@ -620,13 +620,13 @@
 		<Cursor position="3406" topLine="34" />
 	</File>
 	<File name="globalFunc.cpp" open="0" top="0" tabpos="4">
-		<Cursor position="42232" topLine="1284" />
+		<Cursor position="15259" topLine="461" />
 	</File>
 	<File name="globalFunc.hpp" open="0" top="0" tabpos="1">
 		<Cursor position="6667" topLine="105" />
 	</File>
-	<File name="init.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="11314" topLine="209" />
+	<File name="init.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="18019" topLine="356" />
 	</File>
 	<File name="init.hpp" open="0" top="0" tabpos="0">
 		<Cursor position="1825" topLine="15" />
@@ -650,6 +650,6 @@
 		<Cursor position="3256" topLine="8" />
 	</File>
 	<File name="todo.txt" open="1" top="0" tabpos="1">
-		<Cursor position="540" topLine="0" />
+		<Cursor position="11298" topLine="293" />
 	</File>
 </CodeBlocks_layout_file>

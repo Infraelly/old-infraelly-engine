@@ -230,7 +230,6 @@ void init(){
     //load default value into infraelly mixer
     InfraellyMixer::setSoundEnabled(GameConfig::sound);
     InfraellyMixer::setMusicEnabled(GameConfig::music);
-    InfraellyMixer::playMusic("audio/loader.mp3", -1);
 
     /*------------------------------------------
                 initiallise SDL_ttf
@@ -282,8 +281,8 @@ void init(){
     /*--------------------------------------------
                   load main resources
     --------------------------------------------*/
-    //fonts
     packs::loadPacks();
+    InfraellyMixer::playMusic("audio/loader.mp3", -1);
     font::loadFonts();
     Screen::flip();
 

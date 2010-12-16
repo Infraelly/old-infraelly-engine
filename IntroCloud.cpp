@@ -44,7 +44,7 @@ L-----------------------------------------------------------------------------*/
 #include "dataPacks.hpp"
 
 int IntroCloud::nInstances = 0;
-bool IntroCloud::windDir = 0;
+bool IntroCloud::windDir = random(0, 1);
 SDL_Surface* IntroCloud::cloudImage = NULL;
 
 IntroCloud::IntroCloud() :
@@ -53,7 +53,6 @@ IntroCloud::IntroCloud() :
     y(0)
 {
     if( nInstances == 0 ){
-        windDir = random(0, 1);
         ResourceFile rcf;
         packs::mainPack.getResource("images/intro/cloud.png", rcf);
         cloudImage = loadImage( SDL_RWFromMem( (void*)&packs::mainPack.getRawData()[rcf.start], rcf.size), true );
@@ -80,7 +79,7 @@ IntroCloud& IntroCloud::operator=(IntroCloud& rhs){
 
 IntroCloud::~IntroCloud(){
     --nInstances;
-    if( cloudImage != NULL ){
+    if( cloudImage != NULL && nInstances < 1 ){
         SDL_FreeSurface(cloudImage);
     }
 }

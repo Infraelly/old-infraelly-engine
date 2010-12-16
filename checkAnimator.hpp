@@ -4,7 +4,7 @@ namespace isk{
 #include <string>
 #include <fstream>
 using namespace std;
-static string ANIMATOR_KEY("/mdR<k{GgapA@@wjjvkk-SY89vg=i<OHGICV(_?gn=tqdE-@y{XOt:TLcW/BkgchBDGr>y{rqg8qAI)7uNPaV.B~tGAES:)VTaW6X}_?t1L>n1:^uRxob<zOQ,93;t(R1,GN-J=ban=excdp8|F2X~OLJ_,AiJGoeG])Na^@yAs-qe:+;q})4U:)<:Z)^4>3s?WMRBP;:r/OECADe`hhVhn=T*rYM.(a>LlQo8LljkEw_kh8-wlhNSXh6F2yagp-Bk`{RC6>]@5fuVG,Hgt=J9QTXViQ^JGH?Yd@SoDo-=nnGM?w;yXVh1_;7:[Z3<IO2?SOZ5NVp]Iz_Mh=SVHhQ9aZGzh+J2)9I}DsKDRZC>P(,r+mcDvnsv8m~bDI-L+_vbz2?EY65jxN5sqD}8U22(=(w5)ts4TxMu(F97nPyLi9poPqvEfnv66,[3Cx;bKzd0(5;f`_pxaTgN4|9-Pd9>;HP(c0d,U(B{H^KDss^yjle]1HAZ9nT)S-,K]z");
+static string ANIMATOR_KEY("CNOTSChSVhJGV86Wr=V]Uf(72nmH=o3(8GN2`8|]}XENi;y5SZ@[ePllWdw=IR>]ysJhcEKiu~i8F.*a()H(i>[eOZ7J,G7M|8NVljF8nT`^2Y_8TYd:AI~<gn}2BHeWaQ_BPYB,HhCRMfU6jLgH@y}g4W6]g|j@.>nWogO_j4wq6m5)E^2LfZCxlB]xB)lQWNTJ]k6-W9B=>dW_UW.3JX)RV>}`=NtC-P8f}V-I@KWCKoH[{p(2MsBbR`*c0Qz@;VmPN|A>AEuc+N_yl4r-/DD<9(whfZQ:4yyS:KMiM<QULhzY022*j@@fy5Gn/?.c=@vk:AmY6UTY]fF55g90jhMFy55fqa(4Pn_S_vW`Cd-[~rM>?inTkaHsxT`@ugD^[e(,z[8Lo6I7_ddove`ivB}]fG>:))lD/qC{R=XG)y(K.^L`}(@?QNpWiyG2/A=+fQ)w(R;xRd@.ebHM_l)~L>|?hgqCQ^G]j,.L518T}e8WQds?sLPNT5ePt9H");
 bool checkAnimator(){ifstream kf("animator.isk",fstream::in);if(!(kf.good()&&kf.is_open())){cout<<"Invalid key file"<<endl;kf.close();return 0;}string ik;ik.reserve(512);char ch = kf.get();while(ch!=EOF){ik.push_back(ch);ch=kf.get();}if(ik!=ANIMATOR_KEY){cout<<"Invalid key file"<<endl;kf.close();return 0;}else{return 1;}}
 }
 #endif

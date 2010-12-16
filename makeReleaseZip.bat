@@ -12,6 +12,7 @@ echo.
 goto exit
 
 
+
 :has_7zip
 set fn=Infraelly
 
@@ -28,7 +29,7 @@ set fn=%fn%_r%inf_r%
 goto make_zip
 
 :make_zip
-7z u -aoa -t7z -y %fn% InfraellyLancher.bat data docs Infraelly.exe *.isk *.dll -mx9 -ms=on -mf=on -mmt=on -mtc=on
+7z u -aoa -t7z -y %fn% InfraellyLancher.bat docs Infraelly.exe *.isk *.dll *.ipf -mx9 -ms=on -mf=on -mmt=on -mtc=on
 copy /D /V /Y %fn%.7z ..\
 del /F /Q %fn%.7z
 echo.
