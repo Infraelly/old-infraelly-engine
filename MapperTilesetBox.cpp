@@ -116,7 +116,7 @@ void MapperTilesetBox::init(){
 
 
     //make a none item in the list
-    attribTs = cache::tilesets.loadResource("data/tilesets/attrib.xml");
+    attribTs = cache::tilesets.loadResource("tilesets/attrib.xml");
     cache::tilesets.addPointer( attribTs );
     tilesetDropDown->setSelected(0);
 

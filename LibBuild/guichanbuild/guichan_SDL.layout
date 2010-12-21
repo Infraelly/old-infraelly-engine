@@ -19,6 +19,9 @@
 	<File name="include\guichan\sdl\sdlpixel.hpp" open="0" top="0" tabpos="0">
 		<Cursor position="2263" topLine="29" />
 	</File>
+	<File name="include\guichan\selectionlistener.hpp" open="0" top="0" tabpos="0">
+		<Cursor position="3219" topLine="50" />
+	</File>
 	<File name="include\guichan\widget.hpp" open="0" top="0" tabpos="0">
 		<Cursor position="36619" topLine="1133" />
 	</File>

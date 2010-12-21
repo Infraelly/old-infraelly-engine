@@ -47,7 +47,7 @@ L-----------------------------------------------------------------------------*/
 #include "InfraellyWindow.hpp"
 #include "guichan.hpp"
 #include <vector>
-#include "Animation.hpp"
+#include "CharAnimation.hpp"
 
 class CharAnimBuildBox;
 class CharAnimPreviewBox;
@@ -56,9 +56,10 @@ class NumberField;
 class AnimFrameList;
 class InfraellyScroller;
 class TSpriteIcon;
+class InfraellyList;
 
 
-class CharacterAnimBox : public InfraellyWindow {
+class CharacterAnimBox : public InfraellyWindow, public gcn::SelectionListener {
     public:
         CharacterAnimBox();
         ~CharacterAnimBox();
@@ -67,6 +68,7 @@ class CharacterAnimBox : public InfraellyWindow {
 
         virtual void mouseMoved(gcn::MouseEvent& mouseEvent);
         virtual void mouseClicked(gcn::MouseEvent& mouseEvent);
+        virtual void valueChanged(const gcn::SelectionEvent& event);
 
         virtual void draw(gcn::Graphics *graphics);
 
@@ -76,7 +78,8 @@ class CharacterAnimBox : public InfraellyWindow {
         bool editing_;
         bool drawAnim_;
         CharAnimation anim_;
-        CharAnimation::BodyParts activePart_;
+        CharAnimation::BodyParts activePart_;   // bodypart
+        enum CharAnimation::Dir activeDir_;    //direction
 
         void addListItem();
         void editListItem();
@@ -90,7 +93,10 @@ class CharacterAnimBox : public InfraellyWindow {
         gcn::Label *nameLbl;
         gcn::TextField *nameFld;
         //--------------
-        std::vector<AnimFrameList*>frameLsts;
+        //4(directions) sets of 6(ea body part) framelists
+        std::vector< std::vector<AnimFrameList*> >frameLists;
+        InfraellyList *dirList;
+        gcn::DropDown *dirDrpList;
         gcn::ListBox *frameLstBox;
         InfraellyScroller* frameScroller;
         gcn::Button *listUpBtn;

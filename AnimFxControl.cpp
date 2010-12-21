@@ -92,7 +92,7 @@ std::auto_ptr<AnimFx> AnimFxControl::getFx(){
 
 
 
-inp::INFPacket AnimFxControl::savePacket(){
+inp::INFPacket AnimFxControl::savePacket()const{
     inp::INFPacket pack;
 
 	pack << static_cast<int>(type_);

@@ -49,7 +49,7 @@ L-----------------------------------------------------------------------------*/
 #include "globalFunc.hpp"
 #include "SDL/SDL_rotozoom.h"
 #include "caches.hpp"
-#include "ResourcePack.hpp"
+
 
 bool Animation::validAnimType(int type){
     return ( (type==ITEM) || (type==CHARACTER_PART) || (type==OBJECT) );
@@ -389,7 +389,8 @@ void Animation::advanceFrames(){
 
 
 //save animation to
-bool Animation::save( inp::INFPacket& pack ){
+bool Animation::save( inp::INFPacket& pack )const{
+    pack << revision_;
     pack << name_;
     pack << type_;
     pack << snapPoint_;
@@ -410,10 +411,42 @@ bool Animation::save( inp::INFPacket& pack ){
 }
 
 
+//save animation to file
+bool Animation::save( const std::string& filename )const{
+    if( !getFrameCount() ){ return 0; }
+
+    //open file
+    std::string fixedFn = correctFilepath(filename);
+    std::ofstream file( fixedFn.c_str(), std::ios::out|std::ios::binary );
+    if( (!file.good()) || (!file.is_open()) ){
+        file.close();
+        std::cout << "Unable to open file \"" << fixedFn << "\"" << std::endl;
+        return -1;
+    }
+
+    inp::INFPacket pack;
+    save(pack);
+
+    file.write( (char*)pack.getBuf(), pack.getLength() );
+    file.close();
+
+    return true;
+}
+
+
+
 // load animation from
 bool Animation::load( inp::INFPacket& pack ){
     //empty out old frames
     clear();
+
+    //  check version
+    int fileVer;
+    pack >> fileVer;
+    if( fileVer != revision_ ){
+        std::cerr << __FILE__ << __LINE__ << ": Animation: incompatible file version" << std::endl;
+        return 0;
+    }
 
     pack >> name_;
     if( pack.readDone() ){ return 0; }
@@ -465,28 +498,6 @@ bool Animation::load( inp::INFPacket& pack ){
 
     return true;
 }
-//save animation to file
-bool Animation::save( const std::string& filename ){
-    if( !getFrameCount() ){ return 0; }
-
-    //open file
-    std::string fixedFn = correctFilepath(filename);
-    std::ofstream file( fixedFn.c_str(), std::ios::out|std::ios::binary );
-    if( (!file.good()) || (!file.is_open()) ){
-        file.close();
-        std::cout << "Unable to open file \"" << fixedFn << "\"" << std::endl;
-        return -1;
-    }
-
-    inp::INFPacket pack;
-    pack << revision_;
-    save(pack);
-
-    file.write( (char*)pack.getBuf(), pack.getLength() );
-    file.close();
-
-    return true;
-}
 
 
 // load animation from file.
@@ -507,38 +518,23 @@ bool Animation::load( const std::string& filename ){
     pack.readFile( file, filesize );
     file.close();
 
-    //check version
-    int fileVer;
-    pack >> fileVer;
-    if( fileVer != revision_ ){
-        std::cerr << __FILE__ << __LINE__ << "incompatible file version" << std::endl;
-        return 0;
-    }
-
     return load(pack);
 }
 
 
-//  load animation from a pack
+//  load animation from a packet
 bool Animation::load( const ResourcePack& pack, const std::string& filepath){
+    std::string fixedFn = makeUnixFilePath(filepath);
     ResourceFile rcf;
-    if( !pack.getResource(filepath, rcf) ){
-        std::cerr << __FILE__ << ": " << __LINE__ << ": Requested file \"" << filepath << "\" not found in supplied pack" << std::endl;
+    if( !pack.getResource(fixedFn, rcf) ){
+        std::cerr << __FILE__ << ": " << __LINE__ << ": Requested file \"" << fixedFn << "\" not found in supplied pack" << std::endl;
         return false;
     }
 
-    filename_ = correctFilepath(filepath);
+    filename_ = correctFilepath(fixedFn);
     // read file into packet
     inp::INFPacket packet;
     packet.readBuf( const_cast<unsigned char*>(&pack.getRawData()[rcf.start]), rcf.size );
-
-    //  check version
-    int fileVer;
-    packet >> fileVer;
-    if( fileVer != revision_ ){
-        std::cerr << __FILE__ << __LINE__ << ": Animation: incompatible file version" << std::endl;
-        return 0;
-    }
 
     return load(packet);
 }
@@ -742,90 +738,4 @@ AnimFxControl* Animation::getFxControl(size_t i){
         return &fxFrames_.at(i);
     }
     return NULL;
-}
-
-
-CharAnimation::CharAnimation() :
-    bodyPart(6)
-{
-
-    for(int i = 0; i<6; ++i){
-        bodyPart[i].setOrigin(Animation::TL);
-    }
-
-    //set up animation objects
-    TSprite image;
-    image.loadXml("data\\tsprites\\head1.xml");
-    bodyPart[HEAD].setImage( image );
-    bodyPart[HEAD].setType(Animation::CHARACTER_PART);
-
-    image.loadXml("data\\tsprites\\bodyM1.xml");
-    bodyPart[BODY].setImage( image );
-    bodyPart[BODY].setType(Animation::CHARACTER_PART);
-
-    image.loadXml("data\\tsprites\\hand1.xml");
-    bodyPart[LEFT_HAND].setImage( image );
-    bodyPart[LEFT_HAND].setType(Animation::CHARACTER_PART);
-    bodyPart[RIGHT_HAND].setImage( image );
-    bodyPart[RIGHT_HAND].setType(Animation::CHARACTER_PART);
-
-    image.loadXml("data\\tsprites\\feet1.xml");
-    bodyPart[LEFT_FOOT].setImage( image );
-    bodyPart[LEFT_FOOT].setType(Animation::CHARACTER_PART);
-    bodyPart[RIGHT_FOOT].setImage( image );
-    bodyPart[RIGHT_FOOT].setType(Animation::CHARACTER_PART);
-}
-
-
-//save animation to file
-bool CharAnimation::save( const std::string& filename ){
-    //open file
-    std::string fixedFn = correctFilepath(fixedFn);
-    std::ofstream file( fixedFn.c_str(), std::ios::out|std::ios::binary );
-    if( (!file.good()) || (!file.is_open()) ){
-        file.close();
-        std::cout << "Unable to open file \"" << fixedFn << "\"" << std::endl;
-        return -1;
-    }
-
-    inp::INFPacket pack;
-
-    for(int i = 0; i<6; ++i){
-        if( !bodyPart[i].save(pack) ){ return 0; }
-    }
-
-    file.write( (char*)pack.getBuf(), pack.getLength() );
-    file.close();
-
-    return true;
-}
-
-// load animation from file.
-bool CharAnimation::load( const std::string& filename ){
-    //open file
-    std::string fixedFn = correctFilepath(fixedFn);
-    std::ifstream file( fixedFn.c_str(), std::ios::in|std::ios::binary );
-    if( (!file.good()) || (!file.is_open()) ){
-        file.close();
-        std::cout << "Unable to open file \"" << fixedFn << "\"" << std::endl;
-        return 0;
-    }
-    //get filesize
-    size_t filesize = getFileSize(file);
-
-    // read file into packet
-    inp::INFPacket pack;
-    pack.readFile( file, filesize );
-    file.close();
-
-    for(int i = 0; i<6; ++i){
-        if( !bodyPart[i].load(pack) ){ return 0; }
-    }
-
-    return true;
-}
-void CharAnimation::draw(SDL_Surface *dest, int x, int y){
-    for(int i = 0; i<6; ++i){
-        bodyPart[i].draw(dest, x, y);
-    }
 }

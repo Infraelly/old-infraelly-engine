@@ -69,7 +69,7 @@ int InfraellyList::getNumberOfElements(){
 
 
 std::string InfraellyList::getElementAt(int i){
-    if( (i > 0) && (i < contents.size()) ){
+    if( (i > -1) && (i < contents.size()) ){
         return contents.at(i);
     } else {
         return "Index out of Bounds";

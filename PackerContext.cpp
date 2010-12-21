@@ -77,7 +77,7 @@ PackerContext::PackerContext(bool silent) :
     silent_(silent)
 {
     // Set window caption
-    SDL_WM_SetCaption("Infraelly TestBed", NULL);
+    SDL_WM_SetCaption("Infraelly Resource Packer", NULL);
     //set fps
     fpsManager.setMaxFps(30);
     //set console call back

@@ -175,7 +175,7 @@ void IntroContext::events(SDL_Event &event){
 
     if ( (event.key.keysym.sym == SDLK_ESCAPE) ||
          (event.type == SDL_QUIT) ){
-         exit(EXIT_SUCCESS);
+         done = true;
     }
 
     gui->pushInput(event);

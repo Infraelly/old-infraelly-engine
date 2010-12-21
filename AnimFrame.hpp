@@ -82,7 +82,7 @@ class AnimFrame{
 
 
         //Returns a INFPacket containing the tile
-        inp::INFPacket savePacket();
+        inp::INFPacket savePacket()const;
 
         //  Loads data from a packet
         bool loadPacket( inp::INFPacket& pack );

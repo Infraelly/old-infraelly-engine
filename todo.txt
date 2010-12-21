@@ -12,6 +12,7 @@ File names with a "_" prefix are obselete and are due for deletion.
  ---------------------------
 
 Current Task:
+    + animator, drop box, left right up down
     + character shud use animations
 
 Major tasks:

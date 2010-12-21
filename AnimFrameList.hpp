@@ -61,6 +61,7 @@ class AnimFrameList : public gcn::ListModel {
         void removeElementAt(size_t i);
         void clear();
         void swap(size_t a, size_t b) throw();
+        int size(){ return getNumberOfElements(); }
 
         int getNumberOfElements();
         virtual std::string getElementAt(int i);

@@ -128,8 +128,7 @@ class ResourceCache {
 
         //  Removes given Resources from tileset stack
         void erase(ResourceType *toRemove){
-            if( resources.empty() ){ return; }
-            if( toRemove == NULL ){ return; }
+            if( resources.empty() || toRemove == NULL ){ return; }
 
             StorageMediumIterator iter;
             iter = resources.find( toRemove->getFilename() );
@@ -169,6 +168,7 @@ class ResourceCache {
         //  NOTE: Calling unload will also delete resources added using this
         //      method
         bool addPointer(ResourceType *newRc){
+            if( newRc == NULL ){ return 0; }
             if( resources.find(newRc->getFilename()) == resources.end() ){
                 resources[newRc->getFilename()] = newRc;
                 return 1;
@@ -188,7 +188,7 @@ class ResourceCache {
 
         //  Removes pointer of Resources from the vector (without calling delete)
         void removePointer(ResourceType *toRemove){
-            if( resources.empty() ){ return; }
+            if( resources.empty() || toRemove == NULL ){ return; }
 
             StorageMediumIterator iter = resources.begin();
 
@@ -203,15 +203,15 @@ class ResourceCache {
 
         //  Closes safely frees and clears all Resources loaded
         void unload(){
-        if( resources.empty() ){ return; }
+            if( resources.empty() ){ return; }
 
-        StorageMediumIterator iter = resources.begin();
+            StorageMediumIterator iter = resources.begin();
 
-        std::cerr << __FILE__ << " " << __LINE__ << ": " << "Clearing ResourceCache:" << name << std::endl;
-        for( ; iter != resources.end(); ++iter ){
-            //clear tilesets
-            delete iter->second;
-            iter->second = NULL;
+            std::cerr << __FILE__ << " " << __LINE__ << ": " << "Clearing ResourceCache:" << name << std::endl;
+            for( ; iter != resources.end(); ++iter ){
+                //clear tilesets
+                delete iter->second;
+                iter->second = NULL;
         }
         resources.clear();
         std::cerr << __FILE__ << " " << __LINE__ << ": " << "Cleared ResourceCache:" << name << std::endl << std::endl;

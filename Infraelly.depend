@@ -3945,10 +3945,10 @@
 	<SDL.h>
 	<SDL_video.h>
 
-1290879360 source:d:\projects\infraelly\curver\animframe.cpp
+1292741782 source:d:\projects\infraelly\curver\animframe.cpp
 	"AnimFrame.hpp"
 
-1267624010 d:\projects\infraelly\curver\animframe.hpp
+1292741773 d:\projects\infraelly\curver\animframe.hpp
 	"INFPacket.hpp"
 
 1290913776 d:\projects\infraelly\curver\infpacket.hpp
@@ -3979,7 +3979,7 @@
 	"AnimFrameList.hpp"
 	<algorithm>
 
-1267624010 d:\projects\infraelly\curver\animframelist.hpp
+1292914214 d:\projects\infraelly\curver\animframelist.hpp
 	<string>
 	"guichan.hpp"
 	"AnimFrame.hpp"
@@ -4310,11 +4310,11 @@
 1267624010 d:\projects\infraelly\curver\animfx.hpp
 	<string>
 
-1267624349 source:d:\projects\infraelly\curver\animfxcontrol.cpp
+1292741846 source:d:\projects\infraelly\curver\animfxcontrol.cpp
 	"AnimFxControl.hpp"
 	"AnimFx.hpp"
 
-1267624010 d:\projects\infraelly\curver\animfxcontrol.hpp
+1292741841 d:\projects\infraelly\curver\animfxcontrol.hpp
 	<string>
 	<memory>
 	"INFPacket.hpp"
@@ -4468,7 +4468,7 @@
 	<assert.h>
 	<string.h>
 
-1290880736 d:\projects\infraelly\curver\animation.hpp
+1292741589 d:\projects\infraelly\curver\animation.hpp
 	<vector>
 	<map>
 	<string>
@@ -4516,7 +4516,7 @@
 	"ResourceCache_base.hpp"
 	"ResourceCache_image.hpp"
 
-1292420205 d:\projects\infraelly\curver\resourcecache_base.hpp
+1292568841 d:\projects\infraelly\curver\resourcecache_base.hpp
 	<iostream>
 	<memory>
 	<string>
@@ -4532,7 +4532,7 @@
 	<SDL\SDL_image.h>
 	"dataPacks.hpp"
 
-1292410422 source:d:\projects\infraelly\curver\animation.cpp
+1292741702 source:d:\projects\infraelly\curver\animation.cpp
 	"Animation.hpp"
 	<iostream>
 	<cstddef>
@@ -4541,7 +4541,6 @@
 	"globalFunc.hpp"
 	"SDL/SDL_rotozoom.h"
 	"caches.hpp"
-	"ResourcePack.hpp"
 
 1230881361 d:\projects\infraelly\curver\include\sdl\sdl_rotozoom.h
 	<math.h>
@@ -4597,11 +4596,11 @@
 	"InfraellyWindow.hpp"
 	"Animation.hpp"
 
-1290881879 d:\projects\infraelly\curver\characteranimbox.hpp
+1292741866 d:\projects\infraelly\curver\characteranimbox.hpp
 	"InfraellyWindow.hpp"
 	"guichan.hpp"
 	<vector>
-	"Animation.hpp"
+	"CharAnimation.hpp"
 
 1290882144 d:\projects\infraelly\curver\loadtilesetbox.hpp
 	"InfoForm.hpp"
@@ -4707,7 +4706,7 @@
 	"guichan/font.hpp"
 	"guichan/platform.hpp"
 
-1292412182 source:d:\projects\infraelly\curver\characteranimbox.cpp
+1292913685 source:d:\projects\infraelly\curver\characteranimbox.cpp
 	"CharacterAnimBox.hpp"
 	<sstream>
 	"globalFunc.hpp"
@@ -4720,6 +4719,7 @@
 	"TSpriteIcon.hpp"
 	"caches.hpp"
 	"Screen.hpp"
+	"InfraellyList.hpp"
 	<utility>
 
 1267623798 d:\projects\infraelly\curver\numberfield.hpp
@@ -4970,7 +4970,7 @@
 	<windows.h>
 	"version.h"
 
-1292509398 d:\projects\infraelly\curver\version.h
+1292914222 d:\projects\infraelly\curver\version.h
 
 1267624350 source:d:\projects\infraelly\curver\infraellyimageloader.cpp
 	"InfraellyImageLoader.hpp"
@@ -4985,7 +4985,7 @@
 	<string>
 	"guichan.hpp"
 
-1267624350 source:d:\projects\infraelly\curver\infraellylist.cpp
+1292598035 source:d:\projects\infraelly\curver\infraellylist.cpp
 	"InfraellyList.hpp"
 
 1267623797 d:\projects\infraelly\curver\infraellylist.hpp
@@ -5017,7 +5017,7 @@
 1292420355 d:\projects\infraelly\curver\introcloud.hpp
 	<SDL/SDL.h>
 
-1292508815 source:d:\projects\infraelly\curver\introcontext.cpp
+1292568499 source:d:\projects\infraelly\curver\introcontext.cpp
 	"IntroContext.hpp"
 	<iostream>
 	<sstream>
@@ -5271,7 +5271,7 @@
 	"MapperLayerToggleBox.hpp"
 	<iostream>
 
-1292419493 source:d:\projects\infraelly\curver\mappertilesetbox.cpp
+1292568683 source:d:\projects\infraelly\curver\mappertilesetbox.cpp
 	"MapperTilesetBox.hpp"
 	"InfraellyImageLoader.hpp"
 	"caches.hpp"
@@ -5617,27 +5617,27 @@
 	"checkPacker.hpp"
 	"GameConfig.hpp"
 
-1292509398 d:\projects\infraelly\curver\checkexcogitator.hpp
+1292914237 d:\projects\infraelly\curver\checkexcogitator.hpp
 	<string>
 	<fstream>
 
-1292509398 d:\projects\infraelly\curver\checkforge.hpp
+1292914237 d:\projects\infraelly\curver\checkforge.hpp
 	<string>
 	<fstream>
 
-1292509398 d:\projects\infraelly\curver\checkbreath.hpp
+1292914237 d:\projects\infraelly\curver\checkbreath.hpp
 	<string>
 	<fstream>
 
-1292509398 d:\projects\infraelly\curver\checkanimator.hpp
+1292914237 d:\projects\infraelly\curver\checkanimator.hpp
 	<string>
 	<fstream>
 
-1292509398 d:\projects\infraelly\curver\checknucleus.hpp
+1292914237 d:\projects\infraelly\curver\checknucleus.hpp
 	<string>
 	<fstream>
 
-1292509398 d:\projects\infraelly\curver\checktest.hpp
+1292914237 d:\projects\infraelly\curver\checktest.hpp
 	<string>
 	<fstream>
 
@@ -8962,7 +8962,7 @@
 	"Tile.hpp"
 	"InfraellyImageLoader.hpp"
 
-1292509398 d:\projects\infraelly\curver\checkpacker.hpp
+1292914237 d:\projects\infraelly\curver\checkpacker.hpp
 	<string>
 	<fstream>
 
@@ -8997,7 +8997,7 @@
 	<cryptopp/sha.h>
 	"globalFunc.hpp"
 
-1292421010 source:d:\projects\infraelly\curver\packercontext.cpp
+1292568568 source:d:\projects\infraelly\curver\packercontext.cpp
 	<string>
 	<iostream>
 	<fstream>
@@ -9049,4 +9049,12 @@
 	<SDL/SDL_ttf.h>
 	"guichan/font.hpp"
 	"guichan/platform.hpp"
+
+1292741728 source:d:\projects\infraelly\curver\charanimation.cpp
+	"CharAnimation.hpp"
+	"caches.hpp"
+
+1292741599 d:\projects\infraelly\curver\charanimation.hpp
+	"Animation.hpp"
+	"INFPacket.hpp"
 

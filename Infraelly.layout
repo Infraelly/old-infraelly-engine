@@ -8,34 +8,34 @@
 		<Cursor position="3327" topLine="24" />
 	</File>
 	<File name="AnimFrame.cpp" open="0" top="0" tabpos="7">
-		<Cursor position="4097" topLine="68" />
+		<Cursor position="3647" topLine="54" />
 	</File>
 	<File name="AnimFrame.hpp" open="0" top="0" tabpos="5">
-		<Cursor position="3202" topLine="0" />
+		<Cursor position="4599" topLine="59" />
 	</File>
 	<File name="AnimFrameList.cpp" open="0" top="0" tabpos="5">
-		<Cursor position="4341" topLine="52" />
+		<Cursor position="4341" topLine="40" />
 	</File>
-	<File name="AnimFrameList.hpp" open="0" top="0" tabpos="3">
-		<Cursor position="3849" topLine="38" />
+	<File name="AnimFrameList.hpp" open="1" top="0" tabpos="5">
+		<Cursor position="3853" topLine="38" />
 	</File>
 	<File name="AnimFx.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="3202" topLine="0" />
+		<Cursor position="3202" topLine="31" />
 	</File>
 	<File name="AnimFx.hpp" open="0" top="0" tabpos="4">
-		<Cursor position="3202" topLine="0" />
+		<Cursor position="3202" topLine="62" />
 	</File>
 	<File name="AnimFxControl.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="3202" topLine="0" />
+		<Cursor position="4438" topLine="77" />
 	</File>
 	<File name="AnimFxControl.hpp" open="0" top="0" tabpos="0">
-		<Cursor position="3202" topLine="0" />
+		<Cursor position="4381" topLine="53" />
 	</File>
 	<File name="AnimPreviewIcon.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="3836" topLine="27" />
 	</File>
-	<File name="AnimPreviewIcon.hpp" open="0" top="0" tabpos="2">
-		<Cursor position="3705" topLine="25" />
+	<File name="AnimPreviewIcon.hpp" open="0" top="0" tabpos="7">
+		<Cursor position="3705" topLine="36" />
 	</File>
 	<File name="AnimToolBar.cpp" open="0" top="0" tabpos="3">
 		<Cursor position="3685" topLine="32" />
@@ -43,20 +43,20 @@
 	<File name="AnimToolBar.hpp" open="0" top="0" tabpos="0">
 		<Cursor position="3327" topLine="29" />
 	</File>
-	<File name="Animation.cpp" open="0" top="0" tabpos="4">
-		<Cursor position="5779" topLine="122" />
+	<File name="Animation.cpp" open="0" top="0" tabpos="6">
+		<Cursor position="15112" topLine="438" />
 	</File>
-	<File name="Animation.hpp" open="0" top="0" tabpos="7">
-		<Cursor position="7571" topLine="152" />
+	<File name="Animation.hpp" open="0" top="0" tabpos="5">
+		<Cursor position="7002" topLine="136" />
 	</File>
 	<File name="AnimatorContext.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="3304" topLine="10" />
+		<Cursor position="3879" topLine="35" />
 	</File>
 	<File name="AnimatorContext.hpp" open="0" top="0" tabpos="0">
 		<Cursor position="3202" topLine="0" />
 	</File>
-	<File name="AnimatorGui.cpp" open="0" top="0" tabpos="5">
-		<Cursor position="3202" topLine="0" />
+	<File name="AnimatorGui.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="4419" topLine="79" />
 	</File>
 	<File name="AnimatorGui.hpp" open="0" top="0" tabpos="3">
 		<Cursor position="3202" topLine="0" />
@@ -76,17 +76,23 @@
 	<File name="Cacheable.hpp" open="0" top="0" tabpos="7">
 		<Cursor position="4144" topLine="34" />
 	</File>
+	<File name="CharAnimation.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="3244" topLine="24" />
+	</File>
+	<File name="CharAnimation.hpp" open="0" top="0" tabpos="0">
+		<Cursor position="4580" topLine="59" />
+	</File>
 	<File name="Character.cpp" open="0" top="0" tabpos="2">
 		<Cursor position="6804" topLine="135" />
 	</File>
 	<File name="Character.hpp" open="0" top="0" tabpos="4">
 		<Cursor position="3202" topLine="0" />
 	</File>
-	<File name="CharacterAnimBox.cpp" open="0" top="0" tabpos="1">
-		<Cursor position="3829" topLine="44" />
+	<File name="CharacterAnimBox.cpp" open="1" top="1" tabpos="4">
+		<Cursor position="23103" topLine="561" />
 	</File>
-	<File name="CharacterAnimBox.hpp" open="0" top="0" tabpos="2">
-		<Cursor position="4650" topLine="78" />
+	<File name="CharacterAnimBox.hpp" open="1" top="0" tabpos="3">
+		<Cursor position="3976" topLine="64" />
 	</File>
 	<File name="CharacterBase.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="3196" topLine="0" />
@@ -218,13 +224,13 @@
 		<Cursor position="3202" topLine="0" />
 	</File>
 	<File name="InfraellyList.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="3395" topLine="42" />
+		<Cursor position="3850" topLine="42" />
 	</File>
-	<File name="InfraellyList.hpp" open="0" top="0" tabpos="0">
-		<Cursor position="3202" topLine="0" />
+	<File name="InfraellyList.hpp" open="0" top="0" tabpos="7">
+		<Cursor position="3688" topLine="32" />
 	</File>
-	<File name="InfraellyMixer.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="9978" topLine="232" />
+	<File name="InfraellyMixer.cpp" open="0" top="0" tabpos="3">
+		<Cursor position="10277" topLine="240" />
 	</File>
 	<File name="InfraellyMixer.hpp" open="0" top="0" tabpos="2">
 		<Cursor position="6178" topLine="108" />
@@ -253,14 +259,14 @@
 	<File name="IntroCloud.hpp" open="0" top="0" tabpos="0">
 		<Cursor position="3483" topLine="40" />
 	</File>
-	<File name="IntroContext.cpp" open="1" top="1" tabpos="4">
-		<Cursor position="3887" topLine="40" />
+	<File name="IntroContext.cpp" open="0" top="0" tabpos="4">
+		<Cursor position="7418" topLine="160" />
 	</File>
 	<File name="IntroContext.hpp" open="0" top="0" tabpos="2">
 		<Cursor position="3904" topLine="47" />
 	</File>
 	<File name="IntroGui.cpp" open="0" top="0" tabpos="3">
-		<Cursor position="3202" topLine="0" />
+		<Cursor position="7928" topLine="189" />
 	</File>
 	<File name="IntroGui.hpp" open="0" top="0" tabpos="2">
 		<Cursor position="3202" topLine="0" />
@@ -284,10 +290,10 @@
 		<Cursor position="7421" topLine="141" />
 	</File>
 	<File name="ItemAnimBox.cpp" open="0" top="0" tabpos="3">
-		<Cursor position="3672" topLine="35" />
+		<Cursor position="3879" topLine="35" />
 	</File>
 	<File name="ItemAnimBox.hpp" open="0" top="0" tabpos="1">
-		<Cursor position="3687" topLine="43" />
+		<Cursor position="3897" topLine="55" />
 	</File>
 	<File name="ItemMakerBox.cpp" open="0" top="0" tabpos="2">
 		<Cursor position="3480" topLine="31" />
@@ -308,10 +314,10 @@
 		<Cursor position="3202" topLine="0" />
 	</File>
 	<File name="KeyPointList.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="3202" topLine="0" />
+		<Cursor position="3202" topLine="46" />
 	</File>
 	<File name="KeyPointList.hpp" open="0" top="0" tabpos="6">
-		<Cursor position="3202" topLine="7" />
+		<Cursor position="3420" topLine="35" />
 	</File>
 	<File name="Layer.cpp" open="0" top="0" tabpos="2">
 		<Cursor position="11653" topLine="366" />
@@ -353,7 +359,7 @@
 		<Cursor position="3517" topLine="30" />
 	</File>
 	<File name="MakeTSpriteBox.hpp" open="0" top="0" tabpos="1">
-		<Cursor position="3659" topLine="46" />
+		<Cursor position="4019" topLine="46" />
 	</File>
 	<File name="MakeTilesetBox.cpp" open="0" top="0" tabpos="2">
 		<Cursor position="3999" topLine="46" />
@@ -374,7 +380,7 @@
 		<Cursor position="3307" topLine="32" />
 	</File>
 	<File name="MapperContext.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="3202" topLine="0" />
+		<Cursor position="3398" topLine="25" />
 	</File>
 	<File name="MapperContext.hpp" open="0" top="0" tabpos="0">
 		<Cursor position="3202" topLine="7" />
@@ -398,7 +404,7 @@
 		<Cursor position="3202" topLine="7" />
 	</File>
 	<File name="MapperTilesetBox.cpp" open="0" top="0" tabpos="2">
-		<Cursor position="5658" topLine="97" />
+		<Cursor position="5608" topLine="108" />
 	</File>
 	<File name="MapperTilesetBox.hpp" open="0" top="0" tabpos="1">
 		<Cursor position="3202" topLine="7" />
@@ -434,7 +440,7 @@
 		<Cursor position="3202" topLine="7" />
 	</File>
 	<File name="PackerContext.cpp" open="0" top="0" tabpos="2">
-		<Cursor position="7068" topLine="137" />
+		<Cursor position="4208" topLine="59" />
 	</File>
 	<File name="PackerContext.hpp" open="0" top="0" tabpos="3">
 		<Cursor position="4043" topLine="47" />
@@ -461,7 +467,7 @@
 		<Cursor position="3986" topLine="21" />
 	</File>
 	<File name="ResourceCache_base.hpp" open="0" top="0" tabpos="3">
-		<Cursor position="4574" topLine="54" />
+		<Cursor position="6323" topLine="56" />
 	</File>
 	<File name="ResourceCache_image.hpp" open="0" top="0" tabpos="8">
 		<Cursor position="3520" topLine="52" />
@@ -479,7 +485,7 @@
 		<Cursor position="3826" topLine="51" />
 	</File>
 	<File name="RunContext.hpp" open="0" top="0" tabpos="7">
-		<Cursor position="3202" topLine="7" />
+		<Cursor position="4664" topLine="65" />
 	</File>
 	<File name="Screen.cpp" open="0" top="0" tabpos="19">
 		<Cursor position="6622" topLine="147" />
@@ -587,7 +593,7 @@
 		<Cursor position="3202" topLine="7" />
 	</File>
 	<File name="TilesetList.hpp" open="0" top="0" tabpos="4">
-		<Cursor position="3202" topLine="7" />
+		<Cursor position="3648" topLine="33" />
 	</File>
 	<File name="Timer.cpp" open="0" top="0" tabpos="8">
 		<Cursor position="3202" topLine="0" />
@@ -625,8 +631,8 @@
 	<File name="globalFunc.hpp" open="0" top="0" tabpos="1">
 		<Cursor position="6667" topLine="105" />
 	</File>
-	<File name="init.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="18019" topLine="356" />
+	<File name="init.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="18827" topLine="356" />
 	</File>
 	<File name="init.hpp" open="0" top="0" tabpos="0">
 		<Cursor position="1825" topLine="15" />
@@ -635,7 +641,7 @@
 		<Cursor position="3202" topLine="7" />
 	</File>
 	<File name="main.cpp" open="0" top="0" tabpos="3">
-		<Cursor position="8831" topLine="204" />
+		<Cursor position="8486" topLine="195" />
 	</File>
 	<File name="sdltruetypefont.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="2526" topLine="37" />
@@ -650,6 +656,6 @@
 		<Cursor position="3256" topLine="8" />
 	</File>
 	<File name="todo.txt" open="1" top="0" tabpos="1">
-		<Cursor position="11298" topLine="293" />
+		<Cursor position="449" topLine="1" />
 	</File>
 </CodeBlocks_layout_file>

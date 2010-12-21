@@ -93,7 +93,7 @@ void AnimFrame::setZoom(float zoom){ zoom_ = zoom; }
 
 
 
-inp::INFPacket AnimFrame::savePacket(){
+inp::INFPacket AnimFrame::savePacket()const{
     inp::INFPacket pack;
 
     pack << x_;

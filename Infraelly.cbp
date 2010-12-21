@@ -14,7 +14,7 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Option use_console_runner="0" />
-				<Option parameters=" " />
+				<Option parameters="-animator " />
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-Wall" />
@@ -120,7 +120,7 @@
 		<ExtraCommands>
 			<Add before="tools\keySmith\bin\KeySmith.exe nucleus excogitator forge breath animator packer test" />
 			<Add after="makeDataFileList.bat" />
-			<Add after="echo infraelly.exe -packer -s" />
+			<Add after="infraelly.exe -packer -s" />
 		</ExtraCommands>
 		<Unit filename="AlertBox.cpp">
 			<Option virtualFolder="GUI\Base Widgets\" />
@@ -196,6 +196,12 @@
 		</Unit>
 		<Unit filename="Cacheable.hpp">
 			<Option virtualFolder="Resource Management\Cache\" />
+		</Unit>
+		<Unit filename="CharAnimation.cpp">
+			<Option virtualFolder="Animation\" />
+		</Unit>
+		<Unit filename="CharAnimation.hpp">
+			<Option virtualFolder="Animation\" />
 		</Unit>
 		<Unit filename="Character.cpp">
 			<Option virtualFolder="Character\" />

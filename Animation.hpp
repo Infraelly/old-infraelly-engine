@@ -163,9 +163,11 @@ class Animation : public Cacheable {
 
 
         //  save animation to file
-        bool save( const std::string& filename );
+        bool save( inp::INFPacket& pack )const;
+        bool save( const std::string& filename )const;
 
         //  load animation from file.
+        bool load( inp::INFPacket& pack );
         bool load( const std::string& filename );
 
         //  load animation from a data pack
@@ -199,11 +201,6 @@ class Animation : public Cacheable {
 
 
     private:
-        //save animation to packet
-        bool save( inp::INFPacket& pack );
-        // load animation from packet
-        bool load( inp::INFPacket& pack );
-
         void advanceFrames();
 
         std::string name_;
@@ -231,29 +228,5 @@ class Animation : public Cacheable {
         ActiveFxList activeFx_;
 };
 
-struct CharAnimation{
-    public:
-        enum BodyParts{
-            HEAD = 0,
-            BODY = 1,
-            LEFT_HAND = 2,
-            RIGHT_HAND = 3,
-            LEFT_FOOT = 4,
-            RIGHT_FOOT = 5
-        };
-
-        CharAnimation();
-
-        //save animation to file
-        bool save( const std::string& filename );
-
-        // load animation from file.
-        bool load( const std::string& filename );
-
-        //  Draws the animation to "dest" at base position (x,y)
-        void draw(SDL_Surface *dest, int x, int y);
-
-        std::vector<Animation> bodyPart;
-};
 
 #endif // ANIMATION_HPP_INCLUDED

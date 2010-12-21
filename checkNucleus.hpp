@@ -4,7 +4,7 @@ namespace isk{
 #include <string>
 #include <fstream>
 using namespace std;
-static string NUCLEUS_KEY(";B^9Z7T^vz{votD>iNWIqn`tjt|1*u}TGtLVmB9AWtB2j)Y6V>KsG480NKdk`e<cqQ8P-u^8-o`p>p{v)(cJj?a)SU`SS}T=R*AX)dHG|RMXf.]NwaO-7kzjih,UjFK8-/oA;}`E]3{>97JS,^+lJNma;UR|@<6f;VEo(HeVM37a/:].?t/1fqq@j/Zs9HwD_n[MQUKo{}yqCJqgF1u7c@G}ckPZ}PHbB:K[BY>=2I@DupJs3/=owM_t([TyYleFuk5/9<4={6jSM(*Z^)vvw.F;6byj:t<<}Fxy(5Pm]Y0D^=pU_m1e~v@z<paA/TsUXy9hXIY4SR,`0^ZSNWrjL`1jRHuci+VkVoQ:I;?yeerVNsSF7U;hs-ou^ca],.Cd6h78DgydeM(.m}5gem9Mdo.D*2O3FRLv/_O<9]2?[7W}E?og7ONt.mCk`[2OnuX|r2CLJ^U<gZl/XwuoH,l=+cy;62,Kdzdiq{lqDrhYWw9[G.JQe[AJO]a,6j}");
+static string NUCLEUS_KEY("5{4@m1Ly>]s9lWC6iG+/oKPMePr[K89Jk-dMd(1-eZ2/QU5D3>zsLXH86AeD_I,tU(7~]=cZz=klVq@VclmwSqVOs}h-mX*MSJKo57,Z<uY`,^<]yy*p:H4d(0o,?N0AbWJT]w:*op[Os*4.DORl5H9I43@)Mx;ey]7a?1^`qWrlVwmkcq[))qu;0TM2qfh*Qv<5*4oStLlL*Q16}Cd9Um5d7Dz|*PIz8o2z_VfWGF8U~qa@k9`^4X@^5_1oO6b8CxY>s@I?qQEa}w~t9)tU1-|8+-LcglM>-(F/TIKRbr~M9@;Y.}kCHez[:RF`z<OY-R:wWc.V5J{WN>,zKYuH>oP*9SbhgGU95z{;_1MR|yg>ME)VP@^oSdijodD,1+a3zBK3>^yF+`t)zWkuE4MBF)Z4o21OQx0Y6O.{kR2doXQhp@@{C24i=4=g:c2ugW7+.Y/gL3jlZ^3nLG(tev6+*AQBVY>(rh`.}wN^by.FlTY105PNZ-ZAq</(~q?");
 bool checkNucleus(){ifstream kf("nucleus.isk",fstream::in);if(!(kf.good()&&kf.is_open())){cout<<"Invalid key file"<<endl;kf.close();return 0;}string ik;ik.reserve(512);char ch = kf.get();while(ch!=EOF){ik.push_back(ch);ch=kf.get();}if(ik!=NUCLEUS_KEY){cout<<"Invalid key file"<<endl;kf.close();return 0;}else{return 1;}}
 }
 #endif
