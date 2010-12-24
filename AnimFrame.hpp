@@ -77,6 +77,7 @@ class AnimFrame{
 
         void setX(int x);
         void setY(int y);
+        void setPosition(int x, int y){ setX(x); setY(y); }
         void setAngle(int angle);
         void setZoom(float factor);
 

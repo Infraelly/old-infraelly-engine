@@ -80,11 +80,14 @@ class CharacterAnimBox : public InfraellyWindow, public gcn::SelectionListener {
         CharAnimation anim_;
         CharAnimation::BodyParts activePart_;   // bodypart
         enum CharAnimation::Dir activeDir_;    //direction
+        std::vector<AnimFrame> defaultFrames_;
 
         void addListItem();
+        void addListItem(const AnimFrame &frame);
         void editListItem();
         bool save(const std::string &filename, bool discrete = 0);
         bool load(const std::string &filename, bool discrete = 0);
+
 
         //  GUI
         //--------------
@@ -103,11 +106,12 @@ class CharacterAnimBox : public InfraellyWindow, public gcn::SelectionListener {
         gcn::Button *listDownBtn;
         gcn::Button *listDelBtn;
         gcn::Button *listAddBtn;
+        gcn::Button *listDupeBtn;
         //--------------
         std::vector<TSpriteIcon*>bodyEditBtns;
         std::vector<gcn::Button*>bodyToggleBtns;
         //--------------
-        gcn::CheckBox *lockEdit;
+        gcn::CheckBox *lockEdit;    // only allows the selected part to be moved
         gcn::Label *angleLbl;
         NumberField *angleFld;
         gcn::Label *zoomLbl;

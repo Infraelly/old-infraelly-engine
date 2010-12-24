@@ -64,6 +64,8 @@ CharacterAnimBox::CharacterAnimBox() :
     editing_(false),
     drawAnim_(false),
     activePart_(CharAnimation::HEAD),
+    activeDir_(CharAnimation::UP),
+    defaultFrames_(6),
     //-------------
     filenameLbl(new gcn::Label("Filename: ")),
     filenameFld(new gcn::TextField("data/anim/char/")),
@@ -79,6 +81,7 @@ CharacterAnimBox::CharacterAnimBox() :
     listDownBtn(new gcn::Button("V")),
     listDelBtn(new gcn::Button("x")),
     listAddBtn(new gcn::Button("New Frame")),
+    listDupeBtn(new gcn::Button("Dupe Frame")),
     //--------------
     bodyEditBtns(6),
     bodyToggleBtns(6),
@@ -120,8 +123,10 @@ CharacterAnimBox::CharacterAnimBox() :
     frameScroller->setSize(200, 250);
     frameLstBox->setWidth(frameScroller->getWidth()-frameScroller->getScrollbarWidth());
     animPVBox->setSize(400, 250);
-    listAddBtn->setWidth(animPVBox->getWidth());
+    listAddBtn->setWidth(animPVBox->getWidth()/2);
     listAddBtn->setHeight(18);
+    listDupeBtn->setWidth( listAddBtn->getWidth() );
+    listDupeBtn->setHeight(18);
     dirDrpList->setWidth(100);
 
     //position stuff
@@ -146,6 +151,7 @@ CharacterAnimBox::CharacterAnimBox() :
     loadBtn->setPosition(350, 20);
     //--------------
     listAddBtn->setPosition(10, 338);
+    listDupeBtn->setPosition(10+listAddBtn->getWidth(), 338);
     animPVBox->setPosition(10, 360);
     rateLbl->setPosition(10, 622);
     rateFld->setPosition(40, 620);
@@ -162,6 +168,8 @@ CharacterAnimBox::CharacterAnimBox() :
     listDelBtn->setFrameSize(0);
     listAddBtn->setFrameSize(0);
     listAddBtn->setBaseColor(gcn::Color(225, 180, 255));
+    listDupeBtn->setFrameSize(0);
+    listDupeBtn->setBaseColor(gcn::Color(225, 180, 255));
     setRotoZoomBtn->setFrameSize(0);
     animPVBox->setFrameSize(1);
     animPVBox->setBackgroundColor(gcn::Color(0,0,0));
@@ -175,6 +183,7 @@ CharacterAnimBox::CharacterAnimBox() :
     listDownBtn->setFocusable(0);
     listDelBtn->setFocusable(0);
     listAddBtn->setFocusable(0);
+    listDupeBtn->setFocusable(0);
 
 
     // set the animation center
@@ -206,7 +215,7 @@ CharacterAnimBox::CharacterAnimBox() :
     bodyToggleBtns[CharAnimation::HEAD]->setCaption("Head");
     bodyToggleBtns[CharAnimation::HEAD]->setPosition(300, 130);
     bodyToggleBtns[CharAnimation::BODY]->setCaption("Body");
-    bodyToggleBtns[CharAnimation::BODY]->setPosition(300, 195);
+    bodyToggleBtns[CharAnimation::BODY]->setPosition(300, 130);
     bodyToggleBtns[CharAnimation::LEFT_HAND]->setCaption("Left Hand");
     bodyToggleBtns[CharAnimation::LEFT_HAND]->setPosition(240, 195);
     bodyToggleBtns[CharAnimation::RIGHT_HAND]->setCaption("Right Hand");
@@ -225,13 +234,13 @@ CharacterAnimBox::CharacterAnimBox() :
     bodyEditBtns[CharAnimation::LEFT_FOOT]->setTSprite( cache::tsprites.loadResource("tsprites/feet1.xml") );
     bodyEditBtns[CharAnimation::RIGHT_FOOT]->setTSprite( cache::tsprites.loadResource("tsprites/feet1.xml") );
 
-    //  position the body parts
-    bodyEditBtns[CharAnimation::HEAD]->setPosition(animOriginX_-16, animOriginY_-48);
-    bodyEditBtns[CharAnimation::BODY]->setPosition(animOriginX_-16, animOriginY_-16);
-    bodyEditBtns[CharAnimation::LEFT_HAND]->setPosition(animOriginX_-30, animOriginY_-12);
-    bodyEditBtns[CharAnimation::RIGHT_HAND]->setPosition(animOriginX_+16, animOriginY_-12);
-    bodyEditBtns[CharAnimation::LEFT_FOOT]->setPosition(animOriginX_-20, animOriginY_+14);
-    bodyEditBtns[CharAnimation::RIGHT_FOOT]->setPosition(animOriginX_+2, animOriginY_+14);
+    //set up default frames
+    defaultFrames_[CharAnimation::HEAD].setPosition(-16, -48);
+    defaultFrames_[CharAnimation::BODY].setPosition(-16, -16);
+    defaultFrames_[CharAnimation::LEFT_HAND].setPosition(-30, -12);
+    defaultFrames_[CharAnimation::RIGHT_HAND].setPosition(16, -12);
+    defaultFrames_[CharAnimation::LEFT_FOOT].setPosition(-20, 14);
+    defaultFrames_[CharAnimation::RIGHT_FOOT].setPosition(2, 14);
 
 
     //populate framelist
@@ -239,16 +248,20 @@ CharacterAnimBox::CharacterAnimBox() :
         activeDir_ = static_cast<enum CharAnimation::Dir>(i);
         for( int j = 0; j < 6; ++j ){
             activePart_ = static_cast<CharAnimation::BodyParts>(j);
-            addListItem();
+            addListItem( defaultFrames_[activePart_] );
         }
     }
     activeDir_ = CharAnimation::UP;
     activePart_ = CharAnimation::HEAD;
-
+    frameLstBox->setListModel( frameLists[activeDir_][activePart_] );
 
     // add event listeners
     dirDrpList->addSelectionListener(this);
     frameLstBox->addSelectionListener(this);
+
+    //placed after the listeners to trigger the event,
+    // which will then position the bodyEditButons
+    frameLstBox->setSelected(0);
 
     //add
     add(filenameLbl);
@@ -275,6 +288,7 @@ CharacterAnimBox::CharacterAnimBox() :
     add(saveBtn);
     add(loadBtn);
     add(listAddBtn);
+    add(listDupeBtn);
     add(dirDrpList);
     //--------------
     add(infobarLbl);
@@ -293,7 +307,7 @@ CharacterAnimBox::CharacterAnimBox() :
 
 
 CharacterAnimBox::~CharacterAnimBox(){
-    //delete            //NULL
+    //delete                    //NULL
     delete nameLbl;            nameLbl = NULL;
     delete nameFld;            nameFld = NULL;
     delete filenameLbl;        filenameLbl = NULL;
@@ -306,6 +320,8 @@ CharacterAnimBox::~CharacterAnimBox(){
     delete listUpBtn;          listUpBtn = NULL;
     delete listDownBtn;        listDownBtn = NULL;
     delete listDelBtn;         listDelBtn = NULL;
+    delete listAddBtn;         listAddBtn = NULL;
+    delete listDupeBtn;        listDupeBtn = NULL;
     //--------------
     delete lockEdit;           lockEdit = NULL;
     delete angleLbl;           angleLbl = NULL;
@@ -344,14 +360,10 @@ CharacterAnimBox::~CharacterAnimBox(){
 void CharacterAnimBox::logic(){
     InfraellyWindow::logic();
 
-    // recolour body party buttons
+    // recolour body part buttons
     for( int i = 0; i<6; ++i ){
         if( i == activePart_ ){
             bodyToggleBtns[i]->setBaseColor(gcn::Color(200, 255, 200));
-            if( frameLstBox->getListModel() != frameLists[activeDir_][i] ){
-                frameLstBox->setListModel(frameLists[activeDir_][i]);
-                frameLstBox->setSelected(frameLists[activeDir_][i]->getNumberOfElements()-1);
-            }
         } else {
             bodyToggleBtns[i]->setBaseColor(gcn::Color(200, 200, 255));
         }
@@ -363,34 +375,34 @@ void CharacterAnimBox::logic(){
 
         switch(activePart_){
             case CharAnimation::HEAD:
-            activePartIcon_ = bodyEditBtns[CharAnimation::HEAD];
-            infobarLbl->setCaption("Head");
-            break;
+                activePartIcon_ = bodyEditBtns[CharAnimation::HEAD];
+                infobarLbl->setCaption("Head");
+                break;
 
             case CharAnimation::BODY:
-            activePartIcon_ = bodyEditBtns[CharAnimation::BODY];
-            infobarLbl->setCaption("Body");
-            break;
+                activePartIcon_ = bodyEditBtns[CharAnimation::BODY];
+                infobarLbl->setCaption("Body");
+                break;
 
             case CharAnimation::LEFT_HAND:
-            activePartIcon_ = bodyEditBtns[CharAnimation::LEFT_HAND];
-            infobarLbl->setCaption("Left Hand");
-            break;
+                activePartIcon_ = bodyEditBtns[CharAnimation::LEFT_HAND];
+                infobarLbl->setCaption("Left Hand");
+                break;
 
             case CharAnimation::RIGHT_HAND:
-            activePartIcon_ = bodyEditBtns[CharAnimation::RIGHT_HAND];
-            infobarLbl->setCaption("Right Hand");
-            break;
+                activePartIcon_ = bodyEditBtns[CharAnimation::RIGHT_HAND];
+                infobarLbl->setCaption("Right Hand");
+                break;
 
             case CharAnimation::LEFT_FOOT:
-            activePartIcon_ = bodyEditBtns[CharAnimation::LEFT_FOOT];
-            infobarLbl->setCaption("Left Foot");
-            break;
+                activePartIcon_ = bodyEditBtns[CharAnimation::LEFT_FOOT];
+                infobarLbl->setCaption("Left Foot");
+                break;
 
             case CharAnimation::RIGHT_FOOT:
-            activePartIcon_ = bodyEditBtns[CharAnimation::RIGHT_FOOT];
-            infobarLbl->setCaption("Right Foot");
-            break;
+                activePartIcon_ = bodyEditBtns[CharAnimation::RIGHT_FOOT];
+                infobarLbl->setCaption("Right Foot");
+                break;
         }
 
         if( (mouseX_ > animPVBox->getX()) && (mouseX_ < animPVBox->getX()+animPVBox->getWidth()) &&
@@ -412,6 +424,11 @@ void CharacterAnimBox::mouseMoved(gcn::MouseEvent& mouseEvent){
 }
 
 void CharacterAnimBox::valueChanged(const gcn::SelectionEvent& event){
+    if( event.getSource() == dirDrpList ){
+        int selected = frameLstBox->getSelected();
+        frameLstBox->setListModel( frameLists[activeDir_][activePart_] );
+        frameLstBox->setSelected( selected );
+    }
     if( event.getSource() == dirDrpList || event.getSource() == frameLstBox ){
         activeDir_ = static_cast<enum CharAnimation::Dir>( dirDrpList->getSelected() );
 
@@ -525,36 +542,42 @@ void CharacterAnimBox::mouseClicked(gcn::MouseEvent& mouseEvent){
         mouseEvent.consume();
         moveToTop(bodyEditBtns[CharAnimation::HEAD]);
         activePart_ = CharAnimation::HEAD;
+        lockEdit->setSelected(false);
     } else
     //  Body
     if( mouseEvent.getSource() == bodyToggleBtns[CharAnimation::BODY] ){
         mouseEvent.consume();
         moveToTop(bodyEditBtns[CharAnimation::BODY]);
         activePart_ = CharAnimation::BODY;
+        lockEdit->setSelected(false);
     } else
     //  Left arm
     if( mouseEvent.getSource() == bodyToggleBtns[CharAnimation::LEFT_HAND] ){
         mouseEvent.consume();
         moveToTop(bodyEditBtns[CharAnimation::LEFT_HAND]);
         activePart_ = CharAnimation::LEFT_HAND;
+        lockEdit->setSelected(false);
     } else
     //  right hand
     if( mouseEvent.getSource() == bodyToggleBtns[CharAnimation::RIGHT_HAND] ){
         mouseEvent.consume();
         moveToTop(bodyEditBtns[CharAnimation::RIGHT_HAND]);
         activePart_ = CharAnimation::RIGHT_HAND;
+        lockEdit->setSelected(false);
     } else
     //  LEFT FOOT
     if( mouseEvent.getSource() == bodyToggleBtns[CharAnimation::LEFT_FOOT] ){
         mouseEvent.consume();
         moveToTop(bodyEditBtns[CharAnimation::LEFT_FOOT]);
         activePart_ = CharAnimation::LEFT_FOOT;
+        lockEdit->setSelected(false);
     } else
     //  RIGHT FOOT
     if( mouseEvent.getSource() == bodyToggleBtns[CharAnimation::RIGHT_FOOT] ){
         mouseEvent.consume();
         moveToTop(bodyEditBtns[CharAnimation::RIGHT_FOOT]);
         activePart_ = CharAnimation::RIGHT_FOOT;
+        lockEdit->setSelected(false);
     } else
 
 
@@ -570,7 +593,30 @@ void CharacterAnimBox::mouseClicked(gcn::MouseEvent& mouseEvent){
             activeDir_ = static_cast<CharAnimation::Dir>(i);
             for( int j = 0; j < 6; ++j ){
                 activePart_ = static_cast<CharAnimation::BodyParts>(j);
-                addListItem();
+                addListItem( defaultFrames_[activePart_] );
+            }
+        }
+        activePart_ = trueActivepart;
+        activeDir_ = trueDir;
+        frameLstBox->addSelectionListener(this);
+        frameLstBox->setSelected( frameLists[activeDir_][activePart_]->getNumberOfElements()-1 );
+    } else
+    // dupe frame button
+    if( mouseEvent.getSource() == listDupeBtn ){
+        mouseEvent.consume();
+        CharAnimation::BodyParts trueActivepart = activePart_;
+        CharAnimation::Dir trueDir = activeDir_;
+        //only want the event to be fired once not 4x6 times
+        frameLstBox->removeSelectionListener(this);
+        for( int i = 0; i < 4; ++i ){
+            activeDir_ = static_cast<CharAnimation::Dir>(i);
+            for( int j = 0; j < 6; ++j ){
+                activePart_ = static_cast<CharAnimation::BodyParts>(j);
+                if( activeDir_ == trueDir ){
+                    addListItem();
+                } else {
+                    addListItem( defaultFrames_[activePart_] );
+                }
             }
         }
         activePart_ = trueActivepart;
@@ -779,8 +825,15 @@ void CharacterAnimBox::addListItem(){
     newFrame.setAngle( angle );
     newFrame.setZoom( zoom );
 
+    addListItem(newFrame);
+}
+
+void CharacterAnimBox::addListItem(const AnimFrame& newFrame){
     std::ostringstream name;
-    name << "x: " << x << "         y: " << y << "         a: " << angle << "         z: " << zoom;
+    name << "x: " << newFrame.getX()        << "         "
+         << "y: " << newFrame.getY()        << "         "
+         << "a: " << newFrame.getAngle()    << "         "
+         << "z: " << newFrame.getZoom();
 
     frameLists[activeDir_][activePart_]->addElement(name.str(), newFrame);
     frameLstBox->setSelected(frameLists[activeDir_][activePart_]->getNumberOfElements()-1);
@@ -790,6 +843,7 @@ void CharacterAnimBox::addListItem(){
     frameScroller->setScrollAmount( frameScroller->getHorizontalScrollAmount(),
                                     frameScroller->getVerticalMaxScroll());
 }
+
 
 void CharacterAnimBox::editListItem(){
     if( frameLists[activeDir_][activePart_]->empty() ){
