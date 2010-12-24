@@ -1,0 +1,6 @@
+*.o
+*.save
+*.depend
+*.exe
+data.ipf
+data_ipf_index.txt
