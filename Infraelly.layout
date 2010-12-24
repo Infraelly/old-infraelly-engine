@@ -16,7 +16,7 @@
 	<File name="AnimFrameList.cpp" open="0" top="0" tabpos="5">
 		<Cursor position="4341" topLine="40" />
 	</File>
-	<File name="AnimFrameList.hpp" open="1" top="0" tabpos="5">
+	<File name="AnimFrameList.hpp" open="0" top="0" tabpos="5">
 		<Cursor position="3853" topLine="38" />
 	</File>
 	<File name="AnimFx.cpp" open="0" top="0" tabpos="0">
@@ -55,7 +55,7 @@
 	<File name="AnimatorContext.hpp" open="0" top="0" tabpos="0">
 		<Cursor position="3202" topLine="0" />
 	</File>
-	<File name="AnimatorGui.cpp" open="1" top="0" tabpos="2">
+	<File name="AnimatorGui.cpp" open="0" top="0" tabpos="2">
 		<Cursor position="4419" topLine="79" />
 	</File>
 	<File name="AnimatorGui.hpp" open="0" top="0" tabpos="3">
@@ -88,10 +88,10 @@
 	<File name="Character.hpp" open="0" top="0" tabpos="4">
 		<Cursor position="3202" topLine="0" />
 	</File>
-	<File name="CharacterAnimBox.cpp" open="1" top="1" tabpos="4">
+	<File name="CharacterAnimBox.cpp" open="0" top="0" tabpos="4">
 		<Cursor position="23103" topLine="561" />
 	</File>
-	<File name="CharacterAnimBox.hpp" open="1" top="0" tabpos="3">
+	<File name="CharacterAnimBox.hpp" open="0" top="0" tabpos="3">
 		<Cursor position="3976" topLine="64" />
 	</File>
 	<File name="CharacterBase.cpp" open="0" top="0" tabpos="0">
@@ -655,7 +655,7 @@
 	<File name="splash_png.h" open="0" top="0" tabpos="0">
 		<Cursor position="3256" topLine="8" />
 	</File>
-	<File name="todo.txt" open="1" top="0" tabpos="1">
-		<Cursor position="449" topLine="1" />
+	<File name="todo.txt" open="1" top="1" tabpos="0">
+		<Cursor position="403" topLine="1" />
 	</File>
 </CodeBlocks_layout_file>

@@ -244,7 +244,8 @@ CharacterAnimBox::CharacterAnimBox() :
     }
     activeDir_ = CharAnimation::UP;
     activePart_ = CharAnimation::HEAD;
-
+    frameLstBox->setListModel( frameLists[activeDir_][activePart_] );
+    frameLstBox->setSelected(0);
 
     // add event listeners
     dirDrpList->addSelectionListener(this);
@@ -344,14 +345,10 @@ CharacterAnimBox::~CharacterAnimBox(){
 void CharacterAnimBox::logic(){
     InfraellyWindow::logic();
 
-    // recolour body party buttons
+    // recolour body part buttons
     for( int i = 0; i<6; ++i ){
         if( i == activePart_ ){
             bodyToggleBtns[i]->setBaseColor(gcn::Color(200, 255, 200));
-            if( frameLstBox->getListModel() != frameLists[activeDir_][i] ){
-                frameLstBox->setListModel(frameLists[activeDir_][i]);
-                frameLstBox->setSelected(frameLists[activeDir_][i]->getNumberOfElements()-1);
-            }
         } else {
             bodyToggleBtns[i]->setBaseColor(gcn::Color(200, 200, 255));
         }
@@ -363,34 +360,34 @@ void CharacterAnimBox::logic(){
 
         switch(activePart_){
             case CharAnimation::HEAD:
-            activePartIcon_ = bodyEditBtns[CharAnimation::HEAD];
-            infobarLbl->setCaption("Head");
-            break;
+                activePartIcon_ = bodyEditBtns[CharAnimation::HEAD];
+                infobarLbl->setCaption("Head");
+                break;
 
             case CharAnimation::BODY:
-            activePartIcon_ = bodyEditBtns[CharAnimation::BODY];
-            infobarLbl->setCaption("Body");
-            break;
+                activePartIcon_ = bodyEditBtns[CharAnimation::BODY];
+                infobarLbl->setCaption("Body");
+                break;
 
             case CharAnimation::LEFT_HAND:
-            activePartIcon_ = bodyEditBtns[CharAnimation::LEFT_HAND];
-            infobarLbl->setCaption("Left Hand");
-            break;
+                activePartIcon_ = bodyEditBtns[CharAnimation::LEFT_HAND];
+                infobarLbl->setCaption("Left Hand");
+                break;
 
             case CharAnimation::RIGHT_HAND:
-            activePartIcon_ = bodyEditBtns[CharAnimation::RIGHT_HAND];
-            infobarLbl->setCaption("Right Hand");
-            break;
+                activePartIcon_ = bodyEditBtns[CharAnimation::RIGHT_HAND];
+                infobarLbl->setCaption("Right Hand");
+                break;
 
             case CharAnimation::LEFT_FOOT:
-            activePartIcon_ = bodyEditBtns[CharAnimation::LEFT_FOOT];
-            infobarLbl->setCaption("Left Foot");
-            break;
+                activePartIcon_ = bodyEditBtns[CharAnimation::LEFT_FOOT];
+                infobarLbl->setCaption("Left Foot");
+                break;
 
             case CharAnimation::RIGHT_FOOT:
-            activePartIcon_ = bodyEditBtns[CharAnimation::RIGHT_FOOT];
-            infobarLbl->setCaption("Right Foot");
-            break;
+                activePartIcon_ = bodyEditBtns[CharAnimation::RIGHT_FOOT];
+                infobarLbl->setCaption("Right Foot");
+                break;
         }
 
         if( (mouseX_ > animPVBox->getX()) && (mouseX_ < animPVBox->getX()+animPVBox->getWidth()) &&
@@ -412,6 +409,9 @@ void CharacterAnimBox::mouseMoved(gcn::MouseEvent& mouseEvent){
 }
 
 void CharacterAnimBox::valueChanged(const gcn::SelectionEvent& event){
+    if( event.getSource() == dirDrpList ){
+        frameLstBox->setListModel( frameLists[activeDir_][activePart_] );
+    }
     if( event.getSource() == dirDrpList || event.getSource() == frameLstBox ){
         activeDir_ = static_cast<enum CharAnimation::Dir>( dirDrpList->getSelected() );
 
@@ -525,36 +525,42 @@ void CharacterAnimBox::mouseClicked(gcn::MouseEvent& mouseEvent){
         mouseEvent.consume();
         moveToTop(bodyEditBtns[CharAnimation::HEAD]);
         activePart_ = CharAnimation::HEAD;
+        lockEdit->setSelected(false);
     } else
     //  Body
     if( mouseEvent.getSource() == bodyToggleBtns[CharAnimation::BODY] ){
         mouseEvent.consume();
         moveToTop(bodyEditBtns[CharAnimation::BODY]);
         activePart_ = CharAnimation::BODY;
+        lockEdit->setSelected(false);
     } else
     //  Left arm
     if( mouseEvent.getSource() == bodyToggleBtns[CharAnimation::LEFT_HAND] ){
         mouseEvent.consume();
         moveToTop(bodyEditBtns[CharAnimation::LEFT_HAND]);
         activePart_ = CharAnimation::LEFT_HAND;
+        lockEdit->setSelected(false);
     } else
     //  right hand
     if( mouseEvent.getSource() == bodyToggleBtns[CharAnimation::RIGHT_HAND] ){
         mouseEvent.consume();
         moveToTop(bodyEditBtns[CharAnimation::RIGHT_HAND]);
         activePart_ = CharAnimation::RIGHT_HAND;
+        lockEdit->setSelected(false);
     } else
     //  LEFT FOOT
     if( mouseEvent.getSource() == bodyToggleBtns[CharAnimation::LEFT_FOOT] ){
         mouseEvent.consume();
         moveToTop(bodyEditBtns[CharAnimation::LEFT_FOOT]);
         activePart_ = CharAnimation::LEFT_FOOT;
+        lockEdit->setSelected(false);
     } else
     //  RIGHT FOOT
     if( mouseEvent.getSource() == bodyToggleBtns[CharAnimation::RIGHT_FOOT] ){
         mouseEvent.consume();
         moveToTop(bodyEditBtns[CharAnimation::RIGHT_FOOT]);
         activePart_ = CharAnimation::RIGHT_FOOT;
+        lockEdit->setSelected(false);
     } else
 
 

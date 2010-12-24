@@ -107,7 +107,7 @@ class CharacterAnimBox : public InfraellyWindow, public gcn::SelectionListener {
         std::vector<TSpriteIcon*>bodyEditBtns;
         std::vector<gcn::Button*>bodyToggleBtns;
         //--------------
-        gcn::CheckBox *lockEdit;
+        gcn::CheckBox *lockEdit;    // only allows the selected part to be moved
         gcn::Label *angleLbl;
         NumberField *angleFld;
         gcn::Label *zoomLbl;
