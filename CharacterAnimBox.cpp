@@ -64,7 +64,7 @@ CharacterAnimBox::CharacterAnimBox() :
     editing_(false),
     drawAnim_(false),
     activePart_(CharAnimation::HEAD),
-    activeDir_(CharAnimation::UP),
+    activeDir_(UP),
     defaultFrames_(6),
     //-------------
     filenameLbl(new gcn::Label("Filename: ")),
@@ -111,7 +111,7 @@ CharacterAnimBox::CharacterAnimBox() :
     dirList->addElement("Down");
     dirList->addElement("Left");
     dirDrpList->setSelected(0);
-    activeDir_ = CharAnimation::UP;
+    activeDir_ = UP;
 
     // set sizes
     filenameFld->setWidth(150);
@@ -245,13 +245,13 @@ CharacterAnimBox::CharacterAnimBox() :
 
     //populate framelist
     for(int i = 0; i < 4; ++i){
-        activeDir_ = static_cast<enum CharAnimation::Dir>(i);
+        activeDir_ = static_cast<enum Directions>(i);
         for( int j = 0; j < 6; ++j ){
             activePart_ = static_cast<CharAnimation::BodyParts>(j);
             addListItem( defaultFrames_[activePart_] );
         }
     }
-    activeDir_ = CharAnimation::UP;
+    activeDir_ = UP;
     activePart_ = CharAnimation::HEAD;
     frameLstBox->setListModel( frameLists[activeDir_][activePart_] );
 
@@ -430,7 +430,7 @@ void CharacterAnimBox::valueChanged(const gcn::SelectionEvent& event){
         frameLstBox->setSelected( selected );
     }
     if( event.getSource() == dirDrpList || event.getSource() == frameLstBox ){
-        activeDir_ = static_cast<enum CharAnimation::Dir>( dirDrpList->getSelected() );
+        activeDir_ = static_cast<enum Directions>( dirDrpList->getSelected() );
 
         for( size_t i = 0; i < 6; ++i ){
             if( !frameLists[activeDir_][i]->empty() ){
@@ -586,11 +586,11 @@ void CharacterAnimBox::mouseClicked(gcn::MouseEvent& mouseEvent){
     if( mouseEvent.getSource() == listAddBtn ){
         mouseEvent.consume();
         CharAnimation::BodyParts trueActivepart = activePart_;
-        CharAnimation::Dir trueDir = activeDir_;
+        Directions trueDir = activeDir_;
         //only want the event to be fired once not 4x6 times
         frameLstBox->removeSelectionListener(this);
         for( int i = 0; i < 4; ++i ){
-            activeDir_ = static_cast<CharAnimation::Dir>(i);
+            activeDir_ = static_cast<Directions>(i);
             for( int j = 0; j < 6; ++j ){
                 activePart_ = static_cast<CharAnimation::BodyParts>(j);
                 addListItem( defaultFrames_[activePart_] );
@@ -605,11 +605,11 @@ void CharacterAnimBox::mouseClicked(gcn::MouseEvent& mouseEvent){
     if( mouseEvent.getSource() == listDupeBtn ){
         mouseEvent.consume();
         CharAnimation::BodyParts trueActivepart = activePart_;
-        CharAnimation::Dir trueDir = activeDir_;
+        Directions trueDir = activeDir_;
         //only want the event to be fired once not 4x6 times
         frameLstBox->removeSelectionListener(this);
         for( int i = 0; i < 4; ++i ){
-            activeDir_ = static_cast<CharAnimation::Dir>(i);
+            activeDir_ = static_cast<Directions>(i);
             for( int j = 0; j < 6; ++j ){
                 activePart_ = static_cast<CharAnimation::BodyParts>(j);
                 if( activeDir_ == trueDir ){
@@ -650,9 +650,9 @@ void CharacterAnimBox::mouseClicked(gcn::MouseEvent& mouseEvent){
     if( mouseEvent.getSource() == listDelBtn ){
         mouseEvent.consume();
         CharAnimation::BodyParts trueActivepart = activePart_;
-        CharAnimation::Dir trueDir = activeDir_;
+        Directions trueDir = activeDir_;
         for( int i = 0; i < 4; ++i ){
-            activeDir_ = static_cast<CharAnimation::Dir>(i);
+            activeDir_ = static_cast<Directions>(i);
             for( int j = 0; j < 6; ++j ){
                 activePart_ = static_cast<CharAnimation::BodyParts>(j);
                 if( frameLists[activeDir_][activePart_]->getNumberOfElements() > 1 ){

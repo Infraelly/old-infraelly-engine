@@ -544,10 +544,10 @@ bool Animation::load( const ResourcePack& pack, const std::string& filepath){
 
 
 //draws
-void Animation::draw(SDL_Surface *dest, int x, int y){
-    //advance the frames
-    advanceFrames();
-
+void Animation::draw(SDL_Surface *dest, int x, int y, int frameNumber){
+    //bound frameNumber
+    if( frameNumber < 0 ){ frameNumber = 0; }
+    if( frameNumber > frames_.size() ){ frameNumber = frames_.size(); }
     //calculate xy offsets
     int xOffset = 0;
     int yOffset = 0;
@@ -655,23 +655,23 @@ void Animation::draw(SDL_Surface *dest, int x, int y){
         switch(type_){
             case ITEM:
             case CHARACTER_PART:
-                xOffset += frames_.at(frameProgression_).getX();
-                yOffset += frames_.at(frameProgression_).getY();
+                xOffset += frames_.at(frameNumber).getX();
+                yOffset += frames_.at(frameNumber).getY();
                 break;
 
             case OBJECT:
                 //set as abosolute positions
                 xOffset = -x;
                 yOffset = -y;
-                xOffset += frames_.at(frameProgression_).getX();
-                yOffset += frames_.at(frameProgression_).getY();
+                xOffset += frames_.at(frameNumber).getX();
+                yOffset += frames_.at(frameNumber).getY();
 
             default:
                 std::cerr << __FILE__ << " " << __LINE__ << " bad anim type" << std::endl;
                 break;
         }
-        angle = frames_.at(frameProgression_).getAngle();
-        zoom = frames_.at(frameProgression_).getZoom();
+        angle = frames_.at(frameNumber).getAngle();
+        zoom = frames_.at(frameNumber).getZoom();
     }
 
     if( (angle!=0) || (zoom!=1) ){
@@ -687,6 +687,13 @@ void Animation::draw(SDL_Surface *dest, int x, int y){
         //draw direct to screen
         image_.draw(dest, x+xOffset, y+yOffset);
     }
+}
+
+void Animation::draw(SDL_Surface *dest, int x, int y){
+    //advance the frames
+    advanceFrames();
+    //draw new frame
+    draw( dest, x, y, frameProgression_ );
 }
 
 

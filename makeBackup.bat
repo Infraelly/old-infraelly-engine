@@ -67,7 +67,7 @@ rmdir /S /Q LibBuild\zlibbuild\contrib\vstudio\vc9\x86\ZlibDllReleaseWithoutAsm 
 
 7z u -aoa -t7z -y %fn% * -mx9 -ms=on -mf=on -mmt=on -mtc=on -o..\Backups -x!.git -x!*.ipf
 
-IF NOT EXIST ..\Backups mkdir ..\Inf_Backups
+IF NOT EXIST ..\Inf_Backups mkdir ..\Inf_Backups
 copy /D /V /Y %fn%.7z ..\Inf_Backups\%fn%.7z
 del /F /Q %fn%.7z
 echo.

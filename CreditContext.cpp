@@ -59,7 +59,7 @@ CreditContext::CreditContext() :
 
     // player music
     InfraellyMixer::stopMusic();
-    InfraellyMixer::playMusic("audio/always_alone.mp3",-1, 1000);
+    InfraellyMixer::playMusic("audio/always_alone.ogg",-1, 1000);
 
 
     /* credit listing. Vector is used opposed to array to avoid having

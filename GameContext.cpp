@@ -84,7 +84,7 @@ GameContext::GameContext(Connection* serverCon) :
 
     //start theme music, infinite loop
     InfraellyMixer::stopMusic();
-    InfraellyMixer::playMusic("audio/walking_on_air.mp3", -1);
+    InfraellyMixer::playMusic("audio/walking_on_air.ogg", -1);
 
     // init player (form socket later)
     player.setX(Screen::getWidth()/2);
@@ -229,7 +229,7 @@ int GameContext::handleIncomingNetwork(){
                     if( user == NULL ){ break; }
                     packet >> recvVal;
                     if( Character::validDirection(recvVal) ){
-                        user->setDirection( static_cast<Character::Directions>(recvVal) );
+                        user->setDirection( static_cast<Directions>(recvVal) );
                     }
                 } else
                 //  Server is telling us a user's State (still, attacking etc)
@@ -258,7 +258,7 @@ int GameContext::handleIncomingNetwork(){
                     if( user == NULL ){ break; }
                     packet >> recvVal;
                     if( Character::validDirection(recvVal) ){
-                        user->move( Character::Directions(recvVal) );
+                        user->move( Directions(recvVal) );
                     }
                 } else
                 //  The server commands thee to stop!
@@ -370,7 +370,7 @@ void GameContext::events(SDL_Event &event){
             case SDLK_UP:
                 if( !gui->getChatBox()->isTyping() ){
                     if(player.getY() > 0){
-                        player.move( Character::UP );
+                        player.move( UP );
                     }
                 }
                 break;
@@ -378,7 +378,7 @@ void GameContext::events(SDL_Event &event){
             case SDLK_LEFT:
                 if( !gui->getChatBox()->isTyping() ){
                     if(player.getX() > 0){
-                        player.move(Character::LEFT);
+                        player.move( LEFT );
                     }
                 }
                 break;
@@ -386,7 +386,7 @@ void GameContext::events(SDL_Event &event){
             case SDLK_RIGHT:
                 if( !gui->getChatBox()->isTyping() ){
                     if(player.getX() < screen->w-40){
-                        player.move(Character::RIGHT);
+                        player.move( RIGHT );
                     }
                 }
                 break;
@@ -394,7 +394,7 @@ void GameContext::events(SDL_Event &event){
             case SDLK_DOWN:
                 if( !gui->getChatBox()->isTyping() ){
                     if(player.getY() < screen->h-70){
-                        player.move(Character::DOWN);
+                        player.move( DOWN );
                     }
                 }
                 break;

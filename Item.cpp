@@ -235,7 +235,7 @@ bool Item::savePacket( inp::INFPacket& packet )const{
     packet << animFilename_;
 
     //actions
-    packet << actions_.size();
+    packet << (int) actions_.size();
 
     for( unsigned int i = 0; i < actions_.size(); ++i ){
         packet << actions_.at(i);
@@ -325,7 +325,7 @@ bool Item::loadPacket( inp::INFPacket& packet ){
 
     //actions
     std::string action = "";
-    size_t numActions = 0;
+    int numActions = 0;
     packet >> numActions;
 
     actions_.clear();

@@ -48,7 +48,7 @@ AnimFrame::AnimFrame() :
     x_(0),
     y_(0),
     angle_(0),
-    zoom_(0)
+    zoom_(1.00)
 { ; }
 
 AnimFrame::AnimFrame(int x, int y, int angle, float zoom) :

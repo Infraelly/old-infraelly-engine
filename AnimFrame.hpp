@@ -67,7 +67,7 @@ L-----------------------------------------------------------------------------*/
 class AnimFrame{
     public:
         AnimFrame();
-        AnimFrame(int x, int y, int angle = 0, float _zoom = 0);
+        AnimFrame(int x, int y, int angle = 0, float _zoom = 1.00);
         ~AnimFrame();
 
         int getX()const;

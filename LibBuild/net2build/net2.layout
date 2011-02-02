@@ -1,23 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
-	<ActiveTarget name="Windows Release" />
+	<ActiveTarget name="Nix Release" />
 	<File name="SDLUtils.c" open="0" top="0" tabpos="0">
-		<Cursor position="0" topLine="150" />
+		<Cursor position="1000" topLine="0" />
 	</File>
 	<File name="SDLUtils.h" open="0" top="0" tabpos="0">
-		<Cursor position="0" topLine="26" />
+		<Cursor position="1081" topLine="0" />
 	</File>
-	<File name="SDL_net.h" open="0" top="0" tabpos="0">
-		<Cursor position="0" topLine="103" />
+	<File name="SDLnet.c" open="0" top="0" tabpos="0">
+		<Cursor position="1198" topLine="3" />
 	</File>
 	<File name="net2.c" open="0" top="0" tabpos="0">
-		<Cursor position="9290" topLine="443" />
-	</File>
-	<File name="net2.h" open="0" top="0" tabpos="0">
-		<Cursor position="0" topLine="55" />
-	</File>
-	<File name="net2sets.c" open="0" top="0" tabpos="0">
-		<Cursor position="0" topLine="85" />
+		<Cursor position="9290" topLine="407" />
 	</File>
 	<File name="set.h" open="0" top="0" tabpos="0">
 		<Cursor position="0" topLine="89" />

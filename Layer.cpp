@@ -54,7 +54,7 @@ L-----------------------------------------------------------------------------*/
 using namespace std;
 
 
-Layer::Layer(size_t newWidth, size_t newHeight) :
+Layer::Layer(int newWidth, int newHeight) :
     name("Unamed Layer"),
     width(newWidth),
     height(newHeight),
@@ -107,7 +107,7 @@ Layer::~Layer(){
 }
 
 
-MapTile& Layer::operator[](size_t i){
+MapTile& Layer::operator[](int i){
     if( !layerGrid.empty() ){
         if(i < width*height){
             cacheReady = false;
@@ -123,7 +123,7 @@ MapTile& Layer::operator[](size_t i){
     }
 }
 
-MapTile& Layer::index(size_t i){
+MapTile& Layer::index(int i){
     if( !layerGrid.empty() ){
         if(i < width*height){
             cacheReady = false;
@@ -138,7 +138,7 @@ MapTile& Layer::index(size_t i){
     }
 }
 
-MapTile& Layer::at(size_t x, size_t y){
+MapTile& Layer::at(int x, int y){
     if( !layerGrid.empty() ){
         if((y*width + x) < width*height){
             cacheReady = false;
@@ -158,19 +158,19 @@ MapTile& Layer::at(size_t x, size_t y){
 
 const std::string& Layer::getName()const{ return name; }
 
-size_t Layer::size()const{ return width*height; }
+int Layer::size()const{ return width*height; }
 
-size_t Layer::getWidth()const{ return width; }
+int Layer::getWidth()const{ return width; }
 
-size_t Layer::getHeight()const{ return height; }
+int Layer::getHeight()const{ return height; }
 
 bool Layer::isShowingAttributes()const{ return showAttributes; }
 
 
 
-size_t Layer::getTileWidth()const{ return tileWidth; }
+int Layer::getTileWidth()const{ return tileWidth; }
 
-size_t Layer::getTileHeight()const{ return tileHeight; }
+int Layer::getTileHeight()const{ return tileHeight; }
 
 bool Layer::empty()const{ return layerGrid.empty(); }
 
@@ -249,12 +249,12 @@ bool Layer::savePacket(inp::INFPacket& pack)const{
     pack << name;
 
     //Layer size
-    pack << width;
-    pack << height;
+    pack << (int) width;
+    pack << (int) height;
 
     //Tile size
-    pack << tileWidth;
-    pack << tileHeight;
+    pack << (int) tileWidth;
+    pack << (int) tileHeight;
 
     //Show attrib
     pack << showAttributes;
@@ -325,7 +325,7 @@ bool Layer::loadPacket( inp::INFPacket& pack ){
 
     if( !empty ){
         //Load Tile data
-        for(size_t i = 0; i < width*height; ++i ){
+        for(int i = 0; i < width*height; ++i ){
             if( pack.readDone() ){ return 0; }
             layerGrid.at(i).loadPacket( pack );
         }
@@ -361,8 +361,8 @@ void Layer::draw(  SDL_Surface *dest,
 
             //  Regenerate the layer cache image
             SDL_FillRect(cacheImage, NULL, SDL_MapRGBA(cacheImage->format, 0,0,0,0));
-            for( size_t tmpY = 0; tmpY < height; ++tmpY){
-                for( size_t tmpX = 0; tmpX < width; ++tmpX){
+            for( int tmpY = 0; tmpY < height; ++tmpY){
+                for( int tmpX = 0; tmpX < width; ++tmpX){
                     if( at(tmpX, tmpY).getTileset() != NULL ){
                         at(tmpX, tmpY).draw( cacheImage, (tmpX*tileWidth), (tmpY*tileHeight) );
                     }
@@ -370,8 +370,8 @@ void Layer::draw(  SDL_Surface *dest,
             }
             if( showAttributes ){
                 string attLbl = "Reg";
-                for( size_t tmpY = 0; tmpY < height; ++tmpY){
-                    for( size_t tmpX = 0; tmpX < width; ++tmpX){
+                for( int tmpY = 0; tmpY < height; ++tmpY){
+                    for( int tmpX = 0; tmpX < width; ++tmpX){
                         switch( at(tmpX, tmpY).getAttribute() ){
                             case MapTile::REGULAR:
                                 attLbl = " ";

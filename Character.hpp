@@ -52,14 +52,14 @@ L-----------------------------------------------------------------------------*/
 #include "Stats.hpp"
 #include "SpeechBubble.hpp"
 #include "Inventory.hpp"
-
+#include "CharAnimation.hpp"
+#include "globalFunc.hpp"
 
 class Character{
     public:
         static const int revision_ = 1;
 
         //enumerations
-        enum Directions{UP, LEFT, DOWN, RIGHT};
         enum CharacterStates{ATTACKING, CASTING, EQUIPING, MOVING, STILL};
         enum Genders{MALE, FEMALE, ASEXUAL};
         enum Jobs{
@@ -94,21 +94,24 @@ class Character{
         //  Speech bubble
         SpeechBubble speechBubble;
 
+        //  Character's animation
+        CharAnimation anim;
+
         //  Standard ctor
         Character();
         ~Character();
 
 
         //  Returns Character's
-        const enum Character::Jobs& getClass()const;
+        enum Character::Jobs getClass()const;
         //  Returns Direct character is facing
-        const enum Character::Directions& getDirection()const;
+        enum Directions getDirection()const;
         //  Returns Character's gender
-        const enum Character::Genders& getGender()const;
+        enum Character::Genders getGender()const;
         //  Returns the ActionState of teh character
-        const enum Character::CharacterStates& getCharacterState()const{ return characterState; }
+        enum Character::CharacterStates getCharacterState()const{ return characterState; }
         //  Returns a string of the character's class
-        const std::string getClassStr()const;
+        std::string getClassStr()const;
         //  Returns character's name
         const std::string& getName()const;
         //returns the state
@@ -129,13 +132,13 @@ class Character{
         void setYVel(float newYVel){ yVel = newYVel; }
         void stop();
         //  Sets the Character's class
-        void setClass(const enum Character::Jobs& newClass);
+        void setClass(enum Character::Jobs newClass);
         //  Sets the Character's direction
-        void setDirection(const enum Character::Directions& newDirection);
+        void setDirection(enum Directions newDirection);
         //  Sets the character's state
-        void setState(const enum Character::CharacterStates& newState);
+        void setState(enum Character::CharacterStates newState);
         //  Sets the character's gender
-        void setGender(const enum Character::Genders& newGender);
+        void setGender(enum Character::Genders newGender);
         //  Sets the Character's name
         void setName(const std::string& newName);
 
@@ -149,7 +152,7 @@ class Character{
         //  Attacks
         void attack();
         //  Moves character in direction "directionToMove"
-        void move(const enum Character::Directions& directionToMove);
+        void move(enum Directions directionToMove);
         //  Uses item "item"
         void use(Item& item);
 
@@ -179,7 +182,7 @@ class Character{
         std::string name;                   //  Character's name
         enum Jobs characterClass;           //  Character's class
         Genders gender;                     //  Character's gender
-        Directions facing;                  //  Which direction Character is facing
+        enum Directions facing;                  //  Which direction Character is facing
         CharacterStates characterState;     //  Action State of Character
         bool stateIsLocked;                 //  Is action state editable
 
@@ -193,12 +196,7 @@ class Character{
 
         //------------------
         //     "pivate" (dont save)
-        Uint32 lastMoveTime;                  //  The time the character drawn
-        int frameProgression;               //  The animtion frame number currently to be used
-        int hand1AnimOffsetY;               //  The Y-Offset of hand1 for current animation frame
-        int hand2AnimOffsetY;               //  The Y-Offset of hand2 for current animation frame
-        int foot1AnimOffsetX;               //  The X-Offset of foot1 for current animation frame
-        int foot2AnimOffsetX;               //  The X-Offset of foot2 for current animation frame
+        long lastMoveTime;
 
         int nameLoc;                        //  The position to draw the name
         SDL_Rect healthBack;                //  The back of the health bar

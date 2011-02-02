@@ -120,17 +120,31 @@ void PackerContext::logic(){
             while( !filelist_if.eof() && filelist_if.good() ){
                 char buff[512];
                 filelist_if.getline(&buff[0], 512);
-                filelist.push_back( correctFilepath(buff) );
+                string tmp = correctFilepath(buff);
+                if( tmp == "." ) continue;
+                if( tmp.find("./") == 0 ){
+                    tmp.erase( tmp.begin() );
+                    tmp.erase( tmp.begin() );
+                }
+                filelist.push_back( tmp );
             }
             //make reletive paths
+            // this will turn any absolute filepaths into paths reletive to the
+            // current directory. the packer will try to add all files in the
+            //  filelist which are also in a directory named "data" in the
+            //  current working directory
             string rootDir = "data/";
-            int pathStart = filelist[0].rfind(rootDir) + rootDir.length();
+            int pathStart = rootDir.length();
+            int rootDirStart = filelist[0].rfind(rootDir);
+            if( rootDirStart != -1 ){
+                pathStart += rootDirStart;
+            }
             string basepath( filelist[0], 0, pathStart );
             makeReletivePaths(basepath, filelist);
 
             //add files to pack
             for(unsigned int i = 0; i < filelist.size(); ++i){
-                if(!isSpace(filelist[i])){
+                if( !isSpace(filelist[i]) && !isDir(rootDir+filelist[i]) ){
                     if(dataPack.addFile(filelist[i])){
                         console->push_back("File added: " + filelist[i]);
                     } else {
@@ -168,7 +182,6 @@ void PackerContext::logic(){
 
         if(!error && silent_){ done=true; }
     }
-
 
     // let giuchan do its thang!
     console->logic();

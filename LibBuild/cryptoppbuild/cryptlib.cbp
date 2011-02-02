@@ -7,9 +7,9 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Release Win32">
-				<Option output="bin\win\libcryptopp" prefix_auto="1" extension_auto="1" />
+				<Option output="../../lib/win/libcryptopp" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output="Win32\cryptlib\Release Win32" />
+				<Option object_output="Win32/cryptlib/Release Win32" />
 				<Option type="2" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
@@ -34,7 +34,7 @@
 			<Target title="Release x64">
 				<Option output="lib" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output="Win32\cryptlib\Release x64" />
+				<Option object_output="Win32/cryptlib/Release x64" />
 				<Option type="2" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
@@ -50,7 +50,7 @@
 			<Target title="DLL-Import Release Win32">
 				<Option output="lib" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output="Win32\cryptlib\DLL-Import Release Win32" />
+				<Option object_output="Win32/cryptlib/DLL-Import Release Win32" />
 				<Option type="2" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
@@ -67,7 +67,7 @@
 			<Target title="DLL-Import Release x64">
 				<Option output="lib" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output="Win32\cryptlib\DLL-Import Release x64" />
+				<Option object_output="Win32/cryptlib/DLL-Import Release x64" />
 				<Option type="2" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
@@ -84,7 +84,7 @@
 			<Target title="Debug Win32">
 				<Option output="lib" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output="Win32\cryptlib\Debug Win32" />
+				<Option object_output="Win32/cryptlib/Debug Win32" />
 				<Option type="2" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
@@ -101,7 +101,7 @@
 			<Target title="Debug x64">
 				<Option output="lib" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output="Win32\cryptlib\Debug x64" />
+				<Option object_output="Win32/cryptlib/Debug x64" />
 				<Option type="2" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
@@ -117,7 +117,7 @@
 			<Target title="DLL-Import Debug Win32">
 				<Option output="lib" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output="Win32\cryptlib\DLL-Import Debug Win32" />
+				<Option object_output="Win32/cryptlib/DLL-Import Debug Win32" />
 				<Option type="2" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
@@ -135,7 +135,7 @@
 			<Target title="DLL-Import Debug x64">
 				<Option output="lib" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output="Win32\cryptlib\DLL-Import Debug x64" />
+				<Option object_output="Win32/cryptlib/DLL-Import Debug x64" />
 				<Option type="2" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
@@ -150,9 +150,9 @@
 				</Compiler>
 			</Target>
 			<Target title="Release Nix">
-				<Option output="bin\nix\libcryptopp" prefix_auto="1" extension_auto="1" />
+				<Option output="../../lib/nix/libcryptopp" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output="Nix\cryptlib\Release Nix" />
+				<Option object_output="Nix/cryptlib/Release Nix" />
 				<Option type="2" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
@@ -425,8 +425,9 @@
 		<Extensions>
 			<AutoVersioning>
 				<Scheme minor_max="10" build_max="0" rev_max="0" rev_rand_max="10" build_times_to_increment_minor="100" />
-				<Settings autoincrement="1" date_declarations="1" do_auto_increment="0" ask_to_increment="0" language="C++" svn="0" svn_directory="" header_path="version.h" />
+				<Settings autoincrement="1" date_declarations="1" do_auto_increment="0" ask_to_increment="0" language="C++" svn="0" svn_directory=" " header_path="version.h" />
 				<Changes_Log show_changes_editor="0" app_title="released version %M.%m.%b of %p" changeslog_path="ChangesLog.txt" />
+				<Code header_guard="VERSION_H" namespace="AutoVersion" prefix=" " />
 			</AutoVersioning>
 			<code_completion />
 			<envvars />

@@ -40,6 +40,7 @@
 					<Add option="-O2" />
 					<Add option="-O1" />
 					<Add option="-O" />
+					<Add option="-m32" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -47,11 +48,13 @@
 			</Target>
 		</Build>
 		<Compiler>
+			<Add option="-m32" />
 			<Add option="-DBUILDING_DLL=1" />
 			<Add option="-DBUILD_DLL=1" />
 		</Compiler>
 		<Linker>
 			<Add option="--no-export-all-symbols --add-stdcall-alias" />
+			<Add option="-m32" />
 			<Add library="SDL" />
 		</Linker>
 		<Unit filename="SDL_framerate.c">

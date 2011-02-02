@@ -383,8 +383,12 @@ bool Tileset::loadXml( const TiXmlDocument& doc ){
     //  find tileset header
 	{
 		pElem = hDoc.FirstChildElement( "Tileset" ).ToElement();
-		if( !pElem ){ std::cerr << "Tileset load fail: no header found" << std::endl; }
-		root = TiXmlHandle(pElem);
+		if( !pElem ){
+		    std::cerr << "Tileset load fail: no header found" << std::endl;
+		    return 0;
+        } else {
+            root = TiXmlHandle(pElem);
+        }
 	}
 
     //  Get filename

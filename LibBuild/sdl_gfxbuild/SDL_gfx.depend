@@ -535,3 +535,30 @@
 
 1170752658 /media/drive_d/Projects/Infraelly/CurVer/LibBuild/sdl_gfxbuild/SDL_imageFilter.h
 
+1295336221 source:/home/insanepotato/infraelly/LibBuild/sdl_gfxbuild/SDL_framerate.c
+	"SDL_framerate.h"
+
+1295336221 /home/insanepotato/infraelly/LibBuild/sdl_gfxbuild/SDL_framerate.h
+	<SDL/SDL.h>
+
+1295336221 source:/home/insanepotato/infraelly/LibBuild/sdl_gfxbuild/SDL_gfxPrimitives.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	"SDL_gfxPrimitives.h"
+	"SDL_gfxPrimitives_font.h"
+
+1295336221 /home/insanepotato/infraelly/LibBuild/sdl_gfxbuild/SDL_gfxPrimitives.h
+	<math.h>
+	<SDL/SDL.h>
+
+1295336221 /home/insanepotato/infraelly/LibBuild/sdl_gfxbuild/SDL_gfxPrimitives_font.h
+
+1295336221 source:/home/insanepotato/infraelly/LibBuild/sdl_gfxbuild/SDL_imageFilter.c
+	<stdio.h>
+	<stdlib.h>
+	"SDL_imageFilter.h"
+
+1295336221 /home/insanepotato/infraelly/LibBuild/sdl_gfxbuild/SDL_imageFilter.h
+

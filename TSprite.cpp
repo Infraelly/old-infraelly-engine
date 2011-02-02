@@ -294,25 +294,33 @@ bool TSprite::loadXml( const TiXmlDocument& doc  ){
     //  find tsprite header
 	{
 		pElem = hDoc.FirstChildElement( "TSprite" ).ToElement();
-		if( !pElem ){ return 0; };
+		if( !pElem ){
+		    std::cerr << "TSprite load fail: TSprite header not found" << std::endl;
+            return 0;
+        }
 		root = TiXmlHandle(pElem);
 	}
 
     //  Get Tileset
 	{
         pElem = root.FirstChildElement( "Tileset" ).ToElement();
-		if( !pElem ){ return 0; };
-        std::cerr << "Tileset load fail: no imagename" << std::endl;
-		if( pElem->GetText() == NULL ){ return 0; };
-        std::cerr << "Tileset load fail: no text in imageFilename" << std::endl;
+		if( !pElem ){
+            std::cerr << "TSprite load fail: no Tileset element" << std::endl;
+		    return 0;
+        }
+		if( pElem->GetText() == NULL ){
+            std::cerr << "TSprite load warning: no text in Tileset element" << std::endl;
+		}
         tilesetFn = correctFilepath(pElem->GetText());
     }
 
     //  Get dimensions
 	{
         pElem = root.FirstChildElement( "ImageCount" ).ToElement();
-		if( !pElem ){ return 0; };
-        std::cerr << "Tileset load fail: no transkey" << std::endl;
+		if( !pElem ){
+		    std::cerr << "TSprite load fail: no image count" << std::endl;
+		    return 0;
+        }
         int frameCount = 0;
         pElem->QueryIntAttribute("frames", &frameCount );
         numImages_ = frameCount;
@@ -323,12 +331,15 @@ bool TSprite::loadXml( const TiXmlDocument& doc  ){
     //  Get Offsets
 	{
         pElem = root.FirstChildElement( "Offsets" ).ToElement();
-		if( !pElem ){ return 0; };
-		std::cerr << "Tileset load fail: no transkey" << std::endl;
-        pElem->QueryIntAttribute("x", &xOffset_);
-        pElem->QueryIntAttribute("y", &yOffset_);
+		if( !pElem ){
+		    std::cerr << "TSprite load warning: no Offsets element" << std::endl;
+		    xOffset_ = 0;
+		    yOffset_ = 0;
+        } else {
+            pElem->QueryIntAttribute("x", &xOffset_);
+            pElem->QueryIntAttribute("y", &yOffset_);
+        }
     }
-
 
     //  All details ready, load
     Tileset *ts = cache::tilesets.loadResource(tilesetFn);

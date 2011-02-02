@@ -94,7 +94,7 @@ void Inventory::removeItem(size_t i){
 bool Inventory::savePacket(inp::INFPacket& pack)const{
     pack << revision_;
     //write number of items
-    pack << list_.size();
+    pack << (int) list_.size();
 
     //write items
     for( size_t i = 0; i < list_.size(); ++i ){
@@ -117,7 +117,7 @@ bool Inventory::load(inp::INFPacket &pack){
     //clean out existing inventory
     clear();
 
-    size_t numOfItems;
+    int numOfItems;
     pack >> numOfItems;
 
     for( size_t i = 0; i < numOfItems; ++i ){

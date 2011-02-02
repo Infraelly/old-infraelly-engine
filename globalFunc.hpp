@@ -53,6 +53,14 @@ L-----------------------------------------------------------------------------*/
 #include <SDL/SDL_ttf.h>
 
 
+enum Directions{
+        UP = 0,
+        RIGHT = 1,
+        DOWN = 2,
+        LEFT = 3
+};
+
+
 //returns an SDL_rect with parameters as given
 SDL_Rect makeRect(Sint16 _x, Sint16 _y, Uint16 w, Uint16 h);
 

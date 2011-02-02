@@ -2,5 +2,7 @@
 *.save
 *.depend
 *.exe
+infraelly.bin
 data.ipf
 data_ipf_index.txt
+Infraelly_build_log.html

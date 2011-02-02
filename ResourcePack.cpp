@@ -308,8 +308,9 @@ bool ResourcePack::dumpResource( std::string resourceFilepath, const std::string
 
         ResourceFile rc;
         getResource(resourceFilepath, rc);
-        std::string rcFn( resourceFilepath, resourceFilepath.find_last_of(correctFilepath("\\")), resourceFilepath.length()-resourceFilepath.find_last_of(correctFilepath("\\")) );
-        std::string dumpFn = correctFilepath(dumpFilepath+"\\"+rcFn);
+        std::string rcFn( resourceFilepath, resourceFilepath.find_last_of("/")+1,
+                          resourceFilepath.length()-resourceFilepath.find_last_of("/") );
+        std::string dumpFn = makeUnixFilePath(dumpFilepath);
 
         std::ofstream of_file( dumpFn.c_str(), std::fstream::binary);
         if(of_file.is_open()){

@@ -130,13 +130,9 @@ Character::Character() :
     yVel(0),
     xVelMax(200),
     yVelMax(200),
+
     lastMoveTime(0),
 
-    frameProgression(0),
-    hand1AnimOffsetY(0),
-    hand2AnimOffsetY(0),
-    foot1AnimOffsetX(0),
-    foot2AnimOffsetX(0),
     nameLoc(0)
 {
     stats.setValue( Stats::HP, 10 );
@@ -158,17 +154,17 @@ Character::~Character(){ ; }
 
 
 //gets
-const enum Character::Jobs& Character::getClass()const{ return characterClass; }
+enum Character::Jobs Character::getClass()const{ return characterClass; }
 
-const enum Character::Directions& Character::getDirection()const{ return facing; }
+enum Directions Character::getDirection()const{ return facing; }
 
-const enum Character::Genders& Character::getGender()const{ return gender; }
+enum Character::Genders Character::getGender()const{ return gender; }
 
 const std::string& Character::getName()const{ return name; }
 
-enum Character::CharacterStates Character::getState()const{ return characterState; }
+Character::CharacterStates Character::getState()const{ return characterState; }
 
-const std::string Character::getClassStr()const{
+std::string Character::getClassStr()const{
     return jobToString(characterClass);
 }
 
@@ -185,13 +181,13 @@ float Character::getYVel()const{ return yVel; }
 
 
 //sets
-void Character::setClass(const enum Character::Jobs& newClass){ characterClass = newClass; }
+void Character::setClass(enum Character::Jobs newClass){ characterClass = newClass; }
 
-void Character::setDirection(const enum Character::Directions& newDirection){ facing = newDirection; }
+void Character::setDirection(enum Directions newDirection){ facing = newDirection; }
 
-void Character::setState(const enum Character::CharacterStates& newState){ characterState = newState; }
+void Character::setState(enum Character::CharacterStates newState){ characterState = newState; }
 
-void Character::setGender(const enum Character::Genders& newGender){
+void Character::setGender(enum Character::Genders newGender){
     gender = newGender;
     if( gender == MALE ){
         body.setSource( cache::tilesets.loadResource("tilesets/bodyM.xml"), 0, 0 );
@@ -244,7 +240,7 @@ void Character::move(){
     lastMoveTime = SDL_GetTicks();
 }
 
-void Character::move(const enum Character::Directions& directionToMove){
+void Character::move(enum Directions directionToMove){
     if( !stateIsLocked ){
         facing = directionToMove;
         characterState = MOVING;
@@ -362,237 +358,28 @@ void Character::draw(SDL_Surface *dest, int x, int y){
 
     //      animation
     move();
-    //advance the frame progression
-    ++frameProgression;
-    //limit frameprogression
     switch(characterState){
         case STILL:
-            frameProgression = 0;
+            //draws the first frame of the animation
+            anim.draw( dest, facing, x, y, 0 );
             stateIsLocked = false;
             break;
 
         case MOVING:
-            //4 frame
-            if(frameProgression > 3){
-                frameProgression = 0;
-            }
-            //abs(-3ax/16 +a) -a/4
-            hand1AnimOffsetY = abs((frameProgression*(-3*hands.getSize().h)/8)+hands.getSize().h) -hands.getSize().h/2;
-            hand2AnimOffsetY = -(int( ( abs((frameProgression*(-3*hands.getSize().h)/8)+hands.getSize().h) -hands.getSize().h/2)) +2);
-            foot1AnimOffsetX = int( (abs((frameProgression*(-3*feet.getSize().w)/8)+feet.getSize().w) -feet.getSize().w/2)/3 );
-            foot2AnimOffsetX = -(int( (abs((frameProgression*(-3*feet.getSize().w)/8)+feet.getSize().w) -feet.getSize().w/2)/3) +2);
+            anim.draw( dest, facing, x, y, 0 );
             break;
 
         case ATTACKING:
-            //16 frames
-            ++frameProgression; // half length
-            //8frames
-            if(frameProgression > 15){
-                frameProgression = 0;
-                stateIsLocked = false;
-                characterState = STILL;
-            }
-            //y = abs( b.h+10/8 * x-8 ) [+ b.h +10]
-            hand1AnimOffsetY = 0;//abs(  ((body.getSize().h)/8) * (frameProgression-8)  ) -body.getSize().h; //down,right
-            hand2AnimOffsetY = 0;//(-1*hand1AnimOffsetY) - body.getSize().h ; //up, left
-            //foot2AnimOffsetY = ;
+            anim.draw( dest, facing, x, y, 0 );
             break;
 
         case EQUIPING:
-            //20 frames
-            if(frameProgression > 19){
-                frameProgression = 0;
-                stateIsLocked = false;
-                characterState = STILL;
-            }
+            anim.draw( dest, facing, x, y, 0 );
             break;
 
         default:
             cerr << __FILE__ << " " << __LINE__ << ": " << "Unknown character state. Uninitiated?" << endl;
             characterState = STILL;
-    }
-
-
-    switch(facing){
-        default:
-            cerr << __FILE__ << " " << __LINE__ << ": " << "Unkown direction. Uninitiated Character::facing?" << endl;
-        case DOWN:
-            switch(characterState){
-                case STILL:
-                default:
-                    body.draw(dest, x, y+head.getSize().h); //body
-                    feet.draw(dest, x, y+head.getSize().h +body.getSize().h -(3*feet.getSize().h/4) );  //left foot
-                    feet.draw(dest, x +body.getSize().w -hands.getSize().w, y+head.getSize().h +body.getSize().h -(3*feet.getSize().h/4) ); //right foot
-                    head.draw(dest, x, y);    //head
-                    face.draw(dest, x, y);    //face
-                    hands.draw(dest, x -(2*hands.getSize().w/3), y+head.getSize().h);   //left hand
-                    hands.draw(dest, x +body.getSize().w -(hands.getSize().w/3), y+head.getSize().h);   //right hand
-                    break;
-
-                case MOVING:
-                    body.draw(dest, x, y+head.getSize().h); //body
-                    feet.draw(dest, x,  y+head.getSize().h +body.getSize().h -(3*feet.getSize().h/4) +hand2AnimOffsetY/3);  //left foot
-                    feet.draw(dest, x +body.getSize().w -hands.getSize().w, y+head.getSize().h +body.getSize().h -(3*feet.getSize().h/4) +hand1AnimOffsetY/3 ); //right foot
-                    head.draw(dest, x, y);    //head
-                    face.draw(dest, x, y);    //face
-                    hands.draw(dest, x -(2*hands.getSize().w/3), y+head.getSize().h +hand1AnimOffsetY);   //left hand
-                    hands.draw(dest, x +body.getSize().w -(hands.getSize().w/3), y+head.getSize().h +hand2AnimOffsetY);   //right hand
-                    break;
-
-                case ATTACKING:
-                    {
-                        //center hands to body
-                        int hand1X = x; //left
-                        int hand2X = x; //right
-                        int handY = y + head.getSize().h;
-                        if(hands.getSize().w*2+1 > body.getSize().w){
-                            hand1X += ((body.getSize().w - hands.getSize().w*2+1) - (hands.getSize().w+2)) /2 ;
-                            hand2X = hand1X + hands.getSize().w+1;
-                        } else {
-                            hand1X += -((hands.getSize().w*2+1 - body.getSize().w)/2) ;
-                            hand2X = hand1X + hands.getSize().w+1;
-                        }
-                        if(hands.getSize().h > body.getSize().h){
-                            handY += -((hands.getSize().h - body.getSize().h)/2);
-                        } else {
-                            handY += ((body.getSize().h - hands.getSize().h) - (hands.getSize().h/2)) /2;
-                        }
-                        body.draw(dest, x, y+head.getSize().h); //body
-                        head.draw(dest, x, y);    //head
-                        face.draw(dest, x, y);    //face
-                        feet.draw(dest, x, y+head.getSize().h +body.getSize().h -(3*feet.getSize().h/4) -hand2AnimOffsetY/16);  //left foot
-                        feet.draw(dest, x +body.getSize().w -hands.getSize().w, y+head.getSize().h +body.getSize().h -(3*feet.getSize().h/4) +hand2AnimOffsetY/8); //right foot
-                        hands.draw(dest, hand1X,  handY + hand2AnimOffsetY);   //left hand
-                        hands.draw(dest, hand2X,  handY + hand2AnimOffsetY);   //right hand
-                    }
-                    break;
-
-                case EQUIPING:
-                    break;
-            }
-            break;
-
-
-
-        case UP:
-            switch(characterState){
-                case STILL:
-                default:
-                    hands.draw(dest, x -(2*hands.getSize().w/3), y+head.getSize().h);   //left hand
-                    hands.draw(dest, x +body.getSize().w -(hands.getSize().w/3), y+head.getSize().h);   //right hand
-                    feet.draw(dest, x, y+head.getSize().h +body.getSize().h -(3*feet.getSize().h/4) );  //left foot
-                    feet.draw(dest, x +body.getSize().w -hands.getSize().w, y+head.getSize().h +body.getSize().h -(3*feet.getSize().h/4) ); //right foot
-                    head.draw(dest, x, y); //head
-                    body.draw(dest, x, y+head.getSize().h); //body
-                    break;
-
-                case MOVING:
-                    hands.draw(dest, x -(2*hands.getSize().w/3), y+head.getSize().h +hand1AnimOffsetY); //left hand
-                    hands.draw(dest, x +body.getSize().w -(hands.getSize().w/3), y+head.getSize().h +hand2AnimOffsetY);   //right hand
-                    feet.draw(dest, x,  y+head.getSize().h +body.getSize().h -(3*feet.getSize().h/4) +hand2AnimOffsetY/3 );  //left foot
-                    feet.draw(dest, x +body.getSize().w -hands.getSize().w,  y+head.getSize().h +body.getSize().h -(3*feet.getSize().h/4) +(hand1AnimOffsetY/3) ); //right foot
-                    head.draw(dest, x, y); //head
-                    body.draw(dest, x, y+head.getSize().h); //body
-                    break;
-
-                case ATTACKING:
-                    {
-                        //center hands to body
-                        int hand1X = x; //left
-                        int hand2X = x; //right
-                        int handY = y + head.getSize().h;
-                        if(hands.getSize().w*2+1 > body.getSize().w){
-                            hand1X += ((body.getSize().w - hands.getSize().w*2+1) - (hands.getSize().w+2)) /2 ;
-                            hand2X = hand1X + hands.getSize().w+1;
-                        } else {
-                            hand1X += -((hands.getSize().w*2+1 - body.getSize().w)/2) ;
-                            hand2X = hand1X + hands.getSize().w+1;
-                        }
-                        if(hands.getSize().h > body.getSize().h){
-                            handY += -((hands.getSize().h - body.getSize().h)/2);
-                        } else {
-                            handY += ((body.getSize().h - hands.getSize().h) - (hands.getSize().h/2)) /2;
-                        }
-                        hands.draw(dest, hand1X,  handY + hand1AnimOffsetY);   //left hand
-                        hands.draw(dest, hand2X,  handY + hand1AnimOffsetY);   //right hand
-                        feet.draw(dest, x, y+head.getSize().h +body.getSize().h -(3*feet.getSize().h/4) -hand2AnimOffsetY/8);  //left foot
-                        feet.draw(dest, x +body.getSize().w -hands.getSize().w, y+head.getSize().h +body.getSize().h -(3*feet.getSize().h/4) +hand2AnimOffsetY/16); //right foot
-                        head.draw(dest, x, y); //head
-                        body.draw(dest, x, y+head.getSize().h); //body
-
-                    }
-                    break;
-
-                case EQUIPING:
-                    break;
-            }
-            break;
-
-
-
-
-        case LEFT:
-            switch(characterState){
-                case STILL:
-                default:
-                    hands.draw(dest, x -(2*hands.getSize().w/3), y+head.getSize().h);   //hand on left
-                    body.draw(dest, x, y+head.getSize().h); //body
-                    head.draw(dest, x, y);    //head
-                    face.draw(dest, x-2, y);  //face
-                    feet.draw(dest, x, y+head.getSize().h +body.getSize().h -(3*feet.getSize().h/4) );  //foot on left
-                    feet.draw(dest, x +body.getSize().w -hands.getSize().w, y+head.getSize().h +body.getSize().h -(3*feet.getSize().h/4) ); //foot on right
-                    hands.draw(dest, x +(3*hands.getSize().w/4), y+head.getSize().h +(hands.getSize().h/4));   //hand on right
-                    break;
-
-                case MOVING:
-                    hands.draw(dest, x -(2*hands.getSize().w/3), y+head.getSize().h +hand1AnimOffsetY);   //hand on left
-                    body.draw(dest, x, y+head.getSize().h); //body
-                    head.draw(dest, x, y);    //head
-                    face.draw(dest, x-2, y);  //face
-                    feet.draw(dest, x +foot1AnimOffsetX, y+head.getSize().h +body.getSize().h -(3*feet.getSize().h/4) );  //foot on left
-                    feet.draw(dest, x +body.getSize().w -hands.getSize().w +foot2AnimOffsetX, y+head.getSize().h +body.getSize().h -(3*feet.getSize().h/4) ); //foot on right
-                    hands.draw(dest, x +(3*hands.getSize().w/4), y+head.getSize().h +(hands.getSize().h/4) +hand2AnimOffsetY);   //hand on right
-                    break;
-
-                case ATTACKING:
-                    break;
-                case EQUIPING:
-                    break;
-            }
-            break;
-
-
-
-        case RIGHT:
-            switch(characterState){
-                case STILL:
-                default:
-                    hands.draw(dest, x +body.getSize().w -(hands.getSize().w/3), y+head.getSize().h);   //hand on right
-                    body.draw(dest, x, y+head.getSize().h); //body
-                    head.draw(dest, x, y);    //head
-                    face.draw(dest, x+2, y);  //face
-                    feet.draw(dest, x,  y+head.getSize().h +body.getSize().h -(3*feet.getSize().h/4) );  //foot on left
-                    feet.draw(dest, x +body.getSize().w -hands.getSize().w,  y+head.getSize().h +body.getSize().h -(3*feet.getSize().h/4) ); //foot on right
-                    hands.draw(dest, x +(3*hands.getSize().w/4), y+head.getSize().h +(hands.getSize().h/4));   //hand on left
-                    break;
-
-                case MOVING:
-                    hands.draw(dest, x +body.getSize().w -(hands.getSize().w/3), y+head.getSize().h +hand1AnimOffsetY);   //hand on right
-                    body.draw(dest, x,  y+head.getSize().h); //body
-                    head.draw(dest, x,  y);    //head
-                    face.draw(dest, x+2,  y);  //face
-                    feet.draw(dest, x +foot2AnimOffsetX,  y+head.getSize().h +body.getSize().h -(3*feet.getSize().h/4) );  //foot on left
-                    feet.draw(dest, x +body.getSize().w -hands.getSize().w +foot1AnimOffsetX,  y+head.getSize().h +body.getSize().h -(3*feet.getSize().h/4) ); //foot on right
-                    hands.draw(dest, x +(3*hands.getSize().w/4), y+head.getSize().h +(hands.getSize().h/4) +hand2AnimOffsetY);   //hand on left
-                    break;
-
-                case ATTACKING:
-                    break;
-
-                case EQUIPING:
-                    break;
-            }
-            break;
     }
 }
 
@@ -679,9 +466,9 @@ bool Character::load( const std::string& filename ){
         gender = static_cast<Character::Genders>(tmp);
 
         packet >> tmp;
-        if(packet.readDone()){ return 0; }
+        if( packet.readDone() ){ return 0; }
         if( !validDirection(tmp) ){ return 0;}
-        facing = static_cast<Character::Directions>(tmp);
+        facing = static_cast<Directions>(tmp);
 
         packet >> x;
         if(packet.readDone()){ return 0; }

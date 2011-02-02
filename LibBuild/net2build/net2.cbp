@@ -8,8 +8,8 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Windows Release">
-				<Option output="bin\win\net2" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj\win\" />
+				<Option output="../../lib/win/libnet2" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/win/" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
@@ -23,8 +23,8 @@
 				</Linker>
 			</Target>
 			<Target title="Nix Release">
-				<Option output="bin\win\net2" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj\win\" />
+				<Option output="../../lib/nix/libnet2" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/win/" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
@@ -38,6 +38,7 @@
 			</Target>
 		</Build>
 		<Compiler>
+			<Add option="-fomit-frame-pointer" />
 			<Add option="-fexpensive-optimizations" />
 			<Add option="-Os" />
 			<Add option="-O3" />
@@ -45,6 +46,9 @@
 			<Add option="-O1" />
 			<Add option="-O" />
 			<Add option="-Wall" />
+			<Add option="-fPIC" />
+			<Add directory="../../include" />
+			<Add directory="../../include/SDL" />
 		</Compiler>
 		<Linker>
 			<Add option="-s" />
@@ -89,8 +93,9 @@
 		<Extensions>
 			<AutoVersioning>
 				<Scheme minor_max="10" build_max="0" rev_max="0" rev_rand_max="10" build_times_to_increment_minor="100" />
-				<Settings autoincrement="1" date_declarations="1" do_auto_increment="0" ask_to_increment="0" language="C++" svn="0" svn_directory="" header_path="version.h" />
+				<Settings autoincrement="1" date_declarations="1" do_auto_increment="0" ask_to_increment="0" language="C++" svn="0" svn_directory=" " header_path="version.h" />
 				<Changes_Log show_changes_editor="0" app_title="released version %M.%m.%b of %p" changeslog_path="ChangesLog.txt" />
+				<Code header_guard="VERSION_H" namespace="AutoVersion" prefix=" " />
 			</AutoVersioning>
 			<code_completion />
 			<envvars />

@@ -55,7 +55,7 @@ class Layer{
         // Optional parameters
         //  newWidth : how many tiles in a row
         //  newHeight : how many tiles in a collumn
-        Layer(size_t newWidth = 0, size_t newHeight = 0);
+        Layer(int newWidth = 0, int newHeight = 0);
         Layer(const Layer& src);
         Layer& operator=(const Layer& rhs);
         ~Layer();
@@ -64,33 +64,33 @@ class Layer{
 
         //  Returns the tile stored at "i" (tiles stored in 1D array)
         //  returns NULL if out of range
-        MapTile& index(size_t i);
+        MapTile& index(int i);
         //  Returns the tile stored at "i" (tiles stored in 1D array)
         //  returns NULL if out of range
-        MapTile& operator[](size_t i);
+        MapTile& operator[](int i);
         //  Returns tile corresponding to co-ordinates (x,y)
         //  returns NULL if out of range
-        MapTile& at(size_t x, size_t y);
+        MapTile& at(int x, int y);
 
 
 
         //  Returns name of layer
         const std::string& getName()const;
         //  Returns total number of tiles stored
-        size_t size()const;
+        int size()const;
         //  Returns number of tiles in a row
-        size_t getWidth()const;
+        int getWidth()const;
         //  Returns number of tiles in a column
-        size_t getHeight()const;
+        int getHeight()const;
         //  Returns true if showing attribute flags
         bool isShowingAttributes()const;
 
 
 
         //  Returns horizontal gap between tiles (in px)
-		size_t getTileWidth()const;
+		int getTileWidth()const;
         //  Returns vertical gap between tiles (in px)
-        size_t getTileHeight()const;
+        int getTileHeight()const;
         //  True if there are tiles stored in structure
         bool empty()const;
         //  True if array has been constructed
@@ -150,11 +150,11 @@ class Layer{
     private:
         std::string name;           //  Name of layer. Used in mapper
 
-        size_t width;                  //  Width of layer (in tiles)
-        size_t height;                 //  Height of layer (in tiles)
+        int width;                  //  Width of layer (in tiles)
+        int height;                 //  Height of layer (in tiles)
 
-		size_t tileWidth;              //  Horizontal gap between tiles (in px)
-		size_t tileHeight;             //  Vertical gap between tiles (in px)
+		int tileWidth;              //  Horizontal gap between tiles (in px)
+		int tileHeight;             //  Vertical gap between tiles (in px)
 
         std::vector<MapTile> layerGrid; //  Vector of tiles
 

@@ -73,7 +73,7 @@ IntroContext::IntroContext() :
 
     //start music
     InfraellyMixer::clearMusicQueue();
-    InfraellyMixer::playMusic("audio/are_we_talking_yet.mp3", -1);
+    InfraellyMixer::playMusic("audio/are_we_talking_yet.ogg", -1);
 
 
     // load images
@@ -215,7 +215,7 @@ void IntroContext::draw(){
     drawSurface(sdl_powered, screen, screen->w-sdl_powered->w, screen->h-sdl_powered->h);
 
     //draw version number
-    drawText(itos(AutoVersion::REVISION), font::mainFont.at(16), colour::blue, screen, 1, screen->h-12 );
+    drawText(itos(AutoVersion::_REVISION), font::mainFont.at(16), colour::blue, screen, 1, screen->h-12 );
 
     //draw gui
     gui->draw();

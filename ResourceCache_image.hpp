@@ -50,8 +50,8 @@ L-----------------------------------------------------------------------------*/
 
 
 #if USE_PACKED_RESOURCES
-    #include <SDL\SDL.h>
-    #include <SDL\SDL_image.h>
+    #include <SDL/SDL.h>
+    #include <SDL/SDL_image.h>
     #include "dataPacks.hpp"
 #endif
 

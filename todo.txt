@@ -12,6 +12,8 @@ File names with a "_" prefix are obselete and are due for deletion.
  ---------------------------
 
 Current Task:
+    + animator load anim bug?
+    + corrupt c_walk.iaf?
     + character shud use animations
 
 Major tasks:

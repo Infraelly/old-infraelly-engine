@@ -99,10 +99,10 @@ void TestContext::events(SDL_Event &event){
 
 void TestContext::input(Uint8 *keys){
     //directions
-    if ( keys[SDLK_UP] ) { if(player.getY() > 0) player.move( Character::UP ); }
-    if ( keys[SDLK_LEFT] ) { if(player.getX() > 0) player.move(Character::LEFT); }
-    if ( keys[SDLK_DOWN] ) { if(player.getY() < screen->h-70) player.move(Character::DOWN); }
-    if ( keys[SDLK_RIGHT] ) { if(player.getX() < screen->w-40) player.move(Character::RIGHT); }
+    if ( keys[SDLK_UP] ) { if(player.getY() > 0) player.move( UP ); }
+    if ( keys[SDLK_LEFT] ) { if(player.getX() > 0) player.move( LEFT ); }
+    if ( keys[SDLK_DOWN] ) { if(player.getY() < screen->h-70) player.move( DOWN ); }
+    if ( keys[SDLK_RIGHT] ) { if(player.getX() < screen->w-40) player.move( RIGHT ); }
 
     //attack with space
     if ( keys[SDLK_SPACE] ) { player.attack(); }

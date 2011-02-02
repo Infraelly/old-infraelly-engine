@@ -59,6 +59,7 @@ namespace packs{
             std::cerr << __FILE__ << " " << __LINE__ << ": " << "Main pack failed to load" << std::endl;
         }
 
-        /*TODO: load some kinda a config file with other packs O_o*/;
+        /*TODO: load some kinda a config file with other packs O_o*/
+        std::cerr << __FILE__ << " " << __LINE__ << ": " << "All packs loaded" << std::endl << std::endl;
     }
 }

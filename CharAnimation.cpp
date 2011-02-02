@@ -176,8 +176,14 @@ bool CharAnimation::load( const ResourcePack& pack, const std::string& filepath)
 
 
 
-void CharAnimation::draw(SDL_Surface *dest, enum CharAnimation::Dir facing,int x, int y){
+void CharAnimation::draw(SDL_Surface *dest, enum Directions facing,int x, int y){
     for(int i = 0; i < 6; ++i){
         anims[facing][i].draw(dest, x, y);
+    }
+}
+
+void CharAnimation::draw(SDL_Surface *dest, enum Directions facing,int x, int y, int frameNumber){
+    for(int i = 0; i < 6; ++i){
+        anims[facing][i].draw(dest, x, y, frameNumber);
     }
 }

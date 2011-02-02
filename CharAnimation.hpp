@@ -44,7 +44,7 @@ L-----------------------------------------------------------------------------*/
 
 #include "Animation.hpp"
 #include "INFPacket.hpp"
-
+#include "globalFunc.hpp"
 
 class CharAnimation : public Cacheable {
     public:
@@ -58,14 +58,6 @@ class CharAnimation : public Cacheable {
             LEFT_FOOT = 4,
             RIGHT_FOOT = 5
         };
-
-        enum Dir{
-            UP = 0,
-            RIGHT = 1,
-            DOWN = 2,
-            LEFT = 3
-        };
-
 
         CharAnimation();
 
@@ -86,7 +78,9 @@ class CharAnimation : public Cacheable {
         bool cache_load( const std::string& filename ){ return load(packs::mainPack, filename); }
 
         //  Draws the animation to "dest" at base position (x,y)
-        void draw(SDL_Surface *dest, enum CharAnimation::Dir facing, int x, int y);
+        void draw(SDL_Surface *dest, enum Directions facing, int x, int y);
+        //  Draws frame of anim
+        void draw(SDL_Surface *dest, enum Directions facing, int x, int y, int frameNumber);
 
         std::vector< std::vector<Animation> > anims;
 };

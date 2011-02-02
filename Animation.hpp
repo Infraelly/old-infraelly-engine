@@ -181,6 +181,9 @@ class Animation : public Cacheable {
         //  Draws the animation to "dest" at base position (x,y)
         void draw(SDL_Surface *dest, int x, int y);
 
+        //  Draws a frame of the animation to "dest" at base position (x,y)
+        void draw(SDL_Surface *dest, int x, int y, int frameNumber);
+
 
 
         //add a frame/fx event

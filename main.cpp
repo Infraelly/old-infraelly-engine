@@ -59,17 +59,6 @@ L-----------------------------------------------------------------------------*/
 #include "TestContext.hpp"
 #include "PackerContext.hpp"
 
-/*--------------
-access checkers
----------------*/
-#include "checkExcogitator.hpp"
-#include "checkForge.hpp"
-#include "checkBreath.hpp"
-#include "checkAnimator.hpp"
-#include "checkNucleus.hpp"
-#include "checkTest.hpp"
-#include "checkPacker.hpp"
-
 #include "GameConfig.hpp"
 
 using std::cerr;
@@ -97,78 +86,36 @@ int main(int argc, char *argv[]){
         std::string arg1 = argv[1];
         arg1 = upperCase(arg1);
         if( arg1 == "-ANIMATOR" ){
-            //check permision file
-            #ifndef DEBUG
-            if(isk::checkAnimator())
-            #endif
-            {
-                cerr << __FILE__ << " " << __LINE__ << ": " << "Entering animator mode..." << endl << endl;
-                runMode = ANIMATOR;
-            }
+            cerr << __FILE__ << " " << __LINE__ << ": " << "Entering animator mode..." << endl << endl;
+            runMode = ANIMATOR;
         } else
         if( arg1 == "-ITEM" ){
-            //check permision file
-            #ifndef DEBUG
-            if(isk::checkForge())
-            #endif
-            {
-                cerr << __FILE__ << " " << __LINE__ << ": " << "Entering item editor mode..." << endl << endl;
-                runMode = ITEM_EDITOR;
-            }
+            cerr << __FILE__ << " " << __LINE__ << ": " << "Entering item editor mode..." << endl << endl;
+            runMode = ITEM_EDITOR;
         } else
         if( arg1 == "-MAPPER" ){
-            //check permision file
-            #ifndef DEBUG
-            if(isk::checkExcogitator())
-            #endif
-            {
-                cerr << __FILE__ << " " << __LINE__ << ": " << "Entering map editor mode..." << endl << endl;
-                runMode = MAP_EDITOR;
-            }
+            cerr << __FILE__ << " " << __LINE__ << ": " << "Entering map editor mode..." << endl << endl;
+            runMode = MAP_EDITOR;
         } else
         if( arg1 == "-NPC" ){
-            //check permision file
-            #ifndef DEBUG
-            if(isk::checkBreath())
-            #endif
-            {
-                cerr << __FILE__ << " " << __LINE__ << ": " << "Entering item editor mode..." << endl << endl;
-                runMode = NPC_EDITOR;
-            }
+            cerr << __FILE__ << " " << __LINE__ << ": " << "Entering item editor mode..." << endl << endl;
+            runMode = NPC_EDITOR;
         } else
         if( arg1 == "-PACKER" ){
-            //check permision file
-            #ifndef DEBUG
-            if(isk::checkPacker())
-            #endif
-            {
-                cerr << __FILE__ << " " << __LINE__ << ": " << "Entering packer mode..." << endl << endl;
-                runMode = PACKER;
-            }
+            cerr << __FILE__ << " " << __LINE__ << ": " << "Entering packer mode..." << endl << endl;
+            runMode = PACKER;
         } else
         if( arg1 == "-TEST" ){
-            //check permision file
-            #ifndef DEBUG
-            if(isk::checkTest())
-            #endif
-            {
-                cerr << __FILE__ << " " << __LINE__ << ": " << "Entering test bed..." << endl << endl;
-                GameConfig::wScreenWidth = GameConfig::wTestScreenWidth;
-                GameConfig::wScreenHeight = GameConfig::wTestScreenHeight;
-                runMode = TEST;
-            }
+            cerr << __FILE__ << " " << __LINE__ << ": " << "Entering test bed..." << endl << endl;
+            GameConfig::wScreenWidth = GameConfig::wTestScreenWidth;
+            GameConfig::wScreenHeight = GameConfig::wTestScreenHeight;
+            runMode = TEST;
         } else
         if( arg1 == "-SERVER" ){
-            //check permision file
-            #ifndef DEBUG
-            if(isk::checkNucleus())
-            #endif
-            {
-                cerr << __FILE__ << " " << __LINE__ << ": " << "Entering server mode..." << endl << endl;
-                GameConfig::wScreenBpp = 8;
-                GameConfig::fScreenBpp = 8;
-                runMode = SERVER;
-            }
+            cerr << __FILE__ << " " << __LINE__ << ": " << "Entering server mode..." << endl << endl;
+            GameConfig::wScreenBpp = 8;
+            GameConfig::fScreenBpp = 8;
+            runMode = SERVER;
         } else
         if( arg1 == "-SUP" ){
             cerr << __FILE__ << " " << __LINE__ << ": " << "nm, u?" << endl;

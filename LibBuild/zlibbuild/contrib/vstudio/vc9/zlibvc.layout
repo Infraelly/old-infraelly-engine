@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
-	<ActiveTarget name="ReleaseWithoutAsm Win32" />
+	<ActiveTarget name="Nix" />
+	<File name="../../masmx64/inffas8664.c" open="0" top="0" tabpos="0">
+		<Cursor position="1763" topLine="19" />
+	</File>
 	<File name="zlib.rc" open="0" top="0" tabpos="0">
 		<Cursor position="49" topLine="0" />
 	</File>

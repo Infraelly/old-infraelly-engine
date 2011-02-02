@@ -8,9 +8,9 @@
 		<Build>
 			<Target title="Release Windows">
 				<Option platforms="Windows;" />
-				<Option output="bin\win\libtinyxml" prefix_auto="1" extension_auto="1" />
+				<Option output="../../lib/win/libtinyxml" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output="obj\win\" />
+				<Option object_output="obj/win/" />
 				<Option type="2" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
@@ -29,9 +29,9 @@
 			</Target>
 			<Target title="Release Linux">
 				<Option platforms="Unix;" />
-				<Option output="bin\nix\libtinyxml" prefix_auto="1" extension_auto="1" />
+				<Option output="../../lib/nix/libtinyxml" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output="obj\nix\" />
+				<Option object_output="obj/nix/" />
 				<Option type="2" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
@@ -65,8 +65,9 @@
 			<lib_finder disable_auto="1" />
 			<AutoVersioning>
 				<Scheme minor_max="10" build_max="0" rev_max="0" rev_rand_max="10" build_times_to_increment_minor="100" />
-				<Settings autoincrement="1" date_declarations="1" do_auto_increment="0" ask_to_increment="0" language="C++" svn="0" svn_directory="" header_path="version.h" />
+				<Settings autoincrement="1" date_declarations="1" do_auto_increment="0" ask_to_increment="0" language="C++" svn="0" svn_directory=" " header_path="version.h" />
 				<Changes_Log show_changes_editor="0" app_title="released version %M.%m.%b of %p" changeslog_path="ChangesLog.txt" />
+				<Code header_guard="VERSION_H" namespace="AutoVersion" prefix=" " />
 			</AutoVersioning>
 		</Extensions>
 	</Project>

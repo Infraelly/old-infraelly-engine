@@ -188,14 +188,14 @@ bool AreaMap::saveMap(const std::string& filename){
     pack << static_cast<int>(exclusive);
 
     //write number of tilesets used
-    pack << tilesetFilenames.size();
+    pack << (int) tilesetFilenames.size();
     //write tileset filenames
     for( size_t i = 0; i < tilesetFilenames.size(); ++i ){
         pack << tilesetFilenames.at(i);
     }
 
 	//save number of layers
-    pack << layers.size();
+    pack << (int) layers.size();
 
     //save all the layers
     for(size_t i = 0; i < layers.size(); ++i){
@@ -234,7 +234,7 @@ bool AreaMap::loadMap(inp::INFPacket& pack){
     }
 
 	//read number of layers
-	size_t numLayers = 0;
+	int numLayers = 0;
     pack >> numLayers;
     //  dont check
     if( pack.readDone() ){ return 0; }

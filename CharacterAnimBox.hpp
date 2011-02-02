@@ -48,6 +48,7 @@ L-----------------------------------------------------------------------------*/
 #include "guichan.hpp"
 #include <vector>
 #include "CharAnimation.hpp"
+#include "globalFunc.hpp"
 
 class CharAnimBuildBox;
 class CharAnimPreviewBox;
@@ -79,7 +80,7 @@ class CharacterAnimBox : public InfraellyWindow, public gcn::SelectionListener {
         bool drawAnim_;
         CharAnimation anim_;
         CharAnimation::BodyParts activePart_;   // bodypart
-        enum CharAnimation::Dir activeDir_;    //direction
+        enum Directions activeDir_;    //direction
         std::vector<AnimFrame> defaultFrames_;
 
         void addListItem();

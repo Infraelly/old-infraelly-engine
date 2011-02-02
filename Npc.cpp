@@ -41,7 +41,7 @@ L-----------------------------------------------------------------------------*/
 
 //  NPC.cpp
 
-#include "NPC.hpp"
+#include "Npc.hpp"
 
 #include <iostream>
 #include "globalFunc.hpp"

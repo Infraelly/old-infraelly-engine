@@ -86,7 +86,6 @@ void init(){
     //set exit function
     atexit(closeInfraelly);
 
-
     //decorate/prepare the out put log
     cerr << "                         ____                                                  " << endl;
     cerr << "      __                / __ \\                                /\\     /\\        " << endl;
@@ -116,6 +115,8 @@ void init(){
         cout << "Infraelly settings not loading from file. (DEBUG is enabled)" << endl;
     #endif
 
+    //putenv("SDL_VIDEODRIVER=x11");
+
 
     /********************************************************
 
@@ -128,42 +129,37 @@ void init(){
     cerr << __FILE__ << " " << __LINE__ << ": " << "Initialising SDL" << endl;
     //try initiate everything
     if(SDL_Init(SDL_INIT_EVERYTHING) == -1){
-        cerr << __FILE__ << " " << __LINE__ << ": " << "SDL failed to initialised: SDL_INIT_EVERYTHING" << endl;
+        cerr << __FILE__ << " " << __LINE__ << ": " << "SDL failed to initialise: SDL_INIT_EVERYTHING" << endl;
         Uint32 initiated = SDL_WasInit(SDL_INIT_EVERYTHING);
         bool continueAnyway = 1;
         //check if video was initiated
-        if (initiated & SDL_INIT_VIDEO){
-            cerr << __FILE__ << " " << __LINE__ << ": " << "SDL failed to initialised: SDL_INIT_VIDEO" << endl;
-            cerr << __FILE__ << " " << __LINE__ << ": " << SDL_GetError() << endl << endl;
+        if ( !(initiated & SDL_INIT_VIDEO) ){
+            cerr << __FILE__ << " " << __LINE__ << ": " << "SDL failed to initialise: SDL_INIT_VIDEO" << endl;
             continueAnyway = 0;
         }
         //check if the timer systems were initiated properly
-        if (initiated & SDL_INIT_TIMER){
-            cerr << __FILE__ << " " << __LINE__ << ": " << "SDL failed to initialised: SDL_INIT_TIMER" << endl;
-            cerr << __FILE__ << " " << __LINE__ << ": " << SDL_GetError() << endl << endl;
+        if ( !(initiated & SDL_INIT_TIMER) ){
+            cerr << __FILE__ << " " << __LINE__ << ": " << "SDL failed to initialise: SDL_INIT_TIMER" << endl;
             continueAnyway = 0;
         }
         //check i the audio systems were initiated properly
-        if (initiated & SDL_INIT_AUDIO){
-            cerr << __FILE__ << " " << __LINE__ << ": " << "SDL failed to initialised: SDL_INIT_AUDIO" << endl;
-            cerr << __FILE__ << " " << __LINE__ << ": " << SDL_GetError() << endl << endl;
+        if ( !(initiated & SDL_INIT_AUDIO) ){
+            cerr << __FILE__ << " " << __LINE__ << ": " << "SDL failed to initialise: SDL_INIT_AUDIO" << endl;
             GameConfig::sound = 0;
             GameConfig::music = 0;
-            continueAnyway = 1;
         }
         //check if CD-Rom capabilities were initiated properly
-        if (initiated & SDL_INIT_CDROM){
-            cerr << __FILE__ << " " << __LINE__ << ": " << "SDL failed to initialised: SDL_INIT_CDROM" << endl;
-            cerr << __FILE__ << " " << __LINE__ << ": " << SDL_GetError() << endl << endl;
+        /*if ( !(initiated & SDL_INIT_CDROM) ){
+            cerr << __FILE__ << " " << __LINE__ << ": " << "SDL failed to initialise: SDL_INIT_CDROM" << endl;
             continueAnyway = 1;
         }
         //check if the joystick capabilities were initiated properly
-        if (initiated & SDL_INIT_JOYSTICK){
-            cerr << __FILE__ << " " << __LINE__ << ": " << "SDL failed to initialised: SDL_INIT_JOYSTICK" << endl;
-            cerr << __FILE__ << " " << __LINE__ << ": " << SDL_GetError() << endl << endl;
+        if ( !(initiated & SDL_INIT_JOYSTICK) ){
+            cerr << __FILE__ << " " << __LINE__ << ": " << "SDL failed to initialise: SDL_INIT_JOYSTICK" << endl;
             continueAnyway = 1;
-        }
+        }*/
         //depending on what was succesful, continue or not
+        cerr << __FILE__ << " " << __LINE__ << ": " << SDL_GetError() << endl;
         if (continueAnyway){
             cerr << __FILE__ << " " << __LINE__ << ": " << "Continuing anyway..." << endl << endl;
         } else {
@@ -173,13 +169,6 @@ void init(){
     } else {
         cerr << __FILE__ << " " << __LINE__ << ": " << "Initialised: SDL_INIT_EVERYTHING" << endl << endl;
     }
-    //enable unicode input
-    SDL_EnableUNICODE(1);
-    cerr << __FILE__ << " " << __LINE__ << ": " << "Unicode enabled" << endl;
-    SDL_EnableKeyRepeat(SDL_DEFAULT_REPEAT_DELAY, SDL_DEFAULT_REPEAT_INTERVAL);
-    cerr << __FILE__ << " " << __LINE__ << ": " << "Key repeats enabled" << endl;
-
-
 
     /*************************************************************
 
@@ -187,7 +176,7 @@ void init(){
 
     *************************************************************/
     //make splash appear in center of screen
-    putenv("SDL_VIDEO_CENTERED=1");
+    putenv((char*)"SDL_VIDEO_CENTERED=1");
 
     //load splash image
     SDL_Surface *splashBG;
@@ -197,21 +186,41 @@ void init(){
         splashBG = IMG_Load_RW(splash_png_Rwop, 1);
     }
     if(!splashBG) {
+        cerr << __FILE__ << " " << __LINE__ << ": " << "Failed to load splash" << endl;
        cerr << __FILE__ << " " << __LINE__ << ": " << "IMG_Load_RW(splash_png_Rwop, 1): " << IMG_GetError() << endl;
     } else {
         //make window
+        cerr << __FILE__ << " " << __LINE__ << ": " << "Creating splash" << endl << endl;
         Screen::init(splashBG->w, splashBG->h, splashBG->format->BitsPerPixel, SDL_SWSURFACE|SDL_ANYFORMAT|SDL_NOFRAME);
     }
     //display Splash Image
     drawSurface(splashBG, Screen::getSurface(), 0, 0);
     Screen::flip();
 
-
+    const SDL_VideoInfo *info = Screen::getVideoInfo();
+    char dName[16];
+    cerr << __FILE__ << " " << __LINE__ << ": " << "SDL reports:" << endl;
+    cerr << __FILE__ << " " << __LINE__ << ": " << "Driver: " << SDL_VideoDriverName(dName, 16) << endl;
+    if( info != NULL ){
+        cerr << __FILE__ << " " << __LINE__ << ": " << "Possible to create hardware surfaces: " << info->hw_available << endl;
+        cerr << __FILE__ << " " << __LINE__ << ": " << "Window manager available: " << info->wm_available << endl;
+        cerr << __FILE__ << " " << __LINE__ << ": " << "Accelerated hardware to hardware blits: " << info->blit_hw << endl;
+        cerr << __FILE__ << " " << __LINE__ << ": " << "Accelerated hardware to hardware colorkey blits: " << info->blit_hw_CC << endl;
+        cerr << __FILE__ << " " << __LINE__ << ": " << "Accelerated hardware to hardware alpha blits: " << info->blit_hw_A << endl;
+        cerr << __FILE__ << " " << __LINE__ << ": " << "Accelerated software to hardware blits: " << info->blit_sw << endl;
+        cerr << __FILE__ << " " << __LINE__ << ": " << "Accelerated Are software to hardware colorkey blits: " << info->blit_sw_CC << endl;
+        cerr << __FILE__ << " " << __LINE__ << ": " << "Accelerated software to hardware alpha blits: " << info->blit_sw_A << endl;
+        cerr << __FILE__ << " " << __LINE__ << ": " << "Accelerated color fills: " << info->blit_fill << endl;
+        cerr << __FILE__ << " " << __LINE__ << ": " << "Total video memory (Kb): " << info->video_mem << endl;
+    } else {
+        cerr << __FILE__ << " " << __LINE__ << ": " << "Failed to get video info." << endl;
+    }
+    cerr << endl;
 
     /*************************************************************
 
                         SDL addons
-
+ů
     *************************************************************/
     /*------------------------------------------
                 initiallise SDL_mixer
@@ -248,6 +257,7 @@ void init(){
     /*------------------------------------------
                 initiallise SDL_net
     ------------------------------------------*/
+    cerr << __FILE__ << " " << __LINE__ << ": " << "Initialising SDL_net" << endl;
     if( SDLNet_Init() == -1 ){
         cerr << __FILE__ << " " << __LINE__ << ": " << "SDL failed to initialised: SDLNet_Init" << endl;
         cerr << __FILE__ << " " << __LINE__ << ": " << SDLNet_GetError() << endl;
@@ -282,7 +292,7 @@ void init(){
                   load main resources
     --------------------------------------------*/
     packs::loadPacks();
-    InfraellyMixer::playMusic("audio/loader.mp3", -1);
+    InfraellyMixer::playMusic("audio/loader.ogg", -1);
     font::loadFonts();
     Screen::flip();
 
@@ -323,30 +333,12 @@ void init(){
         }
     }
 
-    const SDL_VideoInfo *info = Screen::getVideoInfo();
-    char dName[32];
-    cerr << endl;
-    cerr << endl;
-    cerr << __FILE__ << " " << __LINE__ << ": " << "Screen initialised:" << endl;
-    cerr << __FILE__ << " " << __LINE__ << ": " << "Requested:" << endl;
-    cerr << __FILE__ << " " << __LINE__ << ": " << "Hardware surface (double buffering), at " << Screen::getWidth() << "x" << Screen::getHeight() << "x" << Screen::getBpp() << endl;
-    cerr << endl;
-    cerr << __FILE__ << " " << __LINE__ << ": " << "SDL reports:" << endl;
-    cerr << __FILE__ << " " << __LINE__ << ": " << "Driver: " << SDL_VideoDriverName(dName, 256) << endl;
-    cerr << __FILE__ << " " << __LINE__ << ": " << "Possible to create hardware surfaces: " << info->hw_available << endl;
-    cerr << __FILE__ << " " << __LINE__ << ": " << "Window manager available: " << info->wm_available << endl;
-    cerr << __FILE__ << " " << __LINE__ << ": " << "Accelerated hardware to hardware blits: " << info->blit_hw << endl;
-    cerr << __FILE__ << " " << __LINE__ << ": " << "Accelerated hardware to hardware colorkey blits: " << info->blit_hw_CC << endl;
-    cerr << __FILE__ << " " << __LINE__ << ": " << "Accelerated hardware to hardware alpha blits: " << info->blit_hw_A << endl;
-    cerr << __FILE__ << " " << __LINE__ << ": " << "Accelerated software to hardware blits: " << info->blit_sw << endl;
-    cerr << __FILE__ << " " << __LINE__ << ": " << "Accelerated Are software to hardware colorkey blits: " << info->blit_sw_CC << endl;
-    cerr << __FILE__ << " " << __LINE__ << ": " << "Accelerated software to hardware alpha blits: " << info->blit_sw_A << endl;
-    cerr << __FILE__ << " " << __LINE__ << ": " << "Accelerated color fills: " << info->blit_fill << endl;
-    cerr << __FILE__ << " " << __LINE__ << ": " << "Total video memory (Kb): " << info->video_mem << endl;
-    cerr << endl;
-    cerr << endl;
+    cerr << __FILE__ << " " << __LINE__ << ": " << "Screen initialised: " << Screen::getWidth() << "x" << Screen::getHeight() << "x" << Screen::getBpp() << endl;
 
 
+    //enable unicode input
+    SDL_EnableUNICODE(1);
+    SDL_EnableKeyRepeat(SDL_DEFAULT_REPEAT_DELAY, SDL_DEFAULT_REPEAT_INTERVAL);
     //create an image loader, to load sdl images into guichan
     InfraellyImageLoader *imageLoader = new InfraellyImageLoader();
     //set guichan to use the image loader afore created
@@ -357,6 +349,10 @@ void init(){
     Screen::setCaption( "Infraelly" );
     InfraellyMixer::stopMusic();
     InfraellyMixer::clearMusicQueue();
+
+    // so that when the window is resized it wont snap to the center of the
+    // screen, i find it annoying when it does that.
+    putenv((char*)"SDL_VIDEO_CENTERED=0");
 }
 
 
