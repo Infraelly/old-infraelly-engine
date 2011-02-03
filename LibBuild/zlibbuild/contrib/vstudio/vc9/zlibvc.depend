@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1186384614 source:d:\projects\infraelly\curver\libbuild\zlibbuild\adler32.c
+1296739412 source:d:\projects\infraelly\curver\libbuild\zlibbuild\adler32.c
 	"zutil.h"
 
-1271622564 d:\projects\infraelly\curver\libbuild\zlibbuild\zutil.h
+1296739412 d:\projects\infraelly\curver\libbuild\zlibbuild\zutil.h
 	"zlib.h"
 	<stddef.h>
 	<string.h>
@@ -13,22 +13,22 @@
 	<unix.h>
 	<stdio.h>
 
-1271740368 d:\projects\infraelly\curver\libbuild\zlibbuild\zlib.h
+1296739412 d:\projects\infraelly\curver\libbuild\zlibbuild\zlib.h
 	"zconf.h"
 
-1271617086 d:\projects\infraelly\curver\libbuild\zlibbuild\zconf.h
+1296739412 d:\projects\infraelly\curver\libbuild\zlibbuild\zconf.h
 	<windows.h>
 	<sys/types.h>
 	<unistd.h>
 	<unixio.h>
 
-1134325652 source:d:\projects\infraelly\curver\libbuild\zlibbuild\compress.c
+1296739412 source:d:\projects\infraelly\curver\libbuild\zlibbuild\compress.c
 	"zlib.h"
 
-1262626284 source:d:\projects\infraelly\curver\libbuild\zlibbuild\contrib\minizip\ioapi.c
+1296739412 source:d:\projects\infraelly\curver\libbuild\zlibbuild\contrib\minizip\ioapi.c
 	"ioapi.h"
 
-1266235180 d:\projects\infraelly\curver\libbuild\zlibbuild\contrib\minizip\ioapi.h
+1296739412 d:\projects\infraelly\curver\libbuild\zlibbuild\contrib\minizip\ioapi.h
 	<stdio.h>
 	<stdlib.h>
 	"zlib.h"
@@ -36,16 +36,16 @@
 	"mz64conf.h"
 	"stdint.h"
 
-1266235102 source:d:\projects\infraelly\curver\libbuild\zlibbuild\contrib\minizip\iowin32.c
+1296739412 source:d:\projects\infraelly\curver\libbuild\zlibbuild\contrib\minizip\iowin32.c
 	<stdlib.h>
 	"zlib.h"
 	"ioapi.h"
 	"iowin32.h"
 
-1266235112 d:\projects\infraelly\curver\libbuild\zlibbuild\contrib\minizip\iowin32.h
+1296739412 d:\projects\infraelly\curver\libbuild\zlibbuild\contrib\minizip\iowin32.h
 	<windows.h>
 
-1266235180 source:d:\projects\infraelly\curver\libbuild\zlibbuild\contrib\minizip\unzip.c
+1296739412 source:d:\projects\infraelly\curver\libbuild\zlibbuild\contrib\minizip\unzip.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -57,14 +57,14 @@
 	<errno.h>
 	"crypt.h"
 
-1266235102 d:\projects\infraelly\curver\libbuild\zlibbuild\contrib\minizip\unzip.h
+1296739412 d:\projects\infraelly\curver\libbuild\zlibbuild\contrib\minizip\unzip.h
 	"zlib.h"
 	"ioapi.h"
 	"bzlib.h"
 
-1256536198 d:\projects\infraelly\curver\libbuild\zlibbuild\contrib\minizip\crypt.h
+1296739412 d:\projects\infraelly\curver\libbuild\zlibbuild\contrib\minizip\crypt.h
 
-1266235180 source:d:\projects\infraelly\curver\libbuild\zlibbuild\contrib\minizip\zip.c
+1296739412 source:d:\projects\infraelly\curver\libbuild\zlibbuild\contrib\minizip\zip.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -77,29 +77,29 @@
 	<errno.h>
 	"crypt.h"
 
-1266235102 d:\projects\infraelly\curver\libbuild\zlibbuild\contrib\minizip\zip.h
+1296739412 d:\projects\infraelly\curver\libbuild\zlibbuild\contrib\minizip\zip.h
 	"zlib.h"
 	"ioapi.h"
 	"bzlib.h"
 
-1271653808 source:d:\projects\infraelly\curver\libbuild\zlibbuild\crc32.c
+1296739412 source:d:\projects\infraelly\curver\libbuild\zlibbuild\crc32.c
 	<stdio.h>
 	"zutil.h"
 	<limits.h>
 	"crc32.h"
 
-1041785614 d:\projects\infraelly\curver\libbuild\zlibbuild\crc32.h
+1296739412 d:\projects\infraelly\curver\libbuild\zlibbuild\crc32.h
 
-1271740342 source:d:\projects\infraelly\curver\libbuild\zlibbuild\deflate.c
+1296739412 source:d:\projects\infraelly\curver\libbuild\zlibbuild\deflate.c
 	"deflate.h"
 
-1271653246 d:\projects\infraelly\curver\libbuild\zlibbuild\deflate.h
+1296739412 d:\projects\infraelly\curver\libbuild\zlibbuild\deflate.h
 	"zutil.h"
 
-1266106368 source:d:\projects\infraelly\curver\libbuild\zlibbuild\gzclose.c
+1296739412 source:d:\projects\infraelly\curver\libbuild\zlibbuild\gzclose.c
 	"gzguts.h"
 
-1271622512 d:\projects\infraelly\curver\libbuild\zlibbuild\gzguts.h
+1296739412 d:\projects\infraelly\curver\libbuild\zlibbuild\gzguts.h
 	<stdio.h>
 	"zlib.h"
 	<string.h>
@@ -110,38 +110,38 @@
 	<windows.h>
 	<errno.h>
 
-1271616802 source:d:\projects\infraelly\curver\libbuild\zlibbuild\gzlib.c
+1296739412 source:d:\projects\infraelly\curver\libbuild\zlibbuild\gzlib.c
 	"gzguts.h"
 
-1269789574 source:d:\projects\infraelly\curver\libbuild\zlibbuild\gzread.c
+1296739412 source:d:\projects\infraelly\curver\libbuild\zlibbuild\gzread.c
 	"gzguts.h"
 
-1268447246 source:d:\projects\infraelly\curver\libbuild\zlibbuild\gzwrite.c
+1296739412 source:d:\projects\infraelly\curver\libbuild\zlibbuild\gzwrite.c
 	"gzguts.h"
 	<stdarg.h>
 
-1261787680 source:d:\projects\infraelly\curver\libbuild\zlibbuild\infback.c
+1296739412 source:d:\projects\infraelly\curver\libbuild\zlibbuild\infback.c
 	"zutil.h"
 	"inftrees.h"
 	"inflate.h"
 	"inffast.h"
 	"inffixed.h"
 
-1271654126 d:\projects\infraelly\curver\libbuild\zlibbuild\inftrees.h
+1296739412 d:\projects\infraelly\curver\libbuild\zlibbuild\inftrees.h
 
-1261787528 d:\projects\infraelly\curver\libbuild\zlibbuild\inflate.h
+1296739412 d:\projects\infraelly\curver\libbuild\zlibbuild\inflate.h
 
-1271654162 d:\projects\infraelly\curver\libbuild\zlibbuild\inffast.h
+1296739412 d:\projects\infraelly\curver\libbuild\zlibbuild\inffast.h
 
-1038181498 d:\projects\infraelly\curver\libbuild\zlibbuild\inffixed.h
+1296739412 d:\projects\infraelly\curver\libbuild\zlibbuild\inffixed.h
 
-1271654184 source:d:\projects\infraelly\curver\libbuild\zlibbuild\inffast.c
+1296739412 source:d:\projects\infraelly\curver\libbuild\zlibbuild\inffast.c
 	"zutil.h"
 	"inftrees.h"
 	"inflate.h"
 	"inffast.h"
 
-1264321636 source:d:\projects\infraelly\curver\libbuild\zlibbuild\inflate.c
+1296739412 source:d:\projects\infraelly\curver\libbuild\zlibbuild\inflate.c
 	"zutil.h"
 	"inftrees.h"
 	"inflate.h"
@@ -149,22 +149,22 @@
 	"inffixed.h"
 	<stdio.h>
 
-1271740342 source:d:\projects\infraelly\curver\libbuild\zlibbuild\inftrees.c
+1296739412 source:d:\projects\infraelly\curver\libbuild\zlibbuild\inftrees.c
 	"zutil.h"
 	"inftrees.h"
 
-1271653424 source:d:\projects\infraelly\curver\libbuild\zlibbuild\trees.c
+1296739412 source:d:\projects\infraelly\curver\libbuild\zlibbuild\trees.c
 	"deflate.h"
 	<ctype.h>
 	"trees.h"
 	<stdio.h>
 
-1271615558 d:\projects\infraelly\curver\libbuild\zlibbuild\trees.h
+1296739412 d:\projects\infraelly\curver\libbuild\zlibbuild\trees.h
 
-1263749662 source:d:\projects\infraelly\curver\libbuild\zlibbuild\uncompr.c
+1296739412 source:d:\projects\infraelly\curver\libbuild\zlibbuild\uncompr.c
 	"zlib.h"
 
-1271654054 source:d:\projects\infraelly\curver\libbuild\zlibbuild\zutil.c
+1296739412 source:d:\projects\infraelly\curver\libbuild\zlibbuild\zutil.c
 	"zutil.h"
 
 1295336221 source:/home/insanepotato/infraelly/LibBuild/zlibbuild/adler32.c

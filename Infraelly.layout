@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
-	<ActiveTarget name="Nix Dev" />
+	<ActiveTarget name="Windows Dev" />
 	<File name="AlertBox.cpp" open="0" top="0" tabpos="6">
 		<Cursor position="3202" topLine="0" />
 	</File>
