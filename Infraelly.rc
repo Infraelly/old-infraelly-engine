@@ -18,14 +18,14 @@ FILETYPE VFT_APP
 		 BLOCK "0C0904E4"
 		 {
 			 VALUE "CompanyName", "insanepotato Productions"
-			 VALUE "FileVersion", RC_FILEVERSION_STRING
+			 VALUE "FileVersion", _RC_FILEVERSION_STRING
 			 VALUE "FileDescription", "Infraelly MMORPG"
 			 VALUE "InternalName", "Infraelly"
 			 VALUE "LegalCopyright", "Infraelly"
 			 VALUE "LegalTrademarks", "Infraelly, insanepotato, insanepotato Productions"
 			 VALUE "OriginalFilename", "Infraelly.exe"
 			 VALUE "ProductName", "Infraelly"
-			 VALUE "ProductVersion", RC_FILEVERSION_STRING
+			 VALUE "ProductVersion", _RC_FILEVERSION_STRING
 			 VALUE "1337skillz0rz", ">=O"
 			 VALUE "Energy Scanner", "HIS POWER LEVEL IS OVER NINE_THOUSAND!!!"
 		 }

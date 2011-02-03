@@ -243,9 +243,9 @@ bool ResourcePack::getResource( std::string filepath, ResourceFile& dest )const
     #else
         //  Use physical files
         if( findFile(correctFilepath(rcRoot_+"/"+filepath)) == 0 ){
-            if( addFile(filepath) == 0 ){
+            //if( addFile(filepath) == 0 ){
                 return 0;
-            }
+            //}
         }
 
         dest = index_[filepath];
@@ -274,7 +274,7 @@ bool ResourcePack::getResourceText( std::string filepath, std::string& dest )con
         return 1;
     #else
         //  Use physical files
-        std::ifstream rcFile( correctFilepath(rcRoot_+"/"+filepath).c_str(), std::ios::ascii|std::ios::in );
+        std::ifstream rcFile( correctFilepath(rcRoot_+"/"+filepath).c_str(), std::ios::in );
         //open file to return
         if( !rcFile ){
             errorState = FILE_NOT_FOUND;

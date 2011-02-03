@@ -5,7 +5,7 @@
 		<Option title="Infraelly" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="RunContext/Contexts/;RunContext/;RunContext/;RunContext/;RunContext/;RunContext/Contexts/Global Varibles and Functions/;RunContext/Contexts/Global Varibles and Functions/Image Resources/;RunContext/Contexts/Global Varibles and Functions/Mixer/;RunContext/Contexts/Global Varibles and Functions/Screen/;GUI/Base Widgets/;Animation/;GUI/Animator/;AreaMap/;GUI/;Resource Management/Cache/;Character/;GUI/Animator/CharacterAnimator/;GUI/Game GUI/;Network Control (INP)/;Server/;GUI/Console/;Timers/FPS Manager/;GUI/Intro GUI/;Inventory/;Inventory/Item/;GUI/Animator/ItemAnimator/;GUI/Item maker/;GUI/Mapper/Layer Box/;GUI/Mapper/;GUI/TilesetWidgets/TSprite/;GUI/TilesetWidgets/;Threading/;Character/Npc/;Resource Management/;Character/Stats/;Tileset/TSprite/;Tileset/Tile/;Tileset/;Timers/;Debug/;" />
+		<Option virtualFolders="Timers/;Server/;Server/;Server/;Server/;Timers/FPS Manager/;GUI/Base Widgets/;Animation/;GUI/Animator/;RunContext/Contexts/;AreaMap/;GUI/;Resource Management/Cache/;Character/;GUI/Animator/CharacterAnimator/;GUI/Game GUI/;Network Control (INP)/;GUI/Console/;Global Varibles and Functions/;Global Varibles and Functions/Image Resources/;Global Varibles and Functions/Mixer/;GUI/Intro GUI/;Inventory/;Inventory/Item/;GUI/Animator/ItemAnimator/;GUI/Item maker/;GUI/Mapper/Layer Box/;GUI/Mapper/;GUI/TilesetWidgets/TSprite/;GUI/TilesetWidgets/;Threading/;Character/Npc/;Resource Management/;RunContext/;Global Varibles and Functions/Screen/;Character/Stats/;Tileset/TSprite/;Tileset/Tile/;Tileset/;Debug/;" />
 		<Build>
 			<Target title="Windows Dev">
 				<Option platforms="Windows;" />
@@ -40,7 +40,13 @@
 					<Add library="tinyxml" />
 					<Add library="cryptopp" />
 					<Add library="mingw32" />
+					<Add directory="lib/win" />
 				</Linker>
+				<ExtraCommands>
+					<Add after="makeDataFileList.bat" />
+					<Add after="del data.ipf" />
+					<Add after="infraelly.exe -packer -s" />
+				</ExtraCommands>
 			</Target>
 			<Target title="Windows Release">
 				<Option platforms="Windows;" />
@@ -68,6 +74,9 @@
 					<Add directory="lib/win" />
 				</Linker>
 				<ExtraCommands>
+					<Add after="makeDataFileList.bat" />
+					<Add after="rm data.ipf" />
+					<Add after="infraelly.exe -packer -s" />
 					<Add after="tools\upx303w\upx.exe --best --compress-icons=2 --strip-relocs=1 --overlay=strip --compress-exports=0 --lzma infraelly.exe" />
 					<Add after="makeReleasezip.bat" />
 				</ExtraCommands>
@@ -310,10 +319,10 @@
 			<Option virtualFolder="Server/" />
 		</Unit>
 		<Unit filename="GameConfig.cpp">
-			<Option virtualFolder="RunContext/Contexts/Global Varibles and Functions/" />
+			<Option virtualFolder="Global Varibles and Functions/" />
 		</Unit>
 		<Unit filename="GameConfig.hpp">
-			<Option virtualFolder="RunContext/Contexts/Global Varibles and Functions/" />
+			<Option virtualFolder="Global Varibles and Functions/" />
 		</Unit>
 		<Unit filename="GameContext.cpp">
 			<Option virtualFolder="RunContext/Contexts/" />
@@ -354,7 +363,7 @@
 		</Unit>
 		<Unit filename="Infraelly.rc">
 			<Option compilerVar="WINDRES" />
-			<Option virtualFolder="RunContext/Contexts/Global Varibles and Functions/Image Resources/" />
+			<Option virtualFolder="Global Varibles and Functions/" />
 		</Unit>
 		<Unit filename="InfraellyImageLoader.cpp">
 			<Option virtualFolder="GUI/" />
@@ -375,10 +384,10 @@
 			<Option virtualFolder="GUI/Base Widgets/" />
 		</Unit>
 		<Unit filename="InfraellyMixer.cpp">
-			<Option virtualFolder="RunContext/Contexts/Global Varibles and Functions/Mixer/" />
+			<Option virtualFolder="Global Varibles and Functions/Mixer/" />
 		</Unit>
 		<Unit filename="InfraellyMixer.hpp">
-			<Option virtualFolder="RunContext/Contexts/Global Varibles and Functions/Mixer/" />
+			<Option virtualFolder="Global Varibles and Functions/Mixer/" />
 		</Unit>
 		<Unit filename="InfraellyScroller.cpp">
 			<Option virtualFolder="GUI/Base Widgets/" />
@@ -631,10 +640,10 @@
 			<Option virtualFolder="RunContext/" />
 		</Unit>
 		<Unit filename="Screen.cpp">
-			<Option virtualFolder="RunContext/Contexts/Global Varibles and Functions/Screen/" />
+			<Option virtualFolder="Global Varibles and Functions/Screen/" />
 		</Unit>
 		<Unit filename="Screen.hpp">
-			<Option virtualFolder="RunContext/Contexts/Global Varibles and Functions/Screen/" />
+			<Option virtualFolder="Global Varibles and Functions/Screen/" />
 		</Unit>
 		<Unit filename="ServerContext.cpp">
 			<Option virtualFolder="RunContext/Contexts/" />
@@ -748,35 +757,35 @@
 			<Option virtualFolder="Timers/" />
 		</Unit>
 		<Unit filename="caches.cpp">
-			<Option virtualFolder="RunContext/Contexts/Global Varibles and Functions/" />
+			<Option virtualFolder="Global Varibles and Functions/" />
 		</Unit>
 		<Unit filename="caches.hpp">
-			<Option virtualFolder="RunContext/Contexts/Global Varibles and Functions/" />
+			<Option virtualFolder="Global Varibles and Functions/" />
 		</Unit>
 		<Unit filename="colours.cpp">
-			<Option virtualFolder="RunContext/Contexts/Global Varibles and Functions/" />
+			<Option virtualFolder="Global Varibles and Functions/" />
 		</Unit>
 		<Unit filename="colours.hpp">
-			<Option virtualFolder="RunContext/Contexts/Global Varibles and Functions/" />
+			<Option virtualFolder="Global Varibles and Functions/" />
 		</Unit>
 		<Unit filename="dataPacks.cpp">
-			<Option virtualFolder="RunContext/Contexts/Global Varibles and Functions/" />
+			<Option virtualFolder="Global Varibles and Functions/" />
 		</Unit>
 		<Unit filename="dataPacks.hpp">
-			<Option virtualFolder="RunContext/Contexts/Global Varibles and Functions/" />
+			<Option virtualFolder="Global Varibles and Functions/" />
 		</Unit>
 		<Unit filename="fonts.cpp">
-			<Option virtualFolder="RunContext/Contexts/Global Varibles and Functions/" />
+			<Option virtualFolder="Global Varibles and Functions/" />
 		</Unit>
 		<Unit filename="fonts.hpp">
-			<Option virtualFolder="RunContext/Contexts/Global Varibles and Functions/" />
+			<Option virtualFolder="Global Varibles and Functions/" />
 		</Unit>
 		<Unit filename="globalFunc.cpp">
 			<Option weight="0" />
-			<Option virtualFolder="RunContext/Contexts/Global Varibles and Functions/" />
+			<Option virtualFolder="Global Varibles and Functions/" />
 		</Unit>
 		<Unit filename="globalFunc.hpp">
-			<Option virtualFolder="RunContext/Contexts/Global Varibles and Functions/" />
+			<Option virtualFolder="Global Varibles and Functions/" />
 		</Unit>
 		<Unit filename="init.cpp" />
 		<Unit filename="init.hpp" />
@@ -787,10 +796,10 @@
 		<Unit filename="sdltruetypefont.cpp" />
 		<Unit filename="sdltruetypefont.hpp" />
 		<Unit filename="splash_png.cpp">
-			<Option virtualFolder="RunContext/Contexts/Global Varibles and Functions/Image Resources/" />
+			<Option virtualFolder="Global Varibles and Functions/Image Resources/" />
 		</Unit>
 		<Unit filename="splash_png.h">
-			<Option virtualFolder="RunContext/Contexts/Global Varibles and Functions/Image Resources/" />
+			<Option virtualFolder="Global Varibles and Functions/Image Resources/" />
 		</Unit>
 		<Unit filename="todo.txt" />
 		<Unit filename="version.h" />

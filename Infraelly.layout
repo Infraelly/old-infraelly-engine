@@ -44,10 +44,10 @@
 		<Cursor position="3327" topLine="29" />
 	</File>
 	<File name="Animation.cpp" open="0" top="0" tabpos="6">
-		<Cursor position="16233" topLine="465" />
+		<Cursor position="17615" topLine="533" />
 	</File>
 	<File name="Animation.hpp" open="0" top="0" tabpos="5">
-		<Cursor position="7854" topLine="154" />
+		<Cursor position="6200" topLine="189" />
 	</File>
 	<File name="AnimatorContext.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="3879" topLine="35" />
@@ -62,7 +62,7 @@
 		<Cursor position="3202" topLine="0" />
 	</File>
 	<File name="AreaMap.cpp" open="0" top="0" tabpos="5">
-		<Cursor position="8660" topLine="221" />
+		<Cursor position="5832" topLine="115" />
 	</File>
 	<File name="AreaMap.hpp" open="0" top="0" tabpos="6">
 		<Cursor position="3379" topLine="37" />
@@ -77,22 +77,22 @@
 		<Cursor position="4144" topLine="34" />
 	</File>
 	<File name="CharAnimation.cpp" open="0" top="0" tabpos="4">
-		<Cursor position="6255" topLine="125" />
+		<Cursor position="7863" topLine="166" />
 	</File>
 	<File name="CharAnimation.hpp" open="0" top="0" tabpos="3">
-		<Cursor position="4279" topLine="40" />
+		<Cursor position="3721" topLine="42" />
 	</File>
-	<File name="Character.cpp" open="1" top="1" tabpos="2">
-		<Cursor position="6943" topLine="129" />
+	<File name="Character.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="14020" topLine="348" />
 	</File>
-	<File name="Character.hpp" open="1" top="0" tabpos="3">
-		<Cursor position="8049" topLine="77" />
+	<File name="Character.hpp" open="0" top="0" tabpos="3">
+		<Cursor position="6372" topLine="153" />
 	</File>
 	<File name="CharacterAnimBox.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="31242" topLine="782" />
+		<Cursor position="33552" topLine="843" />
 	</File>
 	<File name="CharacterAnimBox.hpp" open="0" top="0" tabpos="3">
-		<Cursor position="4254" topLine="60" />
+		<Cursor position="4142" topLine="75" />
 	</File>
 	<File name="CharacterBase.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="3196" topLine="0" />
@@ -209,7 +209,7 @@
 		<Cursor position="3202" topLine="0" />
 	</File>
 	<File name="Infraelly.rc" open="0" top="0" tabpos="0">
-		<Cursor position="78" topLine="0" />
+		<Cursor position="728" topLine="0" />
 	</File>
 	<File name="InfraellyImageLoader.cpp" open="0" top="0" tabpos="2">
 		<Cursor position="5215" topLine="104" />
@@ -278,13 +278,13 @@
 		<Cursor position="3202" topLine="0" />
 	</File>
 	<File name="InventoryBox.cpp" open="0" top="0" tabpos="3">
-		<Cursor position="6208" topLine="130" />
+		<Cursor position="6246" topLine="132" />
 	</File>
 	<File name="InventoryBox.hpp" open="0" top="0" tabpos="2">
 		<Cursor position="3202" topLine="0" />
 	</File>
 	<File name="Item.cpp" open="0" top="0" tabpos="4">
-		<Cursor position="10458" topLine="312" />
+		<Cursor position="8613" topLine="237" />
 	</File>
 	<File name="Item.hpp" open="0" top="0" tabpos="3">
 		<Cursor position="7421" topLine="141" />
@@ -464,10 +464,10 @@
 		<Cursor position="3202" topLine="7" />
 	</File>
 	<File name="ResourceCache.hpp" open="0" top="0" tabpos="3">
-		<Cursor position="3986" topLine="21" />
+		<Cursor position="3986" topLine="35" />
 	</File>
 	<File name="ResourceCache_base.hpp" open="0" top="0" tabpos="3">
-		<Cursor position="6323" topLine="56" />
+		<Cursor position="9262" topLine="188" />
 	</File>
 	<File name="ResourceCache_image.hpp" open="0" top="0" tabpos="8">
 		<Cursor position="3417" topLine="37" />
@@ -476,7 +476,7 @@
 		<Cursor position="3505" topLine="30" />
 	</File>
 	<File name="ResourcePack.cpp" open="0" top="0" tabpos="3">
-		<Cursor position="12081" topLine="298" />
+		<Cursor position="9728" topLine="222" />
 	</File>
 	<File name="ResourcePack.hpp" open="0" top="0" tabpos="4">
 		<Cursor position="6073" topLine="121" />
@@ -533,10 +533,10 @@
 		<Cursor position="3202" topLine="7" />
 	</File>
 	<File name="TSprite.cpp" open="0" top="0" tabpos="3">
-		<Cursor position="10931" topLine="333" />
+		<Cursor position="3310" topLine="41" />
 	</File>
 	<File name="TSprite.hpp" open="0" top="0" tabpos="2">
-		<Cursor position="6031" topLine="116" />
+		<Cursor position="3573" topLine="144" />
 	</File>
 	<File name="TSpriteButton.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="3202" topLine="7" />
@@ -569,16 +569,16 @@
 		<Cursor position="3202" topLine="167" />
 	</File>
 	<File name="Tile.cpp" open="0" top="0" tabpos="8">
-		<Cursor position="3772" topLine="77" />
+		<Cursor position="3293" topLine="36" />
 	</File>
 	<File name="Tile.hpp" open="0" top="0" tabpos="2">
-		<Cursor position="4702" topLine="52" />
+		<Cursor position="5364" topLine="36" />
 	</File>
 	<File name="Tileset.cpp" open="0" top="0" tabpos="3">
 		<Cursor position="15046" topLine="470" />
 	</File>
 	<File name="Tileset.hpp" open="0" top="0" tabpos="2">
-		<Cursor position="5346" topLine="70" />
+		<Cursor position="6106" topLine="91" />
 	</File>
 	<File name="TilesetDetailsBox.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="3202" topLine="7" />
@@ -602,10 +602,10 @@
 		<Cursor position="3202" topLine="0" />
 	</File>
 	<File name="caches.cpp" open="0" top="0" tabpos="3">
-		<Cursor position="3202" topLine="29" />
+		<Cursor position="3296" topLine="34" />
 	</File>
 	<File name="caches.hpp" open="0" top="0" tabpos="4">
-		<Cursor position="3864" topLine="46" />
+		<Cursor position="3968" topLine="55" />
 	</File>
 	<File name="colours.cpp" open="0" top="0" tabpos="6">
 		<Cursor position="3202" topLine="0" />
@@ -655,10 +655,10 @@
 	<File name="splash_png.h" open="0" top="0" tabpos="0">
 		<Cursor position="3256" topLine="8" />
 	</File>
-	<File name="todo.txt" open="1" top="0" tabpos="1">
-		<Cursor position="426" topLine="1" />
+	<File name="todo.txt" open="0" top="0" tabpos="1">
+		<Cursor position="479" topLine="3" />
 	</File>
 	<File name="version.h" open="0" top="0" tabpos="0">
-		<Cursor position="515" topLine="0" />
+		<Cursor position="615" topLine="0" />
 	</File>
 </CodeBlocks_layout_file>
