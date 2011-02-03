@@ -7,8 +7,8 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug Win32">
-				<Option output="x86/ZlibDllDebug Win32/zlibwapi" prefix_auto="1" extension_auto="1" />
-				<Option object_output="x86/ZlibDllDebug Win32/Tmp" />
+				<Option output="..\..\..\..\..\lib\win\zlibwapi" prefix_auto="1" extension_auto="1" />
+				<Option object_output="x86\ZlibDllDebug Win32\Tmp" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
@@ -24,21 +24,21 @@
 					<Add option="-W" />
 					<Add option="-g" />
 					<Add option="-O0" />
-					<Add directory="../../.." />
-					<Add directory="../../masmx86" />
+					<Add directory="..\..\.." />
+					<Add directory="..\..\masmx86" />
 				</Compiler>
 				<ResourceCompiler>
-					<Add directory="../../.." />
-					<Add directory="../../masmx86" />
+					<Add directory="..\..\.." />
+					<Add directory="..\..\masmx86" />
 				</ResourceCompiler>
 				<Linker>
-					<Add library="../../masmx86/match686.obj" />
-					<Add library="../../masmx86/inffas32.obj" />
+					<Add library="..\..\masmx86\match686.obj" />
+					<Add library="..\..\masmx86\inffas32.obj" />
 				</Linker>
 			</Target>
 			<Target title="Debug x64">
-				<Option output="x64/ZlibDllDebug x64/zlibwapi" prefix_auto="1" extension_auto="1" />
-				<Option object_output="x64/ZlibDllDebug x64/Tmp" />
+				<Option output="..\..\..\..\..\lib\win\zlibwapi" prefix_auto="1" extension_auto="1" />
+				<Option object_output="x64\ZlibDllDebug x64\Tmp" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
@@ -54,21 +54,21 @@
 					<Add option="-DWIN64" />
 					<Add option="-W" />
 					<Add option="-O0" />
-					<Add directory="../../.." />
-					<Add directory="../../masmx86" />
+					<Add directory="..\..\.." />
+					<Add directory="..\..\masmx86" />
 				</Compiler>
 				<ResourceCompiler>
-					<Add directory="../../.." />
-					<Add directory="../../masmx86" />
+					<Add directory="..\..\.." />
+					<Add directory="..\..\masmx86" />
 				</ResourceCompiler>
 				<Linker>
-					<Add library="../../masmx64/gvmat64.obj" />
-					<Add library="../../masmx64/inffasx64.obj" />
+					<Add library="..\..\masmx64\gvmat64.obj" />
+					<Add library="..\..\masmx64\inffasx64.obj" />
 				</Linker>
 			</Target>
 			<Target title="Debug Itanium">
-				<Option output="ia64/ZlibDllDebug Itanium/zlibwapi" prefix_auto="1" extension_auto="1" />
-				<Option object_output="ia64/ZlibDllDebug Itanium/Tmp" />
+				<Option output="..\..\..\..\..\lib\win\zlibwapi" prefix_auto="1" extension_auto="1" />
+				<Option object_output="ia64\ZlibDllDebug Itanium\Tmp" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
@@ -82,39 +82,39 @@
 					<Add option="-DWIN64" />
 					<Add option="-W" />
 					<Add option="-O0" />
-					<Add directory="../../.." />
-					<Add directory="../../masmx86" />
+					<Add directory="..\..\.." />
+					<Add directory="..\..\masmx86" />
 				</Compiler>
 				<ResourceCompiler>
-					<Add directory="../../.." />
-					<Add directory="../../masmx86" />
+					<Add directory="..\..\.." />
+					<Add directory="..\..\masmx86" />
 				</ResourceCompiler>
 			</Target>
 			<Target title="ReleaseWithoutAsm Win32">
-				<Option output="x86/ZlibDllReleaseWithoutAsm Win32/zlibwapi" prefix_auto="1" extension_auto="1" />
-				<Option object_output="x86/ZlibDllReleaseWithoutAsm Win32/Tmp" />
+				<Option output="..\..\..\..\..\lib\win\zlibwapi" prefix_auto="1" extension_auto="1" />
+				<Option object_output="x86\ZlibDllReleaseWithoutAsm Win32\Tmp" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
 				<Option createStaticLib="1" />
 				<Compiler>
+					<Add option="-W" />
 					<Add option="-DWIN32" />
 					<Add option="-D_CRT_NONSTDC_NO_DEPRECATE" />
 					<Add option="-D_CRT_SECURE_NO_DEPRECATE" />
 					<Add option="-D_CRT_NONSTDC_NO_WARNINGS" />
 					<Add option="-DZLIB_WINAPI" />
-					<Add option="-W" />
-					<Add directory="../../.." />
-					<Add directory="../../masmx86" />
+					<Add directory="..\..\.." />
+					<Add directory="..\..\masmx86" />
 				</Compiler>
 				<ResourceCompiler>
-					<Add directory="../../.." />
-					<Add directory="../../masmx86" />
+					<Add directory="..\..\.." />
+					<Add directory="..\..\masmx86" />
 				</ResourceCompiler>
 			</Target>
 			<Target title="ReleaseWithoutAsm x64">
-				<Option output="x64/ZlibDllReleaseWithoutAsm x64/zlibwapi" prefix_auto="1" extension_auto="1" />
-				<Option object_output="x64/ZlibDllReleaseWithoutAsm x64/Tmp" />
+				<Option output="..\..\..\..\..\lib\win\zlibwapi" prefix_auto="1" extension_auto="1" />
+				<Option object_output="x64\ZlibDllReleaseWithoutAsm x64\Tmp" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
@@ -127,17 +127,17 @@
 					<Add option="-DZLIB_WINAPI" />
 					<Add option="-DWIN64" />
 					<Add option="-W" />
-					<Add directory="../../.." />
-					<Add directory="../../masmx86" />
+					<Add directory="..\..\.." />
+					<Add directory="..\..\masmx86" />
 				</Compiler>
 				<ResourceCompiler>
-					<Add directory="../../.." />
-					<Add directory="../../masmx86" />
+					<Add directory="..\..\.." />
+					<Add directory="..\..\masmx86" />
 				</ResourceCompiler>
 			</Target>
 			<Target title="ReleaseWithoutAsm Itanium">
-				<Option output="ia64/ZlibDllReleaseWithoutAsm Itanium/zlibwapi" prefix_auto="1" extension_auto="1" />
-				<Option object_output="ia64/ZlibDllReleaseWithoutAsm Itanium/Tmp" />
+				<Option output="..\..\..\..\..\lib\win\zlibwapi" prefix_auto="1" extension_auto="1" />
+				<Option object_output="ia64\ZlibDllReleaseWithoutAsm Itanium\Tmp" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
@@ -150,17 +150,17 @@
 					<Add option="-DZLIB_WINAPI" />
 					<Add option="-DWIN64" />
 					<Add option="-W" />
-					<Add directory="../../.." />
-					<Add directory="../../masmx86" />
+					<Add directory="..\..\.." />
+					<Add directory="..\..\masmx86" />
 				</Compiler>
 				<ResourceCompiler>
-					<Add directory="../../.." />
-					<Add directory="../../masmx86" />
+					<Add directory="..\..\.." />
+					<Add directory="..\..\masmx86" />
 				</ResourceCompiler>
 			</Target>
 			<Target title="Release Win32">
-				<Option output="x86/ZlibDllRelease Win32/zlibwapi" prefix_auto="1" extension_auto="1" />
-				<Option object_output="x86/ZlibDllRelease Win32/Tmp" />
+				<Option output="..\..\..\..\..\lib\win\zlibwapi" prefix_auto="1" extension_auto="1" />
+				<Option object_output="x86\ZlibDllRelease Win32\Tmp" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
@@ -174,21 +174,21 @@
 					<Add option="-DASMV" />
 					<Add option="-DASMINF" />
 					<Add option="-W" />
-					<Add directory="../../.." />
-					<Add directory="../../masmx86" />
+					<Add directory="..\..\.." />
+					<Add directory="..\..\masmx86" />
 				</Compiler>
 				<ResourceCompiler>
-					<Add directory="../../.." />
-					<Add directory="../../masmx86" />
+					<Add directory="..\..\.." />
+					<Add directory="..\..\masmx86" />
 				</ResourceCompiler>
 				<Linker>
-					<Add library="../../masmx86/match686.obj" />
-					<Add library="../../masmx86/inffas32.obj" />
+					<Add library="..\..\masmx86\match686.obj" />
+					<Add library="..\..\masmx86\inffas32.obj" />
 				</Linker>
 			</Target>
 			<Target title="Release x64">
-				<Option output="x64/ZlibDllRelease x64/zlibwapi" prefix_auto="1" extension_auto="1" />
-				<Option object_output="x64/ZlibDllRelease x64/Tmp" />
+				<Option output="..\..\..\..\..\lib\win\zlibwapi" prefix_auto="1" extension_auto="1" />
+				<Option object_output="x64\ZlibDllRelease x64\Tmp" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
@@ -202,21 +202,21 @@
 					<Add option="-DASMINF" />
 					<Add option="-DWIN64" />
 					<Add option="-W" />
-					<Add directory="../../.." />
-					<Add directory="../../masmx86" />
+					<Add directory="..\..\.." />
+					<Add directory="..\..\masmx86" />
 				</Compiler>
 				<ResourceCompiler>
-					<Add directory="../../.." />
-					<Add directory="../../masmx86" />
+					<Add directory="..\..\.." />
+					<Add directory="..\..\masmx86" />
 				</ResourceCompiler>
 				<Linker>
-					<Add library="../../masmx64/gvmat64.obj" />
-					<Add library="../../masmx64/inffasx64.obj" />
+					<Add library="..\..\masmx64\gvmat64.obj" />
+					<Add library="..\..\masmx64\inffasx64.obj" />
 				</Linker>
 			</Target>
 			<Target title="Release Itanium">
-				<Option output="ia64/ZlibDllRelease Itanium/zlibwapi" prefix_auto="1" extension_auto="1" />
-				<Option object_output="ia64/ZlibDllRelease Itanium/Tmp" />
+				<Option output="..\..\..\..\..\lib\win\zlibwapi" prefix_auto="1" extension_auto="1" />
+				<Option object_output="ia64\ZlibDllRelease Itanium\Tmp" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
@@ -228,16 +228,16 @@
 					<Add option="-DZLIB_WINAPI" />
 					<Add option="-DWIN64" />
 					<Add option="-W" />
-					<Add directory="../../.." />
-					<Add directory="../../masmx86" />
+					<Add directory="..\..\.." />
+					<Add directory="..\..\masmx86" />
 				</Compiler>
 				<ResourceCompiler>
-					<Add directory="../../.." />
-					<Add directory="../../masmx86" />
+					<Add directory="..\..\.." />
+					<Add directory="..\..\masmx86" />
 				</ResourceCompiler>
 			</Target>
 			<Target title="Nix">
-				<Option output="../../../../../lib/nix/libzlib" prefix_auto="1" extension_auto="1" />
+				<Option output="..\..\..\..\..\lib\nix\libzlib" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
 				<Option type="2" />
 				<Option compiler="gcc" />
@@ -247,22 +247,22 @@
 				</Compiler>
 			</Target>
 		</Build>
-		<Unit filename="../../../adler32.c">
+		<Unit filename="..\..\..\adler32.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../../../compress.c">
+		<Unit filename="..\..\..\compress.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../../masmx64/inffas8664.c">
+		<Unit filename="..\..\masmx64\inffas8664.c">
 			<Option compilerVar="CC" />
 			<Option target="Debug x64" />
 			<Option target="ReleaseWithoutAsm x64" />
 			<Option target="Release x64" />
 		</Unit>
-		<Unit filename="../../minizip/ioapi.c">
+		<Unit filename="..\..\minizip\ioapi.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../../minizip/iowin32.c">
+		<Unit filename="..\..\minizip\iowin32.c">
 			<Option compilerVar="CC" />
 			<Option target="Debug Win32" />
 			<Option target="Debug x64" />
@@ -274,10 +274,10 @@
 			<Option target="Release x64" />
 			<Option target="Release Itanium" />
 		</Unit>
-		<Unit filename="../../minizip/unzip.c">
+		<Unit filename="..\..\minizip\unzip.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../../minizip/zip.c">
+		<Unit filename="..\..\minizip\zip.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="zlib.rc">
@@ -286,55 +286,55 @@
 			<Option link="0" />
 		</Unit>
 		<Unit filename="zlibvc.def" />
-		<Unit filename="../../../crc32.c">
+		<Unit filename="..\..\..\crc32.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../../../deflate.c">
+		<Unit filename="..\..\..\deflate.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../../../deflate.h" />
-		<Unit filename="../../../gzclose.c">
+		<Unit filename="..\..\..\deflate.h" />
+		<Unit filename="..\..\..\gzclose.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../../../gzguts.h" />
-		<Unit filename="../../../gzlib.c">
+		<Unit filename="..\..\..\gzguts.h" />
+		<Unit filename="..\..\..\gzlib.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../../../gzread.c">
+		<Unit filename="..\..\..\gzread.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../../../gzwrite.c">
+		<Unit filename="..\..\..\gzwrite.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../../../infback.c">
+		<Unit filename="..\..\..\infback.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../../../infblock.h" />
-		<Unit filename="../../../infcodes.h" />
-		<Unit filename="../../../inffast.c">
+		<Unit filename="..\..\..\infblock.h" />
+		<Unit filename="..\..\..\infcodes.h" />
+		<Unit filename="..\..\..\inffast.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../../../inffast.h" />
-		<Unit filename="../../../inflate.c">
+		<Unit filename="..\..\..\inffast.h" />
+		<Unit filename="..\..\..\inflate.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../../../inftrees.c">
+		<Unit filename="..\..\..\inftrees.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../../../inftrees.h" />
-		<Unit filename="../../../infutil.h" />
-		<Unit filename="../../../trees.c">
+		<Unit filename="..\..\..\inftrees.h" />
+		<Unit filename="..\..\..\infutil.h" />
+		<Unit filename="..\..\..\trees.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../../../uncompr.c">
+		<Unit filename="..\..\..\uncompr.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../../../zconf.h" />
-		<Unit filename="../../../zlib.h" />
-		<Unit filename="../../../zutil.c">
+		<Unit filename="..\..\..\zconf.h" />
+		<Unit filename="..\..\..\zlib.h" />
+		<Unit filename="..\..\..\zutil.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../../../zutil.h" />
+		<Unit filename="..\..\..\zutil.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
