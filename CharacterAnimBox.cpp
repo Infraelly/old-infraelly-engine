@@ -783,7 +783,7 @@ bool CharacterAnimBox::load(const std::string &filename, bool discrete){
     }
 
 
-    //fill up with loaded animation frames
+    //fill up with loaded animations frames
     for( int i = 0; i < anim_.anims.size(); ++i ){
         for( int j = 0; j < anim_.anims[i].size(); ++j ){
             AnimFrameList* frameLst = frameLists[i][j];
@@ -799,14 +799,17 @@ bool CharacterAnimBox::load(const std::string &filename, bool discrete){
 
                 frameLst->addElement(name.str(), *frame);
             }
-            frameLstBox->setSelected(frameLst->getNumberOfElements()-1);
-            //run logic to have it resize itself =]
-            frameLstBox->logic();
-            //scroll to bottom
-            frameScroller->setScrollAmount( frameScroller->getHorizontalScrollAmount(),
-                                            frameScroller->getVerticalMaxScroll());
         }
     }
+
+    // refresh frame list box
+    frameLstBox->setListModel( frameLists[activeDir_][CharAnimation::HEAD] );
+    frameLstBox->setSelected( 0 );
+    //run logic to have it resize itself =]
+    frameLstBox->logic();
+    //scroll to bottom
+    frameScroller->setScrollAmount( frameScroller->getHorizontalScrollAmount(),
+                                            frameScroller->getVerticalMaxScroll());
 
     rateFld->setText( itos(anim_.anims[0][0].getFPS()) );
 

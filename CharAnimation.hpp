@@ -45,6 +45,9 @@ L-----------------------------------------------------------------------------*/
 #include "Animation.hpp"
 #include "INFPacket.hpp"
 #include "globalFunc.hpp"
+#include "Tile.hpp"
+
+class Character;
 
 class CharAnimation : public Cacheable {
     public:
@@ -56,12 +59,15 @@ class CharAnimation : public Cacheable {
             LEFT_HAND = 2,
             RIGHT_HAND = 3,
             LEFT_FOOT = 4,
-            RIGHT_FOOT = 5
+            RIGHT_FOOT = 5,
+            FACE = 6
         };
 
         CharAnimation();
 
         void clear();
+
+        void setTile( enum CharAnimation::BodyParts part, const Tile& newTile );
 
         //save animation to file
         bool save( inp::INFPacket& pack)const;
@@ -83,6 +89,9 @@ class CharAnimation : public Cacheable {
         void draw(SDL_Surface *dest, enum Directions facing, int x, int y, int frameNumber);
 
         std::vector< std::vector<Animation> > anims;
+
+        private:
+            Tile face_;
 };
 
 #endif // CHARANIMATION_HPP_INCLUDED

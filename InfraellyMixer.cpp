@@ -264,10 +264,11 @@ void InfraellyMixer::freeAudio(){
     }
     //free the rwops
     #ifdef USE_PACKED_RESOURCES
-        for(size_t i = 0; i < dataRwops.size(); ++i){
+        //  i have a feeling SDL_mixer free's these =S
+       /* for(size_t i = 0; i < dataRwops.size(); ++i){
             SDL_FreeRW( dataRwops[i] );
             dataRwops[i] = NULL;
-        }
+        }*/
         dataRwops.clear();
     #endif
     //  clear the map

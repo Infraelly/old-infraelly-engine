@@ -65,6 +65,7 @@ class TSprite : public Cacheable {
 
         //  ctor
         TSprite();
+        TSprite(const Tile &src);
         ~TSprite();
 
 
@@ -161,7 +162,7 @@ class TSprite : public Cacheable {
         std::vector<Tile> frames_;
 
         Tileset *src_;                  //  Where the tiles come from
-        size_t numImages_;                 //  The number of tiles in the anim
+        size_t numImages_;              //  The number of tiles in the anim
         int imagesPerRow_;              //  The number of images in one row
         int xOffset_;                   //  Distance from left to start taking images (Tiles)
         int yOffset_;                   //  Distance from top to start taking images (Tiles)

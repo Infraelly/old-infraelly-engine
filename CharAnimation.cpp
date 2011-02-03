@@ -78,6 +78,19 @@ void CharAnimation::clear(){
     }
 }
 
+void CharAnimation::setTile( enum CharAnimation::BodyParts part, const Tile& newTile ){
+    if( part != FACE ){
+        for(size_t i = 0; i < 4; ++i){
+            Animation newanim;
+            anims[i].assign(6, newanim);
+            for(size_t j = 0; j < anims[i].size(); ++j){
+                anims[i][HEAD].setImage( newTile );
+            }
+        }
+    } else {
+        face_ = newTile;
+    }
+}
 
 //save animation to packet
 bool CharAnimation::save( inp::INFPacket& pack )const{
@@ -180,10 +193,22 @@ void CharAnimation::draw(SDL_Surface *dest, enum Directions facing,int x, int y)
     for(int i = 0; i < 6; ++i){
         anims[facing][i].draw(dest, x, y);
     }
+    switch( facing ){
+        case UP:    break;
+        case RIGHT: face_.draw(dest, x+5, y); break;
+        case DOWN:  face_.draw(dest, x, y); break;
+        case LEFT:  face_.draw(dest, x-5, y); break;
+    }
 }
 
 void CharAnimation::draw(SDL_Surface *dest, enum Directions facing,int x, int y, int frameNumber){
     for(int i = 0; i < 6; ++i){
         anims[facing][i].draw(dest, x, y, frameNumber);
+    }
+    switch( facing ){
+        case UP:    break;
+        case RIGHT: face_.draw(dest, x+5, y); break;
+        case DOWN:  face_.draw(dest, x, y); break;
+        case LEFT:  face_.draw(dest, x-5, y); break;
     }
 }

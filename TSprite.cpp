@@ -46,6 +46,7 @@ L-----------------------------------------------------------------------------*/
 #include "caches.hpp"
 #include "globalFunc.hpp"
 #include "dataPacks.hpp"
+#include "Tile.hpp"
 
 using namespace std;
 
@@ -63,6 +64,27 @@ TSprite::TSprite() :
 
     alias("unamed tsprite")
 {}
+
+TSprite::TSprite(const Tile &src) :
+    src_(src.getTileset()),
+    numImages_(0),
+    imagesPerRow_(0),
+    xOffset_(0),
+    yOffset_(0),
+
+    frameDelay_(0),
+    lastFrameAdvance_(0),
+    frameProgression_(0),
+
+    alias("unamed tsprite (made from tile)")
+{
+    if( src_ ){
+        numImages_ = src_->getCols() * src_->getRows();
+        imagesPerRow_ =src_->getRows();
+
+        frames_.push_back(src);
+    }
+}
 
 TSprite::~TSprite(){}
 

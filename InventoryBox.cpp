@@ -146,7 +146,7 @@ void InventoryBox::setInventory(Inventory *invent){
 
     #ifdef DEBUG
         Item item;
-        item.load("items/test");
+//        item.load("items/test");
         for(int i = 0; i < 10; ++i){
             inventory_->gainItem(item);
         }

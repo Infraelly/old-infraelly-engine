@@ -50,7 +50,9 @@ class Tileset;
 class TSprite;
 class AreaMap;
 class Animation;
+class CharAnimation;
 class Item;
+
 
 namespace cache{
     //  -   -   -   -   -   -   -   -   -   -   -
@@ -74,6 +76,9 @@ namespace cache{
 
     //  Animations
     extern ResourceCache<Animation> animations;
+
+    //  Character Animations
+    extern ResourceCache<CharAnimation> charAnimations;
 
     //  Items
     extern ResourceCache<Item> items;

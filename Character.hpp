@@ -77,14 +77,6 @@ class Character{
         static bool validGender(int gen);
         static bool validJob(int job);
 
-
-        //  Images
-        Tile head;          //  Image of head
-        Tile face;          //  Image of face
-        Tile body;          //  Image of body
-        Tile hands;         //  Image of hands
-        Tile feet;          //  Image of feet
-
         //  Inventory
         Inventory inventory;
 
@@ -94,14 +86,18 @@ class Character{
         //  Speech bubble
         SpeechBubble speechBubble;
 
-        //  Character's animation
-        CharAnimation anim;
 
         //  Standard ctor
         Character();
         ~Character();
 
 
+        float getX()const{ return x; };
+        float getY()const{ return y; };
+        //  Returns the current X velocity
+        float getXVel()const;
+        //  Returns the current Y velocity
+        float getYVel()const;
         //  Returns Character's
         enum Character::Jobs getClass()const;
         //  Returns Direct character is facing
@@ -118,12 +114,10 @@ class Character{
         enum CharacterStates getState()const;
         //  Returns true if state is locked
         bool stateLocked()const;
-        float getX()const{ return x; };
-        float getY()const{ return y; };
-        //  Returns the current X velocity
-        float getXVel()const;
-        //  Returns the current Y velocity
-        float getYVel()const;
+        //  Returns a pointer to the animation currently used
+        CharAnimation getAnim()const;
+        //  Retruns the images used for relevent body part
+        const Tile& getTile( enum CharAnimation::BodyParts part );
 
 
         void setX(float newX){ x = newX; };
@@ -141,7 +135,11 @@ class Character{
         void setGender(enum Character::Genders newGender);
         //  Sets the Character's name
         void setName(const std::string& newName);
-
+        //  Sets the Character's Animation
+        void setAnim(const CharAnimation &newAnim);
+        void setAnim(CharAnimation *newAnim);
+        //  Sets the images used for relevent body part
+        void setTile( enum CharAnimation::BodyParts part, const Tile& newTile );
 
         //  Checks if its time to level up character
         void checkLevelUp();
@@ -185,6 +183,9 @@ class Character{
         enum Directions facing;                  //  Which direction Character is facing
         CharacterStates characterState;     //  Action State of Character
         bool stateIsLocked;                 //  Is action state editable
+        CharAnimation anim_;                 //  Character's animation
+        //  Images
+        std::vector<Tile> bodyPartTiles_;
 
         float x;
         float y;

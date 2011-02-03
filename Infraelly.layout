@@ -82,17 +82,17 @@
 	<File name="CharAnimation.hpp" open="0" top="0" tabpos="3">
 		<Cursor position="4279" topLine="40" />
 	</File>
-	<File name="Character.cpp" open="0" top="0" tabpos="2">
-		<Cursor position="16582" topLine="463" />
+	<File name="Character.cpp" open="1" top="1" tabpos="2">
+		<Cursor position="6943" topLine="129" />
 	</File>
-	<File name="Character.hpp" open="0" top="0" tabpos="1">
-		<Cursor position="8049" topLine="170" />
+	<File name="Character.hpp" open="1" top="0" tabpos="3">
+		<Cursor position="8049" topLine="77" />
 	</File>
 	<File name="CharacterAnimBox.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="10758" topLine="221" />
+		<Cursor position="31242" topLine="782" />
 	</File>
 	<File name="CharacterAnimBox.hpp" open="0" top="0" tabpos="3">
-		<Cursor position="4222" topLine="66" />
+		<Cursor position="4254" topLine="60" />
 	</File>
 	<File name="CharacterBase.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="3196" topLine="0" />
@@ -655,8 +655,8 @@
 	<File name="splash_png.h" open="0" top="0" tabpos="0">
 		<Cursor position="3256" topLine="8" />
 	</File>
-	<File name="todo.txt" open="0" top="0" tabpos="0">
-		<Cursor position="446" topLine="1" />
+	<File name="todo.txt" open="1" top="0" tabpos="1">
+		<Cursor position="426" topLine="1" />
 	</File>
 	<File name="version.h" open="0" top="0" tabpos="0">
 		<Cursor position="515" topLine="0" />

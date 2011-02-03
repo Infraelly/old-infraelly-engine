@@ -49,10 +49,10 @@ L-----------------------------------------------------------------------------*/
 #include "globalFunc.hpp"
 #include "Tileset.hpp"
 #include "caches.hpp"
+#include "CharAnimation.hpp"
 
 
 using namespace std;
-
 
 bool Character::validDirection(int dir){
     return ( (dir==UP) || (dir==LEFT) || (dir==DOWN) || (dir==RIGHT) );
@@ -124,15 +124,14 @@ Character::Character() :
     facing(DOWN),
     characterState(STILL),
     stateIsLocked(false),
+    bodyPartTiles_(7),
     x(0),
     y(0),
     xVel(0),
     yVel(0),
     xVelMax(200),
     yVelMax(200),
-
     lastMoveTime(0),
-
     nameLoc(0)
 {
     stats.setValue( Stats::HP, 10 );
@@ -143,17 +142,27 @@ Character::Character() :
     stats.setValue( Stats::STAM, 20 );
     stats.setValue( Stats::MAX_STAM, 20 );
 
-    head.setSource( cache::tilesets.loadResource("tilesets/heads.xml"), 0, 0 );
-    face.setSource( cache::tilesets.loadResource("tilesets/faces.xml"), 0, 0 );
-    body.setSource( cache::tilesets.loadResource("tilesets/bodyM.xml"), 0, 0 );
-    hands.setSource( cache::tilesets.loadResource("tilesets/hands.xml"), 0, 0 );
-    feet.setSource( cache::tilesets.loadResource("tilesets/feet.xml"), 0, 0 );
+    bodyPartTiles_[CharAnimation::HEAD].setSource( cache::tilesets.loadResource("tilesets/heads.xml"), 0, 0 );
+    bodyPartTiles_[CharAnimation::FACE].setSource( cache::tilesets.loadResource("tilesets/faces.xml"), 0, 0 );
+    bodyPartTiles_[CharAnimation::BODY].setSource( cache::tilesets.loadResource("tilesets/bodyM.xml"), 0, 0 );
+    bodyPartTiles_[CharAnimation::LEFT_HAND].setSource( cache::tilesets.loadResource("tilesets/hands.xml"), 0, 0 );
+    bodyPartTiles_[CharAnimation::RIGHT_HAND].setSource( cache::tilesets.loadResource("tilesets/hands.xml"), 0, 0 );
+    bodyPartTiles_[CharAnimation::LEFT_FOOT].setSource( cache::tilesets.loadResource("tilesets/feet.xml"), 0, 0 );
+    bodyPartTiles_[CharAnimation::RIGHT_FOOT].setSource( cache::tilesets.loadResource("tilesets/feet.xml"), 0, 0 );
+
+    setAnim( cache::charAnimations.loadResource("anim/char/c_walk.iaf") );
 }
 
 Character::~Character(){ ; }
 
 
 //gets
+bool Character::stateLocked()const{ return stateIsLocked; }
+
+float Character::getXVel()const{ return xVel; }
+
+float Character::getYVel()const{ return yVel; }
+
 enum Character::Jobs Character::getClass()const{ return characterClass; }
 
 enum Directions Character::getDirection()const{ return facing; }
@@ -168,15 +177,9 @@ std::string Character::getClassStr()const{
     return jobToString(characterClass);
 }
 
-bool Character::stateLocked()const{ return stateIsLocked; }
+CharAnimation Character::getAnim()const{ return anim_; }
 
-float Character::getXVel()const{ return xVel; }
-
-float Character::getYVel()const{ return yVel; }
-
-
-
-
+const Tile& Character::getTile( enum CharAnimation::BodyParts part ){ return bodyPartTiles_[part]; }
 
 
 
@@ -190,15 +193,24 @@ void Character::setState(enum Character::CharacterStates newState){ characterSta
 void Character::setGender(enum Character::Genders newGender){
     gender = newGender;
     if( gender == MALE ){
-        body.setSource( cache::tilesets.loadResource("tilesets/bodyM.xml"), 0, 0 );
+        bodyPartTiles_[CharAnimation::BODY].setSource( cache::tilesets.loadResource("tilesets/bodyM.xml"), 0, 0 );
     } else {
-       body.setSource( cache::tilesets.loadResource("tilesets/bodyF.xml"), 0, 0 );
+       bodyPartTiles_[CharAnimation::BODY].setSource( cache::tilesets.loadResource("tilesets/bodyF.xml"), 0, 0 );
     }
 }
 
 void Character::setName(const std::string& newName){ name = newName; }
 
+void Character::setAnim(const CharAnimation &newAnim){ anim_ = newAnim; }
 
+void Character::setAnim(CharAnimation *newAnim){
+    if( newAnim != NULL ){ anim_ = *newAnim; }
+}
+
+void Character::setTile( enum CharAnimation::BodyParts part, const Tile& newTile ){
+    bodyPartTiles_[part] = newTile;
+    anim_.setTile(part, newTile);
+}
 
 
 
@@ -331,7 +343,7 @@ void Character::draw(SDL_Surface *dest, int x, int y){
     //back of hp bar
     healthBack.x = x;
     healthBack.y = y-5;
-    healthBack.w = body.getSize().w;
+    healthBack.w = bodyPartTiles_[CharAnimation::BODY].getSize().w;
     healthBack.h = 5;
     //hp bar
     healthFront.x = healthBack.x+1;
@@ -346,35 +358,38 @@ void Character::draw(SDL_Surface *dest, int x, int y){
 
     //where to put name
     int nameWidth = name.length()*6;
-    int nameLoc = x + centerX(nameWidth, body.getWidth());
+    int nameLoc = x + centerX(nameWidth, bodyPartTiles_[CharAnimation::BODY].getWidth());
 
     //draw hp bar and name
-    drawText(name, font::mainFont.at(16), colour::black, dest, nameLoc, y+head.getHeight() + body.getHeight() + feet.getHeight());
+    drawText( name, font::mainFont.at(16), colour::black, dest, nameLoc,
+                y+bodyPartTiles_[CharAnimation::HEAD].getHeight()
+                 + bodyPartTiles_[CharAnimation::BODY].getHeight()
+                 + bodyPartTiles_[CharAnimation::LEFT_FOOT].getHeight() );
     SDL_FillRect(dest, &healthBack, SDL_MapRGB(dest->format, 0,0,0));
     SDL_FillRect(dest, &healthFront, SDL_MapRGB(dest->format, 0,255,0));
 
     //draw speech bubble
-    speechBubble.draw(dest, x+body.getWidth()*.75, y-10-speechBubble.getHeight());
+    speechBubble.draw(dest, x+bodyPartTiles_[CharAnimation::BODY].getWidth()*.75, y-10-speechBubble.getHeight());
 
     //      animation
     move();
     switch(characterState){
         case STILL:
             //draws the first frame of the animation
-            anim.draw( dest, facing, x, y, 0 );
+            anim_.draw( dest, facing, x, y, 0 );
             stateIsLocked = false;
             break;
 
         case MOVING:
-            anim.draw( dest, facing, x, y, 0 );
+            anim_.draw( dest, facing, x, y );
             break;
 
         case ATTACKING:
-            anim.draw( dest, facing, x, y, 0 );
+            anim_.draw( dest, facing, x, y, 0 );
             break;
 
         case EQUIPING:
-            anim.draw( dest, facing, x, y, 0 );
+            anim_.draw( dest, facing, x, y, 0 );
             break;
 
         default:
@@ -409,11 +424,13 @@ bool Character::save( const std::string& filename ){
         if( !stats.savePacket(packet) ){ return 0; }
         if( !inventory.savePacket(packet) ){ return 0; }
 
-        if( !head.savePacket(packet) ){ return 0; }
-        if( !face.savePacket(packet) ){ return 0; }
-        if( !body.savePacket(packet) ){ return 0; }
-        if( !hands.savePacket(packet) ){ return 0; }
-        if( !feet.savePacket(packet) ){ return 0; }
+        if( !bodyPartTiles_[CharAnimation::HEAD].savePacket(packet) ){ return 0; }
+        if( !bodyPartTiles_[CharAnimation::FACE].savePacket(packet) ){ return 0; }
+        if( !bodyPartTiles_[CharAnimation::BODY].savePacket(packet) ){ return 0; }
+        if( !bodyPartTiles_[CharAnimation::LEFT_HAND].savePacket(packet) ){ return 0; }
+        if( !bodyPartTiles_[CharAnimation::RIGHT_HAND].savePacket(packet) ){ return 0; }
+        if( !bodyPartTiles_[CharAnimation::LEFT_FOOT].savePacket(packet) ){ return 0; }
+        if( !bodyPartTiles_[CharAnimation::RIGHT_FOOT].savePacket(packet) ){ return 0; }
 
         file.write( (char*)packet.getBuf(), packet.getLength() );
         file.close();
@@ -483,10 +500,14 @@ bool Character::load( const std::string& filename ){
         if(packet.readDone()){ return 0; }
 
 
-        if( !stats.loadPacket(packet)  ||  !inventory.load(packet)  ||
-            !head.loadPacket(packet)   ||  !face.loadPacket(packet)       ||
-            !body.loadPacket(packet)   ||  !hands.loadPacket(packet)      ||
-            !feet.loadPacket(packet) )
+        if( !stats.loadPacket(packet)  ||  !inventory.load(packet)          ||
+            !bodyPartTiles_[CharAnimation::HEAD].loadPacket(packet)         ||
+            !bodyPartTiles_[CharAnimation::FACE].loadPacket(packet)         ||
+            !bodyPartTiles_[CharAnimation::BODY].loadPacket(packet)         ||
+            !bodyPartTiles_[CharAnimation::LEFT_HAND].loadPacket(packet)    ||
+            !bodyPartTiles_[CharAnimation::RIGHT_HAND].loadPacket(packet)   ||
+            !bodyPartTiles_[CharAnimation::LEFT_FOOT].loadPacket(packet)    ||
+            !bodyPartTiles_[CharAnimation::RIGHT_FOOT].loadPacket(packet) )
         {
             return 0;
         }

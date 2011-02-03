@@ -44,6 +44,7 @@ L-----------------------------------------------------------------------------*/
 #include "Tileset.hpp"
 #include "AreaMap.hpp"
 #include "Animation.hpp"
+#include "CharAnimation.hpp"
 #include "Item.hpp"
 
 #include "ResourceCache.hpp"
@@ -59,6 +60,8 @@ namespace cache{
     ResourceCache<AreaMap> maps("Maps");
 
     ResourceCache<Animation> animations("Animations");
+
+    ResourceCache<CharAnimation> charAnimations("Char Animations");
 
     ResourceCache<Item> items("Items");
 }

@@ -207,14 +207,14 @@ class ResourceCache {
 
             StorageMediumIterator iter = resources.begin();
 
-            std::cerr << __FILE__ << " " << __LINE__ << ": " << "Clearing ResourceCache:" << name << std::endl;
+            std::cerr << __FILE__ << " " << __LINE__ << ": " << "Clearing ResourceCache: " << name << std::endl;
             for( ; iter != resources.end(); ++iter ){
                 //clear tilesets
                 delete iter->second;
                 iter->second = NULL;
         }
         resources.clear();
-        std::cerr << __FILE__ << " " << __LINE__ << ": " << "Cleared ResourceCache:" << name << std::endl << std::endl;
+        std::cerr << __FILE__ << " " << __LINE__ << ": " << "Cleared ResourceCache: " << name << std::endl << std::endl;
     }
 
 
