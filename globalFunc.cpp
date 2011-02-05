@@ -992,11 +992,9 @@ bool isAlpha(const std::string& text){
 }
 
 bool isNumber(const std::string& input){
-    char ch;
     if ( !input.empty() ){
 		for( string::size_type i = 0; i < input.length(); ++i ){
-            ch = input.at(i);
-			if(!isdigit(ch)){
+			if( !isdigit(  input.at(i) ) ){
                 return 0;
             }
 		}
@@ -1006,11 +1004,9 @@ bool isNumber(const std::string& input){
 }
 
 bool isAlphNum( const std::string& text ){
-    char ch;
     if ( !text.empty() ){
 		for( string::size_type i = 0; i < text.length(); ++i ){
-            ch = text.at(i);
-			if(!isalnum(ch)){
+			if( !isalnum(text.at(i)) ){
                 return 0;
             }
 		}

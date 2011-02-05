@@ -74,9 +74,9 @@ FpsManager::~FpsManager(){}
 
 
 
-int FpsManager::getFps(){ return fps; }
+int FpsManager::getFps()const{ return fps; }
 
-int FpsManager::getMaxFps(){ return maxFps; }
+int FpsManager::getMaxFps()const{ return maxFps; }
 
 
 

@@ -197,43 +197,43 @@ ItemAnimBox::ItemAnimBox() :
 }
 
 ItemAnimBox::~ItemAnimBox(){
-    //delete            //NULL
-    delete keyPointLst;        keyPointLst = NULL;
-    delete snapPointLst;       snapPointLst = NULL;
-    delete frameLst;           frameLst = NULL;
+    //delete
+    delete keyPointLst;
+    delete snapPointLst;
+    delete frameLst;
     //--------------
-    delete nameLbl;            nameLbl = NULL;
-    delete nameFld;            nameFld = NULL;
-    delete filenameLbl;        filenameLbl = NULL;
-    delete filenameFld;        filenameFld = NULL;
-    delete snapLbl;            snapLbl = NULL;
-    delete snapDrpLst;         snapDrpLst = NULL;
-    delete originLbl;          originLbl = NULL;
-    delete originDrpLst;       originDrpLst = NULL;
-    delete alignLbl;           alignLbl = NULL;
-    delete alignDrpLst;        alignDrpLst = NULL;
+    delete nameLbl;
+    delete nameFld;
+    delete filenameLbl;
+    delete filenameFld;
+    delete snapLbl;
+    delete snapDrpLst;
+    delete originLbl;
+    delete originDrpLst;
+    delete alignLbl;
+    delete alignDrpLst;
     //--------------
-    delete frameLstBox;        frameLstBox = NULL;
-    delete frameScroller;      frameScroller = NULL;
-    delete listUpBtn;          listUpBtn = NULL;
-    delete listDownBtn;        listDownBtn = NULL;
-    delete listDelBtn;         listDelBtn = NULL;
-    delete listAddBtn;         listAddBtn = NULL;
-    delete xLbl;               xLbl = NULL;
-    delete xFld;               xFld = NULL;
-    delete yLbl;               yLbl = NULL;
-    delete yFld;               yFld = NULL;
-    delete angleLbl;           angleLbl = NULL;
-    delete angleFld;           angleFld = NULL;
-    delete zoomLbl;            zoomLbl = NULL;
-    delete zoomFld;            zoomFld = NULL;
+    delete frameLstBox;
+    delete frameScroller;
+    delete listUpBtn;
+    delete listDownBtn;
+    delete listDelBtn;
+    delete listAddBtn;
+    delete xLbl;
+    delete xFld;
+    delete yLbl;
+    delete yFld;
+    delete angleLbl;
+    delete angleFld;
+    delete zoomLbl;
+    delete zoomFld;
     //--------------
-    delete animPVBox;          animPVBox = NULL;
-    delete rateLbl;            rateLbl = NULL;
-    delete rateFld;            rateFld = NULL;
-    delete playBtn;            playBtn = NULL;
-    delete saveBtn;            saveBtn = NULL;
-    delete loadBtn;            loadBtn = NULL;
+    delete animPVBox;
+    delete rateLbl;
+    delete rateFld;
+    delete playBtn;
+    delete saveBtn;
+    delete loadBtn;
 }
 
 

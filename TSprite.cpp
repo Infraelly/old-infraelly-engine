@@ -72,7 +72,7 @@ TSprite::TSprite(const Tile &src) :
     xOffset_(0),
     yOffset_(0),
 
-    frameDelay_(0),
+    frameDelay_(-1),
     lastFrameAdvance_(0),
     frameProgression_(0),
 
@@ -403,6 +403,8 @@ void TSprite::unload(){ frames_.clear(); }
 
 //advances frames according to FPS
 void TSprite::advanceFrames(){
+    if( frameDelay_ == 0 || frameDelay_ == -1 ){ return; }
+    if( frames_.empty() || frames_.size() == 1 ){ return; }
     //calculate no frames to advance
     int framesBehind = (SDL_GetTicks()-lastFrameAdvance_)/frameDelay_;
     if( framesBehind > 0 ){

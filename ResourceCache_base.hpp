@@ -231,7 +231,7 @@ class ResourceCache {
         //  just want to make sure no one inadvertantly copies it..
         ResourceCache(){}
         ResourceCache(const ResourceCache& src){}
-        ResourceCache& operator=(ResourceCache& rhs){}
+        ResourceCache& operator=(ResourceCache& rhs){ return *this; }
 };
 
 

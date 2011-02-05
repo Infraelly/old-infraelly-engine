@@ -89,7 +89,7 @@ void InfraellyMixer::loadSound(const std::string& filename){
 void InfraellyMixer::loadMusic(const std::string& filename){
     std::string fixedFn = correctFilepath(filename);
     if( musicCache.find(fixedFn) == musicCache.end() ){
-        Mix_Music *music;
+        Mix_Music *music = NULL;
         #ifdef USE_PACKED_RESOURCES
             ResourceFile rcf;
             packs::mainPack.getResource( fixedFn, rcf );

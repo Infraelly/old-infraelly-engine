@@ -128,7 +128,7 @@ class GameArea{
         //  Stops coppying
         GameArea(const GameArea &g){};
         GameArea& operator=(GameArea& rhs);
-        void operator=(GameArea g){};
+        void operator=(GameArea g)const{};
 };
 
 

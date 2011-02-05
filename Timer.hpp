@@ -65,9 +65,9 @@ class Timer{
 
 
         //  Returns how long the timer has timed for. (ie check time)
-        long getTime();
+        long getTime()const;
         //  Returns whether the timer is timing or not
-        bool isTiming();
+        bool isTiming()const;
 
 
 

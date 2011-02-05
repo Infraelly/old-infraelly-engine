@@ -61,10 +61,7 @@ void TSpriteButton::clearSprite(){
 }
 
 void TSpriteButton::draw(gcn::Graphics* graphics){
-    if( image_ != NULL ){
-        delete image_;
-        image_ = NULL;
-    }
+    delete image_;
     image_ = InfraellyImageLoader().load( sprite_.getFrame(sprite_.getFrameProgression()) );
     setImage(image_);
 

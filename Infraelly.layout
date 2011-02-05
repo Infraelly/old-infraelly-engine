@@ -44,10 +44,10 @@
 		<Cursor position="3327" topLine="29" />
 	</File>
 	<File name="Animation.cpp" open="0" top="0" tabpos="6">
-		<Cursor position="17615" topLine="533" />
+		<Cursor position="13271" topLine="340" />
 	</File>
 	<File name="Animation.hpp" open="0" top="0" tabpos="5">
-		<Cursor position="6200" topLine="189" />
+		<Cursor position="8221" topLine="189" />
 	</File>
 	<File name="AnimatorContext.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="3879" topLine="35" />
@@ -76,23 +76,23 @@
 	<File name="Cacheable.hpp" open="0" top="0" tabpos="7">
 		<Cursor position="4144" topLine="34" />
 	</File>
-	<File name="CharAnimation.cpp" open="0" top="0" tabpos="4">
-		<Cursor position="7863" topLine="166" />
+	<File name="CharAnimation.cpp" open="1" top="1" tabpos="1">
+		<Cursor position="8068" topLine="185" />
 	</File>
-	<File name="CharAnimation.hpp" open="0" top="0" tabpos="3">
-		<Cursor position="3721" topLine="42" />
+	<File name="CharAnimation.hpp" open="1" top="0" tabpos="2">
+		<Cursor position="3808" topLine="43" />
 	</File>
 	<File name="Character.cpp" open="0" top="0" tabpos="2">
-		<Cursor position="14020" topLine="348" />
+		<Cursor position="15328" topLine="354" />
 	</File>
 	<File name="Character.hpp" open="0" top="0" tabpos="3">
 		<Cursor position="6372" topLine="153" />
 	</File>
 	<File name="CharacterAnimBox.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="33552" topLine="843" />
+		<Cursor position="7758" topLine="160" />
 	</File>
 	<File name="CharacterAnimBox.hpp" open="0" top="0" tabpos="3">
-		<Cursor position="4142" topLine="75" />
+		<Cursor position="5256" topLine="87" />
 	</File>
 	<File name="CharacterBase.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="3196" topLine="0" />
@@ -344,7 +344,7 @@
 		<Cursor position="3337" topLine="35" />
 	</File>
 	<File name="LoadTilesetBox.cpp" open="0" top="0" tabpos="4">
-		<Cursor position="3706" topLine="47" />
+		<Cursor position="3706" topLine="90" />
 	</File>
 	<File name="LoadTilesetBox.hpp" open="0" top="0" tabpos="5">
 		<Cursor position="3337" topLine="35" />
@@ -404,7 +404,7 @@
 		<Cursor position="3202" topLine="7" />
 	</File>
 	<File name="MapperTilesetBox.cpp" open="0" top="0" tabpos="2">
-		<Cursor position="5608" topLine="108" />
+		<Cursor position="18874" topLine="426" />
 	</File>
 	<File name="MapperTilesetBox.hpp" open="0" top="0" tabpos="1">
 		<Cursor position="3202" topLine="7" />
@@ -533,7 +533,7 @@
 		<Cursor position="3202" topLine="7" />
 	</File>
 	<File name="TSprite.cpp" open="0" top="0" tabpos="3">
-		<Cursor position="3310" topLine="41" />
+		<Cursor position="3556" topLine="383" />
 	</File>
 	<File name="TSprite.hpp" open="0" top="0" tabpos="2">
 		<Cursor position="3573" topLine="144" />
@@ -545,7 +545,7 @@
 		<Cursor position="3202" topLine="7" />
 	</File>
 	<File name="TSpriteIcon.cpp" open="0" top="0" tabpos="3">
-		<Cursor position="3202" topLine="0" />
+		<Cursor position="3202" topLine="40" />
 	</File>
 	<File name="TSpriteIcon.hpp" open="0" top="0" tabpos="0">
 		<Cursor position="3202" topLine="7" />
@@ -590,7 +590,7 @@
 		<Cursor position="3202" topLine="0" />
 	</File>
 	<File name="TilesetList.cpp" open="0" top="0" tabpos="6">
-		<Cursor position="3202" topLine="7" />
+		<Cursor position="3202" topLine="50" />
 	</File>
 	<File name="TilesetList.hpp" open="0" top="0" tabpos="4">
 		<Cursor position="3648" topLine="33" />

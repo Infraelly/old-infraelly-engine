@@ -55,10 +55,10 @@ class FpsManager{
 
 
         //returns the average fps
-        int getFps();
+        int getFps()const;
 
         //returns the max FPS allowed
-        int getMaxFps();
+        int getMaxFps()const;
 
 
         // this is the frame capper

@@ -65,14 +65,14 @@ AnimatorGui::AnimatorGui(SDL_Surface *screen){
 }
 
 AnimatorGui::~AnimatorGui(){
-    //delete                    // assign nul to pointers
-    delete newAnimBox_;         newAnimBox_ = NULL;
-    delete itemAnimBox_;        itemAnimBox_ = NULL;
-    delete charAnimBox_;        charAnimBox_ = NULL;
-    delete loadTSpriteBox_;     loadTSpriteBox_ = NULL;
-    delete makeTSpriteBox_;     makeTSpriteBox_ = NULL;
-    delete loadTilesetBox_;     loadTilesetBox_ = NULL;
-    delete makeTilesetBox_;     makeTilesetBox_ = NULL;
+    //delete
+    delete newAnimBox_;
+    delete itemAnimBox_;
+    delete charAnimBox_;
+    delete loadTSpriteBox_;
+    delete makeTSpriteBox_;
+    delete loadTilesetBox_;
+    delete makeTilesetBox_;
 }
 
 

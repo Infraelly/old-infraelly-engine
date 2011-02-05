@@ -578,7 +578,7 @@ bool ResourcePack::writePack( const std::string& filepath, bool overwriteOld ){
 
 
 
-std::ifstream::pos_type ResourcePack::getEndIndexPos(){
+std::ifstream::pos_type ResourcePack::getEndIndexPos()const{
     #ifdef USE_PACKED_RESOURCES
         //  Use pack
         if( fileData_.size() < headerSize ){ return 0; }
@@ -614,7 +614,7 @@ std::ifstream::pos_type ResourcePack::getEndIndexPos(){
 }
 
 
-std::ifstream::pos_type ResourcePack::getEndLastFilePos(){
+std::ifstream::pos_type ResourcePack::getEndLastFilePos()const{
     #ifdef USE_PACKED_RESOURCES
         //  Use pack
         //  The last file is really just the end of the file

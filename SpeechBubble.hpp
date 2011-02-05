@@ -70,7 +70,7 @@ class SpeechBubble{
         ~SpeechBubble();
 
         void setText(const std::string& newText);
-        const std::string& getText();
+        const std::string& getText()const;
 
         int getWidth()const;
         int getHeight()const;

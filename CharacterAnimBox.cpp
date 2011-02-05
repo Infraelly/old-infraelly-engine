@@ -187,7 +187,7 @@ CharacterAnimBox::CharacterAnimBox() :
 
 
     // set the animation center
-    animOriginX_ = (animPVBox->getWidth()*.5f);
+    animOriginX_ = animPVBox->getX() + (animPVBox->getWidth()*.5f);
     animOriginY_ = animPVBox->getY() + (animPVBox->getHeight()*.5f);
 
 
@@ -200,7 +200,7 @@ CharacterAnimBox::CharacterAnimBox() :
         bodyToggleBtns[i]->setFocusable(0);
 
         bodyEditBtns[i] = new TSpriteIcon;
-        bodyEditBtns[i]->setFrameSize(0);
+        bodyEditBtns[i]->setFrameSize(1);
         bodyEditBtns[i]->setFocusable(0);
     }
 
@@ -215,7 +215,7 @@ CharacterAnimBox::CharacterAnimBox() :
     bodyToggleBtns[CharAnimation::HEAD]->setCaption("Head");
     bodyToggleBtns[CharAnimation::HEAD]->setPosition(300, 130);
     bodyToggleBtns[CharAnimation::BODY]->setCaption("Body");
-    bodyToggleBtns[CharAnimation::BODY]->setPosition(300, 130);
+    bodyToggleBtns[CharAnimation::BODY]->setPosition(300, 195);
     bodyToggleBtns[CharAnimation::LEFT_HAND]->setCaption("Left Hand");
     bodyToggleBtns[CharAnimation::LEFT_HAND]->setPosition(240, 195);
     bodyToggleBtns[CharAnimation::RIGHT_HAND]->setCaption("Right Hand");
@@ -235,12 +235,12 @@ CharacterAnimBox::CharacterAnimBox() :
     bodyEditBtns[CharAnimation::RIGHT_FOOT]->setTSprite( cache::tsprites.loadResource("tsprites/feet1.xml") );
 
     //set up default frames
-    defaultFrames_[CharAnimation::HEAD].setPosition(-16, -48);
-    defaultFrames_[CharAnimation::BODY].setPosition(-16, -16);
-    defaultFrames_[CharAnimation::LEFT_HAND].setPosition(-30, -12);
-    defaultFrames_[CharAnimation::RIGHT_HAND].setPosition(16, -12);
-    defaultFrames_[CharAnimation::LEFT_FOOT].setPosition(-20, 14);
-    defaultFrames_[CharAnimation::RIGHT_FOOT].setPosition(2, 14);
+    defaultFrames_[CharAnimation::HEAD].setPosition(0, 0);
+    defaultFrames_[CharAnimation::BODY].setPosition(0, 32);
+    defaultFrames_[CharAnimation::LEFT_HAND].setPosition(-14, 36);
+    defaultFrames_[CharAnimation::RIGHT_HAND].setPosition(34, 36);
+    defaultFrames_[CharAnimation::LEFT_FOOT].setPosition(-4, 64);
+    defaultFrames_[CharAnimation::RIGHT_FOOT].setPosition(16, 64);
 
 
     //populate framelist
@@ -307,50 +307,46 @@ CharacterAnimBox::CharacterAnimBox() :
 
 
 CharacterAnimBox::~CharacterAnimBox(){
-    //delete                    //NULL
-    delete nameLbl;            nameLbl = NULL;
-    delete nameFld;            nameFld = NULL;
-    delete filenameLbl;        filenameLbl = NULL;
-    delete filenameFld;        filenameFld = NULL;
+    //delete
+    delete nameLbl;
+    delete nameFld;
+    delete filenameLbl;
+    delete filenameFld;
     //--------------
-    delete frameLstBox;        frameLstBox = NULL;
-    delete dirList;            dirList = NULL;
-    delete dirDrpList;         dirDrpList = NULL;
-    delete frameScroller;      frameScroller = NULL;
-    delete listUpBtn;          listUpBtn = NULL;
-    delete listDownBtn;        listDownBtn = NULL;
-    delete listDelBtn;         listDelBtn = NULL;
-    delete listAddBtn;         listAddBtn = NULL;
-    delete listDupeBtn;        listDupeBtn = NULL;
+    delete frameLstBox;
+    delete dirList;
+    delete dirDrpList;
+    delete frameScroller;
+    delete listUpBtn;
+    delete listDownBtn;
+    delete listDelBtn;
+    delete listAddBtn;
+    delete listDupeBtn;
     //--------------
-    delete lockEdit;           lockEdit = NULL;
-    delete angleLbl;           angleLbl = NULL;
-    delete angleFld;           angleFld = NULL;
-    delete zoomLbl;            zoomLbl = NULL;
-    delete zoomFld;            zoomFld = NULL;
-    delete setRotoZoomBtn;     setRotoZoomBtn = NULL;
-    delete zoomFld;            zoomFld = NULL;
+    delete lockEdit;
+    delete angleLbl;
+    delete angleFld;
+    delete zoomLbl;
+    delete zoomFld;
+    delete setRotoZoomBtn;
+    delete zoomFld;
     //--------------
-    delete animPVBox;          animPVBox = NULL;
-    delete rateLbl;            rateLbl = NULL;
-    delete rateFld;            rateFld = NULL;
-    delete playBtn;            playBtn = NULL;
-    delete saveBtn;            saveBtn = NULL;
-    delete loadBtn;            loadBtn = NULL;
+    delete animPVBox;
+    delete rateLbl;
+    delete rateFld;
+    delete playBtn;
+    delete saveBtn;
+    delete loadBtn;
     //--------------
-    delete infobarLbl;         infobarLbl = NULL;
+    delete infobarLbl;
 
     for( int i = 0; i<6; ++i ){
         delete bodyToggleBtns[i];
         delete bodyEditBtns[i];
-        bodyToggleBtns[i] = NULL;
-        bodyEditBtns[i] = NULL;
-
     }
     for(size_t i = 0; i < frameLists.size(); ++i){
         for(size_t j = 0; j < frameLists[i].size(); ++j){
             delete frameLists[i][j];
-            frameLists[i][j] = NULL;
         }
     }
 }
@@ -460,6 +456,10 @@ void CharacterAnimBox::mouseClicked(gcn::MouseEvent& mouseEvent){
             editListItem();
             editing_ = false;
         } else {
+            int selected = frameLstBox->getSelected();
+            frameLstBox->setListModel( frameLists[activeDir_][activePart_] );
+            frameLstBox->setSelected( selected );
+
             if( mouseEvent.getSource() == bodyEditBtns[CharAnimation::HEAD] ){
                 if( lockEdit->isSelected() ){
                     if( activePart_ == CharAnimation::HEAD ){
@@ -542,6 +542,9 @@ void CharacterAnimBox::mouseClicked(gcn::MouseEvent& mouseEvent){
         mouseEvent.consume();
         moveToTop(bodyEditBtns[CharAnimation::HEAD]);
         activePart_ = CharAnimation::HEAD;
+        int selected = frameLstBox->getSelected();
+        frameLstBox->setListModel( frameLists[activeDir_][activePart_] );
+        frameLstBox->setSelected( selected );
         lockEdit->setSelected(false);
     } else
     //  Body
@@ -549,6 +552,10 @@ void CharacterAnimBox::mouseClicked(gcn::MouseEvent& mouseEvent){
         mouseEvent.consume();
         moveToTop(bodyEditBtns[CharAnimation::BODY]);
         activePart_ = CharAnimation::BODY;
+        int selected = frameLstBox->getSelected();
+        frameLstBox->setListModel( frameLists[activeDir_][activePart_] );
+        frameLstBox->setSelected( selected );
+
         lockEdit->setSelected(false);
     } else
     //  Left arm
@@ -556,6 +563,9 @@ void CharacterAnimBox::mouseClicked(gcn::MouseEvent& mouseEvent){
         mouseEvent.consume();
         moveToTop(bodyEditBtns[CharAnimation::LEFT_HAND]);
         activePart_ = CharAnimation::LEFT_HAND;
+        int selected = frameLstBox->getSelected();
+        frameLstBox->setListModel( frameLists[activeDir_][activePart_] );
+        frameLstBox->setSelected( selected );
         lockEdit->setSelected(false);
     } else
     //  right hand
@@ -563,6 +573,9 @@ void CharacterAnimBox::mouseClicked(gcn::MouseEvent& mouseEvent){
         mouseEvent.consume();
         moveToTop(bodyEditBtns[CharAnimation::RIGHT_HAND]);
         activePart_ = CharAnimation::RIGHT_HAND;
+        int selected = frameLstBox->getSelected();
+        frameLstBox->setListModel( frameLists[activeDir_][activePart_] );
+        frameLstBox->setSelected( selected );
         lockEdit->setSelected(false);
     } else
     //  LEFT FOOT
@@ -570,6 +583,9 @@ void CharacterAnimBox::mouseClicked(gcn::MouseEvent& mouseEvent){
         mouseEvent.consume();
         moveToTop(bodyEditBtns[CharAnimation::LEFT_FOOT]);
         activePart_ = CharAnimation::LEFT_FOOT;
+        int selected = frameLstBox->getSelected();
+        frameLstBox->setListModel( frameLists[activeDir_][activePart_] );
+        frameLstBox->setSelected( selected );
         lockEdit->setSelected(false);
     } else
     //  RIGHT FOOT
@@ -577,6 +593,9 @@ void CharacterAnimBox::mouseClicked(gcn::MouseEvent& mouseEvent){
         mouseEvent.consume();
         moveToTop(bodyEditBtns[CharAnimation::RIGHT_FOOT]);
         activePart_ = CharAnimation::RIGHT_FOOT;
+        int selected = frameLstBox->getSelected();
+        frameLstBox->setListModel( frameLists[activeDir_][activePart_] );
+        frameLstBox->setSelected( selected );
         lockEdit->setSelected(false);
     } else
 
@@ -719,6 +738,68 @@ void CharacterAnimBox::mouseClicked(gcn::MouseEvent& mouseEvent){
 }
 
 
+void CharacterAnimBox::addListItem(){
+    int x = bodyEditBtns[activePart_]->getX()-animOriginX_;
+    int y = bodyEditBtns[activePart_]->getY()-animOriginY_;
+    int angle = atoi( angleFld->getText() );
+    float zoom = atof( zoomFld->getText() );
+
+    AnimFrame newFrame;
+    newFrame.setX( x );
+    newFrame.setY( y );
+    newFrame.setAngle( angle );
+    newFrame.setZoom( zoom );
+
+    addListItem(newFrame);
+}
+
+void CharacterAnimBox::addListItem(const AnimFrame& newFrame){
+    std::ostringstream name;
+    name << "x: " << newFrame.getX()        << "         "
+         << "y: " << newFrame.getY()        << "         "
+         << "a: " << newFrame.getAngle()    << "         "
+         << "z: " << newFrame.getZoom();
+
+    frameLists[activeDir_][activePart_]->addElement(name.str(), newFrame);
+    frameLstBox->setSelected(frameLists[activeDir_][activePart_]->getNumberOfElements()-1);
+    //run logic to have it resize itself =]
+    frameLstBox->logic();
+    //scroll to bottom
+    frameScroller->setScrollAmount( frameScroller->getHorizontalScrollAmount(),
+                                    frameScroller->getVerticalMaxScroll());
+}
+
+
+void CharacterAnimBox::editListItem(){
+    if( frameLists[activeDir_][activePart_]->empty() ){
+        addListItem();
+        return;
+    }
+
+    int x = bodyEditBtns[activePart_]->getX()-animOriginX_;
+    int y = bodyEditBtns[activePart_]->getY()-animOriginY_;
+    int angle = atoi( angleFld->getText() );
+    float zoom = atof( zoomFld->getText() );
+
+    AnimFrame newFrame;
+    newFrame.setX( x );
+    newFrame.setY( y );
+    newFrame.setAngle( angle );
+    newFrame.setZoom( zoom );
+
+    std::ostringstream name;
+    name << "x: " << x << "         y: " << y << "         a: " << angle << "         z: " << zoom;
+
+    std::pair<std::string, AnimFrame> newListItem(name.str(), newFrame);
+
+    frameLists[activeDir_][activePart_]->getPair(frameLstBox->getSelected()) = newListItem;
+    //run logic to have it resize itself =]
+    frameLstBox->logic();
+    //scroll to bottom
+    frameScroller->setScrollAmount( frameScroller->getHorizontalScrollAmount(),
+                                    frameScroller->getVerticalMaxScroll());
+}
+
 
 bool CharacterAnimBox::save(const std::string &filename, bool discrete){
     std::string fixedFn = correctFilepath(filename);
@@ -816,69 +897,6 @@ bool CharacterAnimBox::load(const std::string &filename, bool discrete){
     return true;
 }
 
-void CharacterAnimBox::addListItem(){
-    int x = bodyEditBtns[activePart_]->getX()-animOriginX_;
-    int y = bodyEditBtns[activePart_]->getY()-animOriginY_;
-    int angle = atoi( angleFld->getText() );
-    float zoom = atof( zoomFld->getText() );
-
-    AnimFrame newFrame;
-    newFrame.setX( x );
-    newFrame.setY( y );
-    newFrame.setAngle( angle );
-    newFrame.setZoom( zoom );
-
-    addListItem(newFrame);
-}
-
-void CharacterAnimBox::addListItem(const AnimFrame& newFrame){
-    std::ostringstream name;
-    name << "x: " << newFrame.getX()        << "         "
-         << "y: " << newFrame.getY()        << "         "
-         << "a: " << newFrame.getAngle()    << "         "
-         << "z: " << newFrame.getZoom();
-
-    frameLists[activeDir_][activePart_]->addElement(name.str(), newFrame);
-    frameLstBox->setSelected(frameLists[activeDir_][activePart_]->getNumberOfElements()-1);
-    //run logic to have it resize itself =]
-    frameLstBox->logic();
-    //scroll to bottom
-    frameScroller->setScrollAmount( frameScroller->getHorizontalScrollAmount(),
-                                    frameScroller->getVerticalMaxScroll());
-}
-
-
-void CharacterAnimBox::editListItem(){
-    if( frameLists[activeDir_][activePart_]->empty() ){
-        addListItem();
-        return;
-    }
-
-    int x = bodyEditBtns[activePart_]->getX()-animOriginX_;
-    int y = bodyEditBtns[activePart_]->getY()-animOriginY_;
-    int angle = atoi( angleFld->getText() );
-    float zoom = atof( zoomFld->getText() );
-
-    AnimFrame newFrame;
-    newFrame.setX( x );
-    newFrame.setY( y );
-    newFrame.setAngle( angle );
-    newFrame.setZoom( zoom );
-
-    std::ostringstream name;
-    name << "x: " << x << "         y: " << y << "         a: " << angle << "         z: " << zoom;
-
-    std::pair<std::string, AnimFrame> newListItem(name.str(), newFrame);
-
-    frameLists[activeDir_][activePart_]->getPair(frameLstBox->getSelected()) = newListItem;
-    //run logic to have it resize itself =]
-    frameLstBox->logic();
-    //scroll to bottom
-    frameScroller->setScrollAmount( frameScroller->getHorizontalScrollAmount(),
-                                    frameScroller->getVerticalMaxScroll());
-}
-
-
 void CharacterAnimBox::draw(gcn::Graphics *graphics){
     InfraellyWindow::draw(graphics);
 
@@ -886,4 +904,17 @@ void CharacterAnimBox::draw(gcn::Graphics *graphics){
         anim_.draw( Screen::getSurface(), activeDir_, getX()+animOriginX_,
                     getY()+getTitleBarHeight()+animOriginY_ );
     }
+
+    gcn::Rectangle d = animPVBox->getDimension();
+    d.y += getTitleBarHeight();
+    d.x += animPVBox->getFrameSize();
+    graphics->pushClipArea( d );
+    graphics->setColor( gcn::Color( 60, 60, 60 ) );
+    //draw vertical line
+    graphics->drawLine(  d.width/2, 0,
+                         d.width/2, d.height  );
+    //draw horizontal line
+    graphics->drawLine(  0,         d.height/2,
+                         d.width,   d.height/2 );
+    graphics->popClipArea();
 }

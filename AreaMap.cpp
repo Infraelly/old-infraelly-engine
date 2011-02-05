@@ -121,10 +121,6 @@ bool AreaMap::saveMap(const std::string& filename){
     //string to store the filename of the tilset currently being searched
     string curTilesetFilename = "";
 
-    //to hold a ptr to current tile's tileset
-    Tileset *curTilesetPtr = NULL;
-
-
     //cycle through layers
     for( size_t i = 0; i < layers.size(); ++i ){
 
@@ -136,8 +132,6 @@ bool AreaMap::saveMap(const std::string& filename){
                 cerr << __FILE__ << " " << __LINE__ << ": " << "Warning: Saving tile with no tileset. Layer:" << i << " Index:" << j << endl;
                 //make tileset filename ""
                 curTilesetFilename = "";
-                //make pointer to tileset NULL
-                curTilesetPtr = NULL;
             } else {
                 //store tile's tileset's filename
                 curTilesetFilename = correctFilepath(layers[i].index(j).getTileset()->getFilename());

@@ -108,6 +108,7 @@ void Item::init(){
     durability_ = 1;
     maxDurability_ = durability_;
     dropable_ = true;
+    stackable_ = true;
     itemType_ = MISC;
     itemGender_ = ASEXUAL;
 

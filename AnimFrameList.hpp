@@ -57,7 +57,7 @@ class AnimFrameList : public gcn::ListModel {
         bool empty()const;
         AnimFrame& at(size_t i);
         std::pair<std::string, AnimFrame>& getPair(size_t i);
-        int addElement(const std::string name, const AnimFrame& newFrame);
+        int addElement(const std::string& name, const AnimFrame& newFrame);
         void removeElementAt(size_t i);
         void clear();
         void swap(size_t a, size_t b) throw();

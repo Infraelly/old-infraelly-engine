@@ -72,7 +72,7 @@ void Timer::clear(){
 
 
 
-long Timer::getTime(){
+long Timer::getTime()const{
     if( timing ){
         return timeElapsed + (SDL_GetTicks() - startTime);
     } else {
@@ -80,4 +80,4 @@ long Timer::getTime(){
     }
 }
 
-bool Timer::isTiming(){ return timing; }
+bool Timer::isTiming()const{ return timing; }

@@ -59,10 +59,7 @@ TilesetIcon::TilesetIcon(Tileset *ts, bool showGrid) :
 }
 
 TilesetIcon::~TilesetIcon(){
-    if( tsImage_ != NULL ){
-        delete tsImage_;
-        tsImage_ = NULL;
-    }
+    delete tsImage_;
 }
 
 
@@ -89,11 +86,8 @@ void TilesetIcon::updateImage(){
         gcn::Image *newImage = imgLder.load(ts_);
 
         if( newImage != NULL ){
-            //check if image already loaded
-            if( tsImage_ != NULL ){
-                delete tsImage_;
-                tsImage_ = NULL;
-            }
+            //if image is already loaded, get rid of it
+            delete tsImage_;
             tsImage_ = newImage;
             setImage( tsImage_ );
         }

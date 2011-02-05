@@ -81,10 +81,8 @@ void CharAnimation::clear(){
 void CharAnimation::setTile( enum CharAnimation::BodyParts part, const Tile& newTile ){
     if( part != FACE ){
         for(size_t i = 0; i < 4; ++i){
-            Animation newanim;
-            anims[i].assign(6, newanim);
             for(size_t j = 0; j < anims[i].size(); ++j){
-                anims[i][HEAD].setImage( newTile );
+                anims[i][part].setImage( newTile );
             }
         }
     } else {
@@ -193,11 +191,14 @@ void CharAnimation::draw(SDL_Surface *dest, enum Directions facing,int x, int y)
     for(int i = 0; i < 6; ++i){
         anims[facing][i].draw(dest, x, y);
     }
+
+    AnimFrame *frame = anims[facing][HEAD].getFrame( anims[facing][HEAD].getFrameProgression() );
+    if( frame == NULL ){ return; }
     switch( facing ){
         case UP:    break;
-        case RIGHT: face_.draw(dest, x+5, y); break;
-        case DOWN:  face_.draw(dest, x, y); break;
-        case LEFT:  face_.draw(dest, x-5, y); break;
+        case RIGHT: face_.draw(dest, x +frame->getX()+5, y +frame->getY()); break;
+        case DOWN:  face_.draw(dest, x +frame->getX(),   y +frame->getY()); break;
+        case LEFT:  face_.draw(dest, x +frame->getX()-5, y +frame->getY()); break;
     }
 }
 
@@ -205,10 +206,13 @@ void CharAnimation::draw(SDL_Surface *dest, enum Directions facing,int x, int y,
     for(int i = 0; i < 6; ++i){
         anims[facing][i].draw(dest, x, y, frameNumber);
     }
+
+    AnimFrame *frame = anims[facing][HEAD].getFrame( 0 );
+    if( frame == NULL ){ return; }
     switch( facing ){
         case UP:    break;
-        case RIGHT: face_.draw(dest, x+5, y); break;
-        case DOWN:  face_.draw(dest, x, y); break;
-        case LEFT:  face_.draw(dest, x-5, y); break;
+        case RIGHT: face_.draw(dest, x +frame->getX()+5, y +frame->getY()); break;
+        case DOWN:  face_.draw(dest, x +frame->getX(),   y +frame->getY()); break;
+        case LEFT:  face_.draw(dest, x +frame->getX()-5, y +frame->getY()); break;
     }
 }

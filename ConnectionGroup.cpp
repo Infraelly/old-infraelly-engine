@@ -360,10 +360,8 @@ namespace inp{
                     itr->second->disconnect();
                     //  Free Connections' memory
                     itr->second->cleanSet();
-                    if( itr->second != NULL ){
-                        delete itr->second;
-                        itr->second = NULL;
-                    }
+                    delete itr->second;
+                    itr->second = NULL;
                     pimpl_->users.erase( itr );
                 }
             }

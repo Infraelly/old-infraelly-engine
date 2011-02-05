@@ -177,7 +177,7 @@ Tileset& Tileset::operator=(const Tileset& rhs){
 
 
 Tileset::~Tileset(){
-    if( transKey != NULL ){ delete transKey; transKey = NULL; }
+    delete transKey;
 }
 
 
@@ -197,7 +197,7 @@ int Tileset::loadImage(const std::string& newFileName){
     tileHeight = 0;
     xOffset = 0;
     yOffset = 0;
-    if( transKey != NULL ){ delete transKey; }
+    delete transKey;
     transKey = NULL;
     alias = imageFilename;
     if( image == NULL ){
@@ -219,7 +219,7 @@ int Tileset::loadImage(const std::string& newFileName, const std::string& newAli
     tileHeight = 0;
     xOffset = 0;
     yOffset = 0;
-    if( transKey != NULL ){ delete transKey; }
+    delete transKey;
     transKey = NULL;
     if( isSpace(newAlias) ){
         alias = imageFilename;
@@ -241,7 +241,7 @@ int Tileset::loadImage( const std::string& newFileName,  const std::string& newA
     }*/
     image = cache::images.loadResource(newFileName, newTransKey);
     imageFilename = newFileName;
-    if( transKey != NULL ){ delete transKey; };
+    delete transKey;
     transKey = new SDL_Color( newTransKey );
     tileWidth = 0;
     tileHeight = 0;
@@ -267,7 +267,7 @@ int Tileset::loadImage( const std::string& newFileName,   const std::string& new
     }*/
     image = cache::images.loadResource(newFileName);
     imageFilename = newFileName;
-    if( transKey != NULL ){ delete transKey; }
+    delete transKey;
     transKey = NULL;
     tileWidth = newTileWidth;
     tileHeight = newTileHeight;
@@ -296,7 +296,7 @@ int Tileset::loadImage( const std::string& newFileName,     const std::string& n
     tileWidth = newTileWidth;
     tileHeight = newTileHeight;
     imageFilename = newFileName;
-    if( transKey != NULL ){ delete transKey; };
+    delete transKey;
     transKey = new SDL_Color( newTransKey );
     xOffset = 0;
     yOffset = 0;

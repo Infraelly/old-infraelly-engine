@@ -52,9 +52,7 @@ AnimPreviewIcon::AnimPreviewIcon():
 AnimPreviewIcon::~AnimPreviewIcon(){
     if( image_ != NULL ){
         SDL_FreeSurface(image_);
-        image_ = NULL;
     }
-    anim_ = NULL;
 }
 
 

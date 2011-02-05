@@ -168,10 +168,10 @@ class ResourcePack{
         //  Returns the position where the index of the file ends
         //  (handy when adding things to end of index...)
         //  Returns 0 on fail
-        std::ifstream::pos_type getEndIndexPos();
+        std::ifstream::pos_type getEndIndexPos()const;
 
         //  Returns the position where
-        std::ifstream::pos_type getEndLastFilePos();
+        std::ifstream::pos_type getEndLastFilePos()const;
 
         //  typdefs to make life easier
         typedef std::map<std::string, ResourceFile> FileIndex;

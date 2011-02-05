@@ -14,7 +14,6 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Option use_console_runner="0" />
-				<Option parameters="-animator " />
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-DTIXML_USE_STL" />
@@ -88,6 +87,7 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Option use_console_runner="0" />
+				<Option parameters="-animator" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-Wall" />
@@ -101,7 +101,6 @@
 				</Linker>
 				<ExtraCommands>
 					<Add after="./makeDataFileList.sh" />
-					<Add after="rm data.ipf" />
 					<Add after="./infraelly.bin -packer -s" />
 				</ExtraCommands>
 			</Target>
@@ -127,7 +126,6 @@
 				</Linker>
 				<ExtraCommands>
 					<Add after="./makeDataFileList.sh" />
-					<Add after="rm data.ipf" />
 					<Add after="./infraelly.bin -packer -s" />
 					<Add after="./makeReleaseZip.sh" />
 				</ExtraCommands>

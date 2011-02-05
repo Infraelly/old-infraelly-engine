@@ -365,7 +365,6 @@ int Animation::getFPS()const{
 
 //  Returns which frame the animation is up to
 int Animation::getFrameProgression(){
-    advanceFrames();
     return frameProgression_;
 }
 

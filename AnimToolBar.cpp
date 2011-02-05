@@ -96,9 +96,9 @@ AnimToolBar::AnimToolBar(){
 }
 
 AnimToolBar::~AnimToolBar(){
-    //delete                // assign nul to pointers
-    delete typeItemBtn;     typeItemBtn = NULL;
-    delete typeCharBtn;     typeCharBtn = NULL;
-    delete typeObjectBtn;   typeObjectBtn = NULL;
-    delete typeClipBtn;     typeClipBtn = NULL;
+    //delete
+    delete typeItemBtn;
+    delete typeCharBtn;
+    delete typeObjectBtn;
+    delete typeClipBtn;
 }

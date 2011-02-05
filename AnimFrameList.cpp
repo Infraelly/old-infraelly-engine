@@ -52,7 +52,7 @@ AnimFrame& AnimFrameList::at(size_t i){ return values.at(i).second; }
 
 std::pair<std::string, AnimFrame>& AnimFrameList::getPair(size_t i){ return values.at(i); }
 
-int AnimFrameList::addElement(const string name, const AnimFrame& newFrame){
+int AnimFrameList::addElement(const string& name, const AnimFrame& newFrame){
     pair<string, AnimFrame> temp(name, newFrame);
     values.push_back(temp);
     return 1;

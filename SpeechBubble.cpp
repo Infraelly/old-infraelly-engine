@@ -129,7 +129,7 @@ void SpeechBubble::setText(const std::string& newText){
     visibleTimer_.start();
 }
 
-const std::string& SpeechBubble::getText(){ return text_; }
+const std::string& SpeechBubble::getText()const{ return text_; }
 
 
 int SpeechBubble::getWidth()const{

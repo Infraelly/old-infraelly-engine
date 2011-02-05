@@ -67,13 +67,6 @@ BaseGui::~BaseGui(){
     delete container;
     delete notification;
     delete alertBox;
-
-    input = NULL;
-    graphics = NULL;
-    container = NULL;
-    customContainer = NULL;
-    notification = NULL;
-    alertBox = NULL;
 }
 
 void BaseGui::init(){

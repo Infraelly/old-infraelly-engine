@@ -179,7 +179,7 @@ std::string Character::getClassStr()const{
 
 CharAnimation Character::getAnim()const{ return anim_; }
 
-const Tile& Character::getTile( enum CharAnimation::BodyParts part ){ return bodyPartTiles_[part]; }
+const Tile& Character::getTile( enum CharAnimation::BodyParts part )const{ return bodyPartTiles_[part]; }
 
 
 
@@ -204,7 +204,17 @@ void Character::setName(const std::string& newName){ name = newName; }
 void Character::setAnim(const CharAnimation &newAnim){ anim_ = newAnim; }
 
 void Character::setAnim(CharAnimation *newAnim){
-    if( newAnim != NULL ){ anim_ = *newAnim; }
+    if( newAnim != NULL ){
+        anim_ = *newAnim;
+
+        anim_.setTile(CharAnimation::HEAD, bodyPartTiles_[CharAnimation::HEAD]);
+        anim_.setTile(CharAnimation::FACE, bodyPartTiles_[CharAnimation::FACE]);
+        anim_.setTile(CharAnimation::BODY, bodyPartTiles_[CharAnimation::BODY]);
+        anim_.setTile(CharAnimation::LEFT_HAND, bodyPartTiles_[CharAnimation::LEFT_HAND]);
+        anim_.setTile(CharAnimation::RIGHT_HAND, bodyPartTiles_[CharAnimation::RIGHT_HAND]);
+        anim_.setTile(CharAnimation::LEFT_FOOT, bodyPartTiles_[CharAnimation::LEFT_FOOT]);
+        anim_.setTile(CharAnimation::RIGHT_FOOT, bodyPartTiles_[CharAnimation::RIGHT_FOOT]);
+    }
 }
 
 void Character::setTile( enum CharAnimation::BodyParts part, const Tile& newTile ){
@@ -223,7 +233,7 @@ void Character::checkLevelUp(){
     }
 }
 
-long Character::getExpNeeded(unsigned level){
+long Character::getExpNeeded(unsigned level)const{
     //x = lvel
     //y = exp tnl
     //y = x**3 + 22x**2 + 11x +100
@@ -305,9 +315,8 @@ void Character::use(Item& item){
                 }
 
                 if( components.at(0) == "HEAL" ){
-                    int value;
                     if( isNumber(components.at(1)) ){
-                        value = atoi(components.at(1).c_str());
+                        int value = atoi(components.at(1).c_str());
                         //caller->addHp(value);
                         stats.setValue(Stats::HP, value);
                     } else {
@@ -315,9 +324,8 @@ void Character::use(Item& item){
                     }
                 }
                 if( components.at(0) == "MANA" ){
-                    int value;
                     if( isNumber(components.at(1)) ){
-                        value = atoi(components.at(1).c_str());
+                        int value = atoi(components.at(1).c_str());
                         //caller->addMp(value);
                         stats.setValue(Stats::MP, value);
                     } else {
