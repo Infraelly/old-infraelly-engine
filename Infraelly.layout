@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
-	<ActiveTarget name="Nix Dev" />
+	<ActiveTarget name="Windows Dev" />
 	<File name="AlertBox.cpp" open="0" top="0" tabpos="6">
 		<Cursor position="3202" topLine="0" />
 	</File>
@@ -641,7 +641,7 @@
 		<Cursor position="3202" topLine="7" />
 	</File>
 	<File name="main.cpp" open="0" top="0" tabpos="1">
-		<Cursor position="7452" topLine="69" />
+		<Cursor position="3795" topLine="69" />
 	</File>
 	<File name="sdltruetypefont.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="2526" topLine="37" />
@@ -656,7 +656,7 @@
 		<Cursor position="3256" topLine="8" />
 	</File>
 	<File name="todo.txt" open="0" top="0" tabpos="1">
-		<Cursor position="479" topLine="3" />
+		<Cursor position="312" topLine="3" />
 	</File>
 	<File name="version.h" open="0" top="0" tabpos="0">
 		<Cursor position="615" topLine="0" />

@@ -98,12 +98,12 @@
 				<Option createDefFile="1" />
 				<Option createStaticLib="1" />
 				<Compiler>
+					<Add option="-W" />
 					<Add option="-DWIN32" />
 					<Add option="-D_CRT_NONSTDC_NO_DEPRECATE" />
 					<Add option="-D_CRT_SECURE_NO_DEPRECATE" />
 					<Add option="-D_CRT_NONSTDC_NO_WARNINGS" />
 					<Add option="-DZLIB_WINAPI" />
-					<Add option="-W" />
 					<Add directory="..\..\.." />
 					<Add directory="..\..\masmx86" />
 				</Compiler>
@@ -236,6 +236,16 @@
 					<Add directory="..\..\masmx86" />
 				</ResourceCompiler>
 			</Target>
+			<Target title="Nix">
+				<Option output="..\..\..\..\..\lib\nix\libzlib" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-fPIC" />
+				</Compiler>
+			</Target>
 		</Build>
 		<Unit filename="..\..\..\adler32.c">
 			<Option compilerVar="CC" />
@@ -254,6 +264,15 @@
 		</Unit>
 		<Unit filename="..\..\minizip\iowin32.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug Win32" />
+			<Option target="Debug x64" />
+			<Option target="Debug Itanium" />
+			<Option target="ReleaseWithoutAsm Win32" />
+			<Option target="ReleaseWithoutAsm x64" />
+			<Option target="ReleaseWithoutAsm Itanium" />
+			<Option target="Release Win32" />
+			<Option target="Release x64" />
+			<Option target="Release Itanium" />
 		</Unit>
 		<Unit filename="..\..\minizip\unzip.c">
 			<Option compilerVar="CC" />
