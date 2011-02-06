@@ -66,12 +66,12 @@ namespace inp{
         #endif
     }
 
-    #ifdef WIN32
-    inline int close(int s){
-        return closesocket(s);
-    }
-    #endif
 
+    inline int close(int s){
+        #ifdef WIN32
+        return closesocket(s);
+        #endif
+    }
 }
 
 

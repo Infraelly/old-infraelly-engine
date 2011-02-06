@@ -57,6 +57,7 @@
 				<Linker>
 					<Add option="-s" />
 					<Add option="-lzlibwapi" />
+					<Add option="-lmingw32" />
 					<Add directory="lib/win" />
 				</Linker>
 				<ExtraCommands>
@@ -73,7 +74,6 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Option use_console_runner="0" />
-				<Option parameters="-animator" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-Wall" />

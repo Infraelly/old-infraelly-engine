@@ -69,22 +69,31 @@ class ServerContext : RunContext {
         friend class ConnectionListenerThread;
 
     private:
+        //To lock access to the world
         SDL_mutex *worldAccess_;
         typedef std::map<std::string, GameArea*> GameAreaContainer;
         typedef GameAreaContainer::iterator GameAreaContainerIterator;
+        //  This is the world object, it contains all the GameAreas
         GameAreaContainer world_;
 
+        //  Each thread manages a group of GameAreas
         std::vector<GameZoneThread*> threads_;
 
-
+        //  Controlls access to the console(gui)
         SDL_mutex *consoleAccess_;
         std::auto_ptr<Console> console_;
 
+        //  Simple server uptime timer
         SDL_mutex *timerAccess_;
         Timer serverUpTimer_;
 
+        //  Thread listens for new connections
         ConnectionListenerThread listenerThread_;
 
+
+        //------------------
+        //  Helper functions
+        //-------------------
 
         //  Does authenticating of a new incomming connection,
         //      and synconising stats

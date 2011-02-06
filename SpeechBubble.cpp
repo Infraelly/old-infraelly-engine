@@ -73,7 +73,7 @@ SpeechBubble::SpeechBubble(const std::string& newText) :
 {
     if( firstInstance_ ){
         //make load bubble image
-        tileset_.load( packs::mainPack, "tilesets/speechbubble.xml" );
+        tileset_.load( packs::mainPack, "tilesets/speechBubble.xml" );
 
         //side images
         top_.setSource( &tileset_, 1, 0 );

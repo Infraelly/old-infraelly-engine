@@ -42,13 +42,6 @@ L-----------------------------------------------------------------------------*/
 #ifndef GAMEAREA_HPP_INCLUDED
 #define GAMEAREA_HPP_INCLUDED
 
-#include <string>
-#include <SDL.h>
-
-#include "INFPacket.hpp"
-#include "AreaMap.hpp"
-#include "ConnectionGroup.hpp"
-
 
 /*******************************************************************************
 
@@ -59,6 +52,13 @@ L-----------------------------------------------------------------------------*/
 
 *******************************************************************************/
 
+#include <string>
+#include <SDL.h>
+
+#include "INFPacket.hpp"
+#include "AreaMap.hpp"
+#include "ConnectionGroup.hpp"
+#include "Timer.hpp"
 
 class Character;
 typedef std::pair<inp::Connection*, Character*> CharCon;
@@ -103,11 +103,15 @@ class GameArea{
 
 
     private:
+        // Protect non thread safe members
+        SDL_mutex *access_;
+
         //map associated with the game region
         AreaMap map_;
 
         //store conections
         inp::ConnectionGroup connections_;
+
         //store character objects coresponding to connections
         typedef std::map< std::string, Character* > PlayerList;
         typedef PlayerList::iterator PlayerListIterator;
@@ -116,8 +120,8 @@ class GameArea{
         // for handlingnet work activity
         std::vector<inp::Connection*> activeConList_;
 
-        // Protect non thread safe members
-        SDL_mutex *access_;
+
+        //      Helper Functions
 
         inp::INFPacket buildSyncPacket(Character* player, inp::Connection* con);
         inp::INFPacket buildFullSyncPacket();

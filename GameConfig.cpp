@@ -50,7 +50,7 @@ L-----------------------------------------------------------------------------*/
 const int GameConfig::fps = 30;
 
 #ifdef DEBUG
-    const bool GameConfig::bypassMainMenu = false;
+    const bool GameConfig::bypassMainMenu = true;
 #else
     const bool GameConfig::bypassMainMenu = false;
 #endif
@@ -67,15 +67,15 @@ int GameConfig::fScreenBpp = 32;
 
 //  windowed res
 #ifdef DEBUG
-    int GameConfig::wScreenWidth = 1024;
-    int GameConfig::wScreenHeight = 768;
+    int GameConfig::wScreenWidth = 800;
+    int GameConfig::wScreenHeight = 640;
     int GameConfig::wScreenBpp = 32;
 
     bool GameConfig::sound = true;
     bool GameConfig::music = true;
 #else
-    int GameConfig::wScreenWidth = 1024;
-    int GameConfig::wScreenHeight = 768;
+    int GameConfig::wScreenWidth = 800;
+    int GameConfig::wScreenHeight = 640;
     int GameConfig::wScreenBpp = 32;
 
     bool GameConfig::sound = true;
@@ -86,8 +86,8 @@ int GameConfig::audioRate = 44110;
 int GameConfig::aduioBuffSize = 1024;
 
 
-int GameConfig::wTestScreenWidth = 800;
-int GameConfig::wTestScreenHeight = 640;
+int GameConfig::wTestScreenWidth = 600;
+int GameConfig::wTestScreenHeight = 480;
 
 
 std::string GameConfig::serverIp = "localhost";

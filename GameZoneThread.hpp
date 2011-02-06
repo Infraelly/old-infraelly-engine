@@ -43,6 +43,16 @@ L-----------------------------------------------------------------------------*/
 #define GAMEZONETHREAD_HPP_INCLUDED
 
 
+/*******************************************************************************
+
+                            GameZoneThread
+
+                      Runs a group of GameAreas (maps)
+                                Thread safe
+
+*******************************************************************************/
+
+
 #include <SDL/SDL.h>
 #include <vector>
 #include <string>

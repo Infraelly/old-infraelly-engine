@@ -329,7 +329,6 @@ CharacterAnimBox::~CharacterAnimBox(){
     delete zoomLbl;
     delete zoomFld;
     delete setRotoZoomBtn;
-    delete zoomFld;
     //--------------
     delete animPVBox;
     delete rateLbl;
