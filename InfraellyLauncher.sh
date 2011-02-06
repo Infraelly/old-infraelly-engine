@@ -1,19 +1,18 @@
-if [ ! -f ./infraelly.run ]
+if [ ! -f ./infraelly.bin ]
 then
     echo "infraelly not compiled."
     exit 1
 fi
 
-if [ ! -x ./infraelly.run ]
+if [ ! -x ./infraelly.bin ]
 then
-    echo "setting executable bit on infraelly.run"
-    chmod +x infraelly.run
+    echo "setting executable bit on infraelly.bin"
+    chmod +x infraelly.bin
 fi
 
 running=1
-unknownMode=0
 mode=0
-showlogs=1
+unknownMode=0
 
 S_IP=127.0.0.1
 S_PORT=1337
@@ -66,7 +65,7 @@ do
             read S_PORT
 
             echo "Launching Infraelly: $S_IP: $S_PORT"
-            ./infraelly.run;;
+            ./infraelly.bin;;
 
         "2")
             echo "Infraelly Server"
@@ -74,28 +73,28 @@ do
             read S_PORT
 
             echo "Launching Server at port $S_PORT"
-            ./infraelly.run -server;;
+            ./infraelly.bin -server;;
 
         "3")
             echo "Starting Map Editor"
-            ./infraelly.run -mapper;;
+            ./infraelly.bin -mapper;;
 
         "4")
             echo "Starting Animator"
-            ./infraelly.run -animator;;
+            ./infraelly.bin -animator;;
 
         "5")
             echo "Starting Item Editor"
-            ./infraelly.run -item;;
+            ./infraelly.bin -item;;
 
         "6")
             echo "Launching Test Area"
-            ./infraelly.run -test;;
+            ./infraelly.bin -test;;
 
         "7")
-            ./infraelly.run -server &
-            ./infraelly.run &
-            ./infraelly.run &
+            ./infraelly.bin -server &
+            ./infraelly.bin &
+            ./infraelly.bin &
             exit 0;;
             
         "8")
@@ -107,30 +106,19 @@ do
             read S_PORT
 
             echo "Launching Infraelly: $S_IP: $S_PORT x2"
-            ./infraelly.run &
-            ./infraelly.run &
+            ./infraelly.bin &
+            ./infraelly.bin &
             exit 0;;
 
         "9")
-            running=0
-            showlogs=0;;
+            running=0;;
 
         "666")
             echo ERROR
-            ./infraelly.run -crash
-            showlogs=0;;
-        
+            ./infraelly.bin -crash;;
+            
         *)
-            unknownMode=1
-            showlogs=0;;
+            unknownMode=0;;
     esac
-
-
-    if [ $showlogs -eq 1 ]
-    then
-        echo "\n"
-        cat stdout.txt
-        cat stderr.txt
-    fi
 done
 

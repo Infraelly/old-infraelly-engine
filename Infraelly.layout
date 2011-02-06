@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
-	<ActiveTarget name="Windows Dev" />
+	<ActiveTarget name="Nix Dev" />
 	<File name="AlertBox.cpp" open="0" top="0" tabpos="6">
 		<Cursor position="3202" topLine="0" />
 	</File>
@@ -76,14 +76,14 @@
 	<File name="Cacheable.hpp" open="0" top="0" tabpos="7">
 		<Cursor position="4144" topLine="34" />
 	</File>
-	<File name="CharAnimation.cpp" open="1" top="1" tabpos="1">
+	<File name="CharAnimation.cpp" open="0" top="0" tabpos="1">
 		<Cursor position="8068" topLine="185" />
 	</File>
-	<File name="CharAnimation.hpp" open="1" top="0" tabpos="2">
+	<File name="CharAnimation.hpp" open="0" top="0" tabpos="2">
 		<Cursor position="3808" topLine="43" />
 	</File>
 	<File name="Character.cpp" open="0" top="0" tabpos="2">
-		<Cursor position="15328" topLine="354" />
+		<Cursor position="14908" topLine="369" />
 	</File>
 	<File name="Character.hpp" open="0" top="0" tabpos="3">
 		<Cursor position="6372" topLine="153" />
@@ -163,14 +163,14 @@
 	<File name="GameArea.hpp" open="0" top="0" tabpos="3">
 		<Cursor position="3726" topLine="46" />
 	</File>
-	<File name="GameConfig.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="3700" topLine="40" />
+	<File name="GameConfig.cpp" open="1" top="1" tabpos="2">
+		<Cursor position="3508" topLine="37" />
 	</File>
 	<File name="GameConfig.hpp" open="0" top="0" tabpos="0">
 		<Cursor position="80" topLine="34" />
 	</File>
 	<File name="GameContext.cpp" open="0" top="0" tabpos="4">
-		<Cursor position="21158" topLine="532" />
+		<Cursor position="20508" topLine="508" />
 	</File>
 	<File name="GameContext.hpp" open="0" top="0" tabpos="2">
 		<Cursor position="5132" topLine="36" />
@@ -575,7 +575,7 @@
 		<Cursor position="5364" topLine="36" />
 	</File>
 	<File name="Tileset.cpp" open="0" top="0" tabpos="3">
-		<Cursor position="15046" topLine="470" />
+		<Cursor position="17222" topLine="554" />
 	</File>
 	<File name="Tileset.hpp" open="0" top="0" tabpos="2">
 		<Cursor position="6106" topLine="91" />
@@ -632,7 +632,7 @@
 		<Cursor position="10955" topLine="265" />
 	</File>
 	<File name="init.cpp" open="0" top="0" tabpos="2">
-		<Cursor position="17333" topLine="333" />
+		<Cursor position="6122" topLine="128" />
 	</File>
 	<File name="init.hpp" open="0" top="0" tabpos="0">
 		<Cursor position="1825" topLine="15" />
@@ -655,8 +655,8 @@
 	<File name="splash_png.h" open="0" top="0" tabpos="0">
 		<Cursor position="3256" topLine="8" />
 	</File>
-	<File name="todo.txt" open="0" top="0" tabpos="1">
-		<Cursor position="312" topLine="3" />
+	<File name="todo.txt" open="1" top="0" tabpos="1">
+		<Cursor position="498" topLine="0" />
 	</File>
 	<File name="version.h" open="0" top="0" tabpos="0">
 		<Cursor position="615" topLine="0" />

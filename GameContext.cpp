@@ -459,8 +459,8 @@ void GameContext::input(Uint8 *keys){
     //if not chatting
     if( !gui->getChatBox()->isTyping() ){
         //some debug values
-        if ( keys[SDLK_h] ) { player.stats.addValue(Stats::HP, 10); }
-        if ( keys[SDLK_g] ) { player.stats.addValue(Stats::HP, -10); }
+        if ( keys[SDLK_h] ) { player.stats.addValue(Stats::HP, 1); }
+        if ( keys[SDLK_g] ) { player.stats.addValue(Stats::HP, -1); }
 
         if ( keys[SDLK_m] ) { player.stats.addValue(Stats::MP, 1); }
         if ( keys[SDLK_n] ) { player.stats.addValue(Stats::MP, -1); }
@@ -470,8 +470,6 @@ void GameContext::input(Uint8 *keys){
 
         if ( keys[SDLK_s] ) { player.stats.addValue(Stats::STAM, 1); }
         if ( keys[SDLK_a] ) { player.stats.addValue(Stats::STAM, -1); }
-    } else {
-        drawText("Typing...", font::mainFont.at(44), colour::black, 50, screen, player.getX()+(44/2), player.getY()+(44/2));
     }
 }
 
@@ -543,7 +541,11 @@ void GameContext::draw(){
     }
     //draw loacal player
     player.draw(screen);
-    //let guichan draw on the screen =]
+    //draw little message if player is typing
+    if( gui->getChatBox()->isTyping() ){
+        drawText("Typing...", font::mainFont.at(16), colour::black, 50, screen, player.getX(), player.getY()-24);
+    }
+    //draw gui
     gui->draw();
 
     #ifdef DEBUG

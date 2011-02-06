@@ -12,8 +12,7 @@ File names with a "_" prefix are obselete and are due for deletion.
  ---------------------------
 
 Current Task:
-    + Character animation drawn in wrong place
-    + Freezes when Character chat is sent
+
 
 Major tasks:
     + character/npcs
@@ -24,7 +23,6 @@ Major tasks:
 
 
 Minor Taks:
-
     + item aug
     + item actions and stuffs
     + map draw/merge layer cache
@@ -34,7 +32,6 @@ Minor Taks:
     + Unlag
         + benchmark packeting
         + benchmark un-packeting
-    + Go read Postgre Documentation
 
 Low Priority/Random Fixes:
     + Mapper: Tools

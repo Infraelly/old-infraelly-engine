@@ -50,7 +50,7 @@ L-----------------------------------------------------------------------------*/
 const int GameConfig::fps = 30;
 
 #ifdef DEBUG
-    const bool GameConfig::bypassMainMenu = true;
+    const bool GameConfig::bypassMainMenu = false;
 #else
     const bool GameConfig::bypassMainMenu = false;
 #endif
