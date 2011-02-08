@@ -158,7 +158,7 @@ int GameContext::handleIncomingNetwork(){
                     packet >> recvText;
                     if( recvText != "" ){
                         if( recvText != serverConnection->getId() ){
-                           remotePlayers[username] = Character();
+                           remotePlayers[recvText] = Character();
                         }
                     }
                 }else
@@ -533,6 +533,7 @@ void GameContext::draw(){
             itr->second.draw(screen);
         }
     }
+
     //draw loacal player
     player.draw(screen);
     //draw gui

@@ -165,6 +165,7 @@ void GameArea::sendAll(const inp::INFPacket& pack){
 // runs map (non-blocking)
 int GameArea::logic(){
     int dropped = 0;
+    INFPacket syncPack;
     CharCon playerCon;
     std::vector<inp::Connection*> activeConList;
     MutexLocker lock(access_);
@@ -185,16 +186,17 @@ int GameArea::logic(){
                 delete playerCon.second;
                 connections_.erase( playerCon.first->getId() );
             } else {
-                connections_.sendAll(buildSyncPacket(playerCon.second, playerCon.first));
+                syncPack << buildSyncPacket(playerCon.second, playerCon.first);
             }
         }
+        sendAll(syncPack);
     }
 
-    //  sync players
+    /*//  sync players
     if( syncTimer.getTime() > 2000 ){
         connections_.sendAll( buildFullSyncPacket() );
         syncTimer.clear();
-    }
+    }*/
 
     return dropped;
 }

@@ -89,14 +89,17 @@ Animation::Animation(const Animation& src){
     origin_ = src.origin_;
     alignment_ = src.alignment_;
     snapSource_ = src.snapSource_ ;
+    image_ = src.image_;
     drawn_ = NULL;
     final_ = NULL;
+    timer_ = src.timer_;
     frameDelay_ = src.frameDelay_;
     lastFrameAdvance_ = src.lastFrameAdvance_;
     frameProgression_ = src.frameProgression_;
 
     frames_ = src.frames_;
     fxFrames_ = src.fxFrames_;
+    activeFx_ = src.activeFx_;
 }
 
 Animation& Animation::operator=(const Animation& rhs){
@@ -107,14 +110,19 @@ Animation& Animation::operator=(const Animation& rhs){
         origin_ = rhs.origin_;
         alignment_ = rhs.alignment_;
         snapSource_ = rhs.snapSource_ ;
+        image_ = rhs.image_;
+        if( drawn_ != NULL ){ SDL_FreeSurface(drawn_); }
         drawn_ = NULL;
+        if( final_ != NULL ){ SDL_FreeSurface(final_); }
         final_ = NULL;
+        timer_ = rhs.timer_;
         frameDelay_ = rhs.frameDelay_;
         lastFrameAdvance_ = rhs.lastFrameAdvance_;
         frameProgression_ = rhs.frameProgression_;
 
         frames_ = rhs.frames_;
         fxFrames_ = rhs.fxFrames_;
+        activeFx_ = rhs.activeFx_;
     }
     return *this;
 }

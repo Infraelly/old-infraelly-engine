@@ -182,10 +182,10 @@ class Character{
         std::string name;                   //  Character's name
         enum Jobs characterClass;           //  Character's class
         Genders gender;                     //  Character's gender
-        enum Directions facing;                  //  Which direction Character is facing
+        enum Directions facing;             //  Which direction Character is facing
         CharacterStates characterState;     //  Action State of Character
         bool stateIsLocked;                 //  Is action state editable
-        CharAnimation anim_;                 //  Character's animation
+        CharAnimation anim_;                //  Character's animation
         //  Images
         std::vector<Tile> bodyPartTiles_;
 

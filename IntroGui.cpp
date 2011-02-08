@@ -277,7 +277,7 @@ void IntroGui::mouseClicked(gcn::MouseEvent& mouseEvent){
                 packet << inp::DataTypeByte::PASS << "unsecure";
                 svrCon.send(packet);
                 //--------------------------
-                // authenticate here
+                // wait for confirmation
                 //--------------------------
                 GameContext( static_cast<inp::Connection*>(&svrCon) );
             }
