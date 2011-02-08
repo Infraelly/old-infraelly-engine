@@ -79,7 +79,7 @@ class CharacterAnimBox : public InfraellyWindow, public gcn::SelectionListener {
         bool editing_;
         bool drawAnim_;
         CharAnimation anim_;
-        CharAnimation::BodyParts activePart_;   // bodypart
+        BodyParts activePart_;   // bodypart
         enum Directions activeDir_;             //direction
         std::vector<AnimFrame> defaultFrames_;
 

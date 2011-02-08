@@ -124,7 +124,7 @@ Character::Character() :
     facing(DOWN),
     characterState(STILL),
     stateIsLocked(false),
-    bodyPartTiles_(7),
+    bodyPartTiles_(8),
     x(0),
     y(0),
     xVel(0),
@@ -142,13 +142,13 @@ Character::Character() :
     stats.setValue( Stats::STAM, 20 );
     stats.setValue( Stats::MAX_STAM, 20 );
 
-    bodyPartTiles_[CharAnimation::HEAD].setSource( cache::tilesets.loadResource("tilesets/heads.xml"), 0, 0 );
-    bodyPartTiles_[CharAnimation::FACE].setSource( cache::tilesets.loadResource("tilesets/faces.xml"), 0, 0 );
-    bodyPartTiles_[CharAnimation::BODY].setSource( cache::tilesets.loadResource("tilesets/bodyM.xml"), 0, 0 );
-    bodyPartTiles_[CharAnimation::LEFT_HAND].setSource( cache::tilesets.loadResource("tilesets/hands.xml"), 0, 0 );
-    bodyPartTiles_[CharAnimation::RIGHT_HAND].setSource( cache::tilesets.loadResource("tilesets/hands.xml"), 0, 0 );
-    bodyPartTiles_[CharAnimation::LEFT_FOOT].setSource( cache::tilesets.loadResource("tilesets/feet.xml"), 0, 0 );
-    bodyPartTiles_[CharAnimation::RIGHT_FOOT].setSource( cache::tilesets.loadResource("tilesets/feet.xml"), 0, 0 );
+    bodyPartTiles_[HEAD].setSource( cache::tilesets.loadResource("tilesets/heads.xml"), 0, 0 );
+    bodyPartTiles_[FACE].setSource( cache::tilesets.loadResource("tilesets/faces.xml"), 0, 0 );
+    bodyPartTiles_[BODY].setSource( cache::tilesets.loadResource("tilesets/bodyM.xml"), 0, 0 );
+    bodyPartTiles_[LEFT_HAND].setSource( cache::tilesets.loadResource("tilesets/hands.xml"), 0, 0 );
+    bodyPartTiles_[RIGHT_HAND].setSource( cache::tilesets.loadResource("tilesets/hands.xml"), 0, 0 );
+    bodyPartTiles_[LEFT_FOOT].setSource( cache::tilesets.loadResource("tilesets/feet.xml"), 0, 0 );
+    bodyPartTiles_[RIGHT_FOOT].setSource( cache::tilesets.loadResource("tilesets/feet.xml"), 0, 0 );
 
     setAnim( cache::charAnimations.loadResource("anim/char/c_walk.iaf") );
 }
@@ -179,7 +179,7 @@ std::string Character::getClassStr()const{
 
 CharAnimation Character::getAnim()const{ return anim_; }
 
-const Tile& Character::getTile( enum CharAnimation::BodyParts part )const{ return bodyPartTiles_[part]; }
+const Tile& Character::getTile( enum BodyParts part )const{ return bodyPartTiles_[part]; }
 
 
 
@@ -193,9 +193,9 @@ void Character::setState(enum Character::CharacterStates newState){ characterSta
 void Character::setGender(enum Character::Genders newGender){
     gender = newGender;
     if( gender == MALE ){
-        bodyPartTiles_[CharAnimation::BODY].setSource( cache::tilesets.loadResource("tilesets/bodyM.xml"), 0, 0 );
+        bodyPartTiles_[BODY].setSource( cache::tilesets.loadResource("tilesets/bodyM.xml"), 0, 0 );
     } else {
-       bodyPartTiles_[CharAnimation::BODY].setSource( cache::tilesets.loadResource("tilesets/bodyF.xml"), 0, 0 );
+       bodyPartTiles_[BODY].setSource( cache::tilesets.loadResource("tilesets/bodyF.xml"), 0, 0 );
     }
 }
 
@@ -209,17 +209,17 @@ void Character::setAnim(CharAnimation *newAnim){
     if( newAnim != NULL ){
         anim_ = *newAnim;
 
-        anim_.setTile(CharAnimation::HEAD, bodyPartTiles_[CharAnimation::HEAD]);
-        anim_.setTile(CharAnimation::FACE, bodyPartTiles_[CharAnimation::FACE]);
-        anim_.setTile(CharAnimation::BODY, bodyPartTiles_[CharAnimation::BODY]);
-        anim_.setTile(CharAnimation::LEFT_HAND, bodyPartTiles_[CharAnimation::LEFT_HAND]);
-        anim_.setTile(CharAnimation::RIGHT_HAND, bodyPartTiles_[CharAnimation::RIGHT_HAND]);
-        anim_.setTile(CharAnimation::LEFT_FOOT, bodyPartTiles_[CharAnimation::LEFT_FOOT]);
-        anim_.setTile(CharAnimation::RIGHT_FOOT, bodyPartTiles_[CharAnimation::RIGHT_FOOT]);
+        anim_.setTile(HEAD, bodyPartTiles_[HEAD]);
+        anim_.setTile(FACE, bodyPartTiles_[FACE]);
+        anim_.setTile(BODY, bodyPartTiles_[BODY]);
+        anim_.setTile(LEFT_HAND, bodyPartTiles_[LEFT_HAND]);
+        anim_.setTile(RIGHT_HAND, bodyPartTiles_[RIGHT_HAND]);
+        anim_.setTile(LEFT_FOOT, bodyPartTiles_[LEFT_FOOT]);
+        anim_.setTile(RIGHT_FOOT, bodyPartTiles_[RIGHT_FOOT]);
     }
 }
 
-void Character::setTile( enum CharAnimation::BodyParts part, const Tile& newTile ){
+void Character::setTile( enum BodyParts part, const Tile& newTile ){
     bodyPartTiles_[part] = newTile;
     anim_.setTile(part, newTile);
 }
@@ -353,7 +353,7 @@ void Character::draw(SDL_Surface *dest, int x, int y){
     //back of hp bar
     healthBack.x = x;
     healthBack.y = y-5;
-    healthBack.w = bodyPartTiles_[CharAnimation::BODY].getSize().w;
+    healthBack.w = bodyPartTiles_[BODY].getSize().w;
     healthBack.h = 5;
     //hp bar
     healthFront.x = healthBack.x+1;
@@ -368,18 +368,18 @@ void Character::draw(SDL_Surface *dest, int x, int y){
 
     //where to put name
     int nameWidth = name.length()*6;
-    int nameLoc = x + centerX(nameWidth, bodyPartTiles_[CharAnimation::BODY].getWidth());
+    int nameLoc = x + centerX(nameWidth, bodyPartTiles_[BODY].getWidth());
 
     //draw hp bar and name
     drawText( name, font::mainFont.at(16), colour::black, dest, nameLoc,
-                y+bodyPartTiles_[CharAnimation::HEAD].getHeight()
-                 + bodyPartTiles_[CharAnimation::BODY].getHeight()
-                 + bodyPartTiles_[CharAnimation::LEFT_FOOT].getHeight() );
+                y+bodyPartTiles_[HEAD].getHeight()
+                 + bodyPartTiles_[BODY].getHeight()
+                 + bodyPartTiles_[LEFT_FOOT].getHeight() );
     SDL_FillRect(dest, &healthBack, SDL_MapRGB(dest->format, 0,0,0));
     SDL_FillRect(dest, &healthFront, SDL_MapRGB(dest->format, 0,255,0));
 
     //draw speech bubble
-    speechBubble.draw(dest, x+bodyPartTiles_[CharAnimation::BODY].getWidth()*.75, y-10-speechBubble.getHeight());
+    speechBubble.draw(dest, x+bodyPartTiles_[BODY].getWidth()*.75, y-10-speechBubble.getHeight());
 
     //      animation
     move();
@@ -437,13 +437,13 @@ bool Character::save( const std::string& filename ){
         if( !stats.savePacket(packet) ){ return 0; }
         if( !inventory.savePacket(packet) ){ return 0; }
 
-        if( !bodyPartTiles_[CharAnimation::HEAD].savePacket(packet) ){ return 0; }
-        if( !bodyPartTiles_[CharAnimation::FACE].savePacket(packet) ){ return 0; }
-        if( !bodyPartTiles_[CharAnimation::BODY].savePacket(packet) ){ return 0; }
-        if( !bodyPartTiles_[CharAnimation::LEFT_HAND].savePacket(packet) ){ return 0; }
-        if( !bodyPartTiles_[CharAnimation::RIGHT_HAND].savePacket(packet) ){ return 0; }
-        if( !bodyPartTiles_[CharAnimation::LEFT_FOOT].savePacket(packet) ){ return 0; }
-        if( !bodyPartTiles_[CharAnimation::RIGHT_FOOT].savePacket(packet) ){ return 0; }
+        if( !bodyPartTiles_[HEAD].savePacket(packet) ){ return 0; }
+        if( !bodyPartTiles_[FACE].savePacket(packet) ){ return 0; }
+        if( !bodyPartTiles_[BODY].savePacket(packet) ){ return 0; }
+        if( !bodyPartTiles_[LEFT_HAND].savePacket(packet) ){ return 0; }
+        if( !bodyPartTiles_[RIGHT_HAND].savePacket(packet) ){ return 0; }
+        if( !bodyPartTiles_[LEFT_FOOT].savePacket(packet) ){ return 0; }
+        if( !bodyPartTiles_[RIGHT_FOOT].savePacket(packet) ){ return 0; }
 
         file.write( (char*)packet.getBuf(), packet.getLength() );
         file.close();
@@ -514,13 +514,13 @@ bool Character::load( const std::string& filename ){
 
 
         if( !stats.loadPacket(packet)  ||  !inventory.load(packet)          ||
-            !bodyPartTiles_[CharAnimation::HEAD].loadPacket(packet)         ||
-            !bodyPartTiles_[CharAnimation::FACE].loadPacket(packet)         ||
-            !bodyPartTiles_[CharAnimation::BODY].loadPacket(packet)         ||
-            !bodyPartTiles_[CharAnimation::LEFT_HAND].loadPacket(packet)    ||
-            !bodyPartTiles_[CharAnimation::RIGHT_HAND].loadPacket(packet)   ||
-            !bodyPartTiles_[CharAnimation::LEFT_FOOT].loadPacket(packet)    ||
-            !bodyPartTiles_[CharAnimation::RIGHT_FOOT].loadPacket(packet) )
+            !bodyPartTiles_[HEAD].loadPacket(packet)         ||
+            !bodyPartTiles_[FACE].loadPacket(packet)         ||
+            !bodyPartTiles_[BODY].loadPacket(packet)         ||
+            !bodyPartTiles_[LEFT_HAND].loadPacket(packet)    ||
+            !bodyPartTiles_[RIGHT_HAND].loadPacket(packet)   ||
+            !bodyPartTiles_[LEFT_FOOT].loadPacket(packet)    ||
+            !bodyPartTiles_[RIGHT_FOOT].loadPacket(packet) )
         {
             return 0;
         }

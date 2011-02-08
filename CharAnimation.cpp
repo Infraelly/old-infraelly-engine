@@ -78,7 +78,7 @@ void CharAnimation::clear(){
     }
 }
 
-void CharAnimation::setTile( enum CharAnimation::BodyParts part, const Tile& newTile ){
+void CharAnimation::setTile( enum BodyParts part, const Tile& newTile ){
     if( part != FACE ){
         for(size_t i = 0; i < 4; ++i){
             for(size_t j = 0; j < anims[i].size(); ++j){
@@ -195,10 +195,21 @@ void CharAnimation::draw(SDL_Surface *dest, enum Directions facing,int x, int y)
     AnimFrame *frame = anims[facing][HEAD].getFrame( anims[facing][HEAD].getFrameProgression() );
     if( frame == NULL ){ return; }
     switch( facing ){
-        case UP:    break;
-        case RIGHT: face_.draw(dest, x +frame->getX()+5, y +frame->getY()); break;
-        case DOWN:  face_.draw(dest, x +frame->getX(),   y +frame->getY()); break;
-        case LEFT:  face_.draw(dest, x +frame->getX()-5, y +frame->getY()); break;
+        case UP:
+            hair_.draw(dest, x +frame->getX(),   y +frame->getY(), 0);
+            break;
+        case RIGHT:
+            hair_.draw(dest, x +frame->getX(),   y +frame->getY(), 1);
+            face_.draw(dest, x +frame->getX()+5, y +frame->getY());
+            break;
+        case DOWN:
+            hair_.draw(dest, x +frame->getX(),   y +frame->getY(), 2);
+            face_.draw(dest, x +frame->getX(),   y +frame->getY());
+            break;
+        case LEFT:
+            hair_.draw(dest, x +frame->getX(),   y +frame->getY(), 3);
+            face_.draw(dest, x +frame->getX()-5, y +frame->getY());
+            break;
     }
 }
 
@@ -210,9 +221,20 @@ void CharAnimation::draw(SDL_Surface *dest, enum Directions facing,int x, int y,
     AnimFrame *frame = anims[facing][HEAD].getFrame( 0 );
     if( frame == NULL ){ return; }
     switch( facing ){
-        case UP:    break;
-        case RIGHT: face_.draw(dest, x +frame->getX()+5, y +frame->getY()); break;
-        case DOWN:  face_.draw(dest, x +frame->getX(),   y +frame->getY()); break;
-        case LEFT:  face_.draw(dest, x +frame->getX()-5, y +frame->getY()); break;
+        case UP:
+            hair_.draw(dest, x +frame->getX(),   y +frame->getY(), 0);
+            break;
+        case RIGHT:
+            hair_.draw(dest, x +frame->getX(),   y +frame->getY(), 1);
+            face_.draw(dest, x +frame->getX()+5, y +frame->getY());
+            break;
+        case DOWN:
+            hair_.draw(dest, x +frame->getX(),   y +frame->getY(), 2);
+            face_.draw(dest, x +frame->getX(),   y +frame->getY());
+            break;
+        case LEFT:
+            hair_.draw(dest, x +frame->getX(),   y +frame->getY(), 3);
+            face_.draw(dest, x +frame->getX()-5, y +frame->getY());
+            break;
     }
 }

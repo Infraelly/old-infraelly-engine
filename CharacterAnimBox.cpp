@@ -63,7 +63,7 @@ CharacterAnimBox::CharacterAnimBox() :
     animOriginY_(0),
     editing_(false),
     drawAnim_(false),
-    activePart_(CharAnimation::HEAD),
+    activePart_(HEAD),
     activeDir_(UP),
     defaultFrames_(6),
     //-------------
@@ -212,47 +212,47 @@ CharacterAnimBox::CharacterAnimBox() :
     }
 
     //position the toggle buttons
-    bodyToggleBtns[CharAnimation::HEAD]->setCaption("Head");
-    bodyToggleBtns[CharAnimation::HEAD]->setPosition(300, 130);
-    bodyToggleBtns[CharAnimation::BODY]->setCaption("Body");
-    bodyToggleBtns[CharAnimation::BODY]->setPosition(300, 195);
-    bodyToggleBtns[CharAnimation::LEFT_HAND]->setCaption("Left Hand");
-    bodyToggleBtns[CharAnimation::LEFT_HAND]->setPosition(240, 195);
-    bodyToggleBtns[CharAnimation::RIGHT_HAND]->setCaption("Right Hand");
-    bodyToggleBtns[CharAnimation::RIGHT_HAND]->setPosition(360, 195);
-    bodyToggleBtns[CharAnimation::LEFT_FOOT]->setCaption("Left Foot");
-    bodyToggleBtns[CharAnimation::LEFT_FOOT]->setPosition(260, 255);
-    bodyToggleBtns[CharAnimation::RIGHT_FOOT]->setCaption("Right Foot");
-    bodyToggleBtns[CharAnimation::RIGHT_FOOT]->setPosition(340, 255);
+    bodyToggleBtns[HEAD]->setCaption("Head");
+    bodyToggleBtns[HEAD]->setPosition(300, 130);
+    bodyToggleBtns[BODY]->setCaption("Body");
+    bodyToggleBtns[BODY]->setPosition(300, 195);
+    bodyToggleBtns[LEFT_HAND]->setCaption("Left Hand");
+    bodyToggleBtns[LEFT_HAND]->setPosition(240, 195);
+    bodyToggleBtns[RIGHT_HAND]->setCaption("Right Hand");
+    bodyToggleBtns[RIGHT_HAND]->setPosition(360, 195);
+    bodyToggleBtns[LEFT_FOOT]->setCaption("Left Foot");
+    bodyToggleBtns[LEFT_FOOT]->setPosition(260, 255);
+    bodyToggleBtns[RIGHT_FOOT]->setCaption("Right Foot");
+    bodyToggleBtns[RIGHT_FOOT]->setPosition(340, 255);
 
 
     //  load sprites for body parts
-    bodyEditBtns[CharAnimation::HEAD]->setTSprite( cache::tsprites.loadResource("tsprites/head1.xml") );
-    bodyEditBtns[CharAnimation::BODY]->setTSprite( cache::tsprites.loadResource("tsprites/bodyM1.xml") );
-    bodyEditBtns[CharAnimation::LEFT_HAND]->setTSprite( cache::tsprites.loadResource("tsprites/hand1.xml") );
-    bodyEditBtns[CharAnimation::RIGHT_HAND]->setTSprite( cache::tsprites.loadResource("tsprites/hand1.xml") );
-    bodyEditBtns[CharAnimation::LEFT_FOOT]->setTSprite( cache::tsprites.loadResource("tsprites/feet1.xml") );
-    bodyEditBtns[CharAnimation::RIGHT_FOOT]->setTSprite( cache::tsprites.loadResource("tsprites/feet1.xml") );
+    bodyEditBtns[HEAD]->setTSprite( cache::tsprites.loadResource("tsprites/head1.xml") );
+    bodyEditBtns[BODY]->setTSprite( cache::tsprites.loadResource("tsprites/bodyM1.xml") );
+    bodyEditBtns[LEFT_HAND]->setTSprite( cache::tsprites.loadResource("tsprites/hand1.xml") );
+    bodyEditBtns[RIGHT_HAND]->setTSprite( cache::tsprites.loadResource("tsprites/hand1.xml") );
+    bodyEditBtns[LEFT_FOOT]->setTSprite( cache::tsprites.loadResource("tsprites/feet1.xml") );
+    bodyEditBtns[RIGHT_FOOT]->setTSprite( cache::tsprites.loadResource("tsprites/feet1.xml") );
 
     //set up default frames
-    defaultFrames_[CharAnimation::HEAD].setPosition(0, 0);
-    defaultFrames_[CharAnimation::BODY].setPosition(0, 32);
-    defaultFrames_[CharAnimation::LEFT_HAND].setPosition(-14, 36);
-    defaultFrames_[CharAnimation::RIGHT_HAND].setPosition(34, 36);
-    defaultFrames_[CharAnimation::LEFT_FOOT].setPosition(-4, 64);
-    defaultFrames_[CharAnimation::RIGHT_FOOT].setPosition(16, 64);
+    defaultFrames_[HEAD].setPosition(0, 0);
+    defaultFrames_[BODY].setPosition(0, 32);
+    defaultFrames_[LEFT_HAND].setPosition(-14, 36);
+    defaultFrames_[RIGHT_HAND].setPosition(34, 36);
+    defaultFrames_[LEFT_FOOT].setPosition(-4, 64);
+    defaultFrames_[RIGHT_FOOT].setPosition(16, 64);
 
 
     //populate framelist
     for(int i = 0; i < 4; ++i){
         activeDir_ = static_cast<enum Directions>(i);
         for( int j = 0; j < 6; ++j ){
-            activePart_ = static_cast<CharAnimation::BodyParts>(j);
+            activePart_ = static_cast<enum BodyParts>(j);
             addListItem( defaultFrames_[activePart_] );
         }
     }
     activeDir_ = UP;
-    activePart_ = CharAnimation::HEAD;
+    activePart_ = HEAD;
     frameLstBox->setListModel( frameLists[activeDir_][activePart_] );
 
     // add event listeners
@@ -369,33 +369,33 @@ void CharacterAnimBox::logic(){
         TSpriteIcon *activePartIcon_ = NULL;
 
         switch(activePart_){
-            case CharAnimation::HEAD:
-                activePartIcon_ = bodyEditBtns[CharAnimation::HEAD];
+            case HEAD:
+                activePartIcon_ = bodyEditBtns[HEAD];
                 infobarLbl->setCaption("Head");
                 break;
 
-            case CharAnimation::BODY:
-                activePartIcon_ = bodyEditBtns[CharAnimation::BODY];
+            case BODY:
+                activePartIcon_ = bodyEditBtns[BODY];
                 infobarLbl->setCaption("Body");
                 break;
 
-            case CharAnimation::LEFT_HAND:
-                activePartIcon_ = bodyEditBtns[CharAnimation::LEFT_HAND];
+            case LEFT_HAND:
+                activePartIcon_ = bodyEditBtns[LEFT_HAND];
                 infobarLbl->setCaption("Left Hand");
                 break;
 
-            case CharAnimation::RIGHT_HAND:
-                activePartIcon_ = bodyEditBtns[CharAnimation::RIGHT_HAND];
+            case RIGHT_HAND:
+                activePartIcon_ = bodyEditBtns[RIGHT_HAND];
                 infobarLbl->setCaption("Right Hand");
                 break;
 
-            case CharAnimation::LEFT_FOOT:
-                activePartIcon_ = bodyEditBtns[CharAnimation::LEFT_FOOT];
+            case LEFT_FOOT:
+                activePartIcon_ = bodyEditBtns[LEFT_FOOT];
                 infobarLbl->setCaption("Left Foot");
                 break;
 
-            case CharAnimation::RIGHT_FOOT:
-                activePartIcon_ = bodyEditBtns[CharAnimation::RIGHT_FOOT];
+            case RIGHT_FOOT:
+                activePartIcon_ = bodyEditBtns[RIGHT_FOOT];
                 infobarLbl->setCaption("Right Foot");
                 break;
         }
@@ -459,75 +459,75 @@ void CharacterAnimBox::mouseClicked(gcn::MouseEvent& mouseEvent){
             frameLstBox->setListModel( frameLists[activeDir_][activePart_] );
             frameLstBox->setSelected( selected );
 
-            if( mouseEvent.getSource() == bodyEditBtns[CharAnimation::HEAD] ){
+            if( mouseEvent.getSource() == bodyEditBtns[HEAD] ){
                 if( lockEdit->isSelected() ){
-                    if( activePart_ == CharAnimation::HEAD ){
-                        moveToTop(bodyEditBtns[CharAnimation::HEAD]);
+                    if( activePart_ == HEAD ){
+                        moveToTop(bodyEditBtns[HEAD]);
                         editing_ = true;
                     }
                 } else {
-                    activePart_ = CharAnimation::HEAD;
-                    moveToTop(bodyEditBtns[CharAnimation::HEAD]);
+                    activePart_ = HEAD;
+                    moveToTop(bodyEditBtns[HEAD]);
                     editing_ = true;
                 }
             }
-            if( mouseEvent.getSource() == bodyEditBtns[CharAnimation::BODY] ){
+            if( mouseEvent.getSource() == bodyEditBtns[BODY] ){
                 if( lockEdit->isSelected() ){
-                    if( activePart_ == CharAnimation::BODY ){
-                        moveToTop(bodyEditBtns[CharAnimation::BODY]);
+                    if( activePart_ == BODY ){
+                        moveToTop(bodyEditBtns[BODY]);
                         editing_ = true;
                     }
                 } else {
-                    activePart_ = CharAnimation::BODY;
-                    moveToTop(bodyEditBtns[CharAnimation::BODY]);
+                    activePart_ = BODY;
+                    moveToTop(bodyEditBtns[BODY]);
                     editing_ = true;
                 }
             }
-            if( mouseEvent.getSource() == bodyEditBtns[CharAnimation::LEFT_HAND] ){
+            if( mouseEvent.getSource() == bodyEditBtns[LEFT_HAND] ){
                 if( lockEdit->isSelected() ){
-                    if( activePart_ == CharAnimation::LEFT_HAND ){
-                        moveToTop(bodyEditBtns[CharAnimation::LEFT_HAND]);
+                    if( activePart_ == LEFT_HAND ){
+                        moveToTop(bodyEditBtns[LEFT_HAND]);
                         editing_ = true;
                     }
                 } else {
-                    activePart_ = CharAnimation::LEFT_HAND;
-                    moveToTop(bodyEditBtns[CharAnimation::LEFT_HAND]);
+                    activePart_ = LEFT_HAND;
+                    moveToTop(bodyEditBtns[LEFT_HAND]);
                     editing_ = true;
                 }
             }
-            if( mouseEvent.getSource() == bodyEditBtns[CharAnimation::RIGHT_HAND] ){
+            if( mouseEvent.getSource() == bodyEditBtns[RIGHT_HAND] ){
                 if( lockEdit->isSelected() ){
-                    if( activePart_ == CharAnimation::RIGHT_HAND ){
-                        moveToTop(bodyEditBtns[CharAnimation::RIGHT_HAND]);
+                    if( activePart_ == RIGHT_HAND ){
+                        moveToTop(bodyEditBtns[RIGHT_HAND]);
                         editing_ = true;
                     }
                 } else {
-                    activePart_ = CharAnimation::RIGHT_HAND;
-                    moveToTop(bodyEditBtns[CharAnimation::RIGHT_HAND]);
+                    activePart_ = RIGHT_HAND;
+                    moveToTop(bodyEditBtns[RIGHT_HAND]);
                     editing_ = true;
                 }
             }
-            if( mouseEvent.getSource() == bodyEditBtns[CharAnimation::LEFT_FOOT] ){
+            if( mouseEvent.getSource() == bodyEditBtns[LEFT_FOOT] ){
                 if( lockEdit->isSelected() ){
-                    if( activePart_ == CharAnimation::LEFT_FOOT ){
-                        moveToTop(bodyEditBtns[CharAnimation::LEFT_FOOT]);
+                    if( activePart_ == LEFT_FOOT ){
+                        moveToTop(bodyEditBtns[LEFT_FOOT]);
                         editing_ = true;
                     }
                 } else {
-                    activePart_ = CharAnimation::LEFT_FOOT;
-                    moveToTop(bodyEditBtns[CharAnimation::LEFT_FOOT]);
+                    activePart_ = LEFT_FOOT;
+                    moveToTop(bodyEditBtns[LEFT_FOOT]);
                     editing_ = true;
                 }
             }
-            if( mouseEvent.getSource() == bodyEditBtns[CharAnimation::RIGHT_FOOT] ){
+            if( mouseEvent.getSource() == bodyEditBtns[RIGHT_FOOT] ){
                 if( lockEdit->isSelected() ){
-                    if( activePart_ == CharAnimation::RIGHT_FOOT ){
-                        moveToTop(bodyEditBtns[CharAnimation::RIGHT_FOOT]);
+                    if( activePart_ == RIGHT_FOOT ){
+                        moveToTop(bodyEditBtns[RIGHT_FOOT]);
                         editing_ = true;
                     }
                 } else {
-                    activePart_ = CharAnimation::RIGHT_FOOT;
-                    moveToTop(bodyEditBtns[CharAnimation::RIGHT_FOOT]);
+                    activePart_ = RIGHT_FOOT;
+                    moveToTop(bodyEditBtns[RIGHT_FOOT]);
                     editing_ = true;
                 }
             }
@@ -537,20 +537,20 @@ void CharacterAnimBox::mouseClicked(gcn::MouseEvent& mouseEvent){
 
 
     //  head
-    if( mouseEvent.getSource() == bodyToggleBtns[CharAnimation::HEAD] ){
+    if( mouseEvent.getSource() == bodyToggleBtns[HEAD] ){
         mouseEvent.consume();
-        moveToTop(bodyEditBtns[CharAnimation::HEAD]);
-        activePart_ = CharAnimation::HEAD;
+        moveToTop(bodyEditBtns[HEAD]);
+        activePart_ = HEAD;
         int selected = frameLstBox->getSelected();
         frameLstBox->setListModel( frameLists[activeDir_][activePart_] );
         frameLstBox->setSelected( selected );
         lockEdit->setSelected(false);
     } else
     //  Body
-    if( mouseEvent.getSource() == bodyToggleBtns[CharAnimation::BODY] ){
+    if( mouseEvent.getSource() == bodyToggleBtns[BODY] ){
         mouseEvent.consume();
-        moveToTop(bodyEditBtns[CharAnimation::BODY]);
-        activePart_ = CharAnimation::BODY;
+        moveToTop(bodyEditBtns[BODY]);
+        activePart_ = BODY;
         int selected = frameLstBox->getSelected();
         frameLstBox->setListModel( frameLists[activeDir_][activePart_] );
         frameLstBox->setSelected( selected );
@@ -558,40 +558,40 @@ void CharacterAnimBox::mouseClicked(gcn::MouseEvent& mouseEvent){
         lockEdit->setSelected(false);
     } else
     //  Left arm
-    if( mouseEvent.getSource() == bodyToggleBtns[CharAnimation::LEFT_HAND] ){
+    if( mouseEvent.getSource() == bodyToggleBtns[LEFT_HAND] ){
         mouseEvent.consume();
-        moveToTop(bodyEditBtns[CharAnimation::LEFT_HAND]);
-        activePart_ = CharAnimation::LEFT_HAND;
+        moveToTop(bodyEditBtns[LEFT_HAND]);
+        activePart_ = LEFT_HAND;
         int selected = frameLstBox->getSelected();
         frameLstBox->setListModel( frameLists[activeDir_][activePart_] );
         frameLstBox->setSelected( selected );
         lockEdit->setSelected(false);
     } else
     //  right hand
-    if( mouseEvent.getSource() == bodyToggleBtns[CharAnimation::RIGHT_HAND] ){
+    if( mouseEvent.getSource() == bodyToggleBtns[RIGHT_HAND] ){
         mouseEvent.consume();
-        moveToTop(bodyEditBtns[CharAnimation::RIGHT_HAND]);
-        activePart_ = CharAnimation::RIGHT_HAND;
+        moveToTop(bodyEditBtns[RIGHT_HAND]);
+        activePart_ = RIGHT_HAND;
         int selected = frameLstBox->getSelected();
         frameLstBox->setListModel( frameLists[activeDir_][activePart_] );
         frameLstBox->setSelected( selected );
         lockEdit->setSelected(false);
     } else
     //  LEFT FOOT
-    if( mouseEvent.getSource() == bodyToggleBtns[CharAnimation::LEFT_FOOT] ){
+    if( mouseEvent.getSource() == bodyToggleBtns[LEFT_FOOT] ){
         mouseEvent.consume();
-        moveToTop(bodyEditBtns[CharAnimation::LEFT_FOOT]);
-        activePart_ = CharAnimation::LEFT_FOOT;
+        moveToTop(bodyEditBtns[LEFT_FOOT]);
+        activePart_ = LEFT_FOOT;
         int selected = frameLstBox->getSelected();
         frameLstBox->setListModel( frameLists[activeDir_][activePart_] );
         frameLstBox->setSelected( selected );
         lockEdit->setSelected(false);
     } else
     //  RIGHT FOOT
-    if( mouseEvent.getSource() == bodyToggleBtns[CharAnimation::RIGHT_FOOT] ){
+    if( mouseEvent.getSource() == bodyToggleBtns[RIGHT_FOOT] ){
         mouseEvent.consume();
-        moveToTop(bodyEditBtns[CharAnimation::RIGHT_FOOT]);
-        activePart_ = CharAnimation::RIGHT_FOOT;
+        moveToTop(bodyEditBtns[RIGHT_FOOT]);
+        activePart_ = RIGHT_FOOT;
         int selected = frameLstBox->getSelected();
         frameLstBox->setListModel( frameLists[activeDir_][activePart_] );
         frameLstBox->setSelected( selected );
@@ -603,14 +603,14 @@ void CharacterAnimBox::mouseClicked(gcn::MouseEvent& mouseEvent){
     //New Frame button
     if( mouseEvent.getSource() == listAddBtn ){
         mouseEvent.consume();
-        CharAnimation::BodyParts trueActivepart = activePart_;
+        BodyParts trueActivepart = activePart_;
         Directions trueDir = activeDir_;
         //only want the event to be fired once not 4x6 times
         frameLstBox->removeSelectionListener(this);
         for( int i = 0; i < 4; ++i ){
             activeDir_ = static_cast<Directions>(i);
             for( int j = 0; j < 6; ++j ){
-                activePart_ = static_cast<CharAnimation::BodyParts>(j);
+                activePart_ = static_cast<enum BodyParts>(j);
                 addListItem( defaultFrames_[activePart_] );
             }
         }
@@ -622,14 +622,14 @@ void CharacterAnimBox::mouseClicked(gcn::MouseEvent& mouseEvent){
     // dupe frame button
     if( mouseEvent.getSource() == listDupeBtn ){
         mouseEvent.consume();
-        CharAnimation::BodyParts trueActivepart = activePart_;
+        BodyParts trueActivepart = activePart_;
         Directions trueDir = activeDir_;
         //only want the event to be fired once not 4x6 times
         frameLstBox->removeSelectionListener(this);
         for( int i = 0; i < 4; ++i ){
             activeDir_ = static_cast<Directions>(i);
             for( int j = 0; j < 6; ++j ){
-                activePart_ = static_cast<CharAnimation::BodyParts>(j);
+                activePart_ = static_cast<BodyParts>(j);
                 if( activeDir_ == trueDir ){
                     addListItem();
                 } else {
@@ -667,12 +667,12 @@ void CharacterAnimBox::mouseClicked(gcn::MouseEvent& mouseEvent){
     //  List's delete button
     if( mouseEvent.getSource() == listDelBtn ){
         mouseEvent.consume();
-        CharAnimation::BodyParts trueActivepart = activePart_;
+        BodyParts trueActivepart = activePart_;
         Directions trueDir = activeDir_;
         for( int i = 0; i < 4; ++i ){
             activeDir_ = static_cast<Directions>(i);
             for( int j = 0; j < 6; ++j ){
-                activePart_ = static_cast<CharAnimation::BodyParts>(j);
+                activePart_ = static_cast<BodyParts>(j);
                 if( frameLists[activeDir_][activePart_]->getNumberOfElements() > 1 ){
                     int selected = frameLstBox->getSelected();
                     if( (selected >= 0) && (selected < frameLists[activeDir_][activePart_]->getNumberOfElements()) ){
@@ -883,7 +883,7 @@ bool CharacterAnimBox::load(const std::string &filename, bool discrete){
     }
 
     // refresh frame list box
-    frameLstBox->setListModel( frameLists[activeDir_][CharAnimation::HEAD] );
+    frameLstBox->setListModel( frameLists[activeDir_][HEAD] );
     frameLstBox->setSelected( 0 );
     //run logic to have it resize itself =]
     frameLstBox->logic();

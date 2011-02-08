@@ -53,21 +53,11 @@ class CharAnimation : public Cacheable {
     public:
         static const int revision_ = 1;
 
-        enum BodyParts{
-            HEAD = 0,
-            BODY = 1,
-            LEFT_HAND = 2,
-            RIGHT_HAND = 3,
-            LEFT_FOOT = 4,
-            RIGHT_FOOT = 5,
-            FACE = 6
-        };
-
         CharAnimation();
 
         void clear();
 
-        void setTile( enum CharAnimation::BodyParts part, const Tile& newTile );
+        void setTile( enum BodyParts part, const Tile& newTile );
 
         //save animation to file
         bool save( inp::INFPacket& pack)const;
@@ -92,6 +82,7 @@ class CharAnimation : public Cacheable {
 
         private:
             Tile face_;
+            TSprite hair_;
 };
 
 #endif // CHARANIMATION_HPP_INCLUDED

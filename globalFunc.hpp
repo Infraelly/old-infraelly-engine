@@ -61,6 +61,17 @@ enum Directions{
 };
 bool validDirection(int dir);
 
+enum BodyParts{
+    HEAD = 0,
+    BODY = 1,
+    LEFT_HAND = 2,
+    RIGHT_HAND = 3,
+    LEFT_FOOT = 4,
+    RIGHT_FOOT = 5,
+    FACE = 6,
+    HAIR = 7
+};
+bool validBodyPart(int part);
 
 //returns an SDL_rect with parameters as given
 SDL_Rect makeRect(Sint16 _x, Sint16 _y, Uint16 w, Uint16 h);

@@ -117,7 +117,7 @@ class Character{
         //  Returns a pointer to the animation currently used
         CharAnimation getAnim()const;
         //  Retruns the images used for relevent body part
-        const Tile& getTile( enum CharAnimation::BodyParts part )const;
+        const Tile& getTile( enum BodyParts part )const;
 
 
         void setX(float newX){ x = newX; };
@@ -141,7 +141,7 @@ class Character{
         void setAnim(const CharAnimation &newAnim);
         void setAnim(CharAnimation *newAnim);
         //  Sets the images used for relevent body part
-        void setTile( enum CharAnimation::BodyParts part, const Tile& newTile );
+        void setTile( enum BodyParts part, const Tile& newTile );
 
         //  Checks if its time to level up character
         void checkLevelUp();

@@ -63,6 +63,11 @@ bool validDirection(int dir){
     return (dir==UP) || (dir==RIGHT) || (dir==DOWN) || (dir==LEFT) ;
 }
 
+bool validBodyPart(int part){
+    return  (part==HEAD) || (part==BODY) || (part==LEFT_HAND) || (part==RIGHT_HAND)
+    || (part==LEFT_FOOT) || (part==RIGHT_FOOT) || (part==FACE) || (part==HAIR);
+}
+
 SDL_Rect makeRect(Sint16 _x, Sint16 _y, Uint16 _w, Uint16 _h){
     SDL_Rect tmp;
     tmp.x = _x;
