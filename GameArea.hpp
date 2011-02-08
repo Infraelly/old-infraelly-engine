@@ -117,16 +117,18 @@ class GameArea{
         typedef PlayerList::iterator PlayerListIterator;
         PlayerList players_;
 
-        // for handlingnet work activity
-        std::vector<inp::Connection*> activeConList_;
 
+        //  Timer kept to perform tasks at a set time inteval
+        Timer checkAliveTimer;
+        Timer syncTimer;
 
         //      Helper Functions
 
         inp::INFPacket buildSyncPacket(Character* player, inp::Connection* con);
         inp::INFPacket buildFullSyncPacket();
 
-        void handleConnection( CharCon& player );
+        //returns -1 if connection shud be removed (disconnected)
+        int handleConnection( CharCon& player );
         int handlePacket( CharCon& player, inp::INFPacket& packet );
 
         //  Stops coppying

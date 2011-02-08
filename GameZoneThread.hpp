@@ -86,6 +86,7 @@ class GameZoneThread : public ThreadBase {
         bool addPlayer(const CharCon& player, const std::string& map);
 
 
+        //  Sends a packet to all players
         void sendAll(const inp::INFPacket& packet);
 
 

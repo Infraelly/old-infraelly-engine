@@ -5,7 +5,7 @@
 		<Option title="Infraelly" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="Timers/;Server/;Server/;Server/;Server/;Timers/FPS Manager/;GUI/Base Widgets/;Animation/;GUI/Animator/;RunContext/Contexts/;AreaMap/;GUI/;Resource Management/Cache/;Character/;GUI/Animator/CharacterAnimator/;GUI/Game GUI/;Network Control (INP)/;GUI/Console/;Global Varibles and Functions/;Global Varibles and Functions/Image Resources/;Global Varibles and Functions/Mixer/;GUI/Intro GUI/;Inventory/;Inventory/Item/;GUI/Animator/ItemAnimator/;GUI/Item maker/;GUI/Mapper/Layer Box/;GUI/Mapper/;GUI/TilesetWidgets/TSprite/;GUI/TilesetWidgets/;Threading/;Character/Npc/;Resource Management/;RunContext/;Global Varibles and Functions/Screen/;Character/Stats/;Tileset/TSprite/;Tileset/Tile/;Tileset/;Debug/;" />
+		<Option virtualFolders="RunContext/Contexts/;RunContext/Network Control (INP)/;RunContext/;GUI/Base Widgets/;Animation/;GUI/Animator/;AreaMap/;GUI/;Resource Management/Cache/;Character/;GUI/Animator/CharacterAnimator/;GUI/Game GUI/;Server/;GUI/Console/;Timers/FPS Manager/;Global Varibles and Functions/;Global Varibles and Functions/Mixer/;GUI/Intro GUI/;Inventory/;Inventory/Item/;GUI/Animator/ItemAnimator/;GUI/Item maker/;GUI/Mapper/Layer Box/;GUI/Mapper/;GUI/TilesetWidgets/TSprite/;GUI/TilesetWidgets/;Threading/;Character/Npc/;Resource Management/;Global Varibles and Functions/Screen/;Character/Stats/;Tileset/TSprite/;Tileset/Tile/;Tileset/;Timers/;Debug/;Global Varibles and Functions/Image Resources/;Network Control (INP)/;" />
 		<Build>
 			<Target title="Windows Dev">
 				<Option platforms="Windows;" />

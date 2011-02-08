@@ -136,14 +136,17 @@ namespace inp{
         /************************************
                 Connection Control
         *************************************/
+        //  "disconnections and other errors, [are] determined by a failed read/write attempt"
+        //  thus we just preiodicaly send this
+        const NetCode CHECK_ALIVE = 50;
         //  Error message from sever (for compatibility)
-        const NetCode SERVER_MSG = 50;
+        const NetCode SERVER_MSG = 51;
         //  Successfully Connected
-        const NetCode CONNECT_SUCCESS = 51;
+        const NetCode CONNECT_SUCCESS = 52;
         //  Server denies connection request
-        const NetCode CONNECT_DENY = 52;
+        const NetCode CONNECT_DENY = 53;
         //  Sever kicks player
-        const NetCode KICK = 53;
+        const NetCode KICK = 54;
 
 
 
@@ -227,6 +230,15 @@ namespace inp{
 
 
 
+        /******************************
+                Generic Attribute
+        ******************************/
+        //  For sending data as string,value pairs.
+        //  ATTRIBUTE << descripting(string) << ATTRIBUTE_VALUE << value(T)
+        const NetCode ATTRBUTE = 198;
+        const NetCode ATTRIBUTE_VALUE = 199;
+
+
         //  Thread Control
         const NetCode THREAD_START = 200;
         const NetCode THREAD_PAUSE = 201;
@@ -235,7 +247,6 @@ namespace inp{
         const NetCode THREAD_SLEEP = 204;
         //  Send some text to server console from thread
         const NetCode THREAD_SEND_CONSOLE = 205;
-
 
 
         //  Default value of netcode

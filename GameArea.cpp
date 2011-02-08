@@ -55,32 +55,21 @@ using namespace inp;
 
 GameArea::GameArea() :
     access_(SDL_CreateMutex())
-{};
+{
+    checkAliveTimer.start();
+    syncTimer.start();
+};
 GameArea::GameArea(const std::string& mapFilename) :
     access_(SDL_CreateMutex())
 {
     map_.loadMap(mapFilename);
+    checkAliveTimer.start();
+    syncTimer.start();
 };
 GameArea::~GameArea(){
     SDL_LockMutex(access_);
     SDL_DestroyMutex(access_);
 };
-
-/*
-void GameArea::setActive(bool v){
-    SDL_LockMutex(access);
-    active_ = v;
-    SDL_UnlockMutex(access);
-}
-
-bool GameArea::isActive()const{
-    bool rVal;
-    SDL_LockMutex(access);
-    rVal = active_;
-    SDL_UnlockMutex(access);
-    return rVal;
-}*/
-
 
 
 Character GameArea::getPlayer(const std::string& id)const{
@@ -173,17 +162,40 @@ void GameArea::sendAll(const inp::INFPacket& pack){
 
 // runs map (non-blocking)
 void GameArea::logic(){
+    //  send to determine which connectoins are dead
+    if( checkAliveTimer.getTime() > 2000 ){
+        INFPacket pack;
+        pack << DataTypeByte::CHECK_ALIVE;
+        sendAll(pack);
+        checkAliveTimer.clear();
+    }
+
     CharCon playerCon;
+    std::vector<inp::Connection*> activeConList;
     MutexLocker lock(access_);
     //  Get active connections in a list.
-    if( connections_.checkSockets( 50, activeConList_ ) ){
+    if( connections_.checkSockets( 50, activeConList ) ){
         // handle each connection in list
-        for(size_t i = 0; i < activeConList_.size(); ++i){
-            playerCon.first = activeConList_.at(i);
-            playerCon.second = players_.find(activeConList_.at(i)->getId())->second;
-            handleConnection( playerCon );
-            connections_.sendAll(buildSyncPacket(playerCon.second, playerCon.first));
+        for(size_t i = 0; i < activeConList.size(); ++i){
+            playerCon.first = activeConList.at(i);                                  //connection
+            playerCon.second = players_.find(activeConList.at(i)->getId())->second; //player
+            if( handleConnection( playerCon ) == -1 ){
+                //tell others user is gone
+                inp::INFPacket leavePack;
+                leavePack << inp::DataTypeByte::USER_LEFT << playerCon.first->getId();
+                sendAll(leavePack);
+                //remove player from playerlist
+                players_.erase( players_.find(activeConList.at(i)->getId()) );
+                //remove connection
+                connections_.remove( activeConList.at(i)->getId() );
+            }
         }
+    }
+
+    //  sync players
+    if( syncTimer.getTime() > 1000 ){
+        connections_.sendAll(buildSyncPacket(playerCon.second, playerCon.first));
+        syncTimer.clear();
     }
 }
 
@@ -233,7 +245,7 @@ inp::INFPacket GameArea::buildFullSyncPacket(){
 
 
 
-void GameArea::handleConnection( CharCon& player ){
+int GameArea::handleConnection( CharCon& player ){
     inp::INFPacket packet;
     std::string recvText;
     if( player.first->isActive() ) {
@@ -244,25 +256,24 @@ void GameArea::handleConnection( CharCon& player ){
             perror("SDLNet_CheckSockets");
             player.first->disconnect();
             player.first->setActive(false);
+            return -1;
         } else if( numReady > 0 ){
             //  Recieve data and store into "packet"
             if( player.first->recv( packet ) != -1 ) {
                 if( handlePacket(player, packet) == -1 ){
                     player.first->setActive(false);
+                    return -1
                 }
             } else {
                 //disconect
                 std::cerr << __FILE__ << " " << __LINE__ << ": " << "Disconnecting a player: "+player.first->getId();
                 player.first->disconnect();
                 player.first->setActive(false);
-
-                //tell others user is gone
-                inp::INFPacket leavePack;
-                leavePack << inp::DataTypeByte::USER_LEFT << player.first->getId();
-                sendAll(leavePack);
+                return -1;
             }
         }
     }
+    return 0;
 }
 
 int GameArea::handlePacket( CharCon& playerCon, inp::INFPacket& packet ){
