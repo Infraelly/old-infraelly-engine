@@ -100,7 +100,7 @@ ServerContext::ServerContext() :
 
     // Load all maps
     // for now just the null map atm (dummy map) =[
-    GameArea *nullMap = new GameArea;
+    GameArea *nullMap = new GameArea(this);
     world_["NULL"] = nullMap;
 
     //calculate how many maps will be allocated to each worker thread, roudned up

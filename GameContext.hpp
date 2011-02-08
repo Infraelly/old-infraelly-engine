@@ -110,9 +110,9 @@ class GameContext : RunContext {
         Timer movingUpdateTimer;
         Timer staticUpdateTimer;
         //  time between xy updates when moving
-        static const int movingUpdateDelta = 150;
+        static const int movingUpdateDelta = 200;
         //time between xy updates when stationary
-        static const int staticUpdateDelta = 200;
+        static const int staticUpdateDelta = 400;
 
 
         //  server wants to know our ping

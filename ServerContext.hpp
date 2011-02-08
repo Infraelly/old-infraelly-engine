@@ -68,6 +68,9 @@ class ServerContext : RunContext {
 
         friend class ConnectionListenerThread;
 
+        //  Sends some text to the console
+        void sendConsole(const std::string& text);
+
     private:
         //To lock access to the world
         SDL_mutex *worldAccess_;
@@ -104,8 +107,6 @@ class ServerContext : RunContext {
 
 
         // convienience functions
-        //  Sends some text to the console
-        void sendConsole(const std::string& text);
         //  Sends to all players
         void sendAll(const inp::INFPacket& pack);
         // Sends to specific user

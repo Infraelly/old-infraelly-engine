@@ -49,21 +49,22 @@ L-----------------------------------------------------------------------------*/
 #include "Connection.hpp"
 #include "Character.hpp"
 #include "INFPacket.hpp"
+#include "ServerContext.hpp"
 
 using namespace inp;
 
 
-GameArea::GameArea() :
-    access_(SDL_CreateMutex())
+GameArea::GameArea(ServerContext *server) :
+    access_(SDL_CreateMutex()),
+    server_(server)
 {
-    //checkAliveTimer.start();
     syncTimer.start();
 };
-GameArea::GameArea(const std::string& mapFilename) :
-    access_(SDL_CreateMutex())
+GameArea::GameArea(ServerContext *server, const std::string& mapFilename) :
+    access_(SDL_CreateMutex()),
+    server_(server)
 {
     map_.loadMap(mapFilename);
-    //checkAliveTimer.start();
     syncTimer.start();
 };
 GameArea::~GameArea(){
@@ -163,14 +164,6 @@ void GameArea::sendAll(const inp::INFPacket& pack){
 
 // runs map (non-blocking)
 int GameArea::logic(){
-    //  send to determine which connectoins are dead
-    /*if( checkAliveTimer.getTime() > 2000 ){
-        INFPacket pack;
-        pack << DataTypeByte::CHECK_ALIVE;
-        sendAll(pack);
-        checkAliveTimer.clear();
-    }*/
-
     int dropped = 0;
     CharCon playerCon;
     std::vector<inp::Connection*> activeConList;
@@ -329,6 +322,15 @@ int GameArea::handlePacket( CharCon& playerCon, inp::INFPacket& packet ){
             }
         } else
         //  user's state
+        if( code == DataTypeByte::CHAR_DIR ){
+            packet >> recvVal;
+            if ( connections_.exists( username ) ){
+                if( Character::validDirection(recvVal) ){
+                    players_[username]->setDirection( static_cast<enum Directions>(recvVal) );
+                }
+            }
+        } else
+        //  user's state
         if( code == DataTypeByte::CHAR_STATE ){
             packet >> recvVal;
             if ( connections_.exists( username ) ){
@@ -388,7 +390,7 @@ int GameArea::handlePacket( CharCon& playerCon, inp::INFPacket& packet ){
                 if( recvVal != 0 ){
                     std::ostringstream pingStr;
                     pingStr << "Ping (" << username << "): " << recvVal;
-                    //sendConsole( pingStr.str() );
+                    server_->sendConsole( pingStr.str() );
                 }
             }
             break;
@@ -400,7 +402,7 @@ int GameArea::handlePacket( CharCon& playerCon, inp::INFPacket& packet ){
             playerCon.first->send(packet);
             break;
         } else {
-            //sendConsole(playerCon.first->getId() + " is sending junk packets (h4x0rz)");
+            server_->sendConsole(playerCon.first->getId() + " is sending unhandled data (h4x0rz)");
             return 0;
         }
     }//end while(packet.readDone());

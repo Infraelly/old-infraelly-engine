@@ -61,12 +61,13 @@ L-----------------------------------------------------------------------------*/
 #include "Timer.hpp"
 
 class Character;
+class ServerContext;
 typedef std::pair<inp::Connection*, Character*> CharCon;
 
 class GameArea{
     public:
-        GameArea();
-        explicit GameArea(const std::string& mapFilename);
+        GameArea(ServerContext *server);
+        explicit GameArea(ServerContext *server, const std::string& mapFilename);
         ~GameArea();
 
         // Returns a temporary COPY of the player. (cant return pointer because
@@ -107,6 +108,9 @@ class GameArea{
         // Protect non thread safe members
         SDL_mutex *access_;
 
+        //  Server context handle
+        ServerContext *server_;
+
         //map associated with the game region
         AreaMap map_;
 
@@ -120,7 +124,6 @@ class GameArea{
 
 
         //  Timer kept to perform tasks at a set time inteval
-        Timer checkAliveTimer;
         Timer syncTimer;
 
         //      Helper Functions

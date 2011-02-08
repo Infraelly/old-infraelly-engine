@@ -54,11 +54,12 @@ L-----------------------------------------------------------------------------*/
 
 
 enum Directions{
-        UP = 0,
-        RIGHT = 1,
-        DOWN = 2,
-        LEFT = 3
+    UP = 0,
+    RIGHT = 1,
+    DOWN = 2,
+    LEFT = 3
 };
+bool validDirection(int dir);
 
 
 //returns an SDL_rect with parameters as given
