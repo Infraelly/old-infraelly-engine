@@ -60,7 +60,7 @@ bool Character::validDirection(int dir){
 bool Character::validState(int state){
     return ( (state==ATTACKING) || (state==CASTING) ||
              (state==EQUIPING)  || (state==MOVING)  ||
-             (state==STILL) );
+             (state==STILL)     || (state==TYPING)  );
 }
 bool Character::validGender(int gen){
     return ( (gen==MALE) || (gen==FEMALE) || (gen==ASEXUAL) );
@@ -198,6 +198,8 @@ void Character::setGender(enum Character::Genders newGender){
        bodyPartTiles_[CharAnimation::BODY].setSource( cache::tilesets.loadResource("tilesets/bodyF.xml"), 0, 0 );
     }
 }
+
+void Character::lockState(bool v){ stateIsLocked = v; }
 
 void Character::setName(const std::string& newName){ name = newName; }
 
@@ -382,10 +384,13 @@ void Character::draw(SDL_Surface *dest, int x, int y){
     //      animation
     move();
     switch(characterState){
+        case TYPING:
+            drawText("Typing...", font::mainFont.at(16), colour::black, 50, dest, x, y-24);
+            stateIsLocked = true;
+            //delibertaly falling through
         case STILL:
             //draws the first frame of the animation
             anim_.draw( dest, facing, x, y, 0 );
-            stateIsLocked = false;
             break;
 
         case MOVING:

@@ -103,7 +103,7 @@ class GameZoneThread : public ThreadBase {
         std::vector<GameArea*> gameAreas_;
 
 
-        //void sendConsole(const std::string& text);
+        void sendConsole(const std::string& text);
 };
 
 

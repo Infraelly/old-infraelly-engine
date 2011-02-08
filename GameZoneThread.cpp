@@ -121,14 +121,18 @@ void GameZoneThread::handleUserData(inp::INFPacket &data){
 
 bool GameZoneThread::work(){
     MutexLocker lock(dataAccess_);
+    int dropped = 0;
     for(size_t i = 0; i < gameAreas_.size(); ++i){
-        gameAreas_.at(i)->logic();
+        dropped += gameAreas_.at(i)->logic();
+    }
+    if( dropped ){
+        sendConsole("Players disconnected: " + itos(dropped));
     }
     return true;
 }
-/*
+
 void GameZoneThread::sendConsole(const std::string& text){
     INFPacket packet;
     packet << inp::DataTypeByte::THREAD_SEND_CONSOLE << text;
     sendOut(packet);
-}*/
+}

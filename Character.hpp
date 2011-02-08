@@ -60,7 +60,7 @@ class Character{
         static const int revision_ = 1;
 
         //enumerations
-        enum CharacterStates{ATTACKING, CASTING, EQUIPING, MOVING, STILL};
+        enum CharacterStates{ATTACKING, CASTING, EQUIPING, MOVING, STILL, TYPING};
         enum Genders{MALE, FEMALE, ASEXUAL};
         enum Jobs{
             WANDERER,
@@ -135,6 +135,8 @@ class Character{
         void setGender(enum Character::Genders newGender);
         //  Sets the Character's name
         void setName(const std::string& newName);
+        //  Setes lock state
+        void lockState(bool v);
         //  Sets the Character's Animation
         void setAnim(const CharAnimation &newAnim);
         void setAnim(CharAnimation *newAnim);

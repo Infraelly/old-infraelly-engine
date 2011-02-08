@@ -98,7 +98,8 @@ class GameArea{
 
 
         // runs map (non-blocking)
-        void logic();
+        // returns number of player's dropped
+        int logic();
 
 
 

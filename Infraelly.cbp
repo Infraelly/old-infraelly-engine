@@ -5,31 +5,33 @@
 		<Option title="Infraelly" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="RunContext/Contexts/;RunContext/Network Control (INP)/;RunContext/;GUI/Base Widgets/;Animation/;GUI/Animator/;AreaMap/;GUI/;Resource Management/Cache/;Character/;GUI/Animator/CharacterAnimator/;GUI/Game GUI/;Server/;GUI/Console/;Timers/FPS Manager/;Global Varibles and Functions/;Global Varibles and Functions/Mixer/;GUI/Intro GUI/;Inventory/;Inventory/Item/;GUI/Animator/ItemAnimator/;GUI/Item maker/;GUI/Mapper/Layer Box/;GUI/Mapper/;GUI/TilesetWidgets/TSprite/;GUI/TilesetWidgets/;Threading/;Character/Npc/;Resource Management/;Global Varibles and Functions/Screen/;Character/Stats/;Tileset/TSprite/;Tileset/Tile/;Tileset/;Timers/;Debug/;Global Varibles and Functions/Image Resources/;Network Control (INP)/;" />
+		<Option virtualFolders="RunContext\Contexts\;RunContext\;GUI\Base Widgets\;Animation\;GUI\Animator\;AreaMap\;GUI\;Resource Management\Cache\;Character\;GUI\Animator\CharacterAnimator\;GUI\Game GUI\;Server\;GUI\Console\;Timers\FPS Manager\;Global Varibles and Functions\;Global Varibles and Functions\Mixer\;GUI\Intro GUI\;Inventory\;Inventory\Item\;GUI\Animator\ItemAnimator\;GUI\Item maker\;GUI\Mapper\Layer Box\;GUI\Mapper\;GUI\TilesetWidgets\TSprite\;GUI\TilesetWidgets\;Threading\;Character\Npc\;Resource Management\;Global Varibles and Functions\Screen\;Character\Stats\;Tileset\TSprite\;Tileset\Tile\;Tileset\;Timers\;Debug\;Global Varibles and Functions\Image Resources\;Network Control (INP)\;" />
 		<Build>
 			<Target title="Windows Dev">
 				<Option platforms="Windows;" />
 				<Option output="Infraelly" prefix_auto="1" extension_auto="1" />
-				<Option object_output=".objs/w32Dev/" />
+				<Option object_output=".objs\w32Dev\" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Option use_console_runner="0" />
-				<Option parameters="-animator " />
+				<Option parameters="-server " />
 				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-g" />
 					<Add option="-DTIXML_USE_STL" />
 					<Add option="-DZLIB_WINAPI" />
 					<Add option="-DDEBUG" />
 					<Add option="-DUSE_PACKED_RESOURCES" />
 					<Add directory="include" />
-					<Add directory="include/SDL" />
-					<Add directory="include/guichan" />
-					<Add directory="include/guichan/contrib/sdl" />
-					<Add directory="include/cryptopp" />
+					<Add directory="include\SDL" />
+					<Add directory="include\guichan" />
+					<Add directory="include\guichan\contrib\sdl" />
+					<Add directory="include\cryptopp" />
 				</Compiler>
 				<Linker>
 					<Add option="-lzlibwapi" />
 					<Add option="-lmingw32" />
-					<Add directory="lib/win" />
+					<Add directory="lib\win" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="makeDataFileList.bat" />
@@ -39,7 +41,7 @@
 			<Target title="Windows Release">
 				<Option platforms="Windows;" />
 				<Option output="Infraelly" prefix_auto="1" extension_auto="1" />
-				<Option object_output=".objs/w32Rel/" />
+				<Option object_output=".objs\w32Rel\" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Option use_console_runner="0" />
@@ -58,7 +60,7 @@
 					<Add option="-s" />
 					<Add option="-lzlibwapi" />
 					<Add option="-lmingw32" />
-					<Add directory="lib/win" />
+					<Add directory="lib\win" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="makeDataFileList.bat" />
@@ -70,7 +72,7 @@
 			<Target title="Nix Dev">
 				<Option platforms="Unix;" />
 				<Option output="infraelly.bin" prefix_auto="1" extension_auto="0" />
-				<Option object_output=".objs/nixdev/" />
+				<Option object_output=".objs\nixdev\" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Option use_console_runner="0" />
@@ -82,8 +84,8 @@
 					<Add option="-DUSE_PACKED_RESOURCES" />
 				</Compiler>
 				<Linker>
-					<Add library="lib/nix/libzlib.a" />
-					<Add directory="lib/nix" />
+					<Add library="lib\nix\libzlib.a" />
+					<Add directory="lib\nix" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="./makeDataFileList.sh" />
@@ -93,7 +95,7 @@
 			<Target title="Nix Release">
 				<Option platforms="Unix;" />
 				<Option output="infraelly.bin" prefix_auto="1" extension_auto="0" />
-				<Option object_output=".objs/nixrel/" />
+				<Option object_output=".objs\nixrel\" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Option use_console_runner="0" />
@@ -107,8 +109,8 @@
 					<Add option="-DUSE_PACKED_RESOURCES" />
 				</Compiler>
 				<Linker>
-					<Add library="lib/nix/libzlib.a" />
-					<Add directory="lib/nix" />
+					<Add library="lib\nix\libzlib.a" />
+					<Add directory="lib\nix" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="./makeDataFileList.sh" />
@@ -120,10 +122,10 @@
 		<Compiler>
 			<Add option="-DTIXML_USE_STL" />
 			<Add directory="include" />
-			<Add directory="include/SDL" />
-			<Add directory="include/guichan" />
-			<Add directory="include/guichan/contrib/sdl" />
-			<Add directory="include/cryptopp" />
+			<Add directory="include\SDL" />
+			<Add directory="include\guichan" />
+			<Add directory="include\guichan\contrib\sdl" />
+			<Add directory="include\cryptopp" />
 		</Compiler>
 		<Linker>
 			<Add option="--enable-auto-import" />
@@ -139,650 +141,650 @@
 			<Add library="cryptopp" />
 		</Linker>
 		<Unit filename="AlertBox.cpp">
-			<Option virtualFolder="GUI/Base Widgets/" />
+			<Option virtualFolder="GUI\Base Widgets\" />
 		</Unit>
 		<Unit filename="AlertBox.hpp">
-			<Option virtualFolder="GUI/Base Widgets/" />
+			<Option virtualFolder="GUI\Base Widgets\" />
 		</Unit>
 		<Unit filename="AnimFrame.cpp">
-			<Option virtualFolder="Animation/" />
+			<Option virtualFolder="Animation\" />
 		</Unit>
 		<Unit filename="AnimFrame.hpp">
-			<Option virtualFolder="Animation/" />
+			<Option virtualFolder="Animation\" />
 		</Unit>
 		<Unit filename="AnimFrameList.cpp">
-			<Option virtualFolder="GUI/Animator/" />
+			<Option virtualFolder="GUI\Animator\" />
 		</Unit>
 		<Unit filename="AnimFrameList.hpp">
-			<Option virtualFolder="GUI/Animator/" />
+			<Option virtualFolder="GUI\Animator\" />
 		</Unit>
 		<Unit filename="AnimFx.cpp">
-			<Option virtualFolder="Animation/" />
+			<Option virtualFolder="Animation\" />
 		</Unit>
 		<Unit filename="AnimFx.hpp">
-			<Option virtualFolder="Animation/" />
+			<Option virtualFolder="Animation\" />
 		</Unit>
 		<Unit filename="AnimFxControl.cpp">
-			<Option virtualFolder="Animation/" />
+			<Option virtualFolder="Animation\" />
 		</Unit>
 		<Unit filename="AnimFxControl.hpp">
-			<Option virtualFolder="Animation/" />
+			<Option virtualFolder="Animation\" />
 		</Unit>
 		<Unit filename="AnimPreviewIcon.cpp">
-			<Option virtualFolder="GUI/Animator/" />
+			<Option virtualFolder="GUI\Animator\" />
 		</Unit>
 		<Unit filename="AnimPreviewIcon.hpp">
-			<Option virtualFolder="GUI/Animator/" />
+			<Option virtualFolder="GUI\Animator\" />
 		</Unit>
 		<Unit filename="AnimToolBar.cpp">
-			<Option virtualFolder="GUI/Animator/" />
+			<Option virtualFolder="GUI\Animator\" />
 		</Unit>
 		<Unit filename="AnimToolBar.hpp">
-			<Option virtualFolder="GUI/Animator/" />
+			<Option virtualFolder="GUI\Animator\" />
 		</Unit>
 		<Unit filename="Animation.cpp">
-			<Option virtualFolder="Animation/" />
+			<Option virtualFolder="Animation\" />
 		</Unit>
 		<Unit filename="Animation.hpp">
-			<Option virtualFolder="Animation/" />
+			<Option virtualFolder="Animation\" />
 		</Unit>
 		<Unit filename="AnimatorContext.cpp">
-			<Option virtualFolder="RunContext/Contexts/" />
+			<Option virtualFolder="RunContext\Contexts\" />
 		</Unit>
 		<Unit filename="AnimatorContext.hpp">
-			<Option virtualFolder="RunContext/Contexts/" />
+			<Option virtualFolder="RunContext\Contexts\" />
 		</Unit>
 		<Unit filename="AnimatorGui.cpp">
-			<Option virtualFolder="GUI/Animator/" />
+			<Option virtualFolder="GUI\Animator\" />
 		</Unit>
 		<Unit filename="AnimatorGui.hpp">
-			<Option virtualFolder="GUI/Animator/" />
+			<Option virtualFolder="GUI\Animator\" />
 		</Unit>
 		<Unit filename="AreaMap.cpp">
-			<Option virtualFolder="AreaMap/" />
+			<Option virtualFolder="AreaMap\" />
 		</Unit>
 		<Unit filename="AreaMap.hpp">
-			<Option virtualFolder="AreaMap/" />
+			<Option virtualFolder="AreaMap\" />
 		</Unit>
 		<Unit filename="BaseGui.cpp">
-			<Option virtualFolder="GUI/" />
+			<Option virtualFolder="GUI\" />
 		</Unit>
 		<Unit filename="BaseGui.hpp">
-			<Option virtualFolder="GUI/" />
+			<Option virtualFolder="GUI\" />
 		</Unit>
 		<Unit filename="Cacheable.hpp">
-			<Option virtualFolder="Resource Management/Cache/" />
+			<Option virtualFolder="Resource Management\Cache\" />
 		</Unit>
 		<Unit filename="CharAnimation.cpp">
-			<Option virtualFolder="Animation/" />
+			<Option virtualFolder="Animation\" />
 		</Unit>
 		<Unit filename="CharAnimation.hpp">
-			<Option virtualFolder="Animation/" />
+			<Option virtualFolder="Animation\" />
 		</Unit>
 		<Unit filename="Character.cpp">
-			<Option virtualFolder="Character/" />
+			<Option virtualFolder="Character\" />
 		</Unit>
 		<Unit filename="Character.hpp">
-			<Option virtualFolder="Character/" />
+			<Option virtualFolder="Character\" />
 		</Unit>
 		<Unit filename="CharacterAnimBox.cpp">
-			<Option virtualFolder="GUI/Animator/CharacterAnimator/" />
+			<Option virtualFolder="GUI\Animator\CharacterAnimator\" />
 		</Unit>
 		<Unit filename="CharacterAnimBox.hpp">
-			<Option virtualFolder="GUI/Animator/CharacterAnimator/" />
+			<Option virtualFolder="GUI\Animator\CharacterAnimator\" />
 		</Unit>
 		<Unit filename="CharacterBase.cpp">
 			<Option compile="0" />
 			<Option link="0" />
-			<Option virtualFolder="Character/" />
+			<Option virtualFolder="Character\" />
 		</Unit>
 		<Unit filename="CharacterBase.hpp">
-			<Option virtualFolder="Character/" />
+			<Option virtualFolder="Character\" />
 		</Unit>
 		<Unit filename="ChatBox.cpp">
-			<Option virtualFolder="GUI/Game GUI/" />
+			<Option virtualFolder="GUI\Game GUI\" />
 		</Unit>
 		<Unit filename="ChatBox.hpp">
-			<Option virtualFolder="GUI/Game GUI/" />
+			<Option virtualFolder="GUI\Game GUI\" />
 		</Unit>
 		<Unit filename="Connection.cpp">
-			<Option virtualFolder="Network Control (INP)/" />
+			<Option virtualFolder="Network Control (INP)\" />
 		</Unit>
 		<Unit filename="Connection.hpp">
-			<Option virtualFolder="Network Control (INP)/" />
+			<Option virtualFolder="Network Control (INP)\" />
 		</Unit>
 		<Unit filename="ConnectionGroup.cpp">
-			<Option virtualFolder="Network Control (INP)/" />
+			<Option virtualFolder="Network Control (INP)\" />
 		</Unit>
 		<Unit filename="ConnectionGroup.hpp">
-			<Option virtualFolder="Network Control (INP)/" />
+			<Option virtualFolder="Network Control (INP)\" />
 		</Unit>
 		<Unit filename="ConnectionImpl.cpp">
-			<Option virtualFolder="Network Control (INP)/" />
+			<Option virtualFolder="Network Control (INP)\" />
 		</Unit>
 		<Unit filename="ConnectionImpl.hpp">
-			<Option virtualFolder="Network Control (INP)/" />
+			<Option virtualFolder="Network Control (INP)\" />
 		</Unit>
 		<Unit filename="ConnectionListenerThread.cpp">
-			<Option virtualFolder="Server/" />
+			<Option virtualFolder="Server\" />
 		</Unit>
 		<Unit filename="ConnectionListenerThread.hpp">
-			<Option virtualFolder="Server/" />
+			<Option virtualFolder="Server\" />
 		</Unit>
 		<Unit filename="Console.cpp">
-			<Option virtualFolder="GUI/Console/" />
+			<Option virtualFolder="GUI\Console\" />
 		</Unit>
 		<Unit filename="Console.hpp">
-			<Option virtualFolder="GUI/Console/" />
+			<Option virtualFolder="GUI\Console\" />
 		</Unit>
 		<Unit filename="CreditContext.cpp">
-			<Option virtualFolder="RunContext/Contexts/" />
+			<Option virtualFolder="RunContext\Contexts\" />
 		</Unit>
 		<Unit filename="CreditContext.hpp">
-			<Option virtualFolder="RunContext/Contexts/" />
+			<Option virtualFolder="RunContext\Contexts\" />
 		</Unit>
 		<Unit filename="CutScene.hpp">
-			<Option virtualFolder="Animation/" />
+			<Option virtualFolder="Animation\" />
 		</Unit>
 		<Unit filename="FilenameBox.cpp">
-			<Option virtualFolder="GUI/Base Widgets/" />
+			<Option virtualFolder="GUI\Base Widgets\" />
 		</Unit>
 		<Unit filename="FilenameBox.hpp">
-			<Option virtualFolder="GUI/Base Widgets/" />
+			<Option virtualFolder="GUI\Base Widgets\" />
 		</Unit>
 		<Unit filename="FpsManager.cpp">
-			<Option virtualFolder="Timers/FPS Manager/" />
+			<Option virtualFolder="Timers\FPS Manager\" />
 		</Unit>
 		<Unit filename="FpsManager.hpp">
-			<Option virtualFolder="Timers/FPS Manager/" />
+			<Option virtualFolder="Timers\FPS Manager\" />
 		</Unit>
 		<Unit filename="GameArea.cpp">
-			<Option virtualFolder="Server/" />
+			<Option virtualFolder="Server\" />
 		</Unit>
 		<Unit filename="GameArea.hpp">
-			<Option virtualFolder="Server/" />
+			<Option virtualFolder="Server\" />
 		</Unit>
 		<Unit filename="GameConfig.cpp">
-			<Option virtualFolder="Global Varibles and Functions/" />
+			<Option virtualFolder="Global Varibles and Functions\" />
 		</Unit>
 		<Unit filename="GameConfig.hpp">
-			<Option virtualFolder="Global Varibles and Functions/" />
+			<Option virtualFolder="Global Varibles and Functions\" />
 		</Unit>
 		<Unit filename="GameContext.cpp">
-			<Option virtualFolder="RunContext/Contexts/" />
+			<Option virtualFolder="RunContext\Contexts\" />
 		</Unit>
 		<Unit filename="GameContext.hpp">
-			<Option virtualFolder="RunContext/Contexts/" />
+			<Option virtualFolder="RunContext\Contexts\" />
 		</Unit>
 		<Unit filename="GameGui.cpp">
-			<Option virtualFolder="GUI/Game GUI/" />
+			<Option virtualFolder="GUI\Game GUI\" />
 		</Unit>
 		<Unit filename="GameGui.hpp">
-			<Option virtualFolder="GUI/Game GUI/" />
+			<Option virtualFolder="GUI\Game GUI\" />
 		</Unit>
 		<Unit filename="GameZoneThread.cpp">
-			<Option virtualFolder="Server/" />
+			<Option virtualFolder="Server\" />
 		</Unit>
 		<Unit filename="GameZoneThread.hpp">
-			<Option virtualFolder="Server/" />
+			<Option virtualFolder="Server\" />
 		</Unit>
 		<Unit filename="Hasher.hpp" />
 		<Unit filename="HealthBox.cpp">
-			<Option virtualFolder="GUI/Game GUI/" />
+			<Option virtualFolder="GUI\Game GUI\" />
 		</Unit>
 		<Unit filename="HealthBox.hpp">
-			<Option virtualFolder="GUI/Game GUI/" />
+			<Option virtualFolder="GUI\Game GUI\" />
 		</Unit>
 		<Unit filename="INFPacket.cpp">
-			<Option virtualFolder="Network Control (INP)/" />
+			<Option virtualFolder="Network Control (INP)\" />
 		</Unit>
 		<Unit filename="INFPacket.hpp">
-			<Option virtualFolder="Network Control (INP)/" />
+			<Option virtualFolder="Network Control (INP)\" />
 		</Unit>
 		<Unit filename="InfoForm.cpp">
-			<Option virtualFolder="GUI/Base Widgets/" />
+			<Option virtualFolder="GUI\Base Widgets\" />
 		</Unit>
 		<Unit filename="InfoForm.hpp">
-			<Option virtualFolder="GUI/Base Widgets/" />
+			<Option virtualFolder="GUI\Base Widgets\" />
 		</Unit>
 		<Unit filename="Infraelly.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>
 		<Unit filename="InfraellyImageLoader.cpp">
-			<Option virtualFolder="GUI/" />
+			<Option virtualFolder="GUI\" />
 		</Unit>
 		<Unit filename="InfraellyImageLoader.hpp">
-			<Option virtualFolder="GUI/" />
+			<Option virtualFolder="GUI\" />
 		</Unit>
 		<Unit filename="InfraellyLabel.cpp">
-			<Option virtualFolder="GUI/Base Widgets/" />
+			<Option virtualFolder="GUI\Base Widgets\" />
 		</Unit>
 		<Unit filename="InfraellyLabel.hpp">
-			<Option virtualFolder="GUI/Base Widgets/" />
+			<Option virtualFolder="GUI\Base Widgets\" />
 		</Unit>
 		<Unit filename="InfraellyList.cpp">
-			<Option virtualFolder="GUI/Base Widgets/" />
+			<Option virtualFolder="GUI\Base Widgets\" />
 		</Unit>
 		<Unit filename="InfraellyList.hpp">
-			<Option virtualFolder="GUI/Base Widgets/" />
+			<Option virtualFolder="GUI\Base Widgets\" />
 		</Unit>
 		<Unit filename="InfraellyMixer.cpp">
-			<Option virtualFolder="Global Varibles and Functions/Mixer/" />
+			<Option virtualFolder="Global Varibles and Functions\Mixer\" />
 		</Unit>
 		<Unit filename="InfraellyMixer.hpp">
-			<Option virtualFolder="Global Varibles and Functions/Mixer/" />
+			<Option virtualFolder="Global Varibles and Functions\Mixer\" />
 		</Unit>
 		<Unit filename="InfraellyScroller.cpp">
-			<Option virtualFolder="GUI/Base Widgets/" />
+			<Option virtualFolder="GUI\Base Widgets\" />
 		</Unit>
 		<Unit filename="InfraellyScroller.hpp">
-			<Option virtualFolder="GUI/Base Widgets/" />
+			<Option virtualFolder="GUI\Base Widgets\" />
 		</Unit>
 		<Unit filename="InfraellySockets.hpp" />
 		<Unit filename="InfraellyWindow.cpp">
-			<Option virtualFolder="GUI/Base Widgets/" />
+			<Option virtualFolder="GUI\Base Widgets\" />
 		</Unit>
 		<Unit filename="InfraellyWindow.hpp">
-			<Option virtualFolder="GUI/Base Widgets/" />
+			<Option virtualFolder="GUI\Base Widgets\" />
 		</Unit>
 		<Unit filename="InputCallBack.hpp">
-			<Option virtualFolder="GUI/" />
+			<Option virtualFolder="GUI\" />
 		</Unit>
 		<Unit filename="IntroCloud.cpp">
-			<Option virtualFolder="RunContext/Contexts/" />
+			<Option virtualFolder="RunContext\Contexts\" />
 		</Unit>
 		<Unit filename="IntroCloud.hpp">
-			<Option virtualFolder="RunContext/Contexts/" />
+			<Option virtualFolder="RunContext\Contexts\" />
 		</Unit>
 		<Unit filename="IntroContext.cpp">
-			<Option virtualFolder="RunContext/Contexts/" />
+			<Option virtualFolder="RunContext\Contexts\" />
 		</Unit>
 		<Unit filename="IntroContext.hpp">
-			<Option virtualFolder="RunContext/Contexts/" />
+			<Option virtualFolder="RunContext\Contexts\" />
 		</Unit>
 		<Unit filename="IntroGui.cpp">
-			<Option virtualFolder="GUI/Intro GUI/" />
+			<Option virtualFolder="GUI\Intro GUI\" />
 		</Unit>
 		<Unit filename="IntroGui.hpp">
-			<Option virtualFolder="GUI/Intro GUI/" />
+			<Option virtualFolder="GUI\Intro GUI\" />
 		</Unit>
 		<Unit filename="Inventory.cpp">
-			<Option virtualFolder="Inventory/" />
+			<Option virtualFolder="Inventory\" />
 		</Unit>
 		<Unit filename="Inventory.hpp">
-			<Option virtualFolder="Inventory/" />
+			<Option virtualFolder="Inventory\" />
 		</Unit>
 		<Unit filename="InventoryBox.cpp">
-			<Option virtualFolder="GUI/Game GUI/" />
+			<Option virtualFolder="GUI\Game GUI\" />
 		</Unit>
 		<Unit filename="InventoryBox.hpp">
-			<Option virtualFolder="GUI/Game GUI/" />
+			<Option virtualFolder="GUI\Game GUI\" />
 		</Unit>
 		<Unit filename="Item.cpp">
-			<Option virtualFolder="Inventory/Item/" />
+			<Option virtualFolder="Inventory\Item\" />
 		</Unit>
 		<Unit filename="Item.hpp">
-			<Option virtualFolder="Inventory/Item/" />
+			<Option virtualFolder="Inventory\Item\" />
 		</Unit>
 		<Unit filename="ItemAnimBox.cpp">
-			<Option virtualFolder="GUI/Animator/ItemAnimator/" />
+			<Option virtualFolder="GUI\Animator\ItemAnimator\" />
 		</Unit>
 		<Unit filename="ItemAnimBox.hpp">
-			<Option virtualFolder="GUI/Animator/ItemAnimator/" />
+			<Option virtualFolder="GUI\Animator\ItemAnimator\" />
 		</Unit>
 		<Unit filename="ItemMakerBox.cpp">
-			<Option virtualFolder="GUI/Item maker/" />
+			<Option virtualFolder="GUI\Item maker\" />
 		</Unit>
 		<Unit filename="ItemMakerBox.hpp">
-			<Option virtualFolder="GUI/Item maker/" />
+			<Option virtualFolder="GUI\Item maker\" />
 		</Unit>
 		<Unit filename="ItemMakerContext.cpp">
-			<Option virtualFolder="RunContext/Contexts/" />
+			<Option virtualFolder="RunContext\Contexts\" />
 		</Unit>
 		<Unit filename="ItemMakerContext.hpp">
-			<Option virtualFolder="RunContext/Contexts/" />
+			<Option virtualFolder="RunContext\Contexts\" />
 		</Unit>
 		<Unit filename="ItemMakerGui.cpp">
-			<Option virtualFolder="GUI/Item maker/" />
+			<Option virtualFolder="GUI\Item maker\" />
 		</Unit>
 		<Unit filename="ItemMakerGui.hpp">
-			<Option virtualFolder="GUI/Item maker/" />
+			<Option virtualFolder="GUI\Item maker\" />
 		</Unit>
 		<Unit filename="KeyPointList.cpp">
-			<Option virtualFolder="GUI/Animator/" />
+			<Option virtualFolder="GUI\Animator\" />
 		</Unit>
 		<Unit filename="KeyPointList.hpp">
-			<Option virtualFolder="GUI/Animator/" />
+			<Option virtualFolder="GUI\Animator\" />
 		</Unit>
 		<Unit filename="Layer.cpp">
-			<Option virtualFolder="AreaMap/" />
+			<Option virtualFolder="AreaMap\" />
 		</Unit>
 		<Unit filename="Layer.hpp">
-			<Option virtualFolder="AreaMap/" />
+			<Option virtualFolder="AreaMap\" />
 		</Unit>
 		<Unit filename="LayerControl.cpp">
-			<Option virtualFolder="GUI/Mapper/Layer Box/" />
+			<Option virtualFolder="GUI\Mapper\Layer Box\" />
 		</Unit>
 		<Unit filename="LayerControl.hpp">
-			<Option virtualFolder="GUI/Mapper/Layer Box/" />
+			<Option virtualFolder="GUI\Mapper\Layer Box\" />
 		</Unit>
 		<Unit filename="LoadMapBox.cpp">
-			<Option virtualFolder="GUI/Mapper/" />
+			<Option virtualFolder="GUI\Mapper\" />
 		</Unit>
 		<Unit filename="LoadMapBox.hpp">
-			<Option virtualFolder="GUI/Mapper/" />
+			<Option virtualFolder="GUI\Mapper\" />
 		</Unit>
 		<Unit filename="LoadTSpriteBox.cpp">
-			<Option virtualFolder="GUI/TilesetWidgets/TSprite/" />
+			<Option virtualFolder="GUI\TilesetWidgets\TSprite\" />
 		</Unit>
 		<Unit filename="LoadTSpriteBox.hpp">
-			<Option virtualFolder="GUI/TilesetWidgets/TSprite/" />
+			<Option virtualFolder="GUI\TilesetWidgets\TSprite\" />
 		</Unit>
 		<Unit filename="LoadTilesetBox.cpp">
-			<Option virtualFolder="GUI/TilesetWidgets/" />
+			<Option virtualFolder="GUI\TilesetWidgets\" />
 		</Unit>
 		<Unit filename="LoadTilesetBox.hpp">
-			<Option virtualFolder="GUI/TilesetWidgets/" />
+			<Option virtualFolder="GUI\TilesetWidgets\" />
 		</Unit>
 		<Unit filename="LoginBox.cpp">
-			<Option virtualFolder="GUI/Intro GUI/" />
+			<Option virtualFolder="GUI\Intro GUI\" />
 		</Unit>
 		<Unit filename="LoginBox.hpp">
-			<Option virtualFolder="GUI/Intro GUI/" />
+			<Option virtualFolder="GUI\Intro GUI\" />
 		</Unit>
 		<Unit filename="MakeTSpriteBox.cpp">
-			<Option virtualFolder="GUI/TilesetWidgets/TSprite/" />
+			<Option virtualFolder="GUI\TilesetWidgets\TSprite\" />
 		</Unit>
 		<Unit filename="MakeTSpriteBox.hpp">
-			<Option virtualFolder="GUI/TilesetWidgets/TSprite/" />
+			<Option virtualFolder="GUI\TilesetWidgets\TSprite\" />
 		</Unit>
 		<Unit filename="MakeTilesetBox.cpp">
-			<Option virtualFolder="GUI/TilesetWidgets/" />
+			<Option virtualFolder="GUI\TilesetWidgets\" />
 		</Unit>
 		<Unit filename="MakeTilesetBox.hpp">
-			<Option virtualFolder="GUI/TilesetWidgets/" />
+			<Option virtualFolder="GUI\TilesetWidgets\" />
 		</Unit>
 		<Unit filename="MapDetailsBox.cpp">
-			<Option virtualFolder="GUI/Mapper/" />
+			<Option virtualFolder="GUI\Mapper\" />
 		</Unit>
 		<Unit filename="MapDetailsBox.hpp">
-			<Option virtualFolder="GUI/Mapper/" />
+			<Option virtualFolder="GUI\Mapper\" />
 		</Unit>
 		<Unit filename="MapTile.cpp">
-			<Option virtualFolder="AreaMap/" />
+			<Option virtualFolder="AreaMap\" />
 		</Unit>
 		<Unit filename="MapTile.hpp">
-			<Option virtualFolder="AreaMap/" />
+			<Option virtualFolder="AreaMap\" />
 		</Unit>
 		<Unit filename="MapperContext.cpp">
-			<Option virtualFolder="RunContext/Contexts/" />
+			<Option virtualFolder="RunContext\Contexts\" />
 		</Unit>
 		<Unit filename="MapperContext.hpp">
-			<Option virtualFolder="RunContext/Contexts/" />
+			<Option virtualFolder="RunContext\Contexts\" />
 		</Unit>
 		<Unit filename="MapperFileToolBar.cpp">
-			<Option virtualFolder="GUI/Mapper/" />
+			<Option virtualFolder="GUI\Mapper\" />
 		</Unit>
 		<Unit filename="MapperFileToolBar.hpp">
-			<Option virtualFolder="GUI/Mapper/" />
+			<Option virtualFolder="GUI\Mapper\" />
 		</Unit>
 		<Unit filename="MapperGui.cpp">
-			<Option virtualFolder="GUI/Mapper/" />
+			<Option virtualFolder="GUI\Mapper\" />
 		</Unit>
 		<Unit filename="MapperGui.hpp">
-			<Option virtualFolder="GUI/Mapper/" />
+			<Option virtualFolder="GUI\Mapper\" />
 		</Unit>
 		<Unit filename="MapperLayerToggleBox.cpp">
-			<Option virtualFolder="GUI/Mapper/Layer Box/" />
+			<Option virtualFolder="GUI\Mapper\Layer Box\" />
 		</Unit>
 		<Unit filename="MapperLayerToggleBox.hpp">
-			<Option virtualFolder="GUI/Mapper/Layer Box/" />
+			<Option virtualFolder="GUI\Mapper\Layer Box\" />
 		</Unit>
 		<Unit filename="MapperTilesetBox.cpp">
-			<Option virtualFolder="GUI/Mapper/" />
+			<Option virtualFolder="GUI\Mapper\" />
 		</Unit>
 		<Unit filename="MapperTilesetBox.hpp">
-			<Option virtualFolder="GUI/Mapper/" />
+			<Option virtualFolder="GUI\Mapper\" />
 		</Unit>
 		<Unit filename="MutexLocker.hpp">
-			<Option virtualFolder="Threading/" />
+			<Option virtualFolder="Threading\" />
 		</Unit>
 		<Unit filename="Mutexed.hpp">
-			<Option virtualFolder="Threading/" />
+			<Option virtualFolder="Threading\" />
 		</Unit>
 		<Unit filename="NetCode.hpp">
-			<Option virtualFolder="Network Control (INP)/" />
+			<Option virtualFolder="Network Control (INP)\" />
 		</Unit>
 		<Unit filename="NetProtocol.hpp">
-			<Option virtualFolder="Network Control (INP)/" />
+			<Option virtualFolder="Network Control (INP)\" />
 		</Unit>
 		<Unit filename="Notification.cpp">
-			<Option virtualFolder="GUI/Base Widgets/" />
+			<Option virtualFolder="GUI\Base Widgets\" />
 		</Unit>
 		<Unit filename="Notification.hpp">
-			<Option virtualFolder="GUI/Base Widgets/" />
+			<Option virtualFolder="GUI\Base Widgets\" />
 		</Unit>
 		<Unit filename="Npc.cpp">
-			<Option virtualFolder="Character/Npc/" />
+			<Option virtualFolder="Character\Npc\" />
 		</Unit>
 		<Unit filename="Npc.hpp">
-			<Option virtualFolder="Character/Npc/" />
+			<Option virtualFolder="Character\Npc\" />
 		</Unit>
 		<Unit filename="NumberField.cpp">
-			<Option virtualFolder="GUI/Base Widgets/" />
+			<Option virtualFolder="GUI\Base Widgets\" />
 		</Unit>
 		<Unit filename="NumberField.hpp">
-			<Option virtualFolder="GUI/Base Widgets/" />
+			<Option virtualFolder="GUI\Base Widgets\" />
 		</Unit>
 		<Unit filename="PackerContext.cpp">
-			<Option virtualFolder="RunContext/Contexts/" />
+			<Option virtualFolder="RunContext\Contexts\" />
 		</Unit>
 		<Unit filename="PackerContext.hpp">
-			<Option virtualFolder="RunContext/Contexts/" />
+			<Option virtualFolder="RunContext\Contexts\" />
 		</Unit>
 		<Unit filename="PasswordField.cpp">
-			<Option virtualFolder="GUI/Base Widgets/" />
+			<Option virtualFolder="GUI\Base Widgets\" />
 		</Unit>
 		<Unit filename="PasswordField.hpp">
-			<Option virtualFolder="GUI/Base Widgets/" />
+			<Option virtualFolder="GUI\Base Widgets\" />
 		</Unit>
 		<Unit filename="ProgressBar.cpp">
-			<Option virtualFolder="GUI/Base Widgets/" />
+			<Option virtualFolder="GUI\Base Widgets\" />
 		</Unit>
 		<Unit filename="ProgressBar.hpp">
-			<Option virtualFolder="GUI/Base Widgets/" />
+			<Option virtualFolder="GUI\Base Widgets\" />
 		</Unit>
 		<Unit filename="RadioBar.cpp">
-			<Option virtualFolder="GUI/Base Widgets/" />
+			<Option virtualFolder="GUI\Base Widgets\" />
 		</Unit>
 		<Unit filename="RadioBar.hpp">
-			<Option virtualFolder="GUI/Base Widgets/" />
+			<Option virtualFolder="GUI\Base Widgets\" />
 		</Unit>
 		<Unit filename="ResourceCache.hpp">
-			<Option virtualFolder="Resource Management/Cache/" />
+			<Option virtualFolder="Resource Management\Cache\" />
 		</Unit>
 		<Unit filename="ResourceCache_base.hpp">
-			<Option virtualFolder="Resource Management/Cache/" />
+			<Option virtualFolder="Resource Management\Cache\" />
 		</Unit>
 		<Unit filename="ResourceCache_image.hpp">
-			<Option virtualFolder="Resource Management/Cache/" />
+			<Option virtualFolder="Resource Management\Cache\" />
 		</Unit>
 		<Unit filename="ResourceFile.hpp">
-			<Option virtualFolder="Resource Management/" />
+			<Option virtualFolder="Resource Management\" />
 		</Unit>
 		<Unit filename="ResourcePack.cpp">
-			<Option virtualFolder="Resource Management/" />
+			<Option virtualFolder="Resource Management\" />
 		</Unit>
 		<Unit filename="ResourcePack.hpp">
-			<Option virtualFolder="Resource Management/" />
+			<Option virtualFolder="Resource Management\" />
 		</Unit>
 		<Unit filename="RunContext.cpp">
-			<Option virtualFolder="RunContext/" />
+			<Option virtualFolder="RunContext\" />
 		</Unit>
 		<Unit filename="RunContext.hpp">
-			<Option virtualFolder="RunContext/" />
+			<Option virtualFolder="RunContext\" />
 		</Unit>
 		<Unit filename="Screen.cpp">
-			<Option virtualFolder="Global Varibles and Functions/Screen/" />
+			<Option virtualFolder="Global Varibles and Functions\Screen\" />
 		</Unit>
 		<Unit filename="Screen.hpp">
-			<Option virtualFolder="Global Varibles and Functions/Screen/" />
+			<Option virtualFolder="Global Varibles and Functions\Screen\" />
 		</Unit>
 		<Unit filename="ServerContext.cpp">
-			<Option virtualFolder="RunContext/Contexts/" />
+			<Option virtualFolder="RunContext\Contexts\" />
 		</Unit>
 		<Unit filename="ServerContext.hpp">
-			<Option virtualFolder="RunContext/Contexts/" />
+			<Option virtualFolder="RunContext\Contexts\" />
 		</Unit>
 		<Unit filename="SnapPointList.cpp">
-			<Option virtualFolder="GUI/Animator/" />
+			<Option virtualFolder="GUI\Animator\" />
 		</Unit>
 		<Unit filename="SnapPointList.hpp">
-			<Option virtualFolder="GUI/Animator/" />
+			<Option virtualFolder="GUI\Animator\" />
 		</Unit>
 		<Unit filename="SpawnPoint.hpp">
-			<Option virtualFolder="Character/Npc/" />
+			<Option virtualFolder="Character\Npc\" />
 		</Unit>
 		<Unit filename="SpeechBubble.cpp">
-			<Option virtualFolder="Character/" />
+			<Option virtualFolder="Character\" />
 		</Unit>
 		<Unit filename="SpeechBubble.hpp">
-			<Option virtualFolder="Character/" />
+			<Option virtualFolder="Character\" />
 		</Unit>
 		<Unit filename="StatBox.cpp">
-			<Option virtualFolder="GUI/Game GUI/" />
+			<Option virtualFolder="GUI\Game GUI\" />
 		</Unit>
 		<Unit filename="StatBox.hpp">
-			<Option virtualFolder="GUI/Game GUI/" />
+			<Option virtualFolder="GUI\Game GUI\" />
 		</Unit>
 		<Unit filename="Stats.cpp">
-			<Option virtualFolder="Character/Stats/" />
+			<Option virtualFolder="Character\Stats\" />
 		</Unit>
 		<Unit filename="Stats.hpp">
-			<Option virtualFolder="Character/Stats/" />
+			<Option virtualFolder="Character\Stats\" />
 		</Unit>
 		<Unit filename="StringList.cpp">
-			<Option virtualFolder="GUI/Base Widgets/" />
+			<Option virtualFolder="GUI\Base Widgets\" />
 		</Unit>
 		<Unit filename="StringList.hpp">
-			<Option virtualFolder="GUI/Base Widgets/" />
+			<Option virtualFolder="GUI\Base Widgets\" />
 		</Unit>
 		<Unit filename="TSprite.cpp">
-			<Option virtualFolder="Tileset/TSprite/" />
+			<Option virtualFolder="Tileset\TSprite\" />
 		</Unit>
 		<Unit filename="TSprite.hpp">
-			<Option virtualFolder="Tileset/TSprite/" />
+			<Option virtualFolder="Tileset\TSprite\" />
 		</Unit>
 		<Unit filename="TSpriteButton.cpp">
-			<Option virtualFolder="GUI/Base Widgets/" />
+			<Option virtualFolder="GUI\Base Widgets\" />
 		</Unit>
 		<Unit filename="TSpriteButton.hpp">
-			<Option virtualFolder="GUI/Base Widgets/" />
+			<Option virtualFolder="GUI\Base Widgets\" />
 		</Unit>
 		<Unit filename="TSpriteIcon.cpp">
-			<Option virtualFolder="GUI/TilesetWidgets/TSprite/" />
+			<Option virtualFolder="GUI\TilesetWidgets\TSprite\" />
 		</Unit>
 		<Unit filename="TSpriteIcon.hpp">
-			<Option virtualFolder="GUI/TilesetWidgets/TSprite/" />
+			<Option virtualFolder="GUI\TilesetWidgets\TSprite\" />
 		</Unit>
 		<Unit filename="TSpriteList.cpp">
-			<Option virtualFolder="GUI/TilesetWidgets/TSprite/" />
+			<Option virtualFolder="GUI\TilesetWidgets\TSprite\" />
 		</Unit>
 		<Unit filename="TSpriteList.hpp">
-			<Option virtualFolder="GUI/TilesetWidgets/TSprite/" />
+			<Option virtualFolder="GUI\TilesetWidgets\TSprite\" />
 		</Unit>
 		<Unit filename="TestContext.cpp">
-			<Option virtualFolder="RunContext/Contexts/" />
+			<Option virtualFolder="RunContext\Contexts\" />
 		</Unit>
 		<Unit filename="TestContext.hpp">
-			<Option virtualFolder="RunContext/Contexts/" />
+			<Option virtualFolder="RunContext\Contexts\" />
 		</Unit>
 		<Unit filename="ThreadBase.cpp">
-			<Option virtualFolder="Threading/" />
+			<Option virtualFolder="Threading\" />
 		</Unit>
 		<Unit filename="ThreadBase.hpp">
-			<Option virtualFolder="Threading/" />
+			<Option virtualFolder="Threading\" />
 		</Unit>
 		<Unit filename="Tile.cpp">
-			<Option virtualFolder="Tileset/Tile/" />
+			<Option virtualFolder="Tileset\Tile\" />
 		</Unit>
 		<Unit filename="Tile.hpp">
-			<Option virtualFolder="Tileset/Tile/" />
+			<Option virtualFolder="Tileset\Tile\" />
 		</Unit>
 		<Unit filename="Tileset.cpp">
-			<Option virtualFolder="Tileset/" />
+			<Option virtualFolder="Tileset\" />
 		</Unit>
 		<Unit filename="Tileset.hpp">
-			<Option virtualFolder="Tileset/" />
+			<Option virtualFolder="Tileset\" />
 		</Unit>
 		<Unit filename="TilesetDetailsBox.cpp">
-			<Option virtualFolder="GUI/TilesetWidgets/" />
+			<Option virtualFolder="GUI\TilesetWidgets\" />
 		</Unit>
 		<Unit filename="TilesetDetailsBox.hpp">
-			<Option virtualFolder="GUI/TilesetWidgets/" />
+			<Option virtualFolder="GUI\TilesetWidgets\" />
 		</Unit>
 		<Unit filename="TilesetIcon.cpp">
-			<Option virtualFolder="GUI/TilesetWidgets/" />
+			<Option virtualFolder="GUI\TilesetWidgets\" />
 		</Unit>
 		<Unit filename="TilesetIcon.hpp">
-			<Option virtualFolder="GUI/TilesetWidgets/" />
+			<Option virtualFolder="GUI\TilesetWidgets\" />
 		</Unit>
 		<Unit filename="TilesetList.cpp">
-			<Option virtualFolder="GUI/TilesetWidgets/" />
+			<Option virtualFolder="GUI\TilesetWidgets\" />
 		</Unit>
 		<Unit filename="TilesetList.hpp">
-			<Option virtualFolder="GUI/TilesetWidgets/" />
+			<Option virtualFolder="GUI\TilesetWidgets\" />
 		</Unit>
 		<Unit filename="Timer.cpp">
-			<Option virtualFolder="Timers/" />
+			<Option virtualFolder="Timers\" />
 		</Unit>
 		<Unit filename="Timer.hpp">
-			<Option virtualFolder="Timers/" />
+			<Option virtualFolder="Timers\" />
 		</Unit>
 		<Unit filename="caches.cpp">
-			<Option virtualFolder="Global Varibles and Functions/" />
+			<Option virtualFolder="Global Varibles and Functions\" />
 		</Unit>
 		<Unit filename="caches.hpp">
-			<Option virtualFolder="Global Varibles and Functions/" />
+			<Option virtualFolder="Global Varibles and Functions\" />
 		</Unit>
 		<Unit filename="colours.cpp">
-			<Option virtualFolder="Global Varibles and Functions/" />
+			<Option virtualFolder="Global Varibles and Functions\" />
 		</Unit>
 		<Unit filename="colours.hpp">
-			<Option virtualFolder="Global Varibles and Functions/" />
+			<Option virtualFolder="Global Varibles and Functions\" />
 		</Unit>
 		<Unit filename="dataPacks.cpp">
-			<Option virtualFolder="Global Varibles and Functions/" />
+			<Option virtualFolder="Global Varibles and Functions\" />
 		</Unit>
 		<Unit filename="dataPacks.hpp">
-			<Option virtualFolder="Global Varibles and Functions/" />
+			<Option virtualFolder="Global Varibles and Functions\" />
 		</Unit>
 		<Unit filename="fonts.cpp">
-			<Option virtualFolder="Global Varibles and Functions/" />
+			<Option virtualFolder="Global Varibles and Functions\" />
 		</Unit>
 		<Unit filename="fonts.hpp">
-			<Option virtualFolder="Global Varibles and Functions/" />
+			<Option virtualFolder="Global Varibles and Functions\" />
 		</Unit>
 		<Unit filename="globalFunc.cpp">
 			<Option weight="0" />
-			<Option virtualFolder="Global Varibles and Functions/" />
+			<Option virtualFolder="Global Varibles and Functions\" />
 		</Unit>
 		<Unit filename="globalFunc.hpp">
-			<Option virtualFolder="Global Varibles and Functions/" />
+			<Option virtualFolder="Global Varibles and Functions\" />
 		</Unit>
 		<Unit filename="init.cpp" />
 		<Unit filename="init.hpp" />
 		<Unit filename="logOut.hpp">
-			<Option virtualFolder="Debug/" />
+			<Option virtualFolder="Debug\" />
 		</Unit>
 		<Unit filename="main.cpp" />
 		<Unit filename="sdltruetypefont.cpp" />
 		<Unit filename="sdltruetypefont.hpp" />
 		<Unit filename="splash_png.cpp">
-			<Option virtualFolder="Global Varibles and Functions/Image Resources/" />
+			<Option virtualFolder="Global Varibles and Functions\Image Resources\" />
 		</Unit>
 		<Unit filename="splash_png.h">
-			<Option virtualFolder="Global Varibles and Functions/Image Resources/" />
+			<Option virtualFolder="Global Varibles and Functions\Image Resources\" />
 		</Unit>
 		<Unit filename="todo.txt" />
 		<Unit filename="version.h" />

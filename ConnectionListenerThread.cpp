@@ -109,7 +109,7 @@ bool ConnectionListenerThread::work(){
     return true;
 }
 
-            //  users DOESNOT EXISTS
+        //  users DOESNOT EXISTS
         /*if( users.size() > GameConfig::maxConnections ){
             //server is full
             INFPacket packet;

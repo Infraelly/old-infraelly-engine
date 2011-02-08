@@ -56,14 +56,14 @@ using namespace inp;
 GameArea::GameArea() :
     access_(SDL_CreateMutex())
 {
-    checkAliveTimer.start();
+    //checkAliveTimer.start();
     syncTimer.start();
 };
 GameArea::GameArea(const std::string& mapFilename) :
     access_(SDL_CreateMutex())
 {
     map_.loadMap(mapFilename);
-    checkAliveTimer.start();
+    //checkAliveTimer.start();
     syncTimer.start();
 };
 GameArea::~GameArea(){
@@ -89,8 +89,9 @@ void GameArea::addPlayer(const CharCon& playerCon){
     if( (playerCon.first == NULL) || (playerCon.second == NULL) ){ return; }
     inp::Connection *con = playerCon.first;
     Character *player = playerCon.second;
-
-// Look up character from db and load
+//--------------------------------------
+// TODO: Look up character from db and load
+//------------------------------------
     player->setName(con->getId());
     player->setX( 300 );
     player->setY( 300 );
@@ -161,15 +162,16 @@ void GameArea::sendAll(const inp::INFPacket& pack){
 
 
 // runs map (non-blocking)
-void GameArea::logic(){
+int GameArea::logic(){
     //  send to determine which connectoins are dead
-    if( checkAliveTimer.getTime() > 2000 ){
+    /*if( checkAliveTimer.getTime() > 2000 ){
         INFPacket pack;
         pack << DataTypeByte::CHECK_ALIVE;
         sendAll(pack);
         checkAliveTimer.clear();
-    }
+    }*/
 
+    int dropped = 0;
     CharCon playerCon;
     std::vector<inp::Connection*> activeConList;
     MutexLocker lock(access_);
@@ -181,22 +183,27 @@ void GameArea::logic(){
             playerCon.second = players_.find(activeConList.at(i)->getId())->second; //player
             if( handleConnection( playerCon ) == -1 ){
                 //tell others user is gone
+                dropped++;
                 inp::INFPacket leavePack;
                 leavePack << inp::DataTypeByte::USER_LEFT << playerCon.first->getId();
                 sendAll(leavePack);
                 //remove player from playerlist
                 players_.erase( players_.find(activeConList.at(i)->getId()) );
-                //remove connection
-                connections_.remove( activeConList.at(i)->getId() );
+                delete playerCon.second;
+                connections_.erase( playerCon.first->getId() );
+            } else {
+                connections_.sendAll(buildSyncPacket(playerCon.second, playerCon.first));
             }
         }
     }
 
     //  sync players
-    if( syncTimer.getTime() > 1000 ){
-        connections_.sendAll(buildSyncPacket(playerCon.second, playerCon.first));
+    if( syncTimer.getTime() > 2000 ){
+        connections_.sendAll( buildFullSyncPacket() );
         syncTimer.clear();
     }
+
+    return dropped;
 }
 
 
@@ -238,7 +245,6 @@ inp::INFPacket GameArea::buildFullSyncPacket(){
            syncPack << buildSyncPacket( players_[connections_.conAt(i)->getId()],
                                         connections_.conAt(i) );
         }
-        connections_.sendAll(buildFullSyncPacket());
     }
     return syncPack;
 }
@@ -262,7 +268,7 @@ int GameArea::handleConnection( CharCon& player ){
             if( player.first->recv( packet ) != -1 ) {
                 if( handlePacket(player, packet) == -1 ){
                     player.first->setActive(false);
-                    return -1
+                    return -1;
                 }
             } else {
                 //disconect
@@ -279,8 +285,8 @@ int GameArea::handleConnection( CharCon& player ){
 int GameArea::handlePacket( CharCon& playerCon, inp::INFPacket& packet ){
     using namespace inp;
 
-    inp::INFPacket outPacket;
-    inp::NetCode code;
+    INFPacket outPacket;
+    NetCode code;
     std::string recvText = "";
     std::string username = "";
     Sint32 recvVal = 0;
@@ -311,15 +317,24 @@ int GameArea::handlePacket( CharCon& playerCon, inp::INFPacket& packet ){
         } else
         if( code == DataTypeByte::CHAR_X ){
             packet >> recvVal;
-            if ( connections_.exists( recvText ) ){
-                players_[recvText]->setX(recvVal);
+            if ( connections_.exists( username ) ){
+                players_[username]->setX(recvVal);
             }
         } else
-        //  Server is telling us a user's y-pos
+        //  user is telling us a user's y-pos
         if( code == DataTypeByte::CHAR_Y ){
             packet >> recvVal;
-            if ( connections_.exists(recvText) ){
-                players_[recvText]->setY(recvVal);
+            if ( connections_.exists( username ) ){
+                players_[username]->setY(recvVal);
+            }
+        } else
+        //  user's state
+        if( code == DataTypeByte::CHAR_STATE ){
+            packet >> recvVal;
+            if ( connections_.exists( username ) ){
+                if( Character::validState(recvVal) ){
+                    players_[username]->setState( static_cast<Character::CharacterStates>(recvVal) );
+                }
             }
         } else
         /*/  User wants to move

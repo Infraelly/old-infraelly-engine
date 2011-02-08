@@ -375,9 +375,7 @@ int ServerContext::loginPlayer(Connection *con){
     packet.clear();
     packet << DataTypeByte::SERVER_MSG << "Welcome to the Infraelly Server";
     con->send(packet);
-    #ifdef DEBUG
     sendConsole("User joined: "+username);
-    #endif
 
     //add self to room (null map)
     //add connection

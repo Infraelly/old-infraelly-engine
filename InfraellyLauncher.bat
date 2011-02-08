@@ -71,8 +71,8 @@ set /p S_PORT=Game port:
 
 echo Launching Infraelly: %S_IP%: %S_PORT% x2
 title Infraelly Client: %S_IP%: %S_PORT% x2
-start infraelly
-start infraelly
+start /b infraelly
+start /b infraelly
 exit
 
 
@@ -131,9 +131,9 @@ goto logs
 :conSelf
 cls
 title Infraelly Client/Server
-start infraelly.exe -server
-start infraelly.exe
-start infraelly.exe
+start /b infraelly.exe -server
+start /b infraelly.exe
+start /b infraelly.exe
 exit
 
 

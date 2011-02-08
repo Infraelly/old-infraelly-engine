@@ -10,3 +10,6 @@ data_ipf_index.txt
 *temp
 *tmp
 dataFilelist.txt
+stderr.txt
+stdout.txt
+.objs/

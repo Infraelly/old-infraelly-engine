@@ -95,7 +95,8 @@ GameContext::GameContext(Connection* serverCon) :
     //the chat will enable it when its needed
     SDL_EnableKeyRepeat(0, 0);
 
-
+    movingUpdateTimer.start();
+    staticUpdateTimer.start();
     //start
     run();
 }
@@ -157,17 +158,14 @@ int GameContext::handleIncomingNetwork(){
                     packet >> recvText;
                     if( recvText != "" ){
                         if( recvText != serverConnection->getId() ){
-                           NPCS[recvText] = Character();
-                          /* NPCS["LOL"] = Character();
-                           bool fail = (NPCS.find("LOL") != NPCS.end());
-                           bool lol = true;*/
+                           remotePlayers[username] = Character();
                         }
                     }
                 }else
                 //  A player has left
                 if( code == DataTypeByte::USER_LEFT ){
                     if( username != "" ){
-                        NPCS.erase(recvText);
+                        remotePlayers.erase(recvText);
                     }
                 }else
                 //  Server is trying to tell us something about another user
@@ -178,8 +176,8 @@ int GameContext::handleIncomingNetwork(){
                         if( recvText == serverConnection->getId() ){
                             user = &player;
                         } else
-                        if( (NPCS.find(recvText) != NPCS.end()) ){ // || NPCS.empty()
-                            user = &NPCS[recvText];
+                        if( !remotePlayers.empty() && (remotePlayers.find(username) != remotePlayers.end()) ){
+                            user = &remotePlayers[username];
                         } else {
                             // dunno who server is talking about =/
                             break;
@@ -228,7 +226,7 @@ int GameContext::handleIncomingNetwork(){
                 if( code == DataTypeByte::CHAR_DIR ){
                     if( user == NULL ){ break; }
                     packet >> recvVal;
-                    if( Character::validDirection(recvVal) ){
+                    if( Character::validDirection(recvVal) && user!=&player ){
                         user->setDirection( static_cast<Directions>(recvVal) );
                     }
                 } else
@@ -236,7 +234,7 @@ int GameContext::handleIncomingNetwork(){
                 if( code == DataTypeByte::CHAR_STATE ){
                     if( user == NULL ){ break; }
                     packet >> recvVal;
-                    if( Character::validState(recvVal) ){
+                    if( Character::validState(recvVal) && user!=&player){
                         user->setState( static_cast<Character::CharacterStates>(recvVal) );
                     }
                 } else
@@ -332,11 +330,9 @@ int GameContext::handleIncomingNetwork(){
 
 
 void GameContext::events(SDL_Event &event){
-
      if( event.type == SDL_VIDEORESIZE ){
         gui->resetPositions();
      }
-
 
     bool feedGui = 1;
     // A key has been pressed
@@ -361,8 +357,10 @@ void GameContext::events(SDL_Event &event){
                 if( !gui->getChatBox()->isTyping() ){
                     feedGui = 0;
                     gui->getChatBox()->focus();
-                    //packet.clear();
-                    //packet << DataTypeByte::IS_TYPING;
+                    player.setState(Character::TYPING);
+                } else {
+                    player.lockState(false);
+                    player.setState(Character::STILL);
                 }
                 break;
 
@@ -492,32 +490,28 @@ void GameContext::logic(){
                 done = 1;
                 break;
         }
+        //update xy
         if( player.getXVel() || player.getYVel() ){
-            if( playerUpdateTimer.isTiming() ){
-                if( playerUpdateTimer.getTime() - prevUpdateTime > updateDelta ){
-                    INFPacket pack;
-                    pack << DataTypeByte::USERNAME << serverConnection->getId();
-                    pack << DataTypeByte::CHAR_X << player.getX();
-                    pack << DataTypeByte::CHAR_Y << player.getY();
-
-                    serverConnection->send(pack);
-                }
-            } else {
-                playerUpdateTimer.clear();
-                playerUpdateTimer.start();
-                prevUpdateTime = playerUpdateTimer.getTime();
-            }
-        } else {
-            if( playerUpdateTimer.isTiming() ){
-                playerUpdateTimer.clear();
-                playerUpdateTimer.stop();
-
+            if( movingUpdateTimer.getTime() > movingUpdateDelta ){
                 INFPacket pack;
                 pack << DataTypeByte::USERNAME << serverConnection->getId();
                 pack << DataTypeByte::CHAR_X << player.getX();
                 pack << DataTypeByte::CHAR_Y << player.getY();
-
+                pack << DataTypeByte::CHAR_DIR << player.getDirection();
+                pack << DataTypeByte::CHAR_STATE << player.getState();
                 serverConnection->send(pack);
+                movingUpdateTimer.clear();
+            }
+        } else {
+            if( staticUpdateTimer.getTime() > staticUpdateDelta ){
+                INFPacket pack;
+                pack << DataTypeByte::USERNAME << serverConnection->getId();
+                pack << DataTypeByte::CHAR_X << player.getX();
+                pack << DataTypeByte::CHAR_Y << player.getY();
+                pack << DataTypeByte::CHAR_DIR << player.getDirection();
+                pack << DataTypeByte::CHAR_STATE << player.getState();
+                serverConnection->send(pack);
+                staticUpdateTimer.clear();
             }
         }
     }
@@ -533,18 +527,14 @@ void GameContext::draw(){
     Screen::clear(255,255,255);
 
     //draw remote players
-    if( !NPCS.empty() ){
-        for( std::map<std::string, Character>::iterator itr = NPCS.begin();
-            itr != NPCS.end(); ++itr ){
+    if( !remotePlayers.empty() ){
+        for( std::map<std::string, Character>::iterator itr = remotePlayers.begin();
+            itr != remotePlayers.end(); ++itr ){
             itr->second.draw(screen);
         }
     }
     //draw loacal player
     player.draw(screen);
-    //draw little message if player is typing
-    if( gui->getChatBox()->isTyping() ){
-        drawText("Typing...", font::mainFont.at(16), colour::black, 50, screen, player.getX(), player.getY()-24);
-    }
     //draw gui
     gui->draw();
 

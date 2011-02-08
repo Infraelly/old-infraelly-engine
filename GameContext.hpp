@@ -102,14 +102,17 @@ class GameContext : RunContext {
         Timer pingTimer;
 
         //  This will hold all the remote players and NPCS
-        std::map<std::string, Character> NPCS;
+        std::map<std::string, Character> remotePlayers;
 
         //  The local Player
         Character player;
         //  Co-ord update timer
-        long prevUpdateTime;
-        Timer playerUpdateTimer;
-        static const int updateDelta = 150;    //update every 150ms
+        Timer movingUpdateTimer;
+        Timer staticUpdateTimer;
+        //  time between xy updates when moving
+        static const int movingUpdateDelta = 150;
+        //time between xy updates when stationary
+        static const int staticUpdateDelta = 200;
 
 
         //  server wants to know our ping
