@@ -201,12 +201,15 @@ void Console::resetPositions(){
 
         //text area (top left, width of screen, height -input fields)
         textArea->setPosition(0,0);
-        textArea->setWidth( w );
-        textArea->setHeight( h-inputField->getHeight() );
+        //textArea->setWidth( w );
+        //textArea->setHeight( h-inputField->getHeight() );
         //set size for scroller
         textW = w;
         textH = h-inputField->getHeight();
         textScroller->setDimension( gcn::Rectangle(0, 0, textW, textH) );
+
+        textArea->setCaretRow(lines);
+        textArea->scrollToCaret();
     };
 }
 
