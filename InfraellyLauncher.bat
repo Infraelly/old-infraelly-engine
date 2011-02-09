@@ -52,11 +52,8 @@ cls
 title Infraelly Client
 echo Infraelly Client
 
-set /p S_IP=Server IP: 
-set /p S_PORT=Game port: 
-
-echo Launching Infraelly: %S_IP%: %S_PORT%
-title Infraelly Client: %S_IP%: %S_PORT%
+echo Launching Infraelly
+title Infraelly Client
 Infraelly
 goto logs
 
@@ -66,11 +63,8 @@ cls
 title Infraelly Client x2
 echo Infraelly Client x2
 
-set /p S_IP=Server IP: 
-set /p S_PORT=Game port: 
-
-echo Launching Infraelly: %S_IP%: %S_PORT% x2
-title Infraelly Client: %S_IP%: %S_PORT% x2
+echo Launching Infraelly x2
+title Infraelly Client x2
 start /b infraelly
 start /b infraelly
 exit
@@ -81,10 +75,8 @@ cls
 title Infraelly Nucleus (Server)
 echo Infraelly Server
 
-set /p S_PORT=Game port: 
-
-title Infraelly Server: %S_PORT%
-echo Launching Server at port %S_PORT%
+title Infraelly Server
+echo Launching Server
 infraelly.exe -server
 goto logs
 

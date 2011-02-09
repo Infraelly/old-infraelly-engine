@@ -138,8 +138,8 @@ ServerContext::ServerContext() :
 ServerContext::~ServerContext(){
     sendConsole("Infraelly Server is shutting down");
     SDL_LockMutex(consoleAccess_);
-    console_->logic();
-    console_->draw();
+        console_->logic();
+        console_->draw();
     SDL_UnlockMutex(consoleAccess_);
     SDL_Flip(screen);
 
@@ -158,8 +158,8 @@ ServerContext::~ServerContext(){
         }
         sendConsole("Server Shutdown in " + itos(t) + "...");
         SDL_LockMutex(consoleAccess_);
-        console_->logic();
-        console_->draw();
+            console_->logic();
+            console_->draw();
         SDL_UnlockMutex(consoleAccess_);
         SDL_Flip(screen);
         Uint32 time = timer.getTime();
@@ -246,9 +246,8 @@ void ServerContext::logic(){
 }
 
 void ServerContext::draw(){
-    SDL_LockMutex(consoleAccess_);
+    ScopedMutexLock(consoleAccess_);
     console_->draw();
-    SDL_UnlockMutex(consoleAccess_);
 }
 
 
@@ -261,16 +260,15 @@ void ServerContext::draw(){
 
 //  Sends some text to the console
 void ServerContext::sendConsole(const std::string& text){
-    SDL_LockMutex(consoleAccess_);
+    ScopedMutexLock(consoleAccess_);
     if( console_.get() != NULL ){
         console_->push_back(text);
     }
-    SDL_UnlockMutex(consoleAccess_);
 }
 
 //  Sends to all players
 void ServerContext::sendAll(const INFPacket& pack){
-    MutexLocker lock(worldAccess_);
+    ScopedMutexLock(worldAccess_);
     map<string, GameArea*>::iterator itr;
     for( itr = world_.begin(); itr != world_.end(); ++itr ){
         itr->second->sendAll(pack);
@@ -280,7 +278,7 @@ void ServerContext::sendAll(const INFPacket& pack){
 // Sends to specific user
 //  returns false if action failed
 bool ServerContext::sendTo(const string& username, const INFPacket& pack){
-    MutexLocker lock(worldAccess_);
+    ScopedMutexLock(worldAccess_);
     std::map<std::string, GameArea*>::iterator itr;
     for( itr = world_.begin(); itr != world_.end(); ++itr ){
         inp::Connection *con = itr->second->getConnection(username);
@@ -295,7 +293,7 @@ bool ServerContext::sendTo(const string& username, const INFPacket& pack){
 unsigned int ServerContext::totalOnline(){
     unsigned int online = 0;
     map<string, GameArea*>::iterator itr;
-    MutexLocker lock(worldAccess_);
+    ScopedMutexLock(worldAccess_);
     for( itr = world_.begin(); itr != world_.end(); ++itr ){
         online += itr->second->getNumberConnections();
     }
@@ -494,7 +492,7 @@ void ServerContext::commandLine(std::string commandString){
         } else
         if( command == "UPTIME" ){
             SDL_LockMutex(timerAccess_);
-            Uint32 time = serverUpTimer_.getTime();
+                Uint32 time = serverUpTimer_.getTime();
             SDL_UnlockMutex(timerAccess_);
             if( time == 0 ){
                 sendConsole( "Uptime: N/A" );
@@ -516,7 +514,7 @@ void ServerContext::commandLine(std::string commandString){
         } else
         if( command == "CLEAR" ){
             SDL_LockMutex(consoleAccess_);
-            console_->clear();
+                console_->clear();
             SDL_UnlockMutex(consoleAccess_);
         } else
         if( (command == "HELP") || (command == "H") ){

@@ -44,14 +44,15 @@ L-----------------------------------------------------------------------------*/
 
 #include <iostream>
 #include <sstream>
+#include <fstream>
+#include <string>
+
+#include "GameConfig.hpp"
 
 /************************************************************************
 still in the making
 
                                 LogOut
-
-    Function templates will output the file and line number, only if
-    DEBUG is defined.
 
     logOut outputs to the standard output device: cout
     logErr outputs to the standard error device: cerr
@@ -63,17 +64,85 @@ still in the making
 ************************************************************************/
 
 namespace logs{
+    class Logger{
+        public:
+            Logger(std::ostream& stream, std::ofstream& f_stream):
+                std_stream_(stream), file_stream_(f_stream){ ; }
+
+            template<typename T>
+            friend Logger& operator<<(Logger& p, T& message);
+            friend Logger& operator<<(Logger& d, Logger& src);
+            friend std::ostream& operator<<(std::ostream& o, Logger& l);
+
+            void flush(){
+                if( GameConfig::logging ){
+                    file_stream_ << data_.str() << std::endl;
+                }
+                std_stream_ << data_.str() << std::endl;
+                data_.str("");
+            }
+
+        private:
+            std::ostream& std_stream_;
+            std::ofstream& file_stream_;
+            std::stringstream data_;
+    };
+
+    template<typename T>
+    Logger& operator<<(Logger& p, T& message){
+        p.std_stream_ << message;
+        p.data_ << message;
+        return p;
+    };
+
+    inline Logger& operator<<(Logger& d, Logger& src){
+        d.data_ << src.data_.str();
+        d.std_stream_ << src.data_.str();
+        return d;
+    }
+
+    inline std::ostream& operator<<(std::ostream& o, Logger& l){
+        o << l.data_.str();
+        return o;
+    }
+
+    extern Logger logOut;
+    extern Logger logErr;
+    extern Logger logDbg;
+
+    bool logsInit(const std::string& out = "logOut.txt", const std::string& err = "logErr.txt", const std::string &dbg = "logDbg.txt");
+    void logsQuit();
+
+
+    /*extern bool logs_inited;
+    extern std::ofstream of_out;
+    extern std::ofstream of_err;
+    extern std::ofstream of_dbg;
+
+
     template<typename T>
     void logOut(std::ostream& stream, const T& message){
+        if( GameConfig::logging && logs_inited ){
+            #ifdef DEBUG
+                of_out << __FILE__ << ", " << __LINE__ << ": ";
+            #endif
+            of_out << message << std::endl;
+        }
         #ifdef DEBUG
-            std::cout << __FILE__ << ", " << __LINE__ << ": ";
+           stream << __FILE__ << ", " << __LINE__ << ": ";
         #endif
-        std::cout << message << std::endl;
+        stream << message << std::endl;
     }
 
 
     template<typename T>
     void logOut(const T& message){
+        if( GameConfig::logging && logs_inited ){
+            #ifdef DEBUG
+                of_out << __FILE__ << ", " << __LINE__ << ": ";
+            #endif
+            of_out << message << std::endl;
+        }
         #ifdef DEBUG
             std::cout << __FILE__ << ", " << __LINE__ << ": ";
         #endif
@@ -82,6 +151,12 @@ namespace logs{
 
     template<typename T>
     void logErr(const T& message){
+        if( GameConfig::logging && logs_inited ){
+            #ifdef DEBUG
+                of_err << __FILE__ << ", " << __LINE__ << ": ";
+            #endif
+            of_err << message << std::endl;
+        }
         #ifdef DEBUG
             std::cerr << __FILE__ << ", " << __LINE__ << ": ";
         #endif
@@ -91,10 +166,13 @@ namespace logs{
     template<typename T>
     void logDebug(const T& message){
         #ifdef DEBUG
+            if( GameConfig::logging && logs_inited ){
+                of_dbg << __FILE__ << ", " << __LINE__ << ": " <<  message << std::endl;
+            }
             std::cerr << __FILE__ << ", " << __LINE__ << ": " << message << std::endl;
         #endif
-    }
-}
+    }*/
+};
 
 
 #endif // DEBUGOUT_H_INCLUDED

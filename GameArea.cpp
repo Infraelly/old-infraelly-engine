@@ -76,7 +76,7 @@ GameArea::~GameArea(){
 
 
 Character GameArea::getPlayer(const std::string& id)const{
-    MutexLocker lock(access_);
+    ScopedMutexLock(access_);
     Character rVal;
     if( players_.find(id) != players_.end() ){
         rVal = *players_.find(id)->second;
@@ -105,7 +105,7 @@ void GameArea::addPlayer(const CharCon& playerCon){
     con->send(infoPack);
 
 
-    MutexLocker lock(access_);
+    ScopedMutexLock(access_);
     if( players_.size() > 0 ){
         INFPacket joinPack;
         //  Get all players in the current room
@@ -133,7 +133,7 @@ void GameArea::addPlayer(const CharCon& playerCon){
 CharCon GameArea::removeCharCon(const std::string& id){
     CharCon rVal;
     rVal.first = connections_.getConnection(id);
-    MutexLocker lock(access_);
+    ScopedMutexLock(access_);
     if( (rVal.first != NULL) && (players_.find(id) != players_.end()) ){
         rVal.second = players_.find(id)->second;
     } else {
@@ -144,13 +144,13 @@ CharCon GameArea::removeCharCon(const std::string& id){
 
 
 size_t GameArea::getNumberConnections()const{
-    MutexLocker lock(access_);
+    ScopedMutexLock(access_);
     return players_.size();
 }
 
 
 void GameArea::setMap(const AreaMap& newMap){
-    MutexLocker lock(access_);
+    ScopedMutexLock(access_);
     map_ = newMap;
 }
 
@@ -173,7 +173,7 @@ int GameArea::logic(){
     INFPacket syncPack;
     CharCon playerCon;
     std::vector<inp::Connection*> activeConList;
-    MutexLocker lock(access_);
+    ScopedMutexLock(access_);
     //  Get active connections in a list.
     if( connections_.checkSockets( 1000, activeConList ) ){
         // handle each connection in list

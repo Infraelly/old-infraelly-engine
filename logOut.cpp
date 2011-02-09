@@ -37,89 +37,63 @@
 |   tony.huynh1991@gmail.com                                                   |
 |                                                                              |
 L-----------------------------------------------------------------------------*/
-
-
-#ifndef MUTEXED_HPP_INCLUDED
-#define MUTEXED_HPP_INCLUDED
+#include <iostream>
+#include <fstream>
 
 #include "logOut.hpp"
 
+namespace logs{
+    static bool logs_inited = 0;
 
-/*******************************************************************************
-                                    Mutexed
+    std::ofstream of_out;
+    std::ofstream of_err;
+    std::ofstream of_dbg;
 
-    Associates any object with an SDL_Mutex.
-
-    Achieves the same effect as pair<T, SDL_mutex>
-
-    Its a cheap way of protecting an object with a mutex.
-
-*******************************************************************************/
+    Logger logOut(std::cout, of_out);
+    Logger logErr(std::cerr, of_err);
+    Logger logDbg(std::cerr, of_dbg);
 
 
-template<typename T>
-class Mutexed{
-    public:
-        Mutexed() :
-            access(SDL_CreateMutex()),
-            locked(false),
-            data_(new T)
-        {}
-
-        virtual ~Mutexed(){
-            SDL_DestroyMutex(access);
-            access = NULL;
-            delete data_;
-            data_ = NULL;
-        }
-
-        /*void operator=(T& o)throw(){
-            SDL_LockMutex(access);
-            if( &o != data_ ){
-                *data_ = o;
+    bool logsInit(const std::string& out, const std::string& err, const std::string &dbg){
+        if( logs_inited ){
+            logsQuit();
+            return logsInit(out, err, dbg);
+        } else {
+            of_out.open(out.c_str());
+            of_err.open(err.c_str());
+            of_dbg.open(dbg.c_str());
+            if( !of_out.is_open() || !of_err.is_open() || !of_dbg.is_open() ){
+                std::cerr << "Cannot open log files: ";
+                if(!of_out.is_open() ){ std::cerr << out; }
+                if(!of_err.is_open() ){ std::cerr << ", " << err; }
+                if(!of_dbg.is_open() ){ std::cerr << ", " << dbg; }
+                std::cerr << std::endl;
             }
-            SDL_UnlockMutex(access);
-        }*/
-
-
-        void lock(){
-            if(locked){ logs::logDebug("Double locked"); }
-            SDL_LockMutex(access);
-            locked = true;
+            if( !of_out.is_open() && !of_err.is_open() && !of_dbg.is_open() ){
+                logs_inited = false;
+            } else {
+                logs_inited = true;
+                std::cout << "Logs inited: \n";
+            }
         }
-
-        void unlock(){
-            if(!locked){ logs::logDebug("Double unlocked"); }
-            locked = false;
-            SDL_LockMutex(access);
-
-        }
-
-        T& data(){ return *data_; }
-
-
-
-    protected:
-        T *data_;
-        SDL_mutex *access;
-        bool locked;
-};
-
-
-
-template<typename T>
-struct scopedLock{
-    scopedLock(Mutexed<T> &o) : o_(o){
-        o_.lock();
-    }
-    ~scopedLock(){
-        o_.unlock();
+        return logs_inited;
     }
 
-    private:
-        Mutexed<T> &o_;
-};
+    void logsQuit(){
+        if( logs_inited ){
+            logOut.flush();
+            logErr.flush();
+            logDbg.flush();
+            of_out << std::flush;
+            of_err << std::flush;
+            of_dbg << std::flush;
+            of_out.close();
+            of_err.close();
+            of_dbg.close();
+            logs_inited = false;
+        }
+    }
 
 
 
-#endif // MUTEXED_HPP_INCLUDED
+}

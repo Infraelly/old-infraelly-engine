@@ -549,9 +549,6 @@
 		<Unit filename="MutexLocker.hpp">
 			<Option virtualFolder="Threading\" />
 		</Unit>
-		<Unit filename="Mutexed.hpp">
-			<Option virtualFolder="Threading\" />
-		</Unit>
 		<Unit filename="NetCode.hpp">
 			<Option virtualFolder="Network Control (INP)\" />
 		</Unit>
@@ -774,6 +771,9 @@
 		</Unit>
 		<Unit filename="init.cpp" />
 		<Unit filename="init.hpp" />
+		<Unit filename="logOut.cpp">
+			<Option virtualFolder="Debug\" />
+		</Unit>
 		<Unit filename="logOut.hpp">
 			<Option virtualFolder="Debug\" />
 		</Unit>

@@ -47,6 +47,7 @@ L-----------------------------------------------------------------------------*/
 /*------------------------------------
         Default Load up settings
 -------------------------------------*/
+
 const int GameConfig::fps = 30;
 
 #ifdef DEBUG
@@ -56,6 +57,7 @@ const int GameConfig::fps = 30;
 #endif
 
 
+bool GameConfig::logging = true;
 
 bool GameConfig::startFullscreen = false;
 
@@ -109,6 +111,10 @@ bool GameConfig::saveXml(const std::string &filename){
 	TiXmlElement *root = new TiXmlElement( "Infraelly" );
 	doc.LinkEndChild( root );
 
+    //log
+    TiXmlElement *logEl = new TiXmlElement( "Logs" );
+	root->LinkEndChild( logEl );
+    logEl->SetAttribute("log", logging);
 	//Screen reso
     TiXmlElement *screenEl = new TiXmlElement( "Screen" );
 	root->LinkEndChild( screenEl );
@@ -167,11 +173,18 @@ bool GameConfig::loadXml(const std::string &filename){
     }
     root = TiXmlHandle(pElem);
 
+    //logs
+    pElem = root.FirstChildElement( "Logs" ).ToElement();
+    if( pElem == NULL ){
+        std::cout << "Config: log element not found" << std::endl;
+    } else {
+        pElem->QueryValueAttribute("log", &logging );
+    }
+
     //Screen resolution
     pElem = root.FirstChildElement( "Screen" ).ToElement();
     if( pElem == NULL ){
         std::cout << "Config: screen element not found" << std::endl;
-        return 0;
     } else {
         screenRoot = root.FirstChildElement( "Screen" );
         pElem->QueryValueAttribute("fullscreen", &startFullscreen );
@@ -179,7 +192,6 @@ bool GameConfig::loadXml(const std::string &filename){
         TiXmlElement *windElem = screenRoot.FirstChildElement( "Windowed" ).ToElement();
         if( windElem == NULL ){
             std::cout << "Config: windowed element not found" << std::endl;
-            return 0;
         } else {
             windElem->QueryIntAttribute("w", &wScreenWidth );
             windElem->QueryIntAttribute("h", &wScreenHeight );
@@ -189,7 +201,6 @@ bool GameConfig::loadXml(const std::string &filename){
         TiXmlElement *fsElem = screenRoot.FirstChildElement( "Fullscreen" ).ToElement();
         if( fsElem == NULL ){
             std::cout << "Config: fullscreen element not found" << std::endl;
-            return 0;
         } else {
             fsElem->QueryIntAttribute("w", &fScreenWidth );
             fsElem->QueryIntAttribute("h", &fScreenHeight );
@@ -197,11 +208,10 @@ bool GameConfig::loadXml(const std::string &filename){
         }
     }
 
-    // Adudio
+    // Audio
     pElem = root.FirstChildElement( "Audio" ).ToElement();
     if( pElem == NULL ){
         std::cout << "Config: audio element not found" << std::endl;
-        return 0;
     } else {
         pElem->QueryValueAttribute("music", &music );
         pElem->QueryValueAttribute("fx", &sound );
@@ -213,7 +223,6 @@ bool GameConfig::loadXml(const std::string &filename){
     pElem = root.FirstChildElement( "Server" ).ToElement();
     if( pElem == NULL ){
         std::cout << "Config: server element not found" << std::endl;
-        return 0;
     } else {
         pElem->QueryValueAttribute("host", &serverIp );
         pElem->QueryIntAttribute("port", &serverPort );

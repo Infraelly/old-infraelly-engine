@@ -65,7 +65,7 @@ GameZoneThread::~GameZoneThread(){
 
 
 inp::Connection *GameZoneThread::getConnection(const std::string& id)const{
-    MutexLocker lock(dataAccess_);
+    ScopedMutexLock(dataAccess_);
     inp::Connection *con;
     for(size_t i = 0; i < gameAreas_.size(); ++i){
         con = gameAreas_.at(i)->getConnection(id);
@@ -76,7 +76,7 @@ inp::Connection *GameZoneThread::getConnection(const std::string& id)const{
 
 
 size_t GameZoneThread::getNumberConnections()const{
-    MutexLocker lock(dataAccess_);
+    ScopedMutexLock(dataAccess_);
     size_t count = 0;
     for(size_t i = 0; i < gameAreas_.size(); ++i){
         count += gameAreas_.at(i)->getNumberConnections();
@@ -86,7 +86,7 @@ size_t GameZoneThread::getNumberConnections()const{
 
 
 CharCon GameZoneThread::removePlayer(const std::string& id){
-    MutexLocker lock(dataAccess_);
+    ScopedMutexLock(dataAccess_);
     CharCon playerCon;
     for(size_t i = 0; i < gameAreas_.size(); ++i){
         playerCon = gameAreas_.at(i)->removeCharCon(id);
@@ -96,7 +96,7 @@ CharCon GameZoneThread::removePlayer(const std::string& id){
 }
 
 bool GameZoneThread::addPlayer(const CharCon& player, const std::string& map){
-    MutexLocker lock(dataAccess_);
+    ScopedMutexLock(dataAccess_);
     for(size_t i = 0; i < gameAreas_.size(); ++i){
         if( gameAreas_.at(i)->getMapName() == map ){
             gameAreas_.at(i)->addPlayer(player);
@@ -108,7 +108,7 @@ bool GameZoneThread::addPlayer(const CharCon& player, const std::string& map){
 
 
 void GameZoneThread::sendAll(const inp::INFPacket& packet){
-    MutexLocker lock(dataAccess_);
+    ScopedMutexLock(dataAccess_);
     for(size_t i = 0; i < gameAreas_.size(); ++i){
         gameAreas_.at(i)->sendAll(packet);
     }
@@ -120,7 +120,7 @@ void GameZoneThread::handleUserData(inp::INFPacket &data){
 
 
 bool GameZoneThread::work(){
-    MutexLocker lock(dataAccess_);
+    ScopedMutexLock(dataAccess_);
     int dropped = 0;
     for(size_t i = 0; i < gameAreas_.size(); ++i){
         dropped += gameAreas_.at(i)->logic();

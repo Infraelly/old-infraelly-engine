@@ -117,7 +117,7 @@ ThreadBase::~ThreadBase(){ clean(); }
 
 ThreadBase::ThreadBase(const ThreadBase& src){
     //lock mutex
-    MutexLocker lock(src.pimpl_->stateAccess);
+    ScopedMutexLock(src.pimpl_->stateAccess);
     pimpl_ = src.pimpl_;
     ++pimpl_->refCount;
 }
@@ -125,7 +125,7 @@ ThreadBase::ThreadBase(const ThreadBase& src){
 ThreadBase& ThreadBase::operator=(ThreadBase& rhs){
     if( &rhs != this ){
         //lock mutex
-        MutexLocker lock(rhs.pimpl_->stateAccess);
+        ScopedMutexLock(rhs.pimpl_->stateAccess);
         clean();
         pimpl_ = rhs.pimpl_;
         ++pimpl_->refCount;
@@ -149,7 +149,7 @@ void ThreadBase::clean(){
 
 //  Creates thread
 void ThreadBase::create(){
-    MutexLocker lock(pimpl_->stateAccess);
+    ScopedMutexLock(pimpl_->stateAccess);
     if( !pimpl_->thrdCreated ){
         pimpl_->thrdCreated = true;
         pimpl_->thread = SDL_CreateThread( &ThreadBase::thrdFunc, static_cast<void*>(this) );
@@ -161,7 +161,7 @@ void ThreadBase::start(){
     inp::INFPacket startPack;
     startPack << inp::DataTypeByte::THREAD_START;
 
-    MutexLocker lock(pimpl_->signalAccess);
+    ScopedMutexLock(pimpl_->signalAccess);
     pimpl_->controlSignals.push(startPack);
 }
 
@@ -170,7 +170,7 @@ void ThreadBase::end(){
     inp::INFPacket endPack;
     endPack << inp::DataTypeByte::THREAD_END;
 
-    MutexLocker lock(pimpl_->signalAccess);
+    ScopedMutexLock(pimpl_->signalAccess);
     pimpl_->controlSignals.push(endPack);
 }
 
@@ -179,7 +179,7 @@ void ThreadBase::pause(){
     inp::INFPacket pausePack;
     pausePack << inp::DataTypeByte::THREAD_PAUSE;
 
-    MutexLocker lock(pimpl_->signalAccess);
+    ScopedMutexLock(pimpl_->signalAccess);
     pimpl_->controlSignals.push(pausePack);
 }
 
@@ -188,7 +188,7 @@ void ThreadBase::resume(){
     inp::INFPacket resumePack;
     resumePack << inp::DataTypeByte::THREAD_RESUME;
 
-    MutexLocker lock(pimpl_->signalAccess);
+    ScopedMutexLock(pimpl_->signalAccess);
     pimpl_->controlSignals.push(resumePack);
 }
 
@@ -201,7 +201,7 @@ void ThreadBase::sleep(int ms, int sleepBreak){
     inp::INFPacket sleepPack;
     sleepPack << inp::DataTypeByte::THREAD_SLEEP << ms << sleepBreak;
 
-    MutexLocker lock(pimpl_->signalAccess);
+    ScopedMutexLock(pimpl_->signalAccess);
     pimpl_->controlSignals.push(sleepPack);
 }
 
@@ -214,7 +214,7 @@ void ThreadBase::waitFinish(){
 
 //  Returns the ID of the thread
 Uint32 ThreadBase::getId()const{
-    MutexLocker lock(pimpl_->stateAccess);
+    ScopedMutexLock(pimpl_->stateAccess);
     if( pimpl_->thrdCreated ){
         return SDL_GetThreadID(pimpl_->thread);
     }
@@ -225,7 +225,7 @@ Uint32 ThreadBase::getId()const{
 
 //  Returns the state of the thread
 enum ThreadBase::RunState ThreadBase::getRunState(){
-    MutexLocker lock(pimpl_->stateAccess);
+    ScopedMutexLock(pimpl_->stateAccess);
     return pimpl_->state;
 }
 
@@ -233,14 +233,14 @@ enum ThreadBase::RunState ThreadBase::getRunState(){
 //  Sets the target number of times work will be called per seccond
 void ThreadBase::setRate(int rate){
     if( rate < 1 ){ rate = 30; }
-    MutexLocker lock(pimpl_->stateAccess);
+    ScopedMutexLock(pimpl_->stateAccess);
     pimpl_->frameDelay = (1000/rate);
 }
 
 
 //  Gets the target number of times work will be called per second
 int ThreadBase::getRate()const{
-    MutexLocker lock(pimpl_->stateAccess);
+    ScopedMutexLock(pimpl_->stateAccess);
     return (int)(1000/pimpl_->frameDelay);
 }
 
@@ -250,7 +250,7 @@ int ThreadBase::getRate()const{
 //  Allows a thread to send data out of the thread
 //  to retriev the data sent out, use getOutData();
 void ThreadBase::sendOut(const inp::INFPacket& data){
-    MutexLocker lock(pimpl_->outDataAccess);
+    ScopedMutexLock(pimpl_->outDataAccess);
     pimpl_->outData.push(data);
 }
 
@@ -258,7 +258,7 @@ void ThreadBase::sendOut(const inp::INFPacket& data){
 //  NOTE: Returns false if no data.
 //          If there is data, returns true and assignes to "data"
 bool ThreadBase::getOutData(inp::INFPacket& data){
-    MutexLocker lock(pimpl_->outDataAccess);
+    ScopedMutexLock(pimpl_->outDataAccess);
     if( !pimpl_->outData.empty() ){
         data = pimpl_->outData.front();
         pimpl_->outData.pop();
@@ -268,7 +268,7 @@ bool ThreadBase::getOutData(inp::INFPacket& data){
 }
 
 bool ThreadBase::outDataReady(){
-    MutexLocker lock(pimpl_->outDataAccess);
+    ScopedMutexLock(pimpl_->outDataAccess);
     return !pimpl_->outData.empty();
 }
 
@@ -278,7 +278,7 @@ bool ThreadBase::outDataReady(){
 //  Sends an INFPacket to thread. User can recieve this by calling
 //  handleUserData();
 void ThreadBase::sendToThread(const inp::INFPacket& data){
-    MutexLocker lock(pimpl_->userDataAccess);
+    ScopedMutexLock(pimpl_->userDataAccess);
     pimpl_->userData.push(data);
 }
 
@@ -287,7 +287,7 @@ void ThreadBase::sendToThread(const inp::INFPacket& data){
 
 // Handles control signals (end, sleep, resuem)
 void ThreadBase::handleSignal(){
-    MutexLocker lock(pimpl_->signalAccess);
+    ScopedMutexLock(pimpl_->signalAccess);
     if( (!pimpl_->controlSignals.empty()) ){
         inp::INFPacket recvPack;
         recvPack = pimpl_->controlSignals.front();
@@ -296,7 +296,7 @@ void ThreadBase::handleSignal(){
         inp::NetCode code;
         recvPack >> code;
 
-        MutexLocker lock(pimpl_->stateAccess);
+        ScopedMutexLock(pimpl_->stateAccess);
         if( code == inp::DataTypeByte::THREAD_START ){
             pimpl_->state = RUNNING;
         } else

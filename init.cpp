@@ -65,6 +65,9 @@ L-----------------------------------------------------------------------------*/
 #include "colours.hpp"
 #include "dataPacks.hpp"
 
+#include "logOut.hpp"
+
+
 using std::cerr;
 using std::cout;
 using std::endl;
@@ -86,8 +89,25 @@ void init(){
     //set exit function
     atexit(closeInfraelly);
 
+    /*---------------------------------------------
+                    Load user settings
+    ---------------------------------------------*/
+    #ifndef DEBUG
+    cout << "Load Infraelly settings (delete \"infraelly.cfg\" to restore defaults)" << endl;
+    if( !GameConfig::loadXml("infraelly.cfg") ){
+        GameConfig::saveXml("infraelly.cfg");
+    }
+    #else
+        cout << "Infraelly settings not loading from file. (DEBUG is enabled)" << endl;
+    #endif
+
+    if( GameConfig::logging ){
+        logs::logsInit();
+    }
+
+
     //decorate/prepare the out put log
-    cerr << "                         ____                                                  " << endl;
+  /*  cerr << "                         ____                                                  " << endl;
     cerr << "      __                / __ \\                                /\\     /\\        " << endl;
     cerr << "     /_/               / /  \\/                               / /    / /        " << endl;
     cerr << "     __    ____       / /_    ____     ____       ____      / /    / /         " << endl;
@@ -100,20 +120,24 @@ void init(){
     cerr << "/   ____________________________________________________________________/      " << endl;
     cerr << "\\__/                                                                           " << endl;
     cerr << "                                           Copyright Infraelly Team 2007-2010  " << endl;
-    cerr << endl << endl;
+    cerr << endl << endl;*/
 
+    logs::logOut << "                         ____                                                  \n";
+    logs::logOut << "      __                / __ \\                                /\\     /\\        \n";
+    logs::logOut << "     /_/               / /  \\/                               / /    / /        \n";
+    logs::logOut << "     __    ____       / /_    ____     ____       ____      / /    / /         \n";
+    logs::logOut << "    / /   / __ \\     / ___\\  / __ \\   / __ \\     / __ \\    / /    / /   /\\  /\\ \n";
+    logs::logOut << "   / /   / /  \\ \\   / /     / /  \\/  / /  \\ \\   / ____/   / /    / /   / / / / \n";
+    logs::logOut << "  / /_  / /   / /  / /     / /       \\ \\__/ /_  \\  \\___  / /_   / /_   \\ \\/ /  \n";
+    logs::logOut << "  \\__/  \\/    \\/   \\/      \\/         \\______/   \\____/  \\__/   \\__/    \\  /   \n";
+    logs::logOut << "                                                                        / /    \n";
+    logs::logOut << " ______________________________________________________________________/ /     \n";
+    logs::logOut << "/   ____________________________________________________________________/      \n";
+    logs::logOut << "\\__/                                                                           \n";
+    logs::logOut << "                                           Copyright Infraelly Team 2007-2010  \n\n\n";
 
-    /*---------------------------------------------
-                    Load user settings
-    ---------------------------------------------*/
-    #ifndef DEBUG
-    cout << "Load Infraelly settings (delete \"infraelly.cfg\" to restore defaults)" << endl;
-    if( !GameConfig::loadXml("infraelly.cfg") ){
-        GameConfig::saveXml("infraelly.cfg");
-    }
-    #else
-        cout << "Infraelly settings not loading from file. (DEBUG is enabled)" << endl;
-    #endif
+    logs::logErr << logs::logOut;
+
 
     //putenv("SDL_VIDEODRIVER=x11");
 
@@ -385,4 +409,6 @@ void closeInfraelly(){
     cerr << __FILE__ << " " << __LINE__ << ": " << "Closing SDL..." << endl;
     SDL_Quit();
     cerr << __FILE__ << " " << __LINE__ << ": " << "SDL closed" << endl << endl;
+
+    logs::logsQuit();
 }

@@ -42,13 +42,12 @@ L-----------------------------------------------------------------------------*/
 #include "ConnectionGroup.hpp"
 
 #include <iostream>
+#include <map>
+#include <algorithm> //advance()
 
 #include <SDL/SDL.h>
 
-#include <map>
-
-//advance()
-#include <algorithm>
+#include "MutexLocker.hpp"
 
 
 using namespace std;
@@ -134,20 +133,18 @@ namespace inp{
     }
 
     ConnectionGroup::ConnectionGroup(const ConnectionGroup& src){
-        SDL_LockMutex(src.pimpl_->dataAccess);
-            pimpl_ = src.pimpl_;
-            ++pimpl_->refCount;
-        SDL_UnlockMutex(src.pimpl_->dataAccess);
+        ScopedMutexLock(pimpl_->dataAccess);
+        pimpl_ = src.pimpl_;
+        ++pimpl_->refCount;
     }
 
     ConnectionGroup& ConnectionGroup::operator=(ConnectionGroup& rhs){
         if( &rhs != this ){
-            SDL_LockMutex(pimpl_->dataAccess);
-                clean();
-                pimpl_ = rhs.pimpl_;
-                ++pimpl_->refCount;
-                pimpl_->dataAccess = pimpl_->dataAccess;
-            SDL_UnlockMutex(pimpl_->dataAccess);
+            ScopedMutexLock(pimpl_->dataAccess);
+            clean();
+            pimpl_ = rhs.pimpl_;
+            ++pimpl_->refCount;
+            pimpl_->dataAccess = pimpl_->dataAccess;
         }
         return *this;
     }
@@ -158,18 +155,16 @@ namespace inp{
 
 
     inp::Connection* ConnectionGroup::conAt(unsigned i)const{
-        SDL_LockMutex(pimpl_->dataAccess);
-            ConnectionsList::iterator itr = pimpl_->users.begin();
-            advance(itr, i);
-        SDL_UnlockMutex(pimpl_->dataAccess);
+        ScopedMutexLock(pimpl_->dataAccess);
+        ConnectionsList::iterator itr = pimpl_->users.begin();
+        advance(itr, i);
         return itr->second;
     }
 
     std::string ConnectionGroup::keyAt(unsigned i)const{
-        SDL_LockMutex(pimpl_->dataAccess);
-            ConnectionsList::iterator itr = pimpl_->users.begin();
-            advance(itr, i);
-        SDL_UnlockMutex(pimpl_->dataAccess);
+        ScopedMutexLock(pimpl_->dataAccess);
+        ConnectionsList::iterator itr = pimpl_->users.begin();
+        advance(itr, i);
         return itr->first;
     }
 
@@ -177,50 +172,36 @@ namespace inp{
 
 
     bool ConnectionGroup::empty()const{
-        SDL_LockMutex(pimpl_->dataAccess);
-            bool rVal = pimpl_->users.empty();
-        SDL_UnlockMutex(pimpl_->dataAccess);
-        return rVal;
+        ScopedMutexLock(pimpl_->dataAccess);
+        return pimpl_->users.empty();
     }
 
     bool ConnectionGroup::exists(const std::string& key)const{
-        bool rVal;
-        SDL_LockMutex(pimpl_->dataAccess);
-            if( pimpl_->users.find(key) == pimpl_->users.end() ){
-                rVal = false;
-            } else {
-                rVal = true;
-            }
-        SDL_UnlockMutex(pimpl_->dataAccess);
-        return rVal;
+        ScopedMutexLock(pimpl_->dataAccess);
+        if( pimpl_->users.find(key) == pimpl_->users.end() ){
+            return false;
+        } else {
+            return true;
+        }
     }
 
     Connection *ConnectionGroup::getConnection(const std::string& key)const{
-        Connection *rVal;
-        SDL_LockMutex(pimpl_->dataAccess);
-            if( pimpl_->users.find(key) != pimpl_->users.end() ){
-                rVal = pimpl_->users.find(key)->second;
-            } else {
-                rVal = NULL;
-            }
-        SDL_UnlockMutex(pimpl_->dataAccess);
-        return rVal;
+        ScopedMutexLock(pimpl_->dataAccess);
+        if( pimpl_->users.find(key) != pimpl_->users.end() ){
+            return pimpl_->users.find(key)->second;
+        } else {
+            return NULL;
+        }
     }
 
     unsigned ConnectionGroup::size()const{
-        unsigned rVal;
-        SDL_LockMutex(pimpl_->dataAccess);
-            rVal = pimpl_->users.size();
-        SDL_UnlockMutex(pimpl_->dataAccess);
-        return rVal;
+        ScopedMutexLock(pimpl_->dataAccess);
+        return pimpl_->users.size();
     }
 
     unsigned ConnectionGroup::sizePeak()const{
-        unsigned rVal;
-        SDL_LockMutex(pimpl_->dataAccess);
-            rVal = pimpl_->peakConnections;
-        SDL_UnlockMutex(pimpl_->dataAccess);
-        return rVal;
+        ScopedMutexLock(pimpl_->dataAccess);
+        return pimpl_->peakConnections;
     }
 
 
@@ -228,92 +209,62 @@ namespace inp{
 
 
     bool ConnectionGroup::addConnection( const std::string& key, Connection* c ){
-        bool rVal;
-        SDL_LockMutex(pimpl_->dataAccess);
-            //skip if either connection or thread is NULL
-            if( c == NULL ){
-                rVal = false;
-            } else {
-                //only add if the key is unique
-                if( pimpl_->users.find(key) == pimpl_->users.end() ){
-
-                    //make sure theres enough space in the sSet
-                    if( pimpl_->socksInSet == pimpl_->maxSocks ){
-                        //make a set larger than current
-                        SDLNet_SocketSet largerSet = SDLNet_AllocSocketSet(pimpl_->maxSocks + 25);
-                        if( largerSet == NULL ){
-                            cerr << __FILE__ << __LINE__ << ": ";
-                            cerr << "SDLNet_AllocSocketSet: " << SDLNet_GetError() << endl;
-                        }
-                        for( ConnectionsList::iterator itr = pimpl_->users.begin();
-                                itr != pimpl_->users.end();
-                                ++itr   ){
-                                TCPsocket t = itr->second->getSocket();
-                            if( SDLNet_TCP_AddSocket(pimpl_->sSet, t) == -1 ){
-                                cerr << __FILE__ << __LINE__ << ": ";
-                                cerr << "SDLNet_AddSocket: " << SDLNet_GetError() << endl;
-                            }
-                        }
-                        //free old set and associate pointer with the new,larger one
-                        SDLNet_FreeSocketSet(pimpl_->sSet);
-                        pimpl_->maxSocks += 25;
-                        pimpl_->sSet = largerSet;
-                    }
-
-                    //if connection is part of private group, remove it
-                    //c->cleanSet();
-                    //add to list
-                    pimpl_->users[key] = c;
-                    //add to sSet
-                    if( SDLNet_TCP_AddSocket(pimpl_->sSet, c->getSocket()) == -1 ){
+        ScopedMutexLock(pimpl_->dataAccess);
+        //skip if either connection or thread is NULL
+        if( c == NULL ){
+            return false;
+        } else {
+            //only add if the key is unique
+            if( pimpl_->users.find(key) == pimpl_->users.end() ){
+                //make sure theres enough space in the sSet
+                if( pimpl_->socksInSet == pimpl_->maxSocks ){
+                    //make a set larger than current
+                    SDLNet_SocketSet largerSet = SDLNet_AllocSocketSet(pimpl_->maxSocks + 25);
+                    if( largerSet == NULL ){
                         cerr << __FILE__ << __LINE__ << ": ";
-                        cerr << "SDLNet_AddSocket: " << SDLNet_GetError() << endl;
-                    } else {
-                        ++pimpl_->socksInSet;
+                        cerr << "SDLNet_AllocSocketSet: " << SDLNet_GetError() << endl;
                     }
-
-                    //update peak con
-                    if( pimpl_->users.size() > pimpl_->peakConnections ){
-                        pimpl_->peakConnections = pimpl_->users.size();
+                    for( ConnectionsList::iterator itr = pimpl_->users.begin();
+                            itr != pimpl_->users.end();
+                            ++itr   ){
+                            TCPsocket t = itr->second->getSocket();
+                        if( SDLNet_TCP_AddSocket(pimpl_->sSet, t) == -1 ){
+                            cerr << __FILE__ << __LINE__ << ": ";
+                            cerr << "SDLNet_AddSocket: " << SDLNet_GetError() << endl;
+                        }
                     }
-                    rVal = true;
-                } else {
-                    rVal = false;
+                    //free old set and associate pointer with the new,larger one
+                    SDLNet_FreeSocketSet(pimpl_->sSet);
+                    pimpl_->maxSocks += 25;
+                    pimpl_->sSet = largerSet;
                 }
+
+                //if connection is part of private group, remove it
+// needs attn---------->//c->cleanSet();
+                //add to list
+                pimpl_->users[key] = c;
+                //add to sSet
+                if( SDLNet_TCP_AddSocket(pimpl_->sSet, c->getSocket()) == -1 ){
+                    cerr << __FILE__ << __LINE__ << ": ";
+                    cerr << "SDLNet_AddSocket: " << SDLNet_GetError() << endl;
+                } else {
+                    ++pimpl_->socksInSet;
+                }
+
+                //update peak con
+                if( pimpl_->users.size() > pimpl_->peakConnections ){
+                    pimpl_->peakConnections = pimpl_->users.size();
+                }
+                return true;
+            } else {
+                return false;
             }
-        SDL_UnlockMutex(pimpl_->dataAccess);
-        return rVal;
+        }
     }
 
     void ConnectionGroup::erase(const std::string& key){
-        SDL_LockMutex(pimpl_->dataAccess);
-            if( pimpl_->users.find(key) != pimpl_->users.end() ){
-                //remove from set
-                if(SDLNet_TCP_DelSocket(pimpl_->sSet, pimpl_->users[key]->getSocket()) == -1){
-                    cerr << __FILE__ << __LINE__ << ": ";
-                    cerr << "SDLNet_DelSocket: " << SDLNet_GetError() << endl;
-                } else {
-                    --pimpl_->socksInSet;
-                }
-                //  Disconnect Connections
-                pimpl_->users[key]->disconnect();
-                //  Free Connections' memory
-                if( pimpl_->users[key] != NULL ){
-                    delete pimpl_->users[key];
-                    pimpl_->users[key] = NULL;
-                }
-                //remove entry
-                pimpl_->users.erase(key);
-            }
-        SDL_UnlockMutex(pimpl_->dataAccess);
-    }
-
-    void ConnectionGroup::disconnect(const std::string& key){
-        erase(key);
-    }
-
-    void ConnectionGroup::remove(const std::string& key){
-        SDL_LockMutex(pimpl_->dataAccess);
+        ScopedMutexLock(pimpl_->dataAccess);
+        if( pimpl_->users.find(key) != pimpl_->users.end() ){
             //remove from set
             if(SDLNet_TCP_DelSocket(pimpl_->sSet, pimpl_->users[key]->getSocket()) == -1){
                 cerr << __FILE__ << __LINE__ << ": ";
@@ -321,167 +272,157 @@ namespace inp{
             } else {
                 --pimpl_->socksInSet;
             }
-            pimpl_->users[key]->cleanSet();
-            pimpl_->users[key]->makeSet();
+            //  Disconnect Connections
+            pimpl_->users[key]->disconnect();
+            //  Free Connections' memory
+            if( pimpl_->users[key] != NULL ){
+                delete pimpl_->users[key];
+                pimpl_->users[key] = NULL;
+            }
             //remove entry
             pimpl_->users.erase(key);
-        SDL_UnlockMutex(pimpl_->dataAccess);
+        }
+    }
+
+    void ConnectionGroup::disconnect(const std::string& key){
+        erase(key);
+    }
+
+    void ConnectionGroup::remove(const std::string& key){
+        ScopedMutexLock(pimpl_->dataAccess);
+        //remove from set
+        if(SDLNet_TCP_DelSocket(pimpl_->sSet, pimpl_->users[key]->getSocket()) == -1){
+            cerr << __FILE__ << __LINE__ << ": ";
+            cerr << "SDLNet_DelSocket: " << SDLNet_GetError() << endl;
+        } else {
+            --pimpl_->socksInSet;
+        }
+        pimpl_->users[key]->cleanSet();
+        pimpl_->users[key]->makeSet();
+        //remove entry
+        pimpl_->users.erase(key);
     }
 
     void ConnectionGroup::removeAll(const std::string& key){
-        SDL_LockMutex(pimpl_->dataAccess);
-            //free set
-            SDLNet_FreeSocketSet(pimpl_->sSet);
-            //realoc set
-            pimpl_->sSet = SDLNet_AllocSocketSet(minSocks);
-            if( pimpl_->sSet == NULL ){
-                cerr << __FILE__ << __LINE__ << ": ";
-                cerr << "SDLNet_AllocSocketSet: " << SDLNet_GetError() << endl;
-                exit(EXIT_FAILURE);
-            }
-            pimpl_->socksInSet = 0;
-            pimpl_->maxSocks = minSocks;
-            //remove all entries
-            pimpl_->users.clear();
-        SDL_UnlockMutex(pimpl_->dataAccess);
+        ScopedMutexLock(pimpl_->dataAccess);
+        //free set
+        SDLNet_FreeSocketSet(pimpl_->sSet);
+        //realoc set
+        pimpl_->sSet = SDLNet_AllocSocketSet(minSocks);
+        if( pimpl_->sSet == NULL ){
+            cerr << __FILE__ << __LINE__ << ": ";
+            cerr << "SDLNet_AllocSocketSet: " << SDLNet_GetError() << endl;
+            exit(EXIT_FAILURE);
+        }
+        pimpl_->socksInSet = 0;
+        pimpl_->maxSocks = minSocks;
+        //remove all entries
+        pimpl_->users.clear();
     }
 
 
 
     void ConnectionGroup::disconnectAll(){
-        SDL_LockMutex(pimpl_->dataAccess);
-            //  tell all threads to exit
-            if( !pimpl_->users.empty() ){
-                ConnectionsList::iterator itr;
-                while( !pimpl_->users.empty() ){
-                    itr = pimpl_->users.begin();
-                    //send quick shutdown note
-                    INFPacket packet;
-                    packet << DataTypeByte::SERVER_MSG << "Server shutdown.";
-                    itr->second->send(packet);
-                    //  Disconnect Connections
-                    itr->second->disconnect();
-                    //  Free Connections' memory
-                    itr->second->cleanSet();
-                    delete itr->second;
-                    itr->second = NULL;
-                    pimpl_->users.erase( itr );
-                }
+        ScopedMutexLock(pimpl_->dataAccess);
+        //  tell all threads to exit
+        if( !pimpl_->users.empty() ){
+            ConnectionsList::iterator itr;
+            while( !pimpl_->users.empty() ){
+                itr = pimpl_->users.begin();
+                //send quick shutdown note
+                INFPacket packet;
+                packet << DataTypeByte::SERVER_MSG << "Server shutdown.";
+                itr->second->send(packet);
+                //  Disconnect Connections
+                itr->second->disconnect();
+                //  Free Connections' memory
+                itr->second->cleanSet();
+                delete itr->second;
+                itr->second = NULL;
+                pimpl_->users.erase( itr );
             }
-            //remove all entries
-            pimpl_->users.clear();
-            //clear and re aloc set
-                        //free set
-            SDLNet_FreeSocketSet(pimpl_->sSet);
-            //realoc set
-            pimpl_->sSet = SDLNet_AllocSocketSet(minSocks);
-            if( pimpl_->sSet == NULL ){
-                cerr << __FILE__ << __LINE__ << ": ";
-                cerr << "SDLNet_AllocSocketSet: " << SDLNet_GetError() << endl;
-                exit(EXIT_FAILURE);
-            }
-            pimpl_->socksInSet = 0;
-            pimpl_->maxSocks = minSocks;
-        SDL_UnlockMutex(pimpl_->dataAccess);
+        }
+        //remove all entries
+        pimpl_->users.clear();
+        //clear and re aloc set
+                    //free set
+        SDLNet_FreeSocketSet(pimpl_->sSet);
+        //realoc set
+        pimpl_->sSet = SDLNet_AllocSocketSet(minSocks);
+        if( pimpl_->sSet == NULL ){
+            cerr << __FILE__ << __LINE__ << ": ";
+            cerr << "SDLNet_AllocSocketSet: " << SDLNet_GetError() << endl;
+            exit(EXIT_FAILURE);
+        }
+        pimpl_->socksInSet = 0;
+        pimpl_->maxSocks = minSocks;
     }
 
 
 
 
     bool ConnectionGroup::checkSockets(Uint32 timeout){
-        bool rVal;
-        SDL_LockMutex(pimpl_->dataAccess);
-            rVal = SDLNet_CheckSockets(pimpl_->sSet, timeout);
-        SDL_UnlockMutex(pimpl_->dataAccess);
-        return rVal;
+        ScopedMutexLock(pimpl_->dataAccess);
+        return SDLNet_CheckSockets(pimpl_->sSet, timeout);
     }
 
     bool ConnectionGroup::checkSockets(Uint32 timeout, vector<Connection*>& activeList){
-        int rVal;
         activeList.clear();
-        SDL_LockMutex(pimpl_->dataAccess);
-            rVal = SDLNet_CheckSockets(pimpl_->sSet, timeout);
-            //put all the active cons into the vector
-            if( rVal != -1 ){
-                for( ConnectionsList::iterator itr = pimpl_->users.begin();
-                     itr != pimpl_->users.end();
-                     ++itr ){
-                    if( SDLNet_SocketReady(itr->second->getSocket()) ){
-                        activeList.push_back(itr->second);
-                    }
+        ScopedMutexLock(pimpl_->dataAccess);
+        //put all the active cons into the vector
+        if( SDLNet_CheckSockets(pimpl_->sSet, timeout) != -1 ){
+            for( ConnectionsList::iterator itr = pimpl_->users.begin();
+                 itr != pimpl_->users.end();
+                 ++itr ){
+                if( SDLNet_SocketReady(itr->second->getSocket()) ){
+                    activeList.push_back(itr->second);
                 }
             }
-            #ifdef DEBUG
-            else {
-                int numConnectionObjects = pimpl_->users.size();
-                if( pimpl_->users.size() > 0 ){
-                    std::cerr << "rval: " << rVal << "\n";
-                    std::cerr << "users.size: " << pimpl_->users.size() << "\n";
-                    std::string erro = SDLNet_GetError();
-                    std::cerr << "sdlnet error: " << erro << std::endl << std::endl;
-                    perror("SDLNet_CheckSockets");
-                    for( ConnectionsList::iterator itr = pimpl_->users.begin();
-                         itr != pimpl_->users.end();
-                         ++itr ){
-                        if( SDLNet_SocketReady(itr->second->getSocket()) ){
-                            activeList.push_back(itr->second);
-                                std::string conId = itr->second->getId();
-                                int break_here = 123123;
-                        }
-                    }
-                }
-            }
-            #endif
-        SDL_UnlockMutex(pimpl_->dataAccess);
-        return rVal;
+            return 1;
+        }
+        return 0;
     }
 
 
 
 
     bool ConnectionGroup::sendTo(const std::string& key, const INFPacket& packet){
-        bool rVal;
-        SDL_LockMutex(pimpl_->dataAccess);
-            if( pimpl_->users.find(key) == pimpl_->users.end() ){
-                rVal = false;
-            } else {
-                rVal = pimpl_->users[key]->send(packet);
-            }
-        SDL_UnlockMutex(pimpl_->dataAccess);
-        return rVal;
+        ScopedMutexLock(pimpl_->dataAccess);
+        if( pimpl_->users.find(key) == pimpl_->users.end() ){
+            return false;
+        } else {
+            return pimpl_->users[key]->send(packet);
+        }
     }
 
     void ConnectionGroup::sendAll(const INFPacket& packet){
-        SDL_LockMutex(pimpl_->dataAccess);
-            for(    ConnectionsList::iterator itr = pimpl_->users.begin();
-                    itr != pimpl_->users.end();
-                    ++itr   ){
-                itr->second->send(packet);
-            }
-        SDL_UnlockMutex(pimpl_->dataAccess);
+        ScopedMutexLock(pimpl_->dataAccess);
+        for( ConnectionsList::iterator itr = pimpl_->users.begin();
+                itr != pimpl_->users.end();
+                ++itr   ){
+            itr->second->send(packet);
+        }
     }
 
     void ConnectionGroup::sendAllBar(const inp::INFPacket& packet, const inp::Connection* bar){
-        SDL_LockMutex(pimpl_->dataAccess);
-            for(    ConnectionsList::iterator itr = pimpl_->users.begin();
-                    itr != pimpl_->users.end();
-                    ++itr   ){
-                if( itr->second != bar ){
-                    itr->second->send(packet);
-                }
+        ScopedMutexLock(pimpl_->dataAccess);
+        for(    ConnectionsList::iterator itr = pimpl_->users.begin();
+                itr != pimpl_->users.end();
+                ++itr   ){
+            if( itr->second != bar ){
+                itr->second->send(packet);
             }
-        SDL_UnlockMutex(pimpl_->dataAccess);
+        }
     }
 
     void ConnectionGroup::sendAllBar(const inp::INFPacket& packet, const std::string& bar){
-        SDL_LockMutex(pimpl_->dataAccess);
-            for(    ConnectionsList::iterator itr = pimpl_->users.begin();
-                    itr != pimpl_->users.end();
-                    ++itr   ){
-                if( itr->first != bar ){
-                    itr->second->send(packet);
-                }
+        ScopedMutexLock(pimpl_->dataAccess);
+        for(    ConnectionsList::iterator itr = pimpl_->users.begin();
+                itr != pimpl_->users.end();
+                ++itr   ){
+            if( itr->first != bar ){
+                itr->second->send(packet);
             }
-        SDL_UnlockMutex(pimpl_->dataAccess);
+        }
     }
 }

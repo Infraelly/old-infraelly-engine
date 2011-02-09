@@ -49,6 +49,8 @@ struct GameConfig{
         static bool saveXml(const std::string &filename);
         static bool loadXml(const std::string &filename);
 
+        //  Logs
+        static bool logging;
 
         //  Game speed
         static const int fps;

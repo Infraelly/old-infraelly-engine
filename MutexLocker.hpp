@@ -39,78 +39,130 @@
 L-----------------------------------------------------------------------------*/
 
 
-#ifndef MUTEXLOCKER_HPP_INCLUDED
-#define MUTEXLOCKER_HPP_INCLUDED
+#ifndef MUTEXED_HPP_INCLUDED
+#define MUTEXED_HPP_INCLUDED
 
-#include <iostream>
+#include "logOut.hpp"
 
-#include <SDL/SDL.h>
+#include "SDL/SDL_thread.h"
 
 
 /*******************************************************************************
-in teh making
-                                MutexLocker
+                                    MutexLocker
 
-    A simple class that will lock the mutex passed to it, and release it
-    upon destruction. Supposed to have been the auto_ptr of mutexes.
-
-    Turned out quite useless.
+    Locks a mutex. unlocks mutex when lock object goes out of scope.
 
 *******************************************************************************/
 
+//conveinience macro
+#define ScopedMutexLock(x) MutexLocker safeLockedMutex(x);
+
 class MutexLocker{
     public:
-        MutexLocker(SDL_mutex* m) : mutex(m) {
-            if( SDL_mutexP(mutex) == -1 ){
+        MutexLocker(SDL_mutex* m) : mutex_(m) {
+            if( SDL_mutexP(mutex_) == -1 ){
                 std::cerr << __FILE__ << " " << __LINE__ << ": " << "SDL_mutexP(mutex): " << SDL_GetError() << std::endl;
             }
         }
 
         //  Copying transfers respoinsiblity
         MutexLocker(MutexLocker& rhs){
-            mutex = rhs.mutex;
-            rhs.mutex = NULL;
+            mutex_ = rhs.mutex_;
+            rhs.mutex_ = NULL;
         }
 
         //  Asigning transfers respoinsiblity
         MutexLocker& operator=(MutexLocker& rhs){
             if( &rhs != this ){
-                mutex = rhs.mutex;
-                rhs.mutex = NULL;
+                mutex_ = rhs.mutex_;
+                rhs.mutex_ = NULL;
             }
             return *this;
         }
 
-
         //  Stops managing the mutex
-        void clear(){ mutex = NULL; }
+        void clear(){ mutex_ = NULL; }
 
         //  Unlocks mutex then stops managing it
         void release(){
-            if( mutex != NULL ){
-                if( SDL_mutexV(mutex) == -1 ){
+            if( mutex_ != NULL ){
+                if( SDL_mutexV(mutex_) == -1 ){
                     std::cerr << __FILE__ << " " << __LINE__ << ": " << "SDL_mutexV(mutex): " << SDL_GetError() << std::endl;
                 }
-                mutex = NULL;
+                mutex_= NULL;
             }
         }
-
 
         ~MutexLocker(){
-            if( mutex != NULL ){
-                if( SDL_mutexV(mutex) == -1 ){
+            if( mutex_ != NULL ){
+                if( SDL_mutexV(mutex_) == -1 ){
                     std::cerr << __FILE__ << " " << __LINE__ << ": " << "SDL_mutexV(mutex): " << SDL_GetError() << std::endl;
                 }
             }
         }
 
-
     private:
-        SDL_mutex* mutex;
+        SDL_mutex* mutex_;
 };
 
-//conveinience macro
-#define SafeLock(x) MutexLocker safeLockedMutex(x);
+
+/*******************************************************************************
+                                    Mutexed
+
+    Associates any object with an SDL_Mutex.
+
+    Achieves the same effect as pair<T, SDL_mutex>
+
+    Its a cheap way of protecting an object with a mutex.
+
+*******************************************************************************/
+
+template<typename T>
+class Mutexed{
+    public:
+        Mutexed() :
+            access(SDL_CreateMutex()),
+            locked(false),
+            data_(new T)
+        {}
+
+        virtual ~Mutexed(){
+            SDL_DestroyMutex(access);
+            access = NULL;
+            delete data_;
+            data_ = NULL;
+        }
+
+        /*void operator=(T& o)throw(){
+            SDL_LockMutex(access);
+            if( &o != data_ ){
+                *data_ = o;
+            }
+            SDL_UnlockMutex(access);
+        }*/
 
 
-#endif // MUTEXLOCKER_HPP_INCLUDED
+        void lock(){
+            if(locked){ std::cout << "Double locked"; }
+            SDL_LockMutex(access);
+            locked = true;
+        }
+
+        void unlock(){
+            if(!locked){ std::cout << "Double unlocked"; }
+            locked = false;
+            SDL_LockMutex(access);
+
+        }
+
+        T& data(){ return *data_; }
+
+
+    protected:
+        T *data_;
+        SDL_mutex *access;
+        bool locked;
+};
+
+
+#endif // MUTEXED_HPP_INCLUDED

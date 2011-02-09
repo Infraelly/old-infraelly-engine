@@ -13,3 +13,6 @@ dataFilelist.txt
 stderr.txt
 stdout.txt
 .objs/
+logOut.txt
+logErr.txt
+logDbg.txt
