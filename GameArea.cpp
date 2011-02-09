@@ -166,7 +166,7 @@ void GameArea::sendAll(const inp::INFPacket& pack){
 
 // runs map (non-blocking)
 int GameArea::logic(){
-    if( drop ){
+    if( drop || !connections_.empty() ){
         int lol_im_a_break_point = 1231;
     }
     int dropped = 0;

@@ -60,7 +60,6 @@ namespace inp{
         ++pimpl_->refCount;
         pimpl_->userSocket = newUserSocket;
         makeSet(1);
-        addSocketToSet();
     }
 
 
@@ -68,7 +67,9 @@ namespace inp{
         ++pimpl_->refCount;
         pimpl_->group = newGroup;
         pimpl_->userSocket = newUserSocket;
-        addSocketToSet();
+        if( newGroup && newUserSocket ){
+            SDLNet_TCP_AddSocket(pimpl_->group, pimpl_->userSocket);
+        }
     }
 
     Connection::Connection(const Connection& src){
@@ -96,12 +97,14 @@ namespace inp{
         --pimpl_->refCount;
         if( pimpl_->refCount == 0 ){
             if( pimpl_->group != NULL ){
-                SDLNet_TCP_DelSocket(pimpl_->group, pimpl_->userSocket);
+                if( pimpl_->userSocket ){
+                    SDLNet_TCP_DelSocket(pimpl_->group, pimpl_->userSocket);
+                }
                 if( pimpl_->createdSet ){
                     SDLNet_FreeSocketSet(pimpl_->group);
+                    pimpl_->createdSet = 0;
                 }
                 pimpl_->group = NULL;
-                pimpl_->createdSet = 0;
             }
             if( pimpl_->userSocket != NULL ){
                 SDLNet_TCP_Close( pimpl_->userSocket );
@@ -125,14 +128,12 @@ namespace inp{
     int Connection::init(IPaddress *ip){
         if( connect(ip) == -1 ){ return -1; }
         makeSet(1);
-        addSocketToSet();
         return 1;
     }
 
     int Connection::init(const std::string& host, int port){
         if( connect(host, port) == -1 ){ return -1; }
         makeSet(1);
-        addSocketToSet();
         return 1;
     }
 
@@ -144,7 +145,6 @@ namespace inp{
         }
         if( connect(&ip) == -1 ){ return -1; }
         makeSet(1);
-        addSocketToSet();
         return 1;
     }
 
@@ -154,87 +154,73 @@ namespace inp{
 
     int Connection::connect(){
         ScopedMutexLock(pimpl_->dataAccess);
+        if( pimpl_->peer == NULL ){ return -1; }
         //make sure is dissconected
         if( pimpl_->userSocket != NULL ){
             SDLNet_TCP_Close( pimpl_->userSocket );
             pimpl_->userSocket = NULL;
         }
-        pimpl_->active = false;
-        pimpl_->connectTime = 0;
         //  connect to peer ( if there is one )
-        if( pimpl_->peer != NULL ){
-            pimpl_->userSocket = SDLNet_TCP_Open(pimpl_->peer);
-            if( pimpl_->userSocket == NULL ){
-                std::cerr << __FILE__ << " " << __LINE__ << ": " << "SDLNet_TCP_Open: " << SDLNet_GetError() << std::endl;
-                pimpl_->active = false;
-                pimpl_->connectTime = 0;
-                return -1;
-            }
-            pimpl_->active = true;
-            pimpl_->connectTime = SDL_GetTicks();
+        pimpl_->userSocket = SDLNet_TCP_Open(pimpl_->peer);
+        if( pimpl_->userSocket == NULL ){
+            std::cerr << __FILE__ << " " << __LINE__ << ": " << "SDLNet_TCP_Open: " << SDLNet_GetError() << std::endl;
+            pimpl_->active = false;
+            pimpl_->connectTime = 0;
+            return -1;
         }
+        pimpl_->active = true;
+        pimpl_->connectTime = SDL_GetTicks();
         return 1;
     }
 
     int Connection::connect(IPaddress *ip){
+        if( ip == NULL ){ return -1; }
         ScopedMutexLock(pimpl_->dataAccess);
         //make sure is dissconected
         if( pimpl_->userSocket != NULL ){
             SDLNet_TCP_Close( pimpl_->userSocket );
             pimpl_->userSocket = NULL;
         }
-        pimpl_->active = false;
-        pimpl_->connectTime = 0;
         // connect to ip (if one is stored)
-        if( ip != NULL ){
-            pimpl_->userSocket = SDLNet_TCP_Open(ip);
-            if( pimpl_->userSocket == NULL ){
-                std::cerr << __FILE__ << " " << __LINE__ << ": " << "SDLNet_TCP_Open: " << SDLNet_GetError() << std::endl;
-                pimpl_->active = false;
-                pimpl_->connectTime = 0;
-                return -1;
-            }
-            pimpl_->peer = SDLNet_TCP_GetPeerAddress(pimpl_->userSocket);
-            pimpl_->active = true;
-            pimpl_->connectTime = SDL_GetTicks();
-            return 1;
-        }
-        return -1;
-    }
-
-    int Connection::connect(std::string host, int port){
-        ScopedMutexLock(pimpl_->dataAccess);
-        //make sure is dissconected
-        if( pimpl_->userSocket != NULL ){
-            SDLNet_TCP_Close( pimpl_->userSocket );
-            pimpl_->userSocket = NULL;
-        }
-        pimpl_->active = false;
-        pimpl_->connectTime = 0;
-        if( (port != 0) && (!isSpace(host)) ){
-            IPaddress ip;
-            if( SDLNet_ResolveHost(&ip, host.c_str(), port) == -1 ){
-                std::cerr << __FILE__ << " " << __LINE__ << ": " << "SDLNet_ResolveHost: " << SDLNet_GetError() << std::endl;
-                pimpl_->active = false;
-                pimpl_->connectTime = 0;
-                return -1;
-            }
-            pimpl_->userSocket = SDLNet_TCP_Open(&ip);
-            if( pimpl_->userSocket == NULL ){
-                std::cerr << __FILE__ << " " << __LINE__ << ": " << "SDLNet_TCP_Open: " << SDLNet_GetError() << std::endl;
-                pimpl_->active = false;
-                pimpl_->connectTime = 0;
-                return -1;
-            }
-            pimpl_->peer = SDLNet_TCP_GetPeerAddress(pimpl_->userSocket);
-            pimpl_->active = true;
-            pimpl_->connectTime = SDL_GetTicks();
-            return 1;
-        } else {
-            std::cerr << __FILE__ << " " << __LINE__ << ": " << "Connection::connect(string, int): Port can't be 0. Host can't be whitespace." << std::endl;
+        pimpl_->userSocket = SDLNet_TCP_Open(ip);
+        if( pimpl_->userSocket == NULL ){
+            std::cerr << __FILE__ << " " << __LINE__ << ": " << "SDLNet_TCP_Open: " << SDLNet_GetError() << std::endl;
             pimpl_->active = false;
             pimpl_->connectTime = 0;
+            return -1;
         }
+        pimpl_->peer = SDLNet_TCP_GetPeerAddress(pimpl_->userSocket);
+        pimpl_->active = true;
+        pimpl_->connectTime = SDL_GetTicks();
+        return 1;
+    }
+
+    int Connection::connect(const std::string &host, int port){
+        if( (port == 0) || isSpace(host) ){
+            std::cerr << __FILE__ << " " << __LINE__ << ": " << "Connection::connect(string, int): Port can't be 0. Host can't be whitespace." << std::endl;
+            return -1;
+        }
+        IPaddress ip;
+        if( SDLNet_ResolveHost(&ip, host.c_str(), port) == -1 ){
+            std::cerr << __FILE__ << " " << __LINE__ << ": " << "SDLNet_ResolveHost: " << SDLNet_GetError() << std::endl;
+            return -1;
+        }
+        ScopedMutexLock(pimpl_->dataAccess);
+        //make sure is dissconected
+        if( pimpl_->userSocket != NULL ){
+            SDLNet_TCP_Close( pimpl_->userSocket );
+            pimpl_->userSocket = NULL;
+        }
+        pimpl_->userSocket = SDLNet_TCP_Open(&ip);
+        if( pimpl_->userSocket == NULL ){
+            std::cerr << __FILE__ << " " << __LINE__ << ": " << "SDLNet_TCP_Open: " << SDLNet_GetError() << std::endl;
+            pimpl_->active = false;
+            pimpl_->connectTime = 0;
+            return -1;
+        }
+        pimpl_->peer = SDLNet_TCP_GetPeerAddress(pimpl_->userSocket);
+        pimpl_->active = true;
+        pimpl_->connectTime = SDL_GetTicks();
         return 1;
     }
 
@@ -255,35 +241,37 @@ namespace inp{
 
     int Connection::checkSet(int timeout){
         ScopedMutexLock(pimpl_->dataAccess);
-        if( pimpl_->active ){
-            if( pimpl_->group != NULL ){
-                int num = SDLNet_CheckSockets(pimpl_->group, timeout);
-                if( num != -1 ){
-                    pimpl_->active = true;
-                    return num;
-                }
+        if( pimpl_->group != NULL ){
+            int num = SDLNet_CheckSockets(pimpl_->group, timeout);
+            if( num == -1 ){
+                pimpl_->active = false;
+                pimpl_->connectTime = 0;
+            } else {
+                pimpl_->active = true;
             }
-            pimpl_->active = false;
-            pimpl_->connectTime = 0;
+            return num;
         }
-        return -1;
+        return -2;  //  not in set
     }
 
-    int Connection::checkSocket(){
+    int Connection::checkSocket(bool checkSetFirst){
+        if( checkSetFirst ){
+            int num = checkSet();
+            if( num == -1 || num == 0 ){ return num; }
+        }
         ScopedMutexLock(pimpl_->dataAccess);
-        if( pimpl_->active ){
-            if( (pimpl_->group != NULL) && (pimpl_->userSocket != NULL) ){
-                if( SDLNet_CheckSockets(pimpl_->group, 0) != -1 ){
-                    if( SDLNet_SocketReady(pimpl_->userSocket) ){
-                        pimpl_->active = true;
-                        return 1;
-                    }
-                }
+        int val;
+        if( (pimpl_->group != NULL) && (pimpl_->userSocket != NULL) ){
+            if( SDLNet_CheckSockets(pimpl_->group, 100) != -1 ){
+                val = SDLNet_SocketReady(pimpl_->userSocket);
             }
+        }
+        if( val == -1 ){
             pimpl_->active = false;
             pimpl_->connectTime = 0;
+            return -1;
         }
-        return -1;
+        return val;
     }
 
 
@@ -291,6 +279,7 @@ namespace inp{
     std::auto_ptr<Connection> Connection::accept(){
         ScopedMutexLock(pimpl_->dataAccess);
         if( pimpl_->userSocket == NULL){
+            std::cerr << __FILE__ << " " << __LINE__ << ": " << "Connection::accept(): cant accept from a null socket" << std::endl;
             return std::auto_ptr<Connection> (NULL);
         }
         TCPsocket sock = SDLNet_TCP_Accept(pimpl_->userSocket);
@@ -323,31 +312,23 @@ namespace inp{
             //  Send packets in list
             for(size_t i = 0; i < packList.size(); ++i ){
                 if( !packList[i].empty() ){
-                    if( SDLNet_TCP_Send( pimpl_->userSocket,
-                                         &packList[i][0],
-                                         packList[i].size()   ) <
-                        packList[i].size() )
+                    //check if everything went through
+                    if( SDLNet_TCP_Send( pimpl_->userSocket, &packList[i][0], packList[i].size() ) < packList[i].size() )
                     {
-                        if( pimpl_->userSocket != NULL ){
-                            SDLNet_TCP_Close( pimpl_->userSocket );
-                            pimpl_->userSocket = NULL;
-                        }
+                        SDLNet_TCP_Close( pimpl_->userSocket );
+                        pimpl_->userSocket = NULL;
                         pimpl_->peer = NULL;
                         pimpl_->active = false;
                         pimpl_->connectTime = 0;
                         pimpl_->lastSent.clear();
                         return -1;
-                    } else {
-                        pimpl_->active = true;
-
                     }
                 }
             }
             pimpl_->lastSent = packList;
         } else {
-            pimpl_->active = false;
             pimpl_->connectTime = 0;
-            return 1;
+            return -1;
         }
         return 1;
     }
@@ -364,11 +345,12 @@ namespace inp{
             int numReady;
 
             while( (SDL_GetTicks()-startTime) < ms ){
-                numReady = SDLNet_CheckSockets(pimpl_->group, 1);
+                numReady = SDLNet_CheckSockets(pimpl_->group, 10);
                 if( numReady == -1 ){ break; }
                 if( numReady == 1 ){
                     if( SDLNet_SocketReady(pimpl_->userSocket) ){
-                        if( SDLNet_TCP_Recv(pimpl_->userSocket, data, 1) <= 0 ) {
+                        int val = SDLNet_TCP_Recv(pimpl_->userSocket, data, 1);
+                        if( val <= 0 ) {    // 0 = d/c by peer
                             if( pimpl_->userSocket != NULL ){
                                 SDLNet_TCP_Close( pimpl_->userSocket );
                                 pimpl_->userSocket = NULL;
@@ -376,7 +358,9 @@ namespace inp{
                             pimpl_->peer = NULL;
                             pimpl_->active = false;
                             pimpl_->connectTime = 0;
-                            std::cerr << __FILE__ << " " << __LINE__ << ": " << "SDLNet_TCP_Recv(): "<< SDLNet_GetError() << std::endl;
+                            if( val == -1 ){
+                                std::cerr << __FILE__ << " " << __LINE__ << ": " << "SDLNet_TCP_Recv(): "<< SDLNet_GetError() << std::endl;
+                            }
                             if( lockMutex ){ SDL_UnlockMutex(pimpl_->dataAccess); }
                             return -1;
                         } else {
@@ -399,99 +383,96 @@ namespace inp{
 
     int Connection::recv(inp::INFPacket& dest){
         ScopedMutexLock(pimpl_->dataAccess);
-        if( pimpl_->userSocket != NULL ){
-            //make sure thers something to recieved
-            if( (pimpl_->group != NULL) && (pimpl_->userSocket != NULL) ){
-                if( SDLNet_CheckSockets(pimpl_->group, 0) != -1 ){
-                    if( SDLNet_SocketReady(pimpl_->userSocket) ){
-                        pimpl_->active = true;
-                    }
-                }
-            } else {
-                pimpl_->active = false;
-                pimpl_->connectTime = 0;
-                return 0;
-            }
-
-            dest.clear();
-            Uint8 temp = 0;
-            Uint8 len_buf[2];
-            Uint16 len = 0;
-            bool recieving = true;
-
-            //get header byte
-            if( recvOne( &temp, 1000, false ) == -1 ){ return -1; }
-
-            //  check if the header byte is a start packet
-            if( temp != ControlByte::START  ){ return 0; }
-
-            //begin getting body of data
-            while( recieving ){
-                //  This should be 2 bytes stating length of segment
-                for(unsigned i = 0; i < 2; ++i){
-                    if( recvOne( &len_buf[i], 1000, false ) == -1 ){
-                        return -1;
-                    }
-                }
-                len  = SDLNet_Read16(len_buf);
-
-                //try to get "len" amount of bytes
-                for(unsigned i = 0; i < len; ++i){
-                    if( recvOne( &temp, 1000, false ) == -1 ){
-                        return -1;
-                    } else {
-                        dest.data.push_back(temp);
-                    }
-                }
-
-                //  This shud be a wait_more/end
-                if( recvOne( &temp, 1000, false ) == -1 ){ return -1; }
-                if( (temp == ControlByte::CONTINUE ) ||
-                    (temp == ControlByte::WAIT_MORE )  )
-                {
-                    continue;
-                } else
-                // Slab already started.
-                //   this is a malformed transmission
-                if( (temp == ControlByte::START) ||
-                    (temp == ControlByte::END)  )  //stop if this is the end
-                {
-                    recieving = false;
-                } else {
-                    // some bull shit happened here =/
-                    recieving = false;
-                }
-            }
-            pimpl_->lastRecv = dest;
-        } else { // pimpl_->userSocket != NULL
+        //make sure thers something to recieved
+        if( (pimpl_->group == NULL)       ||
+            (pimpl_->userSocket == NULL)  || (pimpl_->userSocket == NULL)  ||
+            (SDLNet_CheckSockets(pimpl_->group, 0) == -1)  )
+        {
             pimpl_->active = false;
             pimpl_->connectTime = 0;
+            return -1;
         }
+
+        if( !SDLNet_SocketReady(pimpl_->userSocket) ){ return 0; } //no activity
+
+        dest.clear();
+        Uint8 temp = 0;
+        Uint8 len_buf[2];
+        Uint16 len = 0;
+        bool recieving = true;
+
+        //get header byte
+        if( recvOne( &temp, 1000, false ) == -1 ){ return -1; }
+
+        //  check if the header byte is a start packet
+        if( temp != ControlByte::START  ){ return -1; }
+
+        //begin getting body of data
+        while( recieving ){
+            //  This should be 2 bytes stating length of segment
+            for(unsigned i = 0; i < 2; ++i){
+                if( recvOne( &len_buf[i], 1000, false ) == -1 ){
+                    return -1;
+                }
+            }
+            len  = SDLNet_Read16(len_buf);
+
+            //try to get "len" amount of bytes
+            for(unsigned i = 0; i < len; ++i){
+                if( recvOne( &temp, 1000, false ) == -1 ){
+                    return -1;
+                } else {
+                    dest.data.push_back(temp);
+                }
+            }
+
+            //  This shud be a wait_more/end
+            if( recvOne( &temp, 1000, false ) == -1 ){ return -1; }
+            if( (temp == ControlByte::CONTINUE ) ||
+                (temp == ControlByte::WAIT_MORE )  )
+            {
+                continue;
+            } else
+            // Slab already started.
+            //   this is a malformed transmission
+            if( (temp == ControlByte::START) ||
+                (temp == ControlByte::END)  )  //stop if this is the end
+            {
+                recieving = false;
+            } else {
+                // some bull shit happened here =/
+                recieving = false;
+            }
+        }
+        pimpl_->lastRecv = dest;
         return 1;
     }
 
     int Connection::recvWait(inp::INFPacket& dest, Uint32 ms){
-        ScopedMutexLock(pimpl_->dataAccess);
-        if( (pimpl_->group != NULL) && (pimpl_->userSocket != NULL) ){
-            Uint32 startTime = SDL_GetTicks();
-            int numReady;
-            while( (SDL_GetTicks()-startTime) < ms ){
-                numReady = SDLNet_CheckSockets(pimpl_->group, 0);
-                if( numReady != -1 ){
-                    if( SDLNet_SocketReady(pimpl_->userSocket) ){
-                        pimpl_->active = true;
-                        return recv(dest);
-                    }
-                } else {
-                    pimpl_->active = false;
-                    pimpl_->connectTime = 0;
-                    break;
-                }
-            }
-        } else {
-            pimpl_->active = false;
+        SDL_LockMutex(pimpl_->dataAccess);
+        if( (pimpl_->group == NULL) || (pimpl_->userSocket == NULL)  )
+        {
             pimpl_->connectTime = 0;
+            SDL_UnlockMutex(pimpl_->dataAccess);
+            return -1;
         }
+
+        Uint32 startTime = SDL_GetTicks();
+        int numReady;
+        while( (SDL_GetTicks()-startTime) < ms ){
+            numReady = SDLNet_CheckSockets(pimpl_->group, 10);
+            if( numReady == -1 ){
+                pimpl_->active = false;
+                pimpl_->connectTime = 0;
+                break;
+            }
+            if( SDLNet_SocketReady(pimpl_->userSocket) ){
+                pimpl_->active = true;
+                SDL_UnlockMutex(pimpl_->dataAccess);
+                return recv(dest);
+            }
+        }
+        SDL_UnlockMutex(pimpl_->dataAccess);
         return -1;
     }
 
@@ -546,20 +527,32 @@ namespace inp{
 
 
 
-    void Connection::setSocketSet(const SDLNet_SocketSet& newGroup){
+    int Connection::setSocketSet(const SDLNet_SocketSet& newGroup){
         ScopedMutexLock(pimpl_->dataAccess);
+        if( pimpl_->group == newGroup ){ return 1; }
+        //remove from old group
+        if( pimpl_->userSocket && pimpl_->group ){
+            SDLNet_TCP_DelSocket(pimpl_->group, pimpl_->userSocket);
+        } else {
+            return -1;
+        }
+        //if internal set was used, free it (its no longer needed)
         if( pimpl_->createdSet ){
             SDLNet_FreeSocketSet(pimpl_->group);
             pimpl_->group = NULL;
             pimpl_->createdSet = false;
         }
         pimpl_->group = newGroup;
+        SDLNet_TCP_AddSocket(pimpl_->group, pimpl_->userSocket);
+        return 1;
     }
 
     void Connection::setSocket(const TCPsocket& newUserSocket){
         ScopedMutexLock(pimpl_->dataAccess);
         pimpl_->userSocket = newUserSocket;
         pimpl_->peer = SDLNet_TCP_GetPeerAddress(pimpl_->userSocket);
+        pimpl_->active = true;
+        pimpl_->connectTime = SDL_GetTicks();
     }
 
     void Connection::setPeer(IPaddress* newPeer){
@@ -580,41 +573,42 @@ namespace inp{
 
     void Connection::makeSet(int max){
         ScopedMutexLock(pimpl_->dataAccess);
-        if( pimpl_->group == NULL ){
-            if( pimpl_->createdSet ){
-                SDLNet_FreeSocketSet(pimpl_->group);
-                pimpl_->group = NULL;
-            }
-            pimpl_->group = SDLNet_AllocSocketSet(max);
-            if( pimpl_->group == NULL ){
-                std::cerr << __FILE__ << " " << __LINE__ << ": " << "SDLNet_AllocSocketSet(" << max << "): " << SDLNet_GetError() << std::endl;
-                exit(EXIT_FAILURE);
-            } else {
-                pimpl_->createdSet = 1;
-            }
+        //  remove from old group
+        if( pimpl_->group && pimpl_->userSocket ){
+            SDLNet_TCP_DelSocket(pimpl_->group, pimpl_->userSocket);
         }
-    }
-
-    void Connection::addSocketToSet(){
-        ScopedMutexLock(pimpl_->dataAccess);
-        if( (pimpl_->group != NULL) && (pimpl_->userSocket != NULL) ){
-            SDLNet_TCP_AddSocket(pimpl_->group, pimpl_->userSocket);
+        //  if internal set was used, destroy it
+        if( pimpl_->createdSet ) {
+            SDLNet_FreeSocketSet(pimpl_->group);
+            pimpl_->group = NULL;
+            pimpl_->createdSet = false;
+        }
+        //create new set
+        pimpl_->group = SDLNet_AllocSocketSet(max);
+        if( pimpl_->group == NULL ){
+            std::cerr << __FILE__ << " " << __LINE__ << ": " << "SDLNet_AllocSocketSet(" << max << "): " << SDLNet_GetError() << std::endl;
+            exit(EXIT_FAILURE);
+        } else {
+            // add self to new group
+            if( pimpl_->userSocket ){
+                SDLNet_TCP_AddSocket(pimpl_->group, pimpl_->userSocket);
+            }
+            pimpl_->createdSet = 1;
         }
     }
 
     void Connection::cleanSet(){
         ScopedMutexLock(pimpl_->dataAccess);
-        SDLNet_TCP_DelSocket(pimpl_->group, pimpl_->userSocket);
+        //remove from set
+        if( pimpl_->group && pimpl_->userSocket ){
+            SDLNet_TCP_DelSocket(pimpl_->group, pimpl_->userSocket);
+        }
+        //  clean up
         if( pimpl_->createdSet == 1 ){
             SDLNet_FreeSocketSet(pimpl_->group);
-            pimpl_->group = NULL;
             pimpl_->createdSet = 0;
         }
-    }
-
-    void Connection::removeSocketFromSet(){
-        ScopedMutexLock(pimpl_->dataAccess);
-        SDLNet_TCP_DelSocket(pimpl_->group, pimpl_->userSocket);
+        pimpl_->group = NULL;
     }
 
 

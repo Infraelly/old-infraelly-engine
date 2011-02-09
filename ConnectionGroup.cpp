@@ -239,12 +239,10 @@ namespace inp{
                     pimpl_->sSet = largerSet;
                 }
 
-                //if connection is part of private group, remove it
-// needs attn---------->//c->cleanSet();
                 //add to list
                 pimpl_->users[key] = c;
                 //add to sSet
-                if( SDLNet_TCP_AddSocket(pimpl_->sSet, c->getSocket()) == -1 ){
+                if( c->setSocketSet( pimpl_->sSet ) == -1 ){
                     cerr << __FILE__ << __LINE__ << ": ";
                     cerr << "SDLNet_AddSocket: " << SDLNet_GetError() << endl;
                 } else {
@@ -266,12 +264,8 @@ namespace inp{
         ScopedMutexLock(pimpl_->dataAccess);
         if( pimpl_->users.find(key) != pimpl_->users.end() ){
             //remove from set
-            if(SDLNet_TCP_DelSocket(pimpl_->sSet, pimpl_->users[key]->getSocket()) == -1){
-                cerr << __FILE__ << __LINE__ << ": ";
-                cerr << "SDLNet_DelSocket: " << SDLNet_GetError() << endl;
-            } else {
-                --pimpl_->socksInSet;
-            }
+            pimpl_->users[key]->cleanSet();
+            --pimpl_->socksInSet;
             //  Disconnect Connections
             pimpl_->users[key]->disconnect();
             //  Free Connections' memory
@@ -291,13 +285,8 @@ namespace inp{
     void ConnectionGroup::remove(const std::string& key){
         ScopedMutexLock(pimpl_->dataAccess);
         //remove from set
-        if(SDLNet_TCP_DelSocket(pimpl_->sSet, pimpl_->users[key]->getSocket()) == -1){
-            cerr << __FILE__ << __LINE__ << ": ";
-            cerr << "SDLNet_DelSocket: " << SDLNet_GetError() << endl;
-        } else {
-            --pimpl_->socksInSet;
-        }
         pimpl_->users[key]->cleanSet();
+        --pimpl_->socksInSet;
         pimpl_->users[key]->makeSet();
         //remove entry
         pimpl_->users.erase(key);

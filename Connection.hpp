@@ -94,13 +94,25 @@ namespace inp{
 
             int connect();
             int connect(IPaddress *ip);
-            int connect(std::string host, int port);
+            int connect(const std::string &host, int port);
             void disconnect();
 
-            int checkSet(int timeout = 20);
-            int checkSocket();
 
-            //for servers
+            //  Checks if there are any sockets ready to be read in the same
+            //      SocketSet as this one.
+            //  Returns the number of sockects ready, or -1 on error.
+            //  -2 is returned if Socket is not in a SocketSet exists.
+            int checkSet(int timeout = 200);
+            //  Check Set MUST be called first
+            //  if checkSetFirst is true, checkSet will automaticly be called first
+            //  Checks if the socket is ready to be read.
+            //  Returns non 0 on success and -1 on failure
+            int checkSocket(bool checkSetFirst = true);
+
+
+            //  For servers
+            //  Accepts incomming connections.
+            //  Returns the newly connected Connection, or NULL on error
             std::auto_ptr<Connection> accept();
 
             //  returns -1 on error (disconnection or corrupt packet)
@@ -115,27 +127,46 @@ namespace inp{
             int recvWait(inp::INFPacket& dest, Uint32 ms);
 
 
+            //  Returns the SocketSet the socket is in
             SDLNet_SocketSet getSocketSet()const;
+            //  Returns the underlying socket
             TCPsocket getSocket()const;
+            //  Returns the peer the socket is connected to
             IPaddress getPeer()const;
+            //if a connection is ever inactive, it probably means an error has
+            //  occured and it probbaly shud be disconected.
             bool isActive()const;
-           // std::string getUsername()const;
+            //  Returns the time the connection was established
             Uint32 getConnectTime()const;
+            //  Returns the time the connection has been established for
             Uint32 getTimeConnected()const;
 
-            void setSocketSet(const SDLNet_SocketSet& group);
+
+            //  Adds socket to the given socket set
+            //  If it was already part of a group, it will be removed from the
+            //     old group and aded to the new one.
+            int setSocketSet(const SDLNet_SocketSet& group);
+            //  Sets the underlying socket.
+            //  This will NOT disconnect the old one first
             void setSocket(const TCPsocket& userSocket);
+            //  Sets the Connection's peer.
+            //  This is for making new outbound connections
             void setPeer(IPaddress* peer);
+            //  Sets the active state of the Connection
             void setActive(bool value);
 
+
+            //  Makes a SocketSet and adds the socket to it
+            //  This will remove the socket from any set it was apart of prior
             void makeSet(int max = 1);
+            //  Removes socket from set and if internal socket set was used,
+            //      free memory. If an external socket set was provided, this will
+            //      only remove the socket from the set.
             void cleanSet();
 
-            void addSocketToSet();
-            void removeSocketFromSet();
-
-
+            //  Give the Connection an id
             void setId(const std::string& newId);
+            //  Returns the Connection's id
             std::string getId();
 
 
