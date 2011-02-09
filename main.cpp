@@ -152,6 +152,7 @@ int main(int argc, char *argv[]){
                 break;
 
             case SERVER:
+                Screen::resize(550, 450);
                 ServerContext();
                 break;
 

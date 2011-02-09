@@ -244,7 +244,7 @@ void init(){
     /*************************************************************
 
                         SDL addons
-ů
+
     *************************************************************/
     /*------------------------------------------
                 initiallise SDL_mixer
@@ -374,9 +374,9 @@ void init(){
     InfraellyMixer::stopMusic();
     InfraellyMixer::clearMusicQueue();
 
-    // so that when the window is resized it wont snap to the center of the
+    // hopefully so that when the window is resized it wont snap to the center of the
     // screen, i find it annoying when it does that.
-    putenv((char*)"SDL_VIDEO_CENTERED=0");
+    putenv((char*)"SDL_VIDEO_CENTERED=");
 }
 
 

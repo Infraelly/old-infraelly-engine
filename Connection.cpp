@@ -351,10 +351,10 @@ namespace inp{
                     if( SDLNet_SocketReady(pimpl_->userSocket) ){
                         int val = SDLNet_TCP_Recv(pimpl_->userSocket, data, 1);
                         if( val <= 0 ) {    // 0 = d/c by peer
-                            if( pimpl_->userSocket != NULL ){
+                           /* if( pimpl_->userSocket != NULL ){
                                 SDLNet_TCP_Close( pimpl_->userSocket );
                                 pimpl_->userSocket = NULL;
-                            }
+                            }*/
                             pimpl_->peer = NULL;
                             pimpl_->active = false;
                             pimpl_->connectTime = 0;
@@ -600,7 +600,7 @@ namespace inp{
     void Connection::cleanSet(){
         ScopedMutexLock(pimpl_->dataAccess);
         //remove from set
-        if( pimpl_->group && pimpl_->userSocket ){
+        if( pimpl_->group ){
             SDLNet_TCP_DelSocket(pimpl_->group, pimpl_->userSocket);
         }
         //  clean up

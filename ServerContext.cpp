@@ -147,24 +147,26 @@ ServerContext::~ServerContext(){
     listenerThread_.end();
     listenerThread_.waitFinish();
 
-    inp::INFPacket packet;
-    for( int t = 5; t != 0; --t ){
-        Timer timer;
-        timer.start();
-        packet.clear();
-        packet << inp::DataTypeByte::SERVER_MSG << ("Server Shutdown in " + itos(t) + "...");
-        for(size_t i = 0; i < threads_.size(); ++i){
-            threads_.at(i)->sendAll(packet);
+    if( totalOnline() ){
+        inp::INFPacket packet;
+        for( int t = 5; t != 0; --t ){
+            Timer timer;
+            timer.start();
+            packet.clear();
+            packet << inp::DataTypeByte::SERVER_MSG << ("Server Shutdown in " + itos(t) + "...");
+            for(size_t i = 0; i < threads_.size(); ++i){
+                threads_.at(i)->sendAll(packet);
+            }
+            sendConsole("Server Shutdown in " + itos(t) + "...");
+            SDL_LockMutex(consoleAccess_);
+                console_->logic();
+                console_->draw();
+            SDL_UnlockMutex(consoleAccess_);
+            SDL_Flip(screen);
+            Uint32 time = timer.getTime();
+            if( time < 1000 )
+                SDL_Delay( 1000-time );
         }
-        sendConsole("Server Shutdown in " + itos(t) + "...");
-        SDL_LockMutex(consoleAccess_);
-            console_->logic();
-            console_->draw();
-        SDL_UnlockMutex(consoleAccess_);
-        SDL_Flip(screen);
-        Uint32 time = timer.getTime();
-        if( time < 1000 )
-            SDL_Delay( 1000-time );
     }
 
     //Tell threads to stop
@@ -178,8 +180,8 @@ ServerContext::~ServerContext(){
     //  destroy threads
     for( size_t i = 0; i < threads_.size(); ++i ){
         delete threads_.at(i);
-        threads_.at(i) = NULL;
     }
+    threads_.clear();
 
     //  Discconect all players
     //

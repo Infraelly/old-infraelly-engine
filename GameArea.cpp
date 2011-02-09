@@ -59,7 +59,6 @@ GameArea::GameArea(ServerContext *server) :
     server_(server)
 {
     syncTimer.start();
-    drop =0;
 };
 GameArea::GameArea(ServerContext *server, const std::string& mapFilename) :
     access_(SDL_CreateMutex()),
@@ -67,7 +66,6 @@ GameArea::GameArea(ServerContext *server, const std::string& mapFilename) :
 {
     map_.loadMap(mapFilename);
     syncTimer.start();
-    drop =0;
 };
 GameArea::~GameArea(){
     SDL_LockMutex(access_);
@@ -166,9 +164,6 @@ void GameArea::sendAll(const inp::INFPacket& pack){
 
 // runs map (non-blocking)
 int GameArea::logic(){
-    if( drop || !connections_.empty() ){
-        int lol_im_a_break_point = 1231;
-    }
     int dropped = 0;
     INFPacket syncPack;
     CharCon playerCon;
@@ -181,7 +176,6 @@ int GameArea::logic(){
             playerCon.first = activeConList.at(i);                                  //connection
             playerCon.second = players_.find(activeConList.at(i)->getId())->second; //player
             if( handleConnection( playerCon ) == -1 ){
-                drop = true;
                 dropped++;
                 std::string id = playerCon.first->getId();
                 //remove player from playerlist
@@ -262,21 +256,16 @@ int GameArea::handleConnection( CharCon& player ){
         if( numReady == -1 ) {
             std::cerr << __FILE__ << " " << __LINE__ << ": " << "SDLNet_CheckSockets: " << SDLNet_GetError() << std::endl;
             perror("SDLNet_CheckSockets");
-            player.first->disconnect();
-            player.first->setActive(false);
             return -1;
         } else if( numReady > 0 ){
             //  Recieve data and store into "packet"
             if( player.first->recv( packet ) != -1 ) {
                 if( handlePacket(player, packet) == -1 ){
-                    player.first->setActive(false);
                     return -1;
                 }
             } else {
                 //disconect
                 std::cerr << __FILE__ << " " << __LINE__ << ": " << "Disconnecting a player: "+player.first->getId();
-                player.first->disconnect();
-                player.first->setActive(false);
                 return -1;
             }
         }

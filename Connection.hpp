@@ -95,6 +95,7 @@ namespace inp{
             int connect();
             int connect(IPaddress *ip);
             int connect(const std::string &host, int port);
+            //  Disconnects and clears the socket
             void disconnect();
 
 
