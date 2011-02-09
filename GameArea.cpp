@@ -59,6 +59,7 @@ GameArea::GameArea(ServerContext *server) :
     server_(server)
 {
     syncTimer.start();
+    drop =0;
 };
 GameArea::GameArea(ServerContext *server, const std::string& mapFilename) :
     access_(SDL_CreateMutex()),
@@ -66,6 +67,7 @@ GameArea::GameArea(ServerContext *server, const std::string& mapFilename) :
 {
     map_.loadMap(mapFilename);
     syncTimer.start();
+    drop =0;
 };
 GameArea::~GameArea(){
     SDL_LockMutex(access_);
@@ -164,27 +166,32 @@ void GameArea::sendAll(const inp::INFPacket& pack){
 
 // runs map (non-blocking)
 int GameArea::logic(){
+    if( drop ){
+        int lol_im_a_break_point = 1231;
+    }
     int dropped = 0;
     INFPacket syncPack;
     CharCon playerCon;
     std::vector<inp::Connection*> activeConList;
     MutexLocker lock(access_);
     //  Get active connections in a list.
-    if( connections_.checkSockets( 50, activeConList ) ){
+    if( connections_.checkSockets( 1000, activeConList ) ){
         // handle each connection in list
         for(size_t i = 0; i < activeConList.size(); ++i){
             playerCon.first = activeConList.at(i);                                  //connection
             playerCon.second = players_.find(activeConList.at(i)->getId())->second; //player
             if( handleConnection( playerCon ) == -1 ){
-                //tell others user is gone
+                drop = true;
                 dropped++;
-                inp::INFPacket leavePack;
-                leavePack << inp::DataTypeByte::USER_LEFT << playerCon.first->getId();
-                sendAll(leavePack);
+                std::string id = playerCon.first->getId();
                 //remove player from playerlist
-                players_.erase( players_.find(activeConList.at(i)->getId()) );
+                players_.erase( players_.find(id) );
                 delete playerCon.second;
-                connections_.erase( playerCon.first->getId() );
+                connections_.erase( id );
+                //tell others user is gone
+                inp::INFPacket leavePack;
+                leavePack << inp::DataTypeByte::USER_LEFT << id;
+                sendAll(leavePack);
             } else {
                 syncPack << buildSyncPacket(playerCon.second, playerCon.first);
             }

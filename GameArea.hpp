@@ -105,6 +105,7 @@ class GameArea{
 
 
     private:
+        bool drop;
         // Protect non thread safe members
         SDL_mutex *access_;
 

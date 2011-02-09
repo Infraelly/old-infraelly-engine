@@ -91,7 +91,8 @@ namespace inp{
         const NetCode S32 = 16;     //  signed int            (4b)
         const NetCode FPN = 17;     //  floating point number (4b)x2
         const NetCode STR = 18;     //  string
-        const NetCode OTHER = 19;   //Unkown(most likely not a NetCode but data)
+        const NetCode BIN = 19;     //  Binary data.
+        const NetCode OTHER = 20;   //Unkown(most likely not a NetCode but data)
     }
 
 

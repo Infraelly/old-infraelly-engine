@@ -260,6 +260,8 @@ namespace inp{
                         pimpl_->sSet = largerSet;
                     }
 
+                    //if connection is part of private group, remove it
+                    //c->cleanSet();
                     //add to list
                     pimpl_->users[key] = c;
                     //add to sSet
@@ -296,7 +298,6 @@ namespace inp{
                 //  Disconnect Connections
                 pimpl_->users[key]->disconnect();
                 //  Free Connections' memory
-                pimpl_->users[key]->cleanSet();
                 if( pimpl_->users[key] != NULL ){
                     delete pimpl_->users[key];
                     pimpl_->users[key] = NULL;
@@ -320,6 +321,8 @@ namespace inp{
             } else {
                 --pimpl_->socksInSet;
             }
+            pimpl_->users[key]->cleanSet();
+            pimpl_->users[key]->makeSet();
             //remove entry
             pimpl_->users.erase(key);
         SDL_UnlockMutex(pimpl_->dataAccess);
@@ -408,6 +411,27 @@ namespace inp{
                     }
                 }
             }
+            #ifdef DEBUG
+            else {
+                int numConnectionObjects = pimpl_->users.size();
+                if( pimpl_->users.size() > 0 ){
+                    std::cerr << "rval: " << rVal << "\n";
+                    std::cerr << "users.size: " << pimpl_->users.size() << "\n";
+                    std::string erro = SDLNet_GetError();
+                    std::cerr << "sdlnet error: " << erro << std::endl << std::endl;
+                    perror("SDLNet_CheckSockets");
+                    for( ConnectionsList::iterator itr = pimpl_->users.begin();
+                         itr != pimpl_->users.end();
+                         ++itr ){
+                        if( SDLNet_SocketReady(itr->second->getSocket()) ){
+                            activeList.push_back(itr->second);
+                                std::string conId = itr->second->getId();
+                                int break_here = 123123;
+                        }
+                    }
+                }
+            }
+            #endif
         SDL_UnlockMutex(pimpl_->dataAccess);
         return rVal;
     }

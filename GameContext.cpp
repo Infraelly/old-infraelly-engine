@@ -164,7 +164,8 @@ int GameContext::handleIncomingNetwork(){
                 }else
                 //  A player has left
                 if( code == DataTypeByte::USER_LEFT ){
-                    if( username != "" ){
+                    packet >> recvText;
+                    if( recvText != "" ){
                         remotePlayers.erase(recvText);
                     }
                 }else
@@ -317,6 +318,8 @@ int GameContext::handleIncomingNetwork(){
                     packet << DataTypeByte::INP_VER << inp::inp_ver;
                     serverConnection->send(packet);
                     break;
+                } else {
+                    gui->getChatBox()->push_back( "Unhandled Packet:" + itos(code.getVal()) );
                 }
             }//end while(packet.readDone());
             return GOOD;

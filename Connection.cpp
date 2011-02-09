@@ -644,8 +644,9 @@ namespace inp{
                 if( pimpl_->group == NULL ){
                     std::cerr << __FILE__ << " " << __LINE__ << ": " << "SDLNet_AllocSocketSet(" << max << "): " << SDLNet_GetError() << std::endl;
                     exit(EXIT_FAILURE);
+                } else {
+                    pimpl_->createdSet = 1;
                 }
-                pimpl_->createdSet = 1;
             }
         SDL_UnlockMutex(pimpl_->dataAccess);
     }
@@ -661,7 +662,11 @@ namespace inp{
     void Connection::cleanSet(){
         SDL_LockMutex(pimpl_->dataAccess);
             SDLNet_TCP_DelSocket(pimpl_->group, pimpl_->userSocket);
-            SDLNet_FreeSocketSet(pimpl_->group);
+            if( pimpl_->createdSet == 1 ){
+                SDLNet_FreeSocketSet(pimpl_->group);
+                pimpl_->group = NULL;
+                pimpl_->createdSet = 0;
+            }
         SDL_UnlockMutex(pimpl_->dataAccess);
     }
 
