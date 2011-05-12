@@ -54,7 +54,7 @@ L-----------------------------------------------------------------------------*/
 
 #include "globalFunc.hpp"
 
-#include "zlib.h"
+//#include "zlib.h"
 
 
 //extra byte for the '\0' (although its not written to file)
@@ -242,10 +242,9 @@ bool ResourcePack::getResource( std::string filepath, ResourceFile& dest )const
         return 1;
     #else
         //  Use physical files
-        if( findFile(correctFilepath(rcRoot_+"/"+filepath)) == 0 ){
-            //if( addFile(filepath) == 0 ){
-                return 0;
-            //}
+        if( filepath.find_first_of(rcRoot_) != 0 ) filepath = rcRoot_+"/"+filepath;
+        if( findFile(correctFilepath(filepath)) == 0 ){
+            return 0;
         }
 
         dest = index_[filepath];
@@ -274,7 +273,8 @@ bool ResourcePack::getResourceText( std::string filepath, std::string& dest )con
         return 1;
     #else
         //  Use physical files
-        std::ifstream rcFile( correctFilepath(rcRoot_+"/"+filepath).c_str(), std::ios::in );
+        if( filepath.find_first_of(rcRoot_) != 0 ) filepath = rcRoot_+"/"+filepath;
+        std::ifstream rcFile( correctFilepath(filepath).c_str(), std::ios::in );
         //open file to return
         if( !rcFile ){
             errorState = FILE_NOT_FOUND;
@@ -364,7 +364,8 @@ bool ResourcePack::findFile( std::string filepath )const{
     #else
         //  Use physical files
         //  if we can get filesize, it exists, so all good
-        return getFileSize(correctFilepath(rcRoot_+"/"+filepath));
+        if( filepath.find_first_of(rcRoot_) != 0 ) filepath = rcRoot_+"/"+filepath;
+        return getFileSize(correctFilepath( filepath ));
     #endif
 }
 
@@ -395,7 +396,8 @@ bool ResourcePack::checkFile( std::string filepath )const{
     #else
         //  Use physical files
         //  if we can get filesize, it exists, so all good
-        return getFileSize(correctFilepath(rcRoot_+"/"+filepath));
+        if( filepath.find_first_of(rcRoot_) != 0 ) filepath = rcRoot_+"/"+filepath;
+        return getFileSize(correctFilepath( filepath ));
     #endif
 }
 
@@ -425,7 +427,8 @@ bool ResourcePack::checkPack()const{
 bool ResourcePack::addFile( std::string filepath ){
     filepath = correctFilepath(filepath);
     //open file to add to pack
-    std::ifstream rcFile( (rcRoot_+"/"+filepath).c_str(), std::ios::binary|std::ios::in );
+    if( filepath.find_first_of(rcRoot_) != 0 ) filepath = rcRoot_+"/"+filepath;
+    std::ifstream rcFile( filepath.c_str(), std::ios::binary|std::ios::in );
     if( !rcFile ){
         errorState = FILE_NOT_FOUND;
         return false;

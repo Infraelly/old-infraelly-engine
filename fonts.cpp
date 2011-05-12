@@ -148,10 +148,10 @@ namespace font{
                     if( rw != NULL ) ttfTitleGuiFont = new gcn::contrib::SDLTrueTypeFont( rw, true, i );
                 }
             #else
-                ttfMainFont = TTF_OpenFont(mainFontFilename.c_str(), i);
-                ttfCreditFont = TTF_OpenFont(creditFontFilename.c_str(), i);
-                ttfMainGuiFont = new gcn::contrib::SDLTrueTypeFont(guiFontFilename, i);
-                ttfTitleGuiFont = new gcn::contrib::SDLTrueTypeFont(guiTitleFontFilename, i);
+                ttfMainFont = TTF_OpenFont((packs::mainPack.getRootDir()+mainFontFilename).c_str(), i);
+                ttfCreditFont = TTF_OpenFont((packs::mainPack.getRootDir()+creditFontFilename.c_str()), i);
+                ttfMainGuiFont = new gcn::contrib::SDLTrueTypeFont((packs::mainPack.getRootDir()+guiFontFilename), i);
+                ttfTitleGuiFont = new gcn::contrib::SDLTrueTypeFont((packs::mainPack.getRootDir()+guiTitleFontFilename), i);
             #endif
 
             mainFont.push_back( ttfMainFont );

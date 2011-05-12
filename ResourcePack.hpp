@@ -106,6 +106,9 @@ class ResourcePack{
         ResourcePack(const std::string& packfilepath, const std::string& rootDir = "data/", bool load = true);
         ~ResourcePack();
 
+        //  Returns a string containing the data root dir
+        std::string getRootDir()const;
+
         //  Returns a string value corresponding to the error value passed
         std::string getErrorString(enum ResourcePackError error)const;
 

@@ -85,7 +85,7 @@ struct GameConfig{
         static bool sound;
         static bool music;
         static int audioRate;
-        static int aduioBuffSize;
+        static int audioBuffSize;
 
         //  For test mode/debug
         static int wTestScreenWidth;

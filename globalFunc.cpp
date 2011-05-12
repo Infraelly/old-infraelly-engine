@@ -1203,7 +1203,7 @@ void makeUnixFilePath(std::string& filepath){
         filepath.at( filepath.find_first_of('\\') ) = '/';
     }
     while( filepath.find("//") != string::npos ){
-        filepath.at( filepath.find("//") ) = '/';
+        filepath.erase( filepath.find("//"), 1 );
     }
 }
 
@@ -1213,7 +1213,7 @@ std::string makeUnixFilePath(const std::string& filepath){
         tmp.at( tmp.find_first_of('\\') ) = '/';
     }
     while( tmp.find("//") != string::npos ){
-        tmp.at( tmp.find("//") ) = '/';
+        tmp.erase( tmp.find("//"), 1 );
     }
     return tmp;
 }

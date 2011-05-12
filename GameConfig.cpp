@@ -85,7 +85,7 @@ int GameConfig::fScreenBpp = 32;
 #endif
 
 int GameConfig::audioRate = 44110;
-int GameConfig::aduioBuffSize = 1024;
+int GameConfig::audioBuffSize = 1024;
 
 
 int GameConfig::wTestScreenWidth = 600;
