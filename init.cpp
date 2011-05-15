@@ -89,39 +89,26 @@ void init(){
     //set exit function
     atexit(closeInfraelly);
 
+    //  init logs
+    logs::logsInit();
+
+
     /*---------------------------------------------
                     Load user settings
     ---------------------------------------------*/
     #ifndef DEBUG
-    cout << "Load Infraelly settings (delete \"infraelly.cfg\" to restore defaults)" << endl;
     if( !GameConfig::loadXml("infraelly.cfg") ){
         GameConfig::saveXml("infraelly.cfg");
     }
     #else
-        cout << "Infraelly settings not loading from file. (DEBUG is enabled)" << endl;
+        cout << "Infraelly settings not loading from file. (compiled with DEBUG enabled)" << endl;
     #endif
 
-    if( GameConfig::logging ){
-        logs::logsInit();
-    }
+    //  Toggle log state
+    logs::logsSetActive(GameConfig::logging);
 
 
     //decorate/prepare the out put log
-  /*  cerr << "                         ____                                                  " << endl;
-    cerr << "      __                / __ \\                                /\\     /\\        " << endl;
-    cerr << "     /_/               / /  \\/                               / /    / /        " << endl;
-    cerr << "     __    ____       / /_    ____     ____       ____      / /    / /         " << endl;
-    cerr << "    / /   / __ \\     / ___\\  / __ \\   / __ \\     / __ \\    / /    / /   /\\  /\\ " << endl;
-    cerr << "   / /   / /  \\ \\   / /     / /  \\/  / /  \\ \\   / ____/   / /    / /   / / / / " << endl;
-    cerr << "  / /_  / /   / /  / /     / /       \\ \\__/ /_  \\  \\___  / /_   / /_   \\ \\/ /  " << endl;
-    cerr << "  \\__/  \\/    \\/   \\/      \\/         \\______/   \\____/  \\__/   \\__/    \\  /   " << endl;
-    cerr << "                                                                        / /    " << endl;
-    cerr << " ______________________________________________________________________/ /     " << endl;
-    cerr << "/   ____________________________________________________________________/      " << endl;
-    cerr << "\\__/                                                                           " << endl;
-    cerr << "                                           Copyright Infraelly Team 2007-2010  " << endl;
-    cerr << endl << endl;*/
-
     logs::logOut << "                         ____                                                  \n";
     logs::logOut << "      __                / __ \\                                /\\     /\\        \n";
     logs::logOut << "     /_/               / /  \\/                               / /    / /        \n";
@@ -134,12 +121,9 @@ void init(){
     logs::logOut << " ______________________________________________________________________/ /     \n";
     logs::logOut << "/   ____________________________________________________________________/      \n";
     logs::logOut << "\\__/                                                                           \n";
-    logs::logOut << "                                           Copyright Infraelly Team 2007-2010  \n\n\n";
-
+    logs::logOut << "                                           Copyright Infraelly Team 2007-2011  \n\n\n";
     logs::logErr << logs::logOut;
-
-
-    //putenv("SDL_VIDEODRIVER=x11");
+    logs::logsFlush();
 
 
     /********************************************************
@@ -150,25 +134,25 @@ void init(){
     /*------------------------------------------
              initialize SDL_main
     -------------------------------------------*/
-    cerr << __FILE__ << " " << __LINE__ << ": " << "Initialising SDL" << endl;
+    logs::logOut << "Initialising SDL\n";
     //try initiate everything
     if(SDL_Init(SDL_INIT_EVERYTHING) == -1){
-        cerr << __FILE__ << " " << __LINE__ << ": " << "SDL failed to initialise: SDL_INIT_EVERYTHING" << endl;
+        logs::logDbg << __FILE__ << " " << __LINE__ << ": " << "SDL failed to initialise: SDL_INIT_EVERYTHING\n";
         Uint32 initiated = SDL_WasInit(SDL_INIT_EVERYTHING);
         bool continueAnyway = 1;
         //check if video was initiated
         if ( !(initiated & SDL_INIT_VIDEO) ){
-            cerr << __FILE__ << " " << __LINE__ << ": " << "SDL failed to initialise: SDL_INIT_VIDEO" << endl;
+            logs::logDbg << __FILE__ << " " << __LINE__ << ": " << "SDL failed to initialise: SDL_INIT_VIDEO\n";
             continueAnyway = 0;
         }
         //check if the timer systems were initiated properly
         if ( !(initiated & SDL_INIT_TIMER) ){
-            cerr << __FILE__ << " " << __LINE__ << ": " << "SDL failed to initialise: SDL_INIT_TIMER" << endl;
+            logs::logDbg << __FILE__ << " " << __LINE__ << ": " << "SDL failed to initialise: SDL_INIT_TIMER\n";
             continueAnyway = 0;
         }
         //check i the audio systems were initiated properly
         if ( !(initiated & SDL_INIT_AUDIO) ){
-            cerr << __FILE__ << " " << __LINE__ << ": " << "SDL failed to initialise: SDL_INIT_AUDIO" << endl;
+            logs::logDbg << __FILE__ << " " << __LINE__ << ": " << "SDL failed to initialise: SDL_INIT_AUDIO\n";
             GameConfig::sound = 0;
             GameConfig::music = 0;
         }
@@ -183,17 +167,19 @@ void init(){
             continueAnyway = 1;
         }*/
         //depending on what was succesful, continue or not
-        cerr << __FILE__ << " " << __LINE__ << ": " << SDL_GetError() << endl;
+        logs::logDbg << __FILE__ << " " << __LINE__ << ": " << SDL_GetError() << "\n";
         if (continueAnyway){
-            cerr << __FILE__ << " " << __LINE__ << ": " << "Continuing anyway..." << endl << endl;
+            logs::logDbg << __FILE__ << " " << __LINE__ << ": " << "Continuing anyway...\n\n";
         } else {
-            cerr << __FILE__ << " " << __LINE__ << ": " << "Unable to continue" << endl;
+            logs::logDbg << __FILE__ << " " << __LINE__ << ": " << "Unable to continue\n";
             exit(EXIT_FAILURE);
         }
     } else {
-        cerr << __FILE__ << " " << __LINE__ << ": " << "Initialised: SDL_INIT_EVERYTHING" << endl << endl;
+        logs::logDbg << __FILE__ << " " << __LINE__ << ": " << "Initialised: SDL_INIT_EVERYTHING\n\n";
     }
 
+    freopen( "CON", "w", stdout );
+    freopen( "CON", "w", stderr );
     /*************************************************************
 
                         Splash Screen
@@ -250,7 +236,7 @@ void init(){
                 initiallise SDL_mixer
     -------------------------------------------*/
     cerr << __FILE__ << " " << __LINE__ << ": " << "Initialising SDL_mixer" << endl;
-    if (Mix_OpenAudio(GameConfig::audioRate, MIX_DEFAULT_FORMAT, 2, GameConfig::aduioBuffSize) == -1){
+    if (Mix_OpenAudio(GameConfig::audioRate, MIX_DEFAULT_FORMAT, 2, GameConfig::audioBuffSize) == -1){
         cerr << __FILE__ << " " << __LINE__ << ": " << "SDL failed to initialised: SDL_mixer" << endl;
         cerr << __FILE__ << " " << __LINE__ << ": " << Mix_GetError() << endl;
         cerr << __FILE__ << " " << __LINE__ << ": " << "Continue anyway" << endl;

@@ -138,7 +138,7 @@ bool GameConfig::saveXml(const std::string &filename){
     audioEl->SetAttribute("music", music);
     audioEl->SetAttribute("fx", sound);
     audioEl->SetAttribute("rate", audioRate);
-    audioEl->SetAttribute("buffer", aduioBuffSize);
+    audioEl->SetAttribute("buffer", audioBuffSize);
 
 	//Server
     TiXmlElement *serverEl = new TiXmlElement( "Server" );
@@ -216,7 +216,7 @@ bool GameConfig::loadXml(const std::string &filename){
         pElem->QueryValueAttribute("music", &music );
         pElem->QueryValueAttribute("fx", &sound );
         pElem->QueryIntAttribute("rate", &audioRate );
-        pElem->QueryIntAttribute("buffer", &aduioBuffSize );
+        pElem->QueryIntAttribute("buffer", &audioBuffSize );
     }
 
 	//Server

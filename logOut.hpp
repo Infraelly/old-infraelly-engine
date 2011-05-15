@@ -47,7 +47,6 @@ L-----------------------------------------------------------------------------*/
 #include <fstream>
 #include <string>
 
-#include "GameConfig.hpp"
 
 /************************************************************************
 still in the making
@@ -67,18 +66,89 @@ namespace logs{
     class Logger{
         public:
             Logger(std::ostream& stream, std::ofstream& f_stream):
-                std_stream_(stream), file_stream_(f_stream){ ; }
+                std_stream_(stream), file_stream_(f_stream), active_(true){ ; }
+
+            inline bool isActive()const{ return active_; }
+            inline void activate(){ active_ = true; }
+            inline void deactivate(){ active_ = false; }
+            inline void setActive(bool b){ active_ = b; }
+            inline void toggle(){ active_ = !active_; }
+
+            inline Logger& operator<<(const std::string& message){
+                if(active_)data_ << message;
+                std_stream_ << message;
+                return *this;
+            }
+
+            inline Logger& operator<<(const char* message){
+                if(active_)data_ << message;
+                std_stream_ << message;
+                return *this;
+            }
+
+            inline Logger& operator<<(char message){
+                if(active_)data_ << message;
+                std_stream_ << message;
+                return *this;
+            }
+
+            inline Logger& operator<<(short message){
+                if(active_)data_ << message;
+                std_stream_ << message;
+                return *this;
+            }
+
+            inline Logger& operator<<(int message){
+                if(active_)data_ << message;
+                std_stream_ << message;
+                return *this;
+            }
+
+            inline Logger& operator<<(long message){
+                if(active_)data_ << message;
+                std_stream_ << message;
+                return *this;
+            }
+
+            inline Logger& operator<<(float message){
+                if(active_)data_ << message;
+                std_stream_ << message;
+                return *this;
+            }
+
+            inline Logger& operator<<(double message){
+                if(active_)data_ << message;
+                std_stream_ << message;
+                return *this;
+            }
+
 
             template<typename T>
-            friend Logger& operator<<(Logger& p, T& message);
-            friend Logger& operator<<(Logger& d, Logger& src);
+            Logger& operator<<(T& message){
+                if(active_)data_ << message;
+                std_stream_ << message;
+                return *this;
+            }
+
+            inline Logger& operator<<(Logger& src){
+                if(active_)data_ << src.data_.str();
+                std_stream_ << src.data_.str();
+                return *this;
+            }
+
+            inline Logger& operator<<(std::ostream& o){
+                if(active_)data_ << o;
+                std_stream_ << o;
+                return *this;
+            }
+
             friend std::ostream& operator<<(std::ostream& o, Logger& l);
 
             void flush(){
-                if( GameConfig::logging ){
-                    file_stream_ << data_.str() << std::endl;
+                if( active_ ){
+                    file_stream_ << data_.str() << std::flush;
                 }
-                std_stream_ << data_.str() << std::endl;
+                std_stream_ << data_.str() << std::flush;
                 data_.str("");
             }
 
@@ -86,23 +156,11 @@ namespace logs{
             std::ostream& std_stream_;
             std::ofstream& file_stream_;
             std::stringstream data_;
+            bool active_;
     };
-
-    template<typename T>
-    Logger& operator<<(Logger& p, T& message){
-        p.std_stream_ << message;
-        p.data_ << message;
-        return p;
-    };
-
-    inline Logger& operator<<(Logger& d, Logger& src){
-        d.data_ << src.data_.str();
-        d.std_stream_ << src.data_.str();
-        return d;
-    }
 
     inline std::ostream& operator<<(std::ostream& o, Logger& l){
-        o << l.data_.str();
+        if(l.active_)o << l.data_.str();
         return o;
     }
 
@@ -113,6 +171,29 @@ namespace logs{
     bool logsInit(const std::string& out = "logOut.txt", const std::string& err = "logErr.txt", const std::string &dbg = "logDbg.txt");
     void logsQuit();
 
+    inline void logsSetActive(bool v){
+        logOut.setActive(v);
+        logErr.setActive(v);
+        logDbg.setActive(v);
+    }
+
+    inline void logsActivate(){
+        logOut.activate();
+        logErr.activate();
+        logDbg.activate();
+    }
+
+    inline void logsDeactivate(){
+        logOut.deactivate();
+        logErr.deactivate();
+        logDbg.deactivate();
+    }
+
+    inline void logsFlush(){
+        logOut.flush();
+        logErr.flush();
+        logDbg.flush();
+    }
 
     /*extern bool logs_inited;
     extern std::ofstream of_out;

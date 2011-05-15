@@ -76,6 +76,9 @@ namespace logs{
                 std::cout << "Logs inited: \n";
             }
         }
+        #ifndef DEBUG
+            logDbg.deactivate();
+        #endif
         return logs_inited;
     }
 
@@ -93,7 +96,4 @@ namespace logs{
             logs_inited = false;
         }
     }
-
-
-
 }

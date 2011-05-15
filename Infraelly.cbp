@@ -14,7 +14,6 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Option use_console_runner="0" />
-				<Option parameters="-server" />
 				<Compiler>
 					<Add option="-Wall" />
 					<Add option="-g" />
@@ -45,7 +44,6 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Option use_console_runner="0" />
-				<Option parameters="-mapper" />
 				<Compiler>
 					<Add option="-march=i586" />
 					<Add option="-fexpensive-optimizations" />
@@ -130,12 +128,12 @@
 		<Linker>
 			<Add option="--enable-auto-import" />
 			<Add library="guichan" />
+			<Add library="SDLmain" />
 			<Add library="SDL_gfx" />
 			<Add library="SDL_image" />
 			<Add library="SDL_mixer" />
 			<Add library="SDL_ttf" />
 			<Add library="SDL_net" />
-			<Add library="SDLmain" />
 			<Add library="SDL" />
 			<Add library="tinyxml" />
 			<Add library="cryptopp" />
