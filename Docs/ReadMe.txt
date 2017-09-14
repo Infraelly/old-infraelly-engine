@@ -124,7 +124,7 @@ All Infraelly content files are are licensed Under according to the file:
 =========
 
 For any further feedback
-E-mail: insanepotato@hotmail.com
+Contact: @PyroSamurai or make an issue on this repo.
 
 
 --------------
